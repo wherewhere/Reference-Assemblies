@@ -1,0 +1,1341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) Microsoft Corporation.  All rights reserved. -->
+<doc>
+  <assembly>
+    <name>System.Xml.Serialization</name>
+  </assembly>
+  <members>
+    <member name="T:System.ServiceModel.XmlSerializerFormatAttribute">
+<summary>指示 Silverlight 5 Beta 基础结构使用 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 代替 <see cref="T:System.Runtime.Serialization.XmlObjectSerializer"/> 来序列化方法或类。</summary>
+    </member>
+    <member name="M:System.ServiceModel.XmlSerializerFormatAttribute.#ctor">
+<summary>初始化 <see cref="T:System.ServiceModel.XmlSerializerFormatAttribute"/> 类的新实例。 </summary>
+    </member>
+    <member name="P:System.ServiceModel.XmlSerializerFormatAttribute.Style">
+<summary>获取或设置 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 的 SOAP 样式。</summary>
+<returns>其中一个 <see cref="T:System.ServiceModel.OperationFormatStyle"/> 值。默认值为 <see cref="F:System.ServiceModel.OperationFormatStyle.Document"/>。</returns>
+    </member>
+    <member name="P:System.ServiceModel.XmlSerializerFormatAttribute.SupportFaults">
+<summary>获取或设置一个值，该值指示是否支持错误。</summary>
+<returns>如果支持错误，则为 true；否则为 false。</returns>
+    </member>
+    <member name="T:System.ServiceModel.Description.XmlSerializerOperationBehavior">
+<summary>控制与操作相关联的 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 的运行时行为。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Description.XmlSerializerOperationBehavior.System#ServiceModel#Description#IOperationBehavior#AddBindingParameters(System.ServiceModel.Description.OperationDescription,System.ServiceModel.Channels.BindingParameterCollection)">
+<summary>在派生类中实现时，向操作说明中添加一组参数。</summary> <param name="description">目标 <see cref="T:System.ServiceModel.Description.OperationDescription"/>。</param><param name="parameters">包含参数的 <see cref="T:System.ServiceModel.Channels.BindingParameterCollection"/>。</param>
+    </member>
+    <member name="M:System.ServiceModel.Description.XmlSerializerOperationBehavior.System#ServiceModel#Description#IOperationBehavior#ApplyClientBehavior(System.ServiceModel.Description.OperationDescription,System.ServiceModel.Dispatcher.ClientOperation)">
+<summary>将客户端的行为应用于操作。</summary> <param name="description">表示操作的 <see cref="T:System.ServiceModel.Description.OperationDescription"/>。</param><param name="proxy">表示客户端操作的 <see cref="T:System.ServiceModel.Dispatcher.ClientOperation"/>。</param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="description"/> 或 <paramref name="proxy"/> 为 null。</exception>
+    </member>
+    <member name="M:System.ServiceModel.Description.XmlSerializerOperationBehavior.System#ServiceModel#Description#IOperationBehavior#ApplyDispatchBehavior(System.ServiceModel.Description.OperationDescription,System.ServiceModel.Dispatcher.DispatchOperation)">
+<summary>将调度行为应用于操作。</summary> <param name="description">目标 <see cref="T:System.ServiceModel.Description.OperationDescription"/>。</param><param name="dispatch">要应用的 <see cref="T:System.ServiceModel.Dispatcher.DispatchOperation"/>。</param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="description"/> 或 <paramref name="dispatch"/> 为 null。</exception>
+    </member>
+    <member name="M:System.ServiceModel.Description.XmlSerializerOperationBehavior.System#ServiceModel#Description#IOperationBehavior#Validate(System.ServiceModel.Description.OperationDescription)">
+<summary>在派生类中实现时，验证操作。</summary> <param name="description">要验证的目标 <see cref="T:System.ServiceModel.Description.OperationDescription"/>。</param>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlAnyElementAttributes">
+<summary>表示 <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute"/> 对象的集合。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.#ctor">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlAnyElementAttributes"/> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.Add(System.Xml.Serialization.XmlAnyElementAttribute)">
+<summary>表示 <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute"/> 对象的集合。</summary>
+<returns>所添加项的索引。</returns>
+<param name="attribute">要添加到此集合中的 <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute"/>。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.Clear">
+<summary>从集合中移除所有对象。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.Contains(System.Xml.Serialization.XmlAnyElementAttribute)">
+<summary>确定集合是否包含指定的 <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute"/>。</summary>
+<returns>如果集合包含指定的 <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute"/>，则为 true；否则为 false。</returns>
+<param name="attribute">要检查的 <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute"/>。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.CopyTo(System.Xml.Serialization.XmlAnyElementAttribute[],System.Int32)">
+<summary>将 <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute"/> 数组复制到集合，从指定的目标索引开始。</summary><param name="array">要复制到集合的 <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute"/> 对象的数组。</param><param name="index">数组中从零开始的索引，从此处开始复制。</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttributes.Count">
+<summary>获取集合中包含的属性数量。</summary>
+<returns>集合中包含的属性数量。</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.GetEnumerator">
+<summary>返回可循环访问集合的 <see cref="T:System.Collections.IEnumerator"/>。</summary>
+<returns>可循环访问集合的 <see cref="T:System.Collections.IEnumerator"/> 对象。</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.IndexOf(System.Xml.Serialization.XmlAnyElementAttribute)">
+<summary>返回集合中第一次出现的指定 <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute"/> 的从零开始的索引；如果集合中找不到此属性，则返回 -1。 </summary>
+<returns>集合中 <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute"/> 的第一个索引；如果集合中找不到此属性，则为 -1。
+</returns>
+<param name="attribute">要在集合中查找的 <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute"/>。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.Insert(System.Int32,System.Xml.Serialization.XmlAnyElementAttribute)">
+<summary>将 <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute"/> 插入到集合中的指定索引处。</summary><param name="index">要在此处插入属性的从零开始的索引。</param> <param name="attribute">要插入的 <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute"/>。</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttributes.Item(System.Int32)">
+<summary>获取或设置指定索引处的属性元素。</summary>
+<returns>指定索引处的 <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute"/>。</returns>
+<param name="index">要获取或设置的属性元素的从零开始的索引。</param>
+<exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index"/> 对于集合来说无效；它太大或者小于零。</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.Remove(System.Xml.Serialization.XmlAnyElementAttribute)">
+<summary>从集合中移除指定的 <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute"/>（如果存在）。</summary><param name="attribute">要移除的 <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute"/>。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.RemoveAt(System.Int32)">
+<summary>从集合中移除指定索引处的 <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute"/> 项。</summary><param name="index">要移除的项的从零开始的索引。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#ICollection#CopyTo(System.Array,System.Int32)">
+<summary>将属性集合中的元素复制到数组，从数组的指定索引处开始。</summary> <param name="array">从 <see cref="T:System.Xml.Serialization.XmlAnyElementAttributes"/> 集合中复制的属性元素的一维目标 <see cref="T:System.Array"/>。</param> <param name="index">数组中从零开始的索引，从此处开始复制。</param>
+<exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index"/> 小于零。</exception>
+<exception cref="T:System.ArgumentException"><paramref name="index"/> 大于数组的长度、添加属性元素时超出数组的长度，或者 <paramref name="array"/> 为多维数组。</exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#ICollection#IsSynchronized">
+<summary>获取一个值，该值指示是否同步对属性集合的访问（线程安全）。</summary>
+<returns>如果同步集合（线程安全），则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#ICollection#SyncRoot">
+<summary>不支持此方法。</summary>
+<returns>引发 <see cref="T:System.NotSupportedException"/>。</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#Add(System.Object)">
+<summary>向属性列表中添加项目。</summary>
+<returns>新元素的插入位置。</returns>
+<param name="value">要添加到列表中的对象。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#Contains(System.Object)">
+<summary>确定属性列表是否包含特定值。</summary>
+<returns>如果此对象已在属性列表中，则为 true；否则为 false。</returns>
+<param name="value">要在属性列表中查找的对象。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#IndexOf(System.Object)">
+<summary>确定属性列表中指定项目的索引。</summary>
+<returns>如果在属性列表中找到，则为 <paramref name="value"/> 的索引；否则为 -1。</returns>
+<param name="value">要在属性列表中查找的对象。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#Insert(System.Int32,System.Object)">
+<summary>在列表中的指定索引处插入项目。</summary> <param name="index">要在此处插入值的从零开始的索引。</param> <param name="value">要插入到列表中的对象。</param>
+<exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index"/> 对于集合来说无效；它太大或者小于零。</exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#IsFixedSize">
+<summary>获取一个值，该值指示列表是否具有固定大小。</summary>
+<returns>如果列表具有固定大小，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#IsReadOnly">
+<summary>获取一个值，该值指示列表是否为只读。</summary>
+<returns>如果列表为只读，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#Item(System.Int32)">
+<summary>获取或设置位于指定索引处的元素。</summary>
+<returns>位于指定索引处的元素。</returns>
+<param name="index">要获取或设置的元素从零开始的索引。</param>
+<exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index"/> 对于集合来说无效；它太大或者小于零。</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#Remove(System.Object)">
+<summary>从列表中移除第一次出现的特定对象。</summary> <param name="value">要从列表中移除的对象。</param>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlArrayItemAttributes">
+<summary>表示 <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute"/> 对象的集合。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.#ctor">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlArrayItemAttributes"/> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.Add(System.Xml.Serialization.XmlArrayItemAttribute)">
+<summary>向集合中添加 <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute"/>。</summary>
+<returns>所添加项的索引。</returns>
+<param name="attribute">要添加到此集合中的 <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute"/>。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.Clear">
+<summary>从集合中移除所有对象。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.Contains(System.Xml.Serialization.XmlArrayItemAttribute)">
+<summary>确定集合是否包含指定的 <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute"/>。</summary>
+<returns>如果集合包含指定的 <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute"/>，则为 true；否则为 false。</returns>
+<param name="attribute">要检查的 <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute"/>。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.CopyTo(System.Xml.Serialization.XmlArrayItemAttribute[],System.Int32)">
+<summary>将 <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute"/> 数组复制到集合，从指定的目标索引开始。</summary><param name="array">要复制到集合的 <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute"/> 对象的数组。</param><param name="index">数组中从零开始的索引，从此处开始复制。</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttributes.Count">
+<summary>获取集合中包含的属性数量。</summary>
+<returns>集合中包含的属性数量。</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.GetEnumerator">
+<summary>返回可循环访问集合的 <see cref="T:System.Collections.IEnumerator"/>。</summary>
+<returns>可循环访问集合的 <see cref="T:System.Collections.IEnumerator"/> 对象。</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.IndexOf(System.Xml.Serialization.XmlArrayItemAttribute)">
+<summary>返回集合中第一次出现的指定 <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute"/> 的从零开始的索引；如果集合中找不到此属性，则返回 -1。 </summary>
+<returns>集合中 <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute"/> 的第一个索引；如果集合中找不到此属性，则为 -1。
+</returns>
+<param name="attribute">要在集合中查找的 <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute"/>。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.Insert(System.Int32,System.Xml.Serialization.XmlArrayItemAttribute)">
+<summary>将 <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute"/> 插入到集合中的指定索引处。</summary><param name="index">要在此处插入属性的从零开始的索引。</param> <param name="attribute">要插入的 <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute"/>。</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttributes.Item(System.Int32)">
+<summary>获取或设置指定索引处的属性元素。</summary>
+<returns>指定索引处的 <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute"/>。</returns>
+<param name="index">要获取或设置的属性元素的从零开始的索引。</param>
+<exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index"/> 对于集合来说无效；它太大或者小于零。</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.Remove(System.Xml.Serialization.XmlArrayItemAttribute)">
+<summary>从集合中移除指定的 <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute"/>（如果存在）。</summary><param name="attribute">要移除的 <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute"/>。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.RemoveAt(System.Int32)">
+<summary>从集合中移除指定索引处的 <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute"/> 项。</summary><param name="index">要移除的项的从零开始的索引。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#ICollection#CopyTo(System.Array,System.Int32)">
+<summary>将属性集合中的元素复制到数组，从数组的指定索引处开始。</summary> <param name="array">从 <see cref="T:System.Xml.Serialization.XmlArrayItemAttributes"/> 集合中复制的属性元素的一维目标 <see cref="T:System.Array"/>。</param> <param name="index">数组中从零开始的索引，从此处开始复制。</param>
+<exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index"/> 小于零。</exception>
+<exception cref="T:System.ArgumentException"><paramref name="index"/> 大于数组的长度，或添加属性元素时超出数组的长度，或者 <paramref name="array"/> 为多维数组。</exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#ICollection#IsSynchronized">
+<summary>获取一个值，该值指示是否同步对属性集合的访问（线程安全）。</summary>
+<returns>如果同步集合（线程安全），则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#ICollection#SyncRoot">
+<summary>不支持此方法。</summary>
+<returns>引发 <see cref="T:System.NotSupportedException"/>。</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#Add(System.Object)">
+<summary>向属性列表中添加项目。</summary>
+<returns>新元素的插入位置。</returns>
+<param name="value">要添加到列表中的对象。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#Contains(System.Object)">
+<summary>确定属性列表是否包含特定值。</summary>
+<returns>如果此对象已在属性列表中，则为 true；否则为 false。</returns>
+<param name="value">要在属性列表中查找的对象。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#IndexOf(System.Object)">
+<summary>确定属性列表中指定项目的索引。</summary>
+<returns>如果在属性列表中找到，则为 <paramref name="value"/> 的索引；否则为 -1。</returns>
+<param name="value">要在属性列表中查找的对象。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#Insert(System.Int32,System.Object)">
+<summary>在列表中的指定索引处插入项目。</summary> <param name="index">要在此处插入值的从零开始的索引。</param> <param name="value">要插入到列表中的对象。</param>
+<exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index"/> 对于集合来说无效；它太大或者小于零。</exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#IsFixedSize">
+<summary>获取一个值，该值指示列表是否具有固定大小。</summary>
+<returns>如果列表具有固定大小，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#IsReadOnly">
+<summary>获取一个值，该值指示列表是否为只读。</summary>
+<returns>如果列表为只读，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#Item(System.Int32)">
+<summary>获取或设置位于指定索引处的元素。</summary>
+<returns>位于指定索引处的元素。</returns>
+<param name="index">要获取或设置的元素从零开始的索引。</param>
+<exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index"/> 对于集合来说无效；它太大或者小于零。</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#Remove(System.Object)">
+<summary>从列表中移除第一次出现的特定对象。</summary> <param name="value">要从列表中移除的对象。</param>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlAttributeOverrides">
+<summary>允许您在使用 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 序列化或反序列化对象时重写属性、字段和类属性。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAttributeOverrides.#ctor">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlAttributeOverrides"/> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAttributeOverrides.Add(System.Type,System.String,System.Xml.Serialization.XmlAttributes)">
+<summary>将 <see cref="T:System.Xml.Serialization.XmlAttributes"/> 对象添加到 <see cref="T:System.Xml.Serialization.XmlAttributes"/> 对象的集合中。<paramref name="type"/> 参数指定要重写的对象。<paramref name="member"/> 参数指定被重写的成员的名称。</summary><param name="type">要重写的对象的 <see cref="T:System.Type"/>。</param> <param name="member">要重写的成员的名称。</param> <param name="attributes">表示重写属性的 <see cref="T:System.Xml.Serialization.XmlAttributes"/> 对象。 </param>
+<exception cref="T:System.InvalidOperationException">为某些类型的成员添加了多个 <see cref="T:System.Xml.Serialization.XmlAttributes"/> 对象。
+</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAttributeOverrides.Add(System.Type,System.Xml.Serialization.XmlAttributes)">
+<summary>将 <see cref="T:System.Xml.Serialization.XmlAttributes"/> 对象添加到 <see cref="T:System.Xml.Serialization.XmlAttributes"/> 对象的集合中。<paramref name="type"/> 参数指定将由 <see cref="T:System.Xml.Serialization.XmlAttributes"/> 对象重写的对象。</summary><param name="type">被重写的对象的 <see cref="T:System.Type"/>。</param> <param name="attributes">表示重写属性的 <see cref="T:System.Xml.Serialization.XmlAttributes"/> 对象。 </param>
+<exception cref="T:System.InvalidOperationException">为某些类型的成员添加了多个 <see cref="T:System.Xml.Serialization.XmlAttributes"/> 对象。</exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributeOverrides.Item(System.Type)">
+<summary>获取与指定的基类类型关联的对象。</summary>
+<returns>表示重写属性集合的 <see cref="T:System.Xml.Serialization.XmlAttributes"/>。</returns>
+<param name="type">与要检索的属性集合关联的基类 <see cref="T:System.Type"/>。 </param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributeOverrides.Item(System.Type,System.String)">
+<summary>获取与指定的基类类型关联的对象。<paramref name="member"/> 参数指定被重写的基类成员。</summary>
+<returns>表示重写属性集合的 <see cref="T:System.Xml.Serialization.XmlAttributes"/>。</returns>
+<param name="type">与所需属性的集合关联的基类 <see cref="T:System.Type"/>。</param> <param name="member">重写成员的名称，指定要返回的 <see cref="T:System.Xml.Serialization.XmlAttributes"/>。 </param>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlAttributes">
+<summary>表示一个属性对象的集合，这些对象控制 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 如何序列化和反序列化对象。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAttributes.#ctor">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlAttributes"/> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAttributes.#ctor(System.Reflection.ICustomAttributeProvider)">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlAttributes"/> 类的新实例，并自定义 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 序列化和反序列化对象的方式。</summary> <param name="provider">能提供控制 XML 序列化的属性的其他实现的类。</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlAnyElements">
+<summary>获取要重写的 <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute"/> 对象的集合。</summary>
+<returns>表示 <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute"/> 对象集合的 <see cref="T:System.Xml.Serialization.XmlAnyElementAttributes"/> 对象。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlArray">
+<summary>获取或设置一个对象，该对象指定 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 如何序列化返回数组的公共字段或读/写属性。</summary>
+<returns><see cref="T:System.Xml.Serialization.XmlArrayAttribute"/>，指定 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 如何序列化返回数组的公共字段或读/写属性。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlArrayItems">
+<summary>获取或设置一个对象集合，这些对象指定 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 如何序列化插入数组（该数组由公共字段或读/写属性返回）的项。</summary>
+<returns>包含 <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute"/> 对象集合的 <see cref="T:System.Xml.Serialization.XmlArrayItemAttributes"/> 对象。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlAttribute">
+<summary>获取或设置一个对象，该对象指定 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 如何将公共字段或公共读/写属性作为 XML 属性序列化。</summary>
+<returns>控制将公共字段或读/写属性序列化为 XML 属性的 <see cref="T:System.Xml.Serialization.XmlAttributeAttribute"/>。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlChoiceIdentifier">
+<summary>获取或设置一个对象，该对象允许区别一组选项。</summary>
+<returns>可应用到某个类成员（被序列化为 xsi:choice 元素）的 <see cref="T:System.Xml.Serialization.XmlChoiceIdentifierAttribute"/>。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlDefaultValue">
+<summary>获取或设置 XML 元素或属性的默认值。</summary>
+<returns>表示 XML 元素或属性的默认值的 <see cref="T:System.Object"/>。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlElements">
+<summary>获取一个对象集合，这些对象指定 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 将公共字段或读/写属性序列化为 XML 元素的方式。</summary>
+<returns>包含 <see cref="T:System.Xml.Serialization.XmlElementAttribute"/> 对象集合的 <see cref="T:System.Xml.Serialization.XmlElementAttributes"/>。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlEnum">
+<summary>获取或设置一个对象，该对象指定 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 如何序列化枚举成员。</summary>
+<returns><see cref="T:System.Xml.Serialization.XmlEnumAttribute"/>，指定 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 如何序列化枚举成员。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlIgnore">
+<summary>获取或设置一个值，该值指定 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 是否序列化公共字段或公共读/写属性。</summary>
+<returns>如果 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 不应序列化字段或属性，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.Xmlns">
+<summary>获取或设置一个值，该值指定当重写包含返回 <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces"/> 对象的成员的对象时，是否保留所有的命名空间声明。</summary>
+<returns>如果应保留命名空间声明，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlRoot">
+<summary>获取或设置一个对象，该对象指定 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 如何将类作为 XML 根元素序列化。</summary>
+<returns>重写属性化为 XML 根元素的类的 <see cref="T:System.Xml.Serialization.XmlRootAttribute"/>。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlText">
+<summary>获取或设置一个对象，该对象指示 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 将公共字段或公共读/写属性作为 XML 文本序列化。</summary>
+<returns>重写公共属性或字段的默认序列化的 <see cref="T:System.Xml.Serialization.XmlTextAttribute"/>。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlType">
+<summary>获取或设置一个对象，该对象指定 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 如何序列化一个已对其应用 <see cref="T:System.Xml.Serialization.XmlTypeAttribute"/> 的类。</summary>
+<returns>重写应用于类声明的 <see cref="T:System.Xml.Serialization.XmlTypeAttribute"/> 的 <see cref="T:System.Xml.Serialization.XmlTypeAttribute"/>。</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlElementAttributes">
+<summary>表示 <see cref="T:System.Xml.Serialization.XmlElementAttribute"/> 对象的集合，该对象由 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 用来重写序列化类的默认方式。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.#ctor">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlElementAttributes"/> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.Add(System.Xml.Serialization.XmlElementAttribute)">
+<summary>向集合中添加 <see cref="T:System.Xml.Serialization.XmlElementAttribute"/>。</summary>
+<returns>所添加项的索引。</returns>
+<param name="attribute">要添加到此集合中的 <see cref="T:System.Xml.Serialization.XmlElementAttribute"/>。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.Clear">
+<summary>从集合中移除所有对象。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.Contains(System.Xml.Serialization.XmlElementAttribute)">
+<summary>确定集合是否包含指定的 <see cref="T:System.Xml.Serialization.XmlElementAttribute"/>。</summary>
+<returns>如果集合包含指定的 <see cref="T:System.Xml.Serialization.XmlElementAttribute"/>，则为 true；否则为 false。</returns>
+<param name="attribute">要检查的 <see cref="T:System.Xml.Serialization.XmlElementAttribute"/>。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.CopyTo(System.Xml.Serialization.XmlElementAttribute[],System.Int32)">
+<summary>将 <see cref="T:System.Xml.Serialization.XmlElementAttribute"/> 数组复制到集合，从指定的目标索引开始。</summary><param name="array">要复制到集合的 <see cref="T:System.Xml.Serialization.XmlElementAttribute"/> 对象的数组。</param><param name="index">数组中从零开始的索引，从此处开始复制。</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttributes.Count">
+<summary>获取集合中包含的属性数量。</summary>
+<returns>集合中包含的属性数量。</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.GetEnumerator">
+<summary>返回可循环访问集合的 <see cref="T:System.Collections.IEnumerator"/>。</summary>
+<returns>可循环访问集合的 <see cref="T:System.Collections.IEnumerator"/> 对象。</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.IndexOf(System.Xml.Serialization.XmlElementAttribute)">
+<summary>返回集合中第一次出现的指定 <see cref="T:System.Xml.Serialization.XmlElementAttribute"/> 的从零开始的索引；如果集合中找不到此属性，则返回 -1。 </summary>
+<returns>集合中 <see cref="T:System.Xml.Serialization.XmlElementAttribute"/> 的第一个索引；如果集合中找不到此属性，则为 -1。
+</returns>
+<param name="attribute">要在集合中查找的 <see cref="T:System.Xml.Serialization.XmlElementAttribute"/>。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.Insert(System.Int32,System.Xml.Serialization.XmlElementAttribute)">
+<summary>将 <see cref="T:System.Xml.Serialization.XmlElementAttribute"/> 插入到集合中的指定索引处。</summary><param name="index">要在此处插入属性的从零开始的索引。</param> <param name="attribute">要插入的 <see cref="T:System.Xml.Serialization.XmlElementAttribute"/>。</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttributes.Item(System.Int32)">
+<summary>获取或设置指定索引处的属性元素。</summary>
+<returns>指定索引处的 <see cref="T:System.Xml.Serialization.XmlElementAttribute"/>。</returns>
+<param name="index">要获取或设置的属性元素的从零开始的索引。</param>
+<exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index"/> 对于集合来说无效；它太大或者小于零。</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.Remove(System.Xml.Serialization.XmlElementAttribute)">
+<summary>从集合中移除指定的 <see cref="T:System.Xml.Serialization.XmlElementAttribute"/>（如果存在）。</summary><param name="attribute">要移除的 <see cref="T:System.Xml.Serialization.XmlElementAttribute"/>。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.RemoveAt(System.Int32)">
+<summary>从集合中移除指定索引处的 <see cref="T:System.Xml.Serialization.XmlElementAttribute"/> 项。</summary><param name="index">要移除的项的从零开始的索引。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.System#Collections#ICollection#CopyTo(System.Array,System.Int32)">
+<summary>将属性集合中的元素复制到数组，从数组的指定索引处开始。</summary> <param name="array">从 <see cref="T:System.Xml.Serialization.XmlElementAttributes"/> 集合中复制的属性元素的一维目标 <see cref="T:System.Array"/>。</param> <param name="index">数组中从零开始的索引，从此处开始复制。</param>
+<exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index"/> 小于零。</exception>
+<exception cref="T:System.ArgumentException"><paramref name="index"/> 大于数组的长度、添加属性元素时超出数组的长度，或者 <paramref name="array"/> 为多维数组。</exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttributes.System#Collections#ICollection#IsSynchronized">
+<summary>获取一个值，该值指示是否同步对属性集合的访问（线程安全）。</summary>
+<returns>如果同步集合（线程安全），则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttributes.System#Collections#ICollection#SyncRoot">
+<summary>不支持此方法。</summary>
+<returns>引发 <see cref="T:System.NotSupportedException"/>。</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Add(System.Object)">
+<summary>向属性列表中添加项目。</summary>
+<returns>新元素的插入位置。</returns>
+<param name="value">要添加到列表中的对象。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Contains(System.Object)">
+<summary>确定属性列表是否包含特定值。</summary>
+<returns>如果此对象已在属性列表中，则为 true；否则为 false。</returns>
+<param name="value">要在属性列表中查找的对象。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#IndexOf(System.Object)">
+<summary>确定属性列表中指定项目的索引。</summary>
+<returns>如果在属性列表中找到，则为 <paramref name="value"/> 的索引；否则为 -1。</returns>
+<param name="value">要在属性列表中查找的对象。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Insert(System.Int32,System.Object)">
+<summary>在列表中的指定索引处插入项目。</summary> <param name="index">要在此处插入值的从零开始的索引。</param> <param name="value">要插入到列表中的对象。</param>
+<exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index"/> 对于集合来说无效；它太大或者小于零。</exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#IsFixedSize">
+<summary>获取一个值，该值指示列表是否具有固定大小。</summary>
+<returns>如果列表具有固定大小，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#IsReadOnly">
+<summary>获取一个值，该值指示列表是否为只读。</summary>
+      <returns>
+如果列表为只读，则为 <paramref name="true"/>；否则为 <paramref name="false"/>。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Item(System.Int32)">
+<summary>获取或设置位于指定索引处的元素。</summary>
+<returns>位于指定索引处的元素。</returns>
+<param name="index">要获取或设置的元素从零开始的索引。</param>
+<exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index"/> 对于集合来说无效；它太大或者小于零。</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Remove(System.Object)">
+<summary>从列表中移除第一次出现的特定对象。</summary> <param name="value">要从列表中移除的对象。</param>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlMapping">
+<summary>支持 .NET Framework 类型和 XML 架构数据类型之间的映射。 </summary>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMapping.ElementName">
+<summary>获取被映射元素的名称。</summary>
+<returns>被映射元素的名称。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMapping.Namespace">
+<summary>获取被映射元素的命名空间。</summary>
+<returns>被映射元素的命名空间。</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlMapping.SetKey(System.String)">
+<summary>设置用于查找映射的键。</summary> <param name="key">查找键。</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMapping.XsdElementName">
+<summary>获取映射的 XSD 元素的名称。</summary>
+<returns>XSD 元素名称。</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlMappingAccess">
+<summary>指定映射是读取、写入，还是即读取又写入。</summary>
+    </member>
+    <member name="F:System.Xml.Serialization.XmlMappingAccess.None">
+<summary>生成读取方法和写入方法。</summary>
+    </member>
+    <member name="F:System.Xml.Serialization.XmlMappingAccess.Read">
+<summary>生成读取方法。</summary>
+    </member>
+    <member name="F:System.Xml.Serialization.XmlMappingAccess.Write">
+<summary>生成写入方法。</summary>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlMemberMapping">
+<summary>将 .NET Framework Web 服务方法中的代码实体映射到 Web 服务描述语言 (WSDL) 消息中的元素。</summary>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMemberMapping.Any">
+<summary>获取或设置一个值，该值指示 .NET Framework 类型是否可以映射到任何类型的 XML 元素或属性。 </summary>
+<returns>如果该类型可以映射到任何 XML 元素或属性，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMemberMapping.CheckSpecified">
+<summary>获取一个值，该值指示 .NET Framework 类型中的伴随字段是否指定了值。</summary>
+<returns>如果伴随字段指定了值，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMemberMapping.ElementName">
+<summary>获取应用于此映射的 XML 元素声明的非限定名。 </summary>
+<returns>应用于映射的 XML 元素声明的非限定名。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMemberMapping.MemberName">
+<summary>获取此映射所表示的 Web 服务方法成员的名称。 </summary>
+<returns>此映射所表示的 Web 服务方法成员的名称。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMemberMapping.Namespace">
+<summary>获取应用于此映射的 XML 命名空间。 </summary>
+<returns>应用于此映射的 XML 命名空间。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMemberMapping.TypeFullName">
+<summary>获取此映射的 .NET Framework 类型的完全限定类型名称。 </summary>
+<returns>此映射的 .NET Framework 类型的完全限定类型名称。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMemberMapping.TypeName">
+<summary>获取此映射的 .NET Framework 类型的类型名称。 </summary>
+<returns>此映射的 .NET Framework 类型的类型名称。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMemberMapping.TypeNamespace">
+<summary>获取此映射的 .NET Framework 类型的命名空间。</summary>
+<returns>此映射的 .NET Framework 类型的命名空间。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMemberMapping.XsdElementName">
+<summary>获取服务描述文档中显示的 XML 元素名称。</summary>
+<returns>XML 元素名称。</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlMembersMapping">
+<summary>提供 .NET Framework Web 服务方法与为 SOAP Web 服务定义的 Web 服务描述语言 (WSDL) 消息之间的映射。 </summary>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMembersMapping.Count">
+<summary>获取 .NET Framework 代码实体的数目，这些实体属于 SOAP 消息所映射到的 Web 服务方法。 </summary>
+<returns>集合中映射的数目。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMembersMapping.Item(System.Int32)">
+<summary>获取一项，该项包含 .NET Framework 代码实体的内部类型映射信息，而 .NET Framework 代码实体属于映射到 SOAP 消息的 Web 服务方法。</summary>
+<returns>请求的 <see cref="T:System.Xml.Serialization.XmlMemberMapping"/>。</returns>
+<param name="index">要返回的映射的索引。</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMembersMapping.TypeName">
+<summary>获取 .NET Framework 类型的名称，该类型映射到表示 SOAP 消息的 XML 架构元素的数据类型。</summary>
+<returns>.NET Framework 类型的名称。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMembersMapping.TypeNamespace">
+<summary>获取 .NET Framework 类型的命名空间，该类型映射到表示 SOAP 消息的 XML 架构元素的数据类型。</summary>
+<returns>映射的 .NET Framework 命名空间。</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlReflectionImporter">
+<summary>为 .NET Framework 类型或 Web 服务方法信息生成到 XML 架构元素声明（包括 Web 服务描述语言 (WSDL) 文档中的文本 XML 架构定义 (XSD) 消息部分）的映射。 </summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.#ctor">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlReflectionImporter"/> 类的新实例。 </summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.#ctor(System.String)">
+<summary>使用指定的默认 XML 命名空间，初始化 <see cref="T:System.Xml.Serialization.XmlReflectionImporter"/> 类的新实例。</summary> <param name="defaultNamespace">导入的类型映射要使用的默认 XML 命名空间。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.#ctor(System.Xml.Serialization.XmlAttributeOverrides)">
+<summary>使用指定的 XML 序列化重写，初始化 <see cref="T:System.Xml.Serialization.XmlReflectionImporter"/> 类的新实例。</summary> <param name="attributeOverrides">一个对象，该对象重写 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 类序列化映射类型的方式。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.#ctor(System.Xml.Serialization.XmlAttributeOverrides,System.String)">
+<summary>使用指定的 XML 序列化重写和默认的 XML 命名空间，初始化 <see cref="T:System.Xml.Serialization.XmlReflectionImporter"/> 类的新实例。</summary> <param name="attributeOverrides">一个对象，该对象重写 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 类序列化映射类型的方式。</param><param name="defaultNamespace">导入的类型映射要使用的默认 XML 命名空间。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.ImportMembersMapping(System.String,System.String,System.Xml.Serialization.XmlReflectionMember[],System.Boolean)">
+<summary>为 Web 服务方法的信息生成内部类型映射。 </summary>
+<returns><see cref="T:System.Xml.Serialization.XmlMembersMapping"/>，其中具有到 WSDL 消息定义的元素部分的映射。</returns>
+<param name="elementName">从 Web 服务方法生成的 XML 元素名称。</param> <param name="ns">从 Web 服务方法生成的 XML 元素命名空间。</param> <param name="members"><see cref="T:System.Xml.Serialization.XmlReflectionMember"/> 对象的数组，这些对象包含属于 Web 服务方法的 .NET Framework 代码实体。</param> <param name="hasWrapperElement">如果对应于 Web 服务描述语言 (WSDL) 消息部分的元素应包含在 SOAP 消息的额外包装元素中，则为 true；否则为 false。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.ImportMembersMapping(System.String,System.String,System.Xml.Serialization.XmlReflectionMember[],System.Boolean,System.Boolean)">
+<summary>使用 Web 服务方法的信息返回内部类型映射，并允许指定 XML 元素名称、XML 命名空间和其他选项。</summary>
+<returns>包含映射的 <see cref="T:System.Xml.Serialization.XmlMembersMapping"/>。</returns>
+<param name="elementName">从 Web 服务方法生成的 XML 元素名称。</param> <param name="ns">从 Web 服务方法生成的 XML 元素命名空间。</param> <param name="members"><see cref="T:System.Xml.Serialization.XmlReflectionMember"/> 对象的数组，这些对象包含属于 Web 服务方法的 .NET Framework 代码实体。</param> <param name="hasWrapperElement">如果对应于 Web 服务描述语言 (WSDL) 消息部分的元素应包含在 SOAP 消息的额外包装元素中，则为 true；否则为 false。</param> <param name="rpc">如果该方法是远程过程调用，则为 true；否则为 false。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.ImportMembersMapping(System.String,System.String,System.Xml.Serialization.XmlReflectionMember[],System.Boolean,System.Boolean,System.Boolean)">
+<summary>使用 Web 服务方法的信息返回内部类型映射，并允许指定 XML 元素名称、XML 命名空间和其他选项。</summary>
+<returns>包含映射的 <see cref="T:System.Xml.Serialization.XmlMembersMapping"/>。</returns>
+<param name="elementName">从 Web 服务方法生成的 XML 元素名称。</param> <param name="ns">从 Web 服务方法生成的 XML 元素命名空间。</param> <param name="members"><see cref="T:System.Xml.Serialization.XmlReflectionMember"/> 对象的数组，这些对象包含属于 Web 服务方法的 .NET Framework 代码实体。</param> <param name="hasWrapperElement">如果对应于 Web 服务描述语言 (WSDL) 消息部分的元素应包含在 SOAP 消息的额外包装元素中，则为 true；否则为 false。</param> <param name="rpc">如果该方法是远程过程调用，则为 true；否则为 false。</param> <param name="openModel">如果指定生成的架构类型用 &lt;xs:anyAttribute&gt; 元素标记，则为 true；否则为 false。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.ImportMembersMapping(System.String,System.String,System.Xml.Serialization.XmlReflectionMember[],System.Boolean,System.Boolean,System.Boolean,System.Xml.Serialization.XmlMappingAccess)">
+<summary>为 Web 服务方法的信息生成内部类型映射。</summary>
+<returns>包含映射的 <see cref="T:System.Xml.Serialization.XmlMembersMapping"/>。</returns>
+<param name="elementName">从 Web 服务方法生成的 XML 元素名称。</param> <param name="ns">从 Web 服务方法生成的 XML 元素命名空间。</param> <param name="members"><see cref="T:System.Xml.Serialization.XmlReflectionMember"/> 对象的数组，这些对象包含属于 Web 服务方法的 .NET Framework 代码实体。</param> <param name="hasWrapperElement">如果对应于 Web 服务描述语言 (WSDL) 消息部分的元素应包含在 SOAP 消息的额外包装元素中，则为 true；否则为 false。</param> <param name="rpc">如果该方法是远程过程调用，则为 true；否则为 false。</param> <param name="openModel">如果指定生成的架构类型用 &lt;xs:anyAttribute&gt; 元素标记，则为 true；否则为 false。</param><param name="access">其中一个 <see cref="T:System.Xml.Serialization.XmlMappingAccess"/> 值。默认值为 None。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type)">
+<summary>为指定的 .NET Framework 类型生成到 XML 架构元素的映射。 </summary>
+<returns>从类型到 XML 架构元素的 .NET Framework 内部映射。</returns>
+<param name="type">.NET Framework 类型，将为该 .NET Framework 类型生成类型映射。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type,System.String)">
+<summary>使用指定的类型和命名空间为 .NET Framework 类型生成到 XML 架构元素的映射。 </summary>
+<returns>从类型到 XML 架构元素的 .NET Framework 内部映射。</returns>
+<param name="type">.NET Framework 类型，将为该 .NET Framework 类型生成类型映射。</param> <param name="defaultNamespace">要使用的默认 XML 命名空间。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type,System.Xml.Serialization.XmlRootAttribute)">
+<summary>使用指定的类型和属性为 .NET Framework 类型生成到 XML 架构元素的映射。 </summary>
+<returns><see cref="T:System.Xml.Serialization.XmlTypeMapping"/>，表示 .NET Framework 类型到 XML 架构元素的映射。</returns>
+<param name="type">.NET Framework 类型，将为该 .NET Framework 类型生成类型映射。</param> <param name="root">应用于类型的 <see cref="T:System.Xml.Serialization.XmlRootAttribute"/> 属性。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type,System.Xml.Serialization.XmlRootAttribute,System.String)">
+<summary>使用指定的类型、属性和命名空间为 .NET Framework 类型生成到 XML 架构元素的映射。 </summary>
+<returns><see cref="T:System.Xml.Serialization.XmlTypeMapping"/>，其中包含一个类型到一个 XML 架构元素的 .NET Framework 内部映射。</returns>
+<param name="type">.NET Framework 类型，将为该 .NET Framework 类型生成类型映射。</param> <param name="root">应用于类型的 <see cref="T:System.Xml.Serialization.XmlRootAttribute"/> 属性。</param><param name="defaultNamespace">要使用的默认 XML 命名空间。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.IncludeType(System.Type)">
+<summary>包含类型的映射，这些映射在以后调用导入方法时使用。</summary> <param name="type">.NET Framework 类型，将为该 .NET Framework 类型保存类型映射信息。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.IncludeTypes(System.Reflection.ICustomAttributeProvider)">
+<summary>包含派生类型的映射，这些映射在以后调用导入方法时使用。</summary> <param name="provider"><see cref="T:System.Reflection.ICustomAttributeProvider"/> 类的实例，该类包含从 <see cref="T:System.Xml.Serialization.XmlIncludeAttribute"/> 属性派生的自定义属性。</param>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlReflectionMember">
+<summary>提供 .NET Framework Web 服务方法中的代码实体与为 SOAP Web 服务定义的 Web 服务描述语言 (WSDL) 消息的内容之间的映射。 </summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionMember.#ctor">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlReflectionMember"/> 类的新实例。 </summary>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlReflectionMember.IsReturnValue">
+<summary>获取或设置一个值，该值指示 <see cref="T:System.Xml.Serialization.XmlReflectionMember"/> 是否表示 Web 服务方法返回值（而不是输出参数）。 </summary>
+<returns>如果成员表示 Web 服务返回值，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlReflectionMember.MemberName">
+<summary>获取或设置此映射的 Web 服务方法成员的名称。 </summary>
+<returns>Web 服务方法的名称。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlReflectionMember.MemberType">
+<summary>获取或设置此映射所表示的 Web 服务方法成员代码实体的类型。 </summary>
+<returns>此映射所表示的 Web 服务方法成员代码实体的 <see cref="T:System.Type"/>。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlReflectionMember.OverrideIsNullable">
+<summary>获取或设置一个值，该值指示相应 XML 元素定义的 isNullable 属性的值是 false。</summary>
+<returns>如果要重写 <see cref="P:System.Xml.Serialization.XmlElementAttribute.IsNullable"/> 属性，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlReflectionMember.XmlAttributes">
+<summary>使用应用于成员代码实体的 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 相关属性的集合获取或设置 <see cref="T:System.Xml.Serialization.XmlAttributes"/>。 </summary>
+<returns><see cref="T:System.XML.Serialization.XmlAttributes"/>，表示应用于成员代码的 XML 属性。</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlSerializationGeneratedCode">
+<summary>一个抽象类，是 <see cref="T:System.Xml.Serialization.XmlSerializationReader"/> 和 <see cref="T:System.Xml.Serialization.XmlSerializationWriter"/> 的基类,并包含这两种类型的通用方法。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationGeneratedCode.#ctor">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlSerializationGeneratedCode"/> 类的实例。 </summary>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlSerializationReader">
+<summary>控制由 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 类执行的反序列化。 </summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.#ctor">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlSerializationReader"/> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.CheckReaderCount(System.Int32@,System.Int32@)">
+<summary>检查反序列化程序是否已推进。</summary> <param name="whileIterations">While 循环中的当前计数。</param> <param name="readerCount">当前的 <see cref="P:System.Xml.Serialization.XmlSerializationReader.ReaderCount"/>。 </param>
+<exception cref="T:System.InvalidOperationException"><see cref="P:System.Xml.Serialization.XmlSerializationReader.ReaderCount"/> 尚未推进。 </exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.CollapseWhitespace(System.String)">
+<summary>从指定字符串的开始位置和末尾移除所有空白字符。</summary>
+<returns>修整后的字符串。</returns>
+<param name="value">修整了空白的字符串。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.CreateAbstractTypeException(System.String,System.String)">
+<summary>创建一个 <see cref="T:System.InvalidOperationException"/>，该异常指示要反序列化的对象应是抽象对象。 </summary>
+<returns><see cref="T:System.InvalidOperationException"/> 异常。</returns>
+<param name="name">抽象类型的名称。</param> <param name="ns">抽象类型的 Silverlight 命名空间。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.CreateBadDerivationException(System.String,System.String,System.String,System.String,System.String,System.String)">
+<summary>使用读取内部元素的选项，根据 <see cref="T:System.Xml.XmlReader"/> 当前位置的 XML 表示形式填充相应对象。</summary>
+<returns><see cref="T:System.InvalidOperationException"/> 异常。</returns>
+<param name="xsdDerived">派生 XML 架构数据类型的本地名称。</param> <param name="nsDerived">派生 XML 架构数据类型的命名空间。</param> <param name="xsdBase">基 XML 架构数据类型的本地名称。</param> <param name="nsBase">基 XML 架构数据类型的命名空间。</param> <param name="clrDerived">派生 Silverlight 类型的命名空间。</param> <param name="clrBase">基 Silverlight 类型的名称。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.CreateCtorHasSecurityException(System.String)">
+<summary>创建一个 <see cref="T:System.InvalidOperationException"/>，该异常指示要反序列化的对象无法实例化，原因是构造函数引发了安全性异常。</summary>
+<returns><see cref="T:System.InvalidOperationException"/> 异常。</returns>
+<param name="typeName">类型名称。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.CreateInaccessibleConstructorException(System.String)">
+<summary>创建一个 <see cref="T:System.InvalidOperationException"/>，该异常指示要反序列化的对象无法实例化，原因是无构造函数可用。</summary>
+<returns><see cref="T:System.InvalidOperationException"/> 异常。</returns>
+<param name="typeName">类型名称。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.CreateInvalidCastException(System.Type,System.Object)">
+<summary>创建一个 <see cref="T:System.InvalidCastException"/>，该异常指示显式引用转换失败。</summary>
+<returns><see cref="T:System.InvalidCastException"/> 异常。</returns>
+<param name="type">对象无法强制转换为的 <see cref="T:System.Type"/>。此类型包含在异常消息中。</param><param name="value">无法强制转换的对象。此对象包含在异常消息中。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.CreateInvalidCastException(System.Type,System.Object,System.String)">
+<summary>创建一个 <see cref="T:System.InvalidCastException"/>，该异常指示显式引用转换失败。</summary>
+<returns><see cref="T:System.InvalidCastException"/> 异常。</returns>
+<param name="type">对象无法强制转换为的 <see cref="T:System.Type"/>。此类型包含在异常消息中。</param><param name="value">无法强制转换的对象。此对象包含在异常消息中。</param><param name="id">字符串标识符。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.CreateMissingIXmlSerializableType(System.String,System.String,System.String)">
+<summary>创建一个 <see cref="T:System.InvalidOperationException"/>，该异常指示无法定位映射到 XML 架构数据类型的派生类型。</summary>
+<returns><see cref="T:System.InvalidOperationException"/> 异常。</returns>
+<param name="name">映射到不可用派生类型的 XML 架构数据类型的本地名称。</param> <param name="ns">映射到不可用派生类型的 XML 架构数据类型的命名空间。</param> <param name="clrType">无法为其定位派生类型的 Silverlight 基类型的全名。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.CreateReadOnlyCollectionException(System.String)">
+<summary>创建一个 <see cref="T:System.InvalidOperationException"/>，该异常指示无法修改 SOAP 编码的集合类型，也无法填充其值。</summary>
+<returns><see cref="T:System.InvalidOperationException"/> 异常。</returns>
+<param name="name">具有映射的 Silverlight 类型的完全限定名称。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.CreateUnknownConstantException(System.String,System.Type)">
+<summary>创建一个 <see cref="T:System.InvalidOperationException"/>，该异常指示枚举值无效。 </summary>
+<returns><see cref="T:System.InvalidOperationException"/> 异常。</returns>
+<param name="value">无效的枚举值。</param> <param name="enumType">枚举类型。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.CreateUnknownNodeException">
+<summary>创建一个 <see cref="T:System.InvalidOperationException"/>，该异常指示表示未知 XML 节点的 <see cref="T:System.Xml.XmlReader"/> 的当前位置。 </summary>
+<returns><see cref="T:System.InvalidOperationException"/> 异常。</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.CreateUnknownTypeException(System.Xml.XmlQualifiedName)">
+<summary>创建一个 <see cref="T:System.InvalidOperationException"/>，该异常指示类型未知。 </summary>
+<returns><see cref="T:System.InvalidOperationException"/> 异常。</returns>
+<param name="type">表示未知类型的名称的 <see cref="T:System.Xml.XmlQualifiedName"/>。</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlSerializationReader.DecodeName">
+<summary>获取或设置一个值，该值确定 XML 字符串是否转换为有效的 Silverlight 类型名称。</summary>
+<returns>如果 XML 字符串解码为有效的 Silverlight 类型名称，则为 true；否则为 false。</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.EnsureArrayIndex(System.Array,System.Int32,System.Type)">
+<summary>确保给定的数组或副本足够大以包含指定的索引。 </summary>
+<returns>如果数组足够大，则为现有的 <see cref="T:System.Array"/>；否则为包含原始数组元素的一个更大的新数组。</returns>
+<param name="a">要检查的 <see cref="T:System.Array"/>。</param><param name="index">要求的索引。</param> <param name="elementType">数组元素的 <see cref="T:System.Type"/>。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.GetNullAttr">
+<summary>确定 <see cref="T:System.Xml.XmlReader"/> 当前定位的 XML 元素是否将某个 null 属性设置为值 true。</summary>
+<returns>如果 <see cref="T:System.Xml.XmlReader"/> 当前定位于值为 true 的 null 属性，则为 true；否则为 false。</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.GetXsiType">
+<summary>获取 <see cref="T:System.Xml.XmlReader"/> 当前位置的 XML 元素的 xsi:type 属性的值。 </summary>
+<returns>XML 限定名称，指示 XML 元素的数据类型。</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.InitCallbacks">
+<summary>初始化回调方法，该方法填充映射到 SOAP 编码的 XML 数据的对象。 </summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.InitIDs">
+<summary>将元素名称和属性名称存储在 <see cref="T:System.Xml.NameTable"/> 对象中。 </summary>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlSerializationReader.IsReturnValue">
+<summary>获取或设置一个值，对于 SOAP 1.1 返回值，该值应为 true。</summary>
+<returns>如果该值是返回值，则为 true。 </returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.IsXmlnsAttribute(System.String)">
+<summary>确定 XML 属性名称是否指示 XML 命名空间。 </summary>
+<returns>如果 XML 属性名称指示 XML 命名空间，则为 true ；否则为 false。</returns>
+<param name="name">XML 属性的名称。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ReadElementQualifiedName">
+<summary>使 <see cref="T:System.Xml.XmlReader"/> 读取其当前定位的元素的完全限定名称。 </summary>
+<returns>当前 XML 元素的完全限定名称。</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ReadEndElement">
+<summary>使 <see cref="T:System.Xml.XmlReader"/> 读取 XML 结束标记。 </summary>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlSerializationReader.Reader">
+<summary>获取由 <see cref="T:System.Xml.Serialization.XmlSerializationReader"/> 使用的 <see cref="T:System.Xml.XmlReader"/> 对象。 </summary>
+<returns><see cref="T:System.Xml.Serialization.XmlSerializationReader"/> 使用的 <see cref="T:System.Xml.XmlReader"/>。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlSerializationReader.ReaderCount">
+<summary>获取 <see cref="T:System.Xml.XmlReader"/> 的当前计数。</summary>
+<returns><see cref="T:System.Xml.XmlReader"/> 的当前计数。</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ReadNull">
+<summary>如果当前 XML 元素某个 null 属性的值为 true，则指示 <see cref="T:System.Xml.XmlReader"/> 读取该元素。 </summary>
+<returns>如果元素具有 null="true" 属性值，且已经读取，则为 true；否则为 false。</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ReadNullableQualifiedName">
+<summary>指示 <see cref="T:System.Xml.XmlReader"/> 读取其当前定位的元素的完全限定名称。 </summary>
+<returns>表示当前 XML 元素的完全限定名称的 <see cref="T:System.Xml.XmlQualifiedName"/>；如果存在 null="true" 属性值，则为 null。</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ReadNullableString">
+<summary>指示 <see cref="T:System.Xml.XmlReader"/> 读取可能为 null 的简单纯文本 XML 元素。 </summary>
+<returns>字符串值；否则为 null。</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ReadSerializable(System.Xml.Serialization.IXmlSerializable)">
+<summary>根据 <see cref="T:System.Xml.XmlReader"/> 当前位置的对象的 XML 表示形式填充该对象。 </summary>
+<returns>实现 <see cref="T:System.Xml.Serialization.IXmlSerializable"/> 接口的对象，其成员从 <see cref="T:System.Xml.XmlReader"/> 的位置填充。</returns>
+<param name="serializable">对应于 <see cref="T:System.Xml.XmlReader"/> 当前位置的 <see cref="T:System.Xml.Serialization.IXmlSerializable"/>。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ReadSerializable(System.Xml.Serialization.IXmlSerializable,System.Boolean)">
+<summary>此方法支持 .NET Framework 基础结构，但不适合在代码中直接使用。根据 <see cref="T:System.Xml.XmlReader"/> 当前位置的对象的 XML 表示形式填充该对象。</summary>
+<returns>根据 <see cref="T:System.Xml.XmlReader"/> 的位置填充其成员的 <see cref="T:System.Xml.Serialization.IXmlSerializable"/> 接口。
+</returns>
+<param name="serializable">对应于 <see cref="T:System.Xml.XmlReader"/> 当前位置的 <see cref="T:System.Xml.Serialization.IXmlSerializable"/>。</param> <param name="wrappedAny">如果包装了任何元素，则为 true；否则为 false。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ReadString(System.String)">
+<summary>生成 <see cref="M:System.Xml.XmlReader.ReadString"/> 方法的调用结果，该结果被追加到输入值。 </summary>
+<returns><see cref="M:System.Xml.XmlReader.ReadString"/> 方法的调用结果，该结果被追加到输入值。</returns>
+<param name="value">作为 <see cref="M:System.Xml.XmlReader.ReadString"/> 方法调用结果的前缀的字符串。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ReadString(System.String,System.Boolean)">
+<summary>返回 <see cref="T:System.Xml.XmlReader"/> 类的 <see cref="M:System.Xml.XmlReader.ReadString"/> 方法的调用结果；如果需要，则修整空白，然后追加到输入值。</summary>
+<returns>追加到输入值的读取操作结果。</returns>
+<param name="value">要追加到的字符串。</param> <param name="trim">如果读取操作的结果应进行修整，则为 true；否则为 false。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ReadTypedNull(System.Xml.XmlQualifiedName)">
+<summary>读取允许 null 值 (xsi:nil = 'true') 的 XML 元素，然后返回一个一般 <see cref="T:System.Nullable`1"/> 值。 </summary>
+<returns>表示 null XML 值的一般 <see cref="T:System.Nullable`1"/>。</returns>
+<param name="type"><see cref="T:System.Xml.XmlQualifiedName"/>，表示 <see cref="T:System.Xml.XmlReader"/> 当前位置的简单数据类型。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ReadTypedPrimitive(System.Xml.XmlQualifiedName)">
+<summary>获取 <see cref="T:System.Xml.XmlReader"/> 当前定位的 XML 节点的值。 </summary>
+<returns>如果值是简单 XML 架构数据类型，则为 Silverlight 值类型形式的节点值。</returns>
+<param name="type"><see cref="T:System.Xml.XmlQualifiedName"/>，表示 <see cref="T:System.Xml.XmlReader"/> 当前位置的简单数据类型。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ShrinkArray(System.Array,System.Int32,System.Type,System.Boolean)">
+<summary>确保给定的数组或副本不大于指定的长度。 </summary>
+<returns>如果数组足够小，则为现有的 <see cref="T:System.Array"/>；否则为包含原始数组元素的一个更小的新数组，其最大大小为 <paramref name=" length"/>。</returns>
+<param name="a">要检查的数组。</param> <param name="length">数组的最大长度。</param> <param name="elementType">数组元素的 <see cref="T:System.Type"/>。</param><param name="isNullable">如果数组为 null，且存在输入数组，则返回 true；否则，返回一个更小的新数组。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ToByteArrayBase64(System.Boolean)">
+<summary>指示 <see cref="T:System.Xml.XmlReader"/> 读取当前位置的字符串值并以 base-64 字节数组的形式返回该字符串值。</summary>
+<returns>base-64 字节数组；如果 <paramref name="isNull"/> 参数的值为 true，则为 null。</returns>
+<param name="isNull">如果要返回 null，则为 true；如果要返回 base-64 字节数组，则为 false。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ToByteArrayBase64(System.String)">
+<summary>从输入字符串生成一个 base-64 字节数组。 </summary>
+<returns>base-64 字节数组。</returns>
+<param name="value">要转换为 base-64 字节数组的字符串。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ToByteArrayHex(System.Boolean)">
+<summary>指示 <see cref="T:System.Xml.XmlReader"/> 读取当前位置的字符串值并以十六进制字节数组的形式返回该字符串值。</summary>
+<returns>十六进制字节数组；如果 <paramref name="isNull"/> 参数的值为 true，则为 null。 </returns>
+<param name="isNull">如果要返回 null，则为 true；如果要返回十六进制字节数组，则为 false。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ToByteArrayHex(System.String)">
+<summary>从输入字符串生成一个十六进制字节数组。</summary>
+<returns>十六进制字节数组。</returns>
+<param name="value">要转换为十六进制字节数组的字符串。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ToChar(System.String)">
+<summary>从输入字符串生成一个 <see cref="T:System.Char"/> 对象。 </summary>
+<returns><see cref="T:System.Char"/> 对象。</returns>
+<param name="value">要转换为 <see cref="T:System.Char"/> 对象的字符串。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ToDate(System.String)">
+<summary>从输入字符串生成一个 <see cref="T:System.DateTime"/> 对象。 </summary>
+<returns><see cref="T:System.DateTime"/> 对象。</returns>
+<param name="value">要转换为 <see cref="T:System.DateTime"/> 类对象的字符串。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ToDateTime(System.String)">
+<summary>从输入字符串生成一个 <see cref="T:System.DateTime"/> 对象。 </summary>
+<returns><see cref="T:System.DateTime"/> 对象。</returns>
+<param name="value">要转换为 <see cref="T:System.DateTime"/> 对象的字符串。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ToEnum(System.String,System.Collections.IDictionary,System.String)">
+<summary>此方法支持 .NET Framework 基础结构，但不适合在代码中直接使用。从由分隔的标识符组成的字符串生成数字枚举值，这些标识符表示枚举器列表中的常数。 </summary>
+      <returns>
+由枚举值组成的长值，其中枚举值的形式为一系列按位 OR 操作。
+</returns>
+<param name="value">一个由分隔的标识符组成的字符串，其中每个标识符都表示已经设置的枚举器列表的一个常数。</param> <param name="h">由标识符（作为键）和常数（作为整数）组成的 <see cref="T:System.Collections.IDictionary"/> hashtable。</param><param name="typeName">枚举类型的名称。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ToTime(System.String)">
+<summary>从表示时间的字符串生成一个 <see cref="T:System.DateTime"/> 对象。 </summary>
+<returns><see cref="T:System.DateTime"/> 对象。</returns>
+<param name="value">要转换为 <see cref="T:System.DateTime"/> 对象的字符串。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ToXmlName(System.String)">
+<summary>解码 XML 名称。</summary>
+<returns>一个已解码的字符串。</returns>
+<param name="value">要解码的 XML 名称。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ToXmlNCName(System.String)">
+<summary>解码 XML 名称。</summary>
+<returns>一个已解码的字符串。</returns>
+<param name="value">要解码的 XML 名称。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ToXmlNmToken(System.String)">
+<summary>解码 XML 名称。</summary>
+<returns>一个已解码的字符串。</returns>
+<param name="value">要解码的 XML 名称。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ToXmlNmTokens(System.String)">
+<summary>解码 XML 名称。</summary>
+<returns>一个已解码的字符串。</returns>
+<param name="value">要解码的 XML 名称。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ToXmlQualifiedName(System.String)">
+<summary>从可能包含前缀的名称中获取 <see cref="T:System.Xml.XmlQualifiedName"/>。 </summary>
+<returns><see cref="T:System.Xml.XmlQualifiedName"/>，表示命名空间限定的 XML 名称。</returns>
+<param name="value">可能包含前缀的名称。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.UnknownNode(System.Object)">
+<summary>为 <see cref="T:System.Xml.XmlReader"/> 的当前位置引发 <see cref="E:System.Xml.Serialization.XmlSerializer.UnknownNode"/> 事件。</summary> <param name="o">要反序列化的对象。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.UnknownNode(System.Object,System.String)">
+<summary>为 <see cref="T:System.Xml.XmlReader"/> 的当前位置引发 <see cref="E:System.Xml.Serialization.XmlSerializer.UnknownNode"/> 事件。</summary><param name="o">要反序列化的对象。</param> <param name="qnames">以逗号分隔的 XML 限定名称列表。</param>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlSerializationWriteCallback">
+<summary><see cref="T:System.Xml.Serialization.XmlSerializer"/> 类为了对 SOAP 编码的非根 XML 数据的类型进行序列化而使用的支持 .NET Framework 基础结构的委托。</summary> <param name="o">要序列化的对象。</param>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlSerializationWriter">
+<summary>抽象类，用于控制由 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 类执行的序列化。 </summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.#ctor">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlSerializationWriter"/> 类的新实例。 </summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.CreateChoiceIdentifierValueException(System.String,System.String,System.String,System.String)">
+<summary>创建一个 <see cref="T:System.InvalidOperationException"/>，该异常指示符合 XML 架构 choice 元素声明的元素具有意外名称。</summary>
+<returns><see cref="T:System.InvalidOperationException"/> 异常。</returns>
+<param name="value">无效的名称。</param> <param name="identifier">名称所属的 choice 元素声明。</param> <param name="name">元素需要的本地名称。</param> <param name="ns">元素需要的命名空间。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.CreateInvalidAnyTypeException(System.Object)">
+<summary>创建一个 <see cref="T:System.InvalidOperationException"/>，该异常指示 <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute"/> 无效地应用于某个成员；只有 <see cref="T:System.Xml.XmlNode"/> 类型的成员或从 <see cref="T:System.Xml.XmlNode"/> 派生的成员才可有效应用。</summary>
+<returns><see cref="T:System.InvalidOperationException"/> 异常。</returns>
+<param name="o">表示无效成员的对象。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.CreateInvalidAnyTypeException(System.Type)">
+<summary>创建一个 <see cref="T:System.InvalidOperationException"/>，该异常指示 <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute"/> 无效地应用于某个成员；只有 <see cref="T:System.Xml.XmlNode"/> 类型的成员或从 <see cref="T:System.Xml.XmlNode"/> 派生的成员才可有效应用。</summary>
+<returns><see cref="T:System.InvalidOperationException"/> 异常。</returns>
+<param name="type">无效的 <see cref="T:System.Type"/>。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.CreateInvalidChoiceIdentifierValueException(System.String,System.String)">
+<summary>创建一个 <see cref="T:System.InvalidOperationException"/>，该异常指示在应用 XML 架构 choice 元素声明的位置写入数组时操作失败。</summary>
+<returns><see cref="T:System.InvalidOperationException"/> 异常。</returns>
+<param name="type">要序列化的类型。</param> <param name="identifier">choice 元素声明的名称。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.CreateInvalidEnumValueException(System.Object,System.String)">
+<summary>为一个无效的枚举值创建 <see cref="T:System.InvalidOperationException"/>。</summary>
+<returns><see cref="T:System.ComponentModel.InvalidEnumArgumentException"/>。</returns>
+<param name="value">表示无效枚举的对象。</param> <param name="typeName">XML 类型名称。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.CreateMismatchChoiceException(System.String,System.String,System.String)">
+<summary>创建一个 <see cref="T:System.InvalidOperationException"/>，该异常指示 XML 元素的某个值与枚举类型不匹配。</summary>
+<returns><see cref="T:System.InvalidOperationException"/> 异常。</returns>
+<param name="value">无效的值。</param> <param name="elementName">具有无效值的 XML 元素的名称。</param> <param name="enumValue">有效值。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.CreateUnknownAnyElementException(System.String,System.String)">
+<summary>创建一个 <see cref="T:System.InvalidOperationException"/>，该异常指示无法处理某个应符合 XML 架构 any 元素声明的 XML 元素。</summary>
+<returns><see cref="T:System.InvalidOperationException"/> 异常。</returns>
+<param name="name">无法处理的 XML 元素。</param> <param name="ns">XML 元素的命名空间。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.CreateUnknownTypeException(System.Object)">
+<summary>创建一个 <see cref="T:System.InvalidOperationException"/>，该异常指示被序列化的类型的使用方式无效，或者意外遇到该类型。 </summary>
+<returns><see cref="T:System.InvalidOperationException"/> 异常。</returns>
+<param name="o">无法序列化其类型的对象。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.CreateUnknownTypeException(System.Type)">
+<summary>创建一个 <see cref="T:System.InvalidOperationException"/>，该异常指示被序列化的类型的使用方式无效，或者意外遇到该类型。 </summary>
+<returns><see cref="T:System.InvalidOperationException"/> 异常。</returns>
+<param name="type">无法序列化的类型。</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlSerializationWriter.EscapeName">
+<summary>获取或设置一个值，该值指示 <see cref="M:System.Xml.XmlConvert.EncodeName(System.String)"/> 方法是否用于写入有效的 XML。</summary>
+<returns>如果 <see cref="M:System.Xml.Serialization.XmlSerializationWriter.FromXmlQualifiedName(System.Xml.XmlQualifiedName)"/> 方法返回一个编码名称，则为 true；否则为 false。</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.FromByteArrayBase64(System.Byte[])">
+<summary>处理 base-64 字节数组。</summary>
+<returns>作为参数传入的字节数组。</returns>
+<param name="value">base-64 <see cref="T:System.Byte"/> 数组。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.FromByteArrayHex(System.Byte[])">
+<summary>从输入的十六进制字节数组生成一个字符串。</summary>
+<returns>转换为字符串的字节数组值。</returns>
+<param name="value">要转换为字符串的十六进制字节数组。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.FromChar(System.Char)">
+<summary>从输入的 <see cref="T:System.Char"/> 生成一个字符串。</summary>
+<returns>转换为字符串的 <see cref="T:System.Char"/> 值。</returns>
+<param name="value">要转换为字符串的 <see cref="T:System.Char"/>。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.FromDate(System.DateTime)">
+<summary>从 <see cref="T:System.DateTime"/> 对象生成一个字符串。</summary>
+<returns><see cref="T:System.DateTime"/> 的字符串表示形式，该对象显示日期，但不显示时间。</returns>
+<param name="value">要转换为字符串的 <see cref="T:System.DateTime"/>。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.FromDateTime(System.DateTime)">
+<summary>从输入的 <see cref="T:System.DateTime"/> 生成一个字符串。</summary>
+<returns><see cref="T:System.DateTime"/> 的字符串表示形式，该对象显示日期和时间。</returns>
+<param name="value">要转换为字符串的 <see cref="T:System.DateTime"/>。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.FromEnum(System.Int64,System.String[],System.Int64[])">
+<summary>生成一个由分隔的标识符组成的字符串，这些标识符表示已经设置的枚举成员。</summary>
+<returns>一个由分隔的标识符组成的字符串，其中每个标识符都表示已经设置的枚举器列表的一个成员。</returns>
+<param name="value">形式为一系列按位 OR 运算的枚举值。</param> <param name="values">枚举的名称值。</param> <param name="ids">枚举的常数值。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.FromEnum(System.Int64,System.String[],System.Int64[],System.String)">
+<summary>接受一个数字枚举值以及该枚举的枚举列表中的名称和常数，返回一个由分隔的标识符组成的字符串，这些标识符表示已经设置的枚举成员。</summary>
+<returns>一个由分隔的标识符组成的字符串，其中每一项都是由按位运算设置的一个值。</returns>
+<param name="value">形式为一系列按位 OR 运算的枚举值。</param> <param name="values">枚举的值。</param> <param name="ids">枚举的常数。</param> <param name="typeName">类型的名称。 </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.FromTime(System.DateTime)">
+<summary>从 <see cref="T:System.DateTime"/> 对象生成一个字符串。</summary>
+<returns><see cref="T:System.DateTime"/> 对象，该对象显示时间，但不显示日期。</returns>
+<param name="value">转换为字符串的 <see cref="T:System.DateTime"/>。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.FromXmlName(System.String)">
+<summary>通过使用转义序列替换无效字符，对一个有效的 XML 名称进行编码。</summary>
+<returns>一个已编码的字符串。</returns>
+<param name="name">要用作 XML 名称的字符串。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.FromXmlNCName(System.String)">
+<summary>通过使用转义序列替换无效字符，对一个有效的 XML 本地名称进行编码。</summary>
+<returns>一个已编码的字符串。</returns>
+<param name="ncName">要用作本地（非限定）XML 名称的字符串。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.FromXmlNmToken(System.String)">
+<summary>对 XML 名称进行编码。</summary>
+<returns>一个已编码的字符串。</returns>
+<param name="nmToken">要进行编码的 XML 名称。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.FromXmlNmTokens(System.String)">
+<summary>将以空格分隔的 XML 名称序列编码为单个 XML 名称。</summary>
+<returns>一个已编码的字符串。</returns>
+<param name="nmTokens">要进行编码的以空格分隔的 XML 名称序列。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.FromXmlQualifiedName(System.Xml.XmlQualifiedName)">
+<summary>返回一个 XML 限定名称，其中无效字符已由转义序列替换。 </summary>
+<returns>一个 XML 限定名称，其中无效字符已由转义序列替换。</returns>
+<param name="xmlQualifiedName"><see cref="T:System.Xml.XmlQualifiedName"/>，表示要写入的 XML。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.FromXmlQualifiedName(System.Xml.XmlQualifiedName,System.Boolean)">
+<summary>生成一个可以写入为 XML 限定名称的字符串，其中无效字符已由转义序列替换。 </summary>
+<returns>一个 XML 限定名称，其中无效字符已由转义序列替换。</returns>
+<param name="xmlQualifiedName"><see cref="T:System.Xml.XmlQualifiedName"/>，表示要写入的 XML。</param> <param name="ignoreEmpty">如果忽略字符串中的空格，则为 true；否则为 false。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.InitCallbacks">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlSerializationWriteCallback"/> 委托的实例，以序列化 SOAP 编码的 XML 数据。 </summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.TopLevelElement">
+<summary>仅在序列化 SOAP 编码的 SOAP 消息时初始化对象引用。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteAttribute(System.String,System.Byte[])">
+<summary>指示 <see cref="T:System.Xml.XmlWriter"/> 对象写入未为其名称指定命名空间的 XML 属性。</summary><param name="localName">XML 属性的本地名称。</param> <param name="value">字节数组形式的 XML 属性值。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteAttribute(System.String,System.String)">
+<summary>指示 <see cref="T:System.Xml.XmlWriter"/> 写入未为其名称指定命名空间的 XML 属性。</summary> <param name="localName">XML 属性的本地名称。</param> <param name="value">字符串形式的 XML 属性值。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteAttribute(System.String,System.String,System.Byte[])">
+<summary>指示 <see cref="T:System.Xml.XmlWriter"/> 对象写入 XML 属性。</summary><param name="localName">XML 属性的本地名称。</param> <param name="ns">XML 属性的命名空间。</param> <param name="value">字节数组形式的 XML 属性值。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteAttribute(System.String,System.String,System.String)">
+<summary>写入 XML 属性。</summary> <param name="localName">XML 属性的本地名称。</param> <param name="ns">XML 属性的命名空间。</param> <param name="value">字符串形式的 XML 属性值。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteAttribute(System.String,System.String,System.String,System.String)">
+<summary>写入 XML 属性，其中命名空间前缀是手动提供的。</summary> <param name="prefix">要写入的命名空间前缀。</param> <param name="localName">XML 属性的本地名称。</param> <param name="ns">前缀所表示的命名空间。</param> <param name="value">字符串形式的 XML 属性值。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementQualifiedName(System.String,System.String,System.Xml.XmlQualifiedName)">
+<summary>在其主体中写入一个具有指定限定名称的 XML 元素。</summary> <param name="localName">XML 元素的本地名称。</param> <param name="ns">XML 元素的命名空间。</param> <param name="value">要在元素文本中写入的名称（如果是命名空间限定的，则使用其前缀）。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementQualifiedName(System.String,System.String,System.Xml.XmlQualifiedName,System.Xml.XmlQualifiedName)">
+<summary>在其主体中写入一个具有指定限定名称的 XML 元素。</summary> <param name="localName">XML 元素的本地名称。</param> <param name="ns">XML 元素的命名空间。</param> <param name="value">要在元素文本中写入的名称（如果是命名空间限定的，则使用其前缀）。</param> <param name="xsiType">要写入 xsi:type 属性的 XML 架构数据类型的名称。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementQualifiedName(System.String,System.Xml.XmlQualifiedName)">
+<summary>在其主体中写入一个具有指定限定名称的 XML 元素。</summary> <param name="localName">XML 元素的本地名称。</param> <param name="value">要在元素文本中写入的名称（如果是命名空间限定的，则使用其前缀）。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementQualifiedName(System.String,System.Xml.XmlQualifiedName,System.Xml.XmlQualifiedName)">
+<summary>在其主体中写入一个具有指定限定名称的 XML 元素。</summary> <param name="localName">XML 元素的本地名称。</param> <param name="value">要在元素文本中写入的名称（如果是命名空间限定的，则使用其前缀）。</param> <param name="xsiType">要写入 xsi:type 属性的 XML 架构数据类型的名称。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementString(System.String,System.String)">
+<summary>在其主体中写入一个具有指定值的 XML 元素。</summary> <param name="localName">要写入的 XML 元素的本地名称，该名称不具有命名空间限定。</param> <param name="value">XML 元素的文本值。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementString(System.String,System.String,System.String)">
+<summary>在其主体中写入一个具有指定值的 XML 元素。</summary> <param name="localName">XML 元素的本地名称。</param> <param name="ns">XML 元素的命名空间。</param> <param name="value">XML 元素的文本值。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementString(System.String,System.String,System.String,System.Xml.XmlQualifiedName)">
+<summary>在其主体中写入一个具有指定值的 XML 元素。</summary> <param name="localName">XML 元素的本地名称。</param> <param name="ns">XML 元素的命名空间。</param> <param name="value">XML 元素的文本值。</param> <param name="xsiType">要写入 xsi:type 属性的 XML 架构数据类型的名称。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementString(System.String,System.String,System.Xml.XmlQualifiedName)">
+<summary>在其主体中写入一个具有指定值的 XML 元素。</summary> <param name="localName">XML 元素的本地名称。</param> <param name="value">XML 元素的文本值。</param> <param name="xsiType">要写入 xsi:type 属性的 XML 架构数据类型的名称。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementStringRaw(System.String,System.Byte[])">
+<summary>在其主体中写入一个具有指定值的 XML 元素。</summary> <param name="localName">XML 元素的本地名称。</param> <param name="value">XML 元素的文本值。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementStringRaw(System.String,System.Byte[],System.Xml.XmlQualifiedName)">
+<summary>在其主体中写入一个具有指定值的 XML 元素。</summary> <param name="localName">XML 元素的本地名称。</param> <param name="value">XML 元素的文本值。</param> <param name="xsiType">要写入 xsi:type 属性的 XML 架构数据类型的名称。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementStringRaw(System.String,System.String)">
+<summary>在其主体中写入一个具有指定值的 XML 元素。</summary> <param name="localName">XML 元素的本地名称。</param> <param name="value">XML 元素的文本值。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementStringRaw(System.String,System.String,System.Byte[])">
+<summary>在其主体中写入一个具有指定值的 XML 元素。</summary> <param name="localName">XML 元素的本地名称。</param> <param name="ns">XML 元素的命名空间。</param> <param name="value">XML 元素的文本值。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementStringRaw(System.String,System.String,System.Byte[],System.Xml.XmlQualifiedName)">
+<summary>在其主体中写入一个具有指定值的 XML 元素。</summary> <param name="localName">XML 元素的本地名称。</param> <param name="ns">XML 元素的命名空间。</param> <param name="value">XML 元素的文本值。</param> <param name="xsiType">要写入 xsi:type 属性的 XML 架构数据类型的名称。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementStringRaw(System.String,System.String,System.String)">
+<summary>在其主体中写入一个具有指定值的 XML 元素。</summary> <param name="localName">XML 元素的本地名称。</param> <param name="ns">XML 元素的命名空间。</param> <param name="value">XML 元素的文本值。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementStringRaw(System.String,System.String,System.String,System.Xml.XmlQualifiedName)">
+<summary>在其主体中写入一个具有指定值的 XML 元素。</summary> <param name="localName">XML 元素的本地名称。</param> <param name="ns">XML 元素的命名空间。</param> <param name="value">XML 元素的文本值。</param> <param name="xsiType">要写入 xsi:type 属性的 XML 架构数据类型的名称。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementStringRaw(System.String,System.String,System.Xml.XmlQualifiedName)">
+<summary>在其主体中写入一个具有指定值的 XML 元素。</summary> <param name="localName">XML 元素的本地名称。</param> <param name="value">XML 元素的文本值。</param> <param name="xsiType">要写入 xsi:type 属性的 XML 架构数据类型的名称。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteEmptyTag(System.String)">
+<summary>写入一个主体为空的 XML 元素。</summary> <param name="name">要写入的 XML 元素的本地名称。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteEmptyTag(System.String,System.String)">
+<summary>写入一个主体为空的 XML 元素。</summary> <param name="name">要写入的 XML 元素的本地名称。</param> <param name="ns">要写入的 XML 元素的命名空间。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteEndElement">
+<summary>写入一个 &lt;closing&gt; 元素标记。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteEndElement(System.Object)">
+<summary>写入一个 &lt;closing&gt; 元素标记。</summary><param name="o">要序列化的对象。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteNamespaceDeclarations(System.Xml.Serialization.XmlSerializerNamespaces)">
+<summary>写入命名空间声明属性。</summary> <param name="xmlns">要声明的 XML 命名空间。</param>
+<exception cref="T:System.InvalidOperationException">这是一个重复的命名空间。</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullableQualifiedNameEncoded(System.String,System.String,System.Xml.XmlQualifiedName,System.Xml.XmlQualifiedName)">
+<summary>写入一个主体内包含有效 XML 限定名称的 XML 元素。如果字符串的值是 null，则 <see cref="T:System.Xml.XmlWriter"/> 插入一个 xsi:nil='true' 属性。</summary><param name="name">要写入的 XML 元素的本地名称。</param> <param name="ns">要写入的 XML 元素的命名空间。</param> <param name="value">要写入 XML 元素主体的 XML 限定名称。</param> <param name="xsiType">要写入 xsi:type 属性的 XML 架构数据类型的名称。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullableQualifiedNameLiteral(System.String,System.String,System.Xml.XmlQualifiedName)">
+<summary>写入一个主体内包含有效 XML 限定名称的 XML 元素。如果字符串的值是 null，则 <see cref="T:System.Xml.XmlWriter"/> 插入一个 xsi:nil='true' 属性。</summary><param name="name">要写入的 XML 元素的本地名称。</param> <param name="ns">要写入的 XML 元素的命名空间。</param> <param name="value">要写入 XML 元素主体的 XML 限定名称。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullableStringEncoded(System.String,System.String,System.String,System.Xml.XmlQualifiedName)">
+<summary>写入一个 XML 元素，该元素包含一个字符串作为主体。如果字符串的值是 null，则 <see cref="T:System.Xml.XmlWriter"/> 插入一个 xsi:nil='true' 属性。</summary><param name="name">要写入的 XML 元素的本地名称。</param> <param name="ns">要写入的 XML 元素的命名空间。</param> <param name="value">要写入 XML 元素主体的字符串。</param> <param name="xsiType">要写入 xsi:type 属性的 XML 架构数据类型的名称。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullableStringEncodedRaw(System.String,System.String,System.Byte[],System.Xml.XmlQualifiedName)">
+<summary>写入一个作为 XML 元素主体的字节数组。如果字符串的值是 null，则 <see cref="T:System.Xml.XmlWriter"/> 插入一个 xsi:nil='true' 属性。</summary><param name="name">要写入的 XML 元素的本地名称。</param> <param name="ns">要写入的 XML 元素的命名空间。</param> <param name="value">要写入 XML 元素主体的字节数组。</param> <param name="xsiType">要写入 xsi:type 属性的 XML 架构数据类型的名称。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullableStringEncodedRaw(System.String,System.String,System.String,System.Xml.XmlQualifiedName)">
+<summary>写入一个 XML 元素，该元素包含一个字符串作为主体。如果字符串的值是 null，则 <see cref="T:System.Xml.XmlWriter"/> 插入一个 xsi:nil='true' 属性。</summary><param name="name">要写入的 XML 元素的本地名称。</param> <param name="ns">要写入的 XML 元素的命名空间。</param> <param name="value">要写入 XML 元素主体的字符串。</param> <param name="xsiType">要写入 xsi:type 属性的 XML 架构数据类型的名称。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullableStringLiteral(System.String,System.String,System.String)">
+<summary>写入一个 XML 元素，该元素包含一个字符串作为主体。如果字符串的值是 null，则 <see cref="T:System.Xml.XmlWriter"/> 插入一个 xsi:nil='true' 属性。</summary><param name="name">要写入的 XML 元素的本地名称。</param> <param name="ns">要写入的 XML 元素的命名空间。</param> <param name="value">要写入 XML 元素主体的字符串。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullableStringLiteralRaw(System.String,System.String,System.Byte[])">
+<summary>写入一个作为 XML 元素主体的字节数组。如果字符串的值是 null，则 <see cref="T:System.Xml.XmlWriter"/> 插入一个 xsi:nil='true' 属性。</summary><param name="name">要写入的 XML 元素的本地名称。</param> <param name="ns">要写入的 XML 元素的命名空间。</param> <param name="value">要写入 XML 元素主体的字节数组。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullableStringLiteralRaw(System.String,System.String,System.String)">
+<summary>写入一个 XML 元素，该元素包含一个字符串作为主体。如果字符串的值是 null，则 <see cref="T:System.Xml.XmlWriter"/> 插入一个 xsi:nil='true' 属性。</summary><param name="name">要写入的 XML 元素的本地名称。</param> <param name="ns">要写入的 XML 元素的命名空间。</param> <param name="value">要写入 XML 元素主体的字符串。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullTagEncoded(System.String)">
+<summary>写入一个具有 xsi:nil='true' 属性的 XML 元素。</summary> <param name="name">要写入的 XML 元素的本地名称。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullTagEncoded(System.String,System.String)">
+<summary>写入一个具有 xsi:nil='true' 属性的 XML 元素。</summary> <param name="name">要写入的 XML 元素的本地名称。</param> <param name="ns">要写入的 XML 元素的命名空间。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullTagLiteral(System.String)">
+<summary>写入一个具有 xsi:nil='true' 属性的 XML 元素。</summary> <param name="name">要写入的 XML 元素的本地名称。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullTagLiteral(System.String,System.String)">
+<summary>写入一个具有 xsi:nil='true' 属性的 XML 元素。</summary> <param name="name">要写入的 XML 元素的本地名称。</param> <param name="ns">要写入的 XML 元素的命名空间。</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlSerializationWriter.Writer">
+<summary>获取由 <see cref="T:System.Xml.Serialization.XmlSerializationWriter"/> 使用的 <see cref="T:System.Xml.XmlWriter"/>。 </summary>
+<returns>类实例使用的 <see cref="T:System.Xml.XmlWriter"/>。</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteSerializable(System.Xml.Serialization.IXmlSerializable,System.String,System.String,System.Boolean)">
+<summary>写入一个对象，该对象使用自定义 XML 格式作为 XML 元素。</summary> <param name="serializable">实现 <see cref="T:System.Xml.Serialization.IXmlSerializable"/> 接口的对象，该接口使用自定义 XML 格式。</param><param name="name">要写入的 XML 元素的本地名称。</param> <param name="ns">要写入的 XML 元素的命名空间。</param><param name="isNullable">如果 <see cref="T:System.Xml.Serialization.IXmlSerializable"/> 类对象是 null 时写入 xsi:nil='true' 属性，则为 true；否则为 false。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteSerializable(System.Xml.Serialization.IXmlSerializable,System.String,System.String,System.Boolean,System.Boolean)">
+<summary>指示 <see cref="T:System.Xml.XmlNode"/> 写入一个对象，该对象使用自定义 XML 格式作为 XML 元素。</summary> <param name="serializable">实现 <see cref="T:System.Xml.Serialization.IXmlSerializable"/> 接口的对象，该接口使用自定义 XML 格式。</param><param name="name">要写入的 XML 元素的本地名称。</param> <param name="ns">要写入的 XML 元素的命名空间。</param> <param name="isNullable">如果在 <see cref="T:System.Xml.Serialization.IXmlSerializable"/> 对象是 null 时写入 xsi:nil='true' 属性，则为 true；否则为 false。</param> <param name="wrapped">如果忽略写入开始元素标记，则为 true；如果写入开始元素标记，则为 false。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteStartDocument">
+<summary>如果编写器位于 XML 文档的开头，则写入 XML 声明。 </summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteStartElement(System.String)">
+<summary>写入一个包括任何属性的开始元素标记。</summary> <param name="name">要写入的 XML 元素的本地名称。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteStartElement(System.String,System.String)">
+<summary>写入一个包括任何属性的开始元素标记。</summary> <param name="name">要写入的 XML 元素的本地名称。</param> <param name="ns">要写入的 XML 元素的命名空间。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteStartElement(System.String,System.String,System.Boolean)">
+<summary>写入一个包括任何属性的开始元素标记。</summary> <param name="name">要写入的 XML 元素的本地名称。</param> <param name="ns">要写入的 XML 元素的命名空间。</param><param name="writePrefixed">若要在指定的命名空间无可用元素名称时写入带有前缀的元素名称，则为 true；否则为 false。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteStartElement(System.String,System.String,System.Object)">
+<summary>写入一个包括任何属性的开始元素标记。</summary> <param name="name">要写入的 XML 元素的本地名称。</param> <param name="ns">要写入的 XML 元素的命名空间。</param> <param name="o">序列化为 XML 元素的对象。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteStartElement(System.String,System.String,System.Object,System.Boolean)">
+<summary>写入一个包括任何属性的开始元素标记。</summary> <param name="name">要写入的 XML 元素的本地名称。</param> <param name="ns">要写入的 XML 元素的命名空间。</param> <param name="o">序列化为 XML 元素的对象。</param><param name="writePrefixed">若要在指定的命名空间无可用元素名称时写入带有前缀的元素名称，则为 true；否则为 false。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteStartElement(System.String,System.String,System.Object,System.Boolean,System.Xml.Serialization.XmlSerializerNamespaces)">
+<summary>写入一个包括任何属性的开始元素标记。</summary> <param name="name">要写入的 XML 元素的本地名称。</param> <param name="ns">要写入的 XML 元素的命名空间。</param> <param name="o">序列化为 XML 元素的对象。</param><param name="writePrefixed">若要在指定的命名空间无可用元素名称时写入带有前缀的元素名称，则为 true；否则为 false。</param><param name="xmlns"><see cref="T:System.Xml.Serialization.XmlSerializerNamespaces"/> 类的实例，包含要在生成的 XML 中使用的前缀和命名空间对。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteTypedPrimitive(System.String,System.String,System.Object,System.Boolean)">
+<summary>写入一个 XML 元素，其文本主体是一个简单 XML 架构数据类型的值。</summary> <param name="name">要写入的元素的本地名称。</param> <param name="ns">要写入的元素的命名空间。</param> <param name="o">要在元素主体中序列化的对象。</param> <param name="xsiType">如果 XML 元素使用 xsi:type 属性显式指定文本值的类型，则为 true；否则为 false。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteValue(System.Byte[])">
+<summary>写入 base-64 字节数组。</summary> <param name="value">要写入的字节数组。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteValue(System.String)">
+<summary>写入指定的字符串。</summary> <param name="value">要写入的字符串。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteXsiType(System.String,System.String)">
+<summary>为序列化为文档的 XML 元素写入一个 xsi:type 属性。</summary> <param name="name">XML 架构数据类型的本地名称。</param> <param name="ns">XML 架构数据类型的命名空间。</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlSerializationWriter.XmlNamespaces">
+<summary>获取或设置 XML 限定名称对象的列表，这些对象包含用于在 XML 文档中生成限定名称的命名空间和前缀。 </summary>
+<returns>包含命名空间和前缀对的 <see cref="T:System.Collections.ArrayList"/>。</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlSerializer">
+<summary>将对象序列化到 XML 文档中和从 XML 文档中反序列化对象。<see cref="T:System.Xml.Serialization.XmlSerializer"/> 使您能够控制如何将对象编码到 XML 中。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type)">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 类的新实例，该类可以将指定类型的对象序列化为 XML 文档，也可以将 XML 文档反序列化为指定类型的对象。</summary><param name="type">此 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 可序列化的对象的类型。 </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.String)">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 类的新实例，该类可以将指定类型的对象序列化为 XML 文档，也可以将 XML 文档反序列化为指定类型的对象。指定所有 XML 元素的默认命名空间。</summary><param name="type">此 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 可序列化的对象的类型。</param> <param name="defaultNamespace">用于所有 XML 元素的默认命名空间。 </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Type[])">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 类的新实例，该类可以将指定类型的对象序列化为 XML 文档，也可以将 XML 文档反序列化为指定类型的对象。如果属性或字段返回一个数组，则 <paramref name="extraTypes"/> 参数指定可插入到该数组的对象。</summary><param name="type">此 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 可序列化的对象的类型。</param> <param name="extraTypes">要序列化的其他对象类型的 <see cref="T:System.Type"/> 数组。 </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Xml.Serialization.XmlAttributeOverrides)">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 类的新实例，该类可以将指定类型的对象序列化为 XML 文档，也可以将 XML 文档反序列化为指定类型的对象。要序列化的每个对象本身可包含类的实例，该重载可使用其他类重写这些实例。</summary><param name="type">要序列化的对象的类型。</param> <param name="overrides"><see cref="T:System.Xml.Serialization.XmlAttributeOverrides"/>。 </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Xml.Serialization.XmlAttributeOverrides,System.Type[],System.Xml.Serialization.XmlRootAttribute,System.String)">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 类的新实例，该类可将 <see cref="T:System.Object"/> 类型的对象序列化为 XML 文档实例，并可将 XML 文档实例反序列化为 <see cref="T:System.Object"/> 类型的对象。要序列化的每个对象本身可包含类的实例，此重载可使用其他类重写这些实例。此重载还指定所有 XML 元素的默认命名空间和用作 XML 根元素的类。</summary><param name="type">此 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 可序列化的对象的类型。</param> <param name="overrides"><see cref="T:System.Xml.Serialization.XmlAttributeOverrides"/>，它扩展或重写 <paramref name="type"/> 参数中指定类的行为。</param> <param name="extraTypes">要序列化的其他对象类型的 <see cref="T:System.Type"/> 数组。</param> <param name="root">定义 XML 根元素属性的 <see cref="T:System.Xml.Serialization.XmlRootAttribute"/>。</param> <param name="defaultNamespace">XML 文档中所有 XML 元素的默认命名空间。 </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Xml.Serialization.XmlRootAttribute)">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 类的新实例，该类可以将指定类型的对象序列化为 XML 文档，也可以将 XML 文档反序列化为指定类型的对象。还可以指定作为 XML 根元素使用的类。</summary><param name="type">此 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 可序列化的对象的类型。</param> <param name="root">表示 XML 根元素的 <see cref="T:System.Xml.Serialization.XmlRootAttribute"/>。 </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Xml.Serialization.XmlTypeMapping)">
+<summary>使用将一个类型映射到另一个类型的对象来初始化 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 类的实例。</summary><param name="xmlTypeMapping">将一种类型映射到另一种类型的 <see cref="T:System.Xml.Serialization.XmlTypeMapping"/>。 </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.CanDeserialize(System.Xml.XmlReader)">
+<summary>获取一个值，该值指示此 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 是否可以反序列化指定的 XML 文档。</summary>
+<returns>如果此 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 可以反序列化 <see cref="T:System.Xml.XmlReader"/> 指向的对象，则为 true，否则为 false。</returns>
+<param name="xmlReader">指向要反序列化的文档的 <see cref="T:System.Xml.XmlReader"/>。 </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.CreateReader">
+<summary>返回一个对象，该对象用于读取要进行序列化的 XML 文档。</summary>
+<returns>用于读取 XML 文档的 <see cref="T:System.Xml.Serialization.XmlSerializationReader"/>。</returns>
+<exception cref="T:System.NotImplementedException">如果未在子类中重写此方法，则尝试访问此方法。 </exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.CreateWriter">
+<summary>在派生类中重写时，返回用于序列化对象的编写器。</summary>
+<returns>实现 <see cref="T:System.Xml.Serialization.XmlSerializationWriter"/> 类的实例。</returns>
+<exception cref="T:System.NotImplementedException">如果未在子类中重写此方法，则尝试访问此方法。 </exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Deserialize(System.IO.Stream)">
+<summary>反序列化指定 <see cref="T:System.IO.Stream"/> 包含的 XML 文档。</summary>
+<returns>要反序列化的 <see cref="T:System.Object"/>。</returns>
+<param name="stream">包含要反序列化的 XML 文档的 <see cref="T:System.IO.Stream"/>。 </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Deserialize(System.IO.TextReader)">
+<summary>反序列化指定 <see cref="T:System.IO.TextReader"/> 包含的 XML 文档。</summary>
+<returns>要反序列化的 <see cref="T:System.Object"/>。</returns>
+<param name="textReader">包含要反序列化的 XML 文档的 <see cref="T:System.IO.TextReader"/>。 </param>
+<exception cref="T:System.InvalidOperationException">反序列化期间发生错误。使用 <see cref="P:System.Exception.InnerException"/> 属性时可获得原始异常。 </exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Deserialize(System.Xml.Serialization.XmlSerializationReader)">
+<summary>反序列化指定 <see cref="T:System.Xml.Serialization.XmlSerializationReader"/> 包含的 XML 文档。</summary>
+<returns>反序列化的对象。</returns>
+<param name="reader">包含要反序列化的 XML 文档的 <see cref="T:System.Xml.Serialization.XmlSerializationReader"/>。 </param>
+<exception cref="T:System.NotImplementedException">如果未在子类中重写此方法，则尝试访问此方法。 </exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Deserialize(System.Xml.XmlReader)">
+<summary>反序列化指定 <see cref="T:System.xml.XmlReader"/> 包含的 XML 文档。</summary>
+<returns>要反序列化的 <see cref="T:System.Object"/>。</returns>
+<param name="xmlReader">包含要反序列化的 XML 文档的 <see cref="T:System.xml.XmlReader"/>。 </param>
+<exception cref="T:System.InvalidOperationException">反序列化期间发生错误。使用 <see cref="P:System.Exception.InnerException"/> 属性时可获得原始异常。 </exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.FromMappings(System.Xml.Serialization.XmlMapping[])">
+<summary>返回从 <see cref="T:System.Xml.Serialization.XmlTypeMapping"/> 对象的数组创建的 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 对象的数组。</summary>
+<returns><see cref="T:System.Xml.Serialization.XmlSerializer"/> 对象的数组。</returns>
+<param name="mappings">将一种类型映射到另一种类型的 <see cref="T:System.Xml.Serialization.XmlTypeMapping"/> 数组。 </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.FromMappings(System.Xml.Serialization.XmlMapping[],System.Type)">
+<summary>从指定的映射返回 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 类的实例。</summary>
+<returns><see cref="T:System.Xml.Serialization.XmlSerializer"/> 类的实例。</returns>
+<param name="mappings"><see cref="T:System.Xml.Serialization.XmlMapping"/> 对象的数组。</param><param name="type">反序列化的对象的 <see cref="T:System.Type"/>。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.FromTypes(System.Type[])">
+<summary>返回从类型数组创建的 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 对象的数组。</summary>
+<returns><see cref="T:System.Xml.Serialization.XmlSerializer"/> 对象的数组。</returns>
+<param name="types"><see cref="T:System.Type"/> 对象的数组。 </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Serialize(System.IO.Stream,System.Object)">
+<summary>使用指定的 <see cref="T:System.IO.Stream"/> 序列化指定的 <see cref="T:System.Object"/> 并将 XML 文档写入文件。</summary><param name="stream">用于写入 XML 文档的 <see cref="T:System.IO.Stream"/>。</param> <param name="o">要序列化的 <see cref="T:System.Object"/>。 </param>
+<exception cref="T:System.InvalidOperationException">序列化期间发生错误。使用 <see cref="P:System.Exception.InnerException"/> 属性时可获得原始异常。 </exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Serialize(System.IO.Stream,System.Object,System.Xml.Serialization.XmlSerializerNamespaces)">
+<summary>使用引用指定命名空间的指定 <see cref="T:System.IO.Stream"/> 序列化指定的 <see cref="T:System.Object"/> 并将 XML 文档写入文件。</summary><param name="stream">用于写入 XML 文档的 <see cref="T:System.IO.Stream"/>。</param> <param name="o">要序列化的 <see cref="T:System.Object"/>。</param> <param name="namespaces">该对象所引用的 <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces"/>。 </param>
+<exception cref="T:System.InvalidOperationException">序列化期间发生错误。使用 <see cref="P:System.Exception.InnerException"/> 属性时可获得原始异常。 </exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Serialize(System.IO.TextWriter,System.Object)">
+<summary>使用指定的 <see cref="T:System.IO.TextWriter"/> 序列化指定的 <see cref="T:System.Object"/> 并将 XML 文档写入文件。</summary><param name="textWriter">用于写入 XML 文档的 <see cref="T:System.IO.TextWriter"/>。</param> <param name="o">要序列化的 <see cref="T:System.Object"/>。 </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Serialize(System.IO.TextWriter,System.Object,System.Xml.Serialization.XmlSerializerNamespaces)">
+<summary>使用指定的 <see cref="T:System.IO.TextWriter"/> 序列化指定的 <see cref="T:System.Object"/> 并将 XML 文档写入文件，并且引用指定的命名空间。</summary><param name="textWriter">用于写入 XML 文档的 <see cref="T:System.IO.TextWriter"/>。</param> <param name="o">要序列化的 <see cref="T:System.Object"/>。</param> <param name="namespaces">包含生成的 XML 文档的命名空间的 <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces"/>。 </param>
+<exception cref="T:System.InvalidOperationException">序列化期间发生错误。使用 <see cref="P:System.Exception.InnerException"/> 属性时可获得原始异常。 </exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Serialize(System.Object,System.Xml.Serialization.XmlSerializationWriter)">
+<summary>使用指定的 <see cref="T:System.Xml.Serialization.XmlSerializationWriter"/> 序列化指定的 <see cref="T:System.Object"/> 并将 XML 文档写入文件。</summary><param name="o">要序列化的 <see cref="T:System.Object"/>。</param> <param name="writer">用于写入 XML 文档的 <see cref="T:System.Xml.Serialization.XmlSerializationWriter"/>。 </param>
+<exception cref="T:System.NotImplementedException">如果未在子类中重写此方法，则尝试访问此方法。 </exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Serialize(System.Xml.XmlWriter,System.Object)">
+<summary>使用指定的 <see cref="T:System.Xml.XmlWriter"/> 序列化指定的 <see cref="T:System.Object"/> 并将 XML 文档写入文件。</summary><param name="xmlWriter">用于写入 XML 文档的 <see cref="T:System.xml.XmlWriter"/>。</param> <param name="o">要序列化的 <see cref="T:System.Object"/>。 </param>
+<exception cref="T:System.InvalidOperationException">序列化期间发生错误。使用 <see cref="P:System.Exception.InnerException"/> 属性时可获得原始异常。 </exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Serialize(System.Xml.XmlWriter,System.Object,System.Xml.Serialization.XmlSerializerNamespaces)">
+<summary>使用指定的 <see cref="T:System.Xml.XmlWriter"/> 序列化指定的 <see cref="T:System.Object"/> 并将 XML 文档写入文件，并且引用指定的命名空间。</summary><param name="xmlWriter">用于写入 XML 文档的 <see cref="T:System.xml.XmlWriter"/>。</param> <param name="o">要序列化的 <see cref="T:System.Object"/>。</param> <param name="namespaces">该对象所引用的 <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces"/>。 </param>
+<exception cref="T:System.InvalidOperationException">序列化期间发生错误。使用 <see cref="P:System.Exception.InnerException"/> 属性时可获得原始异常。 </exception>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlSerializerImplementation">
+<summary>为预生成的类型化序列化程序定义读取器、编写器和方法。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializerImplementation.#ctor">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlSerializerImplementation"/> 类的新实例。 </summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializerImplementation.CanSerialize(System.Type)">
+<summary>获取一个值，该值确定某一类型是否可进行序列化。</summary>
+<returns>如果类型可进行序列化，则为 true；否则为 false。</returns>
+<param name="type">要序列化的 <see cref="T:System.Type"/>。</param>
+<exception cref="T:System.NotImplementedException">如果未在子类中重写此方法，则尝试访问此方法。 </exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializerImplementation.GetSerializer(System.Type)">
+<summary>返回指定类型的序列化程序。</summary>
+<returns>从 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 类派生的类型的实例。 </returns>
+<param name="type">要序列化的 <see cref="T:System.Type"/>。</param>
+<exception cref="T:System.NotImplementedException">如果未在子类中重写此方法，则尝试访问此方法。 </exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlSerializerImplementation.Reader">
+<summary>获取序列化程序所使用的 XML 读取器对象。</summary>
+<returns>用于读取 XML 文档或数据流的 <see cref="T:System.Xml.Serialization.XmlSerializationReader"/>。</returns>
+<exception cref="T:System.NotImplementedException">如果未在子类中重写此方法，则尝试访问此方法。 </exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlSerializerImplementation.Writer">
+<summary>获取序列化程序的 XML 编写器对象。</summary>
+<returns>用于写入 XML 数据流或文档的 <see cref="T:System.Xml.Serialization.XmlSerializationWriter"/>。</returns>
+<exception cref="T:System.NotImplementedException">如果未在子类中重写此方法，则尝试访问此方法。 </exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlSerializerImplementation.XmlReadMethods">
+<summary>获取用于读取数据流的方法的集合。</summary>
+<returns>包含方法的 <see cref="T:System.Collections.Hashtable"/>。</returns>
+<exception cref="T:System.NotImplementedException">如果未在子类中重写此方法，则尝试访问此方法。 </exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlSerializerImplementation.XmlTypedSerializers">
+<summary>获取程序集中的类型化 XML 序列化程序的集合。</summary>
+<returns>包含类型化序列化程序的 <see cref="T:System.Collections.Hashtable"/>。</returns>
+<exception cref="T:System.NotImplementedException">如果未在子类中重写此方法，则尝试访问此方法。 </exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlSerializerImplementation.XmlWriteMethods">
+<summary>获取用于写入 XML 数据流的方法的集合。</summary>
+<returns>包含方法的 <see cref="T:System.Collections.Hashtable"/>。</returns>
+<exception cref="T:System.NotImplementedException">如果未在子类中重写此方法，则尝试访问此方法。 </exception>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlSerializerNamespaces">
+<summary>包含 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 用于在 XML 文档实例中生成限定名称的 XML 命名空间和前缀。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializerNamespaces.#ctor">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces"/> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializerNamespaces.#ctor(System.Xml.Serialization.XmlSerializerNamespaces)">
+<summary>使用包含前缀和命名空间对集合的 XmlSerializerNamespaces 的指定实例，初始化 <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces"/> 类的新实例。</summary><param name="namespaces">包含命名空间和前缀对的 <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces"/> 的实例。 </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializerNamespaces.#ctor(System.Xml.XmlQualifiedName[])">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces"/> 类的新实例。</summary><param name="namespaces"><see cref="T:System.Xml.XmlQualifiedName"/> 对象的数组。 </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializerNamespaces.Add(System.String,System.String)">
+<summary>将前缀和命名空间对添加到 <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces"/> 对象。</summary><param name="prefix">与 XML 命名空间关联的前缀。</param> <param name="ns">一个 XML 命名空间。 </param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlSerializerNamespaces.Count">
+<summary>获取集合中前缀和命名空间对的数目。</summary>
+<returns>集合中前缀和命名空间对的数目。</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializerNamespaces.ToArray">
+<summary>获取 <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces"/> 对象中前缀和命名空间对的数组。</summary>
+<returns>在 XML 文档中用作限定名称的 <see cref="T:System.Xml.XmlQualifiedName"/> 对象的数组。</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlTypeMapping">
+<summary>包含从一种类型到另一种类型的映射。</summary>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlTypeMapping.TypeFullName">
+<summary>包含命名空间和类型的完全限定类型名称。</summary>
+<returns>完全限定的类型名称。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlTypeMapping.TypeName">
+<summary>获取所映射对象的类型名称。</summary>
+<returns>所映射对象的类型名称。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlTypeMapping.XsdTypeName">
+<summary>获取所映射对象的 XML 元素名称。</summary>
+<returns>所映射对象的 XML 元素名称。默认值为该对象的类名称。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlTypeMapping.XsdTypeNamespace">
+<summary>获取所映射对象的 XML 命名空间。</summary>
+<returns>所映射对象的 XML 命名空间。默认值为空字符串 ("")。</returns>
+    </member>
+  </members>
+</doc>

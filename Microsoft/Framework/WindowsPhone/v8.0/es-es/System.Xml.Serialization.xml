@@ -1,0 +1,771 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.Xml.Serialization</name>
+  </assembly>
+  <members>
+    <member name="T:System.ServiceModel.XmlSerializerFormatAttribute">
+      <summary>Indica a la infraestructura de Windows Phone que use <see cref="T:System.Xml.Serialization.XmlSerializer" /> en vez de <see cref="T:System.Runtime.Serialization.XmlObjectSerializer" /> para serializar un método o una clase.</summary>
+    </member>
+    <member name="M:System.ServiceModel.XmlSerializerFormatAttribute.#ctor">
+      <summary>Inicializa una instancia nueva de la clase <see cref="T:System.ServiceModel.XmlSerializerFormatAttribute" />. </summary>
+    </member>
+    <member name="P:System.ServiceModel.XmlSerializerFormatAttribute.SupportFaults">
+      <summary>Obtiene o establece un valor que indica si se admiten errores.</summary>
+      <returns>Es true si se admiten errores; de lo contrario, es false.</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlAnyAttributeAttribute">
+      <summary>Especifica que el miembro (un campo que devuelve una matriz de objetos <see cref="T:System.Xml.XmlAttribute" />) puede contener cualquier atributo XML.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyAttributeAttribute.#ctor">
+      <summary>Construye una nueva instancia de la clase <see cref="T:System.Xml.Serialization.XmlAnyAttributeAttribute" />.</summary>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlAnyElementAttributes">
+      <summary>Representa una colección de objetos <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" />.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.#ctor">
+      <summary>Inicializa una nueva instancia de la clase <see cref="T:System.Xml.Serialization.XmlAnyElementAttributes" />.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.Add(System.Xml.Serialization.XmlAnyElementAttribute)">
+      <summary>Representa una colección de objetos <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" />.</summary>
+      <returns>Índice del elemento agregado.</returns>
+      <param name="attribute">
+        <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> que se va a agregar a la colección.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.Clear">
+      <summary>Quita todos los objetos de la colección.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.Contains(System.Xml.Serialization.XmlAnyElementAttribute)">
+      <summary>Determina si la colección contiene un objeto <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> especificado.</summary>
+      <returns>Es true si la colección contiene el <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> especificado; en caso contrario, es false.</returns>
+      <param name="attribute">
+        <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> que se va a comprobar.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.CopyTo(System.Xml.Serialization.XmlAnyElementAttribute[],System.Int32)">
+      <summary>Copia una matriz <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> en la colección, comenzando en un índice de destino especificado.</summary>
+      <param name="array">Matriz de objetos <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> que se copiará en la colección.</param>
+      <param name="index">Índice basado en cero en la matriz donde comienza la copia.</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttributes.Count">
+      <summary>Obtiene el número de atributos contenidos en la colección.</summary>
+      <returns>Número de atributos contenidos en la colección.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.GetEnumerator">
+      <summary>Devuelve un objeto <see cref="T:System.Collections.IEnumerator" /> que puede recorrer en iteración la colección.</summary>
+      <returns>Objeto <see cref="T:System.Collections.IEnumerator" /> que puede recorrer en iteración la colección.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.IndexOf(System.Xml.Serialization.XmlAnyElementAttribute)">
+      <summary>Devuelve el índice de base cero de la primera aparición de un <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> especificado de la colección, o -1 si no se encuentra el atributo en la colección. </summary>
+      <returns>Primer índice del objeto <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> de la colección, o -1 si no se encuentra el atributo en la colección.</returns>
+      <param name="attribute">
+        <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> que se va a buscar en la colección.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.Insert(System.Int32,System.Xml.Serialization.XmlAnyElementAttribute)">
+      <summary>Inserta un objeto <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> en el índice especificado de la colección.</summary>
+      <param name="index">Índice de base cero en el que se va a insertar el atributo.</param>
+      <param name="attribute">Objeto <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> que se va a insertar.</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttributes.Item(System.Int32)">
+      <summary>Obtiene o establece el elemento de atributo que se encuentra en el índice especificado.</summary>
+      <returns>
+        <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> que se encuentra en el índice especificado.</returns>
+      <param name="index">Índice de base cero del elemento de atributo que se va a obtener o establecer.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> no es válido para la colección; es demasiado grande o bien menor que cero.</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.Remove(System.Xml.Serialization.XmlAnyElementAttribute)">
+      <summary>Elimina un objeto <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> especificado de la colección, en caso de existir.</summary>
+      <param name="attribute">
+        <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> que se va a quitar.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.RemoveAt(System.Int32)">
+      <summary>Elimina un elemento <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> en un índice especificado de la colección.</summary>
+      <param name="index">Índice de base cero del elemento que se va a quitar.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#ICollection#CopyTo(System.Array,System.Int32)">
+      <summary>Copia los elementos de la colección del atributo en una matriz, comenzando en un índice especificado de la matriz.</summary>
+      <param name="array">
+        <see cref="T:System.Array" /> unidimensional de destino de los elementos de atributo copiados de la colección <see cref="T:System.Xml.Serialization.XmlAnyElementAttributes" />. </param>
+      <param name="index">Índice de base cero de la matriz donde comienza la copia.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> es menor que cero.</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="index" /> es mayor que la longitud de la matriz, se sobrepasa la longitud de la matriz al agregar los elementos de atributo o <paramref name="array" /> es multidimensional.</exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#ICollection#IsSynchronized">
+      <summary>Obtiene un valor que indica si el acceso a la colección del atributo está sincronizado. Es decir, es seguro para la ejecución de subprocesos.</summary>
+      <returns>Es true si la colección está sincronizada (es seguro para la ejecución de subprocesos); en caso contrario, es false.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#ICollection#SyncRoot">
+      <summary>No se admite este método.</summary>
+      <returns>Produce una <see cref="T:System.NotSupportedException" />.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#Add(System.Object)">
+      <summary>Agrega un elemento a la lista de atributos.</summary>
+      <returns>Posición en la que se insertó el nuevo elemento.</returns>
+      <param name="value">Objeto que se va a agregar a la lista.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#Contains(System.Object)">
+      <summary>Determina si la lista de atributos contiene un valor específico.</summary>
+      <returns>true si el objeto se encuentra en la lista de atributos; de lo contrario, false.</returns>
+      <param name="value">Objeto que se va a buscar en la lista de atributos.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#IndexOf(System.Object)">
+      <summary>Determina el índice de un elemento especificado de la lista de atributos.</summary>
+      <returns>Índice de <paramref name="value" /> si se encuentra en la lista de atributos; de lo contrario, -1.</returns>
+      <param name="value">Objeto que se va a buscar en la lista de atributos.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#Insert(System.Int32,System.Object)">
+      <summary>Inserta un elemento en la lista en un índice especificado.</summary>
+      <param name="index">Índice de base cero en el que debe insertarse un valor.</param>
+      <param name="value">Objeto que se va a insertar en la lista.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> no es válido para la colección; es demasiado grande o bien menor que cero.</exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#IsFixedSize">
+      <summary>Obtiene un valor que indica si la lista tiene un tamaño fijo.</summary>
+      <returns>true si la lista tiene un tamaño fijo; de lo contrario, false.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#IsReadOnly">
+      <summary>Obtiene un valor que indica si la lista es de solo lectura.</summary>
+      <returns>true si la lista es de solo lectura; de lo contrario, false.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#Item(System.Int32)">
+      <summary>Obtiene o establece el elemento que se encuentra en el índice especificado.</summary>
+      <returns>Elemento en el índice especificado.</returns>
+      <param name="index">Índice de base cero del elemento que se va a obtener o establecer.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> no es válido para la colección; es demasiado grande o bien menor que cero.</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#Remove(System.Object)">
+      <summary>Elimina la primera aparición de un objeto específico de la lista.</summary>
+      <param name="value">Objeto que se va a eliminar de la lista.</param>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlArrayItemAttributes">
+      <summary>Representa una colección de objetos <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" />.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.#ctor">
+      <summary>Inicializa una nueva instancia de la clase <see cref="T:System.Xml.Serialization.XmlArrayItemAttributes" />.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.Add(System.Xml.Serialization.XmlArrayItemAttribute)">
+      <summary>Agrega un objeto <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> a la colección.</summary>
+      <returns>Índice del elemento agregado.</returns>
+      <param name="attribute">
+        <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> que se va a agregar a la colección.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.Clear">
+      <summary>Quita todos los objetos de la colección.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.Contains(System.Xml.Serialization.XmlArrayItemAttribute)">
+      <summary>Determina si la colección contiene un objeto <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> especificado.</summary>
+      <returns>Es true si la colección contiene el objeto <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> especificado; de lo contrario, es false.</returns>
+      <param name="attribute">
+        <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> que se va a comprobar.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.CopyTo(System.Xml.Serialization.XmlArrayItemAttribute[],System.Int32)">
+      <summary>Copia una matriz <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> en la colección, comenzando en un índice de destino especificado.</summary>
+      <param name="array">Matriz de objetos <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> que se copiará en la colección.</param>
+      <param name="index">Índice basado en cero en la matriz donde comienza la copia.</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttributes.Count">
+      <summary>Obtiene el número de atributos contenidos en la colección.</summary>
+      <returns>Número de atributos contenidos en la colección.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.GetEnumerator">
+      <summary>Devuelve un objeto <see cref="T:System.Collections.IEnumerator" /> que puede recorrer en iteración la colección.</summary>
+      <returns>Objeto <see cref="T:System.Collections.IEnumerator" /> que puede recorrer en iteración la colección.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.IndexOf(System.Xml.Serialization.XmlArrayItemAttribute)">
+      <summary>Devuelve el índice de base cero de la primera aparición de un <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> especificado de la colección, o -1 si no se encuentra el atributo en la colección. </summary>
+      <returns>Primer índice del objeto <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> de la colección, o -1 si no se encuentra el atributo en la colección.</returns>
+      <param name="attribute">
+        <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> que se va a buscar en la colección.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.Insert(System.Int32,System.Xml.Serialization.XmlArrayItemAttribute)">
+      <summary>Inserta un objeto <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> en el índice especificado de la colección.</summary>
+      <param name="index">Índice de base cero en el que se va a insertar el atributo.</param>
+      <param name="attribute">Objeto <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> que se va a insertar.</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttributes.Item(System.Int32)">
+      <summary>Obtiene o establece el elemento de atributo que se encuentra en el índice especificado.</summary>
+      <returns>
+        <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> que se encuentra en el índice especificado.</returns>
+      <param name="index">Índice de base cero del elemento de atributo que se va a obtener o establecer.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> no es válido para la colección; es demasiado grande o bien menor que cero.</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.Remove(System.Xml.Serialization.XmlArrayItemAttribute)">
+      <summary>Elimina un objeto <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> especificado de la colección, en caso de existir.</summary>
+      <param name="attribute">
+        <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> que se va a quitar.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.RemoveAt(System.Int32)">
+      <summary>Elimina un elemento <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> en un índice especificado de la colección.</summary>
+      <param name="index">Índice de base cero del elemento que se va a quitar.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#ICollection#CopyTo(System.Array,System.Int32)">
+      <summary>Copia los elementos de la colección del atributo en una matriz, comenzando en un índice especificado de la matriz.</summary>
+      <param name="array">
+        <see cref="T:System.Array" /> unidimensional de destino de los elementos de atributo copiados de la colección <see cref="T:System.Xml.Serialization.XmlArrayItemAttributes" />. </param>
+      <param name="index">Índice de base cero de la matriz donde comienza la copia.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> es menor que cero.</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="index" /> es mayor que la longitud de la matriz, se sobrepasa la longitud de la matriz al agregar los elementos de atributo o <paramref name="array" /> es multidimensional.</exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#ICollection#IsSynchronized">
+      <summary>Obtiene un valor que indica si el acceso a la colección del atributo está sincronizado. Es decir, es seguro para la ejecución de subprocesos.</summary>
+      <returns>Es true si la colección está sincronizada (es seguro para la ejecución de subprocesos); de lo contrario, es false.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#ICollection#SyncRoot">
+      <summary>No se admite este método.</summary>
+      <returns>Produce una <see cref="T:System.NotSupportedException" />.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#Add(System.Object)">
+      <summary>Agrega un elemento a la lista de atributos.</summary>
+      <returns>Posición en la que se insertó el nuevo elemento.</returns>
+      <param name="value">Objeto que se va a agregar a la lista.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#Contains(System.Object)">
+      <summary>Determina si la lista de atributos contiene un valor específico.</summary>
+      <returns>Es true si el objeto se encuentra en la lista de atributos; de lo contrario, es false.</returns>
+      <param name="value">Objeto que se va a buscar en la lista de atributos.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#IndexOf(System.Object)">
+      <summary>Determina el índice de un elemento especificado de la lista de atributos.</summary>
+      <returns>Índice de <paramref name="value" /> si se encuentra en la lista de atributos; de lo contrario, -1.</returns>
+      <param name="value">Objeto que se va a buscar en la lista de atributos.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#Insert(System.Int32,System.Object)">
+      <summary>Inserta un elemento en la lista en un índice especificado.</summary>
+      <param name="index">Índice de base cero en el que debe insertarse un valor.</param>
+      <param name="value">Objeto que se va a insertar en la lista.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> no es válido para la colección; es demasiado grande o bien menor que cero.</exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#IsFixedSize">
+      <summary>Obtiene un valor que indica si la lista tiene un tamaño fijo.</summary>
+      <returns>true si la lista tiene un tamaño fijo; de lo contrario, false.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#IsReadOnly">
+      <summary>Obtiene un valor que indica si la lista es de solo lectura.</summary>
+      <returns>true si la lista es de solo lectura; de lo contrario, false.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#Item(System.Int32)">
+      <summary>Obtiene o establece el elemento que se encuentra en el índice especificado.</summary>
+      <returns>Elemento en el índice especificado.</returns>
+      <param name="index">Índice de base cero del elemento que se va a obtener o establecer.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> no es válido para la colección; es demasiado grande o bien menor que cero.</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#Remove(System.Object)">
+      <summary>Elimina la primera aparición de un objeto específico de la lista.</summary>
+      <param name="value">Objeto que se va a eliminar de la lista.</param>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlAttributeOverrides">
+      <summary>Permite reemplazar los atributos de las propiedades, campos y clases al utilizar <see cref="T:System.Xml.Serialization.XmlSerializer" /> para serializar o deserializar un objeto.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAttributeOverrides.#ctor">
+      <summary>Inicializa una nueva instancia de la clase <see cref="T:System.Xml.Serialization.XmlAttributeOverrides" />.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAttributeOverrides.Add(System.Type,System.String,System.Xml.Serialization.XmlAttributes)">
+      <summary>Agrega un objeto <see cref="T:System.Xml.Serialization.XmlAttributes" /> a la colección de objetos <see cref="T:System.Xml.Serialization.XmlAttributes" />.Parámetro <paramref name="type" /> que especifica el objeto que se debe invalidar.El parámetro <paramref name="member" /> especifica el nombre de un miembro que se va a reemplazar.</summary>
+      <param name="type">
+        <see cref="T:System.Type" /> del objeto que se va a reemplazar. </param>
+      <param name="member">Nombre del miembro que se va a reemplazar. </param>
+      <param name="attributes">Objeto <see cref="T:System.Xml.Serialization.XmlAttributes" /> que representa los atributos invalidados. </param>
+      <exception cref="T:System.InvalidOperationException">Se ha agregado más de un objeto <see cref="T:System.Xml.Serialization.XmlAttributes" /> para un miembro de un tipo determinado.</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAttributeOverrides.Add(System.Type,System.Xml.Serialization.XmlAttributes)">
+      <summary>Agrega un objeto <see cref="T:System.Xml.Serialization.XmlAttributes" /> a la colección de objetos <see cref="T:System.Xml.Serialization.XmlAttributes" />.El parámetro <paramref name="type" /> especifica un objeto que va a ser reemplazado por el objeto <see cref="T:System.Xml.Serialization.XmlAttributes" />.</summary>
+      <param name="type">
+        <see cref="T:System.Type" /> del objeto que se va a reemplazar. </param>
+      <param name="attributes">Objeto <see cref="T:System.Xml.Serialization.XmlAttributes" /> que representa los atributos invalidados. </param>
+      <exception cref="T:System.InvalidOperationException">Se ha agregado más de un objeto <see cref="T:System.Xml.Serialization.XmlAttributes" /> para un miembro de un tipo determinado.</exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributeOverrides.Item(System.Type)">
+      <summary>Obtiene el objeto asociado al tipo de clase base.</summary>
+      <returns>
+        <see cref="T:System.Xml.Serialization.XmlAttributes" /> que representa la colección de atributos de reemplazo.</returns>
+      <param name="type">Tipo <see cref="T:System.Type" /> de la clase base que está asociado a la colección de atributos que se desea recuperar. </param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributeOverrides.Item(System.Type,System.String)">
+      <summary>Obtiene el objeto asociado al tipo de clase base.El parámetro <paramref name="member" /> especifica el miembro de clase base invalidado.</summary>
+      <returns>
+        <see cref="T:System.Xml.Serialization.XmlAttributes" /> que representa la colección de atributos de reemplazo</returns>
+      <param name="type">
+        <see cref="T:System.Type" /> de clase base asociado con la colección de atributos que desea. </param>
+      <param name="member">Nombre del miembro reemplazado que especifica el objeto <see cref="T:System.Xml.Serialization.XmlAttributes" /> que se va a devolver. </param>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlAttributes">
+      <summary>Representa una colección de objetos de atributo que controlan el modo en que <see cref="T:System.Xml.Serialization.XmlSerializer" /> serializa y deserializa un objeto.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAttributes.#ctor">
+      <summary>Inicializa una nueva instancia de la clase <see cref="T:System.Xml.Serialization.XmlAttributes" />.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAttributes.#ctor(System.Reflection.ICustomAttributeProvider)">
+      <summary>Inicializa una nueva instancia de la clase <see cref="T:System.Xml.Serialization.XmlAttributes" /> y personaliza el modo cómo <see cref="T:System.Xml.Serialization.XmlSerializer" /> serializa y deserializa un objeto. </summary>
+      <param name="provider">Una clase que puede proporcionar implementaciones alternativas de atributos de control de la serialización XML.</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlAnyAttribute"></member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlAnyElements">
+      <summary>Obtiene la colección de objetos <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> que se va a reemplazar.</summary>
+      <returns>
+        <see cref="T:System.Xml.Serialization.XmlAnyElementAttributes" /> que representa la colección de objetos <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" />.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlArray">
+      <summary>Obtiene o establece un objeto que especifica el modo en que <see cref="T:System.Xml.Serialization.XmlSerializer" /> serializa un campo público o una propiedad pública de lectura/escritura que devuelve una matriz.</summary>
+      <returns>
+        <see cref="T:System.Xml.Serialization.XmlArrayAttribute" /> que especifica el modo en que <see cref="T:System.Xml.Serialization.XmlSerializer" /> serializa un campo público o una propiedad pública de lectura/escritura que devuelve una matriz.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlArrayItems">
+      <summary>Obtiene o establece una colección de objetos que especifica el modo en que <see cref="T:System.Xml.Serialization.XmlSerializer" /> serializa los elementos insertados en una matriz devuelta por un campo público o una propiedad pública de lectura/escritura.</summary>
+      <returns>Objeto <see cref="T:System.Xml.Serialization.XmlArrayItemAttributes" /> que contiene una colección de objetos <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" />.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlAttribute">
+      <summary>Obtiene o establece un objeto que especifica el modo en que <see cref="T:System.Xml.Serialization.XmlSerializer" /> serializa un campo público o una propiedad pública de lectura/escritura como atributo XML.</summary>
+      <returns>
+        <see cref="T:System.Xml.Serialization.XmlAttributeAttribute" /> que controla la serialización de una propiedad de lectura o escritura o un de campo público como atributo XML.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlChoiceIdentifier">
+      <summary>Obtiene o establece un objeto que le permite distinguir entre un conjunto de opciones.</summary>
+      <returns>
+        <see cref="T:System.Xml.Serialization.XmlChoiceIdentifierAttribute" /> que se puede aplicar a un miembro de clase serializado como elemento xsi:choice.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlDefaultValue">
+      <summary>Obtiene o establece el valor predeterminado de un elemento o atributo XML.</summary>
+      <returns>
+        <see cref="T:System.Object" /> que representa el valor predeterminado de un elemento o atributo XML.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlElements">
+      <summary>Obtiene una colección de objetos que especifican el modo en que <see cref="T:System.Xml.Serialization.XmlSerializer" /> serializa un campo público o una propiedad pública de lectura/escritura como elemento XML.</summary>
+      <returns>
+        <see cref="T:System.Xml.Serialization.XmlElementAttributes" /> que contiene una colección de objetos <see cref="T:System.Xml.Serialization.XmlElementAttribute" />.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlEnum">
+      <summary>Obtiene o establece un objeto que especifica el modo en que <see cref="T:System.Xml.Serialization.XmlSerializer" /> serializa un miembro de enumeración.</summary>
+      <returns>
+        <see cref="T:System.Xml.Serialization.XmlEnumAttribute" /> que especifica el modo en que <see cref="T:System.Xml.Serialization.XmlSerializer" /> serializa un miembro de enumeración.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlIgnore">
+      <summary>Obtiene o establece un valor que especifica si se serializa una propiedad de lectura/escritura o un campo público a través de <see cref="T:System.Xml.Serialization.XmlSerializer" />.</summary>
+      <returns>true si <see cref="T:System.Xml.Serialization.XmlSerializer" /> no debe serializar ni el campo ni la propiedad; en caso contrario, false.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.Xmlns">
+      <summary>Obtiene o establece un valor que especifica si se deben mantener todas las declaraciones de espacio de nombres cuando se invalida un objeto con un miembro que devuelve un objeto <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />.</summary>
+      <returns>true si se deben mantener las declaraciones de espacio de nombres; de lo contrario, false.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlRoot">
+      <summary>Obtiene o establece un objeto que especifica el modo en que <see cref="T:System.Xml.Serialization.XmlSerializer" /> serializa una clase como elemento raíz XML.</summary>
+      <returns>
+        <see cref="T:System.Xml.Serialization.XmlRootAttribute" /> que reemplaza una clase con atributos de elemento raíz XML.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlText">
+      <summary>Obtiene o establece un objeto que instruye al objeto <see cref="T:System.Xml.Serialization.XmlSerializer" /> para que serialice un campo público o una propiedad pública de lectura/escritura como texto XML.</summary>
+      <returns>
+        <see cref="T:System.Xml.Serialization.XmlTextAttribute" /> que reemplaza la serialización predeterminada de un campo público o una propiedad pública.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlType">
+      <summary>Obtiene o establece un objeto que especifica el modo en que <see cref="T:System.Xml.Serialization.XmlSerializer" /> serializa una clase a la que se ha aplicado <see cref="T:System.Xml.Serialization.XmlTypeAttribute" />.</summary>
+      <returns>
+        <see cref="T:System.Xml.Serialization.XmlTypeAttribute" /> que reemplaza un <see cref="T:System.Xml.Serialization.XmlTypeAttribute" /> aplicado a una declaración de clase.</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlElementAttributes">
+      <summary>Representa una colección de objetos <see cref="T:System.Xml.Serialization.XmlElementAttribute" />, que <see cref="T:System.Xml.Serialization.XmlSerializer" /> utiliza para reemplazar la forma predeterminada en que serializa una clase.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.#ctor">
+      <summary>Inicializa una nueva instancia de la clase <see cref="T:System.Xml.Serialization.XmlElementAttributes" />.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.Add(System.Xml.Serialization.XmlElementAttribute)">
+      <summary>Agrega un objeto <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> a la colección.</summary>
+      <returns>Índice del elemento agregado.</returns>
+      <param name="attribute">
+        <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> que se va a agregar a la colección.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.Clear">
+      <summary>Quita todos los objetos de la colección.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.Contains(System.Xml.Serialization.XmlElementAttribute)">
+      <summary>Determina si la colección contiene un objeto <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> especificado.</summary>
+      <returns>Es true si la colección contiene el <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> especificado; en caso contrario, es false.</returns>
+      <param name="attribute">
+        <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> que se va a comprobar.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.CopyTo(System.Xml.Serialization.XmlElementAttribute[],System.Int32)">
+      <summary>Copia una matriz <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> en la colección, comenzando en un índice de destino especificado.</summary>
+      <param name="array">Matriz de objetos <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> que se copiará en la colección.</param>
+      <param name="index">Índice basado en cero en la matriz donde comienza la copia.</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttributes.Count">
+      <summary>Obtiene el número de atributos contenidos en la colección.</summary>
+      <returns>Número de atributos contenidos en la colección.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.GetEnumerator">
+      <summary>Devuelve un objeto <see cref="T:System.Collections.IEnumerator" /> que puede recorrer en iteración la colección.</summary>
+      <returns>Objeto <see cref="T:System.Collections.IEnumerator" /> que puede recorrer en iteración la colección.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.IndexOf(System.Xml.Serialization.XmlElementAttribute)">
+      <summary>Devuelve el índice de base cero de la primera aparición de un <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> especificado de la colección, o -1 si no se encuentra el atributo en la colección. </summary>
+      <returns>Primer índice del objeto <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> de la colección, o -1 si no se encuentra el atributo en la colección.</returns>
+      <param name="attribute">
+        <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> que se va a buscar en la colección.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.Insert(System.Int32,System.Xml.Serialization.XmlElementAttribute)">
+      <summary>Inserta un objeto <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> en el índice especificado de la colección.</summary>
+      <param name="index">Índice de base cero en el que se va a insertar el atributo.</param>
+      <param name="attribute">Objeto <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> que se va a insertar.</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttributes.Item(System.Int32)">
+      <summary>Obtiene o establece el elemento de atributo que se encuentra en el índice especificado.</summary>
+      <returns>
+        <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> que se encuentra en el índice especificado.</returns>
+      <param name="index">Índice de base cero del elemento de atributo que se va a obtener o establecer.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> no es válido para la colección; es demasiado grande o bien menor que cero.</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.Remove(System.Xml.Serialization.XmlElementAttribute)">
+      <summary>Elimina un objeto <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> especificado de la colección, en caso de existir.</summary>
+      <param name="attribute">
+        <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> que se va a quitar.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.RemoveAt(System.Int32)">
+      <summary>Elimina un elemento <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> en un índice especificado de la colección.</summary>
+      <param name="index">Índice de base cero del elemento que se va a quitar.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.System#Collections#ICollection#CopyTo(System.Array,System.Int32)">
+      <summary>Copia los elementos de la colección del atributo en una matriz, comenzando en un índice especificado de la matriz.</summary>
+      <param name="array">
+        <see cref="T:System.Array" /> unidimensional de destino de los elementos de atributo copiados de la colección <see cref="T:System.Xml.Serialization.XmlElementAttributes" />. </param>
+      <param name="index">Índice de base cero de la matriz donde comienza la copia.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> es menor que cero.</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="index" /> es mayor que la longitud de la matriz, se sobrepasa la longitud de la matriz al agregar los elementos de atributo o <paramref name="array" /> es multidimensional.</exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttributes.System#Collections#ICollection#IsSynchronized">
+      <summary>Obtiene un valor que indica si el acceso a la colección del atributo está sincronizado. Es decir, es seguro para la ejecución de subprocesos.</summary>
+      <returns>Es true si la colección está sincronizada (es seguro para la ejecución de subprocesos); en caso contrario, es false.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttributes.System#Collections#ICollection#SyncRoot">
+      <summary>No se admite este método.</summary>
+      <returns>Produce una <see cref="T:System.NotSupportedException" />.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Add(System.Object)">
+      <summary>Agrega un elemento a la lista de atributos.</summary>
+      <returns>Posición en la que se insertó el nuevo elemento.</returns>
+      <param name="value">Objeto que se va a agregar a la lista.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Contains(System.Object)">
+      <summary>Determina si la lista de atributos contiene un valor específico.</summary>
+      <returns>true si el objeto se encuentra en la lista de atributos; de lo contrario, false.</returns>
+      <param name="value">Objeto que se va a buscar en la lista de atributos.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#IndexOf(System.Object)">
+      <summary>Determina el índice de un elemento especificado de la lista de atributos.</summary>
+      <returns>Índice de <paramref name="value" /> si se encuentra en la lista de atributos; de lo contrario, -1.</returns>
+      <param name="value">Objeto que se va a buscar en la lista de atributos.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Insert(System.Int32,System.Object)">
+      <summary>Inserta un elemento en la lista en un índice especificado.</summary>
+      <param name="index">Índice de base cero en el que debe insertarse un valor.</param>
+      <param name="value">Objeto que se va a insertar en la lista.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> no es válido para la colección; es demasiado grande o bien menor que cero.</exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#IsFixedSize">
+      <summary>Obtiene un valor que indica si la lista tiene un tamaño fijo.</summary>
+      <returns>true si la lista tiene un tamaño fijo; de lo contrario, false.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#IsReadOnly">
+      <summary>Obtiene un valor que indica si la lista es de solo lectura.</summary>
+      <returns>
+        <paramref name="true" /> si la lista es de solo lectura; de lo contrario, es <paramref name="false" />.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Item(System.Int32)">
+      <summary>Obtiene o establece el elemento que se encuentra en el índice especificado.</summary>
+      <returns>Elemento en el índice especificado.</returns>
+      <param name="index">Índice de base cero del elemento que se va a obtener o establecer.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> no es válido para la colección; es demasiado grande o bien menor que cero.</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Remove(System.Object)">
+      <summary>Elimina la primera aparición de un objeto específico de la lista.</summary>
+      <param name="value">Objeto que se va a eliminar de la lista.</param>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlMapping">
+      <summary>Admite asignaciones entre tipos .NET Framework y tipos de datos de esquema XML. </summary>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMapping.ElementName">
+      <summary>Obtiene el nombre del elemento asignado.</summary>
+      <returns>Nombre del elemento asignado.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMapping.Namespace">
+      <summary>Obtiene el espacio de nombres del elemento asignado.</summary>
+      <returns>Espacio de nombres del elemento asignado.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlMapping.SetKey(System.String)">
+      <summary>Establece la clave que se usa para buscar la asignación.</summary>
+      <param name="key">Clave de búsqueda.</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMapping.XsdElementName">
+      <summary>Obtiene el nombre del elemento XSD de la asignación.</summary>
+      <returns>Nombre del elemento XSD.</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlMappingAccess">
+      <summary>Especifica si una asignación es de lectura, escritura o ambas.</summary>
+    </member>
+    <member name="F:System.Xml.Serialization.XmlMappingAccess.None">
+      <summary>Se generan métodos de lectura y escritura.</summary>
+    </member>
+    <member name="F:System.Xml.Serialization.XmlMappingAccess.Read">
+      <summary>Se generan métodos de lectura.</summary>
+    </member>
+    <member name="F:System.Xml.Serialization.XmlMappingAccess.Write">
+      <summary>Se generan métodos de escritura.</summary>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlReflectionImporter">
+      <summary>Genera asignaciones a declaraciones de elementos de esquema XML, incluidas partes literales de un mensaje XML Schema Definition (XSD) en un documento Web Services Description Language (WSDL) para tipos .NET Framework o información de método de servicios Web. </summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.#ctor">
+      <summary>Inicializa una nueva instancia de la clase <see cref="T:System.Xml.Serialization.XmlReflectionImporter" />. </summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.#ctor(System.String)">
+      <summary>Inicializa una nueva instancia de la clase <see cref="T:System.Xml.Serialization.XmlReflectionImporter" /> mediante el espacio de nombres XML predeterminado especificado. </summary>
+      <param name="defaultNamespace">Espacio de nombres XML predeterminado que se va a utilizar para las asignaciones de tipos importadas.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.#ctor(System.Xml.Serialization.XmlAttributeOverrides)">
+      <summary>Inicializa una nueva instancia de la clase <see cref="T:System.Xml.Serialization.XmlReflectionImporter" /> utilizando las omisiones de serialización XML especificadas. </summary>
+      <param name="attributeOverrides">Un objeto que invalida cómo la clase <see cref="T:System.Xml.Serialization.XmlSerializer" /> serializa los tipos asignados.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.#ctor(System.Xml.Serialization.XmlAttributeOverrides,System.String)">
+      <summary>Se inicializa una nueva instancia de la clase <see cref="T:System.Xml.Serialization.XmlReflectionImporter" /> utilizando las omisiones de serialización XML especificadas y el espacio de nombres XML predeterminado. </summary>
+      <param name="attributeOverrides">Un objeto que invalida cómo la clase <see cref="T:System.Xml.Serialization.XmlSerializer" /> serializa los tipos asignados.</param>
+      <param name="defaultNamespace">Espacio de nombres XML predeterminado que se va a utilizar para las asignaciones de tipos importadas.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type)">
+      <summary>Genera una asignación a un elemento del esquema XML para un tipo de .NET Framework especificado. </summary>
+      <returns>Asignación .NET Framework interna de un tipo a un elemento de esquema XML.</returns>
+      <param name="type">El tipo de .NET Framework para el que se genera una asignación de tipos.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type,System.String)">
+      <summary>Genera una asignación a un elemento de esquema XML para un tipo de .NET Framework, utilizando el tipo y espacio de nombres especificados. </summary>
+      <returns>Asignación .NET Framework interna de un tipo a un elemento de esquema XML.</returns>
+      <param name="type">El tipo de .NET Framework para el que se genera una asignación de tipos.</param>
+      <param name="defaultNamespace">Espacio de nombres XML predeterminado que se va a utilizar.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type,System.Xml.Serialization.XmlRootAttribute)">
+      <summary>Genera una asignación a un elemento de esquema XML para un tipo de .NET Framework, utilizando el tipo y atributo especificados. </summary>
+      <returns>
+        <see cref="T:System.Xml.Serialization.XmlTypeMapping" /> que representa la asignación de un tipo de .NET Framework a un elemento de esquema XML.</returns>
+      <param name="type">El tipo de .NET Framework para el que se genera una asignación de tipos.</param>
+      <param name="root">Atributo <see cref="T:System.Xml.Serialization.XmlRootAttribute" /> que se aplica al tipo.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type,System.Xml.Serialization.XmlRootAttribute,System.String)">
+      <summary>Genera una asignación a un elemento de esquema XML para un tipo de .NET Framework, utilizando el tipo, atributo y espacio de nombres especificados. </summary>
+      <returns>
+        <see cref="T:System.Xml.Serialization.XmlTypeMapping" /> que contiene la asignación de un tipo de .NET Framework interna para un elemento de esquema XML.</returns>
+      <param name="type">El tipo de .NET Framework para el que se genera una asignación de tipos.</param>
+      <param name="root">Atributo <see cref="T:System.Xml.Serialization.XmlRootAttribute" /> que se aplica al tipo.</param>
+      <param name="defaultNamespace">Espacio de nombres XML predeterminado que se va a utilizar.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.IncludeType(System.Type)">
+      <summary>Incluye asignaciones para un tipo para su uso posterior cuando se invoquen los métodos de importación. </summary>
+      <param name="type">Tipo de .NET Framework para el que se va a guardar la información de asignación de tipo.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.IncludeTypes(System.Reflection.ICustomAttributeProvider)">
+      <summary>Incluye asignaciones de tipos derivados para uso futuro cuando se invoquen métodos de importación. </summary>
+      <param name="provider">Una instancia de la clase <see cref="T:System.Reflection.ICustomAttributeProvider" /> que contiene los atributos personalizados derivados del atributo <see cref="T:System.Xml.Serialization.XmlIncludeAttribute" />.</param>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlSerializer">
+      <summary>Serializa y deserializa objetos en y desde documentos XML.<see cref="T:System.Xml.Serialization.XmlSerializer" /> permite controlar la codificación de los objetos a XML.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor">
+      <summary>Inicializa una nueva instancia de la clase <see cref="T:System.Xml.Serialization.XmlSerializer" />.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type)">
+      <summary>Inicializa una nueva instancia de la clase <see cref="T:System.Xml.Serialization.XmlSerializer" /> que puede serializar objetos del tipo especificado en documentos XML y deserializar documentos XML en objetos del tipo especificado.</summary>
+      <param name="type">Tipo del objeto que puede serializar este <see cref="T:System.Xml.Serialization.XmlSerializer" />. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.String)">
+      <summary>Inicializa una nueva instancia de la clase <see cref="T:System.Xml.Serialization.XmlSerializer" /> que puede serializar objetos del tipo especificado en documentos XML y deserializar documentos XML en objetos del tipo especificado.Especifica el espacio de nombres predeterminado para todos los elementos XML.</summary>
+      <param name="type">Tipo del objeto que puede serializar este <see cref="T:System.Xml.Serialization.XmlSerializer" />. </param>
+      <param name="defaultNamespace">Espacio de nombres predeterminado que se va a usar para todos los elementos XML. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Type[])">
+      <summary>Inicializa una nueva instancia de la clase <see cref="T:System.Xml.Serialization.XmlSerializer" /> que puede serializar objetos del tipo especificado en documentos XML y deserializar documentos XML en objetos de un tipo especificado.Si una propiedad o un campo devuelve una matriz, el parámetro <paramref name="extraTypes" /> especifica aquellos objetos que pueden insertarse en la matriz.</summary>
+      <param name="type">Tipo del objeto que puede serializar este <see cref="T:System.Xml.Serialization.XmlSerializer" />. </param>
+      <param name="extraTypes">Matriz <see cref="T:System.Type" /> de los tipos de objeto adicionales que se van a serializar. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Xml.Serialization.XmlAttributeOverrides)">
+      <summary>Inicializa una nueva instancia de la clase <see cref="T:System.Xml.Serialization.XmlSerializer" /> que puede serializar objetos del tipo especificado en documentos XML y deserializar documentos XML en objetos del tipo especificado.Cada objeto que se va a serializar puede contener instancias de clases que la sobrecarga pueda invalidar con otras clases.</summary>
+      <param name="type">El tipo del objeto que se va a serializar. </param>
+      <param name="overrides">Objeto <see cref="T:System.Xml.Serialization.XmlAttributeOverrides" />. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Xml.Serialization.XmlAttributeOverrides,System.Type[],System.Xml.Serialization.XmlRootAttribute,System.String)">
+      <summary>Inicializa una nueva instancia de la clase <see cref="T:System.Xml.Serialization.XmlSerializer" /> que puede serializar objetos del tipo <see cref="T:System.Object" /> en instancias de documentos XML y deserializar instancias de documentos XML en objetos del tipo <see cref="T:System.Object" />.Cada objeto que se va a serializar puede contener instancias de clases que esta sobrecarga pueda invalidar con otras clases.Esta sobrecarga también especifica el espacio de nombres predeterminado para todos los elementos XML y la clase que se va a usar como elemento XML raíz.</summary>
+      <param name="type">Tipo del objeto que puede serializar este <see cref="T:System.Xml.Serialization.XmlSerializer" />. </param>
+      <param name="overrides">
+        <see cref="T:System.Xml.Serialization.XmlAttributeOverrides" /> que extiende o reemplaza el comportamiento de la clase especificada en el parámetro <paramref name="type" />. </param>
+      <param name="extraTypes">Matriz <see cref="T:System.Type" /> de los tipos de objeto adicionales que se van a serializar. </param>
+      <param name="root">
+        <see cref="T:System.Xml.Serialization.XmlRootAttribute" /> que define las propiedades del elemento XML raíz. </param>
+      <param name="defaultNamespace">Espacio de nombres predeterminado de todos los elementos XML del documento XML. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Xml.Serialization.XmlRootAttribute)">
+      <summary>Inicializa una nueva instancia de la clase <see cref="T:System.Xml.Serialization.XmlSerializer" /> que puede serializar objetos del tipo especificado en documentos XML y deserializar un documento XML en un objeto del tipo especificado.Especifica también la clase que se utilizará como elemento raíz XML.</summary>
+      <param name="type">Tipo del objeto que puede serializar este <see cref="T:System.Xml.Serialization.XmlSerializer" />. </param>
+      <param name="root">
+        <see cref="T:System.Xml.Serialization.XmlRootAttribute" /> que representa el elemento raíz XML. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Xml.Serialization.XmlTypeMapping)">
+      <summary>Inicializa una instancia de la clase <see cref="T:System.Xml.Serialization.XmlSerializer" /> utilizando un objeto que asigna un tipo a otro.</summary>
+      <param name="xmlTypeMapping">
+        <see cref="T:System.Xml.Serialization.XmlTypeMapping" /> que asigna un tipo a otro. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.CanDeserialize(System.Xml.XmlReader)">
+      <summary>Obtiene un valor que indica si este <see cref="T:System.Xml.Serialization.XmlSerializer" /> puede deserializar un documento XML especificado.</summary>
+      <returns>Es true si este <see cref="T:System.Xml.Serialization.XmlSerializer" /> puede deserializar el objeto que señala el <see cref="T:System.Xml.XmlReader" />; en caso contrario, es false.</returns>
+      <param name="xmlReader">
+        <see cref="T:System.Xml.XmlReader" /> que señala el documento que se va a deserializar. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Deserialize(System.IO.Stream)">
+      <summary>Deserializa un documento XML que contiene el <see cref="T:System.IO.Stream" /> especificado.</summary>
+      <returns>
+        <see cref="T:System.Object" /> que se está deserializando.</returns>
+      <param name="stream">
+        <see cref="T:System.IO.Stream" /> que contiene el documento XML que se va a deserializar. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Deserialize(System.IO.TextReader)">
+      <summary>Deserializa un documento XML que contiene el <see cref="T:System.IO.TextReader" /> especificado.</summary>
+      <returns>
+        <see cref="T:System.Object" /> que se está deserializando.</returns>
+      <param name="textReader">
+        <see cref="T:System.IO.TextReader" /> que contiene el documento XML que se va a deserializar. </param>
+      <exception cref="T:System.InvalidOperationException">Se ha producido un error durante la deserialización.La excepción original está disponible utilizando la propiedad <see cref="P:System.Exception.InnerException" />.</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Deserialize(System.Xml.XmlReader)">
+      <summary>Deserializa un documento XML que contiene el <see cref="T:System.xml.XmlReader" /> especificado.</summary>
+      <returns>
+        <see cref="T:System.Object" /> que se está deserializando.</returns>
+      <param name="xmlReader">
+        <see cref="T:System.xml.XmlReader" /> que contiene el documento XML que se va a deserializar. </param>
+      <exception cref="T:System.InvalidOperationException">Se ha producido un error durante la deserialización.La excepción original está disponible utilizando la propiedad <see cref="P:System.Exception.InnerException" />.</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.FromMappings(System.Xml.Serialization.XmlMapping[])">
+      <summary>Devuelve una matriz de objetos <see cref="T:System.Xml.Serialization.XmlSerializer" /> creada a partir de una matriz de objetos <see cref="T:System.Xml.Serialization.XmlTypeMapping" />.</summary>
+      <returns>Matriz de objetos <see cref="T:System.Xml.Serialization.XmlSerializer" />.</returns>
+      <param name="mappings">Matriz de objetos <see cref="T:System.Xml.Serialization.XmlTypeMapping" /> que asigna un tipo a otro. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.FromMappings(System.Xml.Serialization.XmlMapping[],System.Type)">
+      <summary>Devuelve una instancia de la clase <see cref="T:System.Xml.Serialization.XmlSerializer" /> a partir de las asignaciones especificadas.</summary>
+      <returns>Instancia de la clase <see cref="T:System.Xml.Serialization.XmlSerializer" />.</returns>
+      <param name="mappings">Matriz de objetos <see cref="T:System.Xml.Serialization.XmlMapping" />.</param>
+      <param name="type">
+        <see cref="T:System.Type" /> del objeto deserializado.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.FromTypes(System.Type[])">
+      <summary>Devuelve una matriz de objetos <see cref="T:System.Xml.Serialization.XmlSerializer" /> creada a partir de una matriz de tipos.</summary>
+      <returns>Matriz de objetos <see cref="T:System.Xml.Serialization.XmlSerializer" />.</returns>
+      <param name="types">Matriz de objetos <see cref="T:System.Type" />. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Serialize(System.IO.Stream,System.Object)">
+      <summary>Serializa el <see cref="T:System.Object" /> especificado y escribe el documento XML en un archivo utilizando el <see cref="T:System.IO.Stream" /> especificado.</summary>
+      <param name="stream">
+        <see cref="T:System.IO.Stream" /> que se utiliza para escribir el documento XML. </param>
+      <param name="o">
+        <see cref="T:System.Object" /> que se va a serializar. </param>
+      <exception cref="T:System.InvalidOperationException">Se ha producido un error durante la serialización.La excepción original está disponible utilizando la propiedad <see cref="P:System.Exception.InnerException" />.</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Serialize(System.IO.Stream,System.Object,System.Xml.Serialization.XmlSerializerNamespaces)">
+      <summary>Serializa el <see cref="T:System.Object" /> especificado y escribe el documento XML en un archivo utilizando el <see cref="T:System.IO.Stream" /> especificado que hace referencia a los espacios de nombres especificados.</summary>
+      <param name="stream">
+        <see cref="T:System.IO.Stream" /> que se utiliza para escribir el documento XML. </param>
+      <param name="o">
+        <see cref="T:System.Object" /> que se va a serializar. </param>
+      <param name="namespaces">
+        <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" /> al que hace referencia el objeto. </param>
+      <exception cref="T:System.InvalidOperationException">Se ha producido un error durante la serialización.La excepción original está disponible utilizando la propiedad <see cref="P:System.Exception.InnerException" />.</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Serialize(System.IO.TextWriter,System.Object)">
+      <summary>Serializa el <see cref="T:System.Object" /> especificado y escribe el documento XML en un archivo utilizando el <see cref="T:System.IO.TextWriter" /> especificado.</summary>
+      <param name="textWriter">
+        <see cref="T:System.IO.TextWriter" /> que se utiliza para escribir el documento XML. </param>
+      <param name="o">
+        <see cref="T:System.Object" /> que se va a serializar. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Serialize(System.IO.TextWriter,System.Object,System.Xml.Serialization.XmlSerializerNamespaces)">
+      <summary>Serializa el objeto <see cref="T:System.Object" /> especificado, escribe el documento XML en un archivo utilizando el objeto <see cref="T:System.IO.TextWriter" /> especificado y hace referencia a los espacios de nombres especificados.</summary>
+      <param name="textWriter">
+        <see cref="T:System.IO.TextWriter" /> que se utiliza para escribir el documento XML. </param>
+      <param name="o">
+        <see cref="T:System.Object" /> que se va a serializar. </param>
+      <param name="namespaces">
+        <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" /> con los espacios de nombres para el documento XML generado. </param>
+      <exception cref="T:System.InvalidOperationException">Se ha producido un error durante la serialización.La excepción original está disponible utilizando la propiedad <see cref="P:System.Exception.InnerException" />.</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Serialize(System.Xml.XmlWriter,System.Object)">
+      <summary>Serializa el <see cref="T:System.Object" /> especificado y escribe el documento XML en un archivo utilizando el <see cref="T:System.Xml.XmlWriter" /> especificado.</summary>
+      <param name="xmlWriter">
+        <see cref="T:System.xml.XmlWriter" /> que se utiliza para escribir el documento XML. </param>
+      <param name="o">
+        <see cref="T:System.Object" /> que se va a serializar. </param>
+      <exception cref="T:System.InvalidOperationException">Se ha producido un error durante la serialización.La excepción original está disponible utilizando la propiedad <see cref="P:System.Exception.InnerException" />.</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Serialize(System.Xml.XmlWriter,System.Object,System.Xml.Serialization.XmlSerializerNamespaces)">
+      <summary>Serializa el objeto <see cref="T:System.Object" /> especificado, escribe el documento XML en un archivo utilizando el objeto <see cref="T:System.Xml.XmlWriter" /> especificado y hace referencia a los espacios de nombres especificados.</summary>
+      <param name="xmlWriter">
+        <see cref="T:System.xml.XmlWriter" /> que se utiliza para escribir el documento XML. </param>
+      <param name="o">
+        <see cref="T:System.Object" /> que se va a serializar. </param>
+      <param name="namespaces">
+        <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" /> al que hace referencia el objeto. </param>
+      <exception cref="T:System.InvalidOperationException">Se ha producido un error durante la serialización.La excepción original está disponible utilizando la propiedad <see cref="P:System.Exception.InnerException" />.</exception>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlSerializerNamespaces">
+      <summary>Contiene los espacios de nombres XML y prefijos que <see cref="T:System.Xml.Serialization.XmlSerializer" /> utiliza para generar nombres calificados en una instancia de documento XML.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializerNamespaces.#ctor">
+      <summary>Inicializa una nueva instancia de la clase <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializerNamespaces.#ctor(System.Xml.Serialization.XmlSerializerNamespaces)">
+      <summary>Inicializa una nueva instancia de la clase <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" /> utilizando la instancia especificada de XmlSerializerNamespaces que contiene la colección de pares de prefijos y espacios de nombres.</summary>
+      <param name="namespaces">Instancia del <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" /> con los pares de prefijos y espacios de nombres. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializerNamespaces.#ctor(System.Xml.XmlQualifiedName[])">
+      <summary>Inicializa una nueva instancia de la clase <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />.</summary>
+      <param name="namespaces">Matriz de objetos <see cref="T:System.Xml.XmlQualifiedName" />. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializerNamespaces.Add(System.String,System.String)">
+      <summary>Agrega un par de prefijo y espacio de nombres a un objeto <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />.</summary>
+      <param name="prefix">Prefijo asociado a un espacio de nombres XML. </param>
+      <param name="ns">Espacio de nombres XML. </param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlSerializerNamespaces.Count">
+      <summary>Obtiene el número de los pares de prefijos y espacios de nombres de la colección.</summary>
+      <returns>Número de pares de prefijos y espacios de nombres de la colección.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializerNamespaces.ToArray">
+      <summary>Obtiene la matriz de pares de prefijo y espacio de nombres en un objeto <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />.</summary>
+      <returns>Matriz de objetos <see cref="T:System.Xml.XmlQualifiedName" /> que se utilizan como nombres calificados en un documento XML.</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlTypeMapping">
+      <summary>Contiene una asignación de un tipo a otro.</summary>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlTypeMapping.TypeFullName">
+      <summary>Nombre de tipo completo que incluye el espacio o espacios de nombres y el tipo.</summary>
+      <returns>Nombre completo del tipo.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlTypeMapping.TypeName">
+      <summary>Obtiene el nombre de tipo del objeto asignado.</summary>
+      <returns>Nombre de tipo del objeto asignado.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlTypeMapping.XsdTypeName">
+      <summary>Obtiene el nombre del elemento XML del objeto asignado.</summary>
+      <returns>Nombre del elemento XML del objeto asignado.El valor predeterminado es el nombre de clase del objeto.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlTypeMapping.XsdTypeNamespace">
+      <summary>Obtiene el espacio de nombres XML del objeto asignado.</summary>
+      <returns>Espacio de nombres XML del objeto asignado.El valor predeterminado es una cadena vacía ("").</returns>
+    </member>
+  </members>
+</doc>

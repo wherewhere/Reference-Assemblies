@@ -1,0 +1,2580 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) Microsoft Corporation.  All rights reserved. -->
+<doc>
+  <assembly>
+    <name>System.Xml</name>
+  </assembly>
+  <members>
+    <member name="T:System.Xml.ConformanceLevel">
+<summary>指定已创建的 <see cref="T:System.Xml.XmlReader"/> 和 <see cref="T:System.Xml.XmlWriter"/> 对象执行的输入或输出检查的量。</summary>
+    </member>
+    <member name="F:System.Xml.ConformanceLevel.Auto">
+<summary><see cref="T:System.Xml.XmlReader"/> 或 <see cref="T:System.Xml.XmlWriter"/> 对象自动检测是否应该执行文档或片段检查，并执行相应的检查。在您包装另一个 <see cref="T:System.Xml.XmlReader"/> 或 <see cref="T:System.Xml.XmlWriter"/> 对象的情况下，外层对象不进行任何附加一致性检查。一致性检查只针对基础对象。</summary>
+    </member>
+    <member name="F:System.Xml.ConformanceLevel.Fragment">
+<summary>XML 数据是格式良好的 XML 片段。</summary>
+    </member>
+    <member name="F:System.Xml.ConformanceLevel.Document">
+<summary>XML 数据遵循格式良好的 XML 1.0 文档的规则。</summary>
+    </member>
+    <member name="T:System.Xml.DtdProcessing">
+<summary>指定用于处理 DTD 的选项。<see cref="T:System.Xml.DtdProcessing"/> 枚举由 <see cref="T:System.Xml.XmlReaderSettings"/> 使用。  </summary>
+    </member>
+    <member name="F:System.Xml.DtdProcessing.Prohibit">
+<summary>指定在遇到 DTD 时将引发 <see cref="T:System.Xml.XmlException"/>，同时显示一条禁止使用 DTD 的消息。这是默认行为。</summary>
+    </member>
+    <member name="F:System.Xml.DtdProcessing.Ignore">
+<summary>将导致忽略 DOCTYPE 元素。不发生任何 DTD 处理。警告：输出中将丢失 DTD/DOCTYPE。</summary>
+    </member>
+    <member name="F:System.Xml.DtdProcessing.Parse">
+<summary>用于分析 DTD。</summary>
+    </member>
+    <member name="T:System.Xml.IXmlLineInfo">
+<summary>提供一个接口，使类可以返回行和位置信息。</summary>
+    </member>
+    <member name="M:System.Xml.IXmlLineInfo.HasLineInfo">
+<summary>获取一个值，该值指示此类是否可以返回行信息。 </summary>
+<returns>如果可以提供 <see cref="P:System.Xml.IXmlLineInfo.LineNumber"/> 和 <see cref="P:System.Xml.IXmlLineInfo.LinePosition"/>，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Xml.IXmlLineInfo.LineNumber">
+<summary>获取当前行号。</summary>
+<returns>当前行号，如果没有行信息（例如，<see cref="M:System.Xml.IXmlLineInfo.HasLineInfo"/> 返回 false），则为 0。</returns>
+    </member>
+    <member name="P:System.Xml.IXmlLineInfo.LinePosition">
+<summary>获取当前行位置。</summary>
+<returns>当前行位置，如果没有行信息（例如，<see cref="M:System.Xml.IXmlLineInfo.HasLineInfo"/> 返回 false），则为 0。</returns>
+    </member>
+    <member name="T:System.Xml.IXmlNamespaceResolver">
+<summary>提供对一组前缀和命名空间映射的只读访问。 </summary>
+    </member>
+    <member name="M:System.Xml.IXmlNamespaceResolver.GetNamespacesInScope(System.Xml.XmlNamespaceScope)">
+<summary>获取当前在范围内的已定义前缀/命名空间映射的集合。</summary>
+<returns><see cref="T:System.Collections.IDictionary"/>，包含当前在范围内的命名空间。</returns>
+<param name="scope">一个 <see cref="T:System.Xml.XmlNamespaceScope"/> 值，指定要返回的命名空间节点的类型。</param>
+    </member>
+    <member name="M:System.Xml.IXmlNamespaceResolver.LookupNamespace(System.String)">
+<summary>获取映射到指定前缀的命名空间 URI。</summary>
+<returns>映射到前缀的命名空间 URI；如果前缀未映射到命名空间 URI，则为 null。</returns>
+<param name="prefix">要查找其命名空间 URI 的前缀。</param>
+    </member>
+    <member name="M:System.Xml.IXmlNamespaceResolver.LookupPrefix(System.String)">
+<summary>获取映射到指定命名空间 URI 的前缀。</summary>
+<returns>映射到命名空间 URI 的前缀；如果命名空间 URI 未映射到前缀，则为 null。</returns>
+<param name="namespaceName">要查找其前缀的命名空间 URI。</param>
+    </member>
+    <member name="T:System.Xml.NamespaceHandling">
+<summary>指定是否移除 <see cref="T:System.Xml.XmlWriter"/> 中的重复的命名空间声明。</summary>
+    </member>
+    <member name="F:System.Xml.NamespaceHandling.Default">
+<summary>默认行为不移除重复的命名空间声明。 </summary>
+    </member>
+    <member name="F:System.Xml.NamespaceHandling.OmitDuplicates">
+<summary>移除重复的命名空间声明。对于要移除的重复命名空间，前缀和命名空间必须匹配。</summary>
+    </member>
+    <member name="T:System.Xml.NameTable">
+<summary>实现单线程 <see cref="T:System.Xml.XmlNameTable"/>。</summary>
+    </member>
+    <member name="M:System.Xml.NameTable.#ctor">
+<summary>初始化 NameTable 类的新实例。</summary>
+    </member>
+    <member name="M:System.Xml.NameTable.Add(System.Char[],System.Int32,System.Int32)">
+<summary>将指定的字符串原子化，并将其添加到 NameTable。</summary>
+<returns>原子化字符串；如果 NameTable 中已存在字符串，则为现有字符串。如果 <paramref name="len"/> 为零，则返回 String.Empty。</returns>
+<param name="key">包含要添加字符串的字符数组。</param> <param name="start">数组中指定字符串第一个字符的从零开始的索引。</param> <param name="len">字符串中的字符数。 </param>
+<exception cref="T:System.IndexOutOfRangeException">0 &gt; <paramref name="start"/>-或- <paramref name="start"/> &gt;= <paramref name="key"/>.Length -或- <paramref name="len"/> &gt;= <paramref name="key"/>.Length 如果 <paramref name="len"/> =0，则上述条件不会导致引发异常。 </exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="len"/> &lt; 0. </exception>
+    </member>
+    <member name="M:System.Xml.NameTable.Add(System.String)">
+<summary>将指定的字符串原子化，并将其添加到 NameTable。</summary>
+<returns>原子化字符串；如果 NameTable 中已存在字符串，则为现有字符串。</returns>
+<param name="key">要添加的字符串。 </param>
+      <exception cref="T:System.NullReferenceException">
+<paramref name="key"/> 为 null。 </exception>
+    </member>
+    <member name="M:System.Xml.NameTable.Get(System.Char[],System.Int32,System.Int32)">
+<summary>获取包含相同字符（与给定数组中指定范围的字符相同）的原子化字符串。</summary>
+<returns>原子化字符串；如果字符串尚未原子化，则为 null。如果 <paramref name="len"/> 为零，则返回 String.Empty。</returns>
+<param name="key">包含要查找的名称的字符数组。</param> <param name="start">数组中指定名称第一个字符的从零开始的索引。</param> <param name="len">名称中的字符数。 </param>
+<exception cref="T:System.IndexOutOfRangeException">0 &gt; <paramref name="start"/>-或- <paramref name="start"/> &gt;= <paramref name="key"/>.Length -或- <paramref name="len"/> &gt;= <paramref name="key"/>.Length 如果 <paramref name="len"/> =0，则上述条件不会导致引发异常。 </exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="len"/> &lt; 0. </exception>
+    </member>
+    <member name="M:System.Xml.NameTable.Get(System.String)">
+<summary>获取具有指定值的原子化字符串。</summary>
+<returns>原子化字符串对象；如果字符串尚未原子化，则为 null。</returns>
+<param name="value">要查找的名称。 </param>
+      <exception cref="T:System.NullReferenceException">
+<paramref name="value"/> 为 null。</exception>
+    </member>
+    <member name="T:System.Xml.NewLineHandling">
+<summary>指定如何处理分行符。</summary>
+    </member>
+    <member name="F:System.Xml.NewLineHandling.Replace">
+<summary>替换新行字符才能与 <see cref="P:System.Xml.XmlWriterSettings.NewLineChars"/> 属性中指定的字符匹配。</summary>
+    </member>
+    <member name="F:System.Xml.NewLineHandling.Entitize">
+<summary>新行字符已实体化。当通过某个正常化 <see cref="T:System.Xml.XmlReader"/> 来读取输出时，此设置将保留所有字符。</summary>
+    </member>
+    <member name="F:System.Xml.NewLineHandling.None">
+<summary>新行字符未更改。输出与输入一样。</summary>
+    </member>
+    <member name="T:System.Xml.ReadState">
+<summary>指定读取器的状态。</summary>
+    </member>
+    <member name="F:System.Xml.ReadState.Initial">
+<summary>尚未调用 Read 方法。</summary>
+    </member>
+    <member name="F:System.Xml.ReadState.Interactive">
+<summary>已调用 Read 方法。可能对读取器调用了其他方法。</summary>
+    </member>
+    <member name="F:System.Xml.ReadState.Error">
+<summary>出现错误，阻止读取操作继续进行。</summary>
+    </member>
+    <member name="F:System.Xml.ReadState.EndOfFile">
+<summary>已成功到达文件结尾。</summary>
+    </member>
+    <member name="F:System.Xml.ReadState.Closed">
+<summary>已调用 <see cref="M:System.Xml.XmlReader.Close"/> 方法。</summary>
+    </member>
+    <member name="T:System.Xml.WriteState">
+<summary>指定 <see cref="T:System.Xml.XmlWriter"/> 的状态。</summary>
+    </member>
+    <member name="F:System.Xml.WriteState.Start">
+<summary>尚未调用 Write 方法。</summary>
+    </member>
+    <member name="F:System.Xml.WriteState.Prolog">
+<summary>指示正在写入 Prolog。</summary>
+    </member>
+    <member name="F:System.Xml.WriteState.Element">
+<summary>正在写入元素开始标记。</summary>
+    </member>
+    <member name="F:System.Xml.WriteState.Attribute">
+<summary>正在写入属性值。 </summary>
+    </member>
+    <member name="F:System.Xml.WriteState.Content">
+<summary>正在写入元素内容。</summary>
+    </member>
+    <member name="F:System.Xml.WriteState.Closed">
+<summary>已调用 <see cref="M:System.Xml.XmlWriter.Close"/> 方法。</summary>
+    </member>
+    <member name="F:System.Xml.WriteState.Error">
+<summary>已引发异常，使 <see cref="T:System.Xml.XmlWriter"/> 仍处于无效状态。可以调用 <see cref="M:System.Xml.XmlWriter.Close"/> 方法来将 <see cref="T:System.Xml.XmlWriter"/> 置于 <see cref="F:System.Xml.WriteState.Closed"/> 状态。任何其他 <see cref="T:System.Xml.XmlWriter"/> 方法调用都将导致 <see cref="T:System.InvalidOperationException"/>。</summary>
+    </member>
+    <member name="T:System.Xml.XmlConvert">
+<summary>对 XML 名称进行编码和解码并提供在公共语言运行库类型之间进行转换的方法。当转换数据类型时，返回的值是独立于区域设置的。</summary>
+    </member>
+    <member name="M:System.Xml.XmlConvert.#ctor">
+<summary>初始化 <see cref="T:System.Xml.XmlConvert"/> 类的新实例。 </summary>
+    </member>
+    <member name="M:System.Xml.XmlConvert.DecodeName(System.String)">
+<summary>对名称进行解码。该方法完成 <see cref="M:System.Xml.XmlConvert.EncodeName(System.String)"/> 和 <see cref="M:System.Xml.XmlConvert.EncodeLocalName(System.String)"/> 方法的反向操作。</summary>
+<returns>解码的名称。</returns>
+<param name="name">要转换的名称。 </param>
+    </member>
+    <member name="M:System.Xml.XmlConvert.EncodeLocalName(System.String)">
+<summary>将名称转换为有效的 XML 本地名称。</summary>
+<returns>已编码的名称。</returns>
+<param name="name">要编码的名称。 </param>
+    </member>
+    <member name="M:System.Xml.XmlConvert.EncodeName(System.String)">
+<summary>将名称转换为有效的 XML 名称。</summary>
+<returns>返回名称，任何无效的字符都由转义字符串替换。</returns>
+<param name="name">要转换的名称。 </param>
+    </member>
+    <member name="M:System.Xml.XmlConvert.EncodeNmToken(System.String)">
+<summary>根据 XML 规范验证该名称是否有效。</summary>
+<returns>已编码的名称。</returns>
+<param name="name">要编码的名称。 </param>
+    </member>
+    <member name="M:System.Xml.XmlConvert.IsNCNameChar(System.Char)">
+<summary>检查传入的字符是否为有效的名称字符类型。</summary>
+<returns>如果字符是有效的名称字符类型，则返回 true；否则返回 false。</returns>
+<param name="ch">要验证的字符。</param>
+    </member>
+    <member name="M:System.Xml.XmlConvert.IsPublicIdChar(System.Char)">
+<summary>检查传入的字符是否为有效的 PUBLIC ID 字符。</summary>
+<returns>如果传入的字符是有效的 PUBLIC ID 字符，则返回 true；否则返回 false。</returns>
+<param name="ch">要验证的字符。</param>
+    </member>
+    <member name="M:System.Xml.XmlConvert.IsStartNCNameChar(System.Char)">
+<summary>检查传入的字符是否为有效的开始名称字符类型。</summary>
+<returns>如果字符是有效的开始名称字符类型，则返回 true；否则返回 false。</returns>
+<param name="ch">要验证的字符。</param>
+    </member>
+    <member name="M:System.Xml.XmlConvert.IsWhitespaceChar(System.Char)">
+<summary>检查传入的字符是否为有效的 XML 空白字符。</summary>
+<returns>如果传入的字符是有效的 XML 空白字符，则返回 true；否则返回 false。</returns>
+<param name="ch">要验证的字符。</param>
+    </member>
+    <member name="M:System.Xml.XmlConvert.IsXmlChar(System.Char)">
+<summary>检查传入的字符是否为有效的 XML 字符。</summary>
+<returns>如果传入的字符是有效的 XML 字符，则返回 true；否则返回 false。</returns>
+<param name="ch">要验证的字符。</param>
+    </member>
+    <member name="M:System.Xml.XmlConvert.IsXmlSurrogatePair(System.Char,System.Char)">
+<summary>检查传入的代理项字符对是否为有效的 XML 字符。</summary>
+<returns>如果传入的代理项字符对是有效的 XML 字符，则为 true；否则为 false。</returns>
+<param name="lowChar">要验证的代理项字符。</param> <param name="highChar">要验证的代理项字符。</param>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToBoolean(System.String)">
+<summary>将 <see cref="T:System.String"/> 转换为等效的 <see cref="T:System.Boolean"/>。</summary>
+<returns>一个 Boolean 值，即 true 或 false。</returns>
+<param name="s">要转换的字符串。 </param>
+      <exception cref="T:System.NullReferenceException">
+<paramref name="s"/> 为 null。 </exception>
+      <exception cref="T:System.FormatException">
+<paramref name="s"/> 不表示 Boolean 值。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToByte(System.String)">
+<summary>将 <see cref="T:System.String"/> 转换为等效的 <see cref="T:System.Byte"/>。</summary>
+<returns>与该字符串等效的 Byte。</returns>
+<param name="s">要转换的字符串。 </param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="s"/> 为 null。 </exception>
+      <exception cref="T:System.FormatException">
+<paramref name="s"/> 的格式不正确。 </exception>
+      <exception cref="T:System.OverflowException">
+<paramref name="s"/> 表示小于 <see cref="F:System.Byte.MinValue"/> 或大于 <see cref="F:System.Byte.MaxValue"/> 的数字。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToChar(System.String)">
+<summary>将 <see cref="T:System.String"/> 转换为等效的 <see cref="T:System.Char"/>。</summary>
+<returns>表示单个字符的 Char。</returns>
+<param name="s">包含所要转换的单个字符的字符串。 </param>
+<exception cref="T:System.ArgumentNullException"><paramref name="s"/> 参数的值为 null。 </exception>
+<exception cref="T:System.FormatException"><paramref name="s"/> 参数包含多个字符。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToDateTime(System.String,System.String)">
+<summary>将 <see cref="T:System.String"/> 转换为等效的 <see cref="T:System.DateTime"/>。</summary>
+<returns>与该字符串等效的 DateTime。</returns>
+<param name="s">要转换的字符串。</param> <param name="format">适用于转换的 DateTime 的格式结构。有效格式包括“yyyy-MM-ddTHH:mm:sszzzzzz”及其子集。根据此格式验证字符串。 </param>
+      <exception cref="T:System.NullReferenceException">
+<paramref name="s"/> 为 null。 </exception>
+      <exception cref="T:System.FormatException">
+<paramref name="s"/> 或 <paramref name="format"/> 为 String.Empty -或者- <paramref name="s"/> 不包含与 <paramref name="format"/> 对应的日期和时间。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToDateTime(System.String,System.String[])">
+<summary>将 <see cref="T:System.String"/> 转换为等效的 <see cref="T:System.DateTime"/>。</summary>
+<returns>与该字符串等效的 DateTime。</returns>
+<param name="s">要转换的字符串。</param> <param name="formats">包含适用于转换的 DateTime 的格式结构的数组。有效格式包括“yyyy-MM-ddTHH:mm:sszzzzzz”及其子集。 </param>
+      <exception cref="T:System.NullReferenceException">
+<paramref name="s"/> 为 null。 </exception>
+      <exception cref="T:System.FormatException">
+<paramref name="s"/> 或 <paramref name="formats"/> 的元素为 String.Empty -或者- <paramref name="s"/> 不包含与 <paramref name="formats"/> 的任何元素对应的日期和时间。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToDateTime(System.String,System.Xml.XmlDateTimeSerializationMode)">
+<summary>使用指定的 <see cref="T:System.Xml.XmlDateTimeSerializationMode"/> 将 <see cref="T:System.String"/> 转换为 <see cref="T:System.DateTime"/>。</summary>
+<returns>与 <see cref="T:System.String"/> 等效的 <see cref="T:System.DateTime"/>。</returns>
+<param name="s">要转换的 <see cref="T:System.String"/> 值。</param><param name="dateTimeOption"><see cref="T:System.Xml.XmlDateTimeSerializationMode"/> 值之一，用于指定日期是应该转换为本地时间，还是应该保留为协调世界时 (UTC)（如果它为 UTC 日期）。</param>
+<exception cref="T:System.NullReferenceException"><paramref name="dateTimeOption"/> 值为 null。</exception>
+      <exception cref="T:System.FormatException">
+<paramref name="s"/> 是一个空字符串或其格式无效。</exception>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToDateTimeOffset(System.String)">
+<summary>将提供的 <see cref="T:System.String"/> 转换为等效的 <see cref="T:System.DateTimeOffset"/>。</summary>
+<returns>与提供的字符串等效的 <see cref="T:System.DateTimeOffset"/>。</returns>
+<param name="s">要转换的字符串。注意   该字符串必须符合 W3C 建议的 XML DateTime 类型的子集。有关更多信息，请参阅“XML Schema Part 2: Datatypes”（XML 架构第 2 部分：数据类型）。</param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="s"/> 为 null。 </exception>
+<exception cref="T:System.ArgumentOutOfRangeException">传递给此方法的参数不在允许值的范围内。有关允许值的信息，请参阅 <see cref="T:System.DateTimeOffset"/>。</exception>
+<exception cref="T:System.FormatException">传递给此方法的参数不符合 W3C 建议的 XML DateTime 类型的子集。有关更多信息，请参阅“XML Schema Part 2: Datatypes”（XML 架构第 2 部分：数据类型）。</exception>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToDateTimeOffset(System.String,System.String)">
+<summary>将提供的 <see cref="T:System.String"/> 转换为等效的 <see cref="T:System.DateTimeOffset"/>。</summary>
+<returns>与提供的字符串等效的 <see cref="T:System.DateTimeOffset"/>。</returns>
+<param name="s">要转换的字符串。</param> <param name="format">从中转换 <paramref name="s"/> 的格式。该格式参数可以是 W3C 建议的 XML DateTime 类型的任何子集。有关更多信息，请参阅“XML Schema Part 2: Datatypes”（XML 架构第 2 部分：数据类型）所定义。根据此格式验证字符串 <paramref name="s"/>。</param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="s"/> 为 null。 </exception>
+      <exception cref="T:System.FormatException">
+<paramref name="s"/> 或 <paramref name="format"/> 是一个空字符串或未采用指定的格式。</exception>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToDateTimeOffset(System.String,System.String[])">
+<summary>将提供的 <see cref="T:System.String"/> 转换为等效的 <see cref="T:System.DateTimeOffset"/>。</summary>
+<returns>与提供的字符串等效的 <see cref="T:System.DateTimeOffset"/>。</returns>
+<param name="s">要转换的字符串。</param> <param name="formats">可以从其转换 <paramref name="s"/> 的格式数组。<paramref name="formats"/> 中的每个格式均可以是 W3C 建议的 XML DateTime 类型的任何子集。有关更多信息，请参阅“XML Schema Part 2: Datatypes”（XML 架构第 2 部分：数据类型）所定义。将根据这些格式中的一个格式验证字符串 <paramref name="s"/>。</param>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToDecimal(System.String)">
+<summary>将 <see cref="T:System.String"/> 转换为等效的 <see cref="T:System.Decimal"/>。</summary>
+<returns>与该字符串等效的 Decimal。</returns>
+<param name="s">要转换的字符串。 </param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="s"/> 为 null。 </exception>
+      <exception cref="T:System.FormatException">
+<paramref name="s"/> 的格式不正确。 </exception>
+      <exception cref="T:System.OverflowException">
+<paramref name="s"/> 表示小于 <see cref="F:System.Decimal.MinValue"/> 或大于 <see cref="F:System.Decimal.MaxValue"/> 的数字。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToDouble(System.String)">
+<summary>将 <see cref="T:System.String"/> 转换为等效的 <see cref="T:System.Double"/>。</summary>
+<returns>与该字符串等效的 Double。</returns>
+<param name="s">要转换的字符串。 </param>
+      <exception cref="T:System.NullReferenceException">
+<paramref name="s"/> 为 null。 </exception>
+      <exception cref="T:System.FormatException">
+<paramref name="s"/> 的格式不正确。 </exception>
+      <exception cref="T:System.OverflowException">
+<paramref name="s"/> 表示小于 <see cref="F:System.Double.MinValue"/> 或大于 <see cref="F:System.Double.MaxValue"/> 的数字。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToGuid(System.String)">
+<summary>将 <see cref="T:System.String"/> 转换为等效的 <see cref="T:System.Guid"/>。</summary>
+<returns>与该字符串等效的 Guid。</returns>
+<param name="s">要转换的字符串。 </param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="s"/> 为 null。 </exception>
+      <exception cref="T:System.FormatException">
+<paramref name="s"/> 的格式不正确。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToInt16(System.String)">
+<summary>将 <see cref="T:System.String"/> 转换为等效的 <see cref="T:System.Int16"/>。</summary>
+<returns>与该字符串等效的 Int16。</returns>
+<param name="s">要转换的字符串。 </param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="s"/> 为 null。 </exception>
+      <exception cref="T:System.FormatException">
+<paramref name="s"/> 的格式不正确。 </exception>
+      <exception cref="T:System.OverflowException">
+<paramref name="s"/> 表示小于 <see cref="F:System.Int16.MinValue"/> 或大于 <see cref="F:System.Int16.MaxValue"/> 的数字。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToInt32(System.String)">
+<summary>将 <see cref="T:System.String"/> 转换为等效的 <see cref="T:System.Int32"/>。</summary>
+<returns>与该字符串等效的 Int32。</returns>
+<param name="s">要转换的字符串。 </param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="s"/> 为 null。 </exception>
+      <exception cref="T:System.FormatException">
+<paramref name="s"/> 的格式不正确。 </exception>
+      <exception cref="T:System.OverflowException">
+<paramref name="s"/> 表示小于 <see cref="F:System.Int32.MinValue"/> 或大于 <see cref="F:System.Int32.MaxValue"/> 的数字。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToInt64(System.String)">
+<summary>将 <see cref="T:System.String"/> 转换为等效的 <see cref="T:System.Int64"/>。</summary>
+<returns>与该字符串等效的 Int64。</returns>
+<param name="s">要转换的字符串。 </param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="s"/> 为 null。 </exception>
+      <exception cref="T:System.FormatException">
+<paramref name="s"/> 的格式不正确。 </exception>
+      <exception cref="T:System.OverflowException">
+<paramref name="s"/> 表示小于 <see cref="F:System.Int64.MinValue"/> 或大于 <see cref="F:System.Int64.MaxValue"/> 的数字。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToSByte(System.String)">
+<summary>将 <see cref="T:System.String"/> 转换为等效的 <see cref="T:System.SByte"/>。</summary>
+<returns>与该字符串等效的 SByte。</returns>
+<param name="s">要转换的字符串。 </param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="s"/> 为 null。 </exception>
+      <exception cref="T:System.FormatException">
+<paramref name="s"/> 的格式不正确。 </exception>
+      <exception cref="T:System.OverflowException">
+<paramref name="s"/> 表示小于 <see cref="F:System.SByte.MinValue"/> 或大于 <see cref="F:System.SByte.MaxValue"/> 的数字。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToSingle(System.String)">
+<summary>将 <see cref="T:System.String"/> 转换为等效的 <see cref="T:System.Single"/>。</summary>
+<returns>与该字符串等效的 Single。</returns>
+<param name="s">要转换的字符串。 </param>
+      <exception cref="T:System.NullReferenceException">
+<paramref name="s"/> 为 null。 </exception>
+      <exception cref="T:System.FormatException">
+<paramref name="s"/> 的格式不正确。 </exception>
+      <exception cref="T:System.OverflowException">
+<paramref name="s"/> 表示小于 <see cref="F:System.Single.MinValue"/> 或大于 <see cref="F:System.Single.MaxValue"/> 的数字。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToString(System.Boolean)">
+<summary>将 <see cref="T:System.Boolean"/> 转换为 <see cref="T:System.String"/>。</summary>
+<returns>Boolean 的字符串表示形式，即“true”或“false”。</returns>
+<param name="value">要转换的值。 </param>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToString(System.Char)">
+<summary>将 <see cref="T:System.Char"/> 转换为 <see cref="T:System.String"/>。</summary>
+<returns>Char 的字符串表示形式。</returns>
+<param name="value">要转换的值。 </param>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToString(System.DateTime,System.Xml.XmlDateTimeSerializationMode)">
+<summary>使用指定的 <see cref="T:System.Xml.XmlDateTimeSerializationMode"/> 将 <see cref="T:System.DateTime"/> 转换为 <see cref="T:System.String"/>。</summary>
+<returns>与 <see cref="T:System.DateTime"/> 等效的 <see cref="T:System.String"/>。</returns>
+<param name="value">要转换的 <see cref="T:System.DateTime"/> 值。</param><param name="dateTimeOption"><see cref="T:System.Xml.XmlDateTimeSerializationMode"/> 值之一，用于指定如何处理 <see cref="T:System.DateTime"/> 值。</param>
+<exception cref="T:System.ArgumentException"><paramref name="dateTimeOption"/> 值无效。</exception>
+<exception cref="T:System.ArgumentNullException"><paramref name="value"/> 或 <paramref name="dateTimeOption"/> 值为 null。</exception>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToString(System.DateTimeOffset)">
+<summary>将提供的 <see cref="T:System.DateTimeOffset"/> 转换为 <see cref="T:System.String"/>。</summary>
+<returns>与提供的 <see cref="T:System.DateTimeOffset"/> 等效的 <see cref="T:System.String"/>。</returns>
+<param name="value">要转换的 <see cref="T:System.DateTimeOffset"/>。</param>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToString(System.DateTimeOffset,System.String)">
+<summary>将提供的 <see cref="T:System.DateTimeOffset"/> 转换为指定格式的 <see cref="T:System.String"/>。</summary>
+<returns>所提供 <see cref="T:System.DateTimeOffset"/> 的指定格式的 <see cref="T:System.String"/> 表示形式。</returns>
+<param name="value">要转换的 <see cref="T:System.DateTimeOffset"/>。</param><param name="format">要将 <paramref name="s"/> 转换到的格式。该格式参数可以是 W3C 建议的 XML DateTime 类型的任何子集。有关更多信息，请参阅“XML Schema Part 2: Datatypes”（XML 架构第 2 部分：数据类型）。</param>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToString(System.Decimal)">
+<summary>将 <see cref="T:System.Decimal"/> 转换为 <see cref="T:System.String"/>。</summary>
+<returns>Decimal 的字符串表示形式。</returns>
+<param name="value">要转换的值。 </param>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToString(System.Double)">
+<summary>将 <see cref="T:System.Double"/> 转换为 <see cref="T:System.String"/>。</summary>
+<returns>Double 的字符串表示形式。</returns>
+<param name="value">要转换的值。 </param>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToString(System.Guid)">
+<summary>将 <see cref="T:System.Guid"/> 转换为 <see cref="T:System.String"/>。</summary>
+<returns>Guid 的字符串表示形式。</returns>
+<param name="value">要转换的值。 </param>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToString(System.Int16)">
+<summary>将 <see cref="T:System.Int16"/> 转换为 <see cref="T:System.String"/>。</summary>
+<returns>Int16 的字符串表示形式。</returns>
+<param name="value">要转换的值。 </param>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToString(System.Int32)">
+<summary>将 <see cref="T:System.Int32"/> 转换为 <see cref="T:System.String"/>。</summary>
+<returns>Int32 的字符串表示形式。</returns>
+<param name="value">要转换的值。 </param>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToString(System.Int64)">
+<summary>将 <see cref="T:System.Int64"/> 转换为 <see cref="T:System.String"/>。</summary>
+<returns>Int64 的字符串表示形式。</returns>
+<param name="value">要转换的值。 </param>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToString(System.SByte)">
+<summary>将 <see cref="T:System.SByte"/> 转换为 <see cref="T:System.String"/>。</summary>
+<returns>SByte 的字符串表示形式。</returns>
+<param name="value">要转换的值。 </param>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToString(System.Single)">
+<summary>将 <see cref="T:System.Single"/> 转换为 <see cref="T:System.String"/>。</summary>
+<returns>Single 的字符串表示形式。</returns>
+<param name="value">要转换的值。 </param>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToString(System.TimeSpan)">
+<summary>将 <see cref="T:System.TimeSpan"/> 转换为 <see cref="T:System.String"/>。</summary>
+<returns>TimeSpan 的字符串表示形式。</returns>
+<param name="value">要转换的值。 </param>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToString(System.UInt32)">
+<summary>将 <see cref="T:System.UInt32"/> 转换为 <see cref="T:System.String"/>。</summary>
+<returns>UInt32 的字符串表示形式。</returns>
+<param name="value">要转换的值。 </param>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToString(System.UInt64)">
+<summary>将 <see cref="T:System.UInt64"/> 转换为 <see cref="T:System.String"/>。</summary>
+<returns>UInt64 的字符串表示形式。</returns>
+<param name="value">要转换的值。 </param>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToTimeSpan(System.String)">
+<summary>将 <see cref="T:System.String"/> 转换为等效的 <see cref="T:System.TimeSpan"/>。</summary>
+<returns>与该字符串等效的 TimeSpan。</returns>
+<param name="s">要转换的字符串。字符串格式必须符合 W3C“XML Schema Part 2: Datatypes”（XML 架构第 2 部分：数据类型）建议的持续时间。</param>
+      <exception cref="T:System.FormatException">
+<paramref name="s"/> 格式不正确，不能表示 TimeSpan 值。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToUInt16(System.String)">
+<summary>将 <see cref="T:System.String"/> 转换为等效的 <see cref="T:System.UInt16"/>。</summary>
+<returns>与该字符串等效的 UInt16。</returns>
+<param name="s">要转换的字符串。 </param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="s"/> 为 null。 </exception>
+      <exception cref="T:System.FormatException">
+<paramref name="s"/> 的格式不正确。 </exception>
+      <exception cref="T:System.OverflowException">
+<paramref name="s"/> 表示小于 <see cref="F:System.UInt16.MinValue"/> 或大于 <see cref="F:System.UInt16.MaxValue"/> 的数字。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToUInt32(System.String)">
+<summary>将 <see cref="T:System.String"/> 转换为等效的 <see cref="T:System.UInt32"/>。</summary>
+<returns>与该字符串等效的 UInt32。</returns>
+<param name="s">要转换的字符串。 </param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="s"/> 为 null。 </exception>
+      <exception cref="T:System.FormatException">
+<paramref name="s"/> 的格式不正确。 </exception>
+      <exception cref="T:System.OverflowException">
+<paramref name="s"/> 表示小于 <see cref="F:System.UInt32.MinValue"/> 或大于 <see cref="F:System.UInt32.MaxValue"/> 的数字。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlConvert.ToUInt64(System.String)">
+<summary>将 <see cref="T:System.String"/> 转换为等效的 <see cref="T:System.UInt64"/>。</summary>
+<returns>与该字符串等效的 UInt64。</returns>
+<param name="s">要转换的字符串。 </param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="s"/> 为 null。 </exception>
+      <exception cref="T:System.FormatException">
+<paramref name="s"/> 的格式不正确。 </exception>
+      <exception cref="T:System.OverflowException">
+<paramref name="s"/> 表示小于 <see cref="F:System.UInt64.MinValue"/> 或大于 <see cref="F:System.UInt64.MaxValue"/> 的数字。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlConvert.VerifyName(System.String)">
+<summary>根据 W3C 可扩展标记语言建议验证该名称是否为有效的名称。</summary>
+<returns>该名称（如果它是有效的 XML 名称）。</returns>
+<param name="name">要验证的名称。 </param>
+      <exception cref="T:System.Xml.XmlException">
+<paramref name="name"/> 不是有效的 XML 名称。 </exception>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="name"/> 为 null 或 String.Empty。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlConvert.VerifyNCName(System.String)">
+<summary>根据 W3C 可扩展标记语言建议验证该名称是否为有效的 NCName。</summary>
+<returns>该名称（如果它是有效的 NCName）。</returns>
+<param name="name">要验证的名称。 </param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="name"/> 为 null 或 String.Empty。 </exception>
+      <exception cref="T:System.Xml.XmlException">
+<paramref name="name"/> 不是有效的 NCName。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlConvert.VerifyNMTOKEN(System.String)">
+<summary>根据 W3C“XML Schema Part 2: Datatypes”（XML 架构第 2 部分：数据类型）建议，验证字符串是否为有效的 NMTOKEN</summary>
+<returns>名称标记（如果它是有效的 NMTOKEN）。</returns>
+<param name="name">要验证的字符串。</param>
+<exception cref="T:System.Xml.XmlException">该字符串不是有效的名称标记。</exception>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="name"/> 为 null。</exception>
+    </member>
+    <member name="M:System.Xml.XmlConvert.VerifyPublicId(System.String)">
+<summary>验证字符串参数中的所有字符是否都是有效的 PUBLIC ID 字符。</summary>
+<returns>如果字符串参数中的所有字符都是有效的 PUBLIC ID 字符，则为传入的字符串实例。</returns>
+<param name="publicId">要验证的字符串。</param>
+    </member>
+    <member name="M:System.Xml.XmlConvert.VerifyWhitespace(System.String)">
+<summary>验证字符串参数中的所有字符是否都是有效的空白字符。 </summary>
+<returns>如果字符串参数中的所有字符都是有效的空白字符，则为传入的字符串实例。</returns>
+<param name="content">要验证的字符串。</param>
+    </member>
+    <member name="M:System.Xml.XmlConvert.VerifyXmlChars(System.String)">
+<summary>验证传入的字符串中的所有字符和代理项对字符是否都是有效的 XML 字符。</summary>
+<returns>如果字符串参数中的所有字符和代理项对字符都是有效的 XML 字符，则为传入的字符串实例。</returns>
+<param name="content">要验证的字符串。</param>
+    </member>
+    <member name="T:System.Xml.XmlDateTimeSerializationMode">
+<summary>指定在字符串与 <see cref="T:System.DateTime"/> 之间转换时，如何处理时间值。</summary>
+    </member>
+    <member name="F:System.Xml.XmlDateTimeSerializationMode.Local">
+<summary>作为本地时间处理。如果 <see cref="T:System.DateTime"/> 对象表示协调世界时 (UTC)，则将其转换为本地时间。</summary>
+    </member>
+    <member name="F:System.Xml.XmlDateTimeSerializationMode.Utc">
+<summary>作为 UTC 处理。如果 <see cref="T:System.DateTime"/> 对象表示本地时间，则将其转换为 UTC。</summary>
+    </member>
+    <member name="F:System.Xml.XmlDateTimeSerializationMode.Unspecified">
+<summary>如果 <see cref="T:System.DateTime"/> 要转换为字符串，则作为本地时间处理。</summary>
+    </member>
+    <member name="F:System.Xml.XmlDateTimeSerializationMode.RoundtripKind">
+<summary>转换时应保留时区信息。</summary>
+    </member>
+    <member name="T:System.Xml.XmlException">
+<summary>返回有关最后一个异常的详细信息。 </summary>
+    </member>
+    <member name="M:System.Xml.XmlException.#ctor">
+<summary>初始化 XmlException 类的新实例。</summary>
+    </member>
+    <member name="M:System.Xml.XmlException.#ctor(System.String)">
+<summary>使用指定的错误消息初始化 XmlException 类的新实例。</summary> <param name="message">错误说明。 </param>
+    </member>
+    <member name="M:System.Xml.XmlException.#ctor(System.String,System.Exception)">
+<summary>初始化 XmlException 类的新实例。</summary> <param name="message">错误条件的说明。</param> <param name="innerException">引发 XmlException 的 <see cref="T:System.Exception"/>（如果有的话）。此值可以为 null。 </param>
+    </member>
+    <member name="M:System.Xml.XmlException.#ctor(System.String,System.Exception,System.Int32,System.Int32)">
+<summary>用指定的消息、内部异常、行号和行位置初始化 XmlException 类的新实例。</summary> <param name="message">错误说明。</param> <param name="innerException">导致当前异常的异常。此值可以为 null。</param> <param name="lineNumber">指示错误发生位置的行号。</param> <param name="linePosition">指示错误发生位置的行位置。 </param>
+    </member>
+    <member name="P:System.Xml.XmlException.LineNumber">
+<summary>获取指示错误发生位置的行号。</summary>
+<returns>指示错误发生位置的行号。</returns>
+    </member>
+    <member name="P:System.Xml.XmlException.LinePosition">
+<summary>获取指示错误发生位置的行位置。</summary>
+<returns>指示错误发生位置的行位置。</returns>
+    </member>
+    <member name="P:System.Xml.XmlException.Message">
+<summary>获取描述当前异常的消息。</summary>
+<returns>解释异常原因的错误消息。</returns>
+    </member>
+    <member name="P:System.Xml.XmlException.SourceUri">
+<summary>获取 XML 文件的位置。</summary>
+<returns>XML 数据的源 URI。如果没有源 URI，则该属性将返回 null。</returns>
+    </member>
+    <member name="T:System.Xml.XmlNamespaceManager">
+<summary>解析集合的命名空间、向集合添加命名空间和从集合中移除命名空间，以及提供对这些命名空间的作用域管理。 </summary>
+    </member>
+    <member name="M:System.Xml.XmlNamespaceManager.#ctor(System.Xml.XmlNameTable)">
+<summary>使用指定的 <see cref="T:System.Xml.XmlNameTable"/> 初始化 <see cref="T:System.Xml.XmlNamespaceManager"/> 类的新实例。</summary><param name="nameTable">要使用的 <see cref="T:System.Xml.XmlNameTable"/>。 </param>
+      <exception cref="T:System.NullReferenceException">
+<paramref name="nameTable"/> 为 null。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlNamespaceManager.AddNamespace(System.String,System.String)">
+<summary>将给定的命名空间添加到集合。</summary> <param name="prefix">与要添加的命名空间关联的前缀。使用 String.Empty 来添加默认命名空间。</param><param name="uri">要添加的命名空间。 </param>
+<exception cref="T:System.ArgumentException"><paramref name="prefix"/> 的值为“xml”或“xmlns”。 </exception>
+<exception cref="T:System.ArgumentNullException"><paramref name="prefix"/> 或 <paramref name="uri"/> 的值为 null。 </exception>
+    </member>
+    <member name="P:System.Xml.XmlNamespaceManager.DefaultNamespace">
+<summary>获取默认命名空间的命名空间 URI。</summary>
+<returns>返回默认命名空间的命名空间 URI；如果没有默认命名空间，则为 String.Empty。</returns>
+    </member>
+    <member name="M:System.Xml.XmlNamespaceManager.GetEnumerator">
+<summary>返回一个枚举器，将使用该枚举器循环访问 <see cref="T:System.Xml.XmlNamespaceManager"/> 集合中的命名空间。</summary>
+<returns><see cref="T:System.Collections.IEnumerator"/>，包含 <see cref="T:System.Xml.XmlNamespaceManager"/> 存储的前缀。</returns>
+    </member>
+    <member name="M:System.Xml.XmlNamespaceManager.GetNamespacesInScope(System.Xml.XmlNamespaceScope)">
+<summary>获取被前缀键控的可用于枚举当前范围内的命名空间的命名空间名称集合。</summary>
+<returns>被前缀键控的可用于枚举当前范围内的命名空间的命名空间名称集合。</returns>
+<param name="scope">一个 <see cref="T:System.Xml.XmlNamespaceScope"/> 值，指定要返回的命名空间节点的类型。</param>
+    </member>
+    <member name="M:System.Xml.XmlNamespaceManager.HasNamespace(System.String)">
+<summary>获取一个值，该值指示所提供的前缀是否具有为当前推到的范围定义的命名空间。</summary>
+<returns>如果有定义的命名空间，则为 true；否则为 false。</returns>
+<param name="prefix">要查找的命名空间的前缀。 </param>
+    </member>
+    <member name="M:System.Xml.XmlNamespaceManager.LookupNamespace(System.String)">
+<summary>获取指定前缀的命名空间 URI。</summary>
+<returns>返回 <paramref name="prefix"/> 的命名空间 URI；如果没有映射的命名空间，则为 null。返回的字符串是原子化的。有关原子化字符串的更多信息，请参阅 <see cref="T:System.Xml.XmlNameTable"/>。</returns>
+<param name="prefix">要解析其命名空间 URI 的前缀。若要匹配默认命名空间，请传递 String.Empty。</param>
+    </member>
+    <member name="M:System.Xml.XmlNamespaceManager.LookupPrefix(System.String)">
+<summary>查找为给定的命名空间 URI 声明的前缀。</summary>
+<returns>匹配的前缀。如果没有映射的前缀，则此方法返回 String.Empty。如果提供 null 值，则返回 null。</returns>
+<param name="uri">要为前缀解析的命名空间。 </param>
+    </member>
+    <member name="P:System.Xml.XmlNamespaceManager.NameTable">
+<summary>获取与此对象关联的 <see cref="T:System.Xml.XmlNameTable"/>。</summary>
+<returns>此对象使用的 <see cref="T:System.Xml.XmlNameTable"/>。</returns>
+    </member>
+    <member name="M:System.Xml.XmlNamespaceManager.PopScope">
+<summary>将命名空间范围弹出堆栈。</summary>
+<returns>如果堆栈上留有命名空间范围，则为 true；如果不再有要弹出的命名空间，则为 false。</returns>
+    </member>
+    <member name="M:System.Xml.XmlNamespaceManager.PushScope">
+<summary>将命名空间范围推到堆栈上。</summary>
+    </member>
+    <member name="M:System.Xml.XmlNamespaceManager.RemoveNamespace(System.String,System.String)">
+<summary>移除给定前缀的给定命名空间。</summary> <param name="prefix">命名空间的前缀 </param> <param name="uri">移除的给定前缀的命名空间。从当前命名空间范围中移除命名空间。忽略当前范围以外的命名空间。 </param>
+<exception cref="T:System.ArgumentNullException"><paramref name="prefix"/> 或 <paramref name="uri"/> 的值为 null。 </exception>
+    </member>
+    <member name="T:System.Xml.XmlNamespaceScope">
+<summary>定义命名空间范围。 </summary>
+    </member>
+    <member name="F:System.Xml.XmlNamespaceScope.All">
+<summary>在当前节点范围内定义的所有命名空间。这包括总是隐式声明的 xmlns:xml 命名空间。未定义返回的命名空间的顺序。</summary>
+    </member>
+    <member name="F:System.Xml.XmlNamespaceScope.ExcludeXml">
+<summary>在当前节点范围内定义的所有命名空间，总是隐式声明的 xmlns:xml 命名空间除外。未定义返回的命名空间的顺序。</summary>
+    </member>
+    <member name="F:System.Xml.XmlNamespaceScope.Local">
+<summary>在当前节点本地定义的所有命名空间。</summary>
+    </member>
+    <member name="T:System.Xml.XmlNameTable">
+<summary>原子化字符串对象表。</summary>
+    </member>
+    <member name="M:System.Xml.XmlNameTable.#ctor">
+<summary>初始化 <see cref="T:System.Xml.XmlNameTable"/> 类的新实例。 </summary>
+    </member>
+    <member name="M:System.Xml.XmlNameTable.Add(System.Char[],System.Int32,System.Int32)">
+<summary>在派生类中重写时，将指定的字符串原子化并将其添加到 XmlNameTable。</summary>
+<returns>新的原子化字符串；如果已存在原子化字符串，则为此现有的原子化字符串。如果长度为零，则返回 String.Empty。</returns>
+<param name="array">包含要添加的名称的字符数组。</param> <param name="offset">数组中指定名称第一个字符的从零开始的索引。</param> <param name="length">名称中的字符数。 </param>
+<exception cref="T:System.IndexOutOfRangeException">0 &gt; <paramref name="offset"/>-或- <paramref name="offset"/> &gt;= <paramref name="array"/>.Length -或- <paramref name="length"/> &gt; <paramref name="array"/>.Length 如果 <paramref name="length"/> =0，则上述条件不会导致引发异常。 </exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="length"/> &lt; 0. </exception>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="array"/> 为 null。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlNameTable.Add(System.String)">
+<summary>在派生类中重写时，将指定的字符串原子化并将其添加到 XmlNameTable。</summary>
+<returns>新的原子化字符串；如果已存在原子化字符串，则为此现有的原子化字符串。</returns>
+<param name="array">要添加的名称。 </param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="array"/> 为 null。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlNameTable.Get(System.Char[],System.Int32,System.Int32)">
+<summary>在派生类中重写时，获取包含相同字符（与给定数组中指定范围的字符相同）的原子化字符串。</summary>
+<returns>原子化字符串；如果字符串尚未原子化，则为 null。如果 <paramref name="length"/> 为零，则返回 String.Empty。</returns>
+<param name="array">包含要查找的名称的字符数组。</param> <param name="offset">数组中指定名称第一个字符的从零开始的索引。</param> <param name="length">名称中的字符数。 </param>
+<exception cref="T:System.IndexOutOfRangeException">0 &gt; <paramref name="offset"/>-或- <paramref name="offset"/> &gt;= <paramref name="array"/>.Length -或- <paramref name="length"/> &gt; <paramref name="array"/>.Length 如果 <paramref name="length"/> =0，则上述条件不会导致引发异常。 </exception>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="array"/> 为 null。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlNameTable.Get(System.String)">
+<summary>在派生类中重写时，获取与指定的字符串包含相同值的原子化字符串。</summary>
+<returns>原子化字符串；如果字符串尚未原子化，则为 null。</returns>
+<param name="array">要查找的名称。 </param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="array"/> 为 null。 </exception>
+    </member>
+    <member name="T:System.Xml.XmlNodeType">
+<summary>指定节点的类型。</summary>
+    </member>
+    <member name="F:System.Xml.XmlNodeType.None">
+<summary>如果未调用 Read 方法，则由 <see cref="T:System.Xml.XmlReader"/> 返回。</summary>
+    </member>
+    <member name="F:System.Xml.XmlNodeType.Element">
+<summary>元素（例如，&lt;item&gt;）。</summary>
+    </member>
+    <member name="F:System.Xml.XmlNodeType.Attribute">
+<summary>属性（例如，id='123'）。</summary>
+    </member>
+    <member name="F:System.Xml.XmlNodeType.Text">
+<summary>节点的文本内容。</summary>
+    </member>
+    <member name="F:System.Xml.XmlNodeType.CDATA">
+<summary>CDATA 节（例如，&lt;![CDATA[my escaped text]]&gt;）。</summary>
+    </member>
+    <member name="F:System.Xml.XmlNodeType.EntityReference">
+<summary>实体引用（例如，&amp;num;）。</summary>
+    </member>
+    <member name="F:System.Xml.XmlNodeType.Entity">
+<summary>实体声明（例如，&lt;!ENTITY...&gt;）。</summary>
+    </member>
+    <member name="F:System.Xml.XmlNodeType.ProcessingInstruction">
+<summary>处理指令（例如，&lt;?pi test?&gt;）。</summary>
+    </member>
+    <member name="F:System.Xml.XmlNodeType.Comment">
+<summary>注释（例如，&lt;!-- my comment --&gt;）。</summary>
+    </member>
+    <member name="F:System.Xml.XmlNodeType.Document">
+<summary>作为文档树的根的文档对象提供对整个 XML 文档的访问。</summary>
+    </member>
+    <member name="F:System.Xml.XmlNodeType.DocumentType">
+<summary>由以下标记指示的文档类型声明（例如，&lt;!DOCTYPE...&gt;）。</summary>
+    </member>
+    <member name="F:System.Xml.XmlNodeType.DocumentFragment">
+<summary>文档片段。</summary>
+    </member>
+    <member name="F:System.Xml.XmlNodeType.Notation">
+<summary>文档类型声明中的表示法（例如，&lt;!NOTATION...&gt;）。</summary>
+    </member>
+    <member name="F:System.Xml.XmlNodeType.Whitespace">
+<summary>标记间的空白。</summary>
+    </member>
+    <member name="F:System.Xml.XmlNodeType.SignificantWhitespace">
+<summary>混合内容模型中标记间的空白或 xml:space="preserve" 范围内的空白。</summary>
+    </member>
+    <member name="F:System.Xml.XmlNodeType.EndElement">
+<summary>末尾元素标记（例如，&lt;/item&gt;）。</summary>
+    </member>
+    <member name="F:System.Xml.XmlNodeType.EndEntity">
+<summary>由于调用 <see cref="M:System.Xml.XmlReader.ResolveEntity"/> 而使 XmlReader 到达实体替换的末尾时返回。</summary>
+    </member>
+    <member name="F:System.Xml.XmlNodeType.XmlDeclaration">
+<summary>XML 声明（例如，&lt;?xml version='1.0'?&gt;）。</summary>
+    </member>
+    <member name="T:System.Xml.XmlParserContext">
+<summary>提供 <see cref="T:System.Xml.XmlReader"/> 分析 XML 片段所需的所有上下文信息。</summary>
+    </member>
+    <member name="M:System.Xml.XmlParserContext.#ctor(System.Xml.XmlNameTable,System.Xml.XmlNamespaceManager,System.String,System.String,System.String,System.String,System.String,System.String,System.Xml.XmlSpace)">
+<summary>使用指定的 <see cref="T:System.Xml.XmlNameTable"/>、<see cref="T:System.Xml.XmlNamespaceManager"/>、基 URI、xml:lang、xml:space 和文档类型值初始化 XmlParserContext 类的新实例。</summary><param name="nt">用于原子化字符串的 <see cref="T:System.Xml.XmlNameTable"/>。如果这为 null，则改用用于构造 <paramref name="nsMgr"/> 的名称表。有关原子化字符串的更多信息，请参阅 <see cref="T:System.Xml.XmlNameTable"/>。</param> <param name="nsMgr">用于查找命名空间信息的 <see cref="T:System.Xml.XmlNamespaceManager"/>，或者为 null。</param> <param name="docTypeName">文档类型声明的名称。</param> <param name="pubId">公共标识符。</param> <param name="sysId">系统标识符。</param> <param name="internalSubset">内部 DTD 子集。</param> <param name="baseURI">XML 片段的基 URI（从其加载片段的位置）。</param> <param name="xmlLang">xml:lang 范围。</param> <param name="xmlSpace">指示 xml:space 范围的 <see cref="T:System.Xml.XmlSpace"/> 值。 </param>
+      <exception cref="T:System.Xml.XmlException">
+<paramref name="nt"/> 不是构造 <paramref name="nsMgr"/> 所使用的 XmlNameTable。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlParserContext.#ctor(System.Xml.XmlNameTable,System.Xml.XmlNamespaceManager,System.String,System.String,System.String,System.String,System.String,System.String,System.Xml.XmlSpace,System.Text.Encoding)">
+<summary>使用指定的 <see cref="T:System.Xml.XmlNameTable"/>、<see cref="T:System.Xml.XmlNamespaceManager"/>、基 URI、xml:lang、xml:space、编码和文档类型值初始化 XmlParserContext 类的新实例。</summary><param name="nt">用于原子化字符串的 <see cref="T:System.Xml.XmlNameTable"/>。如果这为 null，则改用用于构造 <paramref name="nsMgr"/> 的名称表。有关原子化字符串的更多信息，请参阅 <see cref="T:System.Xml.XmlNameTable"/>。</param> <param name="nsMgr">用于查找命名空间信息的 <see cref="T:System.Xml.XmlNamespaceManager"/>，或者为 null。</param> <param name="docTypeName">文档类型声明的名称。</param> <param name="pubId">公共标识符。</param> <param name="sysId">系统标识符。</param> <param name="internalSubset">内部 DTD 子集。</param> <param name="baseURI">XML 片段的基 URI（从其加载片段的位置）。</param> <param name="xmlLang">xml:lang 范围。</param> <param name="xmlSpace">指示 xml:space 范围的 <see cref="T:System.Xml.XmlSpace"/> 值。</param> <param name="enc">指示编码设置的 <see cref="T:System.Text.Encoding"/> 对象。 </param>
+      <exception cref="T:System.Xml.XmlException">
+<paramref name="nt"/> 不是构造 <paramref name="nsMgr"/> 所使用的 XmlNameTable。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlParserContext.#ctor(System.Xml.XmlNameTable,System.Xml.XmlNamespaceManager,System.String,System.Xml.XmlSpace)">
+<summary>使用指定的 <see cref="T:System.Xml.XmlNameTable"/>、<see cref="T:System.Xml.XmlNamespaceManager"/>、xml:lang、xml:space 值初始化 XmlParserContext 类的新实例。</summary><param name="nt">用于原子化字符串的 <see cref="T:System.Xml.XmlNameTable"/>。如果这为 null，则改用用于构造 <paramref name="nsMgr"/> 的名称表。有关原子化字符串的更多信息，请参阅 <see cref="T:System.Xml.XmlNameTable"/>。</param> <param name="nsMgr">用于查找命名空间信息的 <see cref="T:System.Xml.XmlNamespaceManager"/>，或者为 null。</param> <param name="xmlLang">xml:lang 范围。</param> <param name="xmlSpace">指示 xml:space 范围的 <see cref="T:System.Xml.XmlSpace"/> 值。 </param>
+      <exception cref="T:System.Xml.XmlException">
+<paramref name="nt"/> 不是构造 <paramref name="nsMgr"/> 所使用的 XmlNameTable。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlParserContext.#ctor(System.Xml.XmlNameTable,System.Xml.XmlNamespaceManager,System.String,System.Xml.XmlSpace,System.Text.Encoding)">
+<summary>使用指定的 <see cref="T:System.Xml.XmlNameTable"/>、<see cref="T:System.Xml.XmlNamespaceManager"/>、xml:lang、xml:space 和编码初始化 XmlParserContext 类的新实例。</summary><param name="nt">用于原子化字符串的 <see cref="T:System.Xml.XmlNameTable"/>。如果这为 null，则改用用于构造 <paramref name="nsMgr"/> 的名称表。有关原子化字符串的更多信息，请参阅 <see cref="T:System.Xml.XmlNameTable"/>。</param> <param name="nsMgr">用于查找命名空间信息的 <see cref="T:System.Xml.XmlNamespaceManager"/>，或者为 null。</param> <param name="xmlLang">xml:lang 范围。</param> <param name="xmlSpace">指示 xml:space 范围的 <see cref="T:System.Xml.XmlSpace"/> 值。</param> <param name="enc">指示编码设置的 <see cref="T:System.Text.Encoding"/> 对象。 </param>
+      <exception cref="T:System.Xml.XmlException">
+<paramref name="nt"/> 不是构造 <paramref name="nsMgr"/> 所使用的 XmlNameTable。 </exception>
+    </member>
+    <member name="P:System.Xml.XmlParserContext.BaseURI">
+<summary>获取或设置基 URI。</summary>
+<returns>用于解析 DTD 文件的基 URI。</returns>
+    </member>
+    <member name="P:System.Xml.XmlParserContext.DocTypeName">
+<summary>获取或设置文档类型声明的名称。</summary>
+<returns>文档类型声明的名称。</returns>
+    </member>
+    <member name="P:System.Xml.XmlParserContext.Encoding">
+<summary>获取或设置编码类型。</summary>
+<returns>指示编码类型的 <see cref="T:System.Text.Encoding"/> 对象。</returns>
+    </member>
+    <member name="P:System.Xml.XmlParserContext.InternalSubset">
+<summary>获取或设置内部 DTD 子集。</summary>
+<returns>内部 DTD 子集。例如，此属性返回方括号 &lt;!DOCTYPE doc [...]&gt; 之间的所有内容。</returns>
+    </member>
+    <member name="P:System.Xml.XmlParserContext.NamespaceManager">
+<summary>获取或设置 <see cref="T:System.Xml.XmlNamespaceManager"/>。</summary>
+<returns>XmlNamespaceManager。</returns>
+    </member>
+    <member name="P:System.Xml.XmlParserContext.NameTable">
+<summary>获取用于原子化字符串的 <see cref="T:System.Xml.XmlNameTable"/>。有关原子化字符串的更多信息，请参阅 <see cref="T:System.Xml.XmlNameTable"/>。</summary>
+<returns>XmlNameTable。</returns>
+    </member>
+    <member name="P:System.Xml.XmlParserContext.PublicId">
+<summary>获取或设置公共标识符。</summary>
+<returns>公共标识符。</returns>
+    </member>
+    <member name="P:System.Xml.XmlParserContext.SystemId">
+<summary>获取或设置系统标识符。</summary>
+<returns>系统标识符。</returns>
+    </member>
+    <member name="P:System.Xml.XmlParserContext.XmlLang">
+<summary>获取或设置当前 xml:lang 范围。</summary>
+<returns>当前的 xml:lang 范围。如果范围中没有 xml:lang，则返回 String.Empty。</returns>
+    </member>
+    <member name="P:System.Xml.XmlParserContext.XmlSpace">
+<summary>获取或设置当前 xml:space 范围。</summary>
+<returns>指示 xml:space 范围的 <see cref="T:System.Xml.XmlSpace"/> 值。</returns>
+    </member>
+    <member name="T:System.Xml.XmlQualifiedName">
+<summary>表示 XML 限定名称。</summary>
+    </member>
+    <member name="M:System.Xml.XmlQualifiedName.#ctor">
+<summary>初始化 <see cref="T:System.Xml.XmlQualifiedName"/> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Xml.XmlQualifiedName.#ctor(System.String)">
+<summary>使用指定的名称初始化 <see cref="T:System.Xml.XmlQualifiedName"/> 类的新实例。</summary><param name="name">要用作 <see cref="T:System.Xml.XmlQualifiedName"/> 对象名称的本地名称。 </param>
+    </member>
+    <member name="M:System.Xml.XmlQualifiedName.#ctor(System.String,System.String)">
+<summary>使用指定的名称和命名空间初始化 <see cref="T:System.Xml.XmlQualifiedName"/> 类的新实例。</summary><param name="name">要用作 <see cref="T:System.Xml.XmlQualifiedName"/> 对象名称的本地名称。</param> <param name="ns"><see cref="T:System.Xml.XmlQualifiedName"/> 对象的命名空间。 </param>
+    </member>
+    <member name="F:System.Xml.XmlQualifiedName.Empty">
+<summary>提供一个空的 <see cref="T:System.Xml.XmlQualifiedName"/>。</summary>
+    </member>
+    <member name="M:System.Xml.XmlQualifiedName.Equals(System.Object)">
+<summary>确定指定的 <see cref="T:System.Xml.XmlQualifiedName"/> 对象是否等于当前 <see cref="T:System.Xml.XmlQualifiedName"/> 对象。 </summary>
+<returns>如果它们是两个相同的实例对象，则为 true；否则为 false。</returns>
+<param name="other">要进行比较的 <see cref="T:System.Xml.XmlQualifiedName"/>。 </param>
+    </member>
+    <member name="M:System.Xml.XmlQualifiedName.GetHashCode">
+<summary>返回 <see cref="T:System.Xml.XmlQualifiedName"/> 的哈希代码。</summary>
+<returns>此对象的哈希代码。</returns>
+    </member>
+    <member name="P:System.Xml.XmlQualifiedName.IsEmpty">
+<summary>获取一个值，该值指示 <see cref="T:System.Xml.XmlQualifiedName"/> 是否为空。</summary>
+<returns>如果名称和命名空间为空字符串，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Xml.XmlQualifiedName.Name">
+<summary>获取 <see cref="T:System.Xml.XmlQualifiedName"/> 的限定名称的字符串表示形式。</summary>
+<returns>限定名称的字符串表示形式，如果没有为对象定义名称，则为 String.Empty。</returns>
+    </member>
+    <member name="P:System.Xml.XmlQualifiedName.Namespace">
+<summary>获取 <see cref="T:System.Xml.XmlQualifiedName"/> 的命名空间的字符串表示形式。</summary>
+<returns>命名空间的字符串表示形式，如果没有为对象定义命名空间，则为 String.Empty。</returns>
+    </member>
+    <member name="M:System.Xml.XmlQualifiedName.op_Equality(System.Xml.XmlQualifiedName,System.Xml.XmlQualifiedName)">
+<summary>比较两个 <see cref="T:System.Xml.XmlQualifiedName"/> 对象。</summary>
+<returns>如果两个对象具有相同的名称和命名空间值，则为 true；否则为 false。</returns>
+<param name="a">要进行比较的 <see cref="T:System.Xml.XmlQualifiedName"/>。</param> <param name="b">要进行比较的 <see cref="T:System.Xml.XmlQualifiedName"/>。 </param>
+    </member>
+    <member name="M:System.Xml.XmlQualifiedName.op_Inequality(System.Xml.XmlQualifiedName,System.Xml.XmlQualifiedName)">
+<summary>比较两个 <see cref="T:System.Xml.XmlQualifiedName"/> 对象。</summary>
+<returns>如果两个对象的名称和命名空间值不同，则为 true；否则为 false。</returns>
+<param name="a">要进行比较的 <see cref="T:System.Xml.XmlQualifiedName"/>。</param> <param name="b">要进行比较的 <see cref="T:System.Xml.XmlQualifiedName"/>。 </param>
+    </member>
+    <member name="M:System.Xml.XmlQualifiedName.ToString">
+<summary>返回 <see cref="T:System.Xml.XmlQualifiedName"/> 的字符串值。</summary>
+<returns>采用 namespace:localname 格式的 <see cref="T:System.Xml.XmlQualifiedName"/> 的字符串值。如果对象没有已定义的命名空间，则此方法只返回本地名称。</returns>
+    </member>
+    <member name="M:System.Xml.XmlQualifiedName.ToString(System.String,System.String)">
+<summary>返回 <see cref="T:System.Xml.XmlQualifiedName"/> 的字符串值。</summary>
+<returns>采用 namespace:localname 格式的 <see cref="T:System.Xml.XmlQualifiedName"/> 的字符串值。如果对象没有已定义的命名空间，则此方法只返回本地名称。</returns>
+<param name="name">对象的名称。</param> <param name="ns">对象的命名空间。 </param>
+    </member>
+    <member name="T:System.Xml.XmlReader">
+<summary>表示提供对 XML 数据进行快速、非缓存、只进访问的读取器。</summary>
+    </member>
+    <member name="M:System.Xml.XmlReader.#ctor">
+<summary>初始化 XmlReader 类的新实例。</summary>
+    </member>
+    <member name="P:System.Xml.XmlReader.AttributeCount">
+<summary>在派生类中重写时，获取当前节点上的属性数。</summary>
+<returns>当前节点上的属性数。</returns>
+    </member>
+    <member name="P:System.Xml.XmlReader.BaseURI">
+<summary>在派生类中重写时，获取当前节点的基 URI。</summary>
+<returns>当前节点的基 URI。</returns>
+    </member>
+    <member name="P:System.Xml.XmlReader.CanReadBinaryContent">
+<summary>获取一个值，该值指示 <see cref="T:System.Xml.XmlReader"/> 是否实现二进制内容读取方法。</summary>
+<returns>如果实现二进制内容读取方法，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Xml.XmlReader.CanReadValueChunk">
+<summary>获取一个值，该值指示 <see cref="T:System.Xml.XmlReader"/> 是否实现 <see cref="M:System.Xml.XmlReader.ReadValueChunk(System.Char[],System.Int32,System.Int32)"/> 方法。 </summary>
+<returns>如果 <see cref="T:System.Xml.XmlReader"/> 实现 <see cref="M:System.Xml.XmlReader.ReadValueChunk(System.Char[],System.Int32,System.Int32)"/> 方法，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Xml.XmlReader.CanResolveEntity">
+<summary>获取一个值，该值指示此读取器是否可以分析和解析实体。</summary>
+<returns>如果此读取器可以分析和解析实体，则为 true；否则为 false。</returns>
+    </member>
+    <member name="M:System.Xml.XmlReader.Close">
+<summary>在派生类中重写时，将 <see cref="P:System.Xml.XmlReader.ReadState"/> 更改为 Closed。</summary>
+    </member>
+    <member name="M:System.Xml.XmlReader.Create(System.IO.Stream)">
+<summary>使用指定的流创建一个新的 <see cref="T:System.Xml.XmlReader"/> 实例。</summary>
+<returns>用于读取流中所包含数据的 <see cref="T:System.Xml.XmlReader"/> 对象。 </returns>
+<param name="input">包含 XML 数据的流。<see cref="T:System.Xml.XmlReader"/> 对流的前几个字节进行扫描，查找字节顺序标记或其他编码标志。在确定编码方式后，使用该编码方式继续读取流，而处理过程继续将输入内容分析为 (Unicode) 字符流。</param>
+<exception cref="T:System.NullReferenceException"><paramref name="input"/> 值为 null。</exception>
+<exception cref="T:System.Security.SecurityException"><see cref="T:System.Xml.XmlReader"/> 没有访问 XML 数据位置所需的足够权限。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.Create(System.IO.Stream,System.Xml.XmlReaderSettings)">
+<summary>使用指定的流和 <see cref="T:System.Xml.XmlReaderSettings"/> 对象创建一个新的 <see cref="T:System.Xml.XmlReader"/> 实例。</summary>
+<returns>用于读取 XML 数据的 <see cref="T:System.Xml.XmlReader"/> 对象。</returns>
+<param name="input">包含 XML 数据的流。<see cref="T:System.Xml.XmlReader"/> 对流的前几个字节进行扫描，查找字节顺序标记或其他编码标志。在确定编码方式后，使用该编码方式继续读取流，而处理过程继续将输入内容分析为 (Unicode) 字符流。</param><param name="settings">用于配置新 <see cref="T:System.Xml.XmlReader"/> 实例的 <see cref="T:System.Xml.XmlReaderSettings"/> 对象。此值可以为 null。</param>
+<exception cref="T:System.ArgumentNullException"><paramref name="input"/> 值为 null。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.Create(System.IO.Stream,System.Xml.XmlReaderSettings,System.String)">
+<summary>使用指定的流、基 URI 和 <see cref="T:System.Xml.XmlReaderSettings"/> 对象创建一个新的 <see cref="T:System.Xml.XmlReader"/> 实例。</summary>
+<returns>用于读取 XML 数据的 <see cref="T:System.Xml.XmlReader"/> 对象。</returns>
+<param name="input">包含 XML 数据的流。<see cref="T:System.Xml.XmlReader"/> 对流的前几个字节进行扫描，查找字节顺序标记或其他编码标志。在确定编码方式后，使用该编码方式继续读取流，而处理过程继续将输入内容分析为 (Unicode) 字符流。</param><param name="settings">用于配置新 <see cref="T:System.Xml.XmlReader"/> 实例的 <see cref="T:System.Xml.XmlReaderSettings"/> 对象。此值可以为 null。</param><param name="baseUri">正在读取的实体或文档的基 URI。此值可以为 null。安全说明   基 URI 用于解析 XML 文档的相对 URI。不要使用来自非信任源的基 URI。</param>
+<exception cref="T:System.NullReferenceException"><paramref name="input"/> 值为 null。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.Create(System.IO.Stream,System.Xml.XmlReaderSettings,System.Xml.XmlParserContext)">
+<summary>使用指定的流、<see cref="T:System.Xml.XmlReaderSettings"/> 和 <see cref="T:System.Xml.XmlParserContext"/> 对象创建一个新的 <see cref="T:System.Xml.XmlReader"/> 实例。</summary>
+<returns>用于读取 XML 数据的 <see cref="T:System.Xml.XmlReader"/> 对象。</returns>
+<param name="input">包含 XML 数据的流。<see cref="T:System.Xml.XmlReader"/> 对流的前几个字节进行扫描，查找字节顺序标记或其他编码标志。在确定编码方式后，使用该编码方式继续读取流，而处理过程继续将输入内容分析为 (Unicode) 字符流。</param><param name="settings">用于配置新 <see cref="T:System.Xml.XmlReader"/> 实例的 <see cref="T:System.Xml.XmlReaderSettings"/> 对象。此值可以为 null。</param><param name="inputContext">提供分析 XML 片段所需的上下文信息的 <see cref="T:System.Xml.XmlParserContext"/> 对象。上下文信息可以包括要使用的 <see cref="T:System.Xml.XmlNameTable"/> 、编码、命名空间范围、当前的 xml:lang 和 xml:space 范围、基 URI 和文档类型定义。此值可以为 null。</param>
+<exception cref="T:System.NullReferenceException"><paramref name="input"/> 值为 null。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.Create(System.IO.TextReader)">
+<summary>使用指定的 <see cref="T:System.IO.TextReader"/> 创建一个新的 <see cref="T:System.Xml.XmlReader"/> 实例。</summary>
+<returns>用于读取 XML 数据的 <see cref="T:System.Xml.XmlReader"/> 对象。</returns>
+<param name="input">从其中读取 XML 数据的 <see cref="T:System.IO.TextReader"/>。由于 <see cref="T:System.IO.TextReader"/> 返回的是 Unicode 字符流，因此，<see cref="T:System.Xml.XmlReader"/> 未使用 XML 声明中指定的编码对数据流进行解码。</param>
+<exception cref="T:System.NullReferenceException"><paramref name="input"/> 值为 null。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.Create(System.IO.TextReader,System.Xml.XmlReaderSettings)">
+<summary>使用指定的 <see cref="T:System.IO.TextReader"/> 和 <see cref="T:System.Xml.XmlReaderSettings"/> 对象创建一个新的 <see cref="T:System.Xml.XmlReader"/> 实例。</summary>
+<returns>用于读取 XML 数据的 <see cref="T:System.Xml.XmlReader"/> 对象。</returns>
+<param name="input">从其中读取 XML 数据的 <see cref="T:System.IO.TextReader"/>。由于 <see cref="T:System.IO.TextReader"/> 返回的是 Unicode 字符流，因此，<see cref="T:System.Xml.XmlReader"/> 未使用 XML 声明中指定的编码对数据流进行解码</param> <param name="settings">用于配置新的 <see cref="T:System.Xml.XmlReader"/> 的 <see cref="T:System.Xml.XmlReaderSettings"/> 对象。此值可以为 null。</param>
+<exception cref="T:System.ArgumentNullException"><paramref name="input"/> 值为 null。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.Create(System.IO.TextReader,System.Xml.XmlReaderSettings,System.String)">
+<summary>使用指定的 <see cref="T:System.IO.TextReader"/>、<see cref="T:System.Xml.XmlReaderSettings"/> 和基 URI 创建一个新的 <see cref="T:System.Xml.XmlReader"/> 实例。</summary>
+<returns>用于读取 XML 数据的 <see cref="T:System.Xml.XmlReader"/> 对象。</returns>
+<param name="input">从其中读取 XML 数据的 <see cref="T:System.IO.TextReader"/>。由于 <see cref="T:System.IO.TextReader"/> 返回的是 Unicode 字符流，因此，<see cref="T:System.Xml.XmlReader"/> 未使用 XML 声明中指定的编码对数据流进行解码。</param><param name="settings">用于配置新 <see cref="T:System.Xml.XmlReader"/> 实例的 <see cref="T:System.Xml.XmlReaderSettings"/> 对象。此值可以为 null。</param><param name="baseUri">正在读取的实体或文档的基 URI。此值可以为 null。安全说明   基 URI 用于解析 XML 文档的相对 URI。不要使用来自非信任源的基 URI。</param>
+<exception cref="T:System.NullReferenceException"><paramref name="input"/> 值为 null。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.Create(System.IO.TextReader,System.Xml.XmlReaderSettings,System.Xml.XmlParserContext)">
+<summary>使用指定的 <see cref="T:System.IO.TextReader"/>、<see cref="T:System.Xml.XmlReaderSettings"/> 和 <see cref="T:System.Xml.XmlParserContext"/> 对象创建一个新的 <see cref="T:System.Xml.XmlReader"/> 实例。</summary>
+<returns>用于读取 XML 数据的 <see cref="T:System.Xml.XmlReader"/> 对象。</returns>
+<param name="input">从其中读取 XML 数据的 <see cref="T:System.IO.TextReader"/>。由于 <see cref="T:System.IO.TextReader"/> 返回的是 Unicode 字符流，因此，<see cref="T:System.Xml.XmlReader"/> 未使用 XML 声明中指定的编码对数据流进行解码。</param><param name="settings">用于配置新 <see cref="T:System.Xml.XmlReader"/> 实例的 <see cref="T:System.Xml.XmlReaderSettings"/> 对象。此值可以为 null。</param><param name="inputContext">提供分析 XML 片段所需的上下文信息的 <see cref="T:System.Xml.XmlParserContext"/> 对象。上下文信息可以包括要使用的 <see cref="T:System.Xml.XmlNameTable"/> 、编码、命名空间范围、当前的 xml:lang 和 xml:space 范围、基 URI 和文档类型定义。此值可以为 null。</param>
+<exception cref="T:System.NullReferenceException"><paramref name="input"/> 值为 null。</exception>
+<exception cref="T:System.ArgumentException"><see cref="P:System.Xml.XmlReaderSettings.NameTable"/> 和 <see cref="P:System.Xml.XmlParserContext.NameTable"/> 属性都包含值。（只可以设置并使用这两个 NameTable 属性之中的一个。）</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.Create(System.String)">
+<summary>使用指定的 URI 创建一个新的 <see cref="T:System.Xml.XmlReader"/> 实例。</summary>
+<returns>用于读取 XML 数据的 <see cref="T:System.Xml.XmlReader"/> 对象。 </returns>
+<param name="inputUri">包含 XML 数据的文件的 URI。<see cref="T:System.Xml.XmlXapResolver"/> 类用于将路径转换为规范化数据表示形式。有关更多信息，请参阅下面的“备注”部分。</param>
+<exception cref="T:System.NullReferenceException"><paramref name="inputUri"/> 值为 null。</exception>
+<exception cref="T:System.Security.SecurityException"><see cref="T:System.Xml.XmlReader"/> 没有访问 XML 数据位置所需的足够权限。</exception>
+<exception cref="T:System.IO.FileNotFoundException">由 URI 标识的文件不存在。</exception>
+<exception cref="T:System.UriFormatException">URI 格式不正确。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.Create(System.String,System.Xml.XmlReaderSettings)">
+<summary>使用指定的 URI 和 <see cref="T:System.Xml.XmlReaderSettings"/> 对象创建一个新的实例。</summary>
+<returns>用于读取 XML 数据的 <see cref="T:System.Xml.XmlReader"/> 对象。</returns>
+<param name="inputUri">包含 XML 数据的文件的 URI。<see cref="T:System.Xml.XmlReaderSettings"/> 对象上的 <see cref="T:System.Xml.XmlResolver"/> 对象用于将路径转换为规范化数据表示形式。如果 <see cref="P:System.Xml.XmlReaderSettings.XmlResolver"/> 为 null，则使用一个新的 <see cref="T:System.Xml.XmlXapResolver"/> 对象。有关更多信息，请参阅下面的“备注”部分。</param><param name="settings">用于配置新 <see cref="T:System.Xml.XmlReader"/> 实例的 <see cref="T:System.Xml.XmlReaderSettings"/> 对象。此值可以为 null。</param>
+<exception cref="T:System.ArgumentNullException"><paramref name="inputUri"/> 值为 null。</exception>
+<exception cref="T:System.IO.FileNotFoundException">找不到由该 URI 指定的文件。</exception>
+<exception cref="T:System.UriFormatException">URI 格式不正确。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.Create(System.String,System.Xml.XmlReaderSettings,System.Xml.XmlParserContext)">
+<summary>使用指定的 URI、<see cref="T:System.Xml.XmlReaderSettings"/> 和 <see cref="T:System.Xml.XmlParserContext"/> 对象创建一个新的 <see cref="T:System.Xml.XmlReader"/> 实例。</summary>
+<returns>用于读取 XML 数据的 <see cref="T:System.Xml.XmlReader"/> 对象。</returns>
+<param name="inputUri">包含 XML 数据的文件的 URI。<see cref="T:System.Xml.XmlReaderSettings"/> 对象上的 <see cref="T:System.Xml.XmlResolver"/> 对象用于将路径转换为规范化数据表示形式。如果 <see cref="P:System.Xml.XmlReaderSettings.XmlResolver"/> 为 null，则使用一个新的 <see cref="T:System.Xml.XmlXapResolver"/> 对象。有关更多信息，请参阅下面的“备注”部分。</param><param name="settings">用于配置新 <see cref="T:System.Xml.XmlReader"/> 实例的 <see cref="T:System.Xml.XmlReaderSettings"/> 对象。此值可以为 null。</param><param name="inputContext">提供分析 XML 片段所需的上下文信息的 <see cref="T:System.Xml.XmlParserContext"/> 对象。上下文信息可以包括要使用的 <see cref="T:System.Xml.XmlNameTable"/> 、编码、命名空间范围、当前的 xml:lang 和 xml:space 范围、基 URI 和文档类型定义。此值可以为 null。</param>
+<exception cref="T:System.NullReferenceException">inputUri 值为 null。</exception>
+<exception cref="T:System.Security.SecurityException"><see cref="T:System.Xml.XmlReader"/> 没有访问 XML 数据位置所需的足够权限。</exception>
+<exception cref="T:System.ArgumentException"><see cref="P:System.Xml.XmlReaderSettings.NameTable"/> 和 <see cref="P:System.Xml.XmlParserContext.NameTable"/> 属性都包含值。（只可以设置并使用这两个 NameTable 属性之中的一个。）</exception>
+<exception cref="T:System.IO.FileNotFoundException">找不到由该 URI 指定的文件。</exception>
+<exception cref="T:System.UriFormatException">URI 格式不正确。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.Create(System.Xml.XmlReader,System.Xml.XmlReaderSettings)">
+<summary>使用指定的 <see cref="T:System.Xml.XmlReader"/> 和 <see cref="T:System.Xml.XmlReaderSettings"/> 对象创建一个新的 <see cref="T:System.Xml.XmlReader"/> 实例。</summary>
+<returns><see cref="T:System.Xml.XmlReader"/> 对象，该对象是围绕指定的 <see cref="T:System.Xml.XmlReader"/> 对象包装的。</returns>
+<param name="reader">要用作基础读取器的 <see cref="T:System.Xml.XmlReader"/> 对象。</param><param name="settings">用于配置新 <see cref="T:System.Xml.XmlReader"/> 实例的 <see cref="T:System.Xml.XmlReaderSettings"/> 对象。<see cref="T:System.Xml.XmlReaderSettings"/> 对象的一致性级别要么必须与基础读取器的一致性级别匹配，要么必须设置为 <see cref="F:System.Xml.ConformanceLevel.Auto"/>。</param>
+<exception cref="T:System.NullReferenceException"><paramref name="reader"/> 值为 null。</exception>
+<exception cref="T:System.InvalidOperationException">如果 <see cref="T:System.Xml.XmlReaderSettings"/> 对象指定的一致性级别与基础读取器的一致性级别不一致。-或- 基础 <see cref="T:System.Xml.XmlReader"/> 处于 <see cref="F:System.Xml.ReadState.Error"/> 或 <see cref="F:System.Xml.ReadState.Closed"/> 状态。</exception>
+    </member>
+    <member name="P:System.Xml.XmlReader.Depth">
+<summary>在派生类中重写时，获取 XML 文档中当前节点的深度。</summary>
+<returns>XML 文档中当前节点的深度。</returns>
+    </member>
+    <member name="M:System.Xml.XmlReader.Dispose(System.Boolean)">
+<summary>释放由 <see cref="T:System.Xml.XmlReader"/> 使用的未托管的资源，并且可以选择释放托管的资源。</summary> <param name="disposing">如果释放托管的资源和未托管的资源，则为 true；如果只释放未托管的资源，则为 false。</param>
+    </member>
+    <member name="P:System.Xml.XmlReader.EOF">
+<summary>在派生类中重写时，获取一个值，该值指示此读取器是否定位在流的结尾。</summary>
+<returns>如果此读取器定位在流的结尾，则为 true；否则为 false。</returns>
+    </member>
+    <member name="M:System.Xml.XmlReader.GetAttribute(System.Int32)">
+<summary>在派生类中重写时，获取具有指定索引的属性的值。</summary>
+<returns>指定属性的值。此方法不移动读取器。</returns>
+<param name="i">属性的索引。索引是从零开始的。（第一个属性的索引为 0。） </param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+<paramref name="i"/> 超出范围。必须是非负数且小于属性集合的大小。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.GetAttribute(System.String)">
+<summary>在派生类中重写时，获取具有指定 <see cref="P:System.Xml.XmlReader.Name"/> 的属性的值。</summary>
+<returns>指定属性的值。如果找不到此属性或者值为 String.Empty，则返回 null。</returns>
+<param name="name">此属性的限定名称。 </param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="name"/> 为 null。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.GetAttribute(System.String,System.String)">
+<summary>在派生类中重写时，获取具有指定 <see cref="P:System.Xml.XmlReader.LocalName"/> 和 <see cref="P:System.Xml.XmlReader.NamespaceURI"/> 的属性的值。</summary>
+<returns>指定属性的值。如果找不到此属性或者值为 String.Empty，则返回 null。此方法不移动读取器。</returns>
+<param name="name">属性的本地名称。</param> <param name="namespaceURI">属性的命名空间 URI。 </param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="name"/> 为 null。</exception>
+    </member>
+    <member name="P:System.Xml.XmlReader.HasAttributes">
+<summary>获取一个值，该值指示当前节点是否有任何属性。</summary>
+<returns>如果当前节点具有属性，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Xml.XmlReader.HasValue">
+<summary>在派生类中重写时，获取一个值，该值指示当前节点是否可以具有 <see cref="P:System.Xml.XmlReader.Value"/>。</summary>
+<returns>如果读取器当前定位在的节点可以具有 Value，则为 true；否则为 false。如果为 false，则节点值为 String.Empty。</returns>
+    </member>
+    <member name="P:System.Xml.XmlReader.IsDefault">
+<summary>在派生类中重写时，获取一个值，该值指示当前节点是否为从 DTD 中定义的默认值生成的属性。</summary>
+<returns>如果当前节点是其值从 DTD 中定义的默认值生成的属性，则为 true；如果属性值是显式设置的，则为 false。</returns>
+    </member>
+    <member name="P:System.Xml.XmlReader.IsEmptyElement">
+<summary>在派生类中重写时，获取一个值，该值指示当前节点是否为空元素（例如，&lt;MyElement/&gt;）。</summary>
+<returns>如果当前节点是一个以 /&gt; 结尾的元素（<see cref="P:System.Xml.XmlReader.NodeType"/> 等于 XmlNodeType.Element），则为 true；否则为 false。</returns>
+    </member>
+    <member name="M:System.Xml.XmlReader.IsName(System.String)">
+<summary>获取一个值，该值指示字符串参数是否为有效的 XML 名称。</summary>
+<returns>如果该名称有效，则为 true；否则为 false。</returns>
+<param name="str">要验证的名称。 </param>
+<exception cref="T:System.NullReferenceException"><paramref name="str"/> 值为 null。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.IsNameToken(System.String)">
+<summary>获取一个值，该值指示该字符串参数是否为有效的 XML 名称标记。</summary>
+<returns>如果它是有效的名称标记，则为 true；否则为 false。</returns>
+<param name="str">要验证的名称标记。 </param>
+<exception cref="T:System.NullReferenceException"><paramref name="str"/> 值为 null。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.IsStartElement">
+<summary>调用 <see cref="M:System.Xml.XmlReader.MoveToContent"/> 并测试当前内容节点是否为开始标记或空元素标记。</summary>
+<returns>如果 <see cref="M:System.Xml.XmlReader.MoveToContent"/> 找到开始标记或空元素标记，则为 true；如果找到不同于 XmlNodeType.Element 的节点类型，则为 false。</returns>
+<exception cref="T:System.Xml.XmlException">在输入流中遇到不正确的 XML。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.IsStartElement(System.String)">
+<summary>调用 <see cref="M:System.Xml.XmlReader.MoveToContent"/> 并测试当前内容节点是否为开始标记或空元素标记，以及所找到元素的 <see cref="P:System.Xml.XmlReader.Name"/> 属性是否与给定的参数匹配。</summary>
+<returns>如果结果节点是一个元素并且 Name 属性与指定的字符串匹配，则为 true。如果找到了不是 XmlNodeType.Element 的节点类型或如果元素 Name 属性与指定的字符串不匹配，则为 false。</returns>
+<param name="name">与找到的元素的 Name 属性匹配的字符串。 </param>
+<exception cref="T:System.Xml.XmlException">在输入流中遇到不正确的 XML。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.IsStartElement(System.String,System.String)">
+<summary>调用 <see cref="M:System.Xml.XmlReader.MoveToContent"/> 并测试当前内容节点是否为开始标记或空元素标记，以及所找到元素的 <see cref="P:System.Xml.XmlReader.LocalName"/> 和 <see cref="P:System.Xml.XmlReader.NamespaceURI"/> 属性是否与给定的字符串匹配。</summary>
+<returns>如果结果节点是一个元素，则为 true。如果找到不是 XmlNodeType.Element 的节点类型或如果元素的 LocalName 和 NamespaceURI 属性与指定的字符串不匹配，则为 false。</returns>
+<param name="localname">与找到的元素的 LocalName 属性匹配的字符串。</param> <param name="ns">与找到的元素的 NamespaceURI 属性匹配的字符串。 </param>
+<exception cref="T:System.Xml.XmlException">在输入流中遇到不正确的 XML。 </exception>
+    </member>
+    <member name="P:System.Xml.XmlReader.Item(System.Int32)">
+<summary>在派生类中重写时，获取具有指定索引的属性的值。</summary>
+<returns>指定属性的值。</returns>
+<param name="i">属性的索引。 </param>
+    </member>
+    <member name="P:System.Xml.XmlReader.Item(System.String)">
+<summary>在派生类中重写时，获取具有指定 <see cref="P:System.Xml.XmlReader.Name"/> 的属性的值。</summary>
+<returns>指定属性的值。如果未找到此属性，则返回 null。</returns>
+<param name="name">此属性的限定名称。 </param>
+    </member>
+    <member name="P:System.Xml.XmlReader.Item(System.String,System.String)">
+<summary>在派生类中重写时，获取具有指定 <see cref="P:System.Xml.XmlReader.LocalName"/> 和 <see cref="P:System.Xml.XmlReader.NamespaceURI"/> 的属性的值。</summary>
+<returns>指定属性的值。如果未找到此属性，则返回 null。</returns>
+<param name="name">属性的本地名称。</param> <param name="namespaceURI">属性的命名空间 URI。 </param>
+    </member>
+    <member name="P:System.Xml.XmlReader.LocalName">
+<summary>在派生类中重写时，获取当前节点的本地名称。</summary>
+<returns>移除了前缀的当前节点的名称。例如，对于元素 &lt;bk:book&gt;，LocalName 为 book。对于没有名称的节点类型（如 Text、Comment 等），此属性返回 String.Empty。</returns>
+    </member>
+    <member name="M:System.Xml.XmlReader.LookupNamespace(System.String)">
+<summary>在派生类中重写时，在当前元素的范围内解析命名空间前缀。</summary>
+<returns>前缀映射到的命名空间 URI；如果未找到任何匹配的前缀，则为 null。</returns>
+<param name="prefix">要解析其命名空间 URI 的前缀。若要匹配默认命名空间，请传递一个空字符串。 </param>
+    </member>
+    <member name="M:System.Xml.XmlReader.MoveToAttribute(System.Int32)">
+<summary>在派生类中重写时，移动到指定的属性。</summary> <param name="i">属性的索引。 </param>
+<exception cref="T:System.NullReferenceException"><paramref name="i"/> 值为 null。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.MoveToAttribute(System.String)">
+<summary>在派生类中重写时，移动到指定的 <see cref="P:System.Xml.XmlReader.Name"/>。</summary>
+<returns>如果找到了属性，则为 true；否则为 false。如果为 false，则读取器的位置未改变。</returns>
+<param name="name">此属性的限定名称。 </param>
+<exception cref="T:System.NullReferenceException"><paramref name="name"/> 值为 null。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.MoveToAttribute(System.String,System.String)">
+<summary>在派生类中重写时，移动到指定的 <see cref="P:System.Xml.XmlReader.LocalName"/> 和 <see cref="P:System.Xml.XmlReader.NamespaceURI"/>。</summary>
+<returns>如果找到了属性，则为 true；否则为 false。如果为 false，则读取器的位置未改变。</returns>
+<param name="name">属性的本地名称。</param> <param name="ns">属性的命名空间 URI。 </param>
+<exception cref="T:System.NullReferenceException"><paramref name="name"/> 值为 null。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.MoveToContent">
+<summary>检查当前节点是否为内容（非空白文本、CDATA、Element、EndElement、EntityReference 或 EndEntity）节点。如果此节点不是内容节点，则读取器向前跳至下一个内容节点或文件结尾。它跳过以下类型的节点：ProcessingInstruction、DocumentType、Comment、Whitespace 或 SignificantWhitespace。</summary>
+<returns>此方法找到的当前节点的 <see cref="P:System.Xml.XmlReader.NodeType"/>；如果读取器已到达输入流的末尾，则为 XmlNodeType.None。</returns>
+<exception cref="T:System.Xml.XmlException">在输入流中遇到不正确的 XML。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.MoveToElement">
+<summary>在派生类中重写时，移动到包含当前属性节点的元素。</summary>
+<returns>如果读取器定位在属性上，则为 true（读取器移动到拥有该属性的元素）；如果读取器不是定位在属性上，则为 false（读取器的位置不改变）。</returns>
+    </member>
+    <member name="M:System.Xml.XmlReader.MoveToFirstAttribute">
+<summary>在派生类中重写时，移动到第一个属性。</summary>
+<returns>如果属性存在，则为 true（读取器移动到第一个属性）；否则为 false（读取器的位置不改变）。</returns>
+    </member>
+    <member name="M:System.Xml.XmlReader.MoveToNextAttribute">
+<summary>在派生类中重写时，移动到下一个属性。</summary>
+<returns>如果存在下一个属性，则为 true；如果没有其他属性，则为 false。</returns>
+    </member>
+    <member name="P:System.Xml.XmlReader.Name">
+<summary>在派生类中重写时，获取当前节点的限定名称。</summary>
+<returns>当前节点的限定名称。例如，对于元素 &lt;bk:book&gt;，Name 为 bk:book。返回的名称取决于节点的 <see cref="P:System.Xml.XmlReader.NodeType"/>。下列节点类型返回所列的值。所有其他节点类型返回空字符串。节点类型名称 Attribute - 属性的名称DocumentType 文档类型名称。Element 标记名称。EntityReference 引用的实体的名称。ProcessingInstruction 处理指令的目标。XmlDeclaration 字符串 xml。 </returns>
+    </member>
+    <member name="P:System.Xml.XmlReader.NamespaceURI">
+<summary>在派生类中重写时，获取读取器定位在其上的节点的命名空间 URI（采用 W3C 命名空间规范中定义的形式）。</summary>
+<returns>当前节点的命名空间 URI；否则为空字符串。</returns>
+    </member>
+    <member name="P:System.Xml.XmlReader.NameTable">
+<summary>在派生类中重写时，获取与该实现关联的 <see cref="T:System.Xml.XmlNameTable"/>。</summary>
+<returns>XmlNameTable，它使您能够获取该节点内字符串的原子化版本。</returns>
+    </member>
+    <member name="P:System.Xml.XmlReader.NodeType">
+<summary>在派生类中重写时，获取当前节点的类型。</summary>
+<returns><see cref="T:System.Xml.XmlNodeType"/> 值之一，表示当前节点的类型。</returns>
+    </member>
+    <member name="P:System.Xml.XmlReader.Prefix">
+<summary>在派生类中重写时，获取与当前节点关联的命名空间前缀。</summary>
+<returns>与当前节点关联的命名空间前缀。</returns>
+    </member>
+    <member name="M:System.Xml.XmlReader.Read">
+<summary>在派生类中重写时，从流中读取下一个节点。</summary>
+<returns>如果成功读取了下一个节点，则为 true；如果没有其他节点可读取，则为 false。</returns>
+<exception cref="T:System.Xml.XmlException">分析 XML 时出错。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadAttributeValue">
+<summary>在派生类中重写时，将属性值解析为一个或多个 Text、EntityReference 或 EndEntity 节点。</summary>
+<returns>如果有可返回的节点，则为 true。如果进行初始调用时读取器不是定位在属性节点上，或者如果已读取了所有属性值，则为 false。如果是空属性（如 misc=""），则返回 true，同时返回值为 String.Empty 的单个节点。</returns>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadContentAs(System.Type,System.Xml.IXmlNamespaceResolver)">
+<summary>将内容作为指定类型的对象读取。</summary>
+<returns>已转换为请求类型的连接文本内容或属性值。</returns>
+<param name="returnType">要返回的值的类型。说明   随着 .NET Framework 3.5 的发布，<paramref name="returnType"/> 参数的值现在可以是 <see cref="T:System.DateTimeOffset"/> 类型。</param><param name="namespaceResolver">一个 <see cref="T:System.Xml.IXmlNamespaceResolver"/> 对象，用于解析与类型转换有关的任何命名空间前缀。例如，将 <see cref="T:System.Xml.XmlQualifiedName"/> 对象转换为 xs:string 时可以使用此对象。此值可以为 null。</param>
+<exception cref="T:System.FormatException">内容格式不是目标类型的正确格式。</exception>
+<exception cref="T:System.InvalidCastException">试图进行的强制转换无效。</exception>
+<exception cref="T:System.ArgumentNullException"><paramref name="returnType"/> 值为 null。</exception>
+<exception cref="T:System.InvalidOperationException">当前节点不是所支持的节点类型。有关详细信息，请参阅下表。</exception>
+<exception cref="T:System.OverflowException">读取 Decimal.MaxValue。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadContentAsBase64(System.Byte[],System.Int32,System.Int32)">
+<summary>读取内容并返回 Base64 解码的二进制字节。</summary>
+<returns>写入缓冲区的字节数。</returns>
+<param name="buffer">作为结果文本复制目标的缓冲区。此值不能为 null。</param><param name="index">缓冲区中的偏移，从这个位置开始将结果复制到缓冲区中。</param> <param name="count">要复制到缓冲区的最大字节数。此方法返回复制的实际字节数。</param>
+<exception cref="T:System.ArgumentNullException"><paramref name="buffer"/> 值为 null。</exception>
+      <exception cref="T:System.InvalidOperationException">
+当前节点不支持 <see cref="M:System.Xml.XmlReader.ReadContentAsBase64(System.Byte[],System.Int32,System.Int32)"/>。</exception>
+<exception cref="T:System.ArgumentOutOfRangeException">缓冲区中的索引或者索引与计数之和大于分配的缓冲区大小。</exception>
+<exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XmlReader"/> 实现不支持此方法。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadContentAsBinHex(System.Byte[],System.Int32,System.Int32)">
+<summary>读取内容并返回 BinHex 解码的二进制字节。</summary>
+<returns>写入缓冲区的字节数。</returns>
+<param name="buffer">作为结果文本复制目标的缓冲区。此值不能为 null。</param><param name="index">缓冲区中的偏移，从这个位置开始将结果复制到缓冲区中。</param> <param name="count">要复制到缓冲区的最大字节数。此方法返回复制的实际字节数。</param>
+<exception cref="T:System.ArgumentNullException"><paramref name="buffer"/> 值为 null。</exception>
+      <exception cref="T:System.InvalidOperationException">
+当前节点不支持 <see cref="M:System.Xml.XmlReader.ReadContentAsBinHex(System.Byte[],System.Int32,System.Int32)"/>。</exception>
+<exception cref="T:System.ArgumentOutOfRangeException">缓冲区中的索引或者索引与计数之和大于分配的缓冲区大小。</exception>
+<exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XmlReader"/> 实现不支持此方法。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadContentAsBoolean">
+<summary>将当前位置的文本内容作为 Boolean 读取。</summary>
+<returns>作为 <see cref="T:System.Boolean"/> 对象的文本内容。</returns>
+<exception cref="T:System.InvalidCastException">试图进行的强制转换无效。</exception>
+<exception cref="T:System.FormatException">该字符串格式无效。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadContentAsDateTime">
+<summary>将当前位置的文本内容作为 <see cref="T:System.DateTime"/> 对象读取。</summary>
+<returns>作为 <see cref="T:System.DateTime"/> 对象的文本内容。</returns>
+<exception cref="T:System.InvalidCastException">试图进行的强制转换无效。</exception>
+<exception cref="T:System.FormatException">该字符串格式无效。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadContentAsDecimal">
+<summary>将当前位置的文本内容作为 <see cref="T:System.Decimal"/> 对象读取。</summary>
+<returns>作为 <see cref="T:System.Decimal"/> 对象的当前位置的文本内容。</returns>
+<exception cref="T:System.InvalidCastException">试图进行的强制转换无效。</exception>
+<exception cref="T:System.FormatException">该字符串格式无效。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadContentAsDouble">
+<summary>将当前位置的文本内容作为双精度浮点数读取。</summary>
+<returns>作为双精度浮点数的文本内容。</returns>
+<exception cref="T:System.InvalidCastException">试图进行的强制转换无效。</exception>
+<exception cref="T:System.FormatException">该字符串格式无效。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadContentAsFloat">
+<summary>将当前位置的文本内容作为单精度浮点数读取。</summary>
+<returns>作为单精度浮点数的当前位置的文本内容。</returns>
+<exception cref="T:System.InvalidCastException">试图进行的强制转换无效。</exception>
+<exception cref="T:System.FormatException">该字符串格式无效。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadContentAsInt">
+<summary>将当前位置的文本内容作为 32 位带符号整数读取。</summary>
+<returns>作为 32 位带符号整数的文本内容。</returns>
+<exception cref="T:System.InvalidCastException">试图进行的强制转换无效。</exception>
+<exception cref="T:System.FormatException">该字符串格式无效。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadContentAsLong">
+<summary>将当前位置的文本内容作为 64 位带符号整数读取。</summary>
+<returns>作为 64 位带符号整数的文本内容。</returns>
+<exception cref="T:System.InvalidCastException">试图进行的强制转换无效。</exception>
+<exception cref="T:System.FormatException">该字符串格式无效。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadContentAsObject">
+<summary>将当前位置的文本内容作为 <see cref="T:System.Object"/> 读取。</summary>
+<returns>作为最适当的公共语言运行时 (CLR) 对象的文本内容。</returns>
+<exception cref="T:System.InvalidCastException">试图进行的强制转换无效。</exception>
+<exception cref="T:System.FormatException">该字符串格式无效。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadContentAsString">
+<summary>将当前位置的文本内容作为 <see cref="T:System.String"/> 对象读取。</summary>
+<returns>作为 <see cref="T:System.String"/> 对象的文本内容。</returns>
+<exception cref="T:System.InvalidCastException">试图进行的强制转换无效。</exception>
+<exception cref="T:System.FormatException">该字符串格式无效。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadElementContentAs(System.Type,System.Xml.IXmlNamespaceResolver)">
+<summary>将元素内容作为请求类型读取。</summary>
+<returns>转换为请求类型的对象的元素内容。</returns>
+<param name="returnType">要返回的值的类型。说明   随着 .NET Framework 3.5 的发布，<paramref name="returnType"/> 参数的值现在可以是 <see cref="T:System.DateTimeOffset"/> 类型。</param><param name="namespaceResolver">一个 <see cref="T:System.Xml.IXmlNamespaceResolver"/> 对象，用于解析与类型转换有关的任何命名空间前缀。</param>
+<exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader"/> 未定位在元素上。</exception>
+<exception cref="T:System.Xml.XmlException">当前元素包含子元素。-或- 无法将元素内容转换成请求的类型。</exception>
+<exception cref="T:System.ArgumentNullException">使用 null 参数调用此方法。</exception>
+<exception cref="T:System.OverflowException">读取 Decimal.MaxValue。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadElementContentAs(System.Type,System.Xml.IXmlNamespaceResolver,System.String,System.String)">
+<summary>检查指定的本地名称和命名空间 URI 与当前元素的本地名称和命名空间 URI 是否匹配，然后将元素内容作为请求类型读取。</summary>
+<returns>转换为请求类型的对象的元素内容。</returns>
+<param name="returnType">要返回的值的类型。说明   随着 .NET Framework 3.5 的发布，<paramref name="returnType"/> 参数的值现在可以是 <see cref="T:System.DateTimeOffset"/> 类型。</param><param name="namespaceResolver">一个 <see cref="T:System.Xml.IXmlNamespaceResolver"/> 对象，用于解析与类型转换有关的任何命名空间前缀。</param><param name="localName">元素的本地名称。</param> <param name="namespaceURI">元素的命名空间 URI。</param>
+<exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader"/> 未定位在元素上。</exception>
+<exception cref="T:System.Xml.XmlException">当前元素包含子元素。-或- 无法将元素内容转换成请求的类型。</exception>
+<exception cref="T:System.ArgumentNullException">使用 null 参数调用此方法。</exception>
+<exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与所读取的当前元素的本地名称和命名空间 URI 不匹配。</exception>
+<exception cref="T:System.OverflowException">读取 Decimal.MaxValue。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadElementContentAsBase64(System.Byte[],System.Int32,System.Int32)">
+<summary>读取元素并对 Base64 内容进行解码。</summary>
+<returns>写入缓冲区的字节数。</returns>
+<param name="buffer">作为结果文本复制目标的缓冲区。此值不能为 null。</param><param name="index">缓冲区中的偏移，从这个位置开始将结果复制到缓冲区中。</param> <param name="count">要复制到缓冲区的最大字节数。此方法返回复制的实际字节数。</param>
+<exception cref="T:System.ArgumentNullException"><paramref name="buffer"/> 值为 null。</exception>
+<exception cref="T:System.InvalidOperationException">当前节点不是元素节点。</exception>
+<exception cref="T:System.ArgumentOutOfRangeException">缓冲区中的索引或者索引与计数之和大于分配的缓冲区大小。</exception>
+<exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XmlReader"/> 实现不支持此方法。</exception>
+<exception cref="T:System.Xml.XmlException">该元素包含混合内容。</exception>
+<exception cref="T:System.FormatException">无法将内容转换成请求的类型。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadElementContentAsBinHex(System.Byte[],System.Int32,System.Int32)">
+<summary>读取元素并对 BinHex 内容进行解码。</summary>
+<returns>写入缓冲区的字节数。</returns>
+<param name="buffer">作为结果文本复制目标的缓冲区。此值不能为 null。</param><param name="index">缓冲区中的偏移，从这个位置开始将结果复制到缓冲区中。</param> <param name="count">要复制到缓冲区的最大字节数。此方法返回复制的实际字节数。</param>
+<exception cref="T:System.ArgumentNullException"><paramref name="buffer"/> 值为 null。</exception>
+<exception cref="T:System.InvalidOperationException">当前节点不是元素节点。</exception>
+<exception cref="T:System.ArgumentOutOfRangeException">缓冲区中的索引或者索引与计数之和大于分配的缓冲区大小。</exception>
+<exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XmlReader"/> 实现不支持此方法。</exception>
+<exception cref="T:System.Xml.XmlException">该元素包含混合内容。</exception>
+<exception cref="T:System.FormatException">无法将内容转换成请求的类型。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadElementContentAsBoolean">
+<summary>将当前元素值作为 <see cref="T:System.Boolean"/> 对象读取。</summary>
+<returns>作为 <see cref="T:System.Boolean"/> 对象的元素内容。</returns>
+<exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader"/> 未定位在元素上。</exception>
+<exception cref="T:System.Xml.XmlException">当前元素包含子元素。-或- 无法将元素内容转换成 <see cref="T:System.Boolean"/> 对象。</exception>
+<exception cref="T:System.ArgumentNullException">使用 null 参数调用此方法。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadElementContentAsBoolean(System.String,System.String)">
+<summary>检查指定的本地名称和命名空间 URI 与当前元素的本地名称和命名空间 URI 是否匹配，然后读取当前元素，并将内容作为 <see cref="T:System.Boolean"/> 对象返回。</summary>
+<returns>作为 <see cref="T:System.Boolean"/> 对象的元素内容。</returns>
+<param name="localName">元素的本地名称。</param> <param name="namespaceURI">元素的命名空间 URI。</param>
+<exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader"/> 未定位在元素上。</exception>
+<exception cref="T:System.Xml.XmlException">当前元素包含子元素。-或- 无法将元素内容转换成请求的类型。</exception>
+<exception cref="T:System.ArgumentNullException">使用 null 参数调用此方法。</exception>
+<exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与所读取的当前元素的本地名称和命名空间 URI 不匹配。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadElementContentAsDateTime">
+<summary>将当前元素值作为 <see cref="T:System.DateTime"/> 对象读取。</summary>
+<returns>作为 <see cref="T:System.DateTime"/> 对象的元素内容。</returns>
+<exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader"/> 未定位在元素上。</exception>
+<exception cref="T:System.Xml.XmlException">当前元素包含子元素。-或- 无法将元素内容转换成 <see cref="T:System.DateTime"/> 对象。</exception>
+<exception cref="T:System.ArgumentNullException">使用 null 参数调用此方法。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadElementContentAsDateTime(System.String,System.String)">
+<summary>检查指定的本地名称和命名空间 URI 与当前元素的本地名称和命名空间 URI 是否匹配，然后读取当前元素，并将内容作为 <see cref="T:System.DateTime"/> 对象返回。</summary>
+<returns>作为 <see cref="T:System.DateTime"/> 对象的元素内容。</returns>
+<param name="localName">元素的本地名称。</param> <param name="namespaceURI">元素的命名空间 URI。</param>
+<exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader"/> 未定位在元素上。</exception>
+<exception cref="T:System.Xml.XmlException">当前元素包含子元素。-或- 无法将元素内容转换成请求的类型。</exception>
+<exception cref="T:System.ArgumentNullException">使用 null 参数调用此方法。</exception>
+<exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与所读取的当前元素的本地名称和命名空间 URI 不匹配。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadElementContentAsDecimal">
+<summary>将当前元素值作为 <see cref="T:System.Decimal"/> 对象读取。</summary>
+<returns>作为 <see cref="T:System.Decimal"/> 对象的元素内容。</returns>
+<exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader"/> 未定位在元素上。</exception>
+<exception cref="T:System.Xml.XmlException">当前元素包含子元素。-或- 无法将元素内容转换成 <see cref="T:System.Decimal"/>。</exception>
+<exception cref="T:System.ArgumentNullException">使用 null 参数调用此方法。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadElementContentAsDecimal(System.String,System.String)">
+<summary>检查指定的本地名称和命名空间 URI 与当前元素的本地名称和命名空间 URI 是否匹配，然后读取当前元素，并将内容作为 <see cref="T:System.Decimal"/> 对象返回。</summary>
+<returns>作为 <see cref="T:System.Decimal"/> 对象的元素内容。</returns>
+<param name="localName">元素的本地名称。</param> <param name="namespaceURI">元素的命名空间 URI。</param>
+<exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader"/> 未定位在元素上。</exception>
+<exception cref="T:System.Xml.XmlException">当前元素包含子元素。-或- 无法将元素内容转换成 <see cref="T:System.Decimal"/>。</exception>
+<exception cref="T:System.ArgumentNullException">使用 null 参数调用此方法。</exception>
+<exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与所读取的当前元素的本地名称和命名空间 URI 不匹配。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadElementContentAsDouble">
+<summary>读取当前元素并将内容作为双精度浮点数返回。</summary>
+<returns>作为双精度浮点数的元素内容。</returns>
+<exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader"/> 未定位在元素上。</exception>
+<exception cref="T:System.Xml.XmlException">当前元素包含子元素。-或- 无法将元素内容转换为双精度浮点数。</exception>
+<exception cref="T:System.ArgumentNullException">使用 null 参数调用此方法。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadElementContentAsDouble(System.String,System.String)">
+<summary>检查指定的本地名称和命名空间 URI 与当前元素的本地名称和命名空间 URI 是否匹配，然后读取当前元素，并将内容作为双精度浮点数返回。</summary>
+<returns>作为双精度浮点数的元素内容。</returns>
+<param name="localName">元素的本地名称。</param> <param name="namespaceURI">元素的命名空间 URI。</param>
+<exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader"/> 未定位在元素上。</exception>
+<exception cref="T:System.Xml.XmlException">当前元素包含子元素。-或- 无法将元素内容转换成请求的类型。</exception>
+<exception cref="T:System.ArgumentNullException">使用 null 参数调用此方法。</exception>
+<exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与所读取的当前元素的本地名称和命名空间 URI 不匹配。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadElementContentAsFloat">
+<summary>读取当前元素并将内容作为单精度浮点数返回。</summary>
+<returns>作为单精度浮点数的元素内容。</returns>
+<exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader"/> 未定位在元素上。</exception>
+<exception cref="T:System.Xml.XmlException">当前元素包含子元素。-或- 无法将元素内容转换为单精度浮点数。</exception>
+<exception cref="T:System.ArgumentNullException">使用 null 参数调用此方法。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadElementContentAsFloat(System.String,System.String)">
+<summary>检查指定的本地名称和命名空间 URI 与当前元素的本地名称和命名空间 URI 是否匹配，然后读取当前元素，并将内容作为单精度浮点数返回。</summary>
+<returns>作为单精度浮点数的元素内容。</returns>
+<param name="localName">元素的本地名称。</param> <param name="namespaceURI">元素的命名空间 URI。</param>
+<exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader"/> 未定位在元素上。</exception>
+<exception cref="T:System.Xml.XmlException">当前元素包含子元素。-或- 无法将元素内容转换为单精度浮点数。</exception>
+<exception cref="T:System.ArgumentNullException">使用 null 参数调用此方法。</exception>
+<exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与所读取的当前元素的本地名称和命名空间 URI 不匹配。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadElementContentAsInt">
+<summary>读取当前元素并将内容作为 32 位带符号整数返回。</summary>
+<returns>作为 32 位带符号整数的元素内容。</returns>
+<exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader"/> 未定位在元素上。</exception>
+<exception cref="T:System.Xml.XmlException">当前元素包含子元素。-或- 无法将元素内容转换为 32 位带符号整数。</exception>
+<exception cref="T:System.ArgumentNullException">使用 null 参数调用此方法。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadElementContentAsInt(System.String,System.String)">
+<summary>检查指定的本地名称和命名空间 URI 与当前元素的本地名称和命名空间 URI 是否匹配，然后读取当前元素，并将内容作为 32 位带符号整数返回。</summary>
+<returns>作为 32 位带符号整数的元素内容。</returns>
+<param name="localName">元素的本地名称。</param> <param name="namespaceURI">元素的命名空间 URI。</param>
+<exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader"/> 未定位在元素上。</exception>
+<exception cref="T:System.Xml.XmlException">当前元素包含子元素。-或- 无法将元素内容转换为 32 位带符号整数。</exception>
+<exception cref="T:System.ArgumentNullException">使用 null 参数调用此方法。</exception>
+<exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与所读取的当前元素的本地名称和命名空间 URI 不匹配。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadElementContentAsLong">
+<summary>读取当前元素并将内容作为 64 位带符号整数返回。</summary>
+<returns>作为 64 位带符号整数的元素内容。</returns>
+<exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader"/> 未定位在元素上。</exception>
+<exception cref="T:System.Xml.XmlException">当前元素包含子元素。-或- 无法将元素内容转换为 64 位带符号整数。</exception>
+<exception cref="T:System.ArgumentNullException">使用 null 参数调用此方法。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadElementContentAsLong(System.String,System.String)">
+<summary>检查指定的本地名称和命名空间 URI 与当前元素的本地名称和命名空间 URI 是否匹配，然后读取当前元素，并将内容作为 64 位带符号整数返回。</summary>
+<returns>作为 64 位带符号整数的元素内容。</returns>
+<param name="localName">元素的本地名称。</param> <param name="namespaceURI">元素的命名空间 URI。</param>
+<exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader"/> 未定位在元素上。</exception>
+<exception cref="T:System.Xml.XmlException">当前元素包含子元素。-或- 无法将元素内容转换为 64 位带符号整数。</exception>
+<exception cref="T:System.ArgumentNullException">使用 null 参数调用此方法。</exception>
+<exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与所读取的当前元素的本地名称和命名空间 URI 不匹配。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadElementContentAsObject">
+<summary>将当前元素值作为 <see cref="T:System.Object"/> 读取。</summary>
+<returns>一个最适当类型的装箱的公共语言运行时 (CLR) 对象。<see cref="P:System.Xml.XmlReader.ValueType"/> 属性确定了适当的 CLR 类型。如果将内容类型化为列表类型，则此方法返回一个适当类型的装箱对象的数组。</returns>
+<exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader"/> 未定位在元素上。</exception>
+<exception cref="T:System.Xml.XmlException">当前元素包含子元素。-或- 无法将元素内容转换成请求的类型</exception>
+<exception cref="T:System.ArgumentNullException">使用 null 参数调用此方法。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadElementContentAsObject(System.String,System.String)">
+<summary>检查指定的本地名称和命名空间 URI 与当前元素的本地名称和命名空间 URI 是否匹配，然后读取当前元素，并将内容作为 <see cref="T:System.Object"/> 返回。</summary>
+<returns>一个最适当类型的装箱的公共语言运行时 (CLR) 对象。<see cref="P:System.Xml.XmlReader.ValueType"/> 属性确定了适当的 CLR 类型。如果将内容类型化为列表类型，则此方法返回一个适当类型的装箱对象的数组。</returns>
+<param name="localName">元素的本地名称。</param> <param name="namespaceURI">元素的命名空间 URI。</param>
+<exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader"/> 未定位在元素上。</exception>
+<exception cref="T:System.Xml.XmlException">当前元素包含子元素。-或- 无法将元素内容转换成请求的类型。</exception>
+<exception cref="T:System.ArgumentNullException">使用 null 参数调用此方法。</exception>
+<exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与所读取的当前元素的本地名称和命名空间 URI 不匹配。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadElementContentAsString">
+<summary>将当前元素值作为 <see cref="T:System.String"/> 对象读取。</summary>
+<returns>作为 <see cref="T:System.String"/> 对象的元素内容。</returns>
+<exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader"/> 未定位在元素上。</exception>
+<exception cref="T:System.Xml.XmlException">当前元素包含子元素。-或- 无法将元素内容转换成 <see cref="T:System.String"/> 对象。</exception>
+<exception cref="T:System.ArgumentNullException">使用 null 参数调用此方法。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadElementContentAsString(System.String,System.String)">
+<summary>检查指定的本地名称和命名空间 URI 与当前元素的本地名称和命名空间 URI 是否匹配，然后读取当前元素，并将内容作为 <see cref="T:System.String"/> 对象返回。</summary>
+<returns>作为 <see cref="T:System.String"/> 对象的元素内容。</returns>
+<param name="localName">元素的本地名称。</param> <param name="namespaceURI">元素的命名空间 URI。</param>
+<exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader"/> 未定位在元素上。</exception>
+<exception cref="T:System.Xml.XmlException">当前元素包含子元素。-或- 无法将元素内容转换成 <see cref="T:System.String"/> 对象。</exception>
+<exception cref="T:System.ArgumentNullException">使用 null 参数调用此方法。</exception>
+<exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与所读取的当前元素的本地名称和命名空间 URI 不匹配。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadEndElement">
+<summary>检查当前内容节点是否为结束标记并将读取器推进到下一个节点。</summary>
+<exception cref="T:System.Xml.XmlException">当前节点不是一个结束标记，或者如果在输入流中遇到不正确的 XML。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadInnerXml">
+<summary>在派生类中重写时，将所有内容（包括标记）当做字符串读取。</summary>
+<returns>当前节点中的所有 XML 内容（包括标记）。如果当前节点没有任何子级，则返回空字符串。如果当前节点既非元素，也非属性，则返回空字符串。</returns>
+<exception cref="T:System.Xml.XmlException">XML 的格式不良，或分析 XML 时出错。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadOuterXml">
+<summary>在派生类中重写时，读取表示该节点及其所有子级的内容（包括标记）。</summary>
+<returns>如果读取器定位在元素或属性节点上，此方法将返回当前节点及其所有子级的所有 XML 内容（包括标记）；否则返回空字符串。</returns>
+<exception cref="T:System.Xml.XmlException">XML 的格式不良，或分析 XML 时出错。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadStartElement">
+<summary>检查当前节点是否为元素并将读取器推进到下一个节点。</summary>
+      <exception cref="T:System.Xml.XmlException">
+<see cref="M:System.Xml.XmlReader.IsStartElement"/> 返回 false。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadStartElement(System.String)">
+<summary>检查当前内容节点是否为具有给定 <see cref="P:System.Xml.XmlReader.Name"/> 的元素并将读取器推进到下一个节点。</summary><param name="name">元素的限定名称。 </param>
+      <exception cref="T:System.Xml.XmlException">
+<see cref="M:System.Xml.XmlReader.IsStartElement"/> 返回 false，或者如果元素的 <see cref="P:System.Xml.XmlReader.Name"/> 与给定的 <paramref name="name"/> 不匹配。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadStartElement(System.String,System.String)">
+<summary>检查当前内容节点是否为具有给定 <see cref="P:System.Xml.XmlReader.LocalName"/> 和 <see cref="P:System.Xml.XmlReader.NamespaceURI"/> 的元素并将读取器推进到下一个节点。</summary><param name="localname">元素的本地名称。</param> <param name="ns">元素的命名空间 URI。 </param>
+      <exception cref="T:System.Xml.XmlException">
+<see cref="M:System.Xml.XmlReader.IsStartElement"/> 返回 false，或者所找到元素的 <see cref="P:System.Xml.XmlReader.LocalName"/> 和 <see cref="P:System.Xml.XmlReader.NamespaceURI"/> 属性与给定的参数不匹配。 </exception>
+    </member>
+    <member name="P:System.Xml.XmlReader.ReadState">
+<summary>在派生类中重写时，获取读取器的状态。</summary>
+<returns>其中一个 <see cref="T:System.Xml.ReadState"/> 值。</returns>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadSubtree">
+<summary>返回新的 XmlReader 实例，此实例可用于读取当前节点及其所有子节点。</summary>
+<returns>一个新的 XmlReader 实例，该实例被设置为 ReadState.Initial。调用 <see cref="M:System.Xml.XmlReader.Read"/> 方法时，会将新的 XmlReader 定位在调用 ReadSubtree 方法之前的当前节点上。</returns>
+<exception cref="T:System.InvalidOperationException">调用此方法时 XmlReader 没有定位在某个元素上。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadToDescendant(System.String)">
+<summary>让 <see cref="T:System.Xml.XmlReader"/> 前进到下一个具有指定限定名称的子代元素。</summary>
+<returns>如果找到匹配的子代元素，则为 true；否则为 false。如果未找到匹配的子元素，<see cref="T:System.Xml.XmlReader"/> 将定位在元素的结束标记（<see cref="P:System.Xml.XmlReader.NodeType"/> 为 XmlNodeType.EndElement）上。如果调用 <see cref="M:System.Xml.XmlReader.ReadToDescendant(System.String)"/> 时没有将 <see cref="T:System.Xml.XmlReader"/> 定位在某个元素上，则此方法返回 false 且 <see cref="T:System.Xml.XmlReader"/> 的位置保持不变。</returns>
+<param name="name">要移动到的元素的限定名称。</param>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadToDescendant(System.String,System.String)">
+<summary>让 <see cref="T:System.Xml.XmlReader"/> 前进到下一个具有指定的本地名称和命名空间 URI 的子代元素。</summary>
+<returns>如果找到匹配的子代元素，则为 true；否则为 false。如果未找到匹配的子元素，<see cref="T:System.Xml.XmlReader"/> 将定位在元素的结束标记（<see cref="P:System.Xml.XmlReader.NodeType"/> 为 XmlNodeType.EndElement）上。如果调用 <see cref="M:System.Xml.XmlReader.ReadToDescendant(System.String,System.String)"/> 时没有将 <see cref="T:System.Xml.XmlReader"/> 定位在某个元素上，则此方法返回 false 且 <see cref="T:System.Xml.XmlReader"/> 的位置保持不变。</returns>
+<param name="localName">要移动到的元素的本地名称。</param> <param name="namespaceURI">要移动到的元素的命名空间 URI。</param>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadToFollowing(System.String)">
+<summary>一直读取，直到找到具有指定限定名称的元素。</summary>
+<returns>如果找到匹配的元素，则为 true；否则为 false 且 <see cref="T:System.Xml.XmlReader"/> 位于文件的末尾。</returns>
+<param name="name">元素的限定名称。</param>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadToFollowing(System.String,System.String)">
+<summary>一直读取，直到找到具有指定的本地名称和命名空间 URI 的元素。</summary>
+<returns>如果找到匹配的元素，则为 true；否则为 false 且 <see cref="T:System.Xml.XmlReader"/> 位于文件的末尾。</returns>
+<param name="localName">元素的本地名称。</param> <param name="namespaceURI">元素的命名空间 URI。</param>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadToNextSibling(System.String)">
+<summary>让 XmlReader 前进到下一个具有指定限定名称的同级元素。</summary>
+<returns>如果找到匹配的同级元素，则为 true；否则为 false。如果没有找到匹配的同级元素，XmlReader 会定位在父元素的结束标记（<see cref="P:System.Xml.XmlReader.NodeType"/> 为 XmlNodeType.EndElement）上。</returns>
+<param name="name">要移动到的同级元素的限定名称。</param>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadToNextSibling(System.String,System.String)">
+<summary>让 XmlReader 前进到下一个具有指定的本地名称和命名空间 URI 的同级元素。</summary>
+<returns>如果找到匹配的同级元素，则为 true；否则为 false。如果没有找到匹配的同级元素，XmlReader 会定位在父元素的结束标记（<see cref="P:System.Xml.XmlReader.NodeType"/> 为 XmlNodeType.EndElement）上。</returns>
+<param name="localName">要移动到的同级元素的本地名称。</param> <param name="namespaceURI">要移动到的同级元素的命名空间 URI。</param>
+    </member>
+    <member name="M:System.Xml.XmlReader.ReadValueChunk(System.Char[],System.Int32,System.Int32)">
+<summary>读取嵌入在 XML 文档中的大量文本流。</summary>
+<returns>读取到缓冲区中的字符数。如果不再有文本内容，则返回值零。</returns>
+<param name="buffer">字符数组，充当文本内容写入到的缓冲区。此值不能为 null。</param><param name="index">缓冲区中的偏移量，<see cref="T:System.Xml.XmlReader"/> 可以从这个位置开始复制结果。</param><param name="count">要复制到缓冲区中的最大字符数。此方法返回复制的实际字符数。</param>
+<exception cref="T:System.InvalidOperationException">当前节点没有值（<see cref="P:System.Xml.XmlReader.HasValue"/> 为 false）。</exception>
+<exception cref="T:System.ArgumentNullException"><paramref name="buffer"/> 值为 null。</exception>
+<exception cref="T:System.ArgumentOutOfRangeException">缓冲区中的索引或者索引与计数之和大于分配的缓冲区大小。</exception>
+<exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XmlReader"/> 实现不支持此方法。</exception>
+<exception cref="T:System.Xml.XmlException">XML 数据为不良格式。</exception>
+    </member>
+    <member name="M:System.Xml.XmlReader.ResolveEntity">
+<summary>在派生类中重写时，解析 EntityReference 节点的实体引用。</summary>
+<exception cref="T:System.InvalidOperationException">读取器未定位在 EntityReference 节点上；该读取器的实现不能解析实体（<see cref="P:System.Xml.XmlReader.CanResolveEntity"/> 返回 false）。 </exception>
+    </member>
+    <member name="P:System.Xml.XmlReader.Settings">
+<summary>获取用于创建此 <see cref="T:System.Xml.XmlReader"/> 实例的 <see cref="T:System.Xml.XmlReaderSettings"/>。</summary>
+<returns>用于创建此读取器实例的 <see cref="T:System.Xml.XmlReaderSettings"/> 对象。如果此读取器不是使用 <see cref="Overload:System.Xml.XmlReader.Create"/> 方法创建的，则此属性返回 null。</returns>
+    </member>
+    <member name="M:System.Xml.XmlReader.Skip">
+<summary>跳过当前节点的子级。</summary>
+    </member>
+    <member name="M:System.Xml.XmlReader.System#IDisposable#Dispose">
+<summary>有关此成员的说明，请参阅 <see cref="M:System.IDisposable.Dispose"/>。</summary>
+    </member>
+    <member name="P:System.Xml.XmlReader.Value">
+<summary>在派生类中重写时，获取当前节点的文本值。</summary>
+<returns>返回的值取决于节点的 <see cref="P:System.Xml.XmlReader.NodeType"/>。下表列出具有要返回的值的节点类型。所有其他节点类型返回 String.Empty.Node 类型值 Attribute 属性的值。CDATA CDATA 节的内容。Comment 注释的内容。DocumentType 内部子集。ProcessingInstruction 全部内容（不包括指令目标）。SignificantWhitespace 混合内容模型中标记之间的空白。Text 文本节点的内容。Whitespace 标记之间的空白。XmlDeclaration 声明的内容。 </returns>
+    </member>
+    <member name="P:System.Xml.XmlReader.ValueType">
+<summary>获取当前节点的公共语言运行时 (CLR) 类型。</summary>
+<returns>与节点的类型化值对应的 CLR 类型。默认值为 System.String。</returns>
+    </member>
+    <member name="P:System.Xml.XmlReader.XmlLang">
+<summary>在派生类中重写时，获取当前的 xml:lang 范围。</summary>
+<returns>当前的 xml:lang 范围。</returns>
+    </member>
+    <member name="P:System.Xml.XmlReader.XmlSpace">
+<summary>在派生类中重写时，获取当前的 xml:space 范围。</summary>
+<returns>其中一个 <see cref="T:System.Xml.XmlSpace"/> 值。如果不存在任何 xml:space 范围，则该属性默认值为 XmlSpace.None。</returns>
+    </member>
+    <member name="T:System.Xml.XmlReaderSettings">
+<summary>指定在由 <see cref="Overload:System.Xml.XmlReader.Create"/> 方法创建的 <see cref="T:System.Xml.XmlReader"/> 对象上支持的一组功能。</summary>
+    </member>
+    <member name="M:System.Xml.XmlReaderSettings.#ctor">
+<summary>初始化 <see cref="T:System.Xml.XmlReaderSettings"/> 类的新实例。</summary>
+    </member>
+    <member name="P:System.Xml.XmlReaderSettings.CheckCharacters">
+<summary>获取或设置一个值，该值指示是否进行字符检查。</summary>
+<returns>如果进行字符检查，则为 true；否则为 false。默认值为 true。说明：如果 <see cref="T:System.Xml.XmlReader"/> 处理文本数据，则无论属性如何设置，读取器将总是检查 XML 名称和文本内容是否有效。将 <see cref="P:System.Xml.XmlReaderSettings.CheckCharacters"/> 设置为 false 会禁用对字符实体引用的字符检查。</returns>
+    </member>
+    <member name="M:System.Xml.XmlReaderSettings.Clone">
+<summary>创建 <see cref="T:System.Xml.XmlReaderSettings"/> 实例的副本。</summary>
+<returns>克隆的 <see cref="T:System.Xml.XmlReaderSettings"/> 对象。</returns>
+    </member>
+    <member name="P:System.Xml.XmlReaderSettings.CloseInput">
+<summary>获取或设置一个值，该值指示当读取器关闭时，是否应关闭基础流或 <see cref="T:System.IO.TextReader"/>。</summary>
+<returns>如果当读取器关闭时基础流或 <see cref="T:System.IO.TextReader"/> 也应关闭，则为 true；否则为 false。默认值为 false。</returns>
+    </member>
+    <member name="P:System.Xml.XmlReaderSettings.ConformanceLevel">
+<summary>获取或设置 <see cref="T:System.Xml.XmlReader"/> 将遵循的一致性级别。</summary>
+<returns>其中一个 <see cref="T:System.Xml.ConformanceLevel"/> 值。默认值为 ConformanceLevel.Document。</returns>
+    </member>
+    <member name="P:System.Xml.XmlReaderSettings.DtdProcessing">
+<summary>获取或设置 <see cref="T:System.Xml.DtdProcessing"/> 枚举。</summary>
+<returns><see cref="T:System.Xml.DtdProcessing"/> 枚举。</returns>
+    </member>
+    <member name="P:System.Xml.XmlReaderSettings.IgnoreComments">
+<summary>获取或设置一个值，该值指示是否忽略注释。</summary>
+<returns>如果忽略注释，则为 true；否则为 false。默认值为 false。</returns>
+    </member>
+    <member name="P:System.Xml.XmlReaderSettings.IgnoreProcessingInstructions">
+<summary>获取或设置一个值，该值指示是否忽略处理指令。</summary>
+<returns>如果忽略处理指令，则为 true；否则为 false。默认值为 false。</returns>
+    </member>
+    <member name="P:System.Xml.XmlReaderSettings.IgnoreWhitespace">
+<summary>获取或设置一个值，该值指示是否忽略无关紧要的空白。</summary>
+<returns>如果忽略空白，则为 true；否则为 false。默认值为 false。</returns>
+    </member>
+    <member name="P:System.Xml.XmlReaderSettings.LineNumberOffset">
+<summary>获取或设置 <see cref="T:System.Xml.XmlReader"/> 对象的行号偏移量。</summary>
+<returns>行号偏移量。默认值为 0。</returns>
+    </member>
+    <member name="P:System.Xml.XmlReaderSettings.LinePositionOffset">
+<summary>获取或设置 <see cref="T:System.Xml.XmlReader"/> 对象的行位置偏移量。</summary>
+<returns>行号偏移量。默认值为 0。</returns>
+    </member>
+    <member name="P:System.Xml.XmlReaderSettings.MaxCharactersFromEntities">
+<summary>获取或设置一个值，该值指示文档中允许扩展实体产生的最大字符数。</summary>
+<returns>扩展的项中允许的最大字符数。默认值为 0。</returns>
+    </member>
+    <member name="P:System.Xml.XmlReaderSettings.MaxCharactersInDocument">
+<summary>获取或设置一个值，该值指明 XML 文档中所允许的最大字符数。零 (0) 值表示对 XML 文档的大小没有限制。非零值指定最大大小（以字符数计）。</summary>
+<returns>XML 文档中所允许的最大字符数。默认值为 0。</returns>
+    </member>
+    <member name="P:System.Xml.XmlReaderSettings.NameTable">
+<summary>获取或设置用于原子化字符串比较的 <see cref="T:System.Xml.XmlNameTable"/>。</summary>
+<returns><see cref="T:System.Xml.XmlNameTable"/>，它存储使用此 <see cref="T:System.Xml.XmlReaderSettings"/> 对象创建的所有 <see cref="T:System.Xml.XmlReader"/> 实例使用的所有原子化字符串。默认值为 null。如果该值为 null，则创建的 <see cref="T:System.Xml.XmlReader"/> 实例将使用新的空 <see cref="T:System.Xml.NameTable"/>。</returns>
+    </member>
+    <member name="M:System.Xml.XmlReaderSettings.Reset">
+<summary>将设置类的成员重置为各自的默认值。</summary>
+    </member>
+    <member name="P:System.Xml.XmlReaderSettings.XmlResolver">
+<summary>设置用来访问外部文档的 <see cref="T:System.Xml.XmlResolver"/>。</summary>
+<returns>用来访问外部文档的 <see cref="T:System.Xml.XmlResolver"/>。如果设置为 null，则当 <see cref="T:System.Xml.XmlReader"/> 试图访问外部资源时，将引发 <see cref="T:System.Xml.XmlException"/>。 </returns>
+    </member>
+    <member name="T:System.Xml.XmlResolver">
+<summary>解析由统一资源标识符 (URI) 命名的外部 XML 资源。 </summary>
+    </member>
+    <member name="M:System.Xml.XmlResolver.#ctor">
+<summary>初始化 <see cref="T:System.Xml.XmlResolver"/> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Xml.XmlResolver.GetEntity(System.Uri,System.String,System.Type)">
+<summary>在派生类中重写时，将 URI 映射到包含实际资源的对象。</summary>
+<returns><see cref="T:System.IO.Stream"/> 对象；如果指定了流以外的类型，则为 null。</returns>
+<param name="absoluteUri">从 <see cref="M:System.Xml.XmlResolver.ResolveUri(System.Uri,System.String)"/> 返回的 URI。</param> <param name="role">当解析 URI 时，当前版本不使用此参数。提供此参数是为了将来扩展用。例如，它可以映射到 xlink:role 并用作其他方案中的实现特定参数。</param> <param name="ofObjectToReturn">要返回的对象的类型。当前版本只返回 <see cref="T:System.IO.Stream"/> 对象。 </param>
+      <exception cref="T:System.Xml.XmlException">
+<paramref name="ofObjectToReturn"/> 不是 Stream 类型。 </exception>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="absoluteUri"/> 为 null。 </exception>
+<exception cref="T:System.Exception">存在运行时错误（例如，中断的服务器连接）。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlResolver.ResolveUri(System.Uri,System.String)">
+<summary>在派生类中重写时，从基 URI 和相对 URI 解析绝对 URI。</summary>
+<returns>表示绝对 URI 的 <see cref="T:System.Uri"/>，如果相对 URI 不能被解析，则为 null。</returns>
+<param name="baseUri">用于解析相对 URI 的基 URI </param> <param name="relativeUri">要解析的 URI。该 URI 可以是绝对的或相对的。如果是绝对的，此值有效地替换 <paramref name="baseUri"/> 值。如果是相对的，它与 <paramref name="baseUri"/> 组合以构成绝对 URI。 </param>
+      <exception cref="T:System.ArgumentException">
+<paramref name="relativeUri"/> 为 null</exception>
+    </member>
+    <member name="M:System.Xml.XmlResolver.SupportsType(System.Uri,System.Type)">
+<summary>此方法使冲突解决程序能够返回其他类型，而不只是 <see cref="T:System.IO.Stream"/>。</summary>
+<returns>如果类型参数是 <see cref="T:System.IO.Stream"/>，则为 true；否则为 false。</returns>
+<param name="absoluteUri">URI。</param> <param name="type">要返回的类型。</param>
+    </member>
+    <member name="T:System.Xml.XmlSpace">
+<summary>指定当前 xml:space 范围。</summary>
+    </member>
+    <member name="F:System.Xml.XmlSpace.None">
+<summary>没有 xml:space 范围。</summary>
+    </member>
+    <member name="F:System.Xml.XmlSpace.Default">
+<summary>xml:space 范围等于 default。</summary>
+    </member>
+    <member name="F:System.Xml.XmlSpace.Preserve">
+<summary>xml:space 范围等于 preserve。</summary>
+    </member>
+    <member name="T:System.Xml.XmlTokenizedType">
+<summary>表示字符串的 XML 类型。这允许以特定 XML 类型（例如 CDATA 节类型）的形式读取字符串。</summary>
+    </member>
+    <member name="F:System.Xml.XmlTokenizedType.CDATA">
+<summary>CDATA 类型。</summary>
+    </member>
+    <member name="F:System.Xml.XmlTokenizedType.ID">
+<summary>ID 类型。</summary>
+    </member>
+    <member name="F:System.Xml.XmlTokenizedType.IDREF">
+<summary>IDREF 类型。</summary>
+    </member>
+    <member name="F:System.Xml.XmlTokenizedType.IDREFS">
+<summary>IDREFS 类型。</summary>
+    </member>
+    <member name="F:System.Xml.XmlTokenizedType.ENTITY">
+<summary>ENTITY 类型。</summary>
+    </member>
+    <member name="F:System.Xml.XmlTokenizedType.ENTITIES">
+<summary>ENTITIES 类型。</summary>
+    </member>
+    <member name="F:System.Xml.XmlTokenizedType.NMTOKEN">
+<summary>NMTOKEN 类型。</summary>
+    </member>
+    <member name="F:System.Xml.XmlTokenizedType.NMTOKENS">
+<summary>NMTOKENS 类型。</summary>
+    </member>
+    <member name="F:System.Xml.XmlTokenizedType.NOTATION">
+<summary>NOTATION 类型。</summary>
+    </member>
+    <member name="F:System.Xml.XmlTokenizedType.ENUMERATION">
+<summary>ENUMERATION 类型。</summary>
+    </member>
+    <member name="F:System.Xml.XmlTokenizedType.QName">
+<summary>QName 类型。</summary>
+    </member>
+    <member name="F:System.Xml.XmlTokenizedType.NCName">
+<summary>NCName 类型。</summary>
+    </member>
+    <member name="F:System.Xml.XmlTokenizedType.None">
+<summary>无类型。</summary>
+    </member>
+    <member name="T:System.Xml.XmlWriter">
+<summary>表示一个编写器，该编写器提供一种快速、非缓存和只进的方式来生成包含 XML 数据的流或文件。</summary>
+    </member>
+    <member name="M:System.Xml.XmlWriter.#ctor">
+<summary>初始化 <see cref="T:System.Xml.XmlWriter"/> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Xml.XmlWriter.Close">
+<summary>在派生类中重写时，关闭此流和基础流。</summary>
+<exception cref="T:System.InvalidOperationException">在调用 Close 之后执行要写入其他输出的调用，或者此调用的结果是无效的 XML 文档。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.Create(System.IO.Stream)">
+<summary>使用指定的流创建一个新的 <see cref="T:System.Xml.XmlWriter"/> 实例。</summary>
+<returns><see cref="T:System.Xml.XmlWriter"/> 对象。</returns>
+<param name="output">要写入的流。<see cref="T:System.Xml.XmlWriter"/> 写入 XML 1.0 文本语法并将其追加到指定的流中。</param>
+<exception cref="T:System.ArgumentNullException"><paramref name="stream"/> 值为 null。</exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.Create(System.IO.Stream,System.Xml.XmlWriterSettings)">
+<summary>使用流和 <see cref="T:System.Xml.XmlWriterSettings"/> 对象创建一个新的 <see cref="T:System.Xml.XmlWriter"/> 实例。</summary>
+<returns><see cref="T:System.Xml.XmlWriter"/> 对象。</returns>
+<param name="output">要写入的流。<see cref="T:System.Xml.XmlWriter"/> 写入 XML 1.0 文本语法并将其追加到指定的流</param> <param name="settings">用于配置新 <see cref="T:System.Xml.XmlWriter"/> 实例的 <see cref="T:System.Xml.XmlWriterSettings"/> 对象。如果这是 null，则使用具有默认设置的 <see cref="T:System.Xml.XmlWriterSettings"/>。</param>
+<exception cref="T:System.ArgumentNullException"><paramref name="stream"/> 值为 null。</exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.Create(System.IO.TextWriter)">
+<summary>使用指定的 <see cref="T:System.IO.TextWriter"/> 创建一个新的 <see cref="T:System.Xml.XmlWriter"/> 实例。</summary>
+<returns><see cref="T:System.Xml.XmlWriter"/> 对象。</returns>
+<param name="output">要写入的 <see cref="T:System.IO.TextWriter"/>。<see cref="T:System.Xml.XmlWriter"/> 写入 XML 1.0 文本语法，并将该语法追加到指定的 <see cref="T:System.IO.TextWriter"/>。</param>
+<exception cref="T:System.ArgumentNullException"><paramref name="text"/> 值为 null。</exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.Create(System.IO.TextWriter,System.Xml.XmlWriterSettings)">
+<summary>使用 <see cref="T:System.IO.TextWriter"/> 和 <see cref="T:System.Xml.XmlWriterSettings"/> 对象创建一个新的 <see cref="T:System.Xml.XmlWriter"/> 实例。</summary>
+<returns><see cref="T:System.Xml.XmlWriter"/> 对象。</returns>
+<param name="output">要写入的 <see cref="T:System.IO.TextWriter"/>。<see cref="T:System.Xml.XmlWriter"/> 写入 XML 1.0 文本语法，并将该语法追加到指定的 <see cref="T:System.IO.TextWriter"/>。</param><param name="settings">用于配置新 <see cref="T:System.Xml.XmlWriter"/> 实例的 <see cref="T:System.Xml.XmlWriterSettings"/> 对象。如果这是 null，则使用具有默认设置的 <see cref="T:System.Xml.XmlWriterSettings"/>。</param>
+<exception cref="T:System.ArgumentNullException"><paramref name="text"/> 值为 null。</exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.Create(System.Text.StringBuilder)">
+<summary>使用指定的 <see cref="T:System.Text.StringBuilder"/> 创建一个新的 <see cref="T:System.Xml.XmlWriter"/> 实例。</summary>
+<returns><see cref="T:System.Xml.XmlWriter"/> 对象。</returns>
+<param name="output">要写入的 <see cref="T:System.Text.StringBuilder"/>。由 <see cref="T:System.Xml.XmlWriter"/> 写入的内容被追加到 <see cref="T:System.Text.StringBuilder"/>。</param>
+<exception cref="T:System.ArgumentNullException"><paramref name="builder"/> 值为 null。</exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.Create(System.Text.StringBuilder,System.Xml.XmlWriterSettings)">
+<summary>使用 <see cref="T:System.Text.StringBuilder"/> 和 <see cref="T:System.Xml.XmlWriterSettings"/> 对象创建一个新的 <see cref="T:System.Xml.XmlWriter"/> 实例。</summary>
+<returns><see cref="T:System.Xml.XmlWriter"/> 对象。</returns>
+<param name="output">要写入的 <see cref="T:System.Text.StringBuilder"/>。由 <see cref="T:System.Xml.XmlWriter"/> 写入的内容被追加到 <see cref="T:System.Text.StringBuilder"/>。</param><param name="settings">用于配置新 <see cref="T:System.Xml.XmlWriter"/> 实例的 <see cref="T:System.Xml.XmlWriterSettings"/> 对象。如果这是 null，则使用具有默认设置的 <see cref="T:System.Xml.XmlWriterSettings"/>。</param>
+<exception cref="T:System.ArgumentNullException"><paramref name="builder"/> 值为 null。</exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.Create(System.Xml.XmlWriter)">
+<summary>使用指定的 <see cref="T:System.Xml.XmlWriter"/> 对象创建一个新的 <see cref="T:System.Xml.XmlWriter"/> 实例。</summary>
+<returns><see cref="T:System.Xml.XmlWriter"/> 对象，该对象是围绕指定的 <see cref="T:System.Xml.XmlWriter"/> 对象包装的。</returns>
+<param name="output">要用作基础编写器的 <see cref="T:System.Xml.XmlWriter"/> 对象。</param>
+<exception cref="T:System.ArgumentNullException"><paramref name="writer"/> 值为 null。</exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.Create(System.Xml.XmlWriter,System.Xml.XmlWriterSettings)">
+<summary>使用指定的 <see cref="T:System.Xml.XmlWriter"/> 和 <see cref="T:System.Xml.XmlWriterSettings"/> 对象创建一个新的 <see cref="T:System.Xml.XmlWriter"/> 实例。</summary>
+<returns><see cref="T:System.Xml.XmlWriter"/> 对象，该对象是围绕指定的 <see cref="T:System.Xml.XmlWriter"/> 对象包装的。</returns>
+<param name="output">要用作基础编写器的 <see cref="T:System.Xml.XmlWriter"/> 对象。</param><param name="settings">用于配置新 <see cref="T:System.Xml.XmlWriter"/> 实例的 <see cref="T:System.Xml.XmlWriterSettings"/> 对象。如果这是 null，则使用具有默认设置的 <see cref="T:System.Xml.XmlWriterSettings"/>。</param>
+<exception cref="T:System.ArgumentNullException"><paramref name="writer"/> 值为 null。</exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.Dispose(System.Boolean)">
+<summary>释放由 <see cref="T:System.Xml.XmlWriter"/> 使用的未托管的资源，并且可以选择释放托管的资源。</summary> <param name="disposing">如果释放托管的资源和未托管的资源，则为 true；如果只释放未托管的资源，则为 false。</param>
+    </member>
+    <member name="M:System.Xml.XmlWriter.Flush">
+<summary>在派生类中重写时，将缓冲区中的所有内容刷新到基础流，并同时刷新基础流。</summary>
+    </member>
+    <member name="M:System.Xml.XmlWriter.LookupPrefix(System.String)">
+<summary>在派生类中重写时，返回在当前命名空间范围中为该命名空间 URI 定义的最近的前缀。</summary>
+<returns>匹配的前缀；如果当前范围内未找到匹配的命名空间 URI，则为 null。</returns>
+<param name="ns">要查找其前缀的命名空间 URI。 </param>
+      <exception cref="T:System.ArgumentException">
+<paramref name="ns"/> 为 null 或 String.Empty。 </exception>
+    </member>
+    <member name="P:System.Xml.XmlWriter.Settings">
+<summary>获取用于创建此 <see cref="T:System.Xml.XmlWriter"/> 实例的 <see cref="T:System.Xml.XmlWriterSettings"/>。</summary>
+<returns>用于创建此编写器实例的 <see cref="T:System.Xml.XmlWriterSettings"/> 对象。如果此编写器不是使用 <see cref="Overload:System.Xml.XmlWriter.Create"/> 方法创建的，则此属性返回 null。</returns>
+    </member>
+    <member name="M:System.Xml.XmlWriter.System#IDisposable#Dispose">
+<summary>有关此成员的说明，请参阅 <see cref="M:System.IDisposable.Dispose"/>。</summary>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteAttributes(System.Xml.XmlReader,System.Boolean)">
+<summary>在派生类中重写时，写出在 <see cref="T:System.Xml.XmlReader"/> 中当前位置找到的所有属性。</summary><param name="reader">从其中复制属性的 XmlReader。</param> <param name="defattr">如果从 XmlReader 中复制默认属性，则为 true；否则为 false。 </param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="reader"/> 为 null。 </exception>
+<exception cref="T:System.Xml.XmlException">读取器不是定位在 element、attribute 或 XmlDeclaration 节点上。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteAttributeString(System.String,System.String)">
+<summary>在派生类中重写时，写出具有指定的本地名称和值的属性。</summary> <param name="localName">属性的本地名称。</param> <param name="value">此属性的值。 </param>
+<exception cref="T:System.InvalidOperationException">编写器的状态不是 WriteState.Element 或者编写器已关闭。 </exception>
+<exception cref="T:System.ArgumentException">xml:space 或 xml:lang 属性值无效。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteAttributeString(System.String,System.String,System.String)">
+<summary>在派生类中重写时，写入具有指定的本地名称、命名空间 URI 和值的属性。</summary> <param name="localName">属性的本地名称。</param> <param name="ns">与属性关联的命名空间 URI。</param> <param name="value">此属性的值。 </param>
+<exception cref="T:System.InvalidOperationException">编写器的状态不是 WriteState.Element 或者编写器已关闭。 </exception>
+<exception cref="T:System.ArgumentException">xml:space 或 xml:lang 属性值无效。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteAttributeString(System.String,System.String,System.String,System.String)">
+<summary>在派生类中重写时，写出具有指定的前缀、本地名称、命名空间 URI 和值的属性。</summary> <param name="prefix">属性的命名空间前缀。</param> <param name="localName">属性的本地名称。</param> <param name="ns">属性的命名空间 URI。</param> <param name="value">此属性的值。 </param>
+<exception cref="T:System.InvalidOperationException">编写器的状态不是 WriteState.Element 或者编写器已关闭。 </exception>
+<exception cref="T:System.ArgumentException">xml:space 或 xml:lang 属性值无效。 </exception>
+<exception cref="T:System.Xml.XmlException"><paramref name="localName"/> 或 <paramref name="ns"/> 为 null。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteBase64(System.Byte[],System.Int32,System.Int32)">
+<summary>在派生类中重写时，将指定的二进制字节编码为 Base64 并写出结果文本。</summary> <param name="buffer">要进行编码的字节数组。</param> <param name="index">缓冲区中指示要写入字节的起始位置的位置。</param> <param name="count">要写入的字节数。 </param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="buffer"/> 为 null。 </exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+<paramref name="index"/> 或 <paramref name="count"/> 小于零。-或- 缓冲区长度减去 <paramref name="index"/> 小于 <paramref name="count"/>。</exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteBinHex(System.Byte[],System.Int32,System.Int32)">
+<summary>在派生类中重写时，将指定的二进制字节编码为 BinHex 并写出结果文本。</summary> <param name="buffer">要进行编码的字节数组。</param> <param name="index">缓冲区中指示要写入字节的起始位置的位置。</param> <param name="count">要写入的字节数。 </param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="buffer"/> 为 null。 </exception>
+<exception cref="T:System.InvalidOperationException">编写器已关闭或处于错误状态。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+<paramref name="index"/> 或 <paramref name="count"/> 小于零。-或- 缓冲区长度减去 <paramref name="index"/> 小于 <paramref name="count"/>。</exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteCData(System.String)">
+<summary>在派生类中重写时，写出包含指定文本的 &lt;![CDATA[...]]&gt; 块。</summary><param name="text">要放置在 CDATA 块中的文本。 </param>
+<exception cref="T:System.ArgumentException">该文本将导致格式不正确的 XML 文档。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteCharEntity(System.Char)">
+<summary>在派生类中重写时，为指定的 Unicode 字符值强制生成字符实体。</summary> <param name="ch">为其生成字符实体的 Unicode 字符。 </param>
+<exception cref="T:System.ArgumentException">该字符在代理项对字符范围 0xd800 - 0xdfff 内。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteChars(System.Char[],System.Int32,System.Int32)">
+<summary>在派生类中重写时，以每次一个缓冲区的方式写入文本。</summary> <param name="buffer">字符数组，包含要写入的文本。</param> <param name="index">缓冲区中指示要写入文本的起始位置的位置。</param> <param name="count">要写入的字符数。 </param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="buffer"/> 为 null。 </exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+<paramref name="index"/> 或 <paramref name="count"/> 小于零。-或- 缓冲区长度减去 <paramref name="index"/> 小于 <paramref name="count"/>；此调用导致代理项对字符被拆分或写入无效的代理项对。</exception>
+<exception cref="T:System.ArgumentException"><paramref name="buffer"/> 参数值无效。</exception>
+      <exception cref="T:System.IndexOutOfRangeException">
+<paramref name="index"/> 在 <paramref name="buffer"/> 的界限外。</exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteComment(System.String)">
+<summary>在派生类中重写时，写出包含指定文本的注释 &lt;!--...--&gt;。</summary><param name="text">要放在注释内部的文本。 </param>
+<exception cref="T:System.ArgumentException">该文本将导致格式不正确的 XML 文档。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteDocType(System.String,System.String,System.String,System.String)">
+<summary>在派生类中重写时，写出具有指定名称和可选属性的 DOCTYPE 声明。</summary> <param name="name">DOCTYPE 的名称。它必须是非空的。</param> <param name="pubid">如果非 null，则它还写入 PUBLIC "pubid" "sysid"，其中 <paramref name="pubid"/> 和 <paramref name="sysid"/> 用给定参数的值替换。</param> <param name="sysid">如果 <paramref name="pubid"/> 为 null 而 <paramref name="sysid"/> 非 null，则它写入 SYSTEM "sysid"，其中 <paramref name="sysid"/> 用此参数的值替换。</param> <param name="subset">如果非 null，则它写入 [subset]，其中 subset 用此参数的值替换。 </param>
+<exception cref="T:System.InvalidOperationException">在序言码外部（根元素之后）调用了此方法。 </exception>
+<exception cref="T:System.ArgumentException"><paramref name="name"/> 的值将导致无效的 XML。 </exception>
+      <exception cref="T:System.Xml.XmlException">
+<paramref name="name"/> 无效。 </exception>
+<exception cref="T:System.NullReferenceException"><paramref name=" name"/>、<paramref name=" pubid"/>、<paramref name=" sysid"/> 或 <paramref name="subset"/> 参数为 null。</exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteElementString(System.String,System.String)">
+<summary>在派生类中重写时，写出具有指定的本地名称和值的元素。</summary> <param name="localName">元素的本地名称。</param> <param name="value">此元素的值。 </param>
+<exception cref="T:System.ArgumentException"><paramref name="localName"/> 值为 null 或空字符串。-或- 参数值无效。</exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteElementString(System.String,System.String,System.String)">
+<summary>在派生类中重写时，写入具有指定的本地名称、命名空间 URI 和值的元素。</summary> <param name="localName">元素的本地名称。</param> <param name="ns">与元素关联的命名空间 URI。</param> <param name="value">此元素的值。 </param>
+<exception cref="T:System.ArgumentException"><paramref name="localName"/> 值为 null 或空字符串。-或- 参数值无效。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteElementString(System.String,System.String,System.String,System.String)">
+<summary>使用指定的本地名称、命名空间 URI 和值写入元素。</summary> <param name="prefix">元素的前缀。</param> <param name="localName">元素的本地名称。</param> <param name="ns">元素的命名空间 URI。</param> <param name="value">此元素的值。</param>
+<exception cref="T:System.ArgumentException"><paramref name="localName"/> 值为 null 或空字符串。-或- 参数值无效。</exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteEndAttribute">
+<summary>在派生类中重写时，关闭上一个 <see cref="M:System.Xml.XmlWriter.WriteStartAttribute(System.String,System.String)"/> 调用。</summary>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteEndDocument">
+<summary>在派生类中重写时，关闭任何打开的元素或属性并将编写器重新设置为 Start 状态。</summary>
+<exception cref="T:System.ArgumentException">XML 文档无效。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteEndElement">
+<summary>在派生类中重写时，关闭一个元素并弹出相应的命名空间范围。</summary>
+<exception cref="T:System.InvalidOperationException">这导致无效的 XML 文档。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteEntityRef(System.String)">
+<summary>在派生类中重写时，按 &amp;name; 写出实体引用。</summary><param name="name">实体引用的名称。 </param>
+      <exception cref="T:System.ArgumentException">
+<paramref name="name"/> 为 null 或 String.Empty。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteFullEndElement">
+<summary>在派生类中重写时，关闭一个元素并弹出相应的命名空间范围。</summary>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteName(System.String)">
+<summary>在派生类中重写时，写出指定的名称，确保它是符合 W3C XML 1.0 建议的有效名称 (http://www.w3.org/TR/1998/REC-xml-19980210#NT-Name)。</summary> <param name="name">要写入的名称。 </param>
+      <exception cref="T:System.ArgumentException">
+<paramref name="name"/> 不是有效的 XML 名称，或者 <paramref name="name"/> 为 null 或 String.Empty。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteNmToken(System.String)">
+<summary>在派生类中重写时，写出指定的名称，确保它是符合 W3C XML 1.0 建议的有效 NmToken (http://www.w3.org/TR/1998/REC-xml-19980210#NT-Name)。</summary> <param name="name">要写入的名称。 </param>
+      <exception cref="T:System.ArgumentException">
+<paramref name="name"/> 不是有效的 NmToken，或者 <paramref name="name"/> 为 null 或 String.Empty。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteNode(System.Xml.XmlReader,System.Boolean)">
+<summary>在派生类中重写时，将所有内容从读取器复制到编写器并将读取器移动到下一个同级的开始位置。</summary> <param name="reader">要从其进行读取的 <see cref="T:System.Xml.XmlReader"/>。</param> <param name="defattr">如果从 XmlReader 中复制默认属性，则为 true；否则为 false。 </param>
+      <exception cref="T:System.ArgumentException">
+<paramref name="reader"/> 包含无效字符。 </exception>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="reader"/> 为 null。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteProcessingInstruction(System.String,System.String)">
+<summary>在派生类中重写时，写出在名称和文本之间带有空格的处理指令，如下所示：&lt;?name text?&gt;。</summary><param name="name">处理指令的名称。</param> <param name="text">要包括在处理指令中的文本。 </param>
+<exception cref="T:System.ArgumentException">该文本将导致格式不正确的 XML 文档。<paramref name="name"/> 为 null 或 String.Empty。调用了 <see cref="M:System.Xml.XmlWriter.WriteStartDocument"/> 后，使用此方法创建 XML 声明。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteQualifiedName(System.String,System.String)">
+<summary>在派生类中重写时，写出命名空间限定的名称。此方法查找位于给定命名空间范围内的前缀。</summary><param name="localName">要写入的本地名称。</param> <param name="ns">名称的命名空间 URI。 </param>
+      <exception cref="T:System.ArgumentException">
+<paramref name="localName"/> 为 String.Empty 或者不是有效的名称。 </exception>
+      <exception cref="T:System.NullReferenceException">
+<paramref name="localName"/> 或 <paramref name="ns"/> 为 null。</exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteRaw(System.Char[],System.Int32,System.Int32)">
+<summary>在派生类中重写时，从字符缓冲区手动写入原始标记。</summary> <param name="buffer">字符数组，包含要写入的文本。</param> <param name="index">缓冲区中的位置，指示要写入文本的起始位置。</param> <param name="count">要写入的字符数。 </param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="buffer"/> 为 null。 </exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+<paramref name="index"/> 或 <paramref name="count"/> 小于零。-或- 缓冲区长度减去 <paramref name="index"/> 小于 <paramref name="count"/>。</exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteRaw(System.String)">
+<summary>在派生类中重写时，从字符串手动写入原始标记。</summary> <param name="data">字符串，包含要写入的文本。 </param>
+      <exception cref="T:System.ArgumentException">
+<paramref name="data"/> 为 null 或 String.Empty。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteStartAttribute(System.String)">
+<summary>用指定的本地名称写入属性的起点。</summary> <param name="localName">属性的本地名称。</param>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteStartAttribute(System.String,System.String)">
+<summary>写入具有指定本地名称和命名空间 URI 的属性的起始内容。</summary> <param name="localName">属性的本地名称。</param> <param name="ns">属性的命名空间 URI。 </param>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteStartAttribute(System.String,System.String,System.String)">
+<summary>在派生类中重写时，写入具有指定的前缀、本地名称和命名空间 URI 的属性的起始内容。</summary> <param name="prefix">属性的命名空间前缀。</param> <param name="localName">属性的本地名称。</param> <param name="ns">属性的命名空间 URI。 </param>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteStartDocument">
+<summary>在派生类中重写时，写入版本为“1.0”的 XML 声明。</summary>
+<exception cref="T:System.InvalidOperationException">这不是在构造函数后调用的第一个写方法。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteStartDocument(System.Boolean)">
+<summary>在派生类中重写时，写入版本为“1.0”并具有独立属性的 XML 声明。</summary> <param name="standalone">如果为 true，则它将写入“standalone=yes”；如果为 false，则它将写入“standalone=no”。 </param>
+<exception cref="T:System.InvalidOperationException">这不是在构造函数后调用的第一个写方法。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteStartElement(System.String)">
+<summary>在派生类中重写时，写出具有指定的本地名称的开始标记。</summary> <param name="localName">元素的本地名称。 </param>
+<exception cref="T:System.InvalidOperationException">编写器已关闭。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteStartElement(System.String,System.String)">
+<summary>在派生类中重写时，写出指定的开始标记并将其与给定的命名空间关联起来。</summary> <param name="localName">元素的本地名称。</param> <param name="ns">与元素关联的命名空间 URI。如果此命名空间已在范围中并具有关联的前缀，则编写器还自动写入该前缀。 </param>
+<exception cref="T:System.InvalidOperationException">编写器已关闭。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteStartElement(System.String,System.String,System.String)">
+<summary>在派生类中重写时，写出指定的开始标记并将其与给定的命名空间和前缀关联起来。</summary> <param name="prefix">元素的命名空间前缀。</param> <param name="localName">元素的本地名称。</param> <param name="ns">与元素关联的命名空间 URI。 </param>
+<exception cref="T:System.InvalidOperationException">编写器已关闭。 </exception>
+    </member>
+    <member name="P:System.Xml.XmlWriter.WriteState">
+<summary>在派生类中重写时，获取编写器的状态。</summary>
+<returns>其中一个 <see cref="T:System.Xml.WriteState"/> 值。</returns>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteString(System.String)">
+<summary>在派生类中重写时，写入给定的文本内容。</summary> <param name="text">要写入的文本。 </param>
+<exception cref="T:System.ArgumentException">文本字符串包含无效的代理项对。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteSurrogateCharEntity(System.Char,System.Char)">
+<summary>在派生类中重写时，为代理项字符对生成并写入代理项字符实体。</summary> <param name="lowChar">低代理项。它必须是介于 0xDC00 和 0xDFFF 之间的值。</param> <param name="highChar">高代理项。它必须是介于 0xD800 和 0xDBFF 之间的值。 </param>
+<exception cref="T:System.ArgumentException">传递了无效的代理项字符对。 </exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteValue(System.Boolean)">
+<summary>写入一个 <see cref="T:System.Boolean"/> 值。</summary><param name="value">要写入的 <see cref="T:System.Boolean"/> 值。</param>
+<exception cref="T:System.ArgumentException">指定了无效值。</exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteValue(System.DateTime)">
+<summary>写入一个 <see cref="T:System.DateTime"/> 值。</summary><param name="value">要写入的 <see cref="T:System.DateTime"/> 值。</param>
+<exception cref="T:System.ArgumentException">指定了无效值。</exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteValue(System.Decimal)">
+<summary>写入一个 <see cref="T:System.Decimal"/> 值。</summary><param name="value">要写入的 <see cref="T:System.Decimal"/> 值。</param>
+<exception cref="T:System.ArgumentException">指定了无效值。</exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteValue(System.Double)">
+<summary>写入一个 <see cref="T:System.Double"/> 值。</summary><param name="value">要写入的 <see cref="T:System.Double"/> 值。</param>
+<exception cref="T:System.ArgumentException">指定了无效值。</exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteValue(System.Int32)">
+<summary>写入一个 <see cref="T:System.Int32"/> 值。</summary><param name="value">要写入的 <see cref="T:System.Int32"/> 值。</param>
+<exception cref="T:System.ArgumentException">指定了无效值。</exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteValue(System.Int64)">
+<summary>写入一个 <see cref="T:System.Int64"/> 值。</summary><param name="value">要写入的 <see cref="T:System.Int64"/> 值。</param>
+<exception cref="T:System.ArgumentException">指定了无效值。</exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteValue(System.Object)">
+<summary>写入对象值。</summary> <param name="value">要写入的对象值。说明   随着 .NET Framework 3.5 的发布，该方法接受将 <see cref="T:System.DateTimeOffset"/> 作为参数。</param>
+<exception cref="T:System.ArgumentException">指定了无效值。</exception>
+<exception cref="T:System.ArgumentNullException"><paramref name="value"/> 为 null。</exception>
+<exception cref="T:System.InvalidOperationException">编写器已关闭或处于错误状态。</exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteValue(System.Single)">
+<summary>写入一个单精度浮点数。</summary> <param name="value">要写入的单精度浮点数。</param>
+<exception cref="T:System.ArgumentException">指定了无效值。</exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteValue(System.String)">
+<summary>写入一个 <see cref="T:System.String"/> 值。</summary><param name="value">要写入的 <see cref="T:System.String"/> 值。</param>
+<exception cref="T:System.ArgumentException">指定了无效值。</exception>
+    </member>
+    <member name="M:System.Xml.XmlWriter.WriteWhitespace(System.String)">
+<summary>在派生类中重写时，写出给定的空白。</summary> <param name="ws">空白字符的字符串。 </param>
+<exception cref="T:System.ArgumentException">字符串包含非空白字符。 </exception>
+    </member>
+    <member name="P:System.Xml.XmlWriter.XmlLang">
+<summary>在派生类中重写时，获取当前的 xml:lang 范围。</summary>
+<returns>当前的 xml:lang 范围。</returns>
+    </member>
+    <member name="P:System.Xml.XmlWriter.XmlSpace">
+<summary>在派生类中重写时，获取表示当前 xml:space 范围的 <see cref="T:System.Xml.XmlSpace"/>。</summary>
+<returns>一个表示当前 xml:space 范围的 XmlSpace。值 含义 None 如果不存在 xml:space 范围，则此为默认值。Default 当前范围为 xml:space="default"。Preserve 当前范围为 xml:space="preserve"。 </returns>
+    </member>
+    <member name="T:System.Xml.XmlWriterSettings">
+<summary>指定在由 <see cref="Overload:System.Xml.XmlWriter.Create"/> 方法创建的 <see cref="T:System.Xml.XmlWriter"/> 对象上支持的一组功能。</summary>
+    </member>
+    <member name="M:System.Xml.XmlWriterSettings.#ctor">
+<summary>初始化 <see cref="T:System.Xml.XmlWriterSettings"/> 类的新实例。</summary>
+    </member>
+    <member name="P:System.Xml.XmlWriterSettings.CheckCharacters">
+<summary>获取或设置一个值，该值指示是否进行字符检查。</summary>
+<returns>如果进行字符检查，则为 true；否则为 false。默认值为 true。</returns>
+    </member>
+    <member name="M:System.Xml.XmlWriterSettings.Clone">
+<summary>创建 <see cref="T:System.Xml.XmlWriterSettings"/> 实例的副本。</summary>
+<returns>克隆的 <see cref="T:System.Xml.XmlWriterSettings"/> 对象。</returns>
+    </member>
+    <member name="P:System.Xml.XmlWriterSettings.CloseOutput">
+<summary>获取或设置一个值，该值指示在调用 <see cref="M:System.Xml.XmlWriter.Close"/> 方法时，<see cref="T:System.Xml.XmlWriter"/> 是否还应该关闭基础流或 <see cref="T:System.IO.TextWriter"/>。</summary>
+<returns>如果还应该关闭基础流或 <see cref="T:System.IO.TextWriter"/>，则为 true；否则为 false。默认值为 false。</returns>
+    </member>
+    <member name="P:System.Xml.XmlWriterSettings.ConformanceLevel">
+<summary>获取或设置 <see cref="T:System.Xml.XmlWriter"/> 符合的一致性级别。</summary>
+<returns>其中一个 <see cref="T:System.Xml.ConformanceLevel"/> 值。默认值为 ConformanceLevel.Document。</returns>
+    </member>
+    <member name="P:System.Xml.XmlWriterSettings.Encoding">
+<summary>获取或设置要使用的文本编码。</summary>
+<returns>要使用的文本编码。默认值为 Encoding.UTF8。</returns>
+    </member>
+    <member name="P:System.Xml.XmlWriterSettings.Indent">
+<summary>获取或设置一个值，该值指示是否缩进元素。</summary>
+<returns>如果将各元素分别写入新行并将其缩进，则为 true；否则为 false。默认值为 false。</returns>
+    </member>
+    <member name="P:System.Xml.XmlWriterSettings.IndentChars">
+<summary>获取或设置缩进时要使用的字符串。当 <see cref="P:System.Xml.XmlWriterSettings.Indent"/> 属性设置为 true 时使用此设置。</summary>
+<returns>缩进时要使用的字符串。它可以设置为任何字符串值。但是，为了确保 XML 有效，应该只指定有效的空白字符，例如，空格、制表符、回车符或换行符。默认值为两个空格。</returns>
+<exception cref="T:System.ArgumentNullException">赋予 <see cref="P:System.Xml.XmlWriterSettings.IndentChars"/> 的值为 null。 </exception>
+    </member>
+    <member name="P:System.Xml.XmlWriterSettings.NamespaceHandling">
+<summary>获取或设置用于指定是否在 <see cref="T:System.Xml.XmlWriter"/> 中移除重复的命名空间声明的 <see cref="T:System.Xml.NamespaceHandling"/> 枚举。对于要移除的重复命名空间，前缀和命名空间必须匹配。 </summary>
+<returns>用于指定是否在 <see cref="T:System.Xml.XmlWriter"/> 中移除重复的命名空间声明的 <see cref="T:System.Xml.NamespaceHandling"/> 枚举。</returns>
+    </member>
+    <member name="P:System.Xml.XmlWriterSettings.NewLineChars">
+<summary>获取或设置要用于分行符的字符串。 </summary>
+<returns>要用于分行符的字符串。它可以设置为任何字符串值。但是，为了确保 XML 有效，应该只指定有效的空白字符，例如，空格、制表符、回车符或换行符。默认值为 \r\n（回车换行）。</returns>
+<exception cref="T:System.ArgumentNullException">赋予 <see cref="P:System.Xml.XmlWriterSettings.NewLineChars"/> 的值为 null。 </exception>
+    </member>
+    <member name="P:System.Xml.XmlWriterSettings.NewLineHandling">
+<summary>获取或设置一个值，该值指示是否将输出中的分行符正常化。</summary>
+<returns>其中一个 <see cref="T:System.Xml.NewLineHandling"/> 值。默认值为 <see cref="F:System.Xml.NewLineHandling.Replace"/>。</returns>
+    </member>
+    <member name="P:System.Xml.XmlWriterSettings.NewLineOnAttributes">
+<summary>获取或设置一个值，该值指示是否将属性写入新行。</summary>
+<returns>如果将属性写入单独的行，则为 true；否则为 false。默认值为 false。说明：如果 <see cref="P:System.Xml.XmlWriterSettings.Indent"/> 属性值为 false，则此设置无效。如果 <see cref="P:System.Xml.XmlWriterSettings.NewLineOnAttributes"/> 设置为 true，则每个属性都会写入到一个新行并应用一个额外的缩进级别。</returns>
+    </member>
+    <member name="P:System.Xml.XmlWriterSettings.OmitXmlDeclaration">
+<summary>获取或设置一个值，该值指示是否写入 XML 声明。</summary>
+<returns>如果省略 XML 声明，则为 true；否则为 false。默认值为 false，即写入 XML 声明。</returns>
+    </member>
+    <member name="M:System.Xml.XmlWriterSettings.Reset">
+<summary>将设置类的成员重置为各自的默认值。</summary>
+    </member>
+    <member name="T:System.Xml.XmlXapResolver">
+<summary><see cref="T:System.Xml.XmlXapResolver"/> 类型用于解析 Silverlight 应用程序的 XAP 包中的资源。 </summary>
+    </member>
+    <member name="M:System.Xml.XmlXapResolver.#ctor">
+<summary>初始化 <see cref="T:System.Xml.XmlXapResolver"/> 类的新实例。 </summary>
+    </member>
+    <member name="M:System.Xml.XmlXapResolver.GetEntity(System.Uri,System.String,System.Type)">
+<summary>将 URI 映射到包含实际资源的对象。</summary>
+<returns>一个 System.IO.Stream 对象。如果找不到流，将会引发异常。</returns>
+<param name="absoluteUri">从 <see cref="M:System.Xml.XmlResolver.ResolveUri(System.Uri,System.String)"/> 返回的 URI。</param><param name="role">当解析 URI 时，.NET Framework for Silverlight 的当前版本不使用此参数。提供此参数是为了将来扩展用。例如，它可以映射到 xlink:role 并用作其他方案中的实现特定参数。</param><param name="ofObjectToReturn">要返回的对象的类型。当前版本只返回 System.IO.Stream 对象。 </param>
+    </member>
+    <member name="M:System.Xml.XmlReader.Dispose"></member>
+    <member name="M:System.Xml.XmlWriter.Dispose"></member>
+    <member name="M:System.Xml.XmlReaderSettings.#ctor(System.Xml.XmlResolver)">
+<summary>使用 <see cref="T:System.Xml.XmlResolver"/> 对象初始化 <see cref="T:System.Xml.XmlReaderSettings"/> 类的新实例。</summary><param name="resolver">用于解析外部文档的 <see cref="T:System.Xml.XmlResolver"/> 对象。</param>
+    </member>
+    <member name="T:System.Xml.Schema.XmlSchema">
+<summary>该类是为实现接口的兼容性而提供的。它不应在 Silverlight 代码中使用。</summary>
+    </member>
+    <member name="T:System.Xml.Schema.XmlSchemaForm">
+<summary>指示是否需要用命名空间前缀限定属性或元素。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlSchemaForm.None">
+<summary>架构中不指定元素和属性窗体。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlSchemaForm.Qualified">
+<summary>必须用命名空间前缀限定元素和属性。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlSchemaForm.Unqualified">
+<summary>不要求用命名空间前缀限定元素和属性。</summary>
+    </member>
+    <member name="T:System.Xml.Schema.XmlSchemaObject">
+<summary>该类是为实现接口的兼容性而提供的。它不应在 Silverlight 代码中使用。</summary>
+    </member>
+    <member name="M:System.Xml.Schema.XmlSchemaObject.#ctor">
+<summary>该类是为实现接口的兼容性而提供的。它不应在 Silverlight 代码中使用。</summary>
+    </member>
+    <member name="T:System.Xml.Schema.XmlSchemaSet">
+<summary>该类是为实现接口的兼容性而提供的。它不应在 Silverlight 代码中使用。</summary>
+    </member>
+    <member name="T:System.Xml.Schema.XmlSeverityType">
+<summary>表示验证事件的严重度。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlSeverityType.Error">
+<summary>指示在验证实例文档时发生了验证错误。它适用于文档类型定义 (DTD) 和 XML 架构定义语言 (XSD) 架构。万维网联合会 (W3C) 有效性约束被视为错误。如果尚未创建任何验证事件处理程序，则这些错误会引发异常。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlSeverityType.Warning">
+<summary>指示发生的验证事件不是错误。警告通常是在没有 DTD 或 XML 架构（要对其验证特定元素或属性）时发出。与错误不同，如果没有验证事件处理程序，则警告不会引发异常。</summary>
+    </member>
+    <member name="T:System.Xml.Schema.XmlTypeCode">
+<summary>表示 W3C XML 架构定义语言 (XSD) 构架类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.None">
+<summary>无类型信息。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.Item">
+<summary>一个项，例如，一个节点或原子值。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.Node">
+<summary>此值支持 .NET Framework 基础结构，但不适合在代码中直接使用。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.Document">
+<summary>此值支持 .NET Framework 基础结构，但不适合在代码中直接使用。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.Element">
+<summary>此值支持 .NET Framework 基础结构，但不适合在代码中直接使用。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.Attribute">
+<summary>此值支持 .NET Framework 基础结构，但不适合在代码中直接使用。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.Namespace">
+<summary>此值支持 .NET Framework 基础结构，但不适合在代码中直接使用。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.ProcessingInstruction">
+<summary>此值支持 .NET Framework 基础结构，但不适合在代码中直接使用。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.Comment">
+<summary>此值支持 .NET Framework 基础结构，但不适合在代码中直接使用。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.Text">
+<summary>此值支持 .NET Framework 基础结构，但不适合在代码中直接使用。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.AnyAtomicType">
+<summary>一个联合的任何原子值。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.UntypedAtomic">
+<summary>非类型化原子值。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.String">
+<summary>W3C XML 架构 xs:string 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.Boolean">
+<summary>W3C XML 架构 xs:boolean 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.Decimal">
+<summary>W3C XML 架构 xs:decimal 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.Float">
+<summary>W3C XML 架构 xs:float 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.Double">
+<summary>W3C XML 架构 xs:double 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.Duration">
+<summary>W3C XML 架构 xs:Duration 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.DateTime">
+<summary>W3C XML 架构 xs:dateTime 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.Time">
+<summary>W3C XML 架构 xs:time 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.Date">
+<summary>W3C XML 架构 xs:date 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.GYearMonth">
+<summary>W3C XML 架构 xs:gYearMonth 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.GYear">
+<summary>W3C XML 架构 xs:gYear 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.GMonthDay">
+<summary>W3C XML 架构 xs:gMonthDay 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.GDay">
+<summary>W3C XML 架构 xs:gDay 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.GMonth">
+<summary>W3C XML 架构 xs:gMonth 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.HexBinary">
+<summary>W3C XML 架构 xs:hexBinary 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.Base64Binary">
+<summary>W3C XML 架构 xs:base64Binary 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.AnyUri">
+<summary>W3C XML 架构 xs:anyURI 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.QName">
+<summary>W3C XML 架构 xs:QName 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.Notation">
+<summary>W3C XML 架构 xs:NOTATION 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.NormalizedString">
+<summary>W3C XML 架构 xs:normalizedString 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.Token">
+<summary>W3C XML 架构 xs:token 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.Language">
+<summary>W3C XML 架构 xs:language 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.NmToken">
+<summary>W3C XML 架构 xs:NMTOKEN 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.Name">
+<summary>W3C XML 架构 xs:Name 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.NCName">
+<summary>W3C XML 架构 xs:NCName 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.Id">
+<summary>W3C XML 架构 xs:ID 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.Idref">
+<summary>W3C XML 架构 xs:IDREF 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.Entity">
+<summary>W3C XML 架构 xs:ENTITY 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.Integer">
+<summary>W3C XML 架构 xs:integer 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.NonPositiveInteger">
+<summary>W3C XML 架构 xs:nonPositiveInteger 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.NegativeInteger">
+<summary>W3C XML 架构 xs:negativeInteger 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.Long">
+<summary>W3C XML 架构 xs:long 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.Int">
+<summary>W3C XML 架构 xs:int 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.Short">
+<summary>W3C XML 架构 xs:short 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.Byte">
+<summary>W3C XML 架构 xs:byte 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.NonNegativeInteger">
+<summary>W3C XML 架构 xs:nonNegativeInteger 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.UnsignedLong">
+<summary>W3C XML 架构 xs:unsignedLong 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.UnsignedInt">
+<summary>W3C XML 架构 xs:unsignedInt 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.UnsignedShort">
+<summary>W3C XML 架构 xs:unsignedShort 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.UnsignedByte">
+<summary>W3C XML 架构 xs:unsignedByte 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.PositiveInteger">
+<summary>W3C XML 架构 xs:positiveInteger 类型。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.YearMonthDuration">
+<summary>此值支持 .NET Framework 基础结构，但不适合在代码中直接使用。</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlTypeCode.DayTimeDuration">
+<summary>此值支持 .NET Framework 基础结构，但不适合在代码中直接使用。</summary>
+    </member>
+    <member name="T:System.Xml.Serialization.IXmlSerializable">
+<summary>为 XML 序列化和反序列化提供自定义格式化程序，以控制如何通过 <see cref="T:System.Xml.XmlSerializer"/> 对您的对象进行序列化或反序列化。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.IXmlSerializable.GetSchema">
+<summary>此方法是保留方法，请不要使用。实现 <see cref="T:System.Xml.Serialization.IXmlSerializable"/> 接口时，您应该从此方法返回一个 null 引用（在 Visual Basic 中为 Nothing）。</summary>
+<returns><see cref="T:System.Xml.Schema.XmlSchema"/>，描述由 <see cref="M:System.Xml.Serialization.IXmlSerializable.WriteXml"/> 方法生成并由 <see cref="M:System.Xml.Serialization.IXmlSerializable.ReadXml"/> 方法使用的对象的 XML 表示形式。</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.IXmlSerializable.ReadXml(System.Xml.XmlReader)">
+<summary>从其 XML 表示形式生成对象。</summary> <param name="reader">从中反序列化对象的 <see cref="T:System.Xml.XmlReader"/> 流。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)">
+<summary>将对象转换为其 XML 表示形式。</summary> <param name="writer">向其中序列化对象的 <see cref="T:System.Xml.XmlWriter"/> 流。</param>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlAnyElementAttribute">
+<summary>指定一个成员（返回 <see cref="T:System.Xml.Linq.XElement"/> 数组或 <see cref="T:System.Xml.Linq.XNode"/> 对象的字段），该成员包含表示 XML 元素（在被序列化或反序列化的对象中没有对应的成员）的对象。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttribute.#ctor">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute"/> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttribute.#ctor(System.String)">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute"/> 类的新实例并指定 XML 文档中生成的 XML 元素的名称。</summary><param name="name"><see cref="T:System.Xml.Serialization.XmlSerializer"/> 生成的 XML 元素的名称。 </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttribute.#ctor(System.String,System.String)">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute"/> 类的新实例并指定 XML 文档中生成的 XML 元素的名称及其 XML 命名空间。</summary><param name="name"><see cref="T:System.Xml.Serialization.XmlSerializer"/> 生成的 XML 元素的名称。</param> <param name="ns">XML 元素的 XML 命名空间。 </param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttribute.Name">
+<summary>获取或设置 XML 元素名称。</summary>
+<returns>XML 元素的名称。</returns>
+<exception cref="T:System.InvalidOperationException">数组成员的元素名称与 <see cref="P:System.Xml.Serialization.XmlAnyElementAttribute.Name"/> 属性指定的元素名称不匹配。 </exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttribute.Namespace">
+<summary>获取或设置 XML 文档中生成的 XML 命名空间。</summary>
+<returns>XML 命名空间。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttribute.Order">
+<summary>获取或设置显式顺序，元素按照此顺序进行序列化或反序列化。</summary>
+<returns>代码生成的顺序。</returns>
+<exception cref="T:System.ArgumentException"><paramref name="value"/> 集为负数。</exception>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlArrayAttribute">
+<summary>指定 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 必须将特定类成员序列化为 XML 元素的数组。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayAttribute.#ctor">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlArrayAttribute"/> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayAttribute.#ctor(System.String)">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlArrayAttribute"/> 类的新实例并指定 XML 文档实例中生成的 XML 元素的名称。</summary><param name="elementName"><see cref="T:System.Xml.Serialization.XmlSerializer"/> 生成的 XML 元素的名称。 </param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayAttribute.ElementName">
+<summary>获取或设置为序列化数组提供的 XML 元素名称。</summary>
+<returns>序列化数组的 XML 元素名称。默认值为赋予 <see cref="T:System.Xml.Serialization.XmlArrayAttribute"/> 的成员的名称。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayAttribute.Form">
+<summary>获取或设置一个值，该值指示 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 生成的 XML 元素名称是限定名称还是非限定名称。</summary>
+<returns>其中一个 <see cref="T:System.Xml.Schema.XmlSchemaForm"/> 值。默认值为 XmlSchemaForm.None。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayAttribute.IsNullable">
+<summary>获取或设置一个值，该值指示 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 是否必须将一个成员序列化为空 XML 元素，此元素具有设置为 true 的 xsi:nil 属性。</summary>
+<returns>如果 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 生成 xsi:nil 属性，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayAttribute.Namespace">
+<summary>获取或设置 XML 元素的命名空间。</summary>
+<returns>XML 元素的命名空间。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayAttribute.Order">
+<summary>获取或设置显式顺序，元素按照此顺序进行序列化或反序列化。</summary>
+<returns>代码生成的顺序。</returns>
+<exception cref="T:System.ArgumentException"><paramref name="value"/> 集为负数。</exception>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlArrayItemAttribute">
+<summary>指定 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 可以放置在序列化数组中的派生类型。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttribute.#ctor">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute"/> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttribute.#ctor(System.String)">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute"/> 类的新实例并指定 XML 文档中生成的 XML 元素的名称。</summary><param name="elementName">XML 元素的名称。 </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttribute.#ctor(System.String,System.Type)">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute"/> 类的新实例，并为 XML 文档中生成的 XML 元素以及可以插入到生成的 XML 文档中的 <see cref="T:System.Type"/> 指定名称。</summary><param name="elementName">XML 元素的名称。</param> <param name="type">要序列化的对象的 <see cref="T:System.Type"/>。 </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttribute.#ctor(System.Type)">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute"/> 类的新实例，并指定可以插入到已序列化数组中的 <see cref="T:System.Type"/>。</summary><param name="type">要序列化的对象的 <see cref="T:System.Type"/>。 </param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttribute.DataType">
+<summary>获取或设置生成的 XML 元素的 XML 数据类型。</summary>
+<returns>XML 架构定义 (XSD) 数据类型，如万维网联合会 (www.w3.org) 文档“XML Schema Part 2: Datatypes”（XML 架构第 2 部分：数据类型）所定义。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttribute.ElementName">
+<summary>获取或设置生成的 XML 元素的名称。</summary>
+<returns>生成的 XML 元素的名称。默认值为成员标识符。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttribute.Form">
+<summary>获取或设置一个值，指示生成的 XML 元素的名称是否为限定名称。</summary>
+<returns>其中一个 <see cref="T:System.Xml.Schema.XmlSchemaForm"/> 值。默认值为 XmlSchemaForm.None。</returns>
+<exception cref="T:System.Exception"><see cref="P:System.Xml.Serialization.XmlArrayItemAttribute.Form"/> 属性设置为 XmlSchemaForm.Unqualified 并指定了一个 <see cref="P:System.Xml.Serialization.XmlArrayItemAttribute.Namespace"/> 值。 </exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttribute.IsNullable">
+<summary>获取或设置一个值，该值指示 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 是否必须将一个成员序列化为空 XML 标记，此标记具有设置为 true 的 xsi:nil 属性。</summary>
+<returns>如果 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 生成 xsi:nil 属性，则为 true；否则为 false 并且不生成实例。默认值为 true。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttribute.Namespace">
+<summary>获取或设置生成的 XML 元素的命名空间。</summary>
+<returns>生成的 XML 元素的命名空间。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttribute.NestingLevel">
+<summary>获取或设置受 <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute"/> 影响的 XML 元素的层次结构中的级别。</summary>
+<returns>一组数组中索引集的从零开始的索引。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttribute.Type">
+<summary>获取或设置数组中允许的类型。</summary>
+<returns>数组中允许的 <see cref="T:System.Type"/>。</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlAttributeAttribute">
+<summary>指定 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 必须将类成员序列化为 XML 属性。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAttributeAttribute.#ctor">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlAttributeAttribute"/> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAttributeAttribute.#ctor(System.String)">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlAttributeAttribute"/> 类的新实例并指定所生成的 XML 属性的名称。</summary><param name="attributeName"><see cref="T:System.Xml.Serialization.XmlSerializer"/> 生成的 XML 属性的名称。 </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAttributeAttribute.#ctor(System.String,System.Type)">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlAttributeAttribute"/> 类的新实例。</summary><param name="attributeName">生成的 XML 属性的名称。</param> <param name="type">用于存储属性的 <see cref="T:System.Type"/>。 </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAttributeAttribute.#ctor(System.Type)">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlAttributeAttribute"/> 类的新实例。</summary><param name="type">用于存储属性的 <see cref="T:System.Type"/>。 </param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributeAttribute.AttributeName">
+<summary>获取或设置 XML 属性的名称。</summary>
+<returns>XML 属性的名称。默认值为成员名称。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributeAttribute.DataType">
+<summary>获取或设置由 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 生成的 XML 属性的 XSD 数据类型。</summary>
+<returns>XSD（XML 架构文档）数据类型，如万维网联合会 (www.w3.org) 文档“XML Schema Part 2: Datatypes”（XML 架构第 2 部分：数据类型）所定义。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributeAttribute.Form">
+<summary>获取或设置一个值，该值指示 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 生成的 XML 属性名称是否为限定名称。</summary>
+<returns>其中一个 <see cref="T:System.Xml.Schema.XmlSchemaForm"/> 值。默认值为 XmlForm.None。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributeAttribute.Namespace">
+<summary>获取或设置 XML 属性的 XML 命名空间。</summary>
+<returns>XML 属性的 XML 命名空间。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributeAttribute.Type">
+<summary>获取或设置 XML 属性的复杂类型。</summary>
+<returns>XML 属性的类型。</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlChoiceIdentifierAttribute">
+<summary>指定可以使用枚举进一步检测成员。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlChoiceIdentifierAttribute.#ctor">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlChoiceIdentifierAttribute"/> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlChoiceIdentifierAttribute.#ctor(System.String)">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlChoiceIdentifierAttribute"/> 类（指定返回用于检测选项的枚举的成员名称）的新实例。</summary><param name="name">返回用于检测选项的枚举的成员名称。 </param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlChoiceIdentifierAttribute.MemberName">
+<summary>获取或设置返回在检测类型时要使用的枚举的字段。</summary>
+<returns>返回枚举的字段名称。</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlElementAttribute">
+<summary>在 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 序列化或反序列化包含 XML 元素的对象时，指示公共字段或属性表示此元素。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttribute.#ctor">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlElementAttribute"/> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttribute.#ctor(System.String)">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlElementAttribute"/> 类的新实例并指定 XML 元素的名称。</summary><param name="elementName">序列化成员的 XML 元素名称。 </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttribute.#ctor(System.String,System.Type)">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlElementAttribute"/> 的新实例，并指定 XML 元素的名称和应用了 <see cref="T:System.Xml.Serialization.XmlElementAttribute"/> 的成员的派生类型。如果 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 序列化包含此成员类型的对象，则使用该类型。</summary><param name="elementName">序列化成员的 XML 元素名称。</param> <param name="type">从此成员类型派生的对象的 <see cref="T:System.Type"/>。 </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttribute.#ctor(System.Type)">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlElementAttribute"/> 类的新实例，并指定应用了 <see cref="T:System.Xml.Serialization.XmlElementAttribute"/> 的成员的类型。如果 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 序列化或反序列化包含此类型的对象，则使用该类型。</summary><param name="type">从此成员类型派生的对象的 <see cref="T:System.Type"/>。 </param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttribute.DataType">
+<summary>获取或设置由 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 生成的 XML 元素的 XML 架构定义 (XSD) 数据类型。</summary>
+<returns>XML 架构数据类型，如万维网联合会 (www.w3.org) 文档“XML Schema Part 2: Datatypes”（XML 架构第 2 部分：数据类型）所定义。</returns>
+<exception cref="T:System.Exception">指定的 XML 架构数据类型无法映射到 .NET 数据类型。 </exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttribute.ElementName">
+<summary>获取或设置生成的 XML 元素的名称。</summary>
+<returns>生成的 XML 元素的名称。默认值为成员标识符。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttribute.Form">
+<summary>获取或设置一个值，该值指示此元素是否为限定元素。</summary>
+<returns>其中一个 <see cref="T:System.Xml.Schema.XmlSchemaForm"/> 值。默认值为 <see cref="F:System.Xml.Schema.XmlSchemaForm.None"/>。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttribute.IsNullable">
+<summary>获取或设置一个值，该值指示 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 是否必须将设置为 null 的成员序列化为一个空标记，此空标记具有设置为 true 的 xsi:nil 属性。</summary>
+<returns>如果 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 生成 xsi:nil 属性，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttribute.Namespace">
+<summary>获取或设置赋予 XML 元素（序列化此类时生成）的命名空间。</summary>
+<returns>XML 元素的命名空间。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttribute.Order">
+<summary>获取或设置显式顺序，元素按照此顺序进行序列化或反序列化。</summary>
+<returns>代码生成的顺序。</returns>
+<exception cref="T:System.ArgumentException"><paramref name="value"/> 集为负数。</exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttribute.Type">
+<summary>获取或设置用于表示 XML 元素的对象类型。</summary>
+<returns>此成员的 <see cref="T:System.Type"/>。</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlEnumAttribute">
+<summary>控制 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 序列化枚举成员的方式。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlEnumAttribute.#ctor">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlEnumAttribute"/> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlEnumAttribute.#ctor(System.String)">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlEnumAttribute"/> 类的新实例，并指定 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 生成或识别的 XML 值（当其分别序列化或反序列化此枚举时）。</summary><param name="name">枚举成员的重写名称。 </param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlEnumAttribute.Name">
+<summary>获取或设置当 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 序列化枚举时在 XML 文档实例中生成的值，或者它在反序列化枚举成员时识别的值。</summary>
+<returns>当 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 序列化枚举时在 XML 文档实例中生成的值，或者它在反序列化枚举成员时识别的值。</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlIgnoreAttribute">
+<summary>指示 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 类的 <see cref="M:System.Xml.Serialization.XmlSerializer.Serialize(System.IO.TextWriter,System.Object)"/> 方法不要对公共字段或公共读/写属性值进行序列化。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlIgnoreAttribute.#ctor">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlIgnoreAttribute"/> 类的新实例。</summary>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlIncludeAttribute">
+<summary>允许 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 在序列化或反序列化对象时识别类型。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlIncludeAttribute.#ctor(System.Type)">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlIncludeAttribute"/> 类的新实例。</summary><param name="type">要包含的对象的 <see cref="T:System.Type"/>。 </param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlIncludeAttribute.Type">
+<summary>获取或设置要包含的对象类型。</summary>
+<returns>要包含的对象的 <see cref="T:System.Type"/>。</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlNamespaceDeclarationsAttribute">
+<summary>指定目标属性、参数、返回值或类成员包含与 XML 文档中使用的命名空间相关联的前缀。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlNamespaceDeclarationsAttribute.#ctor">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlNamespaceDeclarationsAttribute"/> 类的新实例。</summary>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlRootAttribute">
+<summary>控制视为 XML 根元素的属性目标的 XML 序列化。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlRootAttribute.#ctor">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlRootAttribute"/> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlRootAttribute.#ctor(System.String)">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlRootAttribute"/> 类的新实例并指定 XML 根元素的名称。</summary><param name="elementName">XML 根元素的名称。 </param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlRootAttribute.DataType">
+<summary>获取或设置 XML 根元素的 XSD 数据类型。</summary>
+<returns>XSD（XML 架构文档）数据类型，如万维网联合会 (www.w3.org) 文档“XML Schema Part 2: Datatypes”（XML 架构第 2 部分：数据类型）所定义。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlRootAttribute.ElementName">
+<summary>获取或设置分别由 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 类的 <see cref="M:System.Xml.Serialization.XmlSerializer.Serialize(System.IO.TextWriter,System.Object)"/> 和 <see cref="M:System.Xml.Serialization.XmlSerializer.Deserialize(System.IO.Stream)"/> 方法生成和识别的 XML 元素的名称。</summary>
+<returns>在 XML 文档实例中生成和识别的 XML 根元素的名称。默认值为序列化类的名称。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlRootAttribute.IsNullable">
+<summary>获取或设置一个值，该值指示 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 是否必须将设置为 null 的成员序列化为设置为 true 的 xsi:nil 属性。</summary>
+<returns>如果 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 生成 xsi:nil 属性，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlRootAttribute.Namespace">
+<summary>获取或设置 XML 元素的命名空间。</summary>
+<returns>XML 元素的命名空间。</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlSchemaProviderAttribute">
+<summary>当应用到用于实现 <see cref="T:System.Xml.Serialization.IXmlSerializable"/> 接口的类型时，存储返回 XML 架构和控制类型序列化的 <see cref="T:System.Xml.XmlQualifiedName"/>（或用于匿名类型的 <see cref="T:System.Xml.Schema.XmlSchemaType"/>）的类型的静态方法名称。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSchemaProviderAttribute.#ctor(System.String)">
+<summary>为目标类型中指定的静态方法初始化 <see cref="T:System.Xml.Serialization.XmlSchemaProviderAttribute"/> 类的实例。</summary><param name="methodName">必须实现的静态方法的名称。</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlSchemaProviderAttribute.IsAny">
+<summary>获取或设置一个值，该值确定此目标类是否为通配符，或者此类的架构是否只包含一个 xs:any 元素。</summary>
+<returns>如果此类是通配符或者此架构仅包含 xs:any 元素，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlSchemaProviderAttribute.MethodName">
+<summary>获取提供此类型的 XML 架构及其 XML 架构数据类型名称的静态方法的名称。</summary>
+<returns>由 XML 基础结构调用以返回 XML 架构的静态方法的名称。</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlTextAttribute">
+<summary>向 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 指示当包含成员的类进行序列化或反序列化时，必须将此成员视为 XML 文本。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlTextAttribute.#ctor">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlTextAttribute"/> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlTextAttribute.#ctor(System.Type)">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlTextAttribute"/> 类的新实例。</summary><param name="type">要序列化的成员的 <see cref="T:System.Type"/>。 </param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlTextAttribute.DataType">
+<summary>获取或设置由 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 生成的文本的 XML 架构定义 (XSD) 语言数据类型。</summary>
+<returns>XML 架构 (XSD) 数据类型，如万维网联合会 (www.w3.org) 文档“XML Schema Part 2: Datatypes”（XML 架构第 2 部分：数据类型）所定义。</returns>
+<exception cref="T:System.Exception">指定的 XML 架构数据类型无法映射到 .NET 数据类型。 </exception>
+<exception cref="T:System.InvalidOperationException">指定的 XML 架构数据类型对此属性无效，并且无法转换为成员类型。 </exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlTextAttribute.Type">
+<summary>获取或设置此成员的类型。</summary>
+<returns>此成员的 <see cref="T:System.Type"/>。</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlTypeAttribute">
+<summary>控制由 <see cref="T:System.Xml.Serialization.XmlSerializer"/> 序列化属性目标时生成的 XML 架构。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlTypeAttribute.#ctor">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlTypeAttribute"/> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlTypeAttribute.#ctor(System.String)">
+<summary>初始化 <see cref="T:System.Xml.Serialization.XmlTypeAttribute"/> 类的新实例并指定 XML 类型的名称。</summary><param name="typeName">在序列化此类实例时，会生成（并在反序列化此类实例时，会识别）<see cref="T:System.Xml.Serialization.XmlSerializer"/> 的 XML 类型的名称。 </param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlTypeAttribute.AnonymousType">
+<summary>获取或设置一个值，该值确定得到的架构类型是否为 XSD 匿名类型。</summary>
+<returns>如果得到的架构类型是 XSD 匿名类型，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlTypeAttribute.IncludeInSchema">
+<summary>获取或设置一个值，该值指示 XML 架构文档中是否包含此类型。</summary>
+<returns>如果要在 XML 架构文档中包含此类型，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlTypeAttribute.Namespace">
+<summary>获取或设置 XML 类型的命名空间。</summary>
+<returns>XML 类型的命名空间。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlTypeAttribute.TypeName">
+<summary>获取或设置 XML 类型的名称。</summary>
+<returns>XML 类型的名称。</returns>
+    </member>
+  </members>
+</doc>

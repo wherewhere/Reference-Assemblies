@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>mscorlib.Extensions</name>
+  </assembly>
+  <members>
+    <member name="T:System.Runtime.CompilerServices.CodeGenerationAttribute">
+      <summary>코드 생성을 위한 설정을 지정합니다.</summary>
+    </member>
+    <member name="M:System.Runtime.CompilerServices.CodeGenerationAttribute.#ctor(System.Runtime.CompilerServices.CodeGenerationFlags)">
+      <summary>
+        <see cref="T:System.Runtime.CompilerServices.CodeGenerationAttribute" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+      <param name="flags">코드가 생성되는 방법을 지정하는 플래그입니다.</param>
+    </member>
+    <member name="P:System.Runtime.CompilerServices.CodeGenerationAttribute.CodeGenerationFlags">
+      <summary>코드가 생성되는 방법을 지정하는 플래그를 가져옵니다.</summary>
+      <returns>코드가 생성되는 방법을 지정하는 플래그입니다.</returns>
+    </member>
+    <member name="T:System.Runtime.CompilerServices.CodeGenerationFlags">
+      <summary>코드가 생성되는 방법을 지정하는 플래그를 정의합니다.</summary>
+    </member>
+    <member name="F:System.Runtime.CompilerServices.CodeGenerationFlags.EnableFPIntrinsicsUsingSIMD">
+      <summary>JIT(Just-In-Time) 컴파일러가 특정 벡터 및 행렬 연산에 대해 SIMD 명령을 사용할 수 있음을 지정합니다.</summary>
+    </member>
+    <member name="T:System.Security.Cryptography.ProtectedData">
+      <summary>데이터를 암호화하거나 해독하는 메서드를 제공합니다. 이 클래스는 상속될 수 없습니다.</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.ProtectedData.Protect(System.Byte[],System.Byte[])">
+      <summary>지정된 바이트 배열에 있는 데이터를 암호화하고 암호화된 데이터가 포함된 바이트 배열을 반환합니다.</summary>
+      <returns>암호화된 데이터를 나타내는 바이트 배열입니다.</returns>
+      <param name="userData">암호화할 데이터가 들어 있는 바이트 배열입니다. </param>
+      <param name="optionalEntropy">복잡성을 추가한 경우 암호화의 복잡성을 증가하는 데 사용한 선택적 추가 바이트 배열이며, 그렇지 않은 경우는 null입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="userData" /> 매개 변수가 null인 경우</exception>
+      <exception cref="T:System.Security.Cryptography.CryptographicException">암호화에 실패한 경우</exception>
+      <exception cref="T:System.NotSupportedException">운영 체제에서 이 메서드를 지원하지 않는 경우 </exception>
+      <exception cref="T:System.OutOfMemoryException">데이터를 암호화하는 동안 시스템의 메모리가 부족한 경우</exception>
+    </member>
+    <member name="M:System.Security.Cryptography.ProtectedData.Unprotect(System.Byte[],System.Byte[])">
+      <summary>지정된 바이트 배열에 있는 데이터를 암호 해독하고 암호 해독된 데이터가 포함된 바이트 배열을 반환합니다.</summary>
+      <returns>해독된 데이터를 나타내는 바이트 배열입니다.</returns>
+      <param name="encryptedData">
+        <see cref="M:System.Security.Cryptography.ProtectedData.Protect(System.Byte[],System.Byte[])" /> 메서드를 사용하여 암호화된 데이터가 들어 있는 바이트 배열입니다. </param>
+      <param name="optionalEntropy">추가 바이트 배열을 사용한 경우 데이터를 암호화하는 데 사용된 선택적 추가 바이트 배열이며, 그렇지 않은 경우는 null입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="encryptedData" /> 매개 변수가 null인 경우</exception>
+      <exception cref="T:System.Security.Cryptography.CryptographicException">해독에 실패한 경우</exception>
+      <exception cref="T:System.NotSupportedException">운영 체제에서 이 메서드를 지원하지 않는 경우 </exception>
+      <exception cref="T:System.OutOfMemoryException">메모리가 부족한 경우</exception>
+    </member>
+  </members>
+</doc>

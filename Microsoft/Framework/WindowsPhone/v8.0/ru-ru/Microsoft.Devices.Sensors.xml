@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Microsoft.Devices.Sensors</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.Devices.Sensors.Accelerometer">
+      <summary>Предоставляет приложениям Windows Phone доступ к установленному в устройстве датчику ускорения (акселерометру).</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Accelerometer.#ctor">
+      <summary>Создает новый экземпляр объекта <see cref="T:Microsoft.Devices.Sensors.Accelerometer" />.</summary>
+      <exception cref="T:Microsoft.Devices.Sensors.SensorFailedException">Превышен предел в 10 одновременно существующих экземпляров класса Accelerometer на приложение.</exception>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Accelerometer.Dispose">
+      <summary>Освобождает управляемые и неуправляемые ресурсы, используемые объектом <see cref="T:Microsoft.Devices.Sensors.Accelerometer" />.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.Accelerometer.IsSupported">
+      <summary>Возвращает или задает сведения о том, поддерживается ли датчик ускорения устройством, на котором запущено приложение.</summary>
+      <returns>значение true,  Если устройство, на котором выполняется приложение поддерживает датчика accelerometer; в противном случае  значение false,.</returns>
+    </member>
+    <member name="E:Microsoft.Devices.Sensors.Accelerometer.ReadingChanged">
+      <summary>Возникает при получении новых данных с датчика ускорения. В текущей версии этот метод устарел. Приложения должны использовать  <see cref="E:Microsoft.Devices.Sensors.SensorBase`1.CurrentValueChanged" />событие  <see cref="T:Microsoft.Devices.Sensors.SensorBase`1" />класса а.</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Accelerometer.Start">
+      <summary>Запускает сбор данных с датчика ускорения.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.Accelerometer.State">
+      <summary>Возвращает текущее состояние датчика ускорения. Значение является элементом перечисления <see cref="T:Microsoft.Devices.Sensors.SensorState" />.</summary>
+      <returns>Тип: <see cref="T:Microsoft.Devices.Sensors.SensorState" />.</returns>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Accelerometer.Stop">
+      <summary>Останавливает сбор данных с датчика ускорения.</summary>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.AccelerometerFailedException">
+      <summary>Исключение, которое может возникать во время вызова <see cref="M:Microsoft.Devices.Sensors.Accelerometer.Start" /> или <see cref="M:Microsoft.Devices.Sensors.Accelerometer.Stop" />. В поле Message описывается причина возникновения исключения, а в поле <see cref="P:Microsoft.Devices.Sensors.AccelerometerFailedException.ErrorId" /> содержится код ошибки для реализации базового машинного кода платформы датчика ускорения.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerFailedException.ErrorId">
+      <summary>Код ошибки для реализации базового машинного кода платформы датчика ускорения.</summary>
+      <returns>Тип: <see cref="T:System.Int32" />.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.AccelerometerReading">
+      <summary>Содержит данные об ускорении и отметку времени для показания датчика ускорения, обозначая амплитуду и направление действия приложенных к устройству сил.  </summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReading.Acceleration">
+      <summary>Возвращает вектор ускорения устройства в гравитационных единицах.</summary>
+      <returns>Ускорение устройства.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReading.Timestamp">
+      <summary>Возвращает отметку времени, указывающую на время получения показания датчика ускорения. Это можно использовать для определения соотношения показаний с разных датчиков и предоставления дополнительных входных данных для алгоритмов, осуществляющих обработку необработанных данных с датчика.</summary>
+      <returns>Время получения показания датчика ускорения.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.AccelerometerReadingEventArgs">
+      <summary>Предоставляет данные для событий <see cref="E:Microsoft.Devices.Sensors.Accelerometer.ReadingChanged" />.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReadingEventArgs.Timestamp">
+      <summary>Отметка времени, указывающая на время получения показания датчика ускорения.</summary>
+      <returns>Тип: <see cref="T:System.DateTimeOffset" />.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReadingEventArgs.X">
+      <summary>Ускорение в направлении по оси X в гравитационных единицах.</summary>
+      <returns>Тип: <see cref="T:System.Double" />.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReadingEventArgs.Y">
+      <summary>Ускорение в направлении по оси Y в гравитационных единицах.</summary>
+      <returns>Тип: <see cref="T:System.Double" />.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReadingEventArgs.Z">
+      <summary>Ускорение в направлении по оси Z в гравитационных единицах.</summary>
+      <returns>Тип: <see cref="T:System.Double" />.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.AttitudeReading">
+      <summary>Содержит сведения об ориентации устройства в пространстве.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.Pitch">
+      <summary>Возвращает тангаж для показания положения в радианах.</summary>
+      <returns>Тангаж для показания положения.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.Quaternion">
+      <summary>Возвращает кватернионное представление показания положения.</summary>
+      <returns>Кватернионное представление показания положения.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.Roll">
+      <summary>Возвращает крен для показания положения в радианах.</summary>
+      <returns>Крен для показания положения.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.RotationMatrix">
+      <summary>Возвращает матричное представление показания положения.</summary>
+      <returns>Матричное представление показания положения.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.Timestamp">
+      <summary>Возвращает отметку времени, указывающую на время получения показания датчика ускорения. Это можно использовать для определения соотношения показаний с разных датчиков и предоставления дополнительных входных данных для алгоритмов, осуществляющих обработку необработанных данных с датчика.</summary>
+      <returns>Время получения показания положения.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.Yaw">
+      <summary>Возвращает рыскание для показания положения в радианах.</summary>
+      <returns>Рыскание для показания положения.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.CalibrationEventArgs">
+      <summary>Предоставляет данные для событий <see cref="E:Microsoft.Devices.Sensors.Compass.Calibrate" />.</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.CalibrationEventArgs.#ctor">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:Microsoft.Devices.Sensors.CalibrationEventArgs" />.</summary>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.Compass">
+      <summary>Предоставляет приложениям Windows Phone доступ к установленному в устройстве компасу.</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Compass.#ctor">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:Microsoft.Devices.Sensors.Compass" />.</summary>
+      <exception cref="T:Microsoft.Devices.Sensors.SensorFailedException">Превышен предел в 10 одновременно существующих экземпляров класса Compass на приложение.</exception>
+    </member>
+    <member name="E:Microsoft.Devices.Sensors.Compass.Calibrate">
+      <summary>Возникает, когда операционная система обнаруживает потребность в калибровке компаса.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.Compass.IsSupported">
+      <summary>Определение того, поддерживается ли компасный датчик устройством, на котором запущено приложение.</summary>
+      <returns>Тип: <see cref="T:System.Boolean" />.  значение true,  Если устройство, на котором выполняется приложение поддерживает компаса датчика; в противном случае  значение false,.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.CompassReading">
+      <summary>Содержит сведения о магнитном поле, обнаруженном компасным датчиком устройства, которые можно использовать для определения ориентации устройства относительно магнитного поля Земли.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.CompassReading.HeadingAccuracy">
+      <summary>Возвращает значение точности (в градусах) для показаний направления по компасу.</summary>
+      <returns>Значение точности для показаний направления по компасу.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.CompassReading.MagneticHeading">
+      <summary>Возвращает направление (в градусах) относительно северного магнитного полюса Земли.</summary>
+      <returns>Направление относительно северного магнитного полюса Земли.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.CompassReading.MagnetometerReading">
+      <summary>Возвращает необработанные данные с магнитометра в микротеслах.</summary>
+      <returns>Необработанные данные с магнитометра.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.CompassReading.Timestamp">
+      <summary>Возвращает отметку времени, указывающую на время получения показания датчика. Это можно использовать для определения соотношения показаний с разных датчиков и предоставления дополнительных входных данных для алгоритмов, осуществляющих обработку необработанных данных с датчика.</summary>
+      <returns>Время получения показания компаса.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.CompassReading.TrueHeading">
+      <summary>Возвращает направление (в градусах) относительно северного географического полюса Земли.</summary>
+      <returns>Направление относительно географического севера Земли.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.Gyroscope">
+      <summary>Предоставляет приложениям Windows Phone доступ к установленному в устройстве гироскопу.</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Gyroscope.#ctor">
+      <summary>Инициализирует новый экземпляр класса Gyroscope.</summary>
+      <exception cref="T:Microsoft.Devices.Sensors.SensorFailedException">Превышен предел в 10 одновременно существующих экземпляров класса Gyroscope на приложение.</exception>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.Gyroscope.IsSupported">
+      <summary>Возвращает или задает сведения о том, поддерживается ли гироскопический датчик устройством, на котором запущено приложение.</summary>
+      <returns>значение true,  Если устройство, на котором выполняется приложение поддерживает гироскоп датчика; в противном случае  значение false,.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.GyroscopeReading">
+      <summary>Содержит сведения об ускорении вращения устройства.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.GyroscopeReading.RotationRate">
+      <summary>Возвращает угловую скорость вокруг каждой из осей устройства в радианах в секунду.</summary>
+      <returns>Угловая скорость вокруг каждой из осей устройства.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.GyroscopeReading.Timestamp">
+      <summary>Возвращает отметку времени, указывающую на время получения показания датчика. Это можно использовать для определения соотношения показаний с разных датчиков и предоставления дополнительных входных данных для алгоритмов, осуществляющих обработку необработанных данных с датчика.</summary>
+      <returns>Время получения показания гироскопа.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.ISensorReading">
+      <summary>Интерфейс, реализуемый всеми классами показаний датчиков.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.ISensorReading.Timestamp">
+      <summary>Возвращает отметку времени, указывающую на время получения показания датчика. Это можно использовать для определения соотношения показаний с разных датчиков и предоставления дополнительных входных данных для алгоритмов, осуществляющих обработку необработанных данных с датчика.</summary>
+      <returns>Тип: <see cref="T:System.DateTimeOffset" />. Время получения показания датчика.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.Motion">
+      <summary>Предоставляет приложениям Windows Phone сведения об ориентации и движении устройства.</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Motion.#ctor">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:Microsoft.Devices.Sensors.Motion" />.</summary>
+      <exception cref="T:Microsoft.Devices.Sensors.SensorFailedException">Превышен предел в 10 одновременно существующих экземпляров класса Motion на приложение.</exception>
+    </member>
+    <member name="E:Microsoft.Devices.Sensors.Motion.Calibrate">
+      <summary>Возникает, когда операционная система обнаруживает потребность в калибровке компаса.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.Motion.IsSupported">
+      <summary>Возвращает или задает сведения о том, поддерживает ли устройство, на котором запущено приложение, датчики, требуемые классу <see cref="T:Microsoft.Devices.Sensors.Motion" />.</summary>
+      <returns>значение true,    , поддерживает ли устройство, на котором выполняется приложение датчиков, необходимые для  <see cref="T:Microsoft.Devices.Sensors.Motion" />класса; в противном случае  значение false,.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.MotionReading">
+      <summary>Содержит сведения об ориентации и движении устройства. </summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.MotionReading.Attitude">
+      <summary>Возвращает положение (рыскание, тангаж, крен) устройства в радианах.</summary>
+      <returns>Положение устройства.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.MotionReading.DeviceAcceleration">
+      <summary>Возвращает линейное ускорение устройства в гравитационных единицах.</summary>
+      <returns>Линейное ускорение устройства.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.MotionReading.DeviceRotationRate">
+      <summary>Возвращает угловое ускорение устройства в радианах в секунду.</summary>
+      <returns>Угловое ускорение устройства.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.MotionReading.Gravity">
+      <summary>Возвращает вектор тяготения, сопоставленный с <see cref="T:Microsoft.Devices.Sensors.MotionReading" />.</summary>
+      <returns>Вектор тяготения, сопоставленный с MotionReading.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.MotionReading.Timestamp">
+      <summary>Возвращает отметку времени, указывающую на время вычисления <see cref="T:Microsoft.Devices.Sensors.MotionReading" />. Это можно использовать для определения соотношения показаний с разных датчиков и предоставления дополнительных входных данных для алгоритмов, осуществляющих обработку необработанных данных с датчика.</summary>
+      <returns>Тип: <see cref="T:System.DateTimeOffset" />. Время вычисления MotionReading</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.SensorBase`1">
+      <summary>Базовый класс для всех классов датчиков Windows Phone.</summary>
+      <typeparam name="TSensorReading">Тип чтения возвращаемых датчика.</typeparam>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.SensorBase`1.CurrentValue">
+      <summary>Возвращает объект, который реализует <see cref="T:Microsoft.Devices.Sensors.ISensorReading" />, содержащий текущее значение датчика. Этот объект будет одним из следующих типов, в зависимости от того, на которые ссылается датчика: <see cref="T:Microsoft.Devices.Sensors.AccelerometerReading" />, <see cref="T:Microsoft.Devices.Sensors.CompassReading" />, <see cref="T:Microsoft.Devices.Sensors.GyroscopeReading" />, <see cref="T:Microsoft.Devices.Sensors.MotionReading" />.</summary>
+      <returns>Тип: <see cref="{0}" />.  Объект, который реализует <see cref="T:Microsoft.Devices.Sensors.ISensorReading" /> содержащий текущее значение датчика.</returns>
+    </member>
+    <member name="E:Microsoft.Devices.Sensors.SensorBase`1.CurrentValueChanged">
+      <summary>Возникает при получении новых данных с датчика.</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.SensorBase`1.Dispose">
+      <summary>Освобождает управляемые и неуправляемые ресурсы, используемые датчиком.</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.SensorBase`1.Finalize">
+      <summary>Позволяет объекту попытаться освободить ресурсы и выполнить другие операции очистки, перед тем как объект Object будет утилизирован в процессе сборки мусора.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.SensorBase`1.IsDataValid">
+      <summary>Возвращает сведения о достоверности данных датчика.</summary>
+      <returns>Тип: <see cref="T:System.Boolean" />.  значение true,  Если датчиков является допустимым; в противном случае  значение false,.</returns>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.SensorBase`1.Start">
+      <summary>Запускает сбор данных с датчика.</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.SensorBase`1.Stop">
+      <summary>Останавливает сбор данных с датчика.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.SensorBase`1.TimeBetweenUpdates">
+      <summary>Возвращает или задает предпочитаемый промежуток времени между событиями <see cref="E:Microsoft.Devices.Sensors.SensorBase`1.CurrentValueChanged" />.</summary>
+      <returns>Тип: <see cref="T:System.TimeSpan" />. Предпочитаемый промежуток времени между событиями CurrentValueChanged.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.SensorFailedException">
+      <summary>Представляет исключение, возникающее сбое операции датчика.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.SensorFailedException.ErrorId">
+      <summary>Код ошибки, указывающий на причину возникновения исключения.</summary>
+      <returns>Тип: <see cref="T:System.Int32" />.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.SensorReadingEventArgs`1">
+      <summary>Предоставляет данные для событий <see cref="E:Microsoft.Devices.Sensors.SensorBase`1.CurrentValueChanged" />. </summary>
+      <typeparam name="T">Тип чтения событий содержит данные.</typeparam>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.SensorReadingEventArgs`1.#ctor">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:Microsoft.Devices.Sensors.SensorReadingEventArgs`1" />.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.SensorReadingEventArgs`1.SensorReading">
+      <summary>Возвращает данные показаний датчика, сопоставленные с SensorReadingEventArgs.</summary>
+      <returns>Данные показаний датчика, сопоставленные с SensorReadingEventArgs.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.SensorState">
+      <summary>Перечисление значений для выражения текущего состояния датчика ускорения. Состояние датчика можно получить с помощью его свойства <see cref="P:Microsoft.Devices.Sensors.Accelerometer.State" />.</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.NotSupported">
+      <summary>Оборудование датчика недоступно.</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.Ready">
+      <summary>Датчик доступен и выполняет разрешение данных.</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.Initializing">
+      <summary>Датчик доступен и выполняет инициализацию.</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.NoData">
+      <summary>Датчику не удается получить данные.</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.NoPermissions">
+      <summary>Вызывающий объект не имеет разрешения на доступ к данным датчика.</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.Disabled">
+      <summary>Датчик отключен.</summary>
+    </member>
+  </members>
+</doc>

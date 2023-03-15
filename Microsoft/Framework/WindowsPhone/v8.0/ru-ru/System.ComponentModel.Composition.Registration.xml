@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.ComponentModel.Composition.Registration</name>
+  </assembly>
+  <members>
+    <member name="T:System.ComponentModel.Composition.Registration.ExportBuilder"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.ExportBuilder.#ctor"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.ExportBuilder.AddMetadata(System.String,System.Func{System.Type,System.Object})"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.ExportBuilder.AddMetadata(System.String,System.Object)"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.ExportBuilder.AsContractName(System.String)"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.ExportBuilder.AsContractType``1">
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="M:System.ComponentModel.Composition.Registration.ExportBuilder.AsContractType(System.Type)"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.ExportBuilder.Inherited"></member>
+    <member name="T:System.ComponentModel.Composition.Registration.ImportBuilder"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.ImportBuilder.#ctor"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.ImportBuilder.AllowDefault"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.ImportBuilder.AsContractName(System.String)"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.ImportBuilder.AsContractType``1">
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="M:System.ComponentModel.Composition.Registration.ImportBuilder.AsContractType(System.Type)"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.ImportBuilder.AsMany(System.Boolean)"></member>
+    <member name="T:System.ComponentModel.Composition.Registration.ParameterImportBuilder"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.ParameterImportBuilder.#ctor"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.ParameterImportBuilder.Import``1">
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="M:System.ComponentModel.Composition.Registration.ParameterImportBuilder.Import``1(System.Action{System.ComponentModel.Composition.Registration.ImportBuilder})">
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="T:System.ComponentModel.Composition.Registration.PartBuilder"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.PartBuilder.AddMetadata(System.String,System.Func{System.Type,System.Object})"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.PartBuilder.AddMetadata(System.String,System.Object)"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.PartBuilder.Export``1">
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="M:System.ComponentModel.Composition.Registration.PartBuilder.Export"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.PartBuilder.Export``1(System.Action{System.ComponentModel.Composition.Registration.ExportBuilder})">
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="M:System.ComponentModel.Composition.Registration.PartBuilder.Export(System.Action{System.ComponentModel.Composition.Registration.ExportBuilder})"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.PartBuilder.ExportInterfaces"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.PartBuilder.ExportInterfaces(System.Predicate{System.Type})"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.PartBuilder.ExportInterfaces(System.Predicate{System.Type},System.Action{System.Type,System.ComponentModel.Composition.Registration.ExportBuilder})"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.PartBuilder.ExportProperties``1(System.Predicate{System.Reflection.PropertyInfo})">
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="M:System.ComponentModel.Composition.Registration.PartBuilder.ExportProperties(System.Predicate{System.Reflection.PropertyInfo})"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.PartBuilder.ExportProperties``1(System.Predicate{System.Reflection.PropertyInfo},System.Action{System.Reflection.PropertyInfo,System.ComponentModel.Composition.Registration.ExportBuilder})">
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="M:System.ComponentModel.Composition.Registration.PartBuilder.ExportProperties(System.Predicate{System.Reflection.PropertyInfo},System.Action{System.Reflection.PropertyInfo,System.ComponentModel.Composition.Registration.ExportBuilder})"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.PartBuilder.ImportProperties``1(System.Predicate{System.Reflection.PropertyInfo})">
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="M:System.ComponentModel.Composition.Registration.PartBuilder.ImportProperties(System.Predicate{System.Reflection.PropertyInfo})"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.PartBuilder.ImportProperties``1(System.Predicate{System.Reflection.PropertyInfo},System.Action{System.Reflection.PropertyInfo,System.ComponentModel.Composition.Registration.ImportBuilder})">
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="M:System.ComponentModel.Composition.Registration.PartBuilder.ImportProperties(System.Predicate{System.Reflection.PropertyInfo},System.Action{System.Reflection.PropertyInfo,System.ComponentModel.Composition.Registration.ImportBuilder})"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.PartBuilder.SelectConstructor(System.Func{System.Reflection.ConstructorInfo[],System.Reflection.ConstructorInfo})"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.PartBuilder.SelectConstructor(System.Func{System.Reflection.ConstructorInfo[],System.Reflection.ConstructorInfo},System.Action{System.Reflection.ParameterInfo,System.ComponentModel.Composition.Registration.ImportBuilder})"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.PartBuilder.SetCreationPolicy(System.ComponentModel.Composition.CreationPolicy)"></member>
+    <member name="T:System.ComponentModel.Composition.Registration.PartBuilder`1">
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="M:System.ComponentModel.Composition.Registration.PartBuilder`1.ExportProperty``1(System.Linq.Expressions.Expression{System.Func{`0,System.Object}})">
+      <typeparam name="TContract"></typeparam>
+    </member>
+    <member name="M:System.ComponentModel.Composition.Registration.PartBuilder`1.ExportProperty(System.Linq.Expressions.Expression{System.Func{`0,System.Object}})"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.PartBuilder`1.ExportProperty``1(System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.Action{System.ComponentModel.Composition.Registration.ExportBuilder})">
+      <typeparam name="TContract"></typeparam>
+    </member>
+    <member name="M:System.ComponentModel.Composition.Registration.PartBuilder`1.ExportProperty(System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.Action{System.ComponentModel.Composition.Registration.ExportBuilder})"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.PartBuilder`1.ImportProperty``1(System.Linq.Expressions.Expression{System.Func{`0,System.Object}})">
+      <typeparam name="TContract"></typeparam>
+    </member>
+    <member name="M:System.ComponentModel.Composition.Registration.PartBuilder`1.ImportProperty(System.Linq.Expressions.Expression{System.Func{`0,System.Object}})"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.PartBuilder`1.ImportProperty``1(System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.Action{System.ComponentModel.Composition.Registration.ImportBuilder})">
+      <typeparam name="TContract"></typeparam>
+    </member>
+    <member name="M:System.ComponentModel.Composition.Registration.PartBuilder`1.ImportProperty(System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.Action{System.ComponentModel.Composition.Registration.ImportBuilder})"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.PartBuilder`1.SelectConstructor(System.Linq.Expressions.Expression{System.Func{System.ComponentModel.Composition.Registration.ParameterImportBuilder,`0}})"></member>
+    <member name="T:System.ComponentModel.Composition.Registration.RegistrationBuilder"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.RegistrationBuilder.#ctor"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.RegistrationBuilder.ForType``1">
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="M:System.ComponentModel.Composition.Registration.RegistrationBuilder.ForType(System.Type)"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.RegistrationBuilder.ForTypesDerivedFrom``1">
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="M:System.ComponentModel.Composition.Registration.RegistrationBuilder.ForTypesDerivedFrom(System.Type)"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.RegistrationBuilder.ForTypesMatching``1(System.Predicate{System.Type})">
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="M:System.ComponentModel.Composition.Registration.RegistrationBuilder.ForTypesMatching(System.Predicate{System.Type})"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.RegistrationBuilder.GetCustomAttributes(System.Reflection.MemberInfo,System.Collections.Generic.IEnumerable{System.Object})"></member>
+    <member name="M:System.ComponentModel.Composition.Registration.RegistrationBuilder.GetCustomAttributes(System.Reflection.ParameterInfo,System.Collections.Generic.IEnumerable{System.Object})"></member>
+  </members>
+</doc>

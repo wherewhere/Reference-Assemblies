@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) Microsoft Corporation.  All rights reserved. -->
+<doc>
+  <assembly>
+    <name>System.Observable</name>
+  </assembly>
+  <members>
+    <member name="T:System.IObservable`1">
+<summary>为基于推送的通知定义提供程序。 </summary>
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="M:System.IObservable`1.Subscribe(System.IObserver{`0})">
+<summary>订阅 <paramref name=" observer"/> 以接收通知。 </summary>
+<returns>对接口的引用，该接口允许观察者在提供程序完成发送通知之前停止接收通知。</returns>
+<param name="observer">要接收通知的对象。</param>
+    </member>
+    <member name="T:System.IObserver`1">
+<summary>提供用于接收基于推送的通知的机制。</summary>
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="M:System.IObserver`1.OnCompleted">
+<summary>通知观察者可观察序列结束。此序列没有进一步可用的值或通知。</summary>
+    </member>
+    <member name="M:System.IObserver`1.OnError(System.Exception)">
+<summary>通知观察者在处理可观察序列时发生异常。</summary> <param name="exception">提供有关错误的详细信息的对象。</param>
+    </member>
+    <member name="M:System.IObserver`1.OnNext(`0)">
+<summary>通知观察者可观察序列中的新值。</summary> <param name="value">当前通知信息。</param>
+    </member>
+  </members>
+</doc>

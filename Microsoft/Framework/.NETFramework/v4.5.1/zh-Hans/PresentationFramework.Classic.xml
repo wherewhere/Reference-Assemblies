@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>PresentationFramework.Classic</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.Windows.Themes.ClassicBorderDecorator">
+      <summary>创建 <see cref="T:System.Windows.Controls.Decorator" /> 类型的特定于主题的外观，以与传统型主题一起使用。</summary>
+    </member>
+    <member name="M:Microsoft.Windows.Themes.ClassicBorderDecorator.#ctor">
+      <summary>初始化 <see cref="T:Microsoft.Windows.Themes.ClassicBorderDecorator" /> 类的新实例。</summary>
+    </member>
+    <member name="P:Microsoft.Windows.Themes.ClassicBorderDecorator.Background">
+      <summary>获取或设置用于填充元素背景的画笔。</summary>
+      <returns>用于填充元素背景的画笔。</returns>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ClassicBorderDecorator.BackgroundProperty">
+      <summary>标识 <see cref="P:Microsoft.Windows.Themes.ClassicBorderDecorator.Background" /> 依赖项属性。</summary>
+      <returns>
+        <see cref="P:Microsoft.Windows.Themes.ButtonChrome.Background" /> 依赖项属性的标识符。</returns>
+    </member>
+    <member name="P:Microsoft.Windows.Themes.ClassicBorderDecorator.BorderBrush">
+      <summary>获取或设置用于绘制元素的外边框的画笔。</summary>
+      <returns>用于绘制元素的外边框的画笔。</returns>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ClassicBorderDecorator.BorderBrushProperty">
+      <summary>标识 <see cref="P:Microsoft.Windows.Themes.ClassicBorderDecorator.BorderBrush" /> 依赖项属性。</summary>
+      <returns>
+        <see cref="P:Microsoft.Windows.Themes.ButtonChrome.BorderBrush" /> 依赖项属性的标识符。</returns>
+    </member>
+    <member name="P:Microsoft.Windows.Themes.ClassicBorderDecorator.BorderStyle">
+      <summary>获取或设置用于绘制元素外边框的 <see cref="T:Microsoft.Windows.Themes.ClassicBorderStyle" />。</summary>
+      <returns>用于绘制元素的边框的 <see cref="T:Microsoft.Windows.Themes.ClassicBorderStyle" />。</returns>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ClassicBorderDecorator.BorderStyleProperty">
+      <summary>标识 <see cref="P:Microsoft.Windows.Themes.ClassicBorderDecorator.BorderStyle" /> 依赖项属性。</summary>
+      <returns>
+        <see cref="P:Microsoft.Windows.Themes.ClassicBorderDecorator.BorderStyle" /> 依赖项属性的标识符。</returns>
+    </member>
+    <member name="P:Microsoft.Windows.Themes.ClassicBorderDecorator.BorderThickness">
+      <summary>获取或设置边框的宽度。</summary>
+      <returns>边框的宽度。</returns>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ClassicBorderDecorator.BorderThicknessProperty">
+      <summary>标识 <see cref="P:Microsoft.Windows.Themes.ClassicBorderDecorator.BorderThickness" /> 依赖项属性。</summary>
+      <returns>
+        <see cref="P:Microsoft.Windows.Themes.ClassicBorderDecorator.BorderThickness" /> 依赖项属性的标识符。</returns>
+    </member>
+    <member name="P:Microsoft.Windows.Themes.ClassicBorderDecorator.ClassicBorderBrush">
+      <summary>获取用于绘制边框的画笔。</summary>
+      <returns>用于绘制边框的画笔。</returns>
+    </member>
+    <member name="T:Microsoft.Windows.Themes.ClassicBorderStyle">
+      <summary>指定要绘制的 <see cref="T:System.Windows.Controls.Border" /> 的类型。</summary>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ClassicBorderStyle.AltPressed">
+      <summary>用于处于按下状态的 <see cref="T:System.Windows.Controls.Primitives.ScrollBar" /> 上的 <see cref="T:System.Windows.Controls.Primitives.Thumb" />。</summary>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ClassicBorderStyle.AltRaised">
+      <summary>用于处于正常状态的 <see cref="T:System.Windows.Controls.Primitives.ScrollBar" /> 上的 <see cref="T:System.Windows.Controls.Primitives.Thumb" />。</summary>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ClassicBorderStyle.Etched">
+      <summary>用于 <see cref="T:System.Windows.Controls.GroupBox" />。</summary>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ClassicBorderStyle.HorizontalLine">
+      <summary>用于水平 <see cref="T:System.Windows.Controls.Separator" />。</summary>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ClassicBorderStyle.None">
+      <summary>无边框。</summary>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ClassicBorderStyle.RadioButton">
+      <summary>
+        <see cref="T:System.Windows.Controls.RadioButton" /> 边框。</summary>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ClassicBorderStyle.Raised">
+      <summary>用于处于正常状态的 <see cref="T:System.Windows.Controls.Button" /> 元素。</summary>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ClassicBorderStyle.RaisedFocused">
+      <summary>用于具有键盘焦点或属于默认 <see cref="T:System.Windows.Controls.Button" /> 的 <see cref="T:System.Windows.Controls.Button" /> 元素。</summary>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ClassicBorderStyle.RaisedPressed">
+      <summary>用于处于按下状态的 <see cref="T:System.Windows.Controls.Button" /> 元素。</summary>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ClassicBorderStyle.Sunken">
+      <summary>用于 <see cref="T:System.Windows.Controls.ListBox" />、<see cref="T:System.Windows.Controls.TextBox" /> 和 <see cref="T:System.Windows.Controls.CheckBox" />。</summary>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ClassicBorderStyle.TabBottom">
+      <summary>用于 <see cref="T:System.Windows.Controls.TabItem" />。</summary>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ClassicBorderStyle.TabLeft">
+      <summary>用于 <see cref="T:System.Windows.Controls.TabItem" />。</summary>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ClassicBorderStyle.TabRight">
+      <summary>用于 <see cref="T:System.Windows.Controls.TabItem" />。</summary>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ClassicBorderStyle.TabTop">
+      <summary>用于 <see cref="T:System.Windows.Controls.TabItem" />。</summary>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ClassicBorderStyle.ThinPressed">
+      <summary>用于处于按下状态的顶级 <see cref="T:System.Windows.Controls.MenuItem" />。</summary>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ClassicBorderStyle.ThinRaised">
+      <summary>用于其上悬停有鼠标或其他输入设备指针的顶级 <see cref="T:System.Windows.Controls.MenuItem" />。</summary>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ClassicBorderStyle.VerticalLine">
+      <summary>用于垂直 <see cref="T:System.Windows.Controls.Separator" />。</summary>
+    </member>
+    <member name="T:Microsoft.Windows.Themes.ProgressBarBrushConverter">
+      <summary>创建用于绘制 <see cref="T:System.Windows.Controls.ProgressBar" /> 的 <see cref="T:System.Windows.Media.Brush" />。</summary>
+    </member>
+    <member name="M:Microsoft.Windows.Themes.ProgressBarBrushConverter.#ctor">
+      <summary>初始化 <see cref="T:Microsoft.Windows.Themes.ProgressBarBrushConverter" /> 类的新实例。</summary>
+    </member>
+    <member name="M:Microsoft.Windows.Themes.ProgressBarBrushConverter.Convert(System.Object[],System.Type,System.Object,System.Globalization.CultureInfo)">
+      <summary>创建用于 <see cref="T:System.Windows.Controls.ProgressBar" /> 的 <see cref="T:System.Windows.Media.DrawingBrush" />。</summary>
+      <returns>
+        <see cref="T:System.Windows.Controls.ProgressBar" /> 的 <see cref="T:System.Windows.Media.DrawingBrush" />。</returns>
+      <param name="values">ForegroundBrush、IsIndeterminate、Indicator Width、Indicator Height、Track Width 用于 <see cref="T:System.Windows.Controls.ProgressBar" /> 的 <see cref="P:System.Windows.Controls.Control.Foreground" /> 的 <see cref="T:System.Windows.Media.Brush" />、用于指示 <see cref="P:System.Windows.Controls.ProgressBar.IsIndeterminate" /> 是否为 true 布尔值、用于定义指示器 <see cref="P:System.Windows.FrameworkElement.Width" /> 的 <see cref="T:System.Double" />、用于定义指示器 <see cref="P:System.Windows.FrameworkElement.Height" /> 的 <see cref="T:System.Double" /> 和用于定义指示器 <see cref="T:System.Windows.Controls.Primitives.Track" /> 的 <see cref="T:System.Double" />。</param>
+      <param name="targetType">未使用此参数。</param>
+      <param name="parameter">未使用此参数。</param>
+      <param name="culture">未使用此参数。</param>
+    </member>
+    <member name="M:Microsoft.Windows.Themes.ProgressBarBrushConverter.ConvertBack(System.Object,System.Type[],System.Object,System.Globalization.CultureInfo)">
+      <summary>未实现。</summary>
+      <returns>null.</returns>
+      <param name="value">未使用此参数。</param>
+      <param name="targetTypes">未使用此参数。</param>
+      <param name="parameter">未使用此参数。</param>
+      <param name="culture">未使用此参数。</param>
+    </member>
+  </members>
+</doc>

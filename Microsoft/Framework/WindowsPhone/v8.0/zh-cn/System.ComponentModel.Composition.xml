@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.ComponentModel.Composition</name>
+  </assembly>
+  <members>
+    <member name="T:System.Lazy`2">
+      <summary>向 <see cref="T:System.Lazy`1" /> 类的扩展提供对元数据的支持。</summary>
+      <typeparam name="T">指定正在延迟初始化的对象的类型。</typeparam>
+      <typeparam name="TMetadata">为延迟初始化的对象指定元数据类型。</typeparam>
+    </member>
+    <member name="M:System.Lazy`2.#ctor(System.Func{`0},`1)">
+      <summary>使用指定的元数据和引用值的工厂方法初始化 <see cref="T:System.Lazy`2" /> 类的新实例。</summary>
+      <param name="valueFactory">返回引用值的函数。</param>
+      <param name="metadata">元数据。</param>
+    </member>
+    <member name="M:System.Lazy`2.#ctor(System.Func{`0},`1,System.Boolean)">
+      <summary>使用指定的元数据、引用值的工厂方法和线程安全模式初始化 <see cref="T:System.Lazy`2" /> 类的新实例。</summary>
+      <param name="valueFactory">返回引用值的函数。</param>
+      <param name="metadata">元数据。</param>
+      <param name="isThreadSafe">true 表示此示例可由多个线程同时使用；false 表示此实例一次只能由一个线程使用。</param>
+    </member>
+    <member name="M:System.Lazy`2.#ctor(System.Func{`0},`1,System.Threading.LazyThreadSafetyMode)">
+      <summary>使用指定的元数据、引用值的工厂方法和线程安全模式初始化 <see cref="T:System.Lazy`2" /> 类的新实例。</summary>
+      <param name="valueFactory">返回引用值的函数。</param>
+      <param name="metadata">元数据。</param>
+      <param name="mode">线程安全模式。</param>
+    </member>
+    <member name="M:System.Lazy`2.#ctor(`1)">
+      <summary>使用指定的元数据初始化 <see cref="T:System.Lazy`2" /> 类的新实例。</summary>
+      <param name="metadata">元数据。</param>
+    </member>
+    <member name="M:System.Lazy`2.#ctor(`1,System.Boolean)">
+      <summary>使用指定的元数据和线程安全模式初始化 <see cref="T:System.Lazy`2" /> 类的新实例。</summary>
+      <param name="metadata">元数据。</param>
+      <param name="isThreadSafe">true 表示此示例可由多个线程同时使用；false 表示此实例一次只能由一个线程使用。</param>
+    </member>
+    <member name="M:System.Lazy`2.#ctor(`1,System.Threading.LazyThreadSafetyMode)">
+      <summary>使用指定的元数据和线程安全模式初始化 <see cref="T:System.Lazy`2" /> 类的新实例。</summary>
+      <param name="metadata">元数据。</param>
+      <param name="mode">线程安全模式。</param>
+    </member>
+    <member name="P:System.Lazy`2.Metadata">
+      <summary>获取或设置与引用值相关联的元数据。</summary>
+      <returns>与引用值相关联的元数据对象。</returns>
+    </member>
+    <member name="T:System.ComponentModel.Composition.AttributedModelServices"></member>
+    <member name="M:System.ComponentModel.Composition.AttributedModelServices.SatisfyImportsOnce(System.ComponentModel.Composition.ICompositionService,System.Object)"></member>
+    <member name="M:System.ComponentModel.Composition.AttributedModelServices.SatisfyImportsOnce(System.ComponentModel.Composition.ICompositionService,System.Object,System.Reflection.ReflectionContext)"></member>
+    <member name="T:System.ComponentModel.Composition.CatalogReflectionContextAttribute"></member>
+    <member name="M:System.ComponentModel.Composition.CatalogReflectionContextAttribute.#ctor(System.Type)"></member>
+    <member name="M:System.ComponentModel.Composition.CatalogReflectionContextAttribute.CreateReflectionContext"></member>
+    <member name="T:System.ComponentModel.Composition.ChangeRejectedException"></member>
+    <member name="M:System.ComponentModel.Composition.ChangeRejectedException.#ctor"></member>
+    <member name="M:System.ComponentModel.Composition.ChangeRejectedException.#ctor(System.Collections.Generic.IEnumerable{System.ComponentModel.Composition.CompositionError})"></member>
+    <member name="M:System.ComponentModel.Composition.ChangeRejectedException.#ctor(System.String)"></member>
+    <member name="M:System.ComponentModel.Composition.ChangeRejectedException.#ctor(System.String,System.Exception)"></member>
+    <member name="P:System.ComponentModel.Composition.ChangeRejectedException.Message"></member>
+    <member name="T:System.ComponentModel.Composition.CompositionContractMismatchException"></member>
+    <member name="M:System.ComponentModel.Composition.CompositionContractMismatchException.#ctor"></member>
+    <member name="M:System.ComponentModel.Composition.CompositionContractMismatchException.#ctor(System.String)"></member>
+    <member name="M:System.ComponentModel.Composition.CompositionContractMismatchException.#ctor(System.String,System.Exception)"></member>
+    <member name="T:System.ComponentModel.Composition.CompositionError"></member>
+    <member name="M:System.ComponentModel.Composition.CompositionError.#ctor(System.String)"></member>
+    <member name="M:System.ComponentModel.Composition.CompositionError.#ctor(System.String,System.ComponentModel.Composition.Primitives.ICompositionElement)"></member>
+    <member name="M:System.ComponentModel.Composition.CompositionError.#ctor(System.String,System.ComponentModel.Composition.Primitives.ICompositionElement,System.Exception)"></member>
+    <member name="M:System.ComponentModel.Composition.CompositionError.#ctor(System.String,System.Exception)"></member>
+    <member name="P:System.ComponentModel.Composition.CompositionError.Description"></member>
+    <member name="P:System.ComponentModel.Composition.CompositionError.Element"></member>
+    <member name="P:System.ComponentModel.Composition.CompositionError.Exception"></member>
+    <member name="M:System.ComponentModel.Composition.CompositionError.ToString"></member>
+    <member name="T:System.ComponentModel.Composition.CompositionException"></member>
+    <member name="M:System.ComponentModel.Composition.CompositionException.#ctor"></member>
+    <member name="M:System.ComponentModel.Composition.CompositionException.#ctor(System.Collections.Generic.IEnumerable{System.ComponentModel.Composition.CompositionError})"></member>
+    <member name="M:System.ComponentModel.Composition.CompositionException.#ctor(System.String)"></member>
+    <member name="M:System.ComponentModel.Composition.CompositionException.#ctor(System.String,System.Exception)"></member>
+    <member name="P:System.ComponentModel.Composition.CompositionException.Errors"></member>
+    <member name="P:System.ComponentModel.Composition.CompositionException.Message"></member>
+    <member name="P:System.ComponentModel.Composition.CompositionException.RootCauses"></member>
+    <member name="T:System.ComponentModel.Composition.CreationPolicy"></member>
+    <member name="F:System.ComponentModel.Composition.CreationPolicy.Any">
+      <summary />
+    </member>
+    <member name="F:System.ComponentModel.Composition.CreationPolicy.NonShared">
+      <summary />
+    </member>
+    <member name="F:System.ComponentModel.Composition.CreationPolicy.Shared">
+      <summary />
+    </member>
+    <member name="T:System.ComponentModel.Composition.ExportAttribute"></member>
+    <member name="M:System.ComponentModel.Composition.ExportAttribute.#ctor"></member>
+    <member name="M:System.ComponentModel.Composition.ExportAttribute.#ctor(System.String)"></member>
+    <member name="M:System.ComponentModel.Composition.ExportAttribute.#ctor(System.String,System.Type)"></member>
+    <member name="M:System.ComponentModel.Composition.ExportAttribute.#ctor(System.Type)"></member>
+    <member name="P:System.ComponentModel.Composition.ExportAttribute.ContractName"></member>
+    <member name="P:System.ComponentModel.Composition.ExportAttribute.ContractType"></member>
+    <member name="T:System.ComponentModel.Composition.ExportFactory`1">
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="M:System.ComponentModel.Composition.ExportFactory`1.#ctor(System.Func{System.Tuple{`0,System.Action}})"></member>
+    <member name="M:System.ComponentModel.Composition.ExportFactory`1.CreateExport"></member>
+    <member name="T:System.ComponentModel.Composition.ExportFactory`2">
+      <typeparam name="T"></typeparam>
+      <typeparam name="TMetadata"></typeparam>
+    </member>
+    <member name="M:System.ComponentModel.Composition.ExportFactory`2.#ctor(System.Func{System.Tuple{`0,System.Action}},`1)"></member>
+    <member name="P:System.ComponentModel.Composition.ExportFactory`2.Metadata"></member>
+    <member name="T:System.ComponentModel.Composition.ExportLifetimeContext`1">
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="M:System.ComponentModel.Composition.ExportLifetimeContext`1.#ctor(`0,System.Action)"></member>
+    <member name="M:System.ComponentModel.Composition.ExportLifetimeContext`1.Dispose"></member>
+    <member name="P:System.ComponentModel.Composition.ExportLifetimeContext`1.Value"></member>
+    <member name="T:System.ComponentModel.Composition.ExportMetadataAttribute"></member>
+    <member name="M:System.ComponentModel.Composition.ExportMetadataAttribute.#ctor(System.String,System.Object)"></member>
+    <member name="P:System.ComponentModel.Composition.ExportMetadataAttribute.IsMultiple"></member>
+    <member name="P:System.ComponentModel.Composition.ExportMetadataAttribute.Name"></member>
+    <member name="P:System.ComponentModel.Composition.ExportMetadataAttribute.Value"></member>
+    <member name="T:System.ComponentModel.Composition.ICompositionService"></member>
+    <member name="M:System.ComponentModel.Composition.ICompositionService.SatisfyImportsOnce(System.ComponentModel.Composition.Primitives.ComposablePart)"></member>
+    <member name="T:System.ComponentModel.Composition.ImportAttribute"></member>
+    <member name="M:System.ComponentModel.Composition.ImportAttribute.#ctor"></member>
+    <member name="M:System.ComponentModel.Composition.ImportAttribute.#ctor(System.String)"></member>
+    <member name="M:System.ComponentModel.Composition.ImportAttribute.#ctor(System.String,System.Type)"></member>
+    <member name="M:System.ComponentModel.Composition.ImportAttribute.#ctor(System.Type)"></member>
+    <member name="P:System.ComponentModel.Composition.ImportAttribute.AllowDefault"></member>
+    <member name="P:System.ComponentModel.Composition.ImportAttribute.ContractName"></member>
+    <member name="P:System.ComponentModel.Composition.ImportAttribute.ContractType"></member>
+    <member name="T:System.ComponentModel.Composition.ImportCardinalityMismatchException"></member>
+    <member name="M:System.ComponentModel.Composition.ImportCardinalityMismatchException.#ctor"></member>
+    <member name="M:System.ComponentModel.Composition.ImportCardinalityMismatchException.#ctor(System.String)"></member>
+    <member name="M:System.ComponentModel.Composition.ImportCardinalityMismatchException.#ctor(System.String,System.Exception)"></member>
+    <member name="T:System.ComponentModel.Composition.ImportingConstructorAttribute"></member>
+    <member name="M:System.ComponentModel.Composition.ImportingConstructorAttribute.#ctor"></member>
+    <member name="T:System.ComponentModel.Composition.ImportManyAttribute"></member>
+    <member name="M:System.ComponentModel.Composition.ImportManyAttribute.#ctor"></member>
+    <member name="M:System.ComponentModel.Composition.ImportManyAttribute.#ctor(System.String)"></member>
+    <member name="M:System.ComponentModel.Composition.ImportManyAttribute.#ctor(System.String,System.Type)"></member>
+    <member name="M:System.ComponentModel.Composition.ImportManyAttribute.#ctor(System.Type)"></member>
+    <member name="P:System.ComponentModel.Composition.ImportManyAttribute.ContractName"></member>
+    <member name="P:System.ComponentModel.Composition.ImportManyAttribute.ContractType"></member>
+    <member name="T:System.ComponentModel.Composition.InheritedExportAttribute"></member>
+    <member name="M:System.ComponentModel.Composition.InheritedExportAttribute.#ctor"></member>
+    <member name="M:System.ComponentModel.Composition.InheritedExportAttribute.#ctor(System.String)"></member>
+    <member name="M:System.ComponentModel.Composition.InheritedExportAttribute.#ctor(System.String,System.Type)"></member>
+    <member name="M:System.ComponentModel.Composition.InheritedExportAttribute.#ctor(System.Type)"></member>
+    <member name="T:System.ComponentModel.Composition.IPartImportsSatisfiedNotification"></member>
+    <member name="M:System.ComponentModel.Composition.IPartImportsSatisfiedNotification.OnImportsSatisfied"></member>
+    <member name="T:System.ComponentModel.Composition.MetadataAttributeAttribute"></member>
+    <member name="M:System.ComponentModel.Composition.MetadataAttributeAttribute.#ctor"></member>
+    <member name="T:System.ComponentModel.Composition.MetadataViewImplementationAttribute"></member>
+    <member name="M:System.ComponentModel.Composition.MetadataViewImplementationAttribute.#ctor(System.Type)"></member>
+    <member name="P:System.ComponentModel.Composition.MetadataViewImplementationAttribute.ImplementationType"></member>
+    <member name="T:System.ComponentModel.Composition.PartCreationPolicyAttribute"></member>
+    <member name="M:System.ComponentModel.Composition.PartCreationPolicyAttribute.#ctor(System.ComponentModel.Composition.CreationPolicy)"></member>
+    <member name="P:System.ComponentModel.Composition.PartCreationPolicyAttribute.CreationPolicy"></member>
+    <member name="T:System.ComponentModel.Composition.PartMetadataAttribute"></member>
+    <member name="M:System.ComponentModel.Composition.PartMetadataAttribute.#ctor(System.String,System.Object)"></member>
+    <member name="P:System.ComponentModel.Composition.PartMetadataAttribute.Name"></member>
+    <member name="P:System.ComponentModel.Composition.PartMetadataAttribute.Value"></member>
+    <member name="T:System.ComponentModel.Composition.PartNotDiscoverableAttribute"></member>
+    <member name="M:System.ComponentModel.Composition.PartNotDiscoverableAttribute.#ctor"></member>
+    <member name="T:System.ComponentModel.Composition.Hosting.AggregateCatalog"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.AggregateCatalog.#ctor"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.AggregateCatalog.#ctor(System.Collections.Generic.IEnumerable{System.ComponentModel.Composition.Primitives.ComposablePartCatalog})"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.AggregateCatalog.#ctor(System.ComponentModel.Composition.Primitives.ComposablePartCatalog[])"></member>
+    <member name="P:System.ComponentModel.Composition.Hosting.AggregateCatalog.Catalogs"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.AggregateCatalog.Dispose(System.Boolean)"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.AggregateCatalog.GetEnumerator"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.AggregateCatalog.GetExports(System.ComponentModel.Composition.Primitives.ImportDefinition)"></member>
+    <member name="T:System.ComponentModel.Composition.Hosting.AssemblyCatalog"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.AssemblyCatalog.#ctor(System.Reflection.Assembly)"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.AssemblyCatalog.#ctor(System.Reflection.Assembly,System.ComponentModel.Composition.Primitives.ICompositionElement)"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.AssemblyCatalog.#ctor(System.Reflection.Assembly,System.Reflection.ReflectionContext)"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.AssemblyCatalog.#ctor(System.Reflection.Assembly,System.Reflection.ReflectionContext,System.ComponentModel.Composition.Primitives.ICompositionElement)"></member>
+    <member name="P:System.ComponentModel.Composition.Hosting.AssemblyCatalog.Assembly"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.AssemblyCatalog.Dispose(System.Boolean)"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.AssemblyCatalog.GetEnumerator"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.AssemblyCatalog.GetExports(System.ComponentModel.Composition.Primitives.ImportDefinition)"></member>
+    <member name="P:System.ComponentModel.Composition.Hosting.AssemblyCatalog.System#ComponentModel#Composition#Primitives#ICompositionElement#DisplayName"></member>
+    <member name="P:System.ComponentModel.Composition.Hosting.AssemblyCatalog.System#ComponentModel#Composition#Primitives#ICompositionElement#Origin"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.AssemblyCatalog.ToString"></member>
+    <member name="T:System.ComponentModel.Composition.Hosting.CatalogExtensions"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.CatalogExtensions.CreateCompositionService(System.ComponentModel.Composition.Primitives.ComposablePartCatalog)"></member>
+    <member name="T:System.ComponentModel.Composition.Hosting.CompositionConstants"></member>
+    <member name="F:System.ComponentModel.Composition.Hosting.CompositionConstants.ExportTypeIdentityMetadataName"></member>
+    <member name="F:System.ComponentModel.Composition.Hosting.CompositionConstants.GenericContractMetadataName"></member>
+    <member name="F:System.ComponentModel.Composition.Hosting.CompositionConstants.GenericParametersMetadataName"></member>
+    <member name="F:System.ComponentModel.Composition.Hosting.CompositionConstants.ImportSourceMetadataName"></member>
+    <member name="F:System.ComponentModel.Composition.Hosting.CompositionConstants.IsGenericPartMetadataName"></member>
+    <member name="F:System.ComponentModel.Composition.Hosting.CompositionConstants.PartCreationPolicyMetadataName"></member>
+    <member name="T:System.ComponentModel.Composition.Hosting.CompositionScopeDefinition"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.CompositionScopeDefinition.#ctor"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.CompositionScopeDefinition.#ctor(System.ComponentModel.Composition.Primitives.ComposablePartCatalog,System.Collections.Generic.IEnumerable{System.ComponentModel.Composition.Hosting.CompositionScopeDefinition})"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.CompositionScopeDefinition.#ctor(System.ComponentModel.Composition.Primitives.ComposablePartCatalog,System.Collections.Generic.IEnumerable{System.ComponentModel.Composition.Hosting.CompositionScopeDefinition},System.Collections.Generic.IEnumerable{System.ComponentModel.Composition.Primitives.ExportDefinition})"></member>
+    <member name="P:System.ComponentModel.Composition.Hosting.CompositionScopeDefinition.Children"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.CompositionScopeDefinition.Dispose(System.Boolean)"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.CompositionScopeDefinition.GetEnumerator"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.CompositionScopeDefinition.GetExports(System.ComponentModel.Composition.Primitives.ImportDefinition)"></member>
+    <member name="P:System.ComponentModel.Composition.Hosting.CompositionScopeDefinition.PublicSurface"></member>
+    <member name="T:System.ComponentModel.Composition.Hosting.CompositionService"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.CompositionService.Dispose"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.CompositionService.SatisfyImportsOnce(System.ComponentModel.Composition.Primitives.ComposablePart)"></member>
+    <member name="T:System.ComponentModel.Composition.Hosting.FilteredCatalog"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.FilteredCatalog.#ctor(System.ComponentModel.Composition.Primitives.ComposablePartCatalog,System.Func{System.ComponentModel.Composition.Primitives.ComposablePartDefinition,System.Boolean})"></member>
+    <member name="P:System.ComponentModel.Composition.Hosting.FilteredCatalog.Complement"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.FilteredCatalog.Dispose(System.Boolean)"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.FilteredCatalog.GetEnumerator"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.FilteredCatalog.GetExports(System.ComponentModel.Composition.Primitives.ImportDefinition)"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.FilteredCatalog.IncludeDependencies"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.FilteredCatalog.IncludeDependencies(System.Func{System.ComponentModel.Composition.Primitives.ImportDefinition,System.Boolean})"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.FilteredCatalog.IncludeDependents"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.FilteredCatalog.IncludeDependents(System.Func{System.ComponentModel.Composition.Primitives.ImportDefinition,System.Boolean})"></member>
+    <member name="T:System.ComponentModel.Composition.Hosting.ScopingExtensions"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.ScopingExtensions.ContainsPartMetadata``1(System.ComponentModel.Composition.Primitives.ComposablePartDefinition,System.String,``0)">
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="M:System.ComponentModel.Composition.Hosting.ScopingExtensions.ContainsPartMetadataWithKey(System.ComponentModel.Composition.Primitives.ComposablePartDefinition,System.String)"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.ScopingExtensions.Exports(System.ComponentModel.Composition.Primitives.ComposablePartDefinition,System.String)"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.ScopingExtensions.Filter(System.ComponentModel.Composition.Primitives.ComposablePartCatalog,System.Func{System.ComponentModel.Composition.Primitives.ComposablePartDefinition,System.Boolean})"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.ScopingExtensions.Imports(System.ComponentModel.Composition.Primitives.ComposablePartDefinition,System.String)"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.ScopingExtensions.Imports(System.ComponentModel.Composition.Primitives.ComposablePartDefinition,System.String,System.ComponentModel.Composition.Primitives.ImportCardinality)"></member>
+    <member name="T:System.ComponentModel.Composition.Hosting.TypeCatalog"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.TypeCatalog.#ctor(System.Collections.Generic.IEnumerable{System.Type})"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.TypeCatalog.#ctor(System.Collections.Generic.IEnumerable{System.Type},System.ComponentModel.Composition.Primitives.ICompositionElement)"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.TypeCatalog.#ctor(System.Collections.Generic.IEnumerable{System.Type},System.Reflection.ReflectionContext)"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.TypeCatalog.#ctor(System.Collections.Generic.IEnumerable{System.Type},System.Reflection.ReflectionContext,System.ComponentModel.Composition.Primitives.ICompositionElement)"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.TypeCatalog.#ctor(System.Type[])"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.TypeCatalog.Dispose(System.Boolean)"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.TypeCatalog.GetEnumerator"></member>
+    <member name="P:System.ComponentModel.Composition.Hosting.TypeCatalog.System#ComponentModel#Composition#Primitives#ICompositionElement#DisplayName"></member>
+    <member name="P:System.ComponentModel.Composition.Hosting.TypeCatalog.System#ComponentModel#Composition#Primitives#ICompositionElement#Origin"></member>
+    <member name="M:System.ComponentModel.Composition.Hosting.TypeCatalog.ToString"></member>
+    <member name="T:System.ComponentModel.Composition.Primitives.ComposablePart"></member>
+    <member name="M:System.ComponentModel.Composition.Primitives.ComposablePart.#ctor"></member>
+    <member name="M:System.ComponentModel.Composition.Primitives.ComposablePart.Activate"></member>
+    <member name="P:System.ComponentModel.Composition.Primitives.ComposablePart.ExportDefinitions"></member>
+    <member name="M:System.ComponentModel.Composition.Primitives.ComposablePart.GetExportedValue(System.ComponentModel.Composition.Primitives.ExportDefinition)"></member>
+    <member name="P:System.ComponentModel.Composition.Primitives.ComposablePart.ImportDefinitions"></member>
+    <member name="P:System.ComponentModel.Composition.Primitives.ComposablePart.Metadata"></member>
+    <member name="M:System.ComponentModel.Composition.Primitives.ComposablePart.SetImport(System.ComponentModel.Composition.Primitives.ImportDefinition,System.Collections.Generic.IEnumerable{System.ComponentModel.Composition.Primitives.Export})"></member>
+    <member name="T:System.ComponentModel.Composition.Primitives.ComposablePartCatalog"></member>
+    <member name="M:System.ComponentModel.Composition.Primitives.ComposablePartCatalog.#ctor"></member>
+    <member name="M:System.ComponentModel.Composition.Primitives.ComposablePartCatalog.Dispose"></member>
+    <member name="M:System.ComponentModel.Composition.Primitives.ComposablePartCatalog.Dispose(System.Boolean)"></member>
+    <member name="M:System.ComponentModel.Composition.Primitives.ComposablePartCatalog.GetEnumerator"></member>
+    <member name="M:System.ComponentModel.Composition.Primitives.ComposablePartCatalog.GetExports(System.ComponentModel.Composition.Primitives.ImportDefinition)"></member>
+    <member name="M:System.ComponentModel.Composition.Primitives.ComposablePartCatalog.System#Collections#IEnumerable#GetEnumerator"></member>
+    <member name="T:System.ComponentModel.Composition.Primitives.ComposablePartDefinition"></member>
+    <member name="M:System.ComponentModel.Composition.Primitives.ComposablePartDefinition.#ctor"></member>
+    <member name="M:System.ComponentModel.Composition.Primitives.ComposablePartDefinition.CreatePart"></member>
+    <member name="P:System.ComponentModel.Composition.Primitives.ComposablePartDefinition.ExportDefinitions"></member>
+    <member name="P:System.ComponentModel.Composition.Primitives.ComposablePartDefinition.ImportDefinitions"></member>
+    <member name="P:System.ComponentModel.Composition.Primitives.ComposablePartDefinition.Metadata"></member>
+    <member name="T:System.ComponentModel.Composition.Primitives.ComposablePartException"></member>
+    <member name="M:System.ComponentModel.Composition.Primitives.ComposablePartException.#ctor"></member>
+    <member name="M:System.ComponentModel.Composition.Primitives.ComposablePartException.#ctor(System.String)"></member>
+    <member name="M:System.ComponentModel.Composition.Primitives.ComposablePartException.#ctor(System.String,System.ComponentModel.Composition.Primitives.ICompositionElement)"></member>
+    <member name="M:System.ComponentModel.Composition.Primitives.ComposablePartException.#ctor(System.String,System.ComponentModel.Composition.Primitives.ICompositionElement,System.Exception)"></member>
+    <member name="M:System.ComponentModel.Composition.Primitives.ComposablePartException.#ctor(System.String,System.Exception)"></member>
+    <member name="P:System.ComponentModel.Composition.Primitives.ComposablePartException.Element"></member>
+    <member name="T:System.ComponentModel.Composition.Primitives.Export"></member>
+    <member name="M:System.ComponentModel.Composition.Primitives.Export.#ctor"></member>
+    <member name="M:System.ComponentModel.Composition.Primitives.Export.#ctor(System.ComponentModel.Composition.Primitives.ExportDefinition,System.Func{System.Object})"></member>
+    <member name="M:System.ComponentModel.Composition.Primitives.Export.#ctor(System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Func{System.Object})"></member>
+    <member name="M:System.ComponentModel.Composition.Primitives.Export.#ctor(System.String,System.Func{System.Object})"></member>
+    <member name="P:System.ComponentModel.Composition.Primitives.Export.Definition"></member>
+    <member name="M:System.ComponentModel.Composition.Primitives.Export.GetExportedValueCore"></member>
+    <member name="P:System.ComponentModel.Composition.Primitives.Export.Metadata"></member>
+    <member name="P:System.ComponentModel.Composition.Primitives.Export.Value"></member>
+    <member name="T:System.ComponentModel.Composition.Primitives.ExportDefinition"></member>
+    <member name="M:System.ComponentModel.Composition.Primitives.ExportDefinition.#ctor"></member>
+    <member name="M:System.ComponentModel.Composition.Primitives.ExportDefinition.#ctor(System.String,System.Collections.Generic.IDictionary{System.String,System.Object})"></member>
+    <member name="P:System.ComponentModel.Composition.Primitives.ExportDefinition.ContractName"></member>
+    <member name="P:System.ComponentModel.Composition.Primitives.ExportDefinition.Metadata"></member>
+    <member name="M:System.ComponentModel.Composition.Primitives.ExportDefinition.ToString"></member>
+    <member name="T:System.ComponentModel.Composition.Primitives.ExportedDelegate"></member>
+    <member name="M:System.ComponentModel.Composition.Primitives.ExportedDelegate.#ctor"></member>
+    <member name="M:System.ComponentModel.Composition.Primitives.ExportedDelegate.#ctor(System.Object,System.Reflection.MethodInfo)"></member>
+    <member name="M:System.ComponentModel.Composition.Primitives.ExportedDelegate.CreateDelegate(System.Type)"></member>
+    <member name="T:System.ComponentModel.Composition.Primitives.ICompositionElement"></member>
+    <member name="P:System.ComponentModel.Composition.Primitives.ICompositionElement.DisplayName"></member>
+    <member name="P:System.ComponentModel.Composition.Primitives.ICompositionElement.Origin"></member>
+    <member name="T:System.ComponentModel.Composition.Primitives.ImportCardinality"></member>
+    <member name="F:System.ComponentModel.Composition.Primitives.ImportCardinality.ExactlyOne">
+      <summary />
+    </member>
+    <member name="F:System.ComponentModel.Composition.Primitives.ImportCardinality.ZeroOrMore">
+      <summary />
+    </member>
+    <member name="F:System.ComponentModel.Composition.Primitives.ImportCardinality.ZeroOrOne">
+      <summary />
+    </member>
+    <member name="T:System.ComponentModel.Composition.Primitives.ImportDefinition"></member>
+    <member name="M:System.ComponentModel.Composition.Primitives.ImportDefinition.#ctor"></member>
+    <member name="M:System.ComponentModel.Composition.Primitives.ImportDefinition.#ctor(System.Linq.Expressions.Expression{System.Func{System.ComponentModel.Composition.Primitives.ExportDefinition,System.Boolean}},System.String,System.ComponentModel.Composition.Primitives.ImportCardinality,System.Boolean,System.Boolean)"></member>
+    <member name="M:System.ComponentModel.Composition.Primitives.ImportDefinition.#ctor(System.Linq.Expressions.Expression{System.Func{System.ComponentModel.Composition.Primitives.ExportDefinition,System.Boolean}},System.String,System.ComponentModel.Composition.Primitives.ImportCardinality,System.Boolean,System.Boolean,System.Collections.Generic.IDictionary{System.String,System.Object})"></member>
+    <member name="P:System.ComponentModel.Composition.Primitives.ImportDefinition.Cardinality"></member>
+    <member name="P:System.ComponentModel.Composition.Primitives.ImportDefinition.Constraint"></member>
+    <member name="P:System.ComponentModel.Composition.Primitives.ImportDefinition.ContractName"></member>
+    <member name="M:System.ComponentModel.Composition.Primitives.ImportDefinition.IsConstraintSatisfiedBy(System.ComponentModel.Composition.Primitives.ExportDefinition)"></member>
+    <member name="P:System.ComponentModel.Composition.Primitives.ImportDefinition.IsPrerequisite"></member>
+    <member name="P:System.ComponentModel.Composition.Primitives.ImportDefinition.IsRecomposable"></member>
+    <member name="P:System.ComponentModel.Composition.Primitives.ImportDefinition.Metadata"></member>
+    <member name="M:System.ComponentModel.Composition.Primitives.ImportDefinition.ToString"></member>
+  </members>
+</doc>

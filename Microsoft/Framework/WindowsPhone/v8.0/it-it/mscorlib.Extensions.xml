@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>mscorlib.Extensions</name>
+  </assembly>
+  <members>
+    <member name="T:System.Runtime.CompilerServices.CodeGenerationAttribute">
+      <summary>Specifica le impostazioni per la generazione del codice.</summary>
+    </member>
+    <member name="M:System.Runtime.CompilerServices.CodeGenerationAttribute.#ctor(System.Runtime.CompilerServices.CodeGenerationFlags)">
+      <summary>Inizializza una nuova istanza della classe <see cref="T:System.Runtime.CompilerServices.CodeGenerationAttribute" />.</summary>
+      <param name="flags">Flag che specificano la generazione del codice.</param>
+    </member>
+    <member name="P:System.Runtime.CompilerServices.CodeGenerationAttribute.CodeGenerationFlags">
+      <summary>Ottiene flag che specificano la generazione del codice.</summary>
+      <returns>I flag che specificano la generazione del codice.</returns>
+    </member>
+    <member name="T:System.Runtime.CompilerServices.CodeGenerationFlags">
+      <summary>Definisce i flag che specificano la generazione del codice.</summary>
+    </member>
+    <member name="F:System.Runtime.CompilerServices.CodeGenerationFlags.EnableFPIntrinsicsUsingSIMD">
+      <summary>Specifica che è possibile che il compilatore JIT (Just-In-Time) utilizzi le istruzioni SIMD per determiante operazioni della matrice e del vettore.</summary>
+    </member>
+    <member name="T:System.Security.Cryptography.ProtectedData">
+      <summary>Fornisce metodi per la crittografia e la decrittografia dei dati. Questa classe non può essere ereditata.</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.ProtectedData.Protect(System.Byte[],System.Byte[])">
+      <summary>Crittografa i dati in una matrice di byte specificata e restituisce una matrice di byte che contiene i dati crittografati.</summary>
+      <returns>Matrice di byte che rappresenta i dati crittografati.</returns>
+      <param name="userData">Matrice di byte che contiene i dati da crittografare. </param>
+      <param name="optionalEntropy">Matrice di byte aggiuntiva facoltativa utilizzata per aumentare la complessità della crittografia o null per non aggiungere alcuna complessità.</param>
+      <exception cref="T:System.ArgumentNullException">Il <paramref name="userData" /> parametro è null.</exception>
+      <exception cref="T:System.Security.Cryptography.CryptographicException">La crittografia non è riuscita.</exception>
+      <exception cref="T:System.NotSupportedException">Il sistema operativo non supporta questo metodo. </exception>
+      <exception cref="T:System.OutOfMemoryException">Il sistema ha esaurito la memoria durante la crittografia dei dati.</exception>
+    </member>
+    <member name="M:System.Security.Cryptography.ProtectedData.Unprotect(System.Byte[],System.Byte[])">
+      <summary>Decrittografa i dati in una matrice di byte specificata e restituisce una matrice di byte che contiene i dati decrittografati.</summary>
+      <returns>Matrice di byte che rappresenta i dati decrittografati.</returns>
+      <param name="encryptedData">Matrice di byte che contiene dati crittografati tramite il metodo <see cref="M:System.Security.Cryptography.ProtectedData.Protect(System.Byte[],System.Byte[])" />. </param>
+      <param name="optionalEntropy">Matrice di byte aggiuntiva facoltativa utilizzata per crittografare i dati o null se non è utilizzata la matrice di byte aggiuntiva.</param>
+      <exception cref="T:System.ArgumentNullException">Il <paramref name="encryptedData" /> parametro è null.</exception>
+      <exception cref="T:System.Security.Cryptography.CryptographicException">La decrittografia non è riuscita.</exception>
+      <exception cref="T:System.NotSupportedException">Il sistema operativo non supporta questo metodo. </exception>
+      <exception cref="T:System.OutOfMemoryException">Memoria insufficiente.</exception>
+    </member>
+  </members>
+</doc>

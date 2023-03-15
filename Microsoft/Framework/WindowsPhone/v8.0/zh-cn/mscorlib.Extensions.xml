@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>mscorlib.Extensions</name>
+  </assembly>
+  <members>
+    <member name="T:System.Runtime.CompilerServices.CodeGenerationAttribute">
+      <summary>指定代码生成的设置。</summary>
+    </member>
+    <member name="M:System.Runtime.CompilerServices.CodeGenerationAttribute.#ctor(System.Runtime.CompilerServices.CodeGenerationFlags)">
+      <summary>初始化 <see cref="T:System.Runtime.CompilerServices.CodeGenerationAttribute" /> 类的新实例。</summary>
+      <param name="flags">指定代码如何生成的标志。</param>
+    </member>
+    <member name="P:System.Runtime.CompilerServices.CodeGenerationAttribute.CodeGenerationFlags">
+      <summary>获取用于指定代码如何生成的标志。</summary>
+      <returns>指定代码如何生成的标志。</returns>
+    </member>
+    <member name="T:System.Runtime.CompilerServices.CodeGenerationFlags">
+      <summary>定义用于指定代码如何生成的标志。</summary>
+    </member>
+    <member name="F:System.Runtime.CompilerServices.CodeGenerationFlags.EnableFPIntrinsicsUsingSIMD">
+      <summary>指定对于特定矢量和矩阵操作，实时 (JIT) 编译器可使用 SIMD 指令。</summary>
+    </member>
+    <member name="T:System.Security.Cryptography.ProtectedData">
+      <summary>为加密和解密数据提供方法。无法继承此类。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.ProtectedData.Protect(System.Byte[],System.Byte[])">
+      <summary>在指定的字节数组中加密数据，并返回包含已加密数据的字节数组。</summary>
+      <returns>表示已加密数据的字节数组。</returns>
+      <param name="userData">包含要加密数据的字节数组。</param>
+      <param name="optionalEntropy">一个用来增加加密复杂度的可选的附加字节数组，或者是 null 如果不要增加复杂度。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="userData" /> 参数为 null。</exception>
+      <exception cref="T:System.Security.Cryptography.CryptographicException">加密失败。</exception>
+      <exception cref="T:System.NotSupportedException">该操作系统不支持此方法。</exception>
+      <exception cref="T:System.OutOfMemoryException">加密数据时系统内存不足。</exception>
+    </member>
+    <member name="M:System.Security.Cryptography.ProtectedData.Unprotect(System.Byte[],System.Byte[])">
+      <summary>在指定的字节数组中参数中解密数据并返回包含解密的数据的字节数组。</summary>
+      <returns>表示已解密数据的字节数组。</returns>
+      <param name="encryptedData">一个字节数组，包含用 <see cref="M:System.Security.Cryptography.ProtectedData.Protect(System.Byte[],System.Byte[])" /> 方法加密的数据。</param>
+      <param name="optionalEntropy">用于加密数据，或 null 的可选的额外的字节数组，如果不使用额外的字节数组。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="encryptedData" /> 参数为 null。</exception>
+      <exception cref="T:System.Security.Cryptography.CryptographicException">解密失败。</exception>
+      <exception cref="T:System.NotSupportedException">该操作系统不支持此方法。</exception>
+      <exception cref="T:System.OutOfMemoryException">内存不足。</exception>
+    </member>
+  </members>
+</doc>

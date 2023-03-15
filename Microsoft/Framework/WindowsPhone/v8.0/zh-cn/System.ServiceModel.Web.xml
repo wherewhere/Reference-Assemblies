@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.ServiceModel.Web</name>
+  </assembly>
+  <members>
+    <member name="T:System.Runtime.Serialization.DateTimeFormat">
+      <summary>指定日期时间格式选项。</summary>
+    </member>
+    <member name="M:System.Runtime.Serialization.DateTimeFormat.#ctor(System.String)">
+      <summary>使用格式字符串初始化 <see cref="T:System.Runtime.Serialization.DateTimeFormat" /> 类的新实例。</summary>
+      <param name="formatString">格式字符串。</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.DateTimeFormat.#ctor(System.String,System.IFormatProvider)">
+      <summary>使用格式字符串和格式提供程序初始化 <see cref="T:System.Runtime.Serialization.DateTimeFormat" /> 类的新实例。</summary>
+      <param name="formatString">格式字符串。</param>
+      <param name="formatProvider">格式提供程序。</param>
+    </member>
+    <member name="P:System.Runtime.Serialization.DateTimeFormat.DateTimeStyles">
+      <summary>获取或设置格式设置选项，这些选项可自定义许多日期和时间分析方法的字符串分析方法。</summary>
+      <returns>格式设置选项，这些选项可自定义许多日期和时间分析方法的字符串分析方法。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.DateTimeFormat.FormatProvider">
+      <summary>获取控制格式设置的对象。</summary>
+    </member>
+    <member name="P:System.Runtime.Serialization.DateTimeFormat.FormatString">
+      <summary>获取用于控制在日期或时间表示为字符串时生成的格式设置的格式字符串。</summary>
+      <returns>用于控制在日期或时间表示为字符串时生成的格式设置的格式字符串。</returns>
+    </member>
+    <member name="T:System.Runtime.Serialization.EmitTypeInformation">
+      <summary>指定发出类型信息的频率。</summary>
+    </member>
+    <member name="F:System.Runtime.Serialization.EmitTypeInformation.Always">
+      <summary>始终发出类型信息。</summary>
+    </member>
+    <member name="F:System.Runtime.Serialization.EmitTypeInformation.AsNeeded">
+      <summary>根据需要发出类型信息。</summary>
+    </member>
+    <member name="F:System.Runtime.Serialization.EmitTypeInformation.Never">
+      <summary>从不发出类型信息。</summary>
+    </member>
+    <member name="T:System.Runtime.Serialization.Json.DataContractJsonSerializer">
+      <summary>将对象序列化为 JavaScript 对象表示法 (JSON)，并将 JSON 数据反序列化为对象。无法继承此类。</summary>
+    </member>
+    <member name="M:System.Runtime.Serialization.Json.DataContractJsonSerializer.#ctor(System.Type)">
+      <summary>初始化 <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer" /> 类的新实例，以便序列化或反序列化指定类型的对象。</summary>
+      <param name="type">序列化或反序列化的实例的类型。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="type" /> 为 null。</exception>
+    </member>
+    <member name="M:System.Runtime.Serialization.Json.DataContractJsonSerializer.#ctor(System.Type,System.Collections.Generic.IEnumerable{System.Type})">
+      <summary>初始化 <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer" /> 类的新实例，以便序列化或反序列化指定类型的对象以及可在对象图中呈现的已知类型的集合。</summary>
+      <param name="type">序列化或反序列化的实例的类型。</param>
+      <param name="knownTypes">
+        <see cref="T:System.Type" /> 的一个 <see cref="T:System.Collections.Generic.IEnumerable`1" />，其中包含可在对象图中呈现的类型。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="type" /> 为 null。</exception>
+    </member>
+    <member name="M:System.Runtime.Serialization.Json.DataContractJsonSerializer.#ctor(System.Type,System.Runtime.Serialization.Json.DataContractJsonSerializerSettings)">
+      <summary>初始化 <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer" /> 类的新实例，以便序列化或反序列化指定类型和序列化程序设置的对象。</summary>
+      <param name="type">序列化或反序列化的实例的类型。</param>
+      <param name="settings">JSON 序列化程序的序列化程序设置。</param>
+    </member>
+    <member name="P:System.Runtime.Serialization.Json.DataContractJsonSerializer.DateTimeFormat">
+      <summary>获取对象图中日期和时间类型项目的格式。</summary>
+      <returns>对象图中日期和时间类型项目的格式。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.Json.DataContractJsonSerializer.EmitTypeInformation">
+      <summary>获取或设置数据协定 JSON 序列化程序设置，用于发出类型信息。</summary>
+      <returns>数据协定 JSON 序列化程序设置，用于发出类型信息。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.Json.DataContractJsonSerializer.KnownTypes">
+      <summary>获取一个类型集合，这些类型可能出现在使用此 <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer" /> 实例序列化的对象图中。</summary>
+      <returns>一个 <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />，它包含作为已知类型传入 <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer" /> 构造函数的预期类型。</returns>
+    </member>
+    <member name="M:System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(System.IO.Stream)">
+      <summary>读取一个采用 JSON（JavaScript 对象表示法）格式的文档流并返回反序列化的对象。</summary>
+      <returns>反序列化的对象。</returns>
+      <param name="stream">要读取的 <see cref="T:System.IO.Stream" />。</param>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">反序列化时发生错误。</exception>
+    </member>
+    <member name="P:System.Runtime.Serialization.Json.DataContractJsonSerializer.SerializeReadOnlyTypes">
+      <summary>获取或设置一个值，该值指定是否序列化只读类型。</summary>
+      <returns>如果要序列化只读类型，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.Json.DataContractJsonSerializer.UseSimpleDictionaryFormat">
+      <summary>获取或设置一个值，该值指定是否使用简单词典格式。</summary>
+      <returns>如果使用简单词典格式，则为 true；否则为 false。</returns>
+    </member>
+    <member name="M:System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject(System.IO.Stream,System.Object)">
+      <summary>将指定对象序列化为 JavaScript 对象表示法 (JSON) 数据并将所得到的 JSON 写入流。</summary>
+      <param name="stream">要写入的 <see cref="T:System.IO.Stream" />。</param>
+      <param name="graph">包含要写入流的数据的对象。</param>
+      <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">正在序列化的类型不符合数据协定规则。例如，<see cref="T:System.Runtime.Serialization.DataContractAttribute" /> 特性未应用于该类型。</exception>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">正在写入的实例出现问题。</exception>
+    </member>
+    <member name="T:System.Runtime.Serialization.Json.DataContractJsonSerializerSettings">
+      <summary>指定 <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer" /> 的设置。</summary>
+    </member>
+    <member name="M:System.Runtime.Serialization.Json.DataContractJsonSerializerSettings.#ctor">
+      <summary>初始化 <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializerSettings" /> 类的新实例。</summary>
+    </member>
+    <member name="P:System.Runtime.Serialization.Json.DataContractJsonSerializerSettings.DateTimeFormat">
+      <summary>获取或设置 DateTimeFormat，它定义适合区域性的、显示日期和时间的格式。</summary>
+      <returns>一个 DateTimeFormat，它定义适合区域性的、显示日期和时间的格式。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.Json.DataContractJsonSerializerSettings.EmitTypeInformation">
+      <summary>获取或设置要发出类型信息的数据协定 JSON 序列化程序设置。</summary>
+      <returns>要发出类型信息的数据协定 JSON 序列化程序设置。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.Json.DataContractJsonSerializerSettings.KnownTypes">
+      <summary>获取或设置一个类型集合，这些类型可能出现在使用此 DataContractJsonSerializerSettings 的实例序列化的对象图中。</summary>
+      <returns>一个类型集合，这些类型可能出现在使用此 DataContractJsonSerializerSettings 的实例序列化的对象图中。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.Json.DataContractJsonSerializerSettings.MaxItemsInObjectGraph">
+      <summary>获取或设置对象图中要序列化或反序列化的最大项数。</summary>
+      <returns>对象图中要序列化或反序列化的最大项数。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.Json.DataContractJsonSerializerSettings.RootName">
+      <summary>获取或设置所选择的对象的根名称。</summary>
+      <returns>所选择的对象的根名称。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.Json.DataContractJsonSerializerSettings.SerializeReadOnlyTypes">
+      <summary>获取或设置一个值，指定是否要序列化只读类型。</summary>
+      <returns>如果为 True 则序列化只读类型；否则为 false。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.Json.DataContractJsonSerializerSettings.UseSimpleDictionaryFormat">
+      <summary>获取或设置一个值，该值指定是否使用简单字典格式。</summary>
+      <returns>如果为 True 则使用简单字典的格式；否则为 false。</returns>
+    </member>
+  </members>
+</doc>

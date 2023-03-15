@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>mscorlib.Extensions</name>
+  </assembly>
+  <members>
+    <member name="T:System.Runtime.CompilerServices.CodeGenerationAttribute">
+      <summary>コード生成の設定を指定します。</summary>
+    </member>
+    <member name="M:System.Runtime.CompilerServices.CodeGenerationAttribute.#ctor(System.Runtime.CompilerServices.CodeGenerationFlags)">
+      <summary>
+        <see cref="T:System.Runtime.CompilerServices.CodeGenerationAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="flags">コードの生成方法を指定するフラグ。</param>
+    </member>
+    <member name="P:System.Runtime.CompilerServices.CodeGenerationAttribute.CodeGenerationFlags">
+      <summary>コードの生成方法を指定するフラグを取得します。</summary>
+      <returns>コードの生成方法を指定するフラグ。</returns>
+    </member>
+    <member name="T:System.Runtime.CompilerServices.CodeGenerationFlags">
+      <summary>コードの生成方法を指定するフラグを定義します。</summary>
+    </member>
+    <member name="F:System.Runtime.CompilerServices.CodeGenerationFlags.EnableFPIntrinsicsUsingSIMD">
+      <summary>Just-In-Time (JIT) コンパイラが特定のベクトル演算および行列演算に SIMD 命令を使用できることを指定します。</summary>
+    </member>
+    <member name="T:System.Security.Cryptography.ProtectedData">
+      <summary>データの暗号化と復号化のためのメソッドを提供します。このクラスは継承できません。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.ProtectedData.Protect(System.Byte[],System.Byte[])">
+      <summary>指定されたバイト配列のデータを暗号化し、暗号化されたデータを含むバイト配列を返します。</summary>
+      <returns>暗号化されたデータを表すバイト配列。</returns>
+      <param name="userData">暗号化するデータを格納するバイト配列。</param>
+      <param name="optionalEntropy">暗号化の複雑さを増加させるのに使用するオプションの追加のバイト配列。複雑さを増加させない場合は、null。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="userData" /> パラメーターが null です。</exception>
+      <exception cref="T:System.Security.Cryptography.CryptographicException">暗号化に失敗しました。</exception>
+      <exception cref="T:System.NotSupportedException">このメソッドがオペレーティング システムでサポートされていません。</exception>
+      <exception cref="T:System.OutOfMemoryException">データの暗号化処理中にシステムで使用できるメモリがなくなりました。</exception>
+    </member>
+    <member name="M:System.Security.Cryptography.ProtectedData.Unprotect(System.Byte[],System.Byte[])">
+      <summary>指定されたバイト配列のデータの暗号化を解除し、復号化されたデータを含むバイト配列を返します。</summary>
+      <returns>復号化されたデータを表すバイト配列。</returns>
+      <param name="encryptedData">
+        <see cref="M:System.Security.Cryptography.ProtectedData.Protect(System.Byte[],System.Byte[])" /> メソッドを使用して暗号化されたデータを格納しているバイト配列。</param>
+      <param name="optionalEntropy">データの暗号化に使用されたオプションの追加のバイト配列。追加のバイト配列が使用されなかった場合は、null。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="encryptedData" /> パラメーターが null です。</exception>
+      <exception cref="T:System.Security.Cryptography.CryptographicException">復号化に失敗しました。</exception>
+      <exception cref="T:System.NotSupportedException">このメソッドがオペレーティング システムでサポートされていません。</exception>
+      <exception cref="T:System.OutOfMemoryException">メモリが不足しています。</exception>
+    </member>
+  </members>
+</doc>

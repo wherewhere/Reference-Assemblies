@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Microsoft.Devices.Sensors</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.Devices.Sensors.Accelerometer">
+      <summary>提供 Windows Phone 應用程式對裝置加速計感應器的存取權。</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Accelerometer.#ctor">
+      <summary>建立 <see cref="T:Microsoft.Devices.Sensors.Accelerometer" /> 物件的新執行個體。</summary>
+      <exception cref="T:Microsoft.Devices.Sensors.SensorFailedException">已超出每個應用程式同時擁有 10 個 Accelerometer 類別之執行個體的限制。</exception>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Accelerometer.Dispose">
+      <summary>釋放 <see cref="T:Microsoft.Devices.Sensors.Accelerometer" /> 所使用的 Managed 及 Unmanaged 資源。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.Accelerometer.IsSupported">
+      <summary>取得或設定應用程式執行所在的裝置是否支援加速計感應器。</summary>
+      <returns>如果應用程式執行所在的裝置支援加速計感應器則為 true，否則為 false。</returns>
+    </member>
+    <member name="E:Microsoft.Devices.Sensors.Accelerometer.ReadingChanged">
+      <summary>發生於新資料從加速計到達時。此方法在目前版本中已過時。應用程式應改用 <see cref="T:Microsoft.Devices.Sensors.SensorBase`1" /> 類別的 <see cref="E:Microsoft.Devices.Sensors.SensorBase`1.CurrentValueChanged" /> 事件。</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Accelerometer.Start">
+      <summary>開始從加速計進行資料擷取。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.Accelerometer.State">
+      <summary>取得加速計的目前狀態。此值是 <see cref="T:Microsoft.Devices.Sensors.SensorState" /> 列舉的成員。</summary>
+      <returns>型別：<see cref="T:Microsoft.Devices.Sensors.SensorState" />.</returns>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Accelerometer.Stop">
+      <summary>停止從加速計進行資料擷取。</summary>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.AccelerometerFailedException">
+      <summary>在呼叫 <see cref="M:Microsoft.Devices.Sensors.Accelerometer.Start" /> 或 <see cref="M:Microsoft.Devices.Sensors.Accelerometer.Stop" /> 期間可能擲回的例外狀況。Message 欄位描述例外狀況的原因，而 <see cref="P:Microsoft.Devices.Sensors.AccelerometerFailedException.ErrorId" /> 欄位則包含來自加速計架構之基礎原生程式碼實作的錯誤碼。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerFailedException.ErrorId">
+      <summary>來自加速計架構之基礎原生程式碼實作的錯誤碼。</summary>
+      <returns>型別： <see cref="T:System.Int32" />.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.AccelerometerReading">
+      <summary>包含加速計讀數的加速度和時間戳記，指出到裝置的作用力強度和方向。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReading.Acceleration">
+      <summary>取得裝置的加速度向量 (以重力單位表示)。</summary>
+      <returns>裝置的加速度。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReading.Timestamp">
+      <summary>取得時間戳記，指出取得加速計讀數的時間。這可以用來關聯感應器之間的讀數，並提供額外的輸入給處理原始感應器資料的演算法。</summary>
+      <returns>取得加速計讀數的時間。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.AccelerometerReadingEventArgs">
+      <summary>提供 <see cref="E:Microsoft.Devices.Sensors.Accelerometer.ReadingChanged" /> 事件的資料。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReadingEventArgs.Timestamp">
+      <summary>時間戳記，指出取得加速計讀數的時間。</summary>
+      <returns>型別：<see cref="T:System.DateTimeOffset" />.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReadingEventArgs.X">
+      <summary>X 方向的加速度 (以重力單位表示)。</summary>
+      <returns>型別：<see cref="T:System.Double" />.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReadingEventArgs.Y">
+      <summary>Y 方向的加速度 (以重力單位表示)。</summary>
+      <returns>型別：<see cref="T:System.Double" />.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReadingEventArgs.Z">
+      <summary>Z 方向的加速度 (以重力單位表示)。</summary>
+      <returns>型別： <see cref="T:System.Double" />.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.AttitudeReading">
+      <summary>包含有關空間中裝置的方向資訊。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.Pitch">
+      <summary>取得姿勢讀數的坡度 (以弧度為單位)。</summary>
+      <returns>姿勢讀數的坡度。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.Quaternion">
+      <summary>取得姿勢讀數的四元法表示。</summary>
+      <returns>姿勢讀數的四元法表示。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.Roll">
+      <summary>取得姿勢讀數的翻轉 (以弧度為單位)。</summary>
+      <returns>姿勢讀數的翻轉。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.RotationMatrix">
+      <summary>取得姿勢讀數的矩陣表示。</summary>
+      <returns>姿勢讀數的矩陣表示。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.Timestamp">
+      <summary>取得時間戳記，指出取得加速計讀數的時間。這可以用來關聯感應器之間的讀數，並提供額外的輸入給處理原始感應器資料的演算法。</summary>
+      <returns>取得姿勢讀數的時間。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.Yaw">
+      <summary>取得姿勢讀數的偏航角度 (以弧度為單位)。</summary>
+      <returns>姿勢讀數的偏航角度。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.CalibrationEventArgs">
+      <summary>提供 <see cref="E:Microsoft.Devices.Sensors.Compass.Calibrate" /> 和事件的資料。</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.CalibrationEventArgs.#ctor">
+      <summary>初始化 <see cref="T:Microsoft.Devices.Sensors.CalibrationEventArgs" /> 類別的新執行個體。</summary>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.Compass">
+      <summary>提供 Windows Phone 應用程式對裝置指南針感應器的存取權。</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Compass.#ctor">
+      <summary>初始化 <see cref="T:Microsoft.Devices.Sensors.Compass" /> 類別的新執行個體。</summary>
+      <exception cref="T:Microsoft.Devices.Sensors.SensorFailedException">已超出每個應用程式同時擁有 10 個 Compass 類別之執行個體的限制。</exception>
+    </member>
+    <member name="E:Microsoft.Devices.Sensors.Compass.Calibrate">
+      <summary>發生於作業系統偵測到指南針需要校正時。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.Compass.IsSupported">
+      <summary>取得應用程式執行所在的裝置是否支援指南針感應器。</summary>
+      <returns>型別：<see cref="T:System.Boolean" />。如果應用程式執行所在的裝置支援指南針感應器則為 true，否則為 false。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.CompassReading">
+      <summary>包含裝置指南針感應器所偵測到的磁場相關資訊，可以用來判斷裝置相對於地球磁場的方向。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.CompassReading.HeadingAccuracy">
+      <summary>取得指南針方向讀數的精確度 (以弧度為單位)。</summary>
+      <returns>指南針方向讀數的精確度。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.CompassReading.MagneticHeading">
+      <summary>以度為單位，取得沿地球磁北之順時針方向測量的方向。</summary>
+      <returns>相對於地球磁北的方向。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.CompassReading.MagnetometerReading">
+      <summary>取得原始磁力儀讀數 (以 microtesla 為單位)。</summary>
+      <returns>原始磁力儀讀數。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.CompassReading.Timestamp">
+      <summary>取得時間戳記，指出取得指南針讀數的時間。這可以用來關聯感應器之間的讀數，並提供額外的輸入給處理原始感應器資料的演算法。</summary>
+      <returns>取得指南針讀數的時間。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.CompassReading.TrueHeading">
+      <summary>以度為單位，取得沿地球地理北方之順時針方向測量的方向。</summary>
+      <returns>相對於地球地理北方的方向。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.Gyroscope">
+      <summary>提供 Windows Phone 應用程式對裝置陀螺儀感應器的存取權。</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Gyroscope.#ctor">
+      <summary>初始化 Gyroscope 類別的新執行個體。</summary>
+      <exception cref="T:Microsoft.Devices.Sensors.SensorFailedException">已超出每個應用程式同時擁有 10 個 Gyroscope 類別之執行個體的限制。</exception>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.Gyroscope.IsSupported">
+      <summary>取得或設定應用程式執行所在的裝置是否支援陀螺儀感應器。</summary>
+      <returns>如果應用程式執行所在的裝置支援陀螺儀感應器則為 true，否則為 false。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.GyroscopeReading">
+      <summary>包含裝置旋轉加速度的相關資訊。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.GyroscopeReading.RotationRate">
+      <summary>取得環繞裝置各個軸的旋轉速度 (弧度/秒)。</summary>
+      <returns>環繞裝置各個軸的旋轉速度。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.GyroscopeReading.Timestamp">
+      <summary>取得時間戳記，指出取得陀螺儀讀數的時間。這可以用來關聯感應器之間的讀數，並提供額外的輸入給處理原始感應器資料的演算法。</summary>
+      <returns>取得陀螺儀讀數的時間。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.ISensorReading">
+      <summary>由所有感應器讀數類別所實作的介面。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.ISensorReading.Timestamp">
+      <summary>取得時間戳記，指出取得感應器讀數的時間。這可以用來關聯感應器之間的讀數，並提供額外的輸入給處理原始感應器資料的演算法。</summary>
+      <returns>型別：<see cref="T:System.DateTimeOffset" />。取得感應器讀數的時間。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.Motion">
+      <summary>提供 Windows Phone 應用程式關於裝置方向和運動的資訊。</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Motion.#ctor">
+      <summary>初始化 <see cref="T:Microsoft.Devices.Sensors.Motion" /> 類別的新執行個體。</summary>
+      <exception cref="T:Microsoft.Devices.Sensors.SensorFailedException">已超出每個應用程式同時擁有 10 個 Motion 類別之執行個體的限制。</exception>
+    </member>
+    <member name="E:Microsoft.Devices.Sensors.Motion.Calibrate">
+      <summary>發生於作業偵測到指南針需要校正時。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.Motion.IsSupported">
+      <summary>取得或設定應用程式執行所在的裝置是否支援 <see cref="T:Microsoft.Devices.Sensors.Motion" /> 類別所需的感應器。</summary>
+      <returns>如果應用程式執行所在的裝置支援 <see cref="T:Microsoft.Devices.Sensors.Motion" /> 類別所需的感應器則為 true，否則為 false。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.MotionReading">
+      <summary>包含裝置之方向和運動的相關資訊。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.MotionReading.Attitude">
+      <summary>取得裝置的姿勢 (偏航角度、坡度及翻轉，以弧度為單位)。</summary>
+      <returns>裝置的姿勢。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.MotionReading.DeviceAcceleration">
+      <summary>取得裝置的線性加速度 (以重力單位表示)。</summary>
+      <returns>裝置的線性加速度。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.MotionReading.DeviceRotationRate">
+      <summary>取得裝置的旋轉速度 (弧度/秒)。</summary>
+      <returns>裝置的旋轉速度。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.MotionReading.Gravity">
+      <summary>取得與 <see cref="T:Microsoft.Devices.Sensors.MotionReading" /> 相關聯的重力向量。</summary>
+      <returns>與 MotionReading 相關聯的重力向量。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.MotionReading.Timestamp">
+      <summary>取得時間戳記，指出計算 <see cref="T:Microsoft.Devices.Sensors.MotionReading" /> 的時間。這可以用來關聯感應器之間的讀數，並提供額外的輸入給處理原始感應器資料的演算法。</summary>
+      <returns>型別：<see cref="T:System.DateTimeOffset" />。計算 MotionReading 的時間。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.SensorBase`1">
+      <summary>適用於所有 Windows Phone 感應器類別的基底類別。</summary>
+      <typeparam name="TSensorReading">感應器所傳回的讀數類型。</typeparam>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.SensorBase`1.CurrentValue">
+      <summary>取得實作包含感應器目前值之 <see cref="T:Microsoft.Devices.Sensors.ISensorReading" /> 的物件。根據參考的感應器而定，此物件將成為下列其中一個型別：<see cref="T:Microsoft.Devices.Sensors.AccelerometerReading" />, <see cref="T:Microsoft.Devices.Sensors.CompassReading" />, <see cref="T:Microsoft.Devices.Sensors.GyroscopeReading" />, <see cref="T:Microsoft.Devices.Sensors.MotionReading" />.</summary>
+      <returns>型別：<see cref="{0}" />。實作包含感應器目前值之 <see cref="T:Microsoft.Devices.Sensors.ISensorReading" /> 的物件。</returns>
+    </member>
+    <member name="E:Microsoft.Devices.Sensors.SensorBase`1.CurrentValueChanged">
+      <summary>發生於新資料從感應器抵達時。</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.SensorBase`1.Dispose">
+      <summary>釋放感應器所使用的 Managed 及 Unmanaged 資源。</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.SensorBase`1.Finalize">
+      <summary>在記憶體回收重新取得 Object 之前，允許物件嘗試釋放資源並執行其他清理作業。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.SensorBase`1.IsDataValid">
+      <summary>取得感應器資料的有效性。</summary>
+      <returns>型別：<see cref="T:System.Boolean" />。如果感應器資料有效則為 true，否則為 false。</returns>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.SensorBase`1.Start">
+      <summary>開始從感應器取得資料。</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.SensorBase`1.Stop">
+      <summary>停止從感應器取得資料。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.SensorBase`1.TimeBetweenUpdates">
+      <summary>取得或設定 <see cref="E:Microsoft.Devices.Sensors.SensorBase`1.CurrentValueChanged" /> 事件之間的偏好時間。</summary>
+      <returns>型別：<see cref="T:System.TimeSpan" />。CurrentValueChanged 事件之間的偏好時間。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.SensorFailedException">
+      <summary>表示在感應器作業失敗時擲回的例外狀況。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.SensorFailedException.ErrorId">
+      <summary>指出例外狀況原因的錯誤 ID。</summary>
+      <returns>型別： <see cref="T:System.Int32" />.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.SensorReadingEventArgs`1">
+      <summary>提供 <see cref="E:Microsoft.Devices.Sensors.SensorBase`1.CurrentValueChanged" /> 事件的資料。</summary>
+      <typeparam name="T">事件資料中包含的讀數類型。</typeparam>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.SensorReadingEventArgs`1.#ctor">
+      <summary>初始化 <see cref="T:Microsoft.Devices.Sensors.SensorReadingEventArgs`1" /> 類別的新執行個體。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.SensorReadingEventArgs`1.SensorReading">
+      <summary>取得與 SensorReadingEventArgs 相關聯的感應器讀數資料。</summary>
+      <returns>與 SensorReadingEventArgs 相關聯的感應器讀數資料。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.SensorState">
+      <summary>值的列舉，表示加速計的目前狀態。感應器的狀態可以使用其 <see cref="P:Microsoft.Devices.Sensors.Accelerometer.State" /> 屬性取得。</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.NotSupported">
+      <summary>無法使用感應器硬體。</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.Ready">
+      <summary>可以使用感應器，且正在解析資料。</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.Initializing">
+      <summary>可以使用感應器，且正在初始化。</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.NoData">
+      <summary>感應器無法取得資料。</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.NoPermissions">
+      <summary>呼叫端沒有權限可存取感應器的資料。</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.Disabled">
+      <summary>感應器已停用。</summary>
+    </member>
+  </members>
+</doc>

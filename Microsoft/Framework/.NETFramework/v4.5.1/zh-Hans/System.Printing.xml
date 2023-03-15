@@ -1,0 +1,2631 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.Printing</name>
+  </assembly>
+  <members>
+    <member name="T:System.Printing.EnumeratedPrintQueueTypes">
+      <summary>指定打印队列的特性。</summary>
+    </member>
+    <member name="F:System.Printing.EnumeratedPrintQueueTypes.Connections">
+      <summary>连接到指定打印服务器的打印队列。</summary>
+    </member>
+    <member name="F:System.Printing.EnumeratedPrintQueueTypes.DirectPrinting">
+      <summary>直接将打印作业发送到打印，而不是先发送到后台打印作业的打印队列。</summary>
+    </member>
+    <member name="F:System.Printing.EnumeratedPrintQueueTypes.EnableBidi">
+      <summary>已启用双向通信的打印机的打印队列。</summary>
+    </member>
+    <member name="F:System.Printing.EnumeratedPrintQueueTypes.EnableDevQuery">
+      <summary>当文档和打印机配置不匹配时停止其打印作业的打印队列。</summary>
+    </member>
+    <member name="F:System.Printing.EnumeratedPrintQueueTypes.Fax">
+      <summary>服务于传真机的打印队列。</summary>
+    </member>
+    <member name="F:System.Printing.EnumeratedPrintQueueTypes.KeepPrintedJobs">
+      <summary>打印完作业后将其保留在队列中的打印队列。</summary>
+    </member>
+    <member name="F:System.Printing.EnumeratedPrintQueueTypes.Local">
+      <summary>作为本地打印队列安装在指定打印服务器上的打印队列。</summary>
+    </member>
+    <member name="F:System.Printing.EnumeratedPrintQueueTypes.PublishedInDirectoryServices">
+      <summary>打印机目录中可看见的打印队列。</summary>
+    </member>
+    <member name="F:System.Printing.EnumeratedPrintQueueTypes.PushedMachineConnection">
+      <summary>使用“推入打印机连接”计算机策略安装的打印队列。 请参见“备注”。</summary>
+    </member>
+    <member name="F:System.Printing.EnumeratedPrintQueueTypes.PushedUserConnection">
+      <summary>使用“推入打印机连接”用户策略安装的打印队列。 请参见“备注”。</summary>
+    </member>
+    <member name="F:System.Printing.EnumeratedPrintQueueTypes.Queued">
+      <summary>允许队列中存在多个打印作业的打印队列。</summary>
+    </member>
+    <member name="F:System.Printing.EnumeratedPrintQueueTypes.RawOnly">
+      <summary>仅对原始数据进行后台处理的打印队列。</summary>
+    </member>
+    <member name="F:System.Printing.EnumeratedPrintQueueTypes.Shared">
+      <summary>共享的打印队列。</summary>
+    </member>
+    <member name="F:System.Printing.EnumeratedPrintQueueTypes.TerminalServer">
+      <summary>通过“终端服务”中的重定向功能安装的打印队列。</summary>
+    </member>
+    <member name="F:System.Printing.EnumeratedPrintQueueTypes.WorkOffline">
+      <summary>可脱机工作的打印队列。</summary>
+    </member>
+    <member name="T:System.Printing.LocalPrintServer">
+      <summary>表示本地打印服务器（应用程序正在其上运行的计算机）和启用其打印队列的管理。</summary>
+    </member>
+    <member name="M:System.Printing.LocalPrintServer.#ctor">
+      <summary>初始化 <see cref="T:System.Printing.LocalPrintServer" /> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Printing.LocalPrintServer.#ctor(System.Printing.LocalPrintServerIndexedProperty[])">
+      <summary>初始化具有指定 <see cref="T:System.Printing.LocalPrintServerIndexedProperty" /> 数组的 <see cref="T:System.Printing.LocalPrintServer" /> 类的一个新实例。</summary>
+      <param name="propertiesFilter">构造函数初始化的属性数组。</param>
+    </member>
+    <member name="M:System.Printing.LocalPrintServer.#ctor(System.Printing.LocalPrintServerIndexedProperty[],System.Printing.PrintSystemDesiredAccess)">
+      <summary>初始化具有指定 <see cref="T:System.Printing.LocalPrintServerIndexedProperty" /> 数组和指定 <see cref="T:System.Printing.PrintSystemDesiredAccess" /> 的 <see cref="T:System.Printing.LocalPrintServer" /> 类的一个新实例。</summary>
+      <param name="propertiesFilter">构造函数初始化的属性数组。</param>
+      <param name="desiredAccess">一个值，指定程序需要对打印服务器所具有的访问类型。</param>
+      <exception cref="T:System.Printing.PrintServerException">
+        <paramref name="desiredAccess" /> 是一个值，仅可用于 <see cref="T:System.Printing.PrintQueue" /> 对象，而不可用于 <see cref="T:System.Printing.LocalPrintServer" /> 对象。 例如 <see cref="F:System.Printing.PrintSystemDesiredAccess.UsePrinter" />。</exception>
+    </member>
+    <member name="M:System.Printing.LocalPrintServer.#ctor(System.Printing.PrintSystemDesiredAccess)">
+      <summary>初始化具有指定 <see cref="T:System.Printing.PrintSystemDesiredAccess" /> 的 <see cref="T:System.Printing.LocalPrintServer" /> 类的一个新实例。</summary>
+      <param name="desiredAccess">一个值，指定应用程序需要对打印服务器所具有的访问类型。</param>
+      <exception cref="T:System.Printing.PrintServerException">
+        <paramref name="desiredAccess" /> 是一个值，仅可用于 <see cref="T:System.Printing.PrintQueue" /> 对象，而不可用于 <see cref="T:System.Printing.LocalPrintServer" /> 对象。 例如 <see cref="F:System.Printing.PrintSystemDesiredAccess.UsePrinter" />。</exception>
+    </member>
+    <member name="M:System.Printing.LocalPrintServer.#ctor(System.String[])">
+      <summary>初始化具有指定属性的 <see cref="T:System.Printing.LocalPrintServer" /> 类的一个新实例。</summary>
+      <param name="propertiesFilter">构造函数初始化的属性名称数组。</param>
+    </member>
+    <member name="M:System.Printing.LocalPrintServer.#ctor(System.String[],System.Printing.PrintSystemDesiredAccess)">
+      <summary>初始化具有指定属性和 <see cref="T:System.Printing.PrintSystemDesiredAccess" /> 的 <see cref="T:System.Printing.LocalPrintServer" /> 类的一个新实例。</summary>
+      <param name="propertiesFilter">构造函数初始化的属性名称数组。</param>
+      <param name="desiredAccess">一个值，指定应用程序需要对打印服务器所具有的访问类型。</param>
+      <exception cref="T:System.Printing.PrintServerException">
+        <paramref name="desiredAccess" /> 是一个值，仅可用于 <see cref="T:System.Printing.PrintQueue" /> 对象，而不可用于 <see cref="T:System.Printing.LocalPrintServer" /> 对象。 例如 <see cref="F:System.Printing.PrintSystemDesiredAccess.UsePrinter" />。</exception>
+    </member>
+    <member name="M:System.Printing.LocalPrintServer.Commit">
+      <summary>将应用程序对 <see cref="T:System.Printing.LocalPrintServer" /> 的属性所做的所有更改写入对象表示的实际打印服务器。</summary>
+      <exception cref="T:System.Printing.PrintServerException">某些属性尚未提交。</exception>
+      <exception cref="T:System.Printing.PrintCommitAttributesException">某些属性未能提交。 - 或 - 无足够的权限创建 <see cref="T:System.Printing.LocalPrintServer" /> 对象。 请参见“备注”。</exception>
+    </member>
+    <member name="M:System.Printing.LocalPrintServer.ConnectToPrintQueue(System.Printing.PrintQueue)">
+      <summary>连接本地打印服务器和指定的 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <returns>如果已建立连接，则为 true；否则为 false。</returns>
+      <param name="printer">要连接的打印队列。</param>
+      <exception cref="T:System.Printing.PrintServerException">未发现与 <paramref name="printer" /> 的 <see cref="P:System.Printing.PrintQueue.FullName" /> 属性匹配的打印队列。</exception>
+    </member>
+    <member name="M:System.Printing.LocalPrintServer.ConnectToPrintQueue(System.String)">
+      <summary>连接使用 <see cref="T:System.String" /> 指定的打印队列。</summary>
+      <returns>如果已建立连接，则为 true；否则为 false。</returns>
+      <param name="printQueuePath">正在连接的打印队列的完整路径。</param>
+      <exception cref="T:System.Printing.PrintServerException">未发现具有指定路径的打印队列。</exception>
+    </member>
+    <member name="P:System.Printing.LocalPrintServer.DefaultPrintQueue">
+      <summary>获取或设置默认打印队列。</summary>
+      <returns>被指定为本地计算机默认队列的 <see cref="T:System.Printing.PrintQueue" />。</returns>
+    </member>
+    <member name="M:System.Printing.LocalPrintServer.DisconnectFromPrintQueue(System.Printing.PrintQueue)">
+      <summary>断开本地打印服务器与指定 <see cref="T:System.Printing.PrintQueue" /> 的连接。</summary>
+      <returns>如果成功断开连接，则为 true；否则为 false。</returns>
+      <param name="printer">正在断开连接的打印队列。</param>
+      <exception cref="T:System.Printing.PrintServerException">未发现与 <paramref name="printer" /> 的 <see cref="P:System.Printing.PrintQueue.FullName" /> 属性匹配的打印队列。</exception>
+    </member>
+    <member name="M:System.Printing.LocalPrintServer.DisconnectFromPrintQueue(System.String)">
+      <summary>断开与 <see cref="T:System.String" /> 中指定打印队列的连接。</summary>
+      <returns>如果成功断开连接，则为 true；否则为 false。</returns>
+      <param name="printQueuePath">已断开连接的打印队列的完整路径。</param>
+      <exception cref="T:System.Printing.PrintServerException">未发现具有指定路径的打印队列。</exception>
+    </member>
+    <member name="M:System.Printing.LocalPrintServer.GetDefaultPrintQueue">
+      <summary>返回对 <see cref="T:System.Printing.LocalPrintServer" /> 的默认打印队列的引用。</summary>
+      <returns>默认为 <see cref="T:System.Printing.PrintQueue" />。</returns>
+    </member>
+    <member name="M:System.Printing.LocalPrintServer.Refresh">
+      <summary>更新 <see cref="T:System.Printing.LocalPrintServer" /> 对象的属性，以便它们的值与对象表示的打印服务器的值匹配。</summary>
+      <exception cref="T:System.Printing.PrintServerException">某些属性不会更新。</exception>
+    </member>
+    <member name="T:System.Printing.LocalPrintServerIndexedProperty">
+      <summary>指定在构造 <see cref="T:System.Printing.LocalPrintServer" /> 对象时初始化的该对象的属性。</summary>
+    </member>
+    <member name="F:System.Printing.LocalPrintServerIndexedProperty.BeepEnabled">
+      <summary>指定打印机错误是否会导致本地打印服务器发出提示音的属性。</summary>
+    </member>
+    <member name="F:System.Printing.LocalPrintServerIndexedProperty.DefaultPortThreadPriority">
+      <summary>指定管理端口 I/0 的线程的默认优先级的属性。</summary>
+    </member>
+    <member name="F:System.Printing.LocalPrintServerIndexedProperty.DefaultPrintQueue">
+      <summary>指定本地打印服务器默认打印队列的属性。</summary>
+    </member>
+    <member name="F:System.Printing.LocalPrintServerIndexedProperty.DefaultSchedulerPriority">
+      <summary>指定计划程序默认优先级的属性。</summary>
+    </member>
+    <member name="F:System.Printing.LocalPrintServerIndexedProperty.DefaultSpoolDirectory">
+      <summary>指定后台打印作业作为临时文件包含在其中的文件夹路径的属性。</summary>
+    </member>
+    <member name="F:System.Printing.LocalPrintServerIndexedProperty.EventLog">
+      <summary>指定本地打印服务器提供的事件日志种类的属性。</summary>
+    </member>
+    <member name="F:System.Printing.LocalPrintServerIndexedProperty.MajorVersion">
+      <summary>指定操作系统主版本的属性。</summary>
+    </member>
+    <member name="F:System.Printing.LocalPrintServerIndexedProperty.MinorVersion">
+      <summary>指定操作系统次版本的属性。</summary>
+    </member>
+    <member name="F:System.Printing.LocalPrintServerIndexedProperty.NetPopup">
+      <summary>指定是客户端计算机还是打印服务器接收作业已完成通知的属性。</summary>
+    </member>
+    <member name="F:System.Printing.LocalPrintServerIndexedProperty.PortThreadPriority">
+      <summary>指定管理端口 I/O 的线程的优先级的属性。</summary>
+    </member>
+    <member name="F:System.Printing.LocalPrintServerIndexedProperty.RestartJobOnPoolEnabled">
+      <summary>指定用户是否可在打印机池正在使用时重新启动作业的属性。</summary>
+    </member>
+    <member name="F:System.Printing.LocalPrintServerIndexedProperty.RestartJobOnPoolTimeout">
+      <summary>指定在打印机池正在使用时可重新启动作业之前的等待时间的属性。</summary>
+    </member>
+    <member name="F:System.Printing.LocalPrintServerIndexedProperty.SchedulerPriority">
+      <summary>指定计划程序优先级的属性。</summary>
+    </member>
+    <member name="T:System.Printing.PrintDocumentImageableArea">
+      <summary>指定纸张（或其他介质）大小，成像区域大小以及成像区域的位置。</summary>
+    </member>
+    <member name="P:System.Printing.PrintDocumentImageableArea.ExtentHeight">
+      <summary>获取成像区域的高度。</summary>
+      <returns>表示与原点距离的 <see cref="T:System.Double" />。</returns>
+    </member>
+    <member name="P:System.Printing.PrintDocumentImageableArea.ExtentWidth">
+      <summary>获取成像区域的宽度。</summary>
+      <returns>表示与原点距离的 <see cref="T:System.Double" />。</returns>
+    </member>
+    <member name="P:System.Printing.PrintDocumentImageableArea.MediaSizeHeight">
+      <summary>获取纸张或介质的高度。</summary>
+      <returns>表示从页面左上角到左下角距离的 <see cref="T:System.Double" />。</returns>
+    </member>
+    <member name="P:System.Printing.PrintDocumentImageableArea.MediaSizeWidth">
+      <summary>获取纸张或介质的宽度。</summary>
+      <returns>表示从页面左上角到右上角距离的 <see cref="T:System.Double" />。</returns>
+    </member>
+    <member name="P:System.Printing.PrintDocumentImageableArea.OriginHeight">
+      <summary>获取从成像区域左上角（也称为成像区域的“原点”）到页面上边缘最近点的距离。</summary>
+      <returns>一个 <see cref="T:System.Double" />，表示从成像区域左上角（也称为成像区域的“原点”）到页面上边缘最近点的距离（以像素，即 1/96 英寸为单位）</returns>
+    </member>
+    <member name="P:System.Printing.PrintDocumentImageableArea.OriginWidth">
+      <summary>获取原点宽度，即页面左边缘到成像区域左上角（也称为成像区域的“原点”）的距离。</summary>
+      <returns>一个 <see cref="T:System.Double" />，表示原点宽度（以像素，即 1/96 英寸为单位），即从页面的左边缘到成像区域左上角（也称为成像区域的“原点”）的距离。</returns>
+    </member>
+    <member name="T:System.Printing.PrintDriver">
+      <summary>表示打印驱动程序。</summary>
+    </member>
+    <member name="M:System.Printing.PrintDriver.Commit">
+      <summary>不要使用。</summary>
+    </member>
+    <member name="M:System.Printing.PrintDriver.Refresh">
+      <summary>不要使用。</summary>
+    </member>
+    <member name="T:System.Printing.PrintFilter">
+      <summary>定义 <see cref="T:System.Printing.PrintDriver" /> 和 <see cref="T:System.Printing.PrintProcessor" /> 类所共有的处置行为。 <see cref="T:System.Printing.PrintFilter" /> 支持 Windows Presentation Foundation (WPF) 基础结构，不应在代码中直接使用。</summary>
+    </member>
+    <member name="M:System.Printing.PrintFilter.InternalDispose(System.Boolean)">
+      <summary>可释放由 <see cref="T:System.Printing.PrintFilter" /> 派生的类所使用的非托管资源，也可以选择释放托管资源。</summary>
+      <param name="disposing">true 表示释放托管资源和非托管资源；false 表示仅释放非托管资源。</param>
+    </member>
+    <member name="T:System.Printing.PrintJobInfoCollection">
+      <summary>表示一个或多个 <see cref="T:System.Printing.PrintSystemJobInfo" /> 对象。</summary>
+    </member>
+    <member name="M:System.Printing.PrintJobInfoCollection.#ctor(System.Printing.PrintQueue,System.String[])">
+      <summary>初始化包含每一项作业（这些作业在指定的 <see cref="T:System.Printing.PrintQueue" /> 中）的 <see cref="T:System.Printing.PrintSystemJobInfo" /> 对象的 <see cref="T:System.Printing.PrintJobInfoCollection" /> 类的一个新实例，并仅初始化那些其属性在指定的属性筛选器中列出的对象。</summary>
+      <param name="printQueue">其打印作业将要填充集合的打印队列。</param>
+      <param name="propertyFilter">
+        <see cref="T:System.Printing.PrintSystemJobInfo" /> 对象属性的子集的列表。</param>
+    </member>
+    <member name="M:System.Printing.PrintJobInfoCollection.Add(System.Printing.PrintSystemJobInfo)">
+      <summary>向 <see cref="T:System.Printing.PrintJobInfoCollection" /> 中添加一个成员。</summary>
+      <param name="printObject">已添加的对象。</param>
+    </member>
+    <member name="M:System.Printing.PrintJobInfoCollection.Dispose(System.Boolean)">
+      <summary>释放正在由 <see cref="T:System.Printing.PrintJobInfoCollection" /> 使用的非托管资源，还可以选择释放托管资源。</summary>
+    </member>
+    <member name="M:System.Printing.PrintJobInfoCollection.GetEnumerator">
+      <summary>获取一个对象，该对象用于实现使用 <see cref="T:System.Printing.PrintSystemJobInfo" /> 关闭的泛型 <see cref="T:System.Collections.IEnumerator" /> 接口。</summary>
+      <returns>实现泛型 <see cref="T:System.Collections.IEnumerator" /> 接口的对象，该对象可以循环访问 <see cref="T:System.Printing.PrintJobInfoCollection" /> 所包含的 <see cref="T:System.Printing.PrintSystemJobInfo" /> 对象。</returns>
+    </member>
+    <member name="M:System.Printing.PrintJobInfoCollection.GetNonGenericEnumerator">
+      <summary>获取实现非泛型 <see cref="T:System.Collections.IEnumerator" /> 接口的对象。</summary>
+      <returns>实现非泛型 <see cref="T:System.Collections.IEnumerator" /> 接口的对象，该对象可以循环访问 <see cref="T:System.Printing.PrintJobInfoCollection" /> 所包含的 <see cref="T:System.Printing.PrintSystemJobInfo" /> 对象。</returns>
+    </member>
+    <member name="T:System.Printing.PrintJobPriority">
+      <summary>指定某打印作业相对于打印队列中的其他打印作业的非数字优先级。</summary>
+    </member>
+    <member name="F:System.Printing.PrintJobPriority.Default">
+      <summary>一个作业，具有 <see cref="T:System.Printing.PrintQueueStream" /> 的 <see cref="P:System.Printing.PrintQueue.DefaultPriority" />。</summary>
+    </member>
+    <member name="F:System.Printing.PrintJobPriority.Maximum">
+      <summary>具有最高优先级的作业。</summary>
+    </member>
+    <member name="F:System.Printing.PrintJobPriority.Minimum">
+      <summary>具有最低优先级的作业。</summary>
+    </member>
+    <member name="F:System.Printing.PrintJobPriority.None">
+      <summary>不包含非数字优先级的作业。</summary>
+    </member>
+    <member name="T:System.Printing.PrintJobSettings">
+      <summary>描述打印作业。</summary>
+    </member>
+    <member name="P:System.Printing.PrintJobSettings.CurrentPrintTicket">
+      <summary>获取或设置 <see cref="T:System.Printing.PrintTicket" /> 对象，该对象拥有打印作业的所有详细设置。</summary>
+      <returns>一个 <see cref="T:System.Printing.PrintTicket" /> 对象，该对象拥有关于打印作业的所有详细信息，如要打印的副本数，以及是使用装订打印还是双面打印。</returns>
+    </member>
+    <member name="P:System.Printing.PrintJobSettings.Description">
+      <summary>获取或设置打印作业的说明。</summary>
+      <returns>描述打印作业的 <see cref="T:System.String" />，例如“季度报表”。</returns>
+    </member>
+    <member name="T:System.Printing.PrintJobStatus">
+      <summary>指定打印队列中打印作业的当前状态。</summary>
+    </member>
+    <member name="F:System.Printing.PrintJobStatus.Blocked">
+      <summary>队列中该打印作业之前的打印作业可能出现了错误情况，因此该打印作业已被阻止。</summary>
+    </member>
+    <member name="F:System.Printing.PrintJobStatus.Completed">
+      <summary>打印作业已完成，包括所有打印后处理。</summary>
+    </member>
+    <member name="F:System.Printing.PrintJobStatus.Deleted">
+      <summary>通常情况下，打印完成后，系统会从队列中删除该打印作业。</summary>
+    </member>
+    <member name="F:System.Printing.PrintJobStatus.Deleting">
+      <summary>正在删除打印作业。</summary>
+    </member>
+    <member name="F:System.Printing.PrintJobStatus.Error">
+      <summary>打印作业处于错误状态。</summary>
+    </member>
+    <member name="F:System.Printing.PrintJobStatus.None">
+      <summary>打印作业无指定状态。</summary>
+    </member>
+    <member name="F:System.Printing.PrintJobStatus.Offline">
+      <summary>打印机处于脱机状态。</summary>
+    </member>
+    <member name="F:System.Printing.PrintJobStatus.PaperOut">
+      <summary>打印机无法提供所需纸张大小。</summary>
+    </member>
+    <member name="F:System.Printing.PrintJobStatus.Paused">
+      <summary>打印作业已暂停。</summary>
+    </member>
+    <member name="F:System.Printing.PrintJobStatus.Printed">
+      <summary>打印作业已打印。</summary>
+    </member>
+    <member name="F:System.Printing.PrintJobStatus.Printing">
+      <summary>正在打印打印作业。</summary>
+    </member>
+    <member name="F:System.Printing.PrintJobStatus.Restarted">
+      <summary>打印作业被阻止，但已重新启动。</summary>
+    </member>
+    <member name="F:System.Printing.PrintJobStatus.Retained">
+      <summary>打印作业打印完后仍保留在打印队列中。</summary>
+    </member>
+    <member name="F:System.Printing.PrintJobStatus.Spooling">
+      <summary>打印作业正在进行后台打印。</summary>
+    </member>
+    <member name="F:System.Printing.PrintJobStatus.UserIntervention">
+      <summary>打印机要求通过用户操作来修复错误情况。</summary>
+    </member>
+    <member name="T:System.Printing.PrintJobType">
+      <summary>指定打印作业是否使用 XML 纸张规范 (XPS)。</summary>
+    </member>
+    <member name="F:System.Printing.PrintJobType.Legacy">
+      <summary>非 XPS 打印作业。</summary>
+    </member>
+    <member name="F:System.Printing.PrintJobType.None">
+      <summary>未指定打印作业是否是 XPS。</summary>
+    </member>
+    <member name="F:System.Printing.PrintJobType.Xps">
+      <summary>一个 XPS 打印作业。</summary>
+    </member>
+    <member name="T:System.Printing.PrintPort">
+      <summary>表示打印服务器上的打印机端口。 每个打印队列都具有分配的打印端口。</summary>
+    </member>
+    <member name="M:System.Printing.PrintPort.Commit">
+      <summary>不要使用。</summary>
+    </member>
+    <member name="M:System.Printing.PrintPort.Refresh">
+      <summary>不要使用。</summary>
+    </member>
+    <member name="T:System.Printing.PrintProcessor">
+      <summary>表示打印服务器上的打印处理器。</summary>
+    </member>
+    <member name="M:System.Printing.PrintProcessor.Commit">
+      <summary>不要使用。</summary>
+    </member>
+    <member name="M:System.Printing.PrintProcessor.Refresh">
+      <summary>不要使用。</summary>
+    </member>
+    <member name="T:System.Printing.PrintQueue">
+      <summary>管理打印机和打印作业。</summary>
+    </member>
+    <member name="M:System.Printing.PrintQueue.#ctor(System.Printing.PrintServer,System.String)">
+      <summary>使用指定的 <see cref="T:System.Printing.PrintServer" /> 和队列名称初始化 <see cref="T:System.Printing.PrintQueue" /> 类的一个新实例。</summary>
+      <param name="printServer">承载打印队列的打印服务器。</param>
+      <param name="printQueueName">打印队列的名称。</param>
+    </member>
+    <member name="M:System.Printing.PrintQueue.#ctor(System.Printing.PrintServer,System.String,System.Int32)">
+      <summary>使用指定 <see cref="T:System.Printing.PrintServer" />、队列名称和打印架构版本初始化 <see cref="T:System.Printing.PrintQueue" /> 类的一个新实例。</summary>
+      <param name="printServer">承载打印队列的打印服务器。</param>
+      <param name="printQueueName">打印队列的名称。</param>
+      <param name="printSchemaVersion">要使用的打印架构的版本。</param>
+    </member>
+    <member name="M:System.Printing.PrintQueue.#ctor(System.Printing.PrintServer,System.String,System.Int32,System.Printing.PrintSystemDesiredAccess)">
+      <summary>使用指定的 <see cref="T:System.Printing.PrintServer" />、队列名称、打印架构版本和所需访问初始化 <see cref="T:System.Printing.PrintQueue" /> 类的一个新实例。</summary>
+      <param name="printServer">承载打印队列的打印服务器。</param>
+      <param name="printQueueName">打印队列的名称。</param>
+      <param name="printSchemaVersion">要使用的打印架构的版本。</param>
+      <param name="desiredAccess">指定程序所需打印队列的访问类型的 <see cref="T:System.Printing.PrintSystemDesiredAccess" /> 值之一。</param>
+      <exception cref="T:System.Printing.PrintQueueException">
+        <paramref name="desiredAccess" /> 是只能用于 <see cref="T:System.Printing.PrintServer" /> 对象，而不能用于 <see cref="T:System.Printing.PrintQueue" /> 对象的值。 例如 <see cref="F:System.Printing.PrintSystemDesiredAccess.AdministrateServer" />。</exception>
+    </member>
+    <member name="M:System.Printing.PrintQueue.#ctor(System.Printing.PrintServer,System.String,System.Printing.PrintQueueIndexedProperty[])">
+      <summary>使用指定的 <see cref="T:System.Printing.PrintServer" />、队列名称和要初始化的 <see cref="T:System.Printing.PrintQueueIndexedProperty" /> 值的数组初始化 <see cref="T:System.Printing.PrintQueue" /> 类的一个新实例。</summary>
+      <param name="printServer">承载打印队列的打印服务器。</param>
+      <param name="printQueueName">打印队列的名称。</param>
+      <param name="propertyFilter">指定要初始化的属性值的 <see cref="T:System.Printing.PrintQueueIndexedProperty" /> 值的数组。</param>
+    </member>
+    <member name="M:System.Printing.PrintQueue.#ctor(System.Printing.PrintServer,System.String,System.Printing.PrintQueueIndexedProperty[],System.Printing.PrintSystemDesiredAccess)">
+      <summary>使用指定的 <see cref="T:System.Printing.PrintServer" />、队列名称、要初始化的 <see cref="T:System.Printing.PrintQueueIndexedProperty" /> 值的数组和所需的访问初始化 <see cref="T:System.Printing.PrintQueue" /> 类的一个新实例。</summary>
+      <param name="printServer">承载打印队列的打印服务器。</param>
+      <param name="printQueueName">打印队列的名称。</param>
+      <param name="propertyFilter">指定要初始化的属性的 <see cref="T:System.Printing.PrintQueueIndexedProperty" /> 值的数组。</param>
+      <param name="desiredAccess">指定程序所需打印队列的访问类型的 <see cref="T:System.Printing.PrintSystemDesiredAccess" /> 值之一。</param>
+      <exception cref="T:System.Printing.PrintQueueException">
+        <paramref name="desiredAccess" /> 是只能用于 <see cref="T:System.Printing.PrintServer" /> 对象，而不能用于 <see cref="T:System.Printing.PrintQueue" /> 对象的值。 例如 <see cref="F:System.Printing.PrintSystemDesiredAccess.AdministrateServer" />。</exception>
+    </member>
+    <member name="M:System.Printing.PrintQueue.#ctor(System.Printing.PrintServer,System.String,System.Printing.PrintSystemDesiredAccess)">
+      <summary>使用指定 <see cref="T:System.Printing.PrintServer" />、队列名称和所需访问初始化 <see cref="T:System.Printing.PrintQueue" /> 类的一个新实例。</summary>
+      <param name="printServer">承载打印队列的打印服务器。</param>
+      <param name="printQueueName">打印队列的名称。</param>
+      <param name="desiredAccess">指定程序所需打印队列的访问类型的 <see cref="T:System.Printing.PrintSystemDesiredAccess" /> 值之一。</param>
+      <exception cref="T:System.Printing.PrintQueueException">
+        <paramref name="desiredAccess" /> 是只能用于 <see cref="T:System.Printing.PrintServer" /> 对象，而不能用于 <see cref="T:System.Printing.PrintQueue" /> 对象的值。 例如 <see cref="F:System.Printing.PrintSystemDesiredAccess.AdministrateServer" />。</exception>
+    </member>
+    <member name="M:System.Printing.PrintQueue.#ctor(System.Printing.PrintServer,System.String,System.String[])">
+      <summary>使用指定 <see cref="T:System.Printing.PrintServer" />、队列名称和要初始化的属性名称的数组初始化 <see cref="T:System.Printing.PrintQueue" /> 类的一个新实例。</summary>
+      <param name="printServer">承载打印队列的打印服务器。</param>
+      <param name="printQueueName">打印队列的名称。</param>
+      <param name="propertyFilter">要初始化的属性名称的数组。</param>
+    </member>
+    <member name="M:System.Printing.PrintQueue.#ctor(System.Printing.PrintServer,System.String,System.String[],System.Printing.PrintSystemDesiredAccess)">
+      <summary>使用指定的 <see cref="T:System.Printing.PrintServer" />、队列名称、属性过滤器和所需访问初始化 <see cref="T:System.Printing.PrintQueue" /> 类的一个新实例。</summary>
+      <param name="printServer">承载打印队列的打印服务器。</param>
+      <param name="printQueueName">打印队列的名称。</param>
+      <param name="propertyFilter">要初始化的属性名称的数组。</param>
+      <param name="desiredAccess">指定程序所需打印队列的访问类型的 <see cref="T:System.Printing.PrintSystemDesiredAccess" /> 值之一。</param>
+      <exception cref="T:System.Printing.PrintQueueException">
+        <paramref name="desiredAccess" /> 是只能用于 <see cref="T:System.Printing.PrintServer" /> 对象，而不能用于 <see cref="T:System.Printing.PrintQueue" /> 对象的值。 例如 <see cref="F:System.Printing.PrintSystemDesiredAccess.AdministrateServer" />。</exception>
+    </member>
+    <member name="M:System.Printing.PrintQueue.AddJob">
+      <summary>将一个内容为 <see cref="T:System.Byte" /> 数组的新（一般命名的）打印作业插入到队列中。</summary>
+      <returns>用于表示打印作业及其状态的 <see cref="T:System.Printing.PrintSystemJobInfo" />。</returns>
+    </member>
+    <member name="M:System.Printing.PrintQueue.AddJob(System.String)">
+      <summary>将一个内容为 <see cref="T:System.Byte" /> 数组的新打印作业插入到队列中。</summary>
+      <returns>用于表示打印作业及其状态的 <see cref="T:System.Printing.PrintSystemJobInfo" />。</returns>
+      <param name="jobName">打印作业的名称。</param>
+    </member>
+    <member name="M:System.Printing.PrintQueue.AddJob(System.String,System.Printing.PrintTicket)">
+      <summary>将 XML 纸张规范 (XPS) 文档的新打印作业插入队列中，为其提供指定名称和设置。</summary>
+      <returns>用于表示打印作业及其状态的 <see cref="T:System.Printing.PrintSystemJobInfo" />。</returns>
+      <param name="jobName">正在打印文档的路径和名称。</param>
+      <param name="printTicket">打印作业的设置。</param>
+    </member>
+    <member name="M:System.Printing.PrintQueue.AddJob(System.String,System.String,System.Boolean)">
+      <summary>将 XML 纸张规范 (XPS) 文档的一个新的打印作业插入队列中，赋予其指定名称，并指定是否应验证它。</summary>
+      <returns>用于表示打印作业及其状态的 <see cref="T:System.Printing.PrintSystemJobInfo" />。</returns>
+      <param name="jobName">打印作业的名称。</param>
+      <param name="documentPath">正在打印文档的路径和名称。</param>
+      <param name="fastCopy">如果为 true，则进行快速后台处理，没有逐页的进度反馈，也不验证文件是否为有效 XPS；否则为 false。</param>
+    </member>
+    <member name="M:System.Printing.PrintQueue.AddJob(System.String,System.String,System.Boolean,System.Printing.PrintTicket)">
+      <summary>将 XML 纸张规范 (XPS) 文档的新打印作业插入队列中，为其提供指定名称和设置，并指定是否应验证它。</summary>
+      <returns>用于表示打印作业及其状态的 <see cref="T:System.Printing.PrintSystemJobInfo" />。</returns>
+      <param name="jobName">正在打印文档的路径和名称。</param>
+      <param name="documentPath">正在打印文档的路径和名称。</param>
+      <param name="fastCopy">如果为 true，则进行快速后台处理，没有逐页的进度反馈，也不验证文件是否为有效 XPS；否则为 false。</param>
+      <param name="printTicket">打印作业的设置。</param>
+    </member>
+    <member name="P:System.Printing.PrintQueue.AveragePagesPerMinute">
+      <summary>获取以每分钟页数为衡量单位的打印机速度。</summary>
+      <returns>打印机每分钟打印的平均页数。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.ClientPrintSchemaVersion">
+      <summary>获取 Print Schema（打印架构）的版本。</summary>
+      <returns>使用的打印架构版本。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.Comment">
+      <summary>获取或设置有关打印机的注释。</summary>
+      <returns>有关打印机的注释。</returns>
+    </member>
+    <member name="M:System.Printing.PrintQueue.Commit">
+      <summary>将 <see cref="T:System.Printing.PrintQueue" /> 对象的当前属性写入打印服务器上的实际打印队列中。</summary>
+      <exception cref="T:System.Printing.PrintSystemException">某些属性未能提交。</exception>
+      <exception cref="T:System.Printing.PrintCommitAttributesException">某些属性未能提交。 - 或 - 没有足够的权限创建 <see cref="T:System.Printing.PrintQueue" /> 对象。</exception>
+    </member>
+    <member name="M:System.Printing.PrintQueue.CreateXpsDocumentWriter(System.Double@,System.Double@)">
+      <summary>创建具有指定维度的 <see cref="T:System.Windows.Xps.XpsDocumentWriter" /> 对象。</summary>
+      <returns>写入 XPS 流的 <see cref="T:System.Windows.Xps.XpsDocumentWriter" />。 它可以是 null。</returns>
+      <param name="width">XPS 文档的宽度。</param>
+      <param name="height">XPS 文档的高度。</param>
+    </member>
+    <member name="M:System.Printing.PrintQueue.CreateXpsDocumentWriter(System.Printing.PrintDocumentImageableArea@)">
+      <summary>创建 <see cref="T:System.Windows.Xps.XpsDocumentWriter" /> 对象，打开 Windows 通用打印对话框并返回 ref（Visual Basic 中为 ByRef）参数，该参数表示有关可绘制区域和介质维度的信息。</summary>
+      <returns>将 XPS 数据写入流的 <see cref="T:System.Windows.Xps.XpsDocumentWriter" />。 它可以是 null。（参数 <paramref name="documentImageableArea" /> 是一个 ref [在 Visual Basic 中为 ByRef] 参数，已经过该方法初始化，因此表示又一个返回项。）</returns>
+      <param name="documentImageableArea">对包含设备可以打印的页面区域维度的对象的引用。 由于该参数的数据类型无公共构造函数，因此它以未初始化状态进行传递。</param>
+    </member>
+    <member name="M:System.Printing.PrintQueue.CreateXpsDocumentWriter(System.Printing.PrintDocumentImageableArea@,System.Windows.Controls.PageRangeSelection@,System.Windows.Controls.PageRange@)">
+      <summary>创建 <see cref="T:System.Windows.Xps.XpsDocumentWriter" /> 对象，打开 Windows 通用打印对话框，为对话框提供页面范围和打印作业说明，并返回 ref（Visual Basic 中为 ByRef）参数，该参数表示有关可绘制区域和介质维度的信息。</summary>
+      <returns>将 XPS 数据写入流的 <see cref="T:System.Windows.Xps.XpsDocumentWriter" />。 它可以是 null。参数 <paramref name="documentImageableArea" />、<paramref name="pageRangeSelection" /> 和 <paramref name="pageRange" /> 全都为 ref [在 Visual Basic 中为 ByRef] 参数，这些参数由用户初始化并在对话框关闭时返回，因此，每个参数表示一个另外的返回项。）</returns>
+      <param name="documentImageableArea">对包含设备可以打印的页面区域维度的对象的引用。 由于该参数的数据类型无公共构造函数，因此它以未初始化状态进行传递。</param>
+      <param name="pageRangeSelection">指定是打印所有页面，还是只打印用户指定页面范围的值。</param>
+      <param name="pageRange">打印的页面范围。</param>
+    </member>
+    <member name="M:System.Printing.PrintQueue.CreateXpsDocumentWriter(System.Printing.PrintQueue)">
+      <summary>创建一个 <see cref="T:System.Windows.Xps.XpsDocumentWriter" /> 对象并将其与指定的打印队列关联。</summary>
+      <returns>写入 XPS 流的 <see cref="T:System.Windows.Xps.XpsDocumentWriter" />。</returns>
+      <param name="printQueue">打印 XPS 文档的打印队列。</param>
+    </member>
+    <member name="M:System.Printing.PrintQueue.CreateXpsDocumentWriter(System.String,System.Printing.PrintDocumentImageableArea@)">
+      <summary>创建 <see cref="T:System.Windows.Xps.XpsDocumentWriter" /> 对象，打开 Windows 通用打印对话框（同时为其提供一个作业说明）并返回 ref（Visual Basic 中为 ByRef）参数，该参数表示有关可绘制区域和介质维度的信息。</summary>
+      <returns>将 XPS 数据写入流的 <see cref="T:System.Windows.Xps.XpsDocumentWriter" />。 它可以是 null。（参数 <paramref name="documentImageableArea" /> 是一个 ref [在 Visual Basic 中为 ByRef] 参数，已经过该方法初始化，因此表示又一个返回项。）</returns>
+      <param name="jobDescription">打印作业的名称。 该名称出现在 Windows 打印用户界面中。</param>
+      <param name="documentImageableArea">对包含设备可以打印的页面区域维度的对象的引用。 由于该参数的数据类型无公共构造函数，因此它以未初始化状态进行传递。</param>
+    </member>
+    <member name="M:System.Printing.PrintQueue.CreateXpsDocumentWriter(System.String,System.Printing.PrintDocumentImageableArea@,System.Windows.Controls.PageRangeSelection@,System.Windows.Controls.PageRange@)">
+      <summary>创建 <see cref="T:System.Windows.Xps.XpsDocumentWriter" /> 对象，打开 Windows 通用打印对话框，为对话框提供一个页面范围并返回 ref（Visual Basic 中为 ByRef）参数，该参数表示有关可绘制区域和介质维度的信息。</summary>
+      <returns>将 XPS 数据写入流的 <see cref="T:System.Windows.Xps.XpsDocumentWriter" />。 它可以是 null。参数 <paramref name="documentImageableArea" />、<paramref name="pageRangeSelection" /> 和 <paramref name="pageRange" /> 全都为 ref [在 Visual Basic 中为 ByRef] 参数，这些参数由用户初始化并在对话框关闭时返回，因此，每个参数表示一个另外的返回项。）</returns>
+      <param name="jobDescription">打印作业的名称。 该名称出现在 Windows 打印用户界面中。</param>
+      <param name="documentImageableArea">对包含设备可以打印的页面区域维度的对象的引用。 由于该参数的数据类型无公共构造函数，因此它以未初始化状态进行传递。</param>
+      <param name="pageRangeSelection">指定是打印所有页面，还是只打印用户指定页面范围的值。</param>
+      <param name="pageRange">打印的页面范围。</param>
+    </member>
+    <member name="P:System.Printing.PrintQueue.CurrentJobSettings">
+      <summary>获取包含当前打印作业的配置设置的对象。</summary>
+      <returns>用于保存当前打印作业的设置的 <see cref="T:System.Printing.PrintJobSettings" /> 值。 这些设置包括作业描述和对作业的 <see cref="T:System.Printing.PrintTicket" /> 的引用。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.DefaultPrintTicket">
+      <summary>获取或设置与此 <see cref="T:System.Printing.PrintQueue" /> 关联的默认打印机选项。</summary>
+      <returns>打印队列的默认 <see cref="T:System.Printing.PrintTicket" />；或者如果打印队列中发生错误，则为 null。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.DefaultPriority">
+      <summary>获取或设置赋予添加到队列中的每个新打印作业的默认优先级。</summary>
+      <returns>添加到队列中的打印作业的默认优先级。 可取值的范围是 1-99。 默认值为 1。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.Description">
+      <summary>获取打印队列说明。</summary>
+      <returns>打印队列说明。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.FullName">
+      <summary>获取队列的完整名称。</summary>
+      <returns>打印队列的完整名称。</returns>
+    </member>
+    <member name="M:System.Printing.PrintQueue.GetJob(System.Int32)">
+      <summary>获取具有指定 ID 号的打印作业。</summary>
+      <returns>指定作业的属性及其状态的 <see cref="T:System.Printing.PrintSystemJobInfo" />。</returns>
+      <param name="jobId">队列中的作业数。</param>
+    </member>
+    <member name="M:System.Printing.PrintQueue.GetPrintCapabilities">
+      <summary>获取用于标识打印机功能的 <see cref="T:System.Printing.PrintCapabilities" /> 对象。</summary>
+      <returns>用于指定打印机可执行和不可执行的操作（如双面复印或自动装订）的 <see cref="T:System.Printing.PrintCapabilities" /> 对象。</returns>
+      <exception cref="T:System.Printing.PrintQueueException">未能检索到 <see cref="T:System.Printing.PrintCapabilities" /> 对象。</exception>
+    </member>
+    <member name="M:System.Printing.PrintQueue.GetPrintCapabilities(System.Printing.PrintTicket)">
+      <summary>获取用于标识打印机功能的 <see cref="T:System.Printing.PrintCapabilities" /> 对象。</summary>
+      <returns>用于指定打印机可执行和不可执行的操作（如双面复印或自动装订）的 <see cref="T:System.Printing.PrintCapabilities" /> 对象。</returns>
+      <param name="printTicket">提供打印功能报告根据的打印票证。</param>
+      <exception cref="T:System.Printing.PrintQueueException">未能检索到 <see cref="T:System.Printing.PrintCapabilities" /> 对象。</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="printTicket" /> 不符合标准格式。</exception>
+    </member>
+    <member name="M:System.Printing.PrintQueue.GetPrintCapabilitiesAsXml">
+      <summary>获取一个 <see cref="T:System.IO.MemoryStream" /> 对象，该对象将打印机的功能指定为遵从 （打印架构）的 XML 流。</summary>
+      <returns>使用属于  Print Schema （打印机架构）系统一部分的 XML 架构“PrintCapabilities”，指定打印机功能的 <see cref="T:System.IO.MemoryStream" />。</returns>
+      <exception cref="T:System.Printing.PrintQueueException">未能检索到打印功能。</exception>
+    </member>
+    <member name="M:System.Printing.PrintQueue.GetPrintCapabilitiesAsXml(System.Printing.PrintTicket)">
+      <summary>获取一个 <see cref="T:System.IO.MemoryStream" /> 对象，该对象指定 XML 格式的打印机功能，该格式符合 （打印架构）。</summary>
+      <returns>使用属于  Print Schema （打印机架构）系统一部分的 XML 架构“PrintCapabilities”，指定打印机功能的 <see cref="T:System.IO.MemoryStream" />。</returns>
+      <param name="printTicket">提供打印功能报告根据的打印票证。</param>
+      <exception cref="T:System.Printing.PrintQueueException">未能检索到打印功能。</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="printTicket" /> 不符合标准格式。</exception>
+    </member>
+    <member name="M:System.Printing.PrintQueue.GetPrintJobInfoCollection">
+      <summary>创建包含队列中每个作业的 <see cref="T:System.Printing.PrintSystemJobInfo" /> 对象的集合。</summary>
+      <returns>返回 <see cref="T:System.Printing.PrintSystemJobInfo" /> 对象的 <see cref="T:System.Printing.PrintJobInfoCollection" />。 队列中的每个作业都有这样一个集合。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.HasPaperProblem">
+      <summary>获取用于指示打印机是否遇到未指定纸张的问题的值。</summary>
+      <returns>如果存在未指定纸张的问题，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.HasToner">
+      <summary>获取指示打印机有无墨粉的值。</summary>
+      <returns>如果当前打印机有墨粉，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.HostingPrintServer">
+      <summary>获取或设置（受保护）控制打印队列的打印服务器。</summary>
+      <returns>承载打印队列的 <see cref="T:System.Printing.PrintServer" /> 的名称和其他属性。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.InPartialTrust">
+      <summary>获取或设置一个值，该值指示队列是否在部分受信任模式（一种较高级别的信任）下运行。</summary>
+      <returns>如果队列在部分受信任模式下运行，则为 true；否则为 false。</returns>
+    </member>
+    <member name="M:System.Printing.PrintQueue.InternalDispose(System.Boolean)">
+      <summary>释放由 <see cref="T:System.Printing.PrintQueue" /> 占用的非托管资源，还可以另外再释放托管资源。</summary>
+      <param name="disposing">true 表示释放托管资源和非托管资源；false 表示仅释放非托管资源。</param>
+    </member>
+    <member name="P:System.Printing.PrintQueue.IsBidiEnabled">
+      <summary>获取指示是否启用与打印机进行双向通信的值。</summary>
+      <returns>如果启用与打印机的双向通信，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.IsBusy">
+      <summary>获取指示打印设备是否忙的值。</summary>
+      <returns>如果设备忙，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.IsDevQueryEnabled">
+      <summary>获取一个值，该值指示当文档和打印机配置不一致时，队列是否保留文档。</summary>
+      <returns>如果队列保留不一致的配置，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.IsDirect">
+      <summary>获取一个值，该值指示队列是直接打印到打印机，还是先在后台处理文档，然后再打印。</summary>
+      <returns>如果队列直接打印到打印机，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.IsDoorOpened">
+      <summary>获取用于指示打印机门是否打开的值。</summary>
+      <returns>如果门为打开状态，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.IsHidden">
+      <summary>获取用于指示打印队列是否隐藏在应用程序用户界面中的值。</summary>
+      <returns>如果打印队列隐藏在 Windows 用户界面中，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.IsInError">
+      <summary>获取用于指示打印机或设备是否处于出错状态的值。</summary>
+      <returns>如果设备处于出错状态，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.IsInitializing">
+      <summary>获取用于指示打印机自身是否正在进行初始化的值。</summary>
+      <returns>如果打印机正在初始化，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.IsIOActive">
+      <summary>获取用于指示打印机是否正在收发数据或信号的值。</summary>
+      <returns>如果打印机正在进行收发操作，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.IsManualFeedRequired">
+      <summary>获取一个值，该值指示是否需要给打印机手动加纸以执行当前打印作业。</summary>
+      <returns>如果需要手动给打印机加纸，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.IsNotAvailable">
+      <summary>获取用于指示打印机是否可用的值。</summary>
+      <returns>如果打印机可用，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.IsOffline">
+      <summary>获取一个值，该值指示打印机是否脱机。</summary>
+      <returns>如果打印机脱机，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.IsOutOfMemory">
+      <summary>获取用于指示打印机的内存是否不足的值。</summary>
+      <returns>如果打印机内存不足，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.IsOutOfPaper">
+      <summary>获取一个值，该值指示打印机是否需要用当前作业所需大小的纸张来重新加载。</summary>
+      <returns>如果需要重新加载打印机，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.IsOutputBinFull">
+      <summary>获取用于指示打印机的输出区域是否存在溢出危险的值。</summary>
+      <returns>如果打印机的输出区域已满，则为 true，否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.IsPaperJammed">
+      <summary>获取用于指示当前纸张是否卡在打印机里的值。</summary>
+      <returns>如果纸被卡住，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.IsPaused">
+      <summary>获取用于指示打印队列是否已暂停的值。</summary>
+      <returns>如果打印队列已暂停，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.IsPendingDeletion">
+      <summary>获取用于指示打印机是否正在删除打印作业的值。</summary>
+      <returns>如果打印机正在删除作业，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.IsPowerSaveOn">
+      <summary>获取用于指示打印机是否处于节能模式的值。</summary>
+      <returns>如果打印机处于节能模式，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.IsPrinting">
+      <summary>获取用于指示是否正在打印作业的值。</summary>
+      <returns>如果正在打印作业，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.IsProcessing">
+      <summary>获取用于指示打印机是否正在处理打印作业的值。</summary>
+      <returns>如果打印机正在处理打印作业，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.IsPublished">
+      <summary>获取用于指示其他网络用户能否看到打印机的值。</summary>
+      <returns>如果其他网络用户能够看到该打印机，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.IsQueued">
+      <summary>获取一个值，该值指示打印机能否支持一个队列中同时包含多个打印作业。</summary>
+      <returns>如果打印机能够支持包含多个打印作业的队列，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.IsRawOnlyEnabled">
+      <summary>获取一个用于指示打印队列能否使用 EMF（增强元文件）的值，增强元文件有助于加快数据从打印应用程序流向 Windows 后台程序的速度。</summary>
+      <returns>如果打印机无法使用 EMF 打印，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.IsServerUnknown">
+      <summary>获取用于指示打印机是否处于出错状态的值。</summary>
+      <returns>如果打印机处于出错状态，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.IsShared">
+      <summary>获取用于指示打印机能否供联网的其他计算机使用的值。</summary>
+      <returns>如果打印机为共享的，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.IsTonerLow">
+      <summary>获取用于指示打印机是否缺少墨粉的值。</summary>
+      <returns>如果打印机缺少墨粉，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.IsWaiting">
+      <summary>获取用于指示队列是否正在等待添加作业的值。</summary>
+      <returns>如果队列正在等待作业，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.IsWarmingUp">
+      <summary>获取用于指示打印机是否正在预热的值。</summary>
+      <returns>如果打印机正在预热，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.IsXpsDevice">
+      <summary>获取一个值，该值指示是否因为打印机的驱动程序是基于 打印概述建立的，所以它使用 XML 纸张规范 (XPS) 作为其页面描述语言。</summary>
+      <returns>如果打印机使用打印概述，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.KeepPrintedJobs">
+      <summary>获取一个值，该值指示队列是否在打印后保存而不是删除打印机语言文件。</summary>
+      <returns>如果队列保存打印机语言文件，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.Location">
+      <summary>获取或设置打印机的物理位置。</summary>
+      <returns>打印机的物理位置。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.MaxPrintSchemaVersion">
+      <summary>获取队列可以使用的 Print Schema （打印架构）的最新的可能的版本编号。</summary>
+      <returns>最新版本号，属于打印架构，队列可以使用它。</returns>
+    </member>
+    <member name="M:System.Printing.PrintQueue.MergeAndValidatePrintTicket(System.Printing.PrintTicket,System.Printing.PrintTicket)">
+      <summary>合并两种 <see cref="T:System.Printing.PrintTicket" />，保证所得的 <see cref="T:System.Printing.PrintTicket" /> 有效且不请求打印机所不支持的任何打印功能。</summary>
+      <returns>一个 <see cref="T:System.Printing.ValidationResult" />，其中包括合并的 <see cref="T:System.Printing.PrintTicket" /> 和一个指示，该指示表明是否为了保证可行性而不得不更改其任何设置。</returns>
+      <param name="basePrintTicket">第一种打印票证。</param>
+      <param name="deltaPrintTicket">第二种打印票证。 它可以是 null。</param>
+      <exception cref="T:System.ArgumentException">至少有一个输入打印票证无效。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="basePrintTicket" /> 为 null。</exception>
+      <exception cref="T:System.Printing.PrintQueueException">验证、合并和可行性检查操作失败。</exception>
+    </member>
+    <member name="M:System.Printing.PrintQueue.MergeAndValidatePrintTicket(System.Printing.PrintTicket,System.Printing.PrintTicket,System.Printing.PrintTicketScope)">
+      <summary>合并两种 <see cref="T:System.Printing.PrintTicket" />，保证所得的 <see cref="T:System.Printing.PrintTicket" /> 有效，不请求打印机所不支持的任何打印功能，且限于指定的作用域。</summary>
+      <returns>一个 <see cref="T:System.Printing.ValidationResult" />，其中包括合并的 <see cref="T:System.Printing.PrintTicket" /> 和一个指示，该指示表明是否为了保证可行性而不得不更改其任何设置。</returns>
+      <param name="basePrintTicket">第一种打印票证。</param>
+      <param name="deltaPrintTicket">第二种打印票证。 它可以是 null。</param>
+      <param name="scope">用于表示 <paramref name="deltaPrintTicket" /> 的作用域和 <see cref="T:System.Printing.ValidationResult" /> 中返回的打印票证的作用域是一个页面、文档，还是整个作业的值。</param>
+      <exception cref="T:System.ArgumentException">至少有一个输入打印票证无效。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="basePrintTicket" /> 为 null。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="scope" /> 参数不含有效的 <see cref="T:System.Printing.PrintTicketScope" /> 值。</exception>
+      <exception cref="T:System.Printing.PrintQueueException">验证、合并和可行性检查操作失败。</exception>
+    </member>
+    <member name="P:System.Printing.PrintQueue.Name">
+      <summary>获取或设置打印队列的名称。</summary>
+      <returns>打印队列的名称。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.NeedUserIntervention">
+      <summary>获取用于指示打印机是否需要人工关注的值。</summary>
+      <returns>如果打印机需要人工关注，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.NumberOfJobs">
+      <summary>获取在打印队列中排队的作业总数。</summary>
+      <returns>队列中的作业数。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.PagePunt">
+      <summary>获取用于指示打印机是否无法打印当前页的值。</summary>
+      <returns>如果打印机无法打印当前页，则为 true；否则为 false。</returns>
+    </member>
+    <member name="M:System.Printing.PrintQueue.Pause">
+      <summary>暂停打印队列。 它保持暂停状态，直到执行 <see cref="M:System.Printing.PrintQueue.Resume" /> 为止。</summary>
+      <exception cref="T:System.Printing.PrintSystemException">无法暂停打印机。</exception>
+    </member>
+    <member name="P:System.Printing.PrintQueue.PrintingIsCancelled">
+      <summary>获取或设置用于指示是否正在取消当前打印作业的值。</summary>
+      <returns>如果正在取消打印作业，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.Priority">
+      <summary>获取或设置该打印队列相对于由同一打印服务器承载并使用同一物理打印机的其他打印队列的优先级。</summary>
+      <returns>该打印队列的优先级。 可取值的范围是 1-99。 默认值为 1。</returns>
+    </member>
+    <member name="M:System.Printing.PrintQueue.Purge">
+      <summary>移除打印队列中的所有作业。</summary>
+      <exception cref="T:System.Printing.PrintSystemException">有些打印作业未能从队列中移除。</exception>
+    </member>
+    <member name="P:System.Printing.PrintQueue.QueueAttributes">
+      <summary>获取打印队列的属性。</summary>
+      <returns>
+        <see cref="T:System.Printing.PrintQueueAttributes" /> 枚举值的按位组合。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.QueueDriver">
+      <summary>获取或设置该队列的打印机驱动程序。</summary>
+      <returns>队列使用的 <see cref="T:System.Printing.PrintDriver" />。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.QueuePort">
+      <summary>获取或设置队列使用的端口。</summary>
+      <returns>分配给打印队列的 <see cref="T:System.Printing.PrintPort" />。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.QueuePrintProcessor">
+      <summary>获取或设置队列使用的打印处理器。</summary>
+      <returns>队列使用的 <see cref="T:System.Printing.PrintProcessor" />，如 WinPrint 或 ModiPrint。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.QueueStatus">
+      <summary>获取用于表示打印机状态的值。 这些状态包括“正在预热”、“正在初始化”、“正在打印”等。</summary>
+      <returns>当前的 <see cref="T:System.Printing.PrintQueueStatus" /> 值。</returns>
+    </member>
+    <member name="M:System.Printing.PrintQueue.Refresh">
+      <summary>使用来自打印机的值和计算机上运行的打印队列实用工具更新 <see cref="T:System.Printing.PrintQueue" /> 对象的属性。</summary>
+      <exception cref="T:System.Printing.PrintSystemException">有些属性未能刷新。</exception>
+    </member>
+    <member name="M:System.Printing.PrintQueue.Resume">
+      <summary>重新启动暂停的打印队列。</summary>
+      <exception cref="T:System.Printing.PrintSystemException">打印机无法继续。</exception>
+    </member>
+    <member name="P:System.Printing.PrintQueue.ScheduleCompletedJobsFirst">
+      <summary>获取一个值，该值指示打印机是否先打印已经完成后台处理过程的作业，然后再打印尚未完全完成后台处理的作业，即使后者先进入队列，或者具有较高的优先级。</summary>
+      <returns>如果打印机先打印已经完成后台处理过程的作业，然后再打印尚未完全完成后台处理的作业，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.SeparatorFile">
+      <summary>获取或设置在每个打印作业的开头插入的文件的路径和文件名。</summary>
+      <returns>分隔符文件的路径和文件名。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.ShareName">
+      <summary>获取或设置网络上的用户可以看到的共享打印机的名称。</summary>
+      <returns>共享打印机的公共名称。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.StartTimeOfDay">
+      <summary>获取或设置打印机在一天中开始打印作业的最早时间，用协调世界时 (UTC)（也称格林尼治标准时间 [GMT]）午夜过后的分钟数表示。</summary>
+      <returns>打印机在一天中的最早工作时间，用午夜 (UTC) 后的分钟数表示。 最大值为 1439。 当使用 Microsoft Windows“添加打印机向导”首次安装打印机时，打印机默认为可全天使用，并且在所有时区该属性都返回 0。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.UntilTimeOfDay">
+      <summary>获取或设置打印机打印作业的最晚时间，用协调世界时 (UTC)（也称格林尼治标准时间 [GMT]）午夜过后的分钟数表示。</summary>
+      <returns>一天中不再使用打印机的时间，用午夜 (UTC) 过后的分钟数表示。 最大值为 1439。 当使用 Microsoft Windows“添加打印机向导”首次安装打印机时，打印机默认为可全天使用，并且在所有时区该属性都返回 0。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueue.UserPrintTicket">
+      <summary>获取或设置当前用户的默认 <see cref="T:System.Printing.PrintTicket" /> 对象，该对象中包含有关打印作业的详细信息。</summary>
+      <returns>当前用户的 <see cref="T:System.Printing.PrintTicket" />，或者如果尚未指定用户 <see cref="T:System.Printing.PrintTicket" />，则为 null。</returns>
+    </member>
+    <member name="T:System.Printing.PrintQueueAttributes">
+      <summary>指定打印队列及其打印机的特性。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueAttributes.Direct">
+      <summary>打印队列立即向打印机发送打印作业，而不是在后台处理作业。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueAttributes.EnableBidi">
+      <summary>已启用打印机的双向通信。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueAttributes.EnableDevQuery">
+      <summary>在文档和打印机配置不匹配时，队列将保留其作业。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueAttributes.Hidden">
+      <summary>在应用程序 UI 中不显示打印队列。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueAttributes.KeepPrintedJobs">
+      <summary>文件打印完后不删除打印机语言文件。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueAttributes.None">
+      <summary>未指定打印队列特性。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueAttributes.Published">
+      <summary>打印队列对于其他网络用户是可见的。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueAttributes.Queued">
+      <summary>打印队列一次能保留多项打印作业。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueAttributes.RawOnly">
+      <summary>打印队列不能使用增强型图元文件格式 (EMF) 打印。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueAttributes.ScheduleCompletedJobsFirst">
+      <summary>队列先打印已经在后台充分处理的作业，然后再打印仍在后台处理的较高优先级作业。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueAttributes.Shared">
+      <summary>打印队列是共享的。</summary>
+    </member>
+    <member name="T:System.Printing.PrintQueueCollection">
+      <summary>表示 <see cref="T:System.Printing.PrintQueue" /> 对象的集合。</summary>
+    </member>
+    <member name="M:System.Printing.PrintQueueCollection.#ctor">
+      <summary>初始化 <see cref="T:System.Printing.PrintQueueCollection" /> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Printing.PrintQueueCollection.#ctor(System.Printing.PrintServer,System.String[])">
+      <summary>为指定的 <see cref="T:System.Printing.PrintServer" /> 初始化 <see cref="T:System.Printing.PrintQueueCollection" /> 类的新实例。</summary>
+      <param name="printServer">承载此集合的打印服务器。</param>
+      <param name="propertyFilter">已初始化的集合成员的属性。</param>
+    </member>
+    <member name="M:System.Printing.PrintQueueCollection.#ctor(System.Printing.PrintServer,System.String[],System.Printing.EnumeratedPrintQueueTypes[])">
+      <summary>为指定的 <see cref="T:System.Printing.PrintServer" /> 初始化 <see cref="T:System.Printing.PrintQueueCollection" /> 类的一个新实例，仅包含指定 <see cref="T:System.Printing.EnumeratedPrintQueueTypes" /> 的打印服务器的队列。</summary>
+      <param name="printServer">承载此集合的打印服务器。</param>
+      <param name="propertyFilter">已初始化的集合成员的属性。</param>
+      <param name="enumerationFlag">一个用于指定集合中包含的打印队列类型的数组。</param>
+    </member>
+    <member name="M:System.Printing.PrintQueueCollection.Add(System.Printing.PrintQueue)">
+      <summary>将 <see cref="T:System.Printing.PrintQueue" /> 添加到集合。</summary>
+      <param name="printObject">已添加的打印队列。</param>
+    </member>
+    <member name="M:System.Printing.PrintQueueCollection.Dispose(System.Boolean)">
+      <summary>释放正在由 <see cref="T:System.Printing.PrintQueueCollection" /> 使用的非托管资源，也可以选择性地释放正在使用的托管资源。</summary>
+    </member>
+    <member name="M:System.Printing.PrintQueueCollection.GetEnumerator">
+      <summary>返回一个对象，该对象用于实现使用 <see cref="T:System.Printing.PrintQueue" /> 关闭的泛型 <see cref="T:System.Collections.IEnumerator" /> 接口。</summary>
+      <returns>实现泛型 <see cref="T:System.Collections.IEnumerator" /> 的对象，该对象可以循环访问 <see cref="T:System.Printing.PrintQueueCollection" /> 所包含的 <see cref="T:System.Printing.PrintQueue" /> 对象。</returns>
+    </member>
+    <member name="M:System.Printing.PrintQueueCollection.GetNonGenericEnumerator">
+      <summary>获取实现非泛型 <see cref="T:System.Collections.IEnumerator" /> 接口的对象。</summary>
+      <returns>实现非泛型 <see cref="T:System.Collections.IEnumerator" /> 的对象，该对象可以循环访问 <see cref="T:System.Printing.PrintQueueCollection" /> 所包含的 <see cref="T:System.Printing.PrintQueue" /> 对象。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueueCollection.SyncRoot">
+      <summary>获取可用于同步对 <see cref="T:System.Printing.PrintQueueCollection" /> 的访问的对象。</summary>
+      <returns>可用于同步集合访问的 <see cref="T:System.Object" />。</returns>
+    </member>
+    <member name="T:System.Printing.PrintQueueIndexedProperty">
+      <summary>指定在构建 <see cref="T:System.Printing.PrintQueue" /> 对象时初始化的属性。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueIndexedProperty.AveragePagesPerMinute">
+      <summary>打印队列的速度。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueIndexedProperty.Comment">
+      <summary>打印队列特定的注释。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueIndexedProperty.DefaultPrintTicket">
+      <summary>默认的打印票证对象。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueIndexedProperty.DefaultPriority">
+      <summary>默认优先级。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueIndexedProperty.Description">
+      <summary>队列的说明。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueIndexedProperty.HostingPrintServer">
+      <summary>主机打印服务器。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueIndexedProperty.Location">
+      <summary>物理打印机的位置。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueIndexedProperty.Name">
+      <summary>打印队列的名称。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueIndexedProperty.NumberOfJobs">
+      <summary>打印队列中的作业数量。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueIndexedProperty.Priority">
+      <summary>打印队列相对于服务同一打印机的其他打印队列的优先级。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueIndexedProperty.QueueAttributes">
+      <summary>打印队列的特性。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueIndexedProperty.QueueDriver">
+      <summary>队列的打印机驱动程序。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueIndexedProperty.QueuePort">
+      <summary>打印队列使用的打印机端口。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueIndexedProperty.QueuePrintProcessor">
+      <summary>打印队列的打印处理器。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueIndexedProperty.QueueStatus">
+      <summary>队列的当前状态。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueIndexedProperty.SeparatorFile">
+      <summary>分隔符文件的路径。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueIndexedProperty.ShareName">
+      <summary>队列的共享名称。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueIndexedProperty.StartTimeOfDay">
+      <summary>队列开始打印作业的时间。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueIndexedProperty.UntilTimeOfDay">
+      <summary>队列停止打印作业的时间。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueIndexedProperty.UserPrintTicket">
+      <summary>用户的打印票证。</summary>
+    </member>
+    <member name="T:System.Printing.PrintQueueStatus">
+      <summary>指定打印队列或其打印机的状态。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueStatus.Busy">
+      <summary>打印机正忙。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueStatus.DoorOpen">
+      <summary>打印机上的门已打开。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueStatus.Error">
+      <summary>由于错误情况，打印机无法打印。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueStatus.Initializing">
+      <summary>打印机正在初始化。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueStatus.IOActive">
+      <summary>打印机正在与打印服务器交换数据。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueStatus.ManualFeed">
+      <summary>打印机正在等待用户将打印介质放入手动送纸盒。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueStatus.None">
+      <summary>未指定状态。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueStatus.NotAvailable">
+      <summary>状态信息不可用。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueStatus.NoToner">
+      <summary>打印机墨粉用完。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueStatus.Offline">
+      <summary>打印机处于脱机状态。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueStatus.OutOfMemory">
+      <summary>打印机无可用内存。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueStatus.OutputBinFull">
+      <summary>打印机的输出纸盒已满。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueStatus.PagePunt">
+      <summary>打印机不能打印当前页。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueStatus.PaperJam">
+      <summary>打印机卡纸。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueStatus.PaperOut">
+      <summary>打印机中没有或已用完当前打印作业所需的纸张类型。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueStatus.PaperProblem">
+      <summary>打印机中的纸张导致未指定的错误情况。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueStatus.Paused">
+      <summary>打印队列已暂停。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueStatus.PendingDeletion">
+      <summary>打印队列正在删除打印作业。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueStatus.PowerSave">
+      <summary>打印机处于节能模式。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueStatus.Printing">
+      <summary>设备正在打印。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueStatus.Processing">
+      <summary>设备正在执行某种工作，如果此设备是集打印机、传真机和扫描仪于一体的多功能设备，则不需要打印。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueStatus.ServerUnknown">
+      <summary>打印机处于错误状态。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueStatus.TonerLow">
+      <summary>打印机中只剩下少量墨粉。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueStatus.UserIntervention">
+      <summary>打印机要求通过用户操作来更正错误情况。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueStatus.Waiting">
+      <summary>打印机正在等待打印作业。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueStatus.WarmingUp">
+      <summary>打印机正在预热。</summary>
+    </member>
+    <member name="T:System.Printing.PrintQueueStream">
+      <summary>一个流，表示打印队列中进行后台处理的打印作业。</summary>
+    </member>
+    <member name="M:System.Printing.PrintQueueStream.#ctor(System.Printing.PrintQueue,System.String)">
+      <summary>为指定的 <see cref="T:System.Printing.PrintQueue" /> 中承载的指定打印作业初始化 <see cref="T:System.Printing.PrintQueueStream" /> 类的一个新实例。</summary>
+      <param name="printQueue">承载提供了流内容的打印作业的 <see cref="T:System.Printing.PrintQueue" />。</param>
+      <param name="printJobName">提供流内容的打印作业的名称。</param>
+    </member>
+    <member name="M:System.Printing.PrintQueueStream.#ctor(System.Printing.PrintQueue,System.String,System.Boolean)">
+      <summary>为指定的 <see cref="T:System.Printing.PrintQueue" /> 中承载的指定打印作业初始化 <see cref="T:System.Printing.PrintQueueStream" /> 类的一个新实例，且指示 <see cref="T:System.Printing.PrintQueueStream" /> 中的数据是否应在关闭流时提交。</summary>
+      <param name="printQueue">承载提供了流内容的打印作业的 <see cref="T:System.Printing.PrintQueue" />。</param>
+      <param name="printJobName">提供流内容的打印作业的名称。</param>
+      <param name="commitDataOnClose">如果调用 <see cref="M:System.Printing.PrintQueueStream.Close" /> 方法时提交 <see cref="T:System.Printing.PrintQueueStream" /> 中的数据，则为 true；否则为  false。</param>
+    </member>
+    <member name="M:System.Printing.PrintQueueStream.#ctor(System.Printing.PrintQueue,System.String,System.Boolean,System.Printing.PrintTicket)">
+      <summary>为指定的 <see cref="T:System.Printing.PrintQueue" /> 中承载的指定打印作业初始化 <see cref="T:System.Printing.PrintQueueStream" /> 类的一个新实例，且指定的设置指示 <see cref="T:System.Printing.PrintQueueStream" /> 中的数据是否应在关闭流时提交。</summary>
+      <param name="printQueue">承载提供了流内容的打印作业的 <see cref="T:System.Printing.PrintQueue" />。</param>
+      <param name="printJobName">提供流内容的打印作业的名称。</param>
+      <param name="commitDataOnClose">如果调用 <see cref="M:System.Printing.PrintQueueStream.Close" /> 方法时提交 <see cref="T:System.Printing.PrintQueueStream" /> 中的数据，则为 true；否则为  false。</param>
+      <param name="printTicket">打印作业的设置。</param>
+    </member>
+    <member name="M:System.Printing.PrintQueueStream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+      <summary>开始异步写操作。</summary>
+      <returns>表示异步写入的 <see cref="T:System.IAsyncResult" />（可能仍处于挂起状态）。</returns>
+      <param name="buffer">从中写入数据的缓冲区。</param>
+      <param name="offset">从中开始写入的缓冲区中的字节偏移量。</param>
+      <param name="count">最多写入的字节数。</param>
+      <param name="callback">异步回调，写操作完成后调用。</param>
+      <param name="state">一个用户提供的对象，它将该异步写入请求与其他请求区别开来。</param>
+    </member>
+    <member name="P:System.Printing.PrintQueueStream.CanRead">
+      <summary>获取一个值，该值指示流是否支持读取。</summary>
+      <returns>如果支持读取，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueueStream.CanSeek">
+      <summary>获取一个值，该值指示流是否支持查找（将读/写位置移到流中的新位置）。</summary>
+      <returns>如果支持查找，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueueStream.CanWrite">
+      <summary>获取一个值，该值指示流是否支持写入。</summary>
+      <returns>如果支持写入，则为 true；否则为 false。</returns>
+    </member>
+    <member name="M:System.Printing.PrintQueueStream.Close">
+      <summary>关闭流并释放与之关联的所有资源（如套接字和文件句柄）。</summary>
+    </member>
+    <member name="M:System.Printing.PrintQueueStream.Dispose(System.Boolean)">
+      <summary>释放由 <see cref="T:System.Printing.PrintQueueStream" /> 使用的非托管资源，还可以选择释放托管资源。</summary>
+    </member>
+    <member name="M:System.Printing.PrintQueueStream.EndWrite(System.IAsyncResult)">
+      <summary>结束异步写操作。</summary>
+      <param name="asyncResult">对挂起异步 I/O 请求的引用。</param>
+    </member>
+    <member name="M:System.Printing.PrintQueueStream.Finalize">
+      <summary>使 <see cref="T:System.Printing.PrintQueueStream" /> 在垃圾回收已收回 <see cref="T:System.Printing.PrintQueueStream" /> 之前尝试释放资源并执行其他清理操作。</summary>
+    </member>
+    <member name="M:System.Printing.PrintQueueStream.Flush">
+      <summary>清除该流的所有缓冲区，并将所有缓冲的数据写入基础设备。</summary>
+    </member>
+    <member name="M:System.Printing.PrintQueueStream.HandlePackagingProgressEvent(System.Object,System.Windows.Xps.Packaging.PackagingProgressEventArgs)">
+      <summary>通过处理 <see cref="E:System.Windows.Xps.Serialization.XpsPackagingPolicy.PackagingProgressEvent" />，使 <see cref="T:System.Printing.PrintQueueStream" /> 响应打包过程。</summary>
+      <param name="sender">事件源。</param>
+      <param name="e">事件数据。</param>
+    </member>
+    <member name="P:System.Printing.PrintQueueStream.JobIdentifier">
+      <summary>获取打印作业的 ID 号。</summary>
+      <returns>一个表示 ID 号的 <see cref="T:System.Int32" />。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueueStream.Length">
+      <summary>获取流的长度（以字节为单位）。</summary>
+      <returns>一个 <see cref="T:System.Int64" />，表示流的长度（以字节为单位）。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueueStream.Position">
+      <summary>获取或设置流中的当前读/写位置。</summary>
+      <returns>一个 <see cref="T:System.Int64" />，表示流中的当前位置。</returns>
+    </member>
+    <member name="M:System.Printing.PrintQueueStream.Read(System.Byte[],System.Int32,System.Int32)">
+      <summary>从流中读取字节序列，并按所读取的字节数向前移动在流中的读/写位置。</summary>
+      <returns>一个 <see cref="T:System.Int32" />，拥有读入缓冲区的字节总数。</returns>
+      <param name="buffer">字节数组。</param>
+      <param name="offset">缓冲区（想在此开始存储从流中读取的数据）中从零开始的字节偏移量。</param>
+      <param name="count">要从流中读取的最大字节数。</param>
+    </member>
+    <member name="M:System.Printing.PrintQueueStream.Seek(System.Int64,System.IO.SeekOrigin)">
+      <summary>在流内设置读/写位置。</summary>
+      <returns>表示新读/写位置的 <see cref="T:System.Int64" />。</returns>
+      <param name="offset">相对于源参数的字节偏移量。</param>
+      <param name="origin">
+        <see cref="T:System.IO.SeekOrigin" /> 类型的值，指示用于获取新位置的参考点。</param>
+    </member>
+    <member name="M:System.Printing.PrintQueueStream.SetLength(System.Int64)">
+      <summary>设置流的长度。</summary>
+      <param name="value">当前流的所需长度（以字节为单位）。</param>
+    </member>
+    <member name="M:System.Printing.PrintQueueStream.Write(System.Byte[],System.Int32,System.Int32)">
+      <summary>将字节序列写入流，并按所写入的字节数向前移动在流中的读/写位置。</summary>
+      <param name="buffer">用于复制到流的字节数组。</param>
+      <param name="offset">
+        <paramref name="buffer" /> 中的从零开始的字节偏移量，从此处开始将字节复制到流中。</param>
+      <param name="count">要写入此流的字节数。</param>
+    </member>
+    <member name="T:System.Printing.PrintQueueStringProperty">
+      <summary>表示打印队列的三个可能属性中的一个（且只有一个）属性：<see cref="P:System.Printing.PrintQueue.Location" />、<see cref="P:System.Printing.PrintQueue.Comment" /> 或 <see cref="P:System.Printing.PrintQueue.ShareName" />。</summary>
+    </member>
+    <member name="M:System.Printing.PrintQueueStringProperty.#ctor">
+      <summary>初始化 <see cref="T:System.Printing.PrintQueueStringProperty" /> 类的新实例。</summary>
+    </member>
+    <member name="P:System.Printing.PrintQueueStringProperty.Name">
+      <summary>获取或设置表示的打印队列属性的值。</summary>
+      <returns>具有该属性值的 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="P:System.Printing.PrintQueueStringProperty.Type">
+      <summary>获取或设置一个值，该值用于标识要表示的是打印队列的三个可能属性中的哪一个。</summary>
+      <returns>一个 <see cref="T:System.Printing.PrintQueueStringPropertyType" />，用于指定要表示的打印队列属性的类型。</returns>
+    </member>
+    <member name="T:System.Printing.PrintQueueStringPropertyType">
+      <summary>指定 <see cref="T:System.Printing.PrintQueueStringProperty" /> 的预期含义。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueStringPropertyType.Comment">
+      <summary>有关打印队列的注释。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueStringPropertyType.Location">
+      <summary>物理打印机的位置。</summary>
+    </member>
+    <member name="F:System.Printing.PrintQueueStringPropertyType.ShareName">
+      <summary>打印队列的共享名称。</summary>
+    </member>
+    <member name="T:System.Printing.PrintServer">
+      <summary>在打印服务器（通常是一台计算机，但也可能是专用硬件打印服务器设备）上管理打印队列。</summary>
+    </member>
+    <member name="M:System.Printing.PrintServer.#ctor">
+      <summary>初始化 <see cref="T:System.Printing.PrintServer" /> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Printing.PrintServer.#ctor(System.Printing.PrintSystemDesiredAccess)">
+      <summary>初始化表示本地打印服务器的 <see cref="T:System.Printing.PrintServer" /> 类的一个新实例，并为其分配指定的 <see cref="T:System.Printing.PrintSystemDesiredAccess" />。</summary>
+      <param name="desiredAccess">一个值，指定程序所需的打印服务器访问类型。</param>
+      <exception cref="T:System.Printing.PrintServerException">
+        <paramref name="desiredAccess" /> 是一个值，仅可用于 <see cref="T:System.Printing.PrintQueue" /> 对象，而不可用于 <see cref="T:System.Printing.LocalPrintServer" /> 对象。 例如 <see cref="F:System.Printing.PrintSystemDesiredAccess.UsePrinter" />。</exception>
+    </member>
+    <member name="M:System.Printing.PrintServer.#ctor(System.String)">
+      <summary>初始化具有指定路径的 <see cref="T:System.Printing.PrintServer" /> 类的一个新实例。</summary>
+      <param name="path">打印服务器的名称和完整路径。</param>
+    </member>
+    <member name="M:System.Printing.PrintServer.#ctor(System.String,System.Printing.PrintServerIndexedProperty[])">
+      <summary>初始化 <see cref="T:System.Printing.PrintServer" /> 类的一个新实例，方法是使用指定的 <see cref="T:System.Printing.PrintServerIndexedProperty" /> 数组来确定将初始化的属性。</summary>
+      <param name="path">打印服务器的完整路径和名称</param>
+      <param name="propertiesFilter">此构造函数初始化的属性。</param>
+    </member>
+    <member name="M:System.Printing.PrintServer.#ctor(System.String,System.Printing.PrintServerIndexedProperty[],System.Printing.PrintSystemDesiredAccess)">
+      <summary>初始化 <see cref="T:System.Printing.PrintServer" /> 类的一个新实例，并提供指定路径、<see cref="T:System.Printing.PrintServerIndexedProperty" /> 数组和所需访问。</summary>
+      <param name="path">打印服务器的完整路径和名称</param>
+      <param name="propertiesFilter">此构造函数初始化的属性。</param>
+      <param name="desiredAccess">一个值，指定程序所需的打印服务器访问类型。</param>
+      <exception cref="T:System.Printing.PrintServerException">
+        <paramref name="desiredAccess" /> 是一个值，仅可用于 <see cref="T:System.Printing.PrintQueue" /> 对象，而不可用于 <see cref="T:System.Printing.LocalPrintServer" /> 对象。 例如 <see cref="F:System.Printing.PrintSystemDesiredAccess.UsePrinter" />。</exception>
+    </member>
+    <member name="M:System.Printing.PrintServer.#ctor(System.String,System.Printing.PrintSystemDesiredAccess)">
+      <summary>初始化具有指定路径和所需访问的 <see cref="T:System.Printing.PrintServer" /> 类的一个新实例。</summary>
+      <param name="path">打印服务器的名称和完整路径。</param>
+      <param name="desiredAccess">一个值，指定程序所需的打印服务器访问类型。</param>
+      <exception cref="T:System.Printing.PrintServerException">
+        <paramref name="desiredAccess" /> 是一个值，仅可用于 <see cref="T:System.Printing.PrintQueue" /> 对象，而不可用于 <see cref="T:System.Printing.LocalPrintServer" /> 对象。 例如 <see cref="F:System.Printing.PrintSystemDesiredAccess.UsePrinter" />。</exception>
+    </member>
+    <member name="M:System.Printing.PrintServer.#ctor(System.String,System.String[])">
+      <summary>初始化具有指定路径和属性筛选器的 <see cref="T:System.Printing.PrintServer" /> 类的一个新实例。</summary>
+      <param name="path">打印服务器的名称和完整路径。</param>
+      <param name="propertiesFilter">构造函数初始化的属性名称数组。</param>
+    </member>
+    <member name="M:System.Printing.PrintServer.#ctor(System.String,System.String[],System.Printing.PrintSystemDesiredAccess)">
+      <summary>初始化具有指定路径、属性筛选器和所需访问的 <see cref="T:System.Printing.PrintServer" /> 类的一个新实例。</summary>
+      <param name="path">打印服务器的名称和完整路径。</param>
+      <param name="propertiesFilter">构造函数初始化的属性名称数组。</param>
+      <param name="desiredAccess">一个值，指定程序所需的打印服务器访问类型。</param>
+      <exception cref="T:System.Printing.PrintServerException">
+        <paramref name="desiredAccess" /> 是一个值，仅可用于 <see cref="T:System.Printing.PrintQueue" /> 对象，而不可用于 <see cref="T:System.Printing.LocalPrintServer" /> 对象。 例如 <see cref="F:System.Printing.PrintSystemDesiredAccess.UsePrinter" />。</exception>
+    </member>
+    <member name="P:System.Printing.PrintServer.BeepEnabled">
+      <summary>获取或设置一个值，该值指示打印服务器是否在打印机出现错误情况时发出提示音。</summary>
+      <returns>
+        <see cref="T:System.Boolean" />如果打印服务器在出现错误时发出提示音，则为 true；否则为 false。</returns>
+    </member>
+    <member name="M:System.Printing.PrintServer.Commit">
+      <summary>提交程序对打印服务器对象属性的所有更改，方法是将这些更改写入此对象表示的打印服务器。</summary>
+      <exception cref="T:System.Printing.PrintSystemException">某些属性尚未提交。</exception>
+      <exception cref="T:System.Printing.PrintCommitAttributesException">某些属性未能提交。 - 或 - 无足够的权限创建 <see cref="T:System.Printing.PrintServer" /> 对象。 请参见“备注”。</exception>
+    </member>
+    <member name="P:System.Printing.PrintServer.DefaultPortThreadPriority">
+      <summary>不要使用。</summary>
+      <returns>线程优先级别。</returns>
+    </member>
+    <member name="P:System.Printing.PrintServer.DefaultSchedulerPriority">
+      <summary>不要使用。</summary>
+      <returns>默认的计划程序线程优先级别。</returns>
+    </member>
+    <member name="P:System.Printing.PrintServer.DefaultSpoolDirectory">
+      <summary>获取或设置打印服务器后台文件的路径。</summary>
+      <returns>一个 <see cref="T:System.String" />，标识用于后台文件的文件夹的完整路径。</returns>
+    </member>
+    <member name="M:System.Printing.PrintServer.DeletePrintQueue(System.Printing.PrintQueue)">
+      <summary>从打印服务器中移除指定的 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <returns>如果队列已成功删除，则为 true；否则为 false。</returns>
+      <param name="printQueue">已删除的队列。</param>
+    </member>
+    <member name="M:System.Printing.PrintServer.DeletePrintQueue(System.String)">
+      <summary>从打印服务器中移除具有指定名称的打印队列。</summary>
+      <returns>如果队列已成功删除，则为 true；否则为 false。</returns>
+      <param name="printQueueName">已删除的队列的名称。</param>
+    </member>
+    <member name="P:System.Printing.PrintServer.EventLog">
+      <summary>获取或设置打印服务器记录的事件的类型。</summary>
+      <returns>一个 <see cref="T:System.Printing.PrintServerEventLoggingTypes" /> 值，标识打印服务器提供的事件日志的类型。 默认值为 <see cref="F:System.Printing.PrintServerEventLoggingTypes.LogPrintingErrorEvents" />。</returns>
+    </member>
+    <member name="M:System.Printing.PrintServer.GetPrintQueue(System.String)">
+      <summary>从打印服务器中获取命名打印队列的引用。</summary>
+      <returns>具有打印服务器中的名称的 <see cref="T:System.Printing.PrintQueue" />。</returns>
+      <param name="printQueueName">打印队列的名称。</param>
+    </member>
+    <member name="M:System.Printing.PrintServer.GetPrintQueue(System.String,System.String[])">
+      <summary>从打印服务器中获取指定的打印队列。</summary>
+      <returns>具有打印服务器中的名称的 <see cref="T:System.Printing.PrintQueue" />。</returns>
+      <param name="printQueueName">打印队列的名称。</param>
+      <param name="propertiesFilter">在返回的队列中进行初始化的属性的名称。</param>
+    </member>
+    <member name="M:System.Printing.PrintServer.GetPrintQueues">
+      <summary>获取打印服务器承载的打印队列的集合。</summary>
+      <returns>打印服务器上的打印队列的 <see cref="T:System.Printing.PrintQueueCollection" />。</returns>
+    </member>
+    <member name="M:System.Printing.PrintServer.GetPrintQueues(System.Printing.EnumeratedPrintQueueTypes[])">
+      <summary>获取在 <see cref="T:System.Printing.EnumeratedPrintQueueTypes" /> 中命名并由打印服务器承载的指定类型的打印队列集合。</summary>
+      <returns>打印服务器上的指定类型的打印队列的 <see cref="T:System.Printing.PrintQueueCollection" />。</returns>
+      <param name="enumerationFlag">一个值的数组，这些值表示集合中打印队列的类型。</param>
+    </member>
+    <member name="M:System.Printing.PrintServer.GetPrintQueues(System.Printing.PrintQueueIndexedProperty[])">
+      <summary>获取由打印服务器承载的且仅在 <see cref="T:System.Printing.PrintQueueIndexedProperty" /> 数组中指定属性中初始化的打印队列的集合。</summary>
+      <returns>一个 <see cref="T:System.Printing.PrintQueueCollection" />，其成员仅在由 <paramref name="propertiesFilter" /> 指定的属性中进行初始化。</returns>
+      <param name="propertiesFilter">此构造函数初始化的属性。</param>
+    </member>
+    <member name="M:System.Printing.PrintServer.GetPrintQueues(System.Printing.PrintQueueIndexedProperty[],System.Printing.EnumeratedPrintQueueTypes[])">
+      <summary>获取指定类型的打印队列的集合。 这些打印队列仅在由 <see cref="T:System.Printing.PrintQueueIndexedProperty" /> 数组指定的属性中进行初始化。</summary>
+      <returns>打印服务器的 <see cref="T:System.Printing.PrintQueueCollection" />。</returns>
+      <param name="propertiesFilter">此构造函数初始化的属性。</param>
+      <param name="enumerationFlag">一个值的数组，这些值表示集合中打印队列的类型。</param>
+    </member>
+    <member name="M:System.Printing.PrintServer.GetPrintQueues(System.String[])">
+      <summary>获取由打印服务器承载的以及仅在指定属性中初始化的打印队列的集合。</summary>
+      <returns>打印服务器上打印队列的 <see cref="T:System.Printing.PrintQueueCollection" />；各打印队列仅在 <paramref name="propertiesFilter" /> 中指定的属性中进行初始化。</returns>
+      <param name="propertiesFilter">已初始化的队列属性的名称。</param>
+    </member>
+    <member name="M:System.Printing.PrintServer.GetPrintQueues(System.String[],System.Printing.EnumeratedPrintQueueTypes[])">
+      <summary>获取打印队列的集合，这些打印队列具有指定的 <see cref="T:System.Printing.EnumeratedPrintQueueTypes" /> 并仅在指定的属性中进行初始化。</summary>
+      <returns>指定类型的打印队列的 <see cref="T:System.Printing.PrintQueueCollection" />；各打印队列仅在指定属性中进行初始化。</returns>
+      <param name="propertiesFilter">已初始化的队列属性的名称。</param>
+      <param name="enumerationFlag">一个值的数组，这些值表示集合中返回的打印队列的类型。</param>
+    </member>
+    <member name="M:System.Printing.PrintServer.InstallPrintQueue(System.String,System.String,System.String[],System.String,System.Printing.IndexedProperties.PrintPropertyDictionary)">
+      <summary>在打印服务器上安装打印队列及关联的打印机驱动程序。</summary>
+      <returns>新的 <see cref="T:System.Printing.PrintQueue" />。</returns>
+      <param name="printQueueName">新队列的名称。</param>
+      <param name="driverName">打印机驱动程序的路径和名称。</param>
+      <param name="portNames">新队列使用的端口的 ID。</param>
+      <param name="printProcessorName">打印处理器的名称。</param>
+      <param name="initialParameters">已初始化的参数。</param>
+    </member>
+    <member name="M:System.Printing.PrintServer.InstallPrintQueue(System.String,System.String,System.String[],System.String,System.Printing.PrintQueueAttributes)">
+      <summary>在打印服务器上安装打印队列及关联的打印机驱动程序。</summary>
+      <returns>新创建的 <see cref="T:System.Printing.PrintQueue" />。</returns>
+      <param name="printQueueName">新队列的名称。</param>
+      <param name="driverName">打印机驱动程序的路径和名称。</param>
+      <param name="portNames">新队列使用的端口的 ID。</param>
+      <param name="printProcessorName">打印处理器的名称。</param>
+      <param name="printQueueAttributes">新队列的特性，如标志。</param>
+    </member>
+    <member name="M:System.Printing.PrintServer.InstallPrintQueue(System.String,System.String,System.String[],System.String,System.Printing.PrintQueueAttributes,System.Printing.PrintQueueStringProperty,System.Int32,System.Int32)">
+      <summary>在打印服务器上安装按优先级别排列的打印队列及关联的打印机驱动程序。</summary>
+      <returns>新创建的 <see cref="T:System.Printing.PrintQueue" />。</returns>
+      <param name="printQueueName">新队列的名称。</param>
+      <param name="driverName">打印机驱动程序的路径和名称。</param>
+      <param name="portNames">新队列使用的端口的 ID。</param>
+      <param name="printProcessorName">打印处理器的名称。</param>
+      <param name="printQueueAttributes">新队列的特性，如标志。</param>
+      <param name="printQueueProperty">新队列的注释、位置或共享名称。</param>
+      <param name="printQueuePriority">一个从 1 到 99 之间的值，指定相对于打印服务器承载的其他队列而言，此打印队列的优先级别。</param>
+      <param name="printQueueDefaultPriority">一个从 1 到 99 之间的值，指定发送到队列的打印作业的默认优先级别。</param>
+    </member>
+    <member name="M:System.Printing.PrintServer.InstallPrintQueue(System.String,System.String,System.String[],System.String,System.Printing.PrintQueueAttributes,System.String,System.String,System.String,System.String,System.Int32,System.Int32)">
+      <summary>在打印服务器上安装按优先级别排列的共享打印队列及关联的打印机驱动程序。</summary>
+      <returns>新创建的 <see cref="T:System.Printing.PrintQueue" />。</returns>
+      <param name="printQueueName">新队列的名称。</param>
+      <param name="driverName">打印机驱动程序的路径和名称。</param>
+      <param name="portNames">新队列使用的端口的 ID。</param>
+      <param name="printProcessorName">打印处理器的名称。</param>
+      <param name="printQueueAttributes">新队列的特性，如标志。</param>
+      <param name="printQueueShareName">新队列的共享名称。</param>
+      <param name="printQueueComment">用户在 Microsoft Windows 用户界面中可见的队列的注释。</param>
+      <param name="printQueueLocation">新队列的位置。</param>
+      <param name="printQueueSeparatorFile">插入各打印作业开头的文件的路径。</param>
+      <param name="printQueuePriority">一个从 1 到 99 之间的值，指定相对于打印服务器承载的其他队列而言，此队列的优先级别。</param>
+      <param name="printQueueDefaultPriority">一个从 1 到 99 之间的值，指定发送到队列的新打印作业的默认优先级别。</param>
+    </member>
+    <member name="M:System.Printing.PrintServer.InternalDispose(System.Boolean)">
+      <summary>释放由 <see cref="T:System.Printing.PrintServer" /> 使用的非托管资源，还可以选择释放托管资源。</summary>
+      <param name="disposing">true 表示释放托管资源和非托管资源；false 表示仅释放非托管资源。</param>
+    </member>
+    <member name="P:System.Printing.PrintServer.IsDelayInitialized">
+      <summary>获取或设置一个值，该值指示 <see cref="T:System.Printing.PrintServer" /> 属性的初始化是否已推迟。</summary>
+      <returns>如果初始化已推迟，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintServer.MajorVersion">
+      <summary>获取操作系统的主版本。</summary>
+      <returns>一个 <see cref="T:System.Int32" />，标识操作系统的主版本。</returns>
+    </member>
+    <member name="P:System.Printing.PrintServer.MinorVersion">
+      <summary>在操作系统的主版本中获取次版本。</summary>
+      <returns>一个 <see cref="T:System.Int32" />，标识操作系统的次版本。</returns>
+    </member>
+    <member name="P:System.Printing.PrintServer.Name">
+      <summary>获取打印服务器的名称。</summary>
+      <returns>打印服务器的名称。</returns>
+      <exception cref="T:System.Printing.PrintSystemException">此属性尚未初始化。</exception>
+    </member>
+    <member name="P:System.Printing.PrintServer.NetPopup">
+      <summary>获取或设置一个值，该值指示打印作业已完成的通知是发送到打印服务器，还是发送到客户端计算机。</summary>
+      <returns>如果将通知发送到客户端计算机，则为 true；如果将通知发送到打印服务器，则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintServer.PortThreadPriority">
+      <summary>获取或设置管理打印机端口 I/O 的进程的线程优先级别。</summary>
+      <returns>一个 <see cref="T:System.Threading.ThreadPriority" /> 枚举值，标识管理打印机端口的进程的线程优先级别。 默认值为 <see cref="F:System.Threading.ThreadPriority.Normal" />。</returns>
+    </member>
+    <member name="M:System.Printing.PrintServer.Refresh">
+      <summary>更新 <see cref="T:System.Printing.PrintServer" /> 对象的属性，以使各属性值与此对象表示的打印服务器的相应特性值一致。</summary>
+      <exception cref="T:System.Printing.PrintSystemException">某些属性无法刷新。</exception>
+    </member>
+    <member name="P:System.Printing.PrintServer.RestartJobOnPoolEnabled">
+      <summary>获取或设置一个值，该值指示用户在已启用打印机池的情况下发生错误后是否可重新启动作业。</summary>
+      <returns>如果启用打印机池后可重新启动作业，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintServer.RestartJobOnPoolTimeout">
+      <summary>获取或设置一个值，该值指示在启用打印机池的情况下发生错误时重新启动作业之前的等待时间。</summary>
+      <returns>作业重新启动之前的等待时间（以分钟为单位）。</returns>
+    </member>
+    <member name="P:System.Printing.PrintServer.SchedulerPriority">
+      <summary>获取或设置将打印作业从应用程序路由到打印队列的进程的线程优先级别。</summary>
+      <returns>一个 <see cref="T:System.Threading.ThreadPriority" /> 枚举值，标识打印服务器安排进程的线程优先级别。 默认值为 <see cref="F:System.Threading.ThreadPriority.Normal" />。</returns>
+    </member>
+    <member name="P:System.Printing.PrintServer.SubSystemVersion">
+      <summary>获取打印后台处理程序系统的版本。</summary>
+      <returns>一个 <see cref="T:System.Byte" />，标识打印后台处理程序系统的版本。</returns>
+    </member>
+    <member name="T:System.Printing.PrintServerEventLoggingTypes">
+      <summary>指定可以由 <see cref="T:System.Printing.PrintServer" /> 记录的事件的类型。</summary>
+    </member>
+    <member name="F:System.Printing.PrintServerEventLoggingTypes.LogAllPrintingEvents">
+      <summary>所有打印事件。</summary>
+    </member>
+    <member name="F:System.Printing.PrintServerEventLoggingTypes.LogPrintingErrorEvents">
+      <summary>打印的错误事件。</summary>
+    </member>
+    <member name="F:System.Printing.PrintServerEventLoggingTypes.LogPrintingInformationEvents">
+      <summary>打印的信息事件。</summary>
+    </member>
+    <member name="F:System.Printing.PrintServerEventLoggingTypes.LogPrintingSuccessEvents">
+      <summary>成功的打印事件。</summary>
+    </member>
+    <member name="F:System.Printing.PrintServerEventLoggingTypes.LogPrintingWarningEvents">
+      <summary>警告事件。</summary>
+    </member>
+    <member name="F:System.Printing.PrintServerEventLoggingTypes.None">
+      <summary>无事件。</summary>
+    </member>
+    <member name="T:System.Printing.PrintServerIndexedProperty">
+      <summary>指定在构造 <see cref="T:System.Printing.PrintServer" /> 对象时已初始化的该对象的属性。</summary>
+    </member>
+    <member name="F:System.Printing.PrintServerIndexedProperty.BeepEnabled">
+      <summary>指定打印机错误是否会导致打印服务器发出提示音的属性。</summary>
+    </member>
+    <member name="F:System.Printing.PrintServerIndexedProperty.DefaultPortThreadPriority">
+      <summary>指定管理端口 I/0 的线程的默认优先级的属性。</summary>
+    </member>
+    <member name="F:System.Printing.PrintServerIndexedProperty.DefaultSchedulerPriority">
+      <summary>指定调度打印作业的默认线程优先级的属性。</summary>
+    </member>
+    <member name="F:System.Printing.PrintServerIndexedProperty.DefaultSpoolDirectory">
+      <summary>指定后台打印作业作为临时文件包含在其中的文件夹路径的属性。</summary>
+    </member>
+    <member name="F:System.Printing.PrintServerIndexedProperty.EventLog">
+      <summary>指定打印服务器提供的事件日志种类的属性。</summary>
+    </member>
+    <member name="F:System.Printing.PrintServerIndexedProperty.MajorVersion">
+      <summary>指定操作系统主版本的属性。</summary>
+    </member>
+    <member name="F:System.Printing.PrintServerIndexedProperty.MinorVersion">
+      <summary>指定操作系统次版本的属性。</summary>
+    </member>
+    <member name="F:System.Printing.PrintServerIndexedProperty.NetPopup">
+      <summary>指定是客户端计算机还是打印服务器接收作业已完成通知的属性。</summary>
+    </member>
+    <member name="F:System.Printing.PrintServerIndexedProperty.PortThreadPriority">
+      <summary>指定管理端口 I/O 的线程的优先级的属性。</summary>
+    </member>
+    <member name="F:System.Printing.PrintServerIndexedProperty.RestartJobOnPoolEnabled">
+      <summary>指定用户是否可在打印机池正在使用时重新启动打印作业的属性。</summary>
+    </member>
+    <member name="F:System.Printing.PrintServerIndexedProperty.RestartJobOnPoolTimeout">
+      <summary>指定打印机池正在使用时重新启动打印作业之前需等待多长时间的属性。</summary>
+    </member>
+    <member name="F:System.Printing.PrintServerIndexedProperty.SchedulerPriority">
+      <summary>指定计划程序优先级的属性。</summary>
+    </member>
+    <member name="T:System.Printing.PrintSystemDesiredAccess">
+      <summary>指定打印对象的不同访问权限（或访问级别）。</summary>
+    </member>
+    <member name="F:System.Printing.PrintSystemDesiredAccess.AdministratePrinter">
+      <summary>执行打印队列的所有管理任务的权限，包括暂停和继续任何打印作业的权限；以及从队列中删除所有作业的权限。 此访问级别还包括 <see cref="F:System.Printing.PrintSystemDesiredAccess.UsePrinter" /> 之下的所有权限。</summary>
+    </member>
+    <member name="F:System.Printing.PrintSystemDesiredAccess.AdministrateServer">
+      <summary>执行打印服务器的所有管理任务的权限。 此访问级别不包括服务器承载的打印队列的 <see cref="F:System.Printing.PrintSystemDesiredAccess.AdministratePrinter" /> 权限。</summary>
+    </member>
+    <member name="F:System.Printing.PrintSystemDesiredAccess.EnumerateServer">
+      <summary>列出打印服务器上的队列的权限。</summary>
+    </member>
+    <member name="F:System.Printing.PrintSystemDesiredAccess.None">
+      <summary>无访问权限。</summary>
+    </member>
+    <member name="F:System.Printing.PrintSystemDesiredAccess.UsePrinter">
+      <summary>将打印作业添加到队列以及删除和枚举自己的作业的权限。</summary>
+    </member>
+    <member name="T:System.Printing.PrintSystemJobInfo">
+      <summary>详细定义打印作业。</summary>
+    </member>
+    <member name="M:System.Printing.PrintSystemJobInfo.Cancel">
+      <summary>取消打印作业。</summary>
+    </member>
+    <member name="M:System.Printing.PrintSystemJobInfo.Commit">
+      <summary>将 <see cref="T:System.Printing.PrintSystemJobInfo" /> 对象属性的任何更改写入该对象所代表的实际打印作业中。</summary>
+    </member>
+    <member name="M:System.Printing.PrintSystemJobInfo.Get(System.Printing.PrintQueue,System.Int32)">
+      <summary>在指定的 <see cref="T:System.Printing.PrintQueue" /> 中获取指定作业的 <see cref="T:System.Printing.PrintSystemJobInfo" />。</summary>
+      <returns>与 <see cref="T:System.Printing.PrintSystemJobInfo" /> 对应的 <paramref name="jobIdentifier" />。</returns>
+      <param name="printQueue">承载打印作业的打印队列。</param>
+      <param name="jobIdentifier">打印作业的数字 ID。</param>
+    </member>
+    <member name="P:System.Printing.PrintSystemJobInfo.HostingPrintQueue">
+      <summary>获取承载打印作业的打印队列。</summary>
+      <returns>一个 <see cref="T:System.Printing.PrintQueue" /> 值，表示拥有打印作业的打印队列。</returns>
+    </member>
+    <member name="P:System.Printing.PrintSystemJobInfo.HostingPrintServer">
+      <summary>获取承载打印作业的打印队列的打印服务器。</summary>
+      <returns>一个 <see cref="T:System.Printing.PrintServer" /> 值，表示拥有打印作业的 <see cref="T:System.Printing.PrintQueue" /> 的宿主打印服务器（通常是一台计算机）。</returns>
+    </member>
+    <member name="M:System.Printing.PrintSystemJobInfo.InternalDispose(System.Boolean)">
+      <summary>释放由 <see cref="T:System.Printing.PrintSystemJobInfo" /> 占用的非托管资源，还可以选择释放托管资源。</summary>
+      <param name="disposing">true 表示释放托管资源和非托管资源；false 表示仅释放非托管资源。</param>
+    </member>
+    <member name="P:System.Printing.PrintSystemJobInfo.IsBlocked">
+      <summary>获取一个值，该值指示打印作业是否因被阻止而没有打印。</summary>
+      <returns>如果已阻止打印作业，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintSystemJobInfo.IsCompleted">
+      <summary>获取一个值，该值指示打印作业是否已完成。</summary>
+      <returns>如果已完成打印作业，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintSystemJobInfo.IsDeleted">
+      <summary>获取一个值，该值指示打印作业（由 <see cref="T:System.Printing.PrintSystemJobInfo" /> 对象表示）是否已从打印队列中删除。</summary>
+      <returns>如果已删除打印作业，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintSystemJobInfo.IsDeleting">
+      <summary>获取一个值，该值指示是否正在从打印队列中删除打印作业。</summary>
+      <returns>如果正在删除打印作业，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintSystemJobInfo.IsInError">
+      <summary>获取一个值，该值指示错误条件是否与打印作业相关联。</summary>
+      <returns>如果错误条件与打印作业相关联，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintSystemJobInfo.IsOffline">
+      <summary>获取一个值，该值指示打印机是否脱机。</summary>
+      <returns>如果打印机脱机，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintSystemJobInfo.IsPaperOut">
+      <summary>获取一个值，该值指示打印机是否已用完打印作业所需的纸张大小和类型。</summary>
+      <returns>如果打印机已用完所需的纸张，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintSystemJobInfo.IsPaused">
+      <summary>获取一个值，该值指示打印作业是否已暂停。</summary>
+      <returns>如果打印作业已暂停，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintSystemJobInfo.IsPrinted">
+      <summary>获取一个值，该值指示打印作业是否已打印。</summary>
+      <returns>如果打印作业已打印，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintSystemJobInfo.IsPrinting">
+      <summary>获取一个值，该值指示打印作业是否正在被打印。</summary>
+      <returns>如果打印机正在打印，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintSystemJobInfo.IsRestarted">
+      <summary>获取一个值，该值指示打印作业是否已重新启动。</summary>
+      <returns>如果打印机正在打印，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintSystemJobInfo.IsRetained">
+      <summary>获取一个值，该值指示打印作业在被打印后是否已保存到队列中。</summary>
+      <returns>如果已保存打印作业，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintSystemJobInfo.IsSpooling">
+      <summary>获取一个值，该值指示打印作业是否正在进行后台处理。</summary>
+      <returns>如果打印作业正在进行后台处理，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintSystemJobInfo.IsUserInterventionRequired">
+      <summary>获取一个值，该值指示打印机是否需要用户干预。</summary>
+      <returns>如果需要用户干预，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintSystemJobInfo.JobIdentifier">
+      <summary>获取打印作业的标识号。</summary>
+      <returns>一个标识打印作业的 <see cref="T:System.Int32" />。</returns>
+    </member>
+    <member name="P:System.Printing.PrintSystemJobInfo.JobName">
+      <summary>获取或设置打印作业的名称。</summary>
+      <returns>打印作业的 <see cref="T:System.String" /> 名称。</returns>
+    </member>
+    <member name="P:System.Printing.PrintSystemJobInfo.JobSize">
+      <summary>获取打印作业的大小（以字节为单位）。</summary>
+      <returns>一个 <see cref="T:System.Int32" />，它指示打印作业的大小（以字节为单位）。</returns>
+    </member>
+    <member name="P:System.Printing.PrintSystemJobInfo.JobStatus">
+      <summary>获取打印作业的当前状态。</summary>
+      <returns>一个 <see cref="T:System.Printing.PrintJobStatus" /> 值。</returns>
+    </member>
+    <member name="P:System.Printing.PrintSystemJobInfo.JobStream">
+      <summary>获取对打印作业的 <see cref="T:System.IO.Stream" /> 的引用。</summary>
+      <returns>一个包含打印作业的 <see cref="T:System.IO.Stream" />。</returns>
+    </member>
+    <member name="P:System.Printing.PrintSystemJobInfo.NumberOfPages">
+      <summary>获取打印作业中的页数。</summary>
+      <returns>一个 <see cref="T:System.Int32" />，它指示打印作业的页数。</returns>
+    </member>
+    <member name="P:System.Printing.PrintSystemJobInfo.NumberOfPagesPrinted">
+      <summary>获取已打印的页数。</summary>
+      <returns>一个 <see cref="T:System.Int32" />，它指示已打印的页数。</returns>
+    </member>
+    <member name="M:System.Printing.PrintSystemJobInfo.Pause">
+      <summary>暂停打印作业，直到 <see cref="M:System.Printing.PrintSystemJobInfo.Resume" /> 运行。</summary>
+    </member>
+    <member name="P:System.Printing.PrintSystemJobInfo.PositionInPrintQueue">
+      <summary>获取打印作业在打印队列中的位置。</summary>
+      <returns>一个 <see cref="T:System.Int32" />，它指示打印作业在打印队列中的位置。</returns>
+    </member>
+    <member name="P:System.Printing.PrintSystemJobInfo.Priority">
+      <summary>获取一个非数字表达式，该表达式表示打印作业相对于打印队列中其他作业的优先级。</summary>
+      <returns>一个 <see cref="T:System.Printing.PrintJobPriority" />，表示打印作业的优先级，如 <see cref="F:System.Printing.PrintJobPriority.Maximum" />、<see cref="F:System.Printing.PrintJobPriority.Minimum" />、<see cref="F:System.Printing.PrintJobPriority.Default" /> 或 <see cref="F:System.Printing.PrintJobPriority.None" />。</returns>
+    </member>
+    <member name="M:System.Printing.PrintSystemJobInfo.Refresh">
+      <summary>更新 <see cref="T:System.Printing.PrintSystemJobInfo" /> 对象的属性，以便它们的值与该对象所代表的实际打印作业的值相匹配。</summary>
+    </member>
+    <member name="M:System.Printing.PrintSystemJobInfo.Restart">
+      <summary>从头开始重新启动打印作业。</summary>
+    </member>
+    <member name="M:System.Printing.PrintSystemJobInfo.Resume">
+      <summary>继续打印暂停的打印作业。</summary>
+    </member>
+    <member name="P:System.Printing.PrintSystemJobInfo.StartTimeOfDay">
+      <summary>获取一天中打印作业可以开始打印的最早时间，用协调世界时 (UTC)（也称为格林尼治标准时间 [GMT]）午夜过后的分钟数表示。</summary>
+      <returns>一个 <see cref="T:System.Int32" />，指定打印作业可能的最早开始时间，用 (UTC) 午夜过后的分钟数表示。 最大值为 1439。</returns>
+    </member>
+    <member name="P:System.Printing.PrintSystemJobInfo.Submitter">
+      <summary>获取提交打印作业的用户的名称。</summary>
+      <returns>一个 <see cref="T:System.String" />，它标识提交打印作业的用户。</returns>
+    </member>
+    <member name="P:System.Printing.PrintSystemJobInfo.TimeJobSubmitted">
+      <summary>获取提交打印作业的日期和时间。</summary>
+      <returns>一个 <see cref="T:System.DateTime" /> 对象，它包含提交打印作业的日期和时间。</returns>
+    </member>
+    <member name="P:System.Printing.PrintSystemJobInfo.TimeSinceStartedPrinting">
+      <summary>获取自打印作业开始打印后已过去的时间（以毫秒为单位）。</summary>
+      <returns>一个 <see cref="T:System.Int32" />，它表示打印作业开始后已过去的时间（以毫秒为单位）。</returns>
+    </member>
+    <member name="P:System.Printing.PrintSystemJobInfo.UntilTimeOfDay">
+      <summary>获取一天中打印作业可以开始打印的最晚时间，用协调世界时 (UTC)（也称为格林尼治标准时间 [GMT]）午夜过后的分钟数表示。</summary>
+      <returns>一个 <see cref="T:System.Int32" />，指定作业可以打印的最晚时间，用 (UTC) 午夜过后的分钟数表示。 最大值为 1439。</returns>
+    </member>
+    <member name="T:System.Printing.PrintSystemObject">
+      <summary>定义打印系统对象所共有的基本属性和方法。 从此类派生的类表示诸如打印队列、打印服务器和打印作业之类的对象。</summary>
+    </member>
+    <member name="M:System.Printing.PrintSystemObject.#ctor">
+      <summary>初始化 <see cref="T:System.Printing.PrintSystemObject" /> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Printing.PrintSystemObject.#ctor(System.Printing.PrintSystemObjectLoadMode)">
+      <summary>使用指定的 <see cref="T:System.Printing.PrintSystemObjectLoadMode" /> 初始化 <see cref="T:System.Printing.PrintSystemObject" /> 类的新实例。</summary>
+      <param name="mode">一个用于指定在装载对象时是否应该初始化该对象属性的值。</param>
+    </member>
+    <member name="M:System.Printing.PrintSystemObject.BaseAttributeNames">
+      <summary>获取派生类特性的名称。</summary>
+      <returns>
+        <see cref="T:System.String" /> 值的数组。</returns>
+    </member>
+    <member name="M:System.Printing.PrintSystemObject.Commit">
+      <summary>在派生类中重写时，会将程序对对象属性所做的所有更改写入该对象表示的实际软件或硬件组件。</summary>
+    </member>
+    <member name="M:System.Printing.PrintSystemObject.Dispose">
+      <summary>释放由 <see cref="T:System.Printing.PrintSystemObject" /> 使用的所有资源。</summary>
+    </member>
+    <member name="M:System.Printing.PrintSystemObject.Dispose(System.Boolean)">
+      <summary>释放由 <see cref="T:System.Printing.PrintSystemObject" /> 占用的非托管资源，还可以另外再释放托管资源。</summary>
+    </member>
+    <member name="M:System.Printing.PrintSystemObject.Finalize">
+      <summary>释放正在由 <see cref="T:System.Printing.PrintSystemObject" /> 使用的资源。</summary>
+    </member>
+    <member name="M:System.Printing.PrintSystemObject.Initialize">
+      <summary>初始化 <see cref="T:System.Printing.PrintSystemObject" /> 的属性。</summary>
+    </member>
+    <member name="M:System.Printing.PrintSystemObject.InternalDispose(System.Boolean)">
+      <summary>在派生类中重写时，请释放正在由 <see cref="T:System.Printing.PrintSystemObject" /> 使用的非托管资源，也可以选择性地释放正在使用的托管资源。</summary>
+      <param name="disposing">true 表示释放托管资源和非托管资源；false 表示仅释放非托管资源。</param>
+    </member>
+    <member name="P:System.Printing.PrintSystemObject.IsDisposed">
+      <summary>获取或设置一个值，该值指示该对象是否已被释放。</summary>
+      <returns>如果该对象已被释放，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Printing.PrintSystemObject.Name">
+      <summary>获取对象的名称。</summary>
+      <returns>表示对象名称的 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="P:System.Printing.PrintSystemObject.Parent">
+      <summary>获取对象的父级。</summary>
+      <returns>另一个 <see cref="T:System.Printing.PrintSystemObject" />。</returns>
+    </member>
+    <member name="P:System.Printing.PrintSystemObject.PropertiesCollection">
+      <summary>获取特性和值对的集合。</summary>
+      <returns>包含特性和值对的 <see cref="T:System.Printing.IndexedProperties.PrintPropertyDictionary" />。</returns>
+    </member>
+    <member name="M:System.Printing.PrintSystemObject.Refresh">
+      <summary>在派生类中重写时，会将更新派生类对象的属性，以使其值与该对象表示的实际软件或硬件组件的值相匹配。</summary>
+    </member>
+    <member name="T:System.Printing.PrintSystemObjectLoadMode">
+      <summary>指定对象属性是否在对象加载时进行初始化。</summary>
+    </member>
+    <member name="F:System.Printing.PrintSystemObjectLoadMode.LoadInitialized">
+      <summary>在加载时初始化属性。</summary>
+    </member>
+    <member name="F:System.Printing.PrintSystemObjectLoadMode.LoadUninitialized">
+      <summary>加载时不初始化属性。</summary>
+    </member>
+    <member name="F:System.Printing.PrintSystemObjectLoadMode.None">
+      <summary>未指定是否初始化属性。</summary>
+    </member>
+    <member name="T:System.Printing.PrintSystemObjectPropertiesChangedEventArgs">
+      <summary>为必须创建的 PropertiesChanged 事件提供数据。</summary>
+    </member>
+    <member name="M:System.Printing.PrintSystemObjectPropertiesChangedEventArgs.#ctor(System.Collections.Specialized.StringCollection)">
+      <summary>初始化 <see cref="T:System.Printing.PrintSystemObjectPropertiesChangedEventArgs" /> 类的新实例。</summary>
+      <param name="events">一个字符串集合，每个字符串均可标识一个更改的属性。</param>
+    </member>
+    <member name="M:System.Printing.PrintSystemObjectPropertiesChangedEventArgs.Dispose">
+      <summary>释放由 <see cref="T:System.Printing.PrintSystemObjectPropertiesChangedEventArgs" /> 对象使用的所有资源。</summary>
+    </member>
+    <member name="M:System.Printing.PrintSystemObjectPropertiesChangedEventArgs.Dispose(System.Boolean)">
+      <summary>释放由 <see cref="T:System.Printing.PrintSystemObjectPropertiesChangedEventArgs" /> 对象占用的非托管资源，还可以选择释放托管资源。</summary>
+    </member>
+    <member name="P:System.Printing.PrintSystemObjectPropertiesChangedEventArgs.PropertiesNames">
+      <summary>获取已更改属性的名称的集合。</summary>
+      <returns>一个属性名称的 <see cref="T:System.Collections.Specialized.StringCollection" />。</returns>
+    </member>
+    <member name="T:System.Printing.PrintSystemObjectPropertyChangedEventArgs">
+      <summary>为必须创建的 PropertyChanged 事件提供数据。</summary>
+    </member>
+    <member name="M:System.Printing.PrintSystemObjectPropertyChangedEventArgs.#ctor(System.String)">
+      <summary>初始化 <see cref="T:System.Printing.PrintSystemObjectPropertyChangedEventArgs" /> 类的新实例。</summary>
+      <param name="eventName">已更改的属性的名称。</param>
+    </member>
+    <member name="M:System.Printing.PrintSystemObjectPropertyChangedEventArgs.Dispose">
+      <summary>释放由 <see cref="T:System.Printing.PrintSystemObjectPropertyChangedEventArgs" /> 使用的所有资源。</summary>
+    </member>
+    <member name="M:System.Printing.PrintSystemObjectPropertyChangedEventArgs.Dispose(System.Boolean)">
+      <summary>释放 <see cref="T:System.Printing.PrintSystemObjectPropertyChangedEventArgs" /> 使用的非托管资源，还可以选择释放托管资源。</summary>
+    </member>
+    <member name="P:System.Printing.PrintSystemObjectPropertyChangedEventArgs.PropertyName">
+      <summary>获取已更改的属性名称。</summary>
+      <returns>拥有属性名称的 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="T:System.Printing.PrintSystemObjects">
+      <summary>代表打印系统对象的集合。</summary>
+    </member>
+    <member name="M:System.Printing.PrintSystemObjects.#ctor">
+      <summary>初始化 <see cref="T:System.Printing.PrintSystemObjects" /> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Printing.PrintSystemObjects.Dispose">
+      <summary>释放由 <see cref="T:System.Printing.PrintSystemObjects" /> 使用的所有资源。</summary>
+    </member>
+    <member name="M:System.Printing.PrintSystemObjects.Dispose(System.Boolean)">
+      <summary>释放 <see cref="T:System.Printing.PrintSystemObjects" /> 使用的非托管资源，还可以选择释放托管资源。</summary>
+    </member>
+    <member name="T:System.Printing.IndexedProperties.PrintBooleanProperty">
+      <summary>表示打印系统硬件或软件组件的 <see cref="T:System.Boolean" /> 属性（及其值）。</summary>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintBooleanProperty.#ctor(System.String)">
+      <summary>为指定的特性初始化 <see cref="T:System.Printing.IndexedProperties.PrintBooleanProperty" /> 类的一个新实例。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintBooleanProperty" /> 表示的 <see cref="T:System.Boolean" /> 特性的名称。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintBooleanProperty.#ctor(System.String,System.Object)">
+      <summary>为使用指定值的指定属性初始化<see cref="T:System.Printing.IndexedProperties.PrintBooleanProperty" /> 类一个的新实例。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintBooleanProperty" /> 表示的 <see cref="T:System.Boolean" /> 属性的名称。</param>
+      <param name="attributeValue">
+        <see cref="T:System.Printing.IndexedProperties.PrintBooleanProperty" /> 表示的属性的值。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintBooleanProperty.op_Implicit(System.Printing.IndexedProperties.PrintBooleanProperty|System.Runtime.CompilerServices.IsImplicitlyDereferenced)~System.Boolean">
+      <summary>提供从 <see cref="T:System.Printing.IndexedProperties.PrintBooleanProperty" /> 到 <see cref="T:System.Boolean" /> 的隐式转换。</summary>
+      <returns>作为布尔对象的已转换 PrintBooleanProperty 对象。</returns>
+      <param name="attribRef">已转换的 <see cref="T:System.Printing.IndexedProperties.PrintBooleanProperty" />。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintBooleanProperty.op_Implicit(System.Printing.IndexedProperties.PrintBooleanProperty)~System.Boolean">
+      <summary>提供从指向 <see cref="T:System.Printing.IndexedProperties.PrintBooleanProperty" /> 的指针到 <see cref="T:System.Boolean" /> 的隐式转换。</summary>
+      <returns>作为布尔对象的已转换 PrintBooleanProperty 对象。</returns>
+      <param name="attribRef">已转换的指向 <see cref="T:System.Printing.IndexedProperties.PrintBooleanProperty" /> 的指针。</param>
+    </member>
+    <member name="P:System.Printing.IndexedProperties.PrintBooleanProperty.Value">
+      <summary>获取或设置 <see cref="T:System.Printing.IndexedProperties.PrintBooleanProperty" /> 表示的属性的值。</summary>
+      <returns>一个装箱的 <see cref="T:System.Boolean" />。</returns>
+    </member>
+    <member name="T:System.Printing.IndexedProperties.PrintByteArrayProperty">
+      <summary>表示打印系统硬件或软件组件一个属性，其值为 <see cref="T:System.Byte" /> 值的一个数组。</summary>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintByteArrayProperty.#ctor(System.String)">
+      <summary>为指定的特性初始化 <see cref="T:System.Printing.IndexedProperties.PrintByteArrayProperty" /> 类的一个新实例。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintByteArrayProperty" /> 表示的属性的名称，该属性为 <see cref="T:System.Byte" /> 类型的一个数组。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintByteArrayProperty.#ctor(System.String,System.Object)">
+      <summary>初始化 <see cref="T:System.Printing.IndexedProperties.PrintByteArrayProperty" /> 类的一个新实例，该类具有指定特性的指定值。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintByteArrayProperty" /> 表示的属性的名称，该属性为 <see cref="T:System.Byte" /> 类型的一个数组。</param>
+      <param name="attributeValue">
+        <see cref="T:System.Printing.IndexedProperties.PrintByteArrayProperty" /> 表示的属性的值。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintByteArrayProperty.op_Implicit(System.Printing.IndexedProperties.PrintByteArrayProperty|System.Runtime.CompilerServices.IsImplicitlyDereferenced)~System.Byte[]">
+      <summary>提供从 <see cref="T:System.Printing.IndexedProperties.PrintByteArrayProperty" /> 到 <see cref="T:System.Byte" /> 值数组的隐式转换。</summary>
+      <returns>
+        <see cref="T:System.Byte" /> 值的数组。</returns>
+      <param name="attribRef">已转换的 <see cref="T:System.Printing.IndexedProperties.PrintByteArrayProperty" />。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintByteArrayProperty.op_Implicit(System.Printing.IndexedProperties.PrintByteArrayProperty)~System.Byte[]">
+      <summary>提供从指向 <see cref="T:System.Printing.IndexedProperties.PrintByteArrayProperty" /> 的指针到 <see cref="T:System.Byte" /> 值的数组的隐式转换。</summary>
+      <returns>
+        <see cref="T:System.Byte" /> 值的数组。</returns>
+      <param name="attribRef">已转换的指向 <see cref="T:System.Printing.IndexedProperties.PrintByteArrayProperty" /> 的指针。</param>
+    </member>
+    <member name="P:System.Printing.IndexedProperties.PrintByteArrayProperty.Value">
+      <summary>获取或设置 <see cref="T:System.Printing.IndexedProperties.PrintByteArrayProperty" /> 表示的属性的值。</summary>
+      <returns>
+        <see cref="T:System.Byte" /> 值的一个装箱数组。</returns>
+    </member>
+    <member name="T:System.Printing.IndexedProperties.PrintDateTimeProperty">
+      <summary>表示打印系统硬件或软件组件的 <see cref="T:System.DateTime" /> 属性（及其值）。</summary>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintDateTimeProperty.#ctor(System.String)">
+      <summary>为指定的属性初始化 <see cref="T:System.Printing.IndexedProperties.PrintDateTimeProperty" /> 类的一个新实例。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintDateTimeProperty" /> 表示的 <see cref="T:System.DateTime" /> 属性的名称。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintDateTimeProperty.#ctor(System.String,System.Object)">
+      <summary>初始化 <see cref="T:System.Printing.IndexedProperties.PrintDateTimeProperty" /> 类的一个新实例，该类具有指定特性的指定值。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintDateTimeProperty" /> 表示的 <see cref="T:System.DateTime" /> 属性的名称。</param>
+      <param name="attributeValue">
+        <see cref="T:System.Printing.IndexedProperties.PrintDateTimeProperty" /> 表示的属性的值。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintDateTimeProperty.op_Implicit(System.Printing.IndexedProperties.PrintDateTimeProperty|System.Runtime.CompilerServices.IsImplicitlyDereferenced)~System.ValueType!System.DateTime!System.Runtime.CompilerServices.IsBoxed">
+      <summary>提供从 <see cref="T:System.Printing.IndexedProperties.PrintDateTimeProperty" /> 到 <see cref="T:System.DateTime" /> 的隐式转换。</summary>
+      <returns>已将 PrintDateTimePropety 对象转换为 DateTime 对象。</returns>
+      <param name="attribRef">已转换的对象。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintDateTimeProperty.op_Implicit(System.Printing.IndexedProperties.PrintDateTimeProperty)~System.ValueType!System.DateTime!System.Runtime.CompilerServices.IsBoxed">
+      <summary>提供从指向 <see cref="T:System.Printing.IndexedProperties.PrintDateTimeProperty" /> 的指针到 <see cref="T:System.DateTime" />的隐式转换。</summary>
+      <returns>已将 PrintDateTimePropety 对象转换为 DateTime 对象。</returns>
+      <param name="attribRef">已转换的对象。</param>
+    </member>
+    <member name="P:System.Printing.IndexedProperties.PrintDateTimeProperty.Value">
+      <summary>获取或设置 <see cref="T:System.Printing.IndexedProperties.PrintDateTimeProperty" /> 表示的属性的值。</summary>
+      <returns>一个装箱的 <see cref="T:System.DateTime" />。</returns>
+    </member>
+    <member name="T:System.Printing.IndexedProperties.PrintDriverProperty">
+      <summary>表示打印系统硬件或软件组件的 <see cref="T:System.Printing.PrintDriver" /> 属性（及其值）。</summary>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintDriverProperty.#ctor(System.String)">
+      <summary>为指定的属性初始化 <see cref="T:System.Printing.IndexedProperties.PrintDriverProperty" /> 类的一个新实例。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintDriverProperty" /> 表示的 <see cref="T:System.Printing.PrintDriver" /> 属性的名称。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintDriverProperty.#ctor(System.String,System.Object)">
+      <summary>初始化 <see cref="T:System.Printing.IndexedProperties.PrintDriverProperty" /> 类的一个新实例，该类具有指定特性的指定值。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintDriverProperty" /> 表示的 <see cref="T:System.Printing.PrintDriver" /> 属性的名称。</param>
+      <param name="attributeValue">
+        <see cref="T:System.Printing.IndexedProperties.PrintDriverProperty" /> 表示的属性的值。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintDriverProperty.op_Implicit(System.Printing.IndexedProperties.PrintDriverProperty|System.Runtime.CompilerServices.IsImplicitlyDereferenced)~System.Printing.PrintDriver">
+      <summary>提供从 <see cref="T:System.Printing.IndexedProperties.PrintDriverProperty" /> 到 <see cref="T:System.Printing.PrintDriver" /> 的隐式转换。</summary>
+      <returns>作为 <see cref="T:System.Printing.IndexedProperties.PrintDriverProperty" /> 的转换后的值的 <see cref="T:System.Printing.PrintDriver" />。</returns>
+      <param name="attribRef">已转换的 <see cref="T:System.Printing.IndexedProperties.PrintDriverProperty" />。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintDriverProperty.op_Implicit(System.Printing.IndexedProperties.PrintDriverProperty)~System.Printing.PrintDriver">
+      <summary>提供从指向 <see cref="T:System.Printing.IndexedProperties.PrintDriverProperty" /> 的指针到 <see cref="T:System.Printing.PrintDriver" /> 的隐式转换。</summary>
+      <returns>作为 <see cref="T:System.Printing.IndexedProperties.PrintDriverProperty" /> 的转换后的值的 <see cref="T:System.Printing.PrintDriver" />。</returns>
+      <param name="attribRef">已转换的指向 <see cref="T:System.Printing.IndexedProperties.PrintDriverProperty" /> 的指针。</param>
+    </member>
+    <member name="P:System.Printing.IndexedProperties.PrintDriverProperty.Value">
+      <summary>获取或设置 <see cref="T:System.Printing.IndexedProperties.PrintDriverProperty" /> 表示的属性的值。</summary>
+      <returns>一个可以强制转换为 <see cref="T:System.Printing.PrintDriver" /> 的 <see cref="T:System.Object" />。</returns>
+    </member>
+    <member name="T:System.Printing.IndexedProperties.PrintInt32Property">
+      <summary>表示打印系统硬件或软件组件的 <see cref="T:System.Int32" /> 属性（和属性的值）。</summary>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintInt32Property.#ctor(System.String)">
+      <summary>为指定的属性初始化 <see cref="T:System.Printing.IndexedProperties.PrintInt32Property" /> 类的一个新实例。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintInt32Property" /> 表示的 <see cref="T:System.Int32" /> 属性的名称。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintInt32Property.#ctor(System.String,System.Object)">
+      <summary>为指定的特性初始化 <see cref="T:System.Printing.IndexedProperties.PrintInt32Property" /> 类的一个新实例，并为其提供指定值。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintInt32Property" /> 表示的 <see cref="T:System.Int32" /> 属性的名称。</param>
+      <param name="attributeValue">
+        <see cref="T:System.Printing.IndexedProperties.PrintInt32Property" /> 表示的 <see cref="T:System.Object" /> 属性的值。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintInt32Property.op_Implicit(System.Printing.IndexedProperties.PrintInt32Property|System.Runtime.CompilerServices.IsImplicitlyDereferenced)~System.Int32">
+      <summary>提供从 <see cref="T:System.Printing.IndexedProperties.PrintInt32Property" /> 到 <see cref="T:System.Int32" /> 的隐式转换。</summary>
+      <returns>针对 Int32 对象的 PrintInt32Property 对象。</returns>
+      <param name="attribRef">已转换的 <see cref="T:System.Printing.IndexedProperties.PrintInt32Property" />。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintInt32Property.op_Implicit(System.Printing.IndexedProperties.PrintInt32Property)~System.Int32">
+      <summary>提供从指向 <see cref="T:System.Printing.IndexedProperties.PrintInt32Property" /> 的指针到 <see cref="T:System.Int32" /> 的隐式转换。</summary>
+      <returns>针对 Int32 对象的 PrintInt32Property 对象。</returns>
+      <param name="attribRef">已转换的指向 <see cref="T:System.Printing.IndexedProperties.PrintInt32Property" /> 的指针。</param>
+    </member>
+    <member name="P:System.Printing.IndexedProperties.PrintInt32Property.Value">
+      <summary>获取或设置 <see cref="T:System.Printing.IndexedProperties.PrintInt32Property" /> 表示的属性的值。</summary>
+      <returns>一个装箱的 <see cref="T:System.Int32" />。</returns>
+      <exception cref="T:System.InvalidOperationException">不能将属性设置为调用代码所提供的值。</exception>
+    </member>
+    <member name="T:System.Printing.IndexedProperties.PrintJobPriorityProperty">
+      <summary>表示打印系统硬件或软件组件的 <see cref="T:System.Printing.PrintJobPriority" /> 属性（及其值）。</summary>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintJobPriorityProperty.#ctor(System.String)">
+      <summary>为指定的属性初始化 <see cref="T:System.Printing.IndexedProperties.PrintJobPriorityProperty" /> 类的新实例。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintJobPriorityProperty" /> 表示的 <see cref="T:System.Printing.PrintJobPriority" /> 属性的名称。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintJobPriorityProperty.#ctor(System.String,System.Object)">
+      <summary>初始化 <see cref="T:System.Printing.IndexedProperties.PrintJobPriorityProperty" /> 类的一个新实例，该类具有指定特性的指定值。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintJobPriorityProperty" /> 表示的 <see cref="T:System.Printing.PrintJobPriority" /> 属性的名称。</param>
+      <param name="attributeValue">
+        <see cref="T:System.Printing.IndexedProperties.PrintJobPriorityProperty" /> 表示的属性的值。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintJobPriorityProperty.op_Implicit(System.Printing.IndexedProperties.PrintJobPriorityProperty|System.Runtime.CompilerServices.IsImplicitlyDereferenced)~System.Printing.PrintJobPriority">
+      <summary>提供从 <see cref="T:System.Printing.IndexedProperties.PrintJobPriorityProperty" /> 到 <see cref="T:System.Printing.PrintJobPriority" /> 的隐式转换。</summary>
+      <returns>一个 <see cref="T:System.Printing.PrintJobPriority" /> 值。</returns>
+      <param name="attribRef">已转换的 <see cref="T:System.Printing.IndexedProperties.PrintJobPriorityProperty" />。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintJobPriorityProperty.op_Implicit(System.Printing.IndexedProperties.PrintJobPriorityProperty)~System.Printing.PrintJobPriority">
+      <summary>提供从指向 <see cref="T:System.Printing.IndexedProperties.PrintJobPriorityProperty" /> 的指针到 <see cref="T:System.Printing.PrintJobPriority" /> 的隐式转换。</summary>
+      <returns>一个 <see cref="T:System.Printing.PrintJobPriority" /> 值。</returns>
+      <param name="attribRef">已转换的指向 <see cref="T:System.Printing.IndexedProperties.PrintBooleanProperty" /> 的指针。</param>
+    </member>
+    <member name="P:System.Printing.IndexedProperties.PrintJobPriorityProperty.Value">
+      <summary>获取或设置 <see cref="T:System.Printing.IndexedProperties.PrintJobPriorityProperty" /> 表示的属性的值。</summary>
+      <returns>一个装箱的 <see cref="T:System.Printing.PrintJobPriority" /> 值。</returns>
+    </member>
+    <member name="T:System.Printing.IndexedProperties.PrintJobStatusProperty">
+      <summary>表示打印系统硬件或软件组件的 <see cref="T:System.Printing.PrintJobStatus" /> 属性（及其值）。</summary>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintJobStatusProperty.#ctor(System.String)">
+      <summary>为指定的属性初始化 <see cref="T:System.Printing.IndexedProperties.PrintJobStatusProperty" /> 类的一个新实例。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintJobStatusProperty" /> 表示的 <see cref="T:System.Printing.PrintJobStatus" /> 属性的名称。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintJobStatusProperty.#ctor(System.String,System.Object)">
+      <summary>初始化 <see cref="T:System.Printing.IndexedProperties.PrintJobStatusProperty" /> 类的新实例，该类具有指定属性的指定值。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintJobStatusProperty" /> 表示的 <see cref="T:System.Printing.PrintJobStatus" /> 属性的名称。</param>
+      <param name="attributeValue">
+        <see cref="T:System.Printing.IndexedProperties.PrintJobStatusProperty" /> 表示的属性的值。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintJobStatusProperty.op_Implicit(System.Printing.IndexedProperties.PrintJobStatusProperty|System.Runtime.CompilerServices.IsImplicitlyDereferenced)~System.Printing.PrintJobStatus">
+      <summary>提供从 <see cref="T:System.Printing.IndexedProperties.PrintJobStatusProperty" /> 到 <see cref="T:System.Printing.PrintJobStatus" /> 值的隐式转换。</summary>
+      <returns>作为 <see cref="T:System.Printing.IndexedProperties.PrintJobStatusProperty" /> 的转换后的值的 <see cref="T:System.Printing.PrintJobStatus" />。</returns>
+      <param name="attribRef">已转换的 <see cref="T:System.Printing.IndexedProperties.PrintJobStatusProperty" />。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintJobStatusProperty.op_Implicit(System.Printing.IndexedProperties.PrintJobStatusProperty)~System.Printing.PrintJobStatus">
+      <summary>提供从指向 <see cref="T:System.Printing.IndexedProperties.PrintJobStatusProperty" /> 的指针到 <see cref="T:System.Printing.PrintJobStatus" /> 值的隐式转换。</summary>
+      <returns>一个 <see cref="T:System.Printing.PrintJobStatus" />，它是指针的已转换值。</returns>
+      <param name="attribRef">已转换的指向 <see cref="T:System.Printing.IndexedProperties.PrintJobStatusProperty" /> 的指针。</param>
+    </member>
+    <member name="P:System.Printing.IndexedProperties.PrintJobStatusProperty.Value">
+      <summary>获取或设置 <see cref="T:System.Printing.IndexedProperties.PrintJobStatusProperty" /> 表示的属性的值。</summary>
+      <returns>一个装箱的 <see cref="T:System.Printing.PrintJobStatus" /> 值。</returns>
+    </member>
+    <member name="T:System.Printing.IndexedProperties.PrintPortProperty">
+      <summary>表示打印系统硬件或软件组件的 <see cref="T:System.Printing.PrintPort" /> 属性（及其值）。</summary>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintPortProperty.#ctor(System.String)">
+      <summary>为指定的属性初始化 <see cref="T:System.Printing.IndexedProperties.PrintPortProperty" /> 类的一个新实例。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintPortProperty" /> 表示的 <see cref="T:System.Printing.PrintPort" /> 属性的名称。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintPortProperty.#ctor(System.String,System.Object)">
+      <summary>初始化 <see cref="T:System.Printing.IndexedProperties.PrintPortProperty" /> 类的新实例，该类具有指定属性的指定值。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintPortProperty" /> 表示的 <see cref="T:System.Printing.PrintPort" /> 属性的名称。</param>
+      <param name="attributeValue">
+        <see cref="T:System.Printing.IndexedProperties.PrintPortProperty" /> 表示的属性的值。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintPortProperty.op_Implicit(System.Printing.IndexedProperties.PrintPortProperty|System.Runtime.CompilerServices.IsImplicitlyDereferenced)~System.Printing.PrintPort">
+      <summary>提供从 <see cref="T:System.Printing.IndexedProperties.PrintPortProperty" /> 到 <see cref="T:System.Printing.PrintPort" /> 值的隐式转换。</summary>
+      <returns>构成 PrintPortProperty 对象的已转换 PrintPort 值。</returns>
+      <param name="attribRef">已转换的 <see cref="T:System.Printing.IndexedProperties.PrintPortProperty" />。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintPortProperty.op_Implicit(System.Printing.IndexedProperties.PrintPortProperty)~System.Printing.PrintPort">
+      <summary>提供从指向 <see cref="T:System.Printing.IndexedProperties.PrintPortProperty" /> 的指针到 <see cref="T:System.Printing.PrintPort" />值的隐式转换。</summary>
+      <returns>构成 PrintPortProperty 对象的已转换 PrintPort 值。</returns>
+      <param name="attribRef">已转换的指向 <see cref="T:System.Printing.IndexedProperties.PrintPortProperty" /> 的指针。</param>
+    </member>
+    <member name="P:System.Printing.IndexedProperties.PrintPortProperty.Value">
+      <summary>获取或设置 <see cref="T:System.Printing.IndexedProperties.PrintPortProperty" /> 表示的属性的值。</summary>
+      <returns>一个可以强制转换为 <see cref="T:System.Printing.IndexedProperties.PrintPortProperty" /> 的 <see cref="T:System.Object" />。</returns>
+    </member>
+    <member name="T:System.Printing.IndexedProperties.PrintProcessorProperty">
+      <summary>表示打印系统硬件或软件组件的 <see cref="T:System.Printing.PrintProcessor" /> 属性（及其值）。</summary>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintProcessorProperty.#ctor(System.String)">
+      <summary>为指定的属性初始化 <see cref="T:System.Printing.IndexedProperties.PrintProcessorProperty" /> 类的新实例。</summary>
+      <param name="attributeName">已转换的 <see cref="T:System.Printing.IndexedProperties.PrintProcessorProperty" />。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintProcessorProperty.#ctor(System.String,System.Object)">
+      <summary>初始化 <see cref="T:System.Printing.IndexedProperties.PrintProcessorProperty" /> 类的新实例，该类具有指定属性的指定值。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintProcessorProperty" /> 表示的 <see cref="T:System.Printing.PrintProcessor" /> 属性的名称。</param>
+      <param name="attributeValue">
+        <see cref="T:System.Printing.IndexedProperties.PrintProcessorProperty" /> 表示的属性的值。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintProcessorProperty.op_Implicit(System.Printing.IndexedProperties.PrintProcessorProperty|System.Runtime.CompilerServices.IsImplicitlyDereferenced)~System.Printing.PrintProcessor">
+      <summary>提供从 <see cref="T:System.Printing.IndexedProperties.PrintProcessorProperty" /> 到 <see cref="T:System.Printing.PrintProcessor" /> 值的隐式转换。</summary>
+      <returns>
+        <see cref="T:System.Printing.IndexedProperties.PrintProcessorProperty" /> 的 <see cref="T:System.Printing.PrintProcessor" /> 值。</returns>
+      <param name="attribRef">已转换的 <see cref="T:System.Printing.IndexedProperties.PrintProcessorProperty" />。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintProcessorProperty.op_Implicit(System.Printing.IndexedProperties.PrintProcessorProperty)~System.Printing.PrintProcessor">
+      <summary>提供从指向 <see cref="T:System.Printing.IndexedProperties.PrintProcessorProperty" /> 的指针到 <see cref="T:System.Printing.PrintProcessor" /> 值的隐式转换。</summary>
+      <returns>
+        <see cref="T:System.Printing.IndexedProperties.PrintProcessorProperty" /> 的 <see cref="T:System.Printing.PrintProcessor" /> 值。</returns>
+      <param name="attribRef">已转换的指向 <see cref="T:System.Printing.IndexedProperties.PrintProcessorProperty" /> 的指针。</param>
+    </member>
+    <member name="P:System.Printing.IndexedProperties.PrintProcessorProperty.Value">
+      <summary>获取或设置 <see cref="T:System.Printing.IndexedProperties.PrintProcessorProperty" /> 表示的属性的值。</summary>
+      <returns>一个可以强制转换为 <see cref="T:System.Printing.PrintProcessor" /> 的 <see cref="T:System.Object" />。</returns>
+    </member>
+    <member name="T:System.Printing.IndexedProperties.PrintProperty">
+      <summary>表示打印系统硬件或软件组件的属性（和属性的值）。</summary>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintProperty.#ctor(System.String)">
+      <summary>初始化 <see cref="T:System.Printing.IndexedProperties.PrintProperty" /> 类的新实例。</summary>
+      <param name="attributeName">此对象表示的属性的名称。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintProperty.Dispose">
+      <summary>释放正在由 <see cref="T:System.Printing.IndexedProperties.PrintProperty" /> 使用的所有资源。</summary>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintProperty.Dispose(System.Boolean)">
+      <summary>释放正在由 <see cref="T:System.Printing.IndexedProperties.PrintProperty" /> 使用的非托管资源，也可以选择性地释放托管资源。</summary>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintProperty.Finalize">
+      <summary>允许 <see cref="T:System.Printing.IndexedProperties.PrintProperty" /> 在垃圾回收将 <see cref="T:System.Printing.IndexedProperties.PrintProperty" /> 收回之前尝试释放资源并执行其他清理操作。</summary>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintProperty.InternalDispose(System.Boolean)">
+      <summary>释放正在由 <see cref="T:System.Printing.IndexedProperties.PrintProperty" /> 使用的非托管资源，还可以选择释放托管资源。</summary>
+      <param name="disposing">为 true 则释放托管资源和非托管资源；为 false 则仅释放非托管资源。</param>
+    </member>
+    <member name="P:System.Printing.IndexedProperties.PrintProperty.IsDisposed">
+      <summary>获取或设置一个值，该值指示该对象是否已被释放。</summary>
+      <returns>如果该对象已被释放，则为 true；否则为 false。 默认值为 false。</returns>
+    </member>
+    <member name="P:System.Printing.IndexedProperties.PrintProperty.IsInitialized">
+      <summary>获取或设置一个值，该值指示该对象是否已初始化。</summary>
+      <returns>如果该对象已初始化，则为 true；否则为 false。 默认值为 false。</returns>
+    </member>
+    <member name="P:System.Printing.IndexedProperties.PrintProperty.Name">
+      <summary>在派生类中重写时，获取该对象表示的属性的名称。</summary>
+      <returns>表示属性名称的 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintProperty.OnDeserialization(System.Object)">
+      <summary>在派生类中重写时，实现 <see cref="T:System.Runtime.Serialization.ISerializable" /> 接口，并在完成反序列化之后引发反序列化事件。</summary>
+      <param name="sender">事件源。</param>
+    </member>
+    <member name="P:System.Printing.IndexedProperties.PrintProperty.Value">
+      <summary>在派生类中重写时，获取或设置该对象表示的属性的值。</summary>
+    </member>
+    <member name="T:System.Printing.IndexedProperties.PrintPropertyDictionary">
+      <summary>表示与 <see cref="N:System.Printing" /> 命名空间中的一个对象关联的属性和值的集合。</summary>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintPropertyDictionary.#ctor">
+      <summary>初始化 <see cref="T:System.Printing.IndexedProperties.PrintPropertyDictionary" /> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintPropertyDictionary.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+      <summary>初始化 <see cref="T:System.Printing.IndexedProperties.PrintPropertyDictionary" /> 类的一个新实例，并为其提供指定的 <see cref="T:System.Runtime.Serialization.SerializationInfo" /> 和 <see cref="T:System.Runtime.Serialization.StreamingContext" />。</summary>
+      <param name="info">序列化或反序列化某个对象所需的数据。</param>
+      <param name="context">序列化流的上下文，包括源和目标。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintPropertyDictionary.Add(System.Printing.IndexedProperties.PrintProperty)">
+      <summary>将指定的对象（属于从 <see cref="T:System.Printing.IndexedProperties.PrintProperty" /> 派生的类）添加到该目录中。</summary>
+      <param name="attributeValue">表示打印系统硬件或软件组件属性的对象（属于从 <see cref="T:System.Printing.IndexedProperties.PrintProperty" /> 派生的类）。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintPropertyDictionary.Dispose">
+      <summary>释放正在由 <see cref="T:System.Printing.IndexedProperties.PrintPropertyDictionary" /> 使用的所有资源。</summary>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintPropertyDictionary.Dispose(System.Boolean)">
+      <summary>释放正在由 <see cref="T:System.Printing.IndexedProperties.PrintPropertyDictionary" /> 占用的非托管资源，还可以另外再释放托管资源。</summary>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintPropertyDictionary.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+      <summary>用序列化 <see cref="T:System.Printing.IndexedProperties.PrintPropertyDictionary" /> 所需的数据来填充 <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</summary>
+      <param name="info">存储用于序列化对象的所有数据。</param>
+      <param name="context">描述序列化流的上下文，包括源和目标。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintPropertyDictionary.GetProperty(System.String)">
+      <summary>获取表示特定属性的对象（属于从 <see cref="T:System.Printing.IndexedProperties.PrintProperty" /> 派生的类）。</summary>
+      <returns>一个从 <see cref="T:System.Printing.IndexedProperties.PrintProperty" /> 派生的类的对象。</returns>
+      <param name="attribName">由 <see cref="T:System.Printing.IndexedProperties.PrintProperty" /> 表示的属性的名称。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintPropertyDictionary.OnDeserialization(System.Object)">
+      <summary>实现 <see cref="T:System.Runtime.Serialization.ISerializable" /> 接口，并在完成反序列化之后引发反序列化事件。</summary>
+      <param name="sender">事件源。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintPropertyDictionary.SetProperty(System.String,System.Printing.IndexedProperties.PrintProperty)">
+      <summary>设置对象的指定特性的值，该对象属于从 <see cref="T:System.Printing.IndexedProperties.PrintProperty" /> 派生的类。</summary>
+      <param name="attribName">属性名。</param>
+      <param name="attribValue">一个从 <see cref="T:System.Printing.IndexedProperties.PrintProperty" /> 派生的类型的对象。</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="attribName" /> 在目录中已存在并且已具有值 <paramref name="attribValue" />。</exception>
+    </member>
+    <member name="T:System.Printing.IndexedProperties.PrintQueueAttributeProperty">
+      <summary>表示打印系统硬件或软件组件的 <see cref="T:System.Printing.PrintQueueAttributes" /> 属性（及其值）。</summary>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintQueueAttributeProperty.#ctor(System.String)">
+      <summary>为指定的属性初始化 <see cref="T:System.Printing.IndexedProperties.PrintQueueAttributeProperty" /> 类的一个新实例。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintQueueAttributeProperty" /> 表示的 <see cref="T:System.Printing.PrintQueueAttributes" /> 属性的名称。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintQueueAttributeProperty.#ctor(System.String,System.Object)">
+      <summary>初始化 <see cref="T:System.Printing.IndexedProperties.PrintQueueAttributeProperty" /> 类的一个新实例，该类具有指定属性的指定值。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintQueueAttributeProperty" /> 表示的 <see cref="T:System.Printing.PrintQueueAttributes" /> 属性的名称。</param>
+      <param name="attributeValue">
+        <see cref="T:System.Printing.IndexedProperties.PrintQueueAttributeProperty" /> 表示的 <see cref="T:System.Object" /> 属性的值。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintQueueAttributeProperty.op_Implicit(System.Printing.IndexedProperties.PrintQueueAttributeProperty|System.Runtime.CompilerServices.IsImplicitlyDereferenced)~System.Printing.PrintQueueAttributes">
+      <summary>提供从 <see cref="T:System.Printing.IndexedProperties.PrintQueueAttributeProperty" /> 到 <see cref="T:System.Printing.PrintQueueAttributes" /> 值的隐式转换。</summary>
+      <returns>一个 <see cref="T:System.Printing.PrintQueueAttributes" /> 值。</returns>
+      <param name="attributeRef">已转换的 <see cref="T:System.Printing.IndexedProperties.PrintQueueAttributeProperty" />。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintQueueAttributeProperty.op_Implicit(System.Printing.IndexedProperties.PrintQueueAttributeProperty)~System.Printing.PrintQueueAttributes">
+      <summary>提供从指向 <see cref="T:System.Printing.IndexedProperties.PrintQueueAttributeProperty" /> 的指针到 <see cref="T:System.Printing.PrintQueueAttributes" /> 值的隐式转换。</summary>
+      <returns>一个 <see cref="T:System.Printing.PrintQueueAttributes" /> 值。</returns>
+      <param name="attributeRef">已转换的指向 <see cref="T:System.Printing.IndexedProperties.PrintQueueAttributeProperty" /> 的指针。</param>
+    </member>
+    <member name="P:System.Printing.IndexedProperties.PrintQueueAttributeProperty.Value">
+      <summary>获取或设置 <see cref="T:System.Printing.IndexedProperties.PrintQueueAttributeProperty" /> 表示的属性的值。</summary>
+      <returns>一个装箱的 <see cref="T:System.Printing.PrintQueueAttributes" /> 值。</returns>
+      <exception cref="T:System.InvalidOperationException">不能通过使用调用代码所提供的值来设置属性。</exception>
+    </member>
+    <member name="T:System.Printing.IndexedProperties.PrintQueueProperty">
+      <summary>表示打印系统硬件或软件组件的 <see cref="T:System.Printing.PrintQueue" /> 属性（及其值）。</summary>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintQueueProperty.#ctor(System.String)">
+      <summary>为指定的属性初始化 <see cref="T:System.Printing.IndexedProperties.PrintQueueProperty" /> 类的一个新实例。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintQueueProperty" /> 表示的 <see cref="T:System.Printing.PrintQueue" /> 属性的名称。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintQueueProperty.#ctor(System.String,System.Object)">
+      <summary>初始化 <see cref="T:System.Printing.IndexedProperties.PrintQueueProperty" /> 类的新实例，该类具有指定属性的指定值。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintQueueProperty" /> 表示的 <see cref="T:System.Printing.PrintQueue" /> 属性的名称。</param>
+      <param name="attributeValue">
+        <see cref="T:System.Printing.IndexedProperties.PrintQueueProperty" /> 表示的属性的值。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintQueueProperty.op_Implicit(System.Printing.IndexedProperties.PrintQueueProperty|System.Runtime.CompilerServices.IsImplicitlyDereferenced)~System.Printing.PrintQueue">
+      <summary>提供从 <see cref="T:System.Printing.IndexedProperties.PrintQueueProperty" /> 到 <see cref="T:System.Printing.PrintQueue" /> 值的隐式转换。</summary>
+      <returns>作为 <see cref="T:System.Printing.IndexedProperties.PrintQueueProperty" /> 的转换后的值的 <see cref="T:System.Printing.PrintQueue" />。</returns>
+      <param name="attribRef">已转换的 <see cref="T:System.Printing.IndexedProperties.PrintQueueProperty" />。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintQueueProperty.op_Implicit(System.Printing.IndexedProperties.PrintQueueProperty)~System.Printing.PrintQueue">
+      <summary>提供从指向 <see cref="T:System.Printing.IndexedProperties.PrintQueueProperty" /> 的指针到 <see cref="T:System.Printing.PrintQueue" />值的隐式转换。</summary>
+      <returns>作为 <see cref="T:System.Printing.IndexedProperties.PrintQueueProperty" /> 的转换后的值的 <see cref="T:System.Printing.PrintQueue" />。</returns>
+      <param name="attribRef">已转换的指向 <see cref="T:System.Printing.IndexedProperties.PrintQueueProperty" /> 的指针。</param>
+    </member>
+    <member name="P:System.Printing.IndexedProperties.PrintQueueProperty.Value">
+      <summary>获取或设置 <see cref="T:System.Printing.IndexedProperties.PrintQueueProperty" /> 表示的属性的值。</summary>
+      <returns>一个可以强制转换为 <see cref="T:System.Printing.PrintQueue" /> 的 <see cref="T:System.Object" />。</returns>
+    </member>
+    <member name="T:System.Printing.IndexedProperties.PrintQueueStatusProperty">
+      <summary>表示打印系统硬件或软件组件的 <see cref="T:System.Printing.PrintQueueStatus" /> 属性（及其值）。</summary>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintQueueStatusProperty.#ctor(System.String)">
+      <summary>为指定的属性初始化 <see cref="T:System.Printing.IndexedProperties.PrintQueueStatusProperty" /> 类的新实例。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintQueueStatusProperty" /> 表示的 <see cref="T:System.Printing.PrintQueueStatus" /> 属性的名称。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintQueueStatusProperty.#ctor(System.String,System.Object)">
+      <summary>初始化 <see cref="T:System.Printing.IndexedProperties.PrintQueueStatusProperty" /> 类的一个新实例，该类具有指定属性的指定值。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintQueueStatusProperty" /> 表示的 <see cref="T:System.Printing.PrintQueueStatus" /> 属性的名称。</param>
+      <param name="attributeValue">
+        <see cref="T:System.Printing.IndexedProperties.PrintQueueStatusProperty" /> 表示的属性的值。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintQueueStatusProperty.op_Implicit(System.Printing.IndexedProperties.PrintQueueStatusProperty|System.Runtime.CompilerServices.IsImplicitlyDereferenced)~System.Printing.PrintQueueStatus">
+      <summary>提供从 <see cref="T:System.Printing.IndexedProperties.PrintQueueStatusProperty" /> 到 <see cref="T:System.Printing.PrintQueueStatus" /> 值的隐式转换。</summary>
+      <returns>一个 <see cref="T:System.Printing.PrintQueueStatus" /> 值。</returns>
+      <param name="attributeRef">已转换的 <see cref="T:System.Printing.IndexedProperties.PrintQueueStatusProperty" />。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintQueueStatusProperty.op_Implicit(System.Printing.IndexedProperties.PrintQueueStatusProperty)~System.Printing.PrintQueueStatus">
+      <summary>提供从指向 <see cref="T:System.Printing.IndexedProperties.PrintQueueStatusProperty" /> 的指针到 <see cref="T:System.Printing.PrintQueueStatus" /> 值的隐式转换。</summary>
+      <returns>一个 <see cref="T:System.Printing.PrintQueueStatus" /> 值。</returns>
+      <param name="attributeRef">已转换的指向 <see cref="T:System.Printing.IndexedProperties.PrintQueueStatusProperty" /> 的指针。</param>
+    </member>
+    <member name="P:System.Printing.IndexedProperties.PrintQueueStatusProperty.Value">
+      <summary>获取或设置 <see cref="T:System.Printing.IndexedProperties.PrintQueueStatusProperty" /> 表示的属性的值。</summary>
+      <returns>一个装箱的 <see cref="T:System.Printing.PrintQueueStatus" />。</returns>
+      <exception cref="T:System.InvalidOperationException">不能通过使用调用代码所提供的值来设置属性。</exception>
+    </member>
+    <member name="T:System.Printing.IndexedProperties.PrintServerLoggingProperty">
+      <summary>表示打印系统硬件或软件组件的 <see cref="T:System.Printing.PrintServerEventLoggingTypes" /> 属性（及其值）。</summary>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintServerLoggingProperty.#ctor(System.String)">
+      <summary>为指定的属性初始化 <see cref="T:System.Printing.IndexedProperties.PrintServerLoggingProperty" /> 类的一个新实例。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintServerLoggingProperty" /> 表示的 <see cref="T:System.Printing.PrintServerEventLoggingTypes" /> 属性的名称。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintServerLoggingProperty.#ctor(System.String,System.Object)">
+      <summary>初始化 <see cref="T:System.Printing.IndexedProperties.PrintServerLoggingProperty" /> 类的新实例，该类具有指定属性的指定值。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintServerLoggingProperty" /> 表示的 <see cref="T:System.Printing.PrintServerEventLoggingTypes" /> 属性的名称。</param>
+      <param name="attributeValue">
+        <see cref="T:System.Printing.IndexedProperties.PrintServerLoggingProperty" /> 表示的属性的值。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintServerLoggingProperty.op_Implicit(System.Printing.IndexedProperties.PrintServerLoggingProperty|System.Runtime.CompilerServices.IsImplicitlyDereferenced)~System.Printing.PrintServerEventLoggingTypes">
+      <summary>提供从 <see cref="T:System.Printing.IndexedProperties.PrintServerLoggingProperty" />（或从指向这种属性的指针）到 <see cref="T:System.Printing.PrintServerEventLoggingTypes" /> 值的隐式转换。</summary>
+      <returns>一个 <see cref="T:System.Printing.PrintServerEventLoggingTypes" /> 值。</returns>
+      <param name="attribRef">已转换的 <see cref="T:System.Printing.IndexedProperties.PrintServerLoggingProperty" />。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintServerLoggingProperty.op_Implicit(System.Printing.IndexedProperties.PrintServerLoggingProperty)~System.Printing.PrintServerEventLoggingTypes">
+      <summary>提供从指向 <see cref="T:System.Printing.IndexedProperties.PrintServerLoggingProperty" /> 的指针到 <see cref="T:System.Printing.PrintServerEventLoggingTypes" /> 值的隐式转换。</summary>
+      <returns>一个 <see cref="T:System.Printing.PrintServerEventLoggingTypes" /> 值。</returns>
+      <param name="attribRef">已转换的指向 <see cref="T:System.Printing.IndexedProperties.PrintServerLoggingProperty" /> 的指针。</param>
+    </member>
+    <member name="P:System.Printing.IndexedProperties.PrintServerLoggingProperty.Value">
+      <summary>获取或设置 <see cref="T:System.Printing.IndexedProperties.PrintServerLoggingProperty" /> 表示的属性的值。</summary>
+      <returns>一个装箱的 <see cref="T:System.Printing.PrintServerEventLoggingTypes" /> 值。</returns>
+    </member>
+    <member name="T:System.Printing.IndexedProperties.PrintServerProperty">
+      <summary>表示打印系统硬件或软件组件的 <see cref="T:System.Printing.PrintServer" /> 属性（及其值）。</summary>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintServerProperty.#ctor(System.String)">
+      <summary>为指定的属性初始化 <see cref="T:System.Printing.IndexedProperties.PrintServerProperty" /> 类的新实例。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintServerProperty" /> 表示的 <see cref="T:System.Printing.PrintServer" /> 属性的名称。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintServerProperty.#ctor(System.String,System.Object)">
+      <summary>初始化 <see cref="T:System.Printing.IndexedProperties.PrintServerProperty" /> 类的一个新实例，该类具有指定属性的指定值。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintServerProperty" /> 表示的 <see cref="T:System.Printing.PrintServer" /> 属性的名称。</param>
+      <param name="attributeValue">
+        <see cref="T:System.Printing.IndexedProperties.PrintServerProperty" /> 表示的属性的值。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintServerProperty.op_Implicit(System.Printing.IndexedProperties.PrintServerProperty|System.Runtime.CompilerServices.IsImplicitlyDereferenced)~System.Printing.PrintServer">
+      <summary>提供从 <see cref="T:System.Printing.IndexedProperties.PrintServerProperty" /> 到 <see cref="T:System.Printing.PrintServer" /> 值的隐式转换。</summary>
+      <returns>作为转换后的值的 <see cref="T:System.Printing.PrintServer" />。</returns>
+      <param name="attribRef">已转换的 <see cref="T:System.Printing.IndexedProperties.PrintServerProperty" />。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintServerProperty.op_Implicit(System.Printing.IndexedProperties.PrintServerProperty)~System.Printing.PrintServer">
+      <summary>提供从指向 <see cref="T:System.Printing.IndexedProperties.PrintServerProperty" /> 的指针到 <see cref="T:System.Printing.PrintServer" /> 值的隐式转换。</summary>
+      <returns>作为转换后的值的 <see cref="T:System.Printing.PrintServer" />。</returns>
+      <param name="attribRef">已转换的指向 <see cref="T:System.Printing.IndexedProperties.PrintServerProperty" /> 的指针。</param>
+    </member>
+    <member name="P:System.Printing.IndexedProperties.PrintServerProperty.Value">
+      <summary>获取或设置 <see cref="T:System.Printing.IndexedProperties.PrintServerProperty" /> 表示的属性的值。</summary>
+      <returns>可强制转换为 <see cref="T:System.Printing.PrintServer" /> 的 <see cref="T:System.Object" />。</returns>
+      <exception cref="T:System.InvalidOperationException">没有在内部初始化该属性。</exception>
+    </member>
+    <member name="T:System.Printing.IndexedProperties.PrintStreamProperty">
+      <summary>表示打印系统硬件或软件组件的 <see cref="T:System.IO.Stream" /> 属性（及其值）。</summary>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintStreamProperty.#ctor(System.String)">
+      <summary>为指定的属性初始化 <see cref="T:System.Printing.IndexedProperties.PrintStreamProperty" /> 类的一个新实例。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintStreamProperty" /> 表示的 <see cref="T:System.IO.Stream" /> 属性的名称。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintStreamProperty.#ctor(System.String,System.Object)">
+      <summary>初始化 <see cref="T:System.Printing.IndexedProperties.PrintStreamProperty" /> 类的一个新实例，该类具有指定属性的指定值。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintStreamProperty" /> 表示的 <see cref="T:System.IO.Stream" /> 属性的名称。</param>
+      <param name="attributeValue">
+        <see cref="T:System.Printing.IndexedProperties.PrintStreamProperty" /> 表示的属性的值。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintStreamProperty.op_Implicit(System.Printing.IndexedProperties.PrintStreamProperty|System.Runtime.CompilerServices.IsImplicitlyDereferenced)~System.IO.Stream">
+      <summary>提供从 <see cref="T:System.Printing.IndexedProperties.PrintStreamProperty" /> 到 <see cref="T:System.IO.Stream" /> 值的隐式转换。</summary>
+      <returns>
+        <see cref="T:System.Printing.IndexedProperties.PrintStreamProperty" /> 的 <see cref="T:System.IO.Stream" /> 值。</returns>
+      <param name="attributeRef">已转换的 <see cref="T:System.Printing.IndexedProperties.PrintStreamProperty" />。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintStreamProperty.op_Implicit(System.Printing.IndexedProperties.PrintStreamProperty)~System.IO.Stream">
+      <summary>提供从指向 <see cref="T:System.Printing.IndexedProperties.PrintStreamProperty" /> 的指针到 <see cref="T:System.IO.Stream" /> 值的隐式转换。</summary>
+      <returns>
+        <see cref="T:System.Printing.IndexedProperties.PrintStreamProperty" /> 的 <see cref="T:System.IO.Stream" /> 值。</returns>
+      <param name="attributeRef">已转换的指向 <see cref="T:System.Printing.IndexedProperties.PrintStreamProperty" /> 的指针。</param>
+    </member>
+    <member name="P:System.Printing.IndexedProperties.PrintStreamProperty.Value">
+      <summary>获取或设置 <see cref="T:System.Printing.IndexedProperties.PrintStreamProperty" /> 表示的属性的值。</summary>
+      <returns>可强制转换为 <see cref="T:System.IO.Stream" /> 的 <see cref="T:System.Object" />。</returns>
+    </member>
+    <member name="T:System.Printing.IndexedProperties.PrintStringProperty">
+      <summary>表示打印系统硬件或软件组件的 <see cref="T:System.String" /> 属性（及其值）。</summary>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintStringProperty.#ctor(System.String)">
+      <summary>为指定的属性初始化 <see cref="T:System.Printing.IndexedProperties.PrintStringProperty" /> 类的一个新实例。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintStringProperty" /> 表示的 <see cref="T:System.String" /> 属性的名称。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintStringProperty.#ctor(System.String,System.Object)">
+      <summary>初始化 <see cref="T:System.Printing.IndexedProperties.PrintStringProperty" /> 类的新实例，该类具有指定属性的指定值。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintStringProperty" /> 表示的 <see cref="T:System.String" /> 属性的名称。</param>
+      <param name="attributeValue">
+        <see cref="T:System.Printing.IndexedProperties.PrintStringProperty" /> 表示的属性的值。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintStringProperty.op_Implicit(System.Printing.IndexedProperties.PrintStringProperty|System.Runtime.CompilerServices.IsImplicitlyDereferenced)~System.String">
+      <summary>提供从 <see cref="T:System.Printing.IndexedProperties.PrintStringProperty" /> 到 <see cref="T:System.String" /> 值的隐式转换。</summary>
+      <returns>从字符串值到 PrintStringProperty 对象的隐式转换。</returns>
+      <param name="attributeRef">已转换的 <see cref="T:System.Printing.IndexedProperties.PrintStringProperty" />。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintStringProperty.op_Implicit(System.Printing.IndexedProperties.PrintStringProperty)~System.String">
+      <summary>提供从指向 <see cref="T:System.Printing.IndexedProperties.PrintStringProperty" /> 的指针到 <see cref="T:System.String" /> 值的隐式转换。</summary>
+      <returns>从字符串值到 PrintStringProperty 对象的隐式转换。</returns>
+      <param name="attributeRef">已转换的指向 <see cref="T:System.Printing.IndexedProperties.PrintStringProperty" /> 的指针。</param>
+    </member>
+    <member name="P:System.Printing.IndexedProperties.PrintStringProperty.Value">
+      <summary>获取或设置 <see cref="T:System.Printing.IndexedProperties.PrintStringProperty" /> 表示的属性的值。</summary>
+      <returns>一个装箱的 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="T:System.Printing.IndexedProperties.PrintSystemTypeProperty">
+      <summary>表示打印系统硬件或软件组件的 <see cref="T:System.Type" /> 属性（及其值）。</summary>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintSystemTypeProperty.#ctor(System.String)">
+      <summary>初始化 <see cref="T:System.Printing.IndexedProperties.PrintSystemTypeProperty" /> 类的一个新实例，该类具有指定的属性名。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintSystemTypeProperty" /> 表示的属性的名称。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintSystemTypeProperty.#ctor(System.String,System.Object)">
+      <summary>初始化 <see cref="T:System.Printing.IndexedProperties.PrintSystemTypeProperty" /> 类的一个新实例，该类具有指定的属性名和值。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintSystemTypeProperty" /> 表示的属性的名称。</param>
+      <param name="attributeValue">
+        <see cref="T:System.Printing.IndexedProperties.PrintSystemTypeProperty" /> 表示的属性的值。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintSystemTypeProperty.op_Implicit(System.Printing.IndexedProperties.PrintSystemTypeProperty|System.Runtime.CompilerServices.IsImplicitlyDereferenced)~System.Type">
+      <summary>提供从 <see cref="T:System.Printing.IndexedProperties.PrintSystemTypeProperty" /> 到 <see cref="T:System.Type" /> 值的隐式转换。</summary>
+      <returns>一个从 PrintSystemTypeProperty 对象转换来的类型值。</returns>
+      <param name="attribRef">已转换的 <see cref="T:System.Printing.IndexedProperties.PrintSystemTypeProperty" />。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintSystemTypeProperty.op_Implicit(System.Printing.IndexedProperties.PrintSystemTypeProperty)~System.Type">
+      <summary>提供从指向 <see cref="T:System.Printing.IndexedProperties.PrintSystemTypeProperty" /> 的指针到 <see cref="T:System.Type" /> 值的隐式转换。</summary>
+      <returns>一个从 PrintSystemTypeProperty 对象转换来的类型值。</returns>
+      <param name="attribRef">已转换的指向 <see cref="T:System.Printing.IndexedProperties.PrintSystemTypeProperty" /> 的指针。</param>
+    </member>
+    <member name="P:System.Printing.IndexedProperties.PrintSystemTypeProperty.Value">
+      <summary>获取或设置 <see cref="T:System.Printing.IndexedProperties.PrintSystemTypeProperty" /> 表示的属性的值。</summary>
+      <returns>
+        <see cref="T:System.Printing.IndexedProperties.PrintSystemTypeProperty" /> 表示的属性的值。</returns>
+    </member>
+    <member name="T:System.Printing.IndexedProperties.PrintThreadPriorityProperty">
+      <summary>表示打印系统硬件或软件组件的 <see cref="T:System.Threading.ThreadPriority" /> 属性（及其值）。</summary>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintThreadPriorityProperty.#ctor(System.String)">
+      <summary>为指定的属性初始化 <see cref="T:System.Printing.IndexedProperties.PrintThreadPriorityProperty" /> 类的一个新实例。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintThreadPriorityProperty" /> 表示的 <see cref="T:System.Threading.ThreadPriority" /> 属性的名称。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintThreadPriorityProperty.#ctor(System.String,System.Object)">
+      <summary>初始化 <see cref="T:System.Printing.IndexedProperties.PrintThreadPriorityProperty" /> 类的新实例，该类具有指定属性的指定值。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintThreadPriorityProperty" /> 表示的 <see cref="T:System.Threading.ThreadPriority" /> 属性的名称。</param>
+      <param name="attributeValue">
+        <see cref="T:System.Printing.IndexedProperties.PrintThreadPriorityProperty" /> 表示的属性的值。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintThreadPriorityProperty.op_Implicit(System.Printing.IndexedProperties.PrintThreadPriorityProperty|System.Runtime.CompilerServices.IsImplicitlyDereferenced)~System.Threading.ThreadPriority">
+      <summary>提供从 <see cref="T:System.Printing.IndexedProperties.PrintThreadPriorityProperty" /> 到 <see cref="T:System.Threading.ThreadPriority" /> 值的隐式转换。</summary>
+      <returns>一个 <see cref="T:System.Threading.ThreadPriority" /> 值。</returns>
+      <param name="attribRef">已转换的 <see cref="T:System.Printing.IndexedProperties.PrintThreadPriorityProperty" />。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintThreadPriorityProperty.op_Implicit(System.Printing.IndexedProperties.PrintThreadPriorityProperty)~System.Threading.ThreadPriority">
+      <summary>提供从指向 <see cref="T:System.Printing.IndexedProperties.PrintThreadPriorityProperty" /> 的指针到 <see cref="T:System.Threading.ThreadPriority" /> 值的隐式转换。</summary>
+      <returns>一个 <see cref="T:System.Threading.ThreadPriority" /> 值。</returns>
+      <param name="attribRef">已转换的指向 <see cref="T:System.Printing.IndexedProperties.PrintThreadPriorityProperty" /> 的指针。</param>
+    </member>
+    <member name="P:System.Printing.IndexedProperties.PrintThreadPriorityProperty.Value">
+      <summary>获取或设置 <see cref="T:System.Printing.IndexedProperties.PrintThreadPriorityProperty" /> 表示的属性的值。</summary>
+      <returns>一个装箱的 <see cref="T:System.Threading.ThreadPriority" /> 值。</returns>
+    </member>
+    <member name="T:System.Printing.IndexedProperties.PrintTicketProperty">
+      <summary>表示打印系统硬件或软件组件的 <see cref="T:System.Printing.PrintTicket" /> 属性（及其值）。</summary>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintTicketProperty.#ctor(System.String)">
+      <summary>为指定的属性初始化 <see cref="T:System.Printing.IndexedProperties.PrintTicketProperty" /> 类的一个新实例。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintTicketProperty" /> 表示的 <see cref="T:System.Printing.PrintTicket" /> 属性的名称。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintTicketProperty.#ctor(System.String,System.Object)">
+      <summary>初始化 <see cref="T:System.Printing.IndexedProperties.PrintTicketProperty" /> 类的新实例，该类具有指定属性的指定值。</summary>
+      <param name="attributeName">
+        <see cref="T:System.Printing.IndexedProperties.PrintTicketProperty" /> 表示的 <see cref="T:System.Printing.PrintTicket" /> 属性的名称。</param>
+      <param name="attributeValue">
+        <see cref="T:System.Printing.IndexedProperties.PrintTicketProperty" /> 表示的属性的值。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintTicketProperty.op_Implicit(System.Printing.IndexedProperties.PrintTicketProperty|System.Runtime.CompilerServices.IsImplicitlyDereferenced)~System.Printing.PrintTicket">
+      <summary>提供从 <see cref="T:System.Printing.IndexedProperties.PrintTicketProperty" /> 到 <see cref="T:System.Printing.PrintTicket" /> 值的隐式转换。</summary>
+      <returns>一个已转换为 PrintTicket 值的 PrintTicketProperty 对象。</returns>
+      <param name="attribRef">已转换的 <see cref="T:System.Printing.IndexedProperties.PrintTicketProperty" />。</param>
+    </member>
+    <member name="M:System.Printing.IndexedProperties.PrintTicketProperty.op_Implicit(System.Printing.IndexedProperties.PrintTicketProperty)~System.Printing.PrintTicket">
+      <summary>提供从指向 <see cref="T:System.Printing.IndexedProperties.PrintTicketProperty" /> 的指针到 <see cref="T:System.Printing.PrintTicket" /> 值的隐式转换。</summary>
+      <returns>一个已转换为 PrintTicket 值的 PrintTicketProperty 对象。</returns>
+      <param name="attribRef">已转换的指向 <see cref="T:System.Printing.IndexedProperties.PrintTicketProperty" /> 的指针。</param>
+    </member>
+    <member name="P:System.Printing.IndexedProperties.PrintTicketProperty.Value">
+      <summary>获取或设置 <see cref="T:System.Printing.IndexedProperties.PrintTicketProperty" /> 表示的属性的值。</summary>
+      <returns>一个可以强制转换为 <see cref="T:System.Printing.PrintTicket" /> 的 <see cref="T:System.Object" />。</returns>
+    </member>
+    <member name="T:System.Windows.Xps.VisualsToXpsDocument">
+      <summary>提供以批处理模式将 <see cref="T:System.Windows.Media.Visual" /> 对象写入 XML 纸张规范 (XPS) 文档或打印队列中的方法。</summary>
+    </member>
+    <member name="M:System.Windows.Xps.VisualsToXpsDocument.BeginBatchWrite">
+      <summary>指示写操作可以开始。</summary>
+    </member>
+    <member name="M:System.Windows.Xps.VisualsToXpsDocument.Cancel">
+      <summary>取消同步写操作。</summary>
+      <exception cref="T:System.Windows.Xps.XpsWriterException">
+        <see cref="T:System.Windows.Xps.VisualsToXpsDocument" /> 的状态与 <see cref="M:System.Windows.Xps.VisualsToXpsDocument.Cancel" /> 操作不兼容。</exception>
+    </member>
+    <member name="M:System.Windows.Xps.VisualsToXpsDocument.CancelAsync">
+      <summary>取消异步写操作。</summary>
+      <exception cref="T:System.Windows.Xps.XpsWriterException">
+        <see cref="T:System.Windows.Xps.VisualsToXpsDocument" /> 的状态与 <see cref="M:System.Windows.Xps.VisualsToXpsDocument.CancelAsync" /> 操作不兼容。</exception>
+    </member>
+    <member name="M:System.Windows.Xps.VisualsToXpsDocument.EndBatchWrite">
+      <summary>指示写操作必须结束。</summary>
+    </member>
+    <member name="M:System.Windows.Xps.VisualsToXpsDocument.Write(System.Windows.Media.Visual)">
+      <summary>将 <see cref="T:System.Windows.Media.Visual" /> 同步写入 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="visual">写入的 <see cref="T:System.Windows.Media.Visual" />。</param>
+    </member>
+    <member name="M:System.Windows.Xps.VisualsToXpsDocument.Write(System.Windows.Media.Visual,System.Printing.PrintTicket)">
+      <summary>将 <see cref="T:System.Windows.Media.Visual" /> 同步写入 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" /> 并包含 <see cref="T:System.Printing.PrintTicket" />。</summary>
+      <param name="visual">写入的 <see cref="T:System.Windows.Media.Visual" />。</param>
+      <param name="printTicket">一个表示文档的默认打印首选项的 <see cref="T:System.Printing.PrintTicket" />。</param>
+    </member>
+    <member name="M:System.Windows.Xps.VisualsToXpsDocument.WriteAsync(System.Windows.Media.Visual)">
+      <summary>将 <see cref="T:System.Windows.Media.Visual" /> 异步写入 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="visual">写入的 <see cref="T:System.Windows.Media.Visual" />。</param>
+    </member>
+    <member name="M:System.Windows.Xps.VisualsToXpsDocument.WriteAsync(System.Windows.Media.Visual,System.Object)">
+      <summary>将 <see cref="T:System.Windows.Media.Visual" /> 异步写入 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />，并包含调用方要传递给事件处理程序的其他信息。</summary>
+      <param name="visual">写入的 <see cref="T:System.Windows.Media.Visual" />。</param>
+      <param name="userSuppliedState">一个对象，其中包含调用方要传递给 <see cref="E:System.Windows.Xps.XpsDocumentWriter.WritingCompleted" /> 事件处理程序的数据。</param>
+    </member>
+    <member name="M:System.Windows.Xps.VisualsToXpsDocument.WriteAsync(System.Windows.Media.Visual,System.Printing.PrintTicket)">
+      <summary>将 <see cref="T:System.Windows.Media.Visual" /> 异步写入 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" /> 并包含 <see cref="T:System.Printing.PrintTicket" />。</summary>
+      <param name="visual">写入的 <see cref="T:System.Windows.Media.Visual" />。</param>
+      <param name="printTicket">一个表示文档的默认打印首选项的 <see cref="T:System.Printing.PrintTicket" />。</param>
+    </member>
+    <member name="M:System.Windows.Xps.VisualsToXpsDocument.WriteAsync(System.Windows.Media.Visual,System.Printing.PrintTicket,System.Object)">
+      <summary>将 <see cref="T:System.Windows.Media.Visual" /> 异步写入 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />；同时包含 <see cref="T:System.Printing.PrintTicket" /> 以及调用方要传递给事件处理程序的任何其他信息。</summary>
+      <param name="visual">写入的 <see cref="T:System.Windows.Media.Visual" />。</param>
+      <param name="printTicket">一个表示文档的默认打印首选项的 <see cref="T:System.Printing.PrintTicket" />。</param>
+      <param name="userSuppliedState">一个对象，其中包含调用方要传递给 <see cref="E:System.Windows.Xps.XpsDocumentWriter.WritingCompleted" /> 事件处理程序的数据。</param>
+    </member>
+    <member name="T:System.Windows.Xps.XpsDocumentNotificationLevel">
+      <summary>指示对 XML 纸张规范 (XPS) 文档或打印队列的写操作是否发回逐页和逐个文档的进度通知。</summary>
+    </member>
+    <member name="F:System.Windows.Xps.XpsDocumentNotificationLevel.None">
+      <summary>未指示通知状态。</summary>
+    </member>
+    <member name="F:System.Windows.Xps.XpsDocumentNotificationLevel.ReceiveNotificationDisabled">
+      <summary>已禁用进度通知。</summary>
+    </member>
+    <member name="F:System.Windows.Xps.XpsDocumentNotificationLevel.ReceiveNotificationEnabled">
+      <summary>已启用进度通知。</summary>
+    </member>
+    <member name="T:System.Windows.Xps.XpsDocumentWriter">
+      <summary>提供用于写入 XPS 文档或打印队列的方法。</summary>
+    </member>
+    <member name="E:System.Windows.Xps.XpsDocumentWriter._WritingCancelled">
+      <summary>在取消 <see cref="Overload:System.Windows.Xps.XpsDocumentWriter.Write" /> 或 <see cref="Overload:System.Windows.Xps.XpsDocumentWriter.WriteAsync" /> 操作时发生。</summary>
+    </member>
+    <member name="E:System.Windows.Xps.XpsDocumentWriter._WritingCompleted">
+      <summary>在写操作完成时发生。</summary>
+    </member>
+    <member name="E:System.Windows.Xps.XpsDocumentWriter._WritingProgressChanged">
+      <summary>在 <see cref="T:System.Windows.Xps.XpsDocumentWriter" /> 更新其进度时发生。</summary>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.CancelAsync">
+      <summary>取消当前的 <see cref="Overload:System.Windows.Xps.XpsDocumentWriter.WriteAsync" /> 操作。</summary>
+      <exception cref="T:System.Windows.Xps.XpsWriterException">未进行任何异步写操作。</exception>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.CreateVisualsCollator">
+      <summary>返回一个可将 <see cref="T:System.Windows.Media.Visual" /> 对象写入文档或打印队列中的 <see cref="T:System.Windows.Xps.VisualsToXpsDocument" />。</summary>
+      <returns>新的 <see cref="T:System.Windows.Xps.VisualsToXpsDocument" />。</returns>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.CreateVisualsCollator(System.Printing.PrintTicket,System.Printing.PrintTicket)">
+      <summary>返回一个可将具有 <see cref="T:System.Printing.PrintTicket" /> 设置的 <see cref="T:System.Windows.Media.Visual" /> 对象写入 XPS 文档或打印队列中的 <see cref="T:System.Windows.Xps.VisualsToXpsDocument" />。</summary>
+      <returns>将具有 <see cref="T:System.Printing.PrintTicket" /> 设置的 <see cref="T:System.Windows.Media.Visual" /> 元素写入 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 中的新 <see cref="T:System.Windows.Xps.VisualsToXpsDocument" />。</returns>
+      <param name="documentSequencePrintTicket">一个为文档序列指定默认打印首选项的 <see cref="T:System.Printing.PrintTicket" />。</param>
+      <param name="documentPrintTicket">一个表示每个文档的默认打印首选项的 <see cref="T:System.Printing.PrintTicket" />。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.Write(System.String)">
+      <summary>将指定 XPS 文档同步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="documentPath">源文档的路径。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.Write(System.String,System.Windows.Xps.XpsDocumentNotificationLevel)">
+      <summary>将指定 XPS 文档同步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="documentPath">源文档的路径。</param>
+      <param name="notificationLevel">对是否已启用通知的指示。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.Write(System.Windows.Documents.DocumentPaginator)">
+      <summary>将分页内容从指定的 <see cref="T:System.Windows.Documents.DocumentPaginator" />同步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="documentPaginator">一个对象，其中包含指向未分页源材料的指针以及用于对材料分页的方法。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.Write(System.Windows.Documents.DocumentPaginator,System.Printing.PrintTicket)">
+      <summary>将分页内容从指定的 <see cref="T:System.Windows.Documents.DocumentPaginator" /> 和 <see cref="T:System.Printing.PrintTicket" />同步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="documentPaginator">一个对象，其中包含指向未分页源材料的指针以及用于对材料分页的方法。</param>
+      <param name="printTicket">一个表示材料的默认打印首选项的 <see cref="T:System.Printing.PrintTicket" />。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.Write(System.Windows.Documents.FixedDocument)">
+      <summary>将指定 <see cref="T:System.Windows.Documents.FixedDocument" />同步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="fixedDocument">写入 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 中的文档。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.Write(System.Windows.Documents.FixedDocument,System.Printing.PrintTicket)">
+      <summary>将 <see cref="T:System.Windows.Documents.FixedDocument" /> 和 <see cref="T:System.Printing.PrintTicket" />同步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="fixedDocument">写入的文档。</param>
+      <param name="printTicket">一个表示文档的默认打印首选项的 <see cref="T:System.Printing.PrintTicket" />。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.Write(System.Windows.Documents.FixedDocumentSequence)">
+      <summary>将指定 <see cref="T:System.Windows.Documents.FixedDocumentSequence" />同步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="fixedDocumentSequence">写入 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 中的文档的集合。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.Write(System.Windows.Documents.FixedDocumentSequence,System.Printing.PrintTicket)">
+      <summary>将指定 <see cref="T:System.Windows.Documents.FixedDocumentSequence" /> 和 <see cref="T:System.Printing.PrintTicket" />同步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="fixedDocumentSequence">写入的文档集合。</param>
+      <param name="printTicket">一个表示文档集合的默认打印首选项的 <see cref="T:System.Printing.PrintTicket" />。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.Write(System.Windows.Documents.FixedPage)">
+      <summary>将指定 <see cref="T:System.Windows.Documents.FixedPage" />同步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="fixedPage">写入 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 中的页。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.Write(System.Windows.Documents.FixedPage,System.Printing.PrintTicket)">
+      <summary>将指定 <see cref="T:System.Windows.Documents.FixedPage" /> 和 <see cref="T:System.Printing.PrintTicket" />同步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="fixedPage">写入的页。</param>
+      <param name="printTicket">一个 <see cref="T:System.Printing.PrintTicket" />，表示页的默认打印首选项。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.Write(System.Windows.Media.Visual)">
+      <summary>将指定 <see cref="T:System.Windows.Media.Visual" />同步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="visual">写入的 <see cref="T:System.Windows.Media.Visual" />。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.Write(System.Windows.Media.Visual,System.Printing.PrintTicket)">
+      <summary>将指定 <see cref="T:System.Windows.Media.Visual" /> 和 <see cref="T:System.Printing.PrintTicket" />同步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="visual">写入的 <see cref="T:System.Windows.Media.Visual" />。</param>
+      <param name="printTicket">一个表示文档的默认打印首选项的 <see cref="T:System.Printing.PrintTicket" />。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.String)">
+      <summary>将指定 XPS 文档异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="documentPath">源文档的路径。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.String,System.Windows.Xps.XpsDocumentNotificationLevel)">
+      <summary>将包含通知选项的指定 XPS 文档异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="documentPath">源文档的路径。</param>
+      <param name="notificationLevel">对是否已启用通知的指示。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Documents.DocumentPaginator)">
+      <summary>将分页内容从指定的 <see cref="T:System.Windows.Documents.DocumentPaginator" />异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="documentPaginator">一个对象，其中包含指向未分页源材料的指针以及用于对材料分页的方法。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Documents.DocumentPaginator,System.Object)">
+      <summary>将分页内容从指定的 <see cref="T:System.Windows.Documents.DocumentPaginator" />异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="documentPaginator">一个对象，其中包含指向未分页源材料的指针以及用于对材料分页的方法。</param>
+      <param name="userSuppliedState">用户指定的对象，用于标识异步操作并与该操作关联。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Documents.DocumentPaginator,System.Printing.PrintTicket)">
+      <summary>将分页内容从指定的 <see cref="T:System.Windows.Documents.DocumentPaginator" /> 和 <see cref="T:System.Printing.PrintTicket" />异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="documentPaginator">一个对象，其中包含指向未分页源材料的指针以及用于对材料分页的方法。</param>
+      <param name="printTicket">一个 <see cref="T:System.Printing.PrintTicket" />，表示材料的默认打印首选项。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Documents.DocumentPaginator,System.Printing.PrintTicket,System.Object)">
+      <summary>将分页内容从指定的 <see cref="T:System.Windows.Documents.DocumentPaginator" /> 和 <see cref="T:System.Printing.PrintTicket" />异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="documentPaginator">一个对象，其中包含指向未分页源材料的指针以及用于对材料分页的方法。</param>
+      <param name="printTicket">一个 <see cref="T:System.Printing.PrintTicket" />，表示材料的默认打印首选项。</param>
+      <param name="userSuppliedState">用户指定的对象，用于标识异步操作并与该操作关联。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Documents.FixedDocument)">
+      <summary>将指定 <see cref="T:System.Windows.Documents.FixedDocument" />异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="fixedDocument">写入的文档。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Documents.FixedDocument,System.Object)">
+      <summary>将指定 <see cref="T:System.Windows.Documents.FixedDocument" />异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="fixedDocument">写入的文档。</param>
+      <param name="userSuppliedState">用户指定的对象，用于标识异步操作并与该操作关联。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Documents.FixedDocument,System.Printing.PrintTicket)">
+      <summary>将指定 <see cref="T:System.Windows.Documents.FixedDocument" /> 和 <see cref="T:System.Printing.PrintTicket" />异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="fixedDocument">写入的文档。</param>
+      <param name="printTicket">一个表示文档的默认打印首选项的 <see cref="T:System.Printing.PrintTicket" />。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Documents.FixedDocument,System.Printing.PrintTicket,System.Object)">
+      <summary>将指定 <see cref="T:System.Windows.Documents.FixedDocument" /> 和 <see cref="T:System.Printing.PrintTicket" />异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="fixedDocument">写入的文档。</param>
+      <param name="printTicket">一个表示文档的默认打印首选项的 <see cref="T:System.Printing.PrintTicket" />。</param>
+      <param name="userSuppliedState">用户指定的对象，用于标识异步操作并与该操作关联。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Documents.FixedDocumentSequence)">
+      <summary>将指定 <see cref="T:System.Windows.Documents.FixedDocumentSequence" />异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="fixedDocumentSequence">写入的文档集合。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Documents.FixedDocumentSequence,System.Object)">
+      <summary>将指定 <see cref="T:System.Windows.Documents.FixedDocumentSequence" />异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="fixedDocumentSequence">写入的文档集合。</param>
+      <param name="userSuppliedState">用户指定的对象，用于标识异步操作并与该操作关联。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Documents.FixedDocumentSequence,System.Printing.PrintTicket)">
+      <summary>将指定 <see cref="T:System.Windows.Documents.FixedDocumentSequence" /> 和 <see cref="T:System.Printing.PrintTicket" />异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="fixedDocumentSequence">写入的文档集合。</param>
+      <param name="printTicket">一个表示文档集合的默认打印首选项的 <see cref="T:System.Printing.PrintTicket" />。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Documents.FixedDocumentSequence,System.Printing.PrintTicket,System.Object)">
+      <summary>将指定 <see cref="T:System.Windows.Documents.FixedDocumentSequence" /> 和 <see cref="T:System.Printing.PrintTicket" />异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="fixedDocumentSequence">要写入的文档集合。</param>
+      <param name="printTicket">一个表示文档集合的默认打印首选项的 <see cref="T:System.Printing.PrintTicket" />。</param>
+      <param name="userSuppliedState">用户指定的对象，用于标识异步操作并与该操作关联。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Documents.FixedPage)">
+      <summary>将指定 <see cref="T:System.Windows.Documents.FixedPage" />异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="fixedPage">写入的页。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Documents.FixedPage,System.Object)">
+      <summary>将指定 <see cref="T:System.Windows.Documents.FixedPage" />异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="fixedPage">写入的页。</param>
+      <param name="userSuppliedState">用户指定的对象，用于标识异步操作并与该操作关联。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Documents.FixedPage,System.Printing.PrintTicket)">
+      <summary>将指定 <see cref="T:System.Windows.Documents.FixedPage" /> 和 <see cref="T:System.Printing.PrintTicket" />异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="fixedPage">写入的页。</param>
+      <param name="printTicket">一个 <see cref="T:System.Printing.PrintTicket" />，表示页的默认打印首选项。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Documents.FixedPage,System.Printing.PrintTicket,System.Object)">
+      <summary>将指定 <see cref="T:System.Windows.Documents.FixedPage" /> 和 <see cref="T:System.Printing.PrintTicket" />异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="fixedPage">写入的页。</param>
+      <param name="printTicket">一个 <see cref="T:System.Printing.PrintTicket" />，表示页的默认打印首选项。</param>
+      <param name="userSuppliedState">用户指定的对象，用于标识异步操作并与该操作关联。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Media.Visual)">
+      <summary>将指定 <see cref="T:System.Windows.Media.Visual" />异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="visual">写入的 <see cref="T:System.Windows.Media.Visual" />。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Media.Visual,System.Object)">
+      <summary>将指定 <see cref="T:System.Windows.Media.Visual" />异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="visual">写入的 <see cref="T:System.Windows.Media.Visual" />。</param>
+      <param name="userSuppliedState">用户指定的对象，用于标识异步操作并与该操作关联。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Media.Visual,System.Printing.PrintTicket)">
+      <summary>将指定 <see cref="T:System.Windows.Media.Visual" /> 和 <see cref="T:System.Printing.PrintTicket" />异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="visual">写入的 <see cref="T:System.Windows.Media.Visual" />。</param>
+      <param name="printTicket">一个表示文档的默认打印首选项的 <see cref="T:System.Printing.PrintTicket" />。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Media.Visual,System.Printing.PrintTicket,System.Object)">
+      <summary>将指定 <see cref="T:System.Windows.Media.Visual" /> 和 <see cref="T:System.Printing.PrintTicket" />异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 或 <see cref="T:System.Printing.PrintQueue" />。</summary>
+      <param name="visual">写入的 <see cref="T:System.Windows.Media.Visual" />。</param>
+      <param name="printTicket">一个表示文档的默认打印首选项的 <see cref="T:System.Printing.PrintTicket" />。</param>
+      <param name="userSuppliedState">用户指定的对象，用于标识异步操作并与该操作关联。</param>
+    </member>
+    <member name="E:System.Windows.Xps.XpsDocumentWriter.WritingCancelled">
+      <summary>在取消 <see cref="Overload:System.Windows.Xps.XpsDocumentWriter.Write" /> 或 <see cref="Overload:System.Windows.Xps.XpsDocumentWriter.WriteAsync" /> 操作时发生。</summary>
+    </member>
+    <member name="E:System.Windows.Xps.XpsDocumentWriter.WritingCompleted">
+      <summary>在写操作完成时发生。</summary>
+    </member>
+    <member name="E:System.Windows.Xps.XpsDocumentWriter.WritingPrintTicketRequired">
+      <summary>恰好在 <see cref="Overload:System.Windows.Xps.XpsDocumentWriter.Write" /> 或 <see cref="Overload:System.Windows.Xps.XpsDocumentWriter.WriteAsync" /> 方法将 <see cref="T:System.Printing.PrintTicket" /> 添加至文档或打印队列之前发生。</summary>
+    </member>
+    <member name="E:System.Windows.Xps.XpsDocumentWriter.WritingProgressChanged">
+      <summary>在 <see cref="T:System.Windows.Xps.XpsDocumentWriter" /> 更新其进度时发生。</summary>
+    </member>
+    <member name="T:System.Windows.Xps.XpsWriterException">
+      <summary>当调用的 <see cref="T:System.Windows.Xps.XpsDocumentWriter" /> 或 <see cref="T:System.Windows.Xps.VisualsToXpsDocument" /> 对象的方法与对象的当前状态不兼容时引发的异常。</summary>
+    </member>
+    <member name="M:System.Windows.Xps.XpsWriterException.#ctor">
+      <summary>初始化 <see cref="T:System.Windows.Xps.XpsWriterException" /> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Windows.Xps.XpsWriterException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+      <summary>初始化提供特定 <see cref="T:System.Runtime.Serialization.SerializationInfo" /> 和 <see cref="T:System.Runtime.Serialization.StreamingContext" /> 的 <see cref="T:System.Windows.Xps.XpsWriterException" /> 类的一个新实例。 此构造函数受到保护。</summary>
+      <param name="info">序列化或反序列化某个对象所需的数据。</param>
+      <param name="context">序列化流的上下文，包括源和目标。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsWriterException.#ctor(System.String)">
+      <summary>初始化提供特定错误情况的 <see cref="T:System.Windows.Xps.XpsWriterException" /> 类的一个新实例。</summary>
+      <param name="message">一个描述错误情况的 <see cref="T:System.String" />。</param>
+    </member>
+    <member name="M:System.Windows.Xps.XpsWriterException.#ctor(System.String,System.Exception)">
+      <summary>初始化 <see cref="T:System.Windows.Xps.XpsWriterException" /> 类的一个新实例，该类提供特定错误情况并包括引起异常的原因。</summary>
+      <param name="message">一个描述错误情况的 <see cref="T:System.String" />。</param>
+      <param name="innerException">引起 <see cref="T:System.Windows.Xps.XpsWriterException" /> 的基础错误。</param>
+    </member>
+  </members>
+</doc>

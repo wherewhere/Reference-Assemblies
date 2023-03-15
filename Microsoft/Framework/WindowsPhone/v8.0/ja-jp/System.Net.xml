@@ -1,0 +1,2737 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.Net</name>
+  </assembly>
+  <members>
+    <member name="T:System.Net.Cookie">
+      <summary>Windows Phone ベースのアプリケーションに対応する状態情報を永続化するために HTTP 要求で使用するオブジェクトを提供します。</summary>
+    </member>
+    <member name="M:System.Net.Cookie.#ctor">
+      <summary>
+        <see cref="T:System.Net.Cookie" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:System.Net.Cookie.#ctor(System.String,System.String)">
+      <summary>指定した名前と値を使用して、<see cref="T:System.Net.Cookie" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="name">
+        <see cref="T:System.Net.Cookie" /> の名前。<paramref name="name" /> パラメーターに次の文字を含めることはできません。等号 (=)、セミコロン (;)、コンマ (,)、改行 (\n)、リターン (\r)、タブ (\t)、および空白文字。ドル記号文字 ($) を最初の文字にすることはできません。</param>
+      <param name="value">
+        <see cref="T:System.Net.Cookie" /> の値。<paramref name="value" /> パラメーターにセミコロン (;) またはコンマ (,) を含めるには、エスケープした二重引用符で囲みます。</param>
+      <exception cref="T:System.Net.CookieException">
+        <paramref name="name" /> は null か空の文字列 ("") です。または<paramref name="name" /> に使用できない文字が含まれます。次のいずれかの文字を使用すると、例外が発生します。等号 (=)セミコロン (;) コンマ (,)改行 (\n)リターン (\r)タブ (\t)空白文字先頭文字のドル記号 ($)または<paramref name="value" /> が null であるか、エスケープした二重引用符で囲まれていないセミコロン (;) またはコンマ (,) が含まれます。</exception>
+    </member>
+    <member name="M:System.Net.Cookie.#ctor(System.String,System.String,System.String)">
+      <summary>指定した名前、値、およびパスを使用して、<see cref="T:System.Net.Cookie" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="name">
+        <see cref="T:System.Net.Cookie" /> の名前。<paramref name="name" /> パラメーターに次の文字を含めることはできません。等号 (=)、セミコロン (;)、コンマ (,)、改行 (\n)、リターン (\r)、タブ (\t)、および空白文字。ドル記号文字 ($) を最初の文字にすることはできません。</param>
+      <param name="value">
+        <see cref="T:System.Net.Cookie" /> の値。<paramref name="value" /> パラメーターにセミコロン (;) またはコンマ (,) を含めるには、エスケープした二重引用符で囲みます。</param>
+      <param name="path">この cookie が適用される URI のパス部分。</param>
+      <exception cref="T:System.Net.CookieException">
+        <paramref name="name" /> は null か空の文字列 ("") です。または<paramref name="name" /> に使用できない文字が含まれます。次のいずれかの文字を使用すると、例外が発生します。等号 (=)セミコロン (;) コンマ (,)改行 (\n)リターン (\r)タブ (\t)空白文字先頭文字のドル記号 ($)または<paramref name="value" /> が null であるか、エスケープした二重引用符で囲まれていないセミコロン (;) またはコンマ (,) が含まれます。</exception>
+    </member>
+    <member name="M:System.Net.Cookie.#ctor(System.String,System.String,System.String,System.String)">
+      <summary>指定した名前、値、パス、およびドメインを使用して、<see cref="T:System.Net.Cookie" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="name">
+        <see cref="T:System.Net.Cookie" /> の名前。<paramref name="name" /> パラメーターに次の文字を含めることはできません。等号 (=)、セミコロン (;)、コンマ (,)、改行 (\n)、リターン (\r)、タブ (\t)、および空白文字。ドル記号文字 ($) を最初の文字にすることはできません。</param>
+      <param name="value">
+        <see cref="T:System.Net.Cookie" /> の値。<paramref name="value" /> パラメーターにセミコロン (;) またはコンマ (,) を含めるには、エスケープした二重引用符で囲みます。</param>
+      <param name="path">この cookie が適用される URI のパス部分。</param>
+      <param name="domain">この Cookie が適用される URI のドメイン部分。</param>
+      <exception cref="T:System.Net.CookieException">
+        <paramref name="name" /> は null か空の文字列 ("") です。または<paramref name="name" /> に使用できない文字が含まれます。次のいずれかの文字を使用すると、例外が発生します。等号 (=)セミコロン (;) コンマ (,)改行 (\n)リターン (\r)タブ (\t)空白文字先頭文字のドル記号 ($)または<paramref name="value" /> が null であるか、エスケープした二重引用符で囲まれていないセミコロン (;) またはコンマ (,) が含まれます。</exception>
+    </member>
+    <member name="P:System.Net.Cookie.Comment">
+      <summary>Cookie の用途を説明したオプションのコメントを取得または設定します。</summary>
+      <returns>Cookie の使用目的。</returns>
+    </member>
+    <member name="P:System.Net.Cookie.CommentUri">
+      <summary>サーバーがこの <see cref="T:System.Net.Cookie" /> に提供する Uniform Resource Identifier (URI) コメントを取得または設定します。</summary>
+      <returns>サーバーがこの <see cref="T:System.Net.Cookie" /> について提供する URI コメント。</returns>
+    </member>
+    <member name="P:System.Net.Cookie.Discard">
+      <summary>現在のセッションの終了時にクライアントが <see cref="T:System.Net.Cookie" /> を破棄する必要があるかどうかを示す値を取得または設定します。</summary>
+      <returns>クライアントがセッション終了時に <see cref="T:System.Net.Cookie" /> を破棄する必要がある場合は true。それ以外の場合は false。既定値は false です。</returns>
+    </member>
+    <member name="P:System.Net.Cookie.Domain">
+      <summary>Cookie が有効である Uniform Resource Identifier (URI) のドメインを取得または設定します。</summary>
+      <returns>Cookie が有効である URI のドメイン。既定値は空の文字列 ("") です。</returns>
+    </member>
+    <member name="M:System.Net.Cookie.Equals(System.Object)">
+      <summary>2 つの <see cref="T:System.Net.Cookie" /> オブジェクトが等しいかどうかを判断します。</summary>
+      <returns>Cookie オブジェクトが等しい場合は true。それ以外の場合は false。</returns>
+      <param name="comparand">この <see cref="T:System.Net.Cookie" /> と等しいかどうかを比較する <see cref="T:System.Net.Cookie" />。</param>
+    </member>
+    <member name="P:System.Net.Cookie.Expired">
+      <summary>この <see cref="T:System.Net.Cookie" /> が無効になったかどうかを示す値を取得または設定します。</summary>
+      <returns>Cookie が有効でない場合は true。有効である場合は false。既定値は false です。</returns>
+    </member>
+    <member name="P:System.Net.Cookie.Expires">
+      <summary>
+        <see cref="T:System.Net.Cookie" /> の有効期限の日時を取得または設定します。</summary>
+      <returns>
+        <see cref="T:System.Net.Cookie" /> の有効期限の日時。既定値は、<see cref="F:System.DateTime.MinValue" /> です。</returns>
+    </member>
+    <member name="M:System.Net.Cookie.GetHashCode">
+      <summary>この <see cref="T:System.Net.Cookie" /> を処理するためのハッシュ コードを取得します。</summary>
+      <returns>この <see cref="T:System.Net.Cookie" /> のハッシュ コード。</returns>
+    </member>
+    <member name="P:System.Net.Cookie.HttpOnly">
+      <summary>ページ スクリプトまたは他のアクティブ コンテンツがこの Cookie にアクセスできるかどうかを示す値を取得または設定します。</summary>
+      <returns>ページ スクリプトまたは他のアクティブ コンテンツがこの <see cref="T:System.Net.Cookie" /> にアクセスできないことを示す場合は true。それ以外の場合は false。既定値は false です。</returns>
+    </member>
+    <member name="P:System.Net.Cookie.Name">
+      <summary>この Cookie の名前を取得または設定します。</summary>
+      <returns>Cookie の名前。</returns>
+      <exception cref="T:System.Net.CookieException">設定操作に指定された値は null または空の文字列 ("") です。または設定操作として指定した値に使用できない文字が含まれます。次のいずれかの文字を使用すると、例外が発生します。等号 (=)セミコロン (;) コンマ (,)改行 (\n)リターン (\r)タブ (\t)空白文字先頭文字のドル記号 ($)</exception>
+    </member>
+    <member name="P:System.Net.Cookie.Path">
+      <summary>Cookie が適用される Uniform Resource Identifier (URI) のパス部分を取得または設定します。</summary>
+      <returns>この cookie が適用される URI のパス部分。</returns>
+    </member>
+    <member name="P:System.Net.Cookie.Port">
+      <summary>この Cookie が適用される伝送制御プロトコル (TCP) ポートのリストを取得または設定します。</summary>
+      <returns>この Cookie が適用される TCP ポートのコンマ区切りリスト。</returns>
+      <exception cref="T:System.Net.CookieException">
+        <see cref="P:System.Net.Cookie.Port" /> が正しくない形式に設定されています。</exception>
+    </member>
+    <member name="P:System.Net.Cookie.Secure">
+      <summary>後続のクライアント要求に Cookie を含める場合に要求を Secure Hypertext Transport Protocol (HTTPS) で送信する必要があることを示す値を取得または設定します。</summary>
+      <returns>後続のクライアント要求に Cookie を含める際に要求を HTTPS で送信する必要がある場合は true。それ以外の場合は false。既定値は false です。</returns>
+    </member>
+    <member name="P:System.Net.Cookie.TimeStamp">
+      <summary>この <see cref="T:System.Net.Cookie" /> が作成された日時を取得します。</summary>
+      <returns>この Cookie が作成された日時。</returns>
+    </member>
+    <member name="M:System.Net.Cookie.ToString">
+      <summary>HTTP Cookie 要求に含めることができる <see cref="T:System.Net.Cookie" /> の文字列形式を返します。</summary>
+      <returns>HTTP Cookie 要求への追加に適した <see cref="T:System.Net.Cookie" /> の文字列形式。</returns>
+    </member>
+    <member name="P:System.Net.Cookie.Value">
+      <summary>
+        <see cref="T:System.Net.Cookie" /> の値を取得または設定します。</summary>
+      <returns>
+        <see cref="T:System.Net.Cookie" /> の値。</returns>
+    </member>
+    <member name="P:System.Net.Cookie.Version">
+      <summary>Cookie が準拠する HTTP 状態保守のバージョンを示す 1 桁の数字を取得または設定します。</summary>
+      <returns>Cookie が準拠する HTTP 状態保守のバージョンを示す 1 桁の数字。既定値は 0 です。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">指定した値が 0 未満です。</exception>
+    </member>
+    <member name="T:System.Net.CookieCollection">
+      <summary>
+        <see cref="T:System.Net.Cookie" /> オブジェクトのコレクションを表します。</summary>
+    </member>
+    <member name="M:System.Net.CookieCollection.#ctor">
+      <summary>
+        <see cref="T:System.Net.CookieCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:System.Net.CookieCollection.Add(System.Net.Cookie)">
+      <summary>指定した <see cref="T:System.Net.Cookie" /> をコレクションに追加します。</summary>
+      <param name="cookie">コレクションに追加する <see cref="T:System.Net.Cookie" />。</param>
+    </member>
+    <member name="M:System.Net.CookieCollection.Add(System.Net.CookieCollection)">
+      <summary>指定した <see cref="T:System.Net.CookieCollection" /> の内容をこのコレクションに追加します。</summary>
+      <param name="cookies">このコレクションに追加する <see cref="T:System.Net.CookieCollection" />。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="cookies" /> が null です。</exception>
+    </member>
+    <member name="M:System.Net.CookieCollection.CopyTo(System.Array,System.Int32)">
+      <summary>指定した配列インデックスを開始位置として、指定した配列にこの <see cref="T:System.Net.CookieCollection" /> の内容をコピーします。</summary>
+      <param name="array">コレクションの内容をコピーする配列。</param>
+      <param name="index">コピー操作を開始するコピー先の配列の 0 から始まるインデックス。</param>
+    </member>
+    <member name="P:System.Net.CookieCollection.Count">
+      <summary>
+        <see cref="T:System.Net.CookieCollection" /> に格納されている Cookie の数を取得します。</summary>
+      <returns>
+        <see cref="T:System.Net.CookieCollection" /> に含まれる Cookie の数。</returns>
+    </member>
+    <member name="M:System.Net.CookieCollection.GetEnumerator">
+      <summary>
+        <see cref="T:System.Net.CookieCollection" /> を反復処理する列挙子を取得します。</summary>
+      <returns>
+        <see cref="T:System.Net.CookieCollection" /> を反復処理する列挙子。</returns>
+    </member>
+    <member name="P:System.Net.CookieCollection.IsReadOnly">
+      <summary>
+        <see cref="T:System.Net.CookieCollection" /> が読み取り専用かどうかを示す値を取得します。</summary>
+      <returns>コレクションが読み取り専用の場合は true。それ以外の場合は false。既定値は true です。</returns>
+    </member>
+    <member name="P:System.Net.CookieCollection.IsSynchronized">
+      <summary>
+        <see cref="T:System.Net.CookieCollection" /> へのアクセスがスレッド セーフであるかどうかを示す値を取得します。</summary>
+      <returns>
+        <see cref="T:System.Net.CookieCollection" /> へのアクセスがスレッド セーフである場合は true。それ以外の場合は false。既定値は false です。</returns>
+    </member>
+    <member name="P:System.Net.CookieCollection.Item(System.String)">
+      <summary>指定した名前の Cookie をコレクションから取得します。</summary>
+      <returns>指定した名前を持つ Cookie。</returns>
+      <param name="name">コレクションから取得する Cookie の名前。</param>
+    </member>
+    <member name="P:System.Net.CookieCollection.SyncRoot">
+      <summary>
+        <see cref="T:System.Net.CookieCollection" /> へのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+      <returns>
+        <see cref="T:System.Net.CookieCollection" /> へのアクセスを同期するために使用できるオブジェクト。</returns>
+    </member>
+    <member name="T:System.Net.CookieContainer">
+      <summary>
+        <see cref="T:System.Net.CookieCollection" /> オブジェクトのコレクション用のコンテナーを提供します。</summary>
+    </member>
+    <member name="M:System.Net.CookieContainer.#ctor">
+      <summary>
+        <see cref="T:System.Net.CookieContainer" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:System.Net.CookieContainer.Add(System.Uri,System.Net.Cookie)">
+      <summary>URI (Uniform Resource Identifier) で指定された <see cref="T:System.Net.Cookie" /> をこの <see cref="T:System.Net.CookieContainer" /> に追加します。</summary>
+      <param name="uri">この <see cref="T:System.Net.CookieContainer" /> に追加する Cookie の URI。</param>
+      <param name="cookie">この <see cref="T:System.Net.CookieContainer" /> に追加する <see cref="T:System.Net.Cookie" />。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="cookie" /> が null です。</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="cookie" /> のドメインが null です。</exception>
+      <exception cref="T:System.Net.CookieException">
+        <paramref name="cookie" /> が <see cref="P:System.Net.CookieContainer.MaxCookieSize" /> を超えています。または<paramref name="cookie" /> のドメインが有効な URI ではありません。</exception>
+    </member>
+    <member name="M:System.Net.CookieContainer.Add(System.Uri,System.Net.CookieCollection)">
+      <summary>URI (Uniform Resource Identifier) で指定された <see cref="T:System.Net.CookieCollection" /> の内容をこの <see cref="T:System.Net.CookieContainer" /> に追加します。</summary>
+      <param name="uri">この <see cref="T:System.Net.CookieContainer" /> に追加する <see cref="T:System.Net.CookieCollection" /> の URI。</param>
+      <param name="cookies">この <see cref="T:System.Net.CookieContainer" /> に追加する Cookie が格納されている <see cref="T:System.Net.CookieCollection" />。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="cookies" /> が null です。</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="cookies" /> の Cookie オブジェクトのいずれかのドメインが null です。</exception>
+      <exception cref="T:System.Net.CookieException">
+        <paramref name="cookies" /> の Cookie オブジェクトのいずれかに無効なドメインが含まれています。</exception>
+    </member>
+    <member name="P:System.Net.CookieContainer.Capacity">
+      <summary>この <see cref="T:System.Net.CookieContainer" /> に格納できる <see cref="T:System.Net.Cookie" /> オブジェクトの数を取得します。</summary>
+      <returns>この <see cref="T:System.Net.CookieContainer" /> が含むことができる <see cref="T:System.Net.Cookie" /> オブジェクトの数。既定値は 300 です。</returns>
+    </member>
+    <member name="P:System.Net.CookieContainer.Count">
+      <summary>この <see cref="T:System.Net.CookieContainer" /> に格納されている <see cref="T:System.Net.Cookie" /> オブジェクトの数を取得します。</summary>
+      <returns>この <see cref="T:System.Net.CookieContainer" /> が含む <see cref="T:System.Net.Cookie" /> オブジェクトの数。</returns>
+    </member>
+    <member name="F:System.Net.CookieContainer.DefaultCookieLengthLimit">
+      <summary>
+        <see cref="T:System.Net.CookieContainer" /> が保持できる <see cref="T:System.Net.Cookie" /> オブジェクトの既定の最大サイズをバイト単位で表します。このフィールドは定数です。</summary>
+      <returns>常に 4096 を返します。</returns>
+    </member>
+    <member name="F:System.Net.CookieContainer.DefaultCookieLimit">
+      <summary>
+        <see cref="T:System.Net.CookieContainer" /> が保持できる <see cref="T:System.Net.Cookie" /> オブジェクトの既定の最大数を表します。このフィールドは定数です。</summary>
+      <returns>常に 300 を返します。</returns>
+    </member>
+    <member name="F:System.Net.CookieContainer.DefaultPerDomainCookieLimit">
+      <summary>
+        <see cref="T:System.Net.CookieContainer" /> がドメインごとに参照できる <see cref="T:System.Net.Cookie" /> オブジェクトの既定の最大数を表します。このフィールドは定数です。</summary>
+      <returns>常に 20 を返します。</returns>
+    </member>
+    <member name="M:System.Net.CookieContainer.GetCookieHeader(System.Uri)">
+      <summary>指定した URI (Uniform Resource Identifier) に関連する Cookie を含む HTTP Cookie ヘッダーを取得します。</summary>
+      <returns>指定した URI に関連付けられている Cookie ヘッダーを示す文字列。</returns>
+      <param name="uri">Cookie の取得対象となる URI。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="uri" /> が null です。</exception>
+    </member>
+    <member name="M:System.Net.CookieContainer.GetCookies(System.Uri)">
+      <summary>指定した URI (Uniform Resource Identifier) に関連付けられた <see cref="T:System.Net.CookieCollection" /> を取得します。</summary>
+      <returns>指定した URI に関連付けられている Cookie コレクション。</returns>
+      <param name="uri">
+        <see cref="T:System.Net.CookieCollection" /> を取得するための URI。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="uri" /> が null です。</exception>
+    </member>
+    <member name="P:System.Net.CookieContainer.MaxCookieSize">
+      <summary>
+        <see cref="T:System.Net.CookieContainer" /> の Cookie の最大長。</summary>
+      <returns>
+        <see cref="T:System.Net.CookieContainer" /> の Cookie の最大 Cookie 長。既定値は 4096 です。</returns>
+    </member>
+    <member name="P:System.Net.CookieContainer.PerDomainCapacity">
+      <summary>ドメインごとに <see cref="T:System.Net.CookieContainer" /> が保持できる <see cref="T:System.Net.Cookie" /> インスタンスの数を取得または設定します。</summary>
+      <returns>
+        <see cref="T:System.Net.CookieContainer" /> がドメインごとに保持できる <see cref="T:System.Net.Cookie" /> インスタンスの数。既定値は 20 です。</returns>
+    </member>
+    <member name="M:System.Net.CookieContainer.SetCookies(System.Uri,System.String)">
+      <summary>HTTP Cookie ヘッダーに指定されている Cookie に対応する Cookie インスタンスを作成し、それを指定した URI (Uniform Resource Identifier) に関連付けられている <see cref="T:System.Net.CookieContainer" /> に追加します。</summary>
+      <param name="uri">Cookie コンテナーに関連付けられている URI。</param>
+      <param name="cookieHeader">
+        <see cref="T:System.Net.CookieContainer" /> に追加する Cookie が含まれている HTTP ヘッダー。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="uri" /> が null です。または<paramref name="cookieHeader" /> が null です。</exception>
+      <exception cref="T:System.Net.CookieException">Cookie のいずれかが無効です。またはコンテナーにいずれかの Cookie を追加するときにエラーが発生しました。</exception>
+    </member>
+    <member name="T:System.Net.CookieException">
+      <summary>
+        <see cref="T:System.Net.Cookie" /> を <see cref="T:System.Net.CookieCollection" /> に追加するときにスローされる例外。</summary>
+    </member>
+    <member name="M:System.Net.CookieException.#ctor">
+      <summary>
+        <see cref="T:System.Net.CookieException" /> クラスの新しいインスタンスを初期化します。 </summary>
+    </member>
+    <member name="T:System.Net.DnsEndPoint">
+      <summary>ネットワーク エンドポイントをホスト名か、IP アドレスとポート番号の文字列形式で表します。</summary>
+    </member>
+    <member name="M:System.Net.DnsEndPoint.#ctor(System.String,System.Int32)">
+      <summary>ホスト名か、IP アドレスとポート番号の文字列形式を使用して、<see cref="T:System.Net.DnsEndPoint" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="host">ホスト名、または IP アドレスの文字列形式。</param>
+      <param name="port">
+        <paramref name="address" /> に関連付けられているポート番号。または、使用できる任意のポートを指定する場合は 0。<paramref name="port" /> は、ホスト順です。</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="host" /> パラメーターに空の文字列が含まれています。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="host" /> パラメーターが null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="port" /> が 0 未満です。または<paramref name="port" /> が 0xffff より大です。</exception>
+    </member>
+    <member name="M:System.Net.DnsEndPoint.#ctor(System.String,System.Int32,System.Net.Sockets.AddressFamily)">
+      <summary>ホスト名か、IP アドレス、ポート番号、およびアドレス ファミリの文字列形式を使用して、<see cref="T:System.Net.DnsEndPoint" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="host">ホスト名、または IP アドレスの文字列形式。</param>
+      <param name="port">
+        <paramref name="address" /> に関連付けられているポート番号。または、使用できる任意のポートを指定する場合は 0。<paramref name="port" /> は、ホスト順です。</param>
+      <param name="addressFamily">
+        <see cref="T:System.Net.Sockets.AddressFamily" /> 値の 1 つ。</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="host" /> パラメーターに空の文字列が含まれています。または<paramref name="addressFamily" /> パラメーターが <see cref="F:System.Net.Sockets.AddressFamily.Unknown" /> と指定されています。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="host" /> パラメーターが null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="port" /> が 0 未満です。または<paramref name="port" /> が 0xffff より大です。</exception>
+    </member>
+    <member name="P:System.Net.DnsEndPoint.AddressFamily">
+      <summary>インターネット プロトコル (IP) アドレス ファミリを取得します。</summary>
+      <returns>
+        <see cref="T:System.Net.Sockets.AddressFamily" /> 値の 1 つ。</returns>
+    </member>
+    <member name="M:System.Net.DnsEndPoint.Equals(System.Object)">
+      <summary>2 つの <see cref="T:System.Net.DnsEndPoint" /> オブジェクトを比較します。</summary>
+      <returns>2 つの <see cref="T:System.Net.DnsEndPoint" /> インスタンスが等しい場合は true。それ以外の場合は false。</returns>
+      <param name="comparand">現在のインスタンスと比較する <see cref="T:System.Net.DnsEndPoint" /> インスタンス。</param>
+    </member>
+    <member name="M:System.Net.DnsEndPoint.GetHashCode">
+      <summary>
+        <see cref="T:System.Net.DnsEndPoint" /> のハッシュ値を返します。</summary>
+      <returns>
+        <see cref="T:System.Net.DnsEndPoint" /> の整数ハッシュ値。</returns>
+    </member>
+    <member name="P:System.Net.DnsEndPoint.Host">
+      <summary>ホスト名、またはホストのインターネット プロトコル (IP) アドレスの文字列形式を取得します。</summary>
+      <returns>ホスト名、または IP アドレスの文字列形式。</returns>
+    </member>
+    <member name="P:System.Net.DnsEndPoint.Port">
+      <summary>
+        <see cref="T:System.Net.DnsEndPoint" /> のポート番号を取得します。</summary>
+      <returns>
+        <see cref="T:System.Net.DnsEndPoint" /> のポート番号を示す 0 ～ 0xffff の範囲の整数値。</returns>
+    </member>
+    <member name="M:System.Net.DnsEndPoint.ToString">
+      <summary>
+        <see cref="T:System.Net.DnsEndPoint" /> のホスト名、または IP アドレスとポート番号の文字列形式を返します。</summary>
+      <returns>指定した <see cref="T:System.Net.DnsEndPoint" /> のアドレス ファミリ、ホスト名、または IP アドレス文字列と、ポート番号を格納している文字列。</returns>
+    </member>
+    <member name="T:System.Net.DownloadProgressChangedEventArgs">
+      <summary>
+        <see cref="T:System.Net.WebClient" /> の <see cref="E:System.Net.WebClient.DownloadProgressChanged" /> イベントのデータを提供します。</summary>
+    </member>
+    <member name="P:System.Net.DownloadProgressChangedEventArgs.BytesReceived">
+      <summary>受信したバイト数を取得します。</summary>
+      <returns>受信したバイト数を示す <see cref="T:System.Int64" /> 値。</returns>
+    </member>
+    <member name="P:System.Net.DownloadProgressChangedEventArgs.TotalBytesToReceive">
+      <summary>
+        <see cref="T:System.Net.WebClient" /> データのダウンロード操作の総バイト数を取得します。</summary>
+      <returns>受信するバイト数を示す <see cref="T:System.Int64" /> 値。</returns>
+    </member>
+    <member name="T:System.Net.DownloadProgressChangedEventHandler">
+      <summary>
+        <see cref="T:System.Net.WebClient" /> の <see cref="E:System.Net.WebClient.DownloadProgressChanged" /> イベントを処理するメソッドを表します。</summary>
+      <param name="sender">イベントのソース。</param>
+      <param name="e">イベント データを格納している <see cref="T:System.Net.DownloadProgressChangedEventArgs" />。</param>
+    </member>
+    <member name="T:System.Net.DownloadStringCompletedEventArgs">
+      <summary>
+        <see cref="E:System.Net.WebClient.DownloadStringCompleted" /> イベントのデータを提供します。</summary>
+    </member>
+    <member name="P:System.Net.DownloadStringCompletedEventArgs.Result">
+      <summary>
+        <see cref="Overload:System.Net.WebClient.DownloadStringAsync" /> メソッドによってダウンロードされたデータを取得します。</summary>
+      <returns>ダウンロードされたデータが格納されている <see cref="T:System.String" />。</returns>
+      <exception cref="T:System.InvalidOperationException">非同期要求がキャンセルされました。 </exception>
+    </member>
+    <member name="T:System.Net.DownloadStringCompletedEventHandler">
+      <summary>
+        <see cref="T:System.Net.WebClient" /> の <see cref="E:System.Net.WebClient.DownloadStringCompleted" /> イベントを処理するメソッドを表します。</summary>
+      <param name="sender">イベントのソース。</param>
+      <param name="e">イベント データを格納している <see cref="T:System.Net.DownloadStringCompletedEventArgs" />。</param>
+    </member>
+    <member name="T:System.Net.EndPoint">
+      <summary>ネットワーク アドレスを識別します。これは abstract クラスです。</summary>
+    </member>
+    <member name="M:System.Net.EndPoint.#ctor">
+      <summary>
+        <see cref="T:System.Net.EndPoint" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="P:System.Net.EndPoint.AddressFamily">
+      <summary>エンドポイントが属するアドレス ファミリを取得します。</summary>
+      <returns>
+        <see cref="T:System.Net.Sockets.AddressFamily" /> 値の 1 つ。</returns>
+      <exception cref="T:System.NotImplementedException">プロパティが子孫クラスでオーバーライドされていないのに、そのプロパティの取得または設定が試行されました。</exception>
+    </member>
+    <member name="M:System.Net.EndPoint.Create(System.Net.SocketAddress)">
+      <summary>
+        <see cref="T:System.Net.SocketAddress" /> インスタンスから <see cref="T:System.Net.EndPoint" /> インスタンスを作成します。</summary>
+      <returns>指定した <see cref="T:System.Net.SocketAddress" /> インスタンスから初期化された新しい <see cref="T:System.Net.EndPoint" /> インスタンス。</returns>
+      <param name="socketAddress">接続のエンドポイントとして機能するソケット アドレス。</param>
+      <exception cref="T:System.NotImplementedException">メソッドが派生クラスでオーバーライドされない場合は、そのメソッドへのアクセスが行われます。</exception>
+    </member>
+    <member name="M:System.Net.EndPoint.Serialize">
+      <summary>
+        <see cref="T:System.Net.SocketAddress" /> インスタンスに対してエンドポイント情報をシリアル化します。</summary>
+      <returns>エンドポイント情報を格納している <see cref="T:System.Net.SocketAddress" /> インスタンス。</returns>
+      <exception cref="T:System.NotImplementedException">メソッドが派生クラスでオーバーライドされない場合は、そのメソッドへのアクセスが行われます。 </exception>
+    </member>
+    <member name="T:System.Net.HttpRequestHeader">
+      <summary>クライアント要求で指定される可能性のある HTTP ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.CacheControl">
+      <summary>要求と応答のチェーンにおいて、すべてのキャッシュ制御機構が従う必要のあるディレクティブを指定する Cache-Control ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Connection">
+      <summary>特定の接続で必要なオプションを指定する Connection ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Date">
+      <summary>要求が最初に作成された日付と時刻を指定する Date ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.KeepAlive">
+      <summary>永続的な接続を維持するために使用するパラメーターを指定する Keep-Alive ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Pragma">
+      <summary>要求と応答のチェーンにおいて、エージェントに適用できる実装固有のディレクティブを指定する Pragma ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Trailer">
+      <summary>チャンク転送コーディングでエンコードされたメッセージのトレーラーにあるヘッダー フィールドを指定する Trailer ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.TransferEncoding">
+      <summary>メッセージ本文に変換が適用されている場合に、変換の種類を指定する Transfer-Encoding ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Upgrade">
+      <summary>クライアントがサポートする追加の通信プロトコルを指定する Upgrade ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Via">
+      <summary>ゲートウェイ エージェントとプロキシ エージェントで使用される中間プロトコルを指定する Via ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Warning">
+      <summary>メッセージに反映されない場合がある、メッセージの状態や変換に関する追加情報を指定する Warning ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Allow">
+      <summary>サポートされる HTTP メソッドのセットを指定する Allow ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.ContentLength">
+      <summary>付随する本文データの長さ (バイト単位) を指定する Content-Length ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.ContentType">
+      <summary>付随する本文データの MIME タイプを指定する Content-Type ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.ContentEncoding">
+      <summary>付随する本文データに適用されているエンコーディングを指定する Content-Encoding ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.ContentLanguage">
+      <summary>付随する本文データの 1 つ以上の自然言語を指定する Content-Langauge ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.ContentLocation">
+      <summary>付随する本文を取得することができる URI を指定する Content-Location ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.ContentMd5">
+      <summary>付随する本文データの MD5 ダイジェストを指定する Content-MD5 ヘッダー。これはエンド ツー エンドのメッセージの整合性チェックを提供する目的で使用します。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.ContentRange">
+      <summary>付随する本文データのうち適用される必要がある部分の、本文全体の中の位置を指定する Content-Range ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Expires">
+      <summary>付随する本文データが無効と見なされる必要がある日付と時刻を指定する Expires ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.LastModified">
+      <summary>付随する本文データが最後に変更された日付と時刻を指定する Last-Modified ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Accept">
+      <summary>応答で受け入れることができる MIME タイプを指定する Accept ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.AcceptCharset">
+      <summary>応答で受け入れることができる文字セットを指定する Accept-Charset ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.AcceptEncoding">
+      <summary>応答で受け入れることができるコンテンツ エンコーディングを指定する Accept-Encoding ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.AcceptLanguage">
+      <summary>応答で推奨される自然言語を指定する Accept-Langauge ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Authorization">
+      <summary>サーバーに対してクライアントを認証するために提供される資格情報を指定する Authorization ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Cookie">
+      <summary>サーバーに提供される Cookie データを指定する Cookie ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Expect">
+      <summary>クライアントによって必要とされる特定のサーバー動作を指定する Expect ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.From">
+      <summary>要求元のユーザー エージェントを制御しているユーザーのインターネット電子メール アドレスを指定する From ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Host">
+      <summary>要求されているリソースのホスト名とポート番号を指定する Host ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.IfMatch">
+      <summary>クライアントのキャッシュされたコピーが、示されたリソースの現在のリソースである場合にだけ、要求された操作が実行される必要があることを指定する If-Match ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.IfModifiedSince">
+      <summary>要求されたリソースが、示された日付と時刻以降に変更されている場合にだけ、要求された操作が実行される必要があることを指定する If-Modified-Since ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.IfNoneMatch">
+      <summary>クライアントのキャッシュされたどのコピーも、示されたリソースの現在のリソースではない場合にだけ、要求された操作が実行される必要があることを指定する If-None-Match ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.IfRange">
+      <summary>クライアントのキャッシュされたコピーが現在のリソースである場合に、要求されたリソースの指定した範囲だけが送信される必要があることを指定する If-Range ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.IfUnmodifiedSince">
+      <summary>要求されたリソースが、示された日付と時刻以降に変更されていない場合にだけ、要求された操作が実行される必要があることを指定する If-Unmodified-Since ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.MaxForwards">
+      <summary>この要求を転送できる残りの回数を示す整数を指定する Max-Forwards ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.ProxyAuthorization">
+      <summary>プロキシに対してクライアントを認証するために提供される資格情報を指定する Proxy-Authorization ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Referer">
+      <summary>要求 URI の取得元のリソースの URI を指定する Referer ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Range">
+      <summary>クライアントが応答全体の代わりに返却を要求する応答の 1 つ以上のサブ範囲を指定する Range ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Te">
+      <summary>応答で受け入れることができる転送のエンコーディングを指定する TE ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Translate">
+      <summary>WebDAV 機能と共に使用する、HTTP 仕様に対する Microsoft 拡張機能である Translate ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.UserAgent">
+      <summary>クライアント エージェントに関する情報を指定する User-Agent ヘッダー。</summary>
+    </member>
+    <member name="T:System.Net.HttpStatusCode">
+      <summary>HTTP で定義されたステータス コードの値を格納します。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Continue">
+      <summary>HTTP ステータス 100 と等価です。<see cref="F:System.Net.HttpStatusCode.Continue" /> は、クライアントが要求を続行できることを示します。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.SwitchingProtocols">
+      <summary>HTTP ステータス 101 と等価です。<see cref="F:System.Net.HttpStatusCode.SwitchingProtocols" /> は、プロトコルのバージョンまたはプロトコルが変更されていることを示します。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.OK">
+      <summary>HTTP ステータス 200 と等価です。<see cref="F:System.Net.HttpStatusCode.OK" /> は、要求が成功し、要求された情報が応答で返されたことを示します。これは受信される最も一般的なステータス コードです。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Created">
+      <summary>HTTP ステータス 201 と等価です。<see cref="F:System.Net.HttpStatusCode.Created" /> は、要求によって新しいリソースが作成された後で応答が送信されたことを示します。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Accepted">
+      <summary>HTTP ステータス 202 と等価です。<see cref="F:System.Net.HttpStatusCode.Accepted" /> は、要求が承認され、以後の処理が実行されることを示します。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.NonAuthoritativeInformation">
+      <summary>HTTP ステータス 203 と等価です。<see cref="F:System.Net.HttpStatusCode.NonAuthoritativeInformation" /> は、返されたメタデータ情報が発信元サーバーではなくキャッシュされたコピーから得られたものであり、不正確である可能性があることを示しています。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.NoContent">
+      <summary>HTTP ステータス 204 と等価です。<see cref="F:System.Net.HttpStatusCode.NoContent" /> は、要求が正常に処理され、応答が意図的に空白になっていることを示します。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.ResetContent">
+      <summary>HTTP ステータス 205 と等価です。<see cref="F:System.Net.HttpStatusCode.ResetContent" /> は、クライアントが現在のリソースをリセットする必要がある (再読み込みしない) ことを示します。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.PartialContent">
+      <summary>HTTP ステータス 206 と等価です。<see cref="F:System.Net.HttpStatusCode.PartialContent" /> は、バイト範囲を含む GET 要求によって要求された内容が部分的に応答で返されることを示します。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.MultipleChoices">
+      <summary>HTTP ステータス 300 と等価です。<see cref="F:System.Net.HttpStatusCode.MultipleChoices" /> は、要求された情報に複数の表現があることを示します。既定のアクションは、このステータスをリダイレクトとして扱い、この応答に関連付けられている Location ヘッダーの内容に従うことです。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Ambiguous">
+      <summary>HTTP ステータス 300 と等価です。<see cref="F:System.Net.HttpStatusCode.Ambiguous" /> は、要求された情報に複数の表現があることを示します。既定のアクションは、このステータスをリダイレクトとして扱い、この応答に関連付けられている Location ヘッダーの内容に従うことです。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.MovedPermanently">
+      <summary>HTTP ステータス 301 と等価です。<see cref="F:System.Net.HttpStatusCode.MovedPermanently" /> は、要求された情報が Location ヘッダーに指定された URI に移動されていることを示します。この状態が受信されたときの既定の動作は、応答に関連付けられた Location ヘッダーに従います。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Moved">
+      <summary>HTTP ステータス 301 と等価です。<see cref="F:System.Net.HttpStatusCode.Moved" /> は、要求された情報が Location ヘッダーに指定された URI に移動されていることを示します。この状態が受信されたときの既定の動作は、応答に関連付けられた Location ヘッダーに従います。元の要求メソッドが POST だった場合、リダイレクトされた要求では GET メソッドが使用されます。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Found">
+      <summary>HTTP ステータス 302 と等価です。<see cref="F:System.Net.HttpStatusCode.Found" /> は、要求された情報が Location ヘッダーに指定された URI にあることを示します。この状態が受信されたときの既定の動作は、応答に関連付けられた Location ヘッダーに従います。元の要求メソッドが POST だった場合、リダイレクトされた要求では GET メソッドが使用されます。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Redirect">
+      <summary>HTTP ステータス 302 と等価です。<see cref="F:System.Net.HttpStatusCode.Redirect" /> は、要求された情報が Location ヘッダーに指定された URI にあることを示します。この状態が受信されたときの既定の動作は、応答に関連付けられた Location ヘッダーに従います。元の要求メソッドが POST だった場合、リダイレクトされた要求では GET メソッドが使用されます。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.SeeOther">
+      <summary>HTTP ステータス 303 と等価です。<see cref="F:System.Net.HttpStatusCode.SeeOther" /> は、POST の結果として、Location ヘッダーに指定された URI にクライアントを自動的にリダイレクトします。Location ヘッダーで指定されたリソースへの要求は、GET によって実行されます。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.RedirectMethod">
+      <summary>HTTP ステータス 303 と等価です。<see cref="F:System.Net.HttpStatusCode.RedirectMethod" /> は、POST の結果として、Location ヘッダーに指定された URI にクライアントを自動的にリダイレクトします。Location ヘッダーで指定されたリソースへの要求は、GET によって実行されます。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.NotModified">
+      <summary>HTTP ステータス 304 と等価です。<see cref="F:System.Net.HttpStatusCode.NotModified" /> は、クライアントのキャッシュされたコピーが最新の状態であることを示します。リソースの内容は転送されません。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.UseProxy">
+      <summary>HTTP ステータス 305 と等価です。<see cref="F:System.Net.HttpStatusCode.UseProxy" /> は、Location ヘッダーに指定された URI にあるプロキシ サーバーをその要求で使用する必要があることを示します。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Unused">
+      <summary>HTTP ステータス 306 と等価です。<see cref="F:System.Net.HttpStatusCode.Unused" /> は、作成中の HTTP/1.1 仕様の拡張案です。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.TemporaryRedirect">
+      <summary>HTTP ステータス 307 と等価です。<see cref="F:System.Net.HttpStatusCode.TemporaryRedirect" /> は、要求情報が Location ヘッダーに指定された URI にあることを示します。この状態が受信されたときの既定の動作は、応答に関連付けられた Location ヘッダーに従います。元の要求メソッドが POST だった場合、リダイレクトされた要求でも POST メソッドが使用されます。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.RedirectKeepVerb">
+      <summary>HTTP ステータス 307 と等価です。<see cref="F:System.Net.HttpStatusCode.RedirectKeepVerb" /> は、要求情報が Location ヘッダーに指定された URI にあることを示します。この状態が受信されたときの既定の動作は、応答に関連付けられた Location ヘッダーに従います。元の要求メソッドが POST だった場合、リダイレクトされた要求でも POST メソッドが使用されます。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.BadRequest">
+      <summary>HTTP ステータス 400 と等価です。<see cref="F:System.Net.HttpStatusCode.BadRequest" /> は、要求がサーバーによって認識されなかったことを示します。他のエラーが該当しない場合、または正確なエラー情報が不明であるかエラー コードが存在しない場合は、<see cref="F:System.Net.HttpStatusCode.BadRequest" /> が送信されます。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Unauthorized">
+      <summary>HTTP ステータス 401 と等価です。<see cref="F:System.Net.HttpStatusCode.Unauthorized" /> は、要求されたリソースで認証が必要であることを示します。WWW-Authenticate ヘッダーには、認証を実行する方法の詳細が格納されます。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.PaymentRequired">
+      <summary>HTTP ステータス 402 と等価です。<see cref="F:System.Net.HttpStatusCode.PaymentRequired" /> は、将来の使用のために予約されています。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Forbidden">
+      <summary>HTTP ステータス 403 と等価です。<see cref="F:System.Net.HttpStatusCode.Forbidden" /> は、サーバーが要求への応答を拒否したことを示します。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.NotFound">
+      <summary>HTTP ステータス 404 と等価です。<see cref="F:System.Net.HttpStatusCode.NotFound" /> は、要求されたリソースがサーバーに存在していないことを示します。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.MethodNotAllowed">
+      <summary>HTTP ステータス 405 と等価です。<see cref="F:System.Net.HttpStatusCode.MethodNotAllowed" /> は、要求されたリソースで要求メソッド (POST または GET) が許可されていないことを示します。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.NotAcceptable">
+      <summary>HTTP ステータス 406 と等価です。<see cref="F:System.Net.HttpStatusCode.NotAcceptable" /> は、クライアントが Accept ヘッダーでリソースの利用可能な任意の表現を受け入れないことを指定していることを示します。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.ProxyAuthenticationRequired">
+      <summary>HTTP ステータス 407 と等価です。<see cref="F:System.Net.HttpStatusCode.ProxyAuthenticationRequired" /> は、要求されたプロキシで認証が必要であることを示します。Proxy-authenticate ヘッダーには、認証を実行する方法の詳細が格納されます。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.RequestTimeout">
+      <summary>HTTP ステータス 408 と等価です。<see cref="F:System.Net.HttpStatusCode.RequestTimeout" /> は、サーバーで要求の到着を待っている時間内にクライアントが要求を送信しなかったことを示します。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Conflict">
+      <summary>HTTP ステータス 409 と等価です。<see cref="F:System.Net.HttpStatusCode.Conflict" /> は、サーバーで競合が発生したため、要求を実行できなかったことを示します。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Gone">
+      <summary>HTTP ステータス 410 と等価です。<see cref="F:System.Net.HttpStatusCode.Gone" /> は、要求されたリソースが使用できないことを示します。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.LengthRequired">
+      <summary>HTTP ステータス 411 と等価です。<see cref="F:System.Net.HttpStatusCode.LengthRequired" /> は、要求された Content-length ヘッダーがないことを示します。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.PreconditionFailed">
+      <summary>HTTP ステータス 412 と等価です。<see cref="F:System.Net.HttpStatusCode.PreconditionFailed" /> は、この要求に対して設定された条件が満たされなかったため、要求を実行できないことを示します。条件は、If-Match、If-None-Match、If-Unmodified-Since などの条件要求ヘッダーで設定します。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.RequestEntityTooLarge">
+      <summary>HTTP ステータス 413 と等価です。<see cref="F:System.Net.HttpStatusCode.RequestEntityTooLarge" /> は、要求が大きすぎてサーバーで処理できないことを示します。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.RequestUriTooLong">
+      <summary>HTTP ステータス 414 と等価です。<see cref="F:System.Net.HttpStatusCode.RequestUriTooLong" /> は、URI が長すぎることを示します。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.UnsupportedMediaType">
+      <summary>HTTP ステータス 415 と等価です。<see cref="F:System.Net.HttpStatusCode.UnsupportedMediaType" /> は、その要求の種類がサポートされていないことを示します。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.RequestedRangeNotSatisfiable">
+      <summary>HTTP ステータス 416 と等価です。<see cref="F:System.Net.HttpStatusCode.RequestedRangeNotSatisfiable" /> は、要求されたリソースのデータ範囲の開始位置がリソースの先頭位置より前にあるか、データ範囲の終了位置がリソースの末尾位置よりも後にあるため、データが返されないことを示します。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.ExpectationFailed">
+      <summary>HTTP ステータス 417 と等価です。<see cref="F:System.Net.HttpStatusCode.ExpectationFailed" /> は、Expect ヘッダーで指定されている条件をサーバーが満たすことができなかったことを示します。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.InternalServerError">
+      <summary>HTTP ステータス 500 と等価です。<see cref="F:System.Net.HttpStatusCode.InternalServerError" /> は、サーバーで一般的なエラーが発生したことを示します。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.NotImplemented">
+      <summary>HTTP ステータス 501 と等価です。<see cref="F:System.Net.HttpStatusCode.NotImplemented" /> は、要求された機能がサーバーでサポートされないことを示します。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.BadGateway">
+      <summary>HTTP ステータス 502 と等価です。<see cref="F:System.Net.HttpStatusCode.BadGateway" /> は、中間プロキシ サーバーで、他のプロキシ サーバーまたは発信元サーバーからの不正な応答が受信されたことを示します。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.ServiceUnavailable">
+      <summary>HTTP ステータス 503 と等価です。<see cref="F:System.Net.HttpStatusCode.ServiceUnavailable" /> は、高い負荷または保守のため、サーバーを一時的に利用できないことを示します。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.GatewayTimeout">
+      <summary>HTTP ステータス 504 と等価です。<see cref="F:System.Net.HttpStatusCode.GatewayTimeout" /> は、中間プロキシ サーバーが他のプロキシ サーバーまたは発信元サーバーからの応答を待っているときにタイムアウトしたことを示します。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.HttpVersionNotSupported">
+      <summary>HTTP ステータス 505 と等価です。<see cref="F:System.Net.HttpStatusCode.HttpVersionNotSupported" /> は、要求された HTTP バージョンがサーバーでサポートされないことを示します。</summary>
+    </member>
+    <member name="T:System.Net.HttpWebRequest">
+      <summary>
+        <see cref="T:System.Net.WebRequest" /> クラスの HTTP 固有の実装を提供します。</summary>
+    </member>
+    <member name="M:System.Net.HttpWebRequest.#ctor">
+      <summary>
+        <see cref="T:System.Net.HttpWebRequest" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:System.Net.HttpWebRequest.Abort">
+      <summary>インターネット リソースへの要求をキャンセルします。</summary>
+      <exception cref="T:System.NotImplementedException">このメソッドは実装されていません。</exception>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.Accept">
+      <summary>Accept HTTP ヘッダーの値を取得または設定します。</summary>
+      <returns>Accept HTTP ヘッダーの値。既定値は null です。</returns>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.AllowAutoRedirect">
+      <summary>要求がリダイレクト応答に従うかどうかを示す値を取得または設定します。</summary>
+      <returns>要求がインターネット リソースからのリダイレクト応答に自動的に従う場合は true。それ以外の場合は false。既定値は true です。</returns>
+      <exception cref="T:System.NotImplementedException">このプロパティは実装されていません。 </exception>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.AllowReadStreamBuffering">
+      <summary>子孫クラスでオーバーライドする場合、インターネット リソースから読み取るデータをバッファーするかどうかを示す値を取得または設定します。</summary>
+      <returns>インターネット リソースから受信したデータのバッファー処理を有効にする場合は true。無効にする場合は false。既定値は true です。</returns>
+      <exception cref="T:System.NotImplementedException">このプロパティは実装されていません。</exception>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.AllowWriteStreamBuffering"></member>
+    <member name="M:System.Net.HttpWebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)">
+      <summary>データを書き込むために使用する <see cref="T:System.IO.Stream" /> オブジェクトの非同期要求を開始します。</summary>
+      <returns>非同期の要求を参照する <see cref="T:System.IAsyncResult" />。</returns>
+      <param name="callback">
+        <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+      <param name="state">この要求に対して使用する状態オブジェクト。</param>
+      <exception cref="T:System.Net.ProtocolViolationException">
+        <see cref="P:System.Net.HttpWebRequest.Method" /> プロパティが GET です。または<see cref="P:System.Net.WebRequest.ContentLength" /> プロパティが、指定された要求の本体のサイズと一致しない値に設定されています。</exception>
+      <exception cref="T:System.InvalidOperationException">ストリームが、<see cref="M:System.Net.HttpWebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)" /> の前回の呼び出しで使用されています。またはスレッド プールのスレッドが不足しています。</exception>
+      <exception cref="T:System.NotImplementedException">このメソッドは実装されていません。</exception>
+      <exception cref="T:System.NotSupportedException">要求のキャッシュ検証コントロールで、この要求の応答がキャッシュから取得できることが示されましたが、データの書き込みを行う要求でキャッシュは使用できません。この例外は、キャッシュ検証コントロールの不適切なカスタム実装を使用した場合に発生することがあります。</exception>
+      <exception cref="T:System.Net.WebException">
+        <see cref="M:System.Net.HttpWebRequest.Abort" /> は既に呼び出されました。</exception>
+      <exception cref="T:System.ObjectDisposedException">.NET Framework アプリケーションで、コンテンツの長さが 0 の要求ストリームが正しく取得して閉じられませんでした。</exception>
+    </member>
+    <member name="M:System.Net.HttpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)">
+      <summary>インターネット リソースへの非同期要求を開始します。</summary>
+      <returns>応答の非同期要求を参照する <see cref="T:System.IAsyncResult" />。</returns>
+      <param name="callback">
+        <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+      <param name="state">この要求に対して使用する状態オブジェクト。</param>
+      <exception cref="T:System.InvalidOperationException">ストリームが、既に <see cref="M:System.Net.HttpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" /> の前回の呼び出しで使用されています。またはスレッド プールのスレッドが不足しています。</exception>
+      <exception cref="T:System.NotImplementedException">このメソッドは実装されていません。</exception>
+      <exception cref="T:System.NotSupportedException">
+        <paramref name="callback" /> パラメーターが null です。</exception>
+      <exception cref="T:System.Net.ProtocolViolationException">
+        <see cref="P:System.Net.HttpWebRequest.Method" /> は GET です。</exception>
+      <exception cref="T:System.Net.WebException">
+        <see cref="M:System.Net.HttpWebRequest.Abort" /> は既に呼び出されました。</exception>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.ContentLength"></member>
+    <member name="P:System.Net.HttpWebRequest.ContentType">
+      <summary>Content-type HTTP ヘッダーの値を取得または設定します。</summary>
+      <returns>Content-type HTTP ヘッダーの値。既定値は null です。</returns>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.CookieContainer">
+      <summary>HTTP 要求に関連付けられた <see cref="T:System.Net.CookieCollection" /> オブジェクトのコレクションを指定します。</summary>
+      <returns>HTTP 要求に関連付けられている <see cref="T:System.Net.CookieCollection" /> オブジェクトのコレクションを含む <see cref="T:System.Net.CookieContainer" />。</returns>
+      <exception cref="T:System.NotImplementedException">このプロパティは実装されていません。</exception>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.Credentials">
+      <summary>要求に対して使用する認証情報を取得または設定します。</summary>
+      <returns>要求に関連付けられた認証資格情報を格納する <see cref="T:System.Net.ICredentials" />。既定値は null です。</returns>
+    </member>
+    <member name="M:System.Net.HttpWebRequest.EndGetRequestStream(System.IAsyncResult)">
+      <summary>データを書き込むために使用する <see cref="T:System.IO.Stream" /> オブジェクトの非同期要求を終了します。</summary>
+      <returns>要求データを書き込むために使用する <see cref="T:System.IO.Stream" />。</returns>
+      <param name="asyncResult">ストリームの保留中の要求。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="asyncResult" /> が null です。</exception>
+      <exception cref="T:System.IO.IOException">要求が完了しませんでした。また、ストリームは使用できません。</exception>
+      <exception cref="T:System.ArgumentException">現在のインスタンスによって、<see cref="M:System.Net.HttpWebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)" /> への呼び出しから <paramref name="asyncResult" /> が返されませんでした。</exception>
+      <exception cref="T:System.InvalidOperationException">このメソッドは、<paramref name="asyncResult" /> を使用して既に呼び出されています。</exception>
+      <exception cref="T:System.NotImplementedException">このメソッドは実装されていません。</exception>
+      <exception cref="T:System.Net.WebException">
+        <see cref="M:System.Net.HttpWebRequest.Abort" /> は既に呼び出されました。または要求の処理中にエラーが発生しました。</exception>
+    </member>
+    <member name="M:System.Net.HttpWebRequest.EndGetResponse(System.IAsyncResult)">
+      <summary>インターネット リソースへの非同期要求を終了します。</summary>
+      <returns>インターネット リソースからの応答を格納している <see cref="T:System.Net.WebResponse" />。</returns>
+      <param name="asyncResult">応答の保留中の要求。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="asyncResult" /> が null です。</exception>
+      <exception cref="T:System.InvalidOperationException">このメソッドは、<paramref name="asyncResult" /> を使用して既に呼び出されています。</exception>
+      <exception cref="T:System.NotImplementedException">このメソッドは実装されていません。</exception>
+      <exception cref="T:System.Net.WebException">
+        <see cref="M:System.Net.HttpWebRequest.Abort" /> は既に呼び出されました。または要求の処理中にエラーが発生しました。</exception>
+      <exception cref="T:System.ArgumentException">現在のインスタンスによって、<see cref="M:System.Net.HttpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" /> への呼び出しから <paramref name="asyncResult" /> が返されませんでした。</exception>
+    </member>
+    <member name="M:System.Net.HttpWebRequest.Finalize">
+      <summary>現在の <see cref="T:System.Net.HttpWebRequest" /> インスタンスに保持されているリソースを解放します。</summary>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.HaveResponse">
+      <summary>インターネット リソースから応答が受信されたかどうかを示す値を取得します。</summary>
+      <returns>応答を受信した場合は true。それ以外の場合は false。</returns>
+      <exception cref="T:System.NotImplementedException">このプロパティは実装されていません。</exception>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.Headers">
+      <summary>HTTP ヘッダーを構成する名前/値ペアのコレクションを指定します。</summary>
+      <returns>HTTP 要求のヘッダーを構成する名前/値ペアを格納している <see cref="T:System.Net.WebHeaderCollection" />。</returns>
+      <exception cref="T:System.InvalidOperationException">要求が <see cref="M:System.Net.HttpWebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)" /> メソッドまたは <see cref="M:System.Net.HttpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" /> メソッドを呼び出して開始されています。</exception>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.Method">
+      <summary>要求に対して使用するメソッドを取得または設定します。</summary>
+      <returns>インターネット リソースと通信するために使用する要求メソッド。既定値は GET です。</returns>
+      <exception cref="T:System.ArgumentException">メソッドが指定されていません。またはメソッドの文字列に無効な文字が含まれています。</exception>
+      <exception cref="T:System.NotImplementedException">このプロパティは実装されていません。</exception>
+      <exception cref="T:System.NotSupportedException">
+        <see cref="P:System.Net.HttpWebRequest.Method" /> プロパティが GET と POST のいずれでもありません。</exception>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.RequestUri">
+      <summary>要求の元の URI (Uniform Resource Identifier) を取得します。</summary>
+      <returns>
+        <see cref="M:System.Net.WebRequest.Create(System.Uri)" /> メソッドに渡されるインターネット リソースの URI を含む <see cref="T:System.Uri" />。</returns>
+      <exception cref="T:System.NotImplementedException">このプロパティは実装されていません。</exception>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.SupportsCookieContainer">
+      <summary>
+        <see cref="P:System.Net.HttpWebRequest.CookieContainer" /> プロパティが <see cref="T:System.Net.HttpWebRequest" /> インスタンスによってサポートされているかどうかを示す値を取得します。</summary>
+      <returns>
+        <see cref="P:System.Net.HttpWebRequest.CookieContainer" /> プロパティが <see cref="T:System.Net.HttpWebRequest" /> インスタンスによってサポートされている場合は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.UserAgent">
+      <summary>User-agent HTTP ヘッダーの値を取得または設定します。</summary>
+      <returns>User-agent HTTP ヘッダーの値。既定値は null です。Note:このプロパティの値は <see cref="T:System.Net.WebHeaderCollection" /> に格納されます。WebHeaderCollection が設定されている場合、プロパティ値は失われます。</returns>
+    </member>
+    <member name="T:System.Net.HttpWebResponse">
+      <summary>
+        <see cref="T:System.Net.WebResponse" /> クラスの HTTP 固有の実装を提供します。</summary>
+    </member>
+    <member name="M:System.Net.HttpWebResponse.#ctor">
+      <summary>
+        <see cref="T:System.Net.WebResponse" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:System.Net.HttpWebResponse.Close">
+      <summary>応答ストリームを閉じます。</summary>
+    </member>
+    <member name="P:System.Net.HttpWebResponse.ContentLength">
+      <summary>要求で返されるコンテンツの長さを取得します。</summary>
+      <returns>要求で返されるバイト数。コンテンツ長には、ヘッダー情報は含まれません。</returns>
+    </member>
+    <member name="P:System.Net.HttpWebResponse.ContentType">
+      <summary>応答のコンテンツ タイプを取得します。</summary>
+      <returns>応答のコンテンツの種類を含む文字列。</returns>
+    </member>
+    <member name="P:System.Net.HttpWebResponse.Cookies">
+      <summary>HTTP 応答の状態情報の保持に使用する Cookie を取得します。</summary>
+      <returns>HTTP 応答に関連付けられている <see cref="T:System.Net.CookieCollection" /> オブジェクト。</returns>
+      <exception cref="T:System.NotImplementedException">このプロパティは実装されていません。</exception>
+    </member>
+    <member name="M:System.Net.HttpWebResponse.Dispose(System.Boolean)">
+      <summary>
+        <see cref="T:System.Net.HttpWebResponse" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+      <param name="disposing">マネージ リソースも解放する必要があるかどうかを示すブール値。</param>
+    </member>
+    <member name="M:System.Net.HttpWebResponse.GetResponseStream">
+      <summary>サーバーから応答の本文を読み取るために使用するストリームを取得します。</summary>
+      <returns>応答の本文を格納している <see cref="T:System.IO.Stream" />。</returns>
+    </member>
+    <member name="P:System.Net.HttpWebResponse.Headers">
+      <summary>応答に関連付けられているヘッダーをサーバーから取得します。</summary>
+      <returns>応答で返されるヘッダー情報を格納する <see cref="T:System.Net.WebHeaderCollection" />。</returns>
+    </member>
+    <member name="P:System.Net.HttpWebResponse.Method">
+      <summary>応答を返すために使用するメソッドを取得します。</summary>
+      <returns>応答を返すために使用する HTTP メソッドを格納する文字列。</returns>
+      <exception cref="T:System.ObjectDisposedException">現在のインスタンスは破棄されています。</exception>
+    </member>
+    <member name="P:System.Net.HttpWebResponse.ResponseUri">
+      <summary>要求に応答したインターネット リソースの URI を取得します。</summary>
+      <returns>要求に応答したインターネット リソースの URI を格納する <see cref="T:System.Uri" />。</returns>
+    </member>
+    <member name="P:System.Net.HttpWebResponse.StatusCode">
+      <summary>応答の状態を取得します。</summary>
+      <returns>
+        <see cref="T:System.Net.HttpStatusCode" /> 値の 1 つ。</returns>
+      <exception cref="T:System.ObjectDisposedException">現在のインスタンスは破棄されています。</exception>
+    </member>
+    <member name="P:System.Net.HttpWebResponse.StatusDescription">
+      <summary>応答で返される状態の説明を取得します。</summary>
+      <returns>応答の状態を説明する文字列。</returns>
+      <exception cref="T:System.ObjectDisposedException">現在のインスタンスは破棄されています。</exception>
+    </member>
+    <member name="M:System.Net.HttpWebResponse.System#IDisposable#Dispose">
+      <summary>
+        <see cref="T:System.Net.HttpWebResponse" /> によって使用されているすべてのリソースを解放します。</summary>
+    </member>
+    <member name="T:System.Net.ICredentials">
+      <summary>Web クライアント認証の資格情報を取得するために基本認証インターフェイスを提供します。</summary>
+    </member>
+    <member name="M:System.Net.ICredentials.GetCredential(System.Uri,System.String)">
+      <summary>指定した URI および認証の種類に関連付けられている <see cref="T:System.Net.NetworkCredential" /> オブジェクトを返します。</summary>
+      <returns>指定した URI および認証の種類に関連付けられている <see cref="T:System.Net.NetworkCredential" />。資格情報を使用できない場合は null。</returns>
+      <param name="uri">クライアントが認証を提供している <see cref="T:System.Uri" />。</param>
+      <param name="authType">認証の種類を指定する文字列。</param>
+    </member>
+    <member name="T:System.Net.IPAddress">
+      <summary>インターネット プロトコル (IP) アドレスを提供します。</summary>
+    </member>
+    <member name="M:System.Net.IPAddress.#ctor(System.Byte[])">
+      <summary>
+        <see cref="T:System.Byte" /> 配列として指定したアドレスを使用して、<see cref="T:System.Net.IPAddress" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="address">IP アドレスを含むバイト配列。</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="address" /> パラメーターの長さが IPv4 アドレスに必要な 4 バイト、IPv6 アドレスに必要な 16 バイトではありません。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> パラメーターが null です。</exception>
+    </member>
+    <member name="M:System.Net.IPAddress.#ctor(System.Byte[],System.Int64)">
+      <summary>
+        <see cref="T:System.Byte" /> 配列として指定した IPv6 アドレスと指定したスコープ識別子を使用して、<see cref="T:System.Net.IPAddress" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="address">IPv6 アドレスのバイト配列値。</param>
+      <param name="scopeid">スコープ識別子の long 値。</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="address" /> パラメーターの長さが、IPv6 アドレスに必要な 16 バイトではありません。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> パラメーターが null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="scopeid" /> パラメーターが 0 未満、または<paramref name="scopeid" /> が 0x00000000FFFFFFFF より大きい値です。</exception>
+    </member>
+    <member name="M:System.Net.IPAddress.#ctor(System.Int64)">
+      <summary>
+        <see cref="T:System.Int64" /> として指定したアドレスを使用して、<see cref="T:System.Net.IPAddress" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="newAddress">IP アドレスの long 値。たとえば、ビッグ エンディアン形式の値 0x2414188f は、IP アドレス "143.24.20.36" になります。</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="newAddress" /> パラメーターは IPv4 アドレスの範囲外です。</exception>
+    </member>
+    <member name="P:System.Net.IPAddress.Address">
+      <summary>IPv4 のインターネット プロトコル (IP) アドレスを取得または設定します。</summary>
+      <returns>整数として表示されている IPv4 アドレス。</returns>
+      <exception cref="T:System.Net.Sockets.SocketException">
+        <see cref="P:System.Net.IPAddress.AddressFamily" /> プロパティが <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6" /> です。</exception>
+    </member>
+    <member name="P:System.Net.IPAddress.AddressFamily">
+      <summary>IP アドレスのアドレス ファミリを取得します。</summary>
+      <returns>IPv4 の場合は <see cref="F:System.Net.Sockets.AddressFamily.InterNetwork" />、IPv6 の場合は <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6" /> を返します。</returns>
+    </member>
+    <member name="F:System.Net.IPAddress.Any">
+      <summary>IPv4 のすべてのネットワーク インターフェイス上でサーバーがクライアントの活動をリッスンする必要があることを示す IPv4 アドレスを提供します。このフィールドは読み取り専用です。</summary>
+    </member>
+    <member name="F:System.Net.IPAddress.Broadcast">
+      <summary>IPv4 ブロードキャスト アドレスを提供します。このフィールドは読み取り専用です。</summary>
+    </member>
+    <member name="M:System.Net.IPAddress.Equals(System.Object)">
+      <summary>2 つの IP アドレスを比較します。</summary>
+      <returns>2 つのアドレスが等しい場合は true。それ以外の場合は false。</returns>
+      <param name="comparand">現在のインスタンスと比較する <see cref="T:System.Net.IPAddress" /> インスタンス。</param>
+    </member>
+    <member name="M:System.Net.IPAddress.GetAddressBytes">
+      <summary>
+        <see cref="T:System.Net.IPAddress" /> のコピーをバイト配列として提供します。</summary>
+      <returns>
+        <see cref="T:System.Net.IPAddress" /> インスタンスを示すバイトの配列。</returns>
+    </member>
+    <member name="M:System.Net.IPAddress.GetHashCode">
+      <summary>IP アドレスのハッシュ値を返します。</summary>
+      <returns>IP アドレスの整数のハッシュ値。</returns>
+    </member>
+    <member name="M:System.Net.IPAddress.HostToNetworkOrder(System.Int16)">
+      <summary>short 値をホストのバイト順からネットワークのバイト順に変換します。</summary>
+      <returns>ネットワークのバイト順で表現される short 値。</returns>
+      <param name="host">ホストのバイト順で記述された変換する数値。</param>
+    </member>
+    <member name="M:System.Net.IPAddress.HostToNetworkOrder(System.Int32)">
+      <summary>整数値をホストのバイト順からネットワークのバイト順に変換します。</summary>
+      <returns>ネットワークのバイト順で表現される整数値。</returns>
+      <param name="host">ホストのバイト順で記述された変換する数値。</param>
+    </member>
+    <member name="M:System.Net.IPAddress.HostToNetworkOrder(System.Int64)">
+      <summary>long 値をホストのバイト順からネットワークのバイト順に変換します。</summary>
+      <returns>ネットワークのバイト順で表現される long 値。</returns>
+      <param name="host">ホストのバイト順で記述された変換する数値。</param>
+    </member>
+    <member name="F:System.Net.IPAddress.IPv6Any">
+      <summary>IPv6 のすべてのネットワーク インターフェイス上でサーバーがクライアントの活動をリッスンする必要があることを示す IPv6 アドレスを提供します。このフィールドは読み取り専用です。</summary>
+    </member>
+    <member name="F:System.Net.IPAddress.IPv6Loopback">
+      <summary>IP ループバック アドレスを提供します。このプロパティは読み取り専用です。</summary>
+    </member>
+    <member name="F:System.Net.IPAddress.IPv6None">
+      <summary>ネットワーク インターフェイスを使用しないことを示す IPv6 アドレスを提供します。このプロパティは読み取り専用です。</summary>
+    </member>
+    <member name="P:System.Net.IPAddress.IsIPv6LinkLocal">
+      <summary>アドレスが IPv6 リンク ローカル アドレスであるかどうかを示す値を取得します。</summary>
+      <returns>IP アドレスが IPv6 リンク ローカル アドレスである場合は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="P:System.Net.IPAddress.IsIPv6Multicast">
+      <summary>アドレスが IPv6 マルチキャスト グローバル アドレスであるかどうかを示す値を取得します。</summary>
+      <returns>IP アドレスが IPv6 マルチキャスト グローバル アドレスである場合は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="P:System.Net.IPAddress.IsIPv6SiteLocal">
+      <summary>アドレスが IPv6 サイト ローカル アドレスであるかどうかを示す値を取得します。</summary>
+      <returns>IP アドレスが IPv6 サイト ローカル アドレスである場合は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="M:System.Net.IPAddress.IsLoopback(System.Net.IPAddress)">
+      <summary>指定した IP アドレスがループバック アドレスであるかどうかを示します。</summary>
+      <returns>
+        <paramref name="address" /> がループバック アドレスである場合は true。それ以外の場合は false。</returns>
+      <param name="address">IP アドレス。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> パラメーターが null です。</exception>
+    </member>
+    <member name="F:System.Net.IPAddress.Loopback">
+      <summary>IPv4 ループバック アドレスを提供します。このフィールドは読み取り専用です。</summary>
+    </member>
+    <member name="M:System.Net.IPAddress.NetworkToHostOrder(System.Int16)">
+      <summary>short 値をネットワークのバイト順からホストのバイト順に変換します。</summary>
+      <returns>ホストのバイト順で表現される short 値。</returns>
+      <param name="network">ネットワークのバイト順で記述された変換する数値。</param>
+    </member>
+    <member name="M:System.Net.IPAddress.NetworkToHostOrder(System.Int32)">
+      <summary>整数値をネットワークのバイト順からホストのバイト順に変換します。</summary>
+      <returns>ホストのバイト順で表現される整数値。</returns>
+      <param name="network">ネットワークのバイト順で記述された変換する数値。</param>
+    </member>
+    <member name="M:System.Net.IPAddress.NetworkToHostOrder(System.Int64)">
+      <summary>long 値をネットワークのバイト順からホストのバイト順に変換します。</summary>
+      <returns>ホストのバイト順で表現される long 値。</returns>
+      <param name="network">ネットワークのバイト順で記述された変換する数値。</param>
+    </member>
+    <member name="F:System.Net.IPAddress.None">
+      <summary>ネットワーク インターフェイスを使用しないことを示す IP アドレスを提供します。このフィールドは読み取り専用です。</summary>
+    </member>
+    <member name="M:System.Net.IPAddress.Parse(System.String)">
+      <summary>IP アドレス文字列を <see cref="T:System.Net.IPAddress" /> インスタンスに変換します。</summary>
+      <returns>
+        <see cref="T:System.Net.IPAddress" /> のインスタンス。</returns>
+      <param name="ipString">IPv4 のピリオド区切りの 10 進表記または IPv6 のコロン区切りの 16 進表記の IP アドレスを含む文字列。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="ipString" /> パラメーターが null です。</exception>
+      <exception cref="T:System.FormatException">
+        <paramref name="ipString" /> パラメーターは有効な IP アドレスではありません。</exception>
+    </member>
+    <member name="P:System.Net.IPAddress.ScopeId">
+      <summary>IPv6 アドレスのスコープ識別子を取得または設定します。</summary>
+      <returns>アドレスのスコープを指定する長整数。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">ScopeId を設定するときの値が 0 未満か、その値が 0x00000000FFFFFFFF より大きい値です。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">
+        <see cref="P:System.Net.IPAddress.AddressFamily" /> プロパティが <see cref="F:System.Net.Sockets.AddressFamily.InterNetwork" /> として指定されます。</exception>
+    </member>
+    <member name="M:System.Net.IPAddress.ToString">
+      <summary>インターネット アドレスを標準表記に変換します。</summary>
+      <returns>ピリオド区切りの 10 進表記 (IPv4 の場合) またはコロン区切りの 16 進表記 (IPv6 の場合) の IP アドレスを格納している文字列。</returns>
+      <exception cref="T:System.Net.Sockets.SocketException">エラーにより IPv6 アドレスを文字列に変換できませんでした。</exception>
+    </member>
+    <member name="M:System.Net.IPAddress.TryParse(System.String,System.Net.IPAddress@)">
+      <summary>文字列が有効な IP アドレスであるかどうかを判断します。</summary>
+      <returns>
+        <paramref name="ipString" /> が有効な IP アドレスである場合は true。それ以外の場合は false。</returns>
+      <param name="ipString">検証する文字列。</param>
+      <param name="address">文字列の <see cref="T:System.Net.IPAddress" /> バージョン。</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="ipString" /> を IP アドレスとして解析できませんでした。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="ipString" /> が null です。</exception>
+      <exception cref="T:System.FormatException">
+        <paramref name="ipString" /> が有効な IP アドレスではありません。</exception>
+    </member>
+    <member name="T:System.Net.IPEndPoint">
+      <summary>IP アドレスとポート番号でネットワーク エンドポイントを表します。</summary>
+    </member>
+    <member name="M:System.Net.IPEndPoint.#ctor(System.Int64,System.Int32)">
+      <summary>指定した IP アドレスとポート番号を使用して、<see cref="T:System.Net.IPEndPoint" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="address">インターネット ホストの IP アドレスの long 値。たとえば、ビッグ エンディアン形式の値 0x2414188f は、IP アドレス "143.24.20.36" になります。</param>
+      <param name="port">
+        <paramref name="address" /> に関連付けられているポート番号。または、使用できる任意のポートを指定する場合は 0。<paramref name="port" /> は、ホスト順です。</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="port" /> は <see cref="F:System.Net.IPEndPoint.MinPort" /> より小さい値です。または<paramref name="port" /> は <see cref="F:System.Net.IPEndPoint.MaxPort" /> より大きい値です。または<paramref name="address" /> が IPv4 アドレスの範囲を超えている。</exception>
+    </member>
+    <member name="M:System.Net.IPEndPoint.#ctor(System.Net.IPAddress,System.Int32)">
+      <summary>指定したアドレスとポート番号を使用して、<see cref="T:System.Net.IPEndPoint" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="address">
+        <see cref="T:System.Net.IPAddress" /> で表されるインターネット ホストの IP アドレス。</param>
+      <param name="port">
+        <paramref name="address" /> に関連付けられているポート番号。または、使用できる任意のポートを指定する場合は 0。<paramref name="port" /> は、ホスト順です。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> パラメーターが null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="port" /> は <see cref="F:System.Net.IPEndPoint.MinPort" /> より小さい値です。または<paramref name="port" /> は <see cref="F:System.Net.IPEndPoint.MaxPort" /> より大きい値です。</exception>
+    </member>
+    <member name="P:System.Net.IPEndPoint.Address">
+      <summary>エンドポイントの IP アドレスを取得または設定します。</summary>
+      <returns>エンドポイントの IP アドレス。</returns>
+    </member>
+    <member name="P:System.Net.IPEndPoint.AddressFamily">
+      <summary>インターネット プロトコル (IP) アドレス ファミリを取得します。</summary>
+      <returns>
+        <see cref="T:System.Net.Sockets.AddressFamily" /> 値の 1 つ。</returns>
+    </member>
+    <member name="M:System.Net.IPEndPoint.Create(System.Net.SocketAddress)">
+      <summary>ソケット アドレスからエンドポイントを作成します。</summary>
+      <returns>指定したソケット アドレスを使用する <see cref="T:System.Net.EndPoint" /> インスタンス。</returns>
+      <param name="socketAddress">エンドポイントで使用する <see cref="T:System.Net.SocketAddress" />。</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="socketAddress" /> の AddressFamily は、現在のインスタンスの AddressFamily と同じではありません。または<paramref name="socketAddress" /> .Size &lt; 8。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="socketAddress" /> パラメーターが null です。</exception>
+    </member>
+    <member name="M:System.Net.IPEndPoint.Equals(System.Object)">
+      <summary>指定した <see cref="T:System.Object" /> が現在の <see cref="T:System.Net.IPEndPoint" /> インスタンスと等しいかどうかを判断します。</summary>
+      <returns>2 つの IP エンドポイントが等しい場合は true。それ以外の場合は false。</returns>
+      <param name="comparand">現在の <see cref="T:System.Net.IPEndPoint" /> インスタンスと等しいかどうかをテストするために指定した <see cref="T:System.Object" />。</param>
+    </member>
+    <member name="M:System.Net.IPEndPoint.GetHashCode">
+      <summary>IP エンドポイントのハッシュ値を返します。</summary>
+      <returns>IP エンドポイントの整数のハッシュ値。</returns>
+    </member>
+    <member name="F:System.Net.IPEndPoint.MaxPort">
+      <summary>
+        <see cref="P:System.Net.IPEndPoint.Port" /> プロパティに割り当てることができる最大値を指定します。MaxPort 値は、0x0000FFFF に設定されます。このフィールドは読み取り専用です。</summary>
+    </member>
+    <member name="F:System.Net.IPEndPoint.MinPort">
+      <summary>
+        <see cref="P:System.Net.IPEndPoint.Port" /> プロパティに割り当てることができる最小値を指定します。このフィールドは読み取り専用です。</summary>
+    </member>
+    <member name="P:System.Net.IPEndPoint.Port">
+      <summary>エンドポイントのポート番号を取得または設定します。</summary>
+      <returns>エンドポイントのポート番号を示す <see cref="F:System.Net.IPEndPoint.MinPort" /> ～ <see cref="F:System.Net.IPEndPoint.MaxPort" /> の範囲の整数値。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">set 操作に指定された値が <see cref="F:System.Net.IPEndPoint.MinPort" /> より小さいか、<see cref="F:System.Net.IPEndPoint.MaxPort" /> を超えています。</exception>
+    </member>
+    <member name="M:System.Net.IPEndPoint.Serialize">
+      <summary>
+        <see cref="T:System.Net.SocketAddress" /> インスタンスに対してエンドポイント情報をシリアル化します。</summary>
+      <returns>エンドポイントのソケット アドレスを格納する <see cref="T:System.Net.SocketAddress" /> インスタンス。</returns>
+    </member>
+    <member name="M:System.Net.IPEndPoint.ToString">
+      <summary>指定したエンドポイントの IP アドレスとポート番号を返します。</summary>
+      <returns>指定したエンドポイントの IP アドレスとポート番号を含む文字列。</returns>
+    </member>
+    <member name="T:System.Net.IWebRequestCreate">
+      <summary>
+        <see cref="T:System.Net.WebRequest" /> インスタンスを作成するための基本インターフェイスを提供します。</summary>
+    </member>
+    <member name="M:System.Net.IWebRequestCreate.Create(System.Uri)">
+      <summary>
+        <see cref="T:System.Net.WebRequest" /> インスタンスを作成します。</summary>
+      <returns>
+        <see cref="T:System.Net.WebRequest" /> のインスタンス。</returns>
+      <param name="uri">Web リソースの URI (Uniform Resource Identifier)。</param>
+      <exception cref="T:System.NotSupportedException">
+        <paramref name="uri" /> で指定された要求スキームは、この <see cref="T:System.Net.IWebRequestCreate" /> のインスタンスではサポートされていません。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="uri" /> が null です。</exception>
+      <exception cref="T:System.Security.SecurityException">呼び出し元に、要求された URI に接続するためのアクセス許可、または要求のリダイレクト先の URI に接続するためのアクセス許可がありません。</exception>
+      <exception cref="T:System.UriFormatException">
+        <paramref name="uri" /> で指定された URI が有効な URI ではありません。 </exception>
+    </member>
+    <member name="T:System.Net.NetworkCredential">
+      <summary>基本認証、ダイジェスト認証、NTLM 認証、Kerberos 認証などのパスワードに基づく認証方式の資格情報を提供します。</summary>
+    </member>
+    <member name="M:System.Net.NetworkCredential.#ctor">
+      <summary>
+        <see cref="T:System.Net.NetworkCredential" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:System.Net.NetworkCredential.#ctor(System.String,System.String)">
+      <summary>指定したユーザー名とパスワードを使用して、<see cref="T:System.Net.NetworkCredential" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="userName">資格情報に関連付けられたユーザー名。</param>
+      <param name="password">資格情報に関連付けられたユーザー名のパスワード。</param>
+    </member>
+    <member name="M:System.Net.NetworkCredential.#ctor(System.String,System.String,System.String)">
+      <summary>指定したユーザー名、パスワード、およびドメインを使用して、<see cref="T:System.Net.NetworkCredential" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="userName">資格情報に関連付けられたユーザー名。</param>
+      <param name="password">資格情報に関連付けられたユーザー名のパスワード。</param>
+      <param name="domain">資格情報に関連付けられたドメイン。</param>
+    </member>
+    <member name="P:System.Net.NetworkCredential.Domain">
+      <summary>資格情報を検証するドメイン名またはコンピューター名を取得または設定します。</summary>
+      <returns>資格情報に関連付けられたドメインの名前。</returns>
+    </member>
+    <member name="M:System.Net.NetworkCredential.GetCredential(System.Uri,System.String)">
+      <summary>指定した URI (Uniform Resource Identifier) と認証の種類用に <see cref="T:System.Net.NetworkCredential" /> クラスのインスタンスを返します。</summary>
+      <returns>
+        <see cref="T:System.Net.NetworkCredential" /> オブジェクト。</returns>
+      <param name="uri">クライアントが認証を提供する URI。</param>
+      <param name="authType">要求された認証の種類を指定する文字列。</param>
+    </member>
+    <member name="P:System.Net.NetworkCredential.Password">
+      <summary>資格情報に関連付けられたユーザー名のパスワードを取得または設定します。</summary>
+      <returns>資格情報に関連付けられたパスワード。</returns>
+    </member>
+    <member name="P:System.Net.NetworkCredential.UserName">
+      <summary>資格情報に関連付けられたユーザー名を取得または設定します。</summary>
+      <returns>資格情報に関連付けられたユーザー名。</returns>
+    </member>
+    <member name="T:System.Net.OpenReadCompletedEventArgs">
+      <summary>
+        <see cref="E:System.Net.WebClient.OpenReadCompleted" /> イベントのデータを提供します。</summary>
+    </member>
+    <member name="P:System.Net.OpenReadCompletedEventArgs.Result">
+      <summary>
+        <see cref="M:System.Net.WebClient.OpenReadAsync(System.Uri,System.Object)" /> メソッドの結果を格納している読み取り可能なストリームを取得します。</summary>
+      <returns>
+        <see cref="M:System.Net.WebClient.OpenReadAsync(System.Uri,System.Object)" /> メソッドの結果を含む <see cref="T:System.IO.Stream" />。</returns>
+      <exception cref="T:System.InvalidOperationException">非同期要求がキャンセルされました。 </exception>
+    </member>
+    <member name="T:System.Net.OpenReadCompletedEventHandler">
+      <summary>
+        <see cref="T:System.Net.WebClient" /> の <see cref="M:System.Net.WebClient.OpenReadAsync(System.Uri)" /> イベントを処理するメソッドを表します。</summary>
+      <param name="sender">イベントのソース。</param>
+      <param name="e">イベント データを格納している <see cref="T:System.Net.OpenReadCompletedEventArgs" />。 </param>
+    </member>
+    <member name="T:System.Net.OpenWriteCompletedEventArgs">
+      <summary>
+        <see cref="E:System.Net.WebClient.OpenWriteCompleted" /> イベントのデータを提供します。</summary>
+    </member>
+    <member name="P:System.Net.OpenWriteCompletedEventArgs.Result">
+      <summary>データをサーバーに送信するために使用される書き込み可能なストリームを取得します。</summary>
+      <returns>アップロードされるデータを書き込むことができる <see cref="T:System.IO.Stream" />。</returns>
+      <exception cref="T:System.InvalidOperationException">非同期要求がキャンセルされました。 </exception>
+    </member>
+    <member name="T:System.Net.OpenWriteCompletedEventHandler">
+      <summary>
+        <see cref="T:System.Net.WebClient" /> の <see cref="E:System.Net.WebClient.OpenWriteCompleted" /> イベントを処理するメソッドを表します。</summary>
+      <param name="sender">イベントのソース。</param>
+      <param name="e">イベント データを格納している <see cref="T:System.Net.OpenWriteCompletedEventArgs" />。</param>
+    </member>
+    <member name="T:System.Net.ProtocolViolationException">
+      <summary>ネットワーク プロトコルの使用中にエラーが発生した場合にスローされる例外。</summary>
+    </member>
+    <member name="M:System.Net.ProtocolViolationException.#ctor">
+      <summary>
+        <see cref="T:System.Net.ProtocolViolationException" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:System.Net.ProtocolViolationException.#ctor(System.String)">
+      <summary>指定したメッセージを使用して、<see cref="T:System.Net.ProtocolViolationException" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="message">エラー メッセージ文字列。</param>
+    </member>
+    <member name="T:System.Net.SocketAddress">
+      <summary>
+        <see cref="T:System.Net.EndPoint" /> 派生クラスからシリアル化された情報を格納します。</summary>
+    </member>
+    <member name="M:System.Net.SocketAddress.#ctor(System.Net.Sockets.AddressFamily)">
+      <summary>指定したアドレス ファミリの <see cref="T:System.Net.SocketAddress" /> クラスの新しいインスタンスを作成します。</summary>
+      <param name="family">
+        <see cref="T:System.Net.Sockets.AddressFamily" /> 列挙値。</param>
+    </member>
+    <member name="M:System.Net.SocketAddress.#ctor(System.Net.Sockets.AddressFamily,System.Int32)">
+      <summary>指定したアドレス ファミリとバッファー サイズを使用して、<see cref="T:System.Net.SocketAddress" /> クラスの新しいインスタンスを作成します。</summary>
+      <param name="family">
+        <see cref="T:System.Net.Sockets.AddressFamily" /> 列挙値。</param>
+      <param name="size">
+        <see cref="P:System.Net.SocketAddress.Size" /> プロパティに設定する値。基になるバッファーに割り当てるバイト数に影響します。</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="size" /> が 2 より小さい値です。<paramref name="family" /> の保存には 2 バイトが必要です。</exception>
+    </member>
+    <member name="M:System.Net.SocketAddress.Equals(System.Object)">
+      <summary>指定した <see cref="T:System.Object" /> が現在の <see cref="T:System.Net.SocketAddress" /> インスタンスと等しいかどうかを判断します。</summary>
+      <returns>2 つの <see cref="T:System.Net.SocketAddress" /> インスタンスが等しい場合は true。それ以外の場合は false。</returns>
+      <param name="comparand">現在の <see cref="T:System.Net.SocketAddress" /> インスタンスと比較する指定された <see cref="T:System.Object" />。</param>
+    </member>
+    <member name="P:System.Net.SocketAddress.Family">
+      <summary>現在の <see cref="T:System.Net.SocketAddress" /> の <see cref="T:System.Net.Sockets.AddressFamily" /> 列挙値を取得します。</summary>
+      <returns>
+        <see cref="T:System.Net.Sockets.AddressFamily" /> 列挙値の 1 つ。</returns>
+    </member>
+    <member name="M:System.Net.SocketAddress.GetHashCode">
+      <summary>
+        <see cref="T:System.Net.SocketAddress" /> のハッシュ値を返します。</summary>
+      <returns>ソケット アドレスの整数ハッシュ値。</returns>
+    </member>
+    <member name="P:System.Net.SocketAddress.Item(System.Int32)">
+      <summary>基になるバッファーの指定したインデックス要素を取得または設定します。</summary>
+      <returns>基になるバッファーの指定したインデックス要素の値。</returns>
+      <param name="offset">要求されている情報の配列インデックス要素。</param>
+      <exception cref="T:System.IndexOutOfRangeException">指定されたインデックスがバッファーにありません (<paramref name="offset" /> が 0 より小さいか <see cref="P:System.Net.SocketAddress.Size" /> プロパティ以上です)。</exception>
+    </member>
+    <member name="P:System.Net.SocketAddress.Size">
+      <summary>
+        <see cref="T:System.Net.SocketAddress" /> に使用できるバッファー サイズを取得します。</summary>
+      <returns>
+        <see cref="T:System.Net.SocketAddress" /> に使用できるバッファー サイズ (バイト単位)。</returns>
+    </member>
+    <member name="M:System.Net.SocketAddress.ToString">
+      <summary>ソケット アドレスに関する情報を示す文字列を返します。</summary>
+      <returns>
+        <see cref="T:System.Net.SocketAddress" /> に関する情報を格納する文字列。</returns>
+    </member>
+    <member name="T:System.Net.UploadProgressChangedEventArgs">
+      <summary>
+        <see cref="T:System.Net.WebClient" /> の <see cref="E:System.Net.WebClient.UploadProgressChanged" /> イベントのデータを提供します。</summary>
+    </member>
+    <member name="P:System.Net.UploadProgressChangedEventArgs.BytesReceived">
+      <summary>受信するバイト数を取得します。</summary>
+      <returns>受信したバイト数を示す <see cref="T:System.Int64" /> 値。</returns>
+    </member>
+    <member name="P:System.Net.UploadProgressChangedEventArgs.BytesSent">
+      <summary>送信されたバイト数を取得します。</summary>
+      <returns>送信されたバイト数を示す <see cref="T:System.Int64" /> 値。</returns>
+    </member>
+    <member name="P:System.Net.UploadProgressChangedEventArgs.TotalBytesToReceive">
+      <summary>
+        <see cref="T:System.Net.WebClient" /> データのアップロード操作の総バイト数を取得します。</summary>
+      <returns>受信するバイト数を示す <see cref="T:System.Int64" /> 値。</returns>
+    </member>
+    <member name="P:System.Net.UploadProgressChangedEventArgs.TotalBytesToSend">
+      <summary>送信する総バイト数を取得します。</summary>
+      <returns>送信するバイト数を示す <see cref="T:System.Int64" /> 値。</returns>
+    </member>
+    <member name="T:System.Net.UploadProgressChangedEventHandler">
+      <summary>
+        <see cref="T:System.Net.WebClient" /> の <see cref="E:System.Net.WebClient.UploadProgressChanged" /> イベントを処理するメソッドを表します。</summary>
+      <param name="sender">イベントのソース。</param>
+      <param name="e">イベント データを格納している <see cref="T:System.Net.UploadProgressChangedEventArgs" />。</param>
+    </member>
+    <member name="T:System.Net.UploadStringCompletedEventArgs">
+      <summary>
+        <see cref="E:System.Net.WebClient.UploadStringCompleted" /> イベントのデータを提供します。</summary>
+    </member>
+    <member name="P:System.Net.UploadStringCompletedEventArgs.Result">
+      <summary>
+        <see cref="Overload:System.Net.WebClient.UploadStringAsync" /> メソッドを呼び出すことによって開始された文字列アップロード操作へのサーバー応答を取得します。</summary>
+      <returns>サーバー応答を格納している <see cref="T:System.Byte" /> 配列。</returns>
+      <exception cref="T:System.InvalidOperationException">非同期要求がキャンセルされました。 </exception>
+    </member>
+    <member name="T:System.Net.UploadStringCompletedEventHandler">
+      <summary>
+        <see cref="T:System.Net.WebClient" /> の <see cref="E:System.Net.WebClient.UploadStringCompleted" /> イベントを処理するメソッドを表します。</summary>
+      <param name="sender">イベントのソース。</param>
+      <param name="e">イベント データを格納している <see cref="T:System.Net.UploadStringCompletedEventArgs" />。</param>
+    </member>
+    <member name="T:System.Net.WebClient">
+      <summary>URI で識別されるリソースとの間でデータを送受信するための共通のメソッドが用意されています。</summary>
+    </member>
+    <member name="M:System.Net.WebClient.#ctor">
+      <summary>
+        <see cref="T:System.Net.WebClient" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="P:System.Net.WebClient.AllowReadStreamBuffering">
+      <summary>
+        <see cref="T:System.Net.WebClient" /> インスタンスのインターネット リソースから読み取ったデータをバッファーするかどうかを示す値を取得または設定します。</summary>
+      <returns>インターネット リソースから受信したデータのバッファー処理を有効にする場合は true。無効にする場合は false。既定値は true です。</returns>
+    </member>
+    <member name="P:System.Net.WebClient.AllowWriteStreamBuffering">
+      <summary>
+        <see cref="T:System.Net.WebClient" /> インスタンスのインターネット リソースに書き込んだデータをバッファーするかどうかを示す値を取得または設定します。</summary>
+      <returns>インターネット リソースに書き込まれたデータのバッファーリングを有効にする場合は true。無効にする場合は false。既定値は true です。</returns>
+    </member>
+    <member name="P:System.Net.WebClient.BaseAddress">
+      <summary>
+        <see cref="T:System.Net.WebClient" /> で作成された要求のベース URI を取得または設定します。</summary>
+      <returns>
+        <see cref="T:System.Net.WebClient" /> によって行われる要求の基本 URI。ベース アドレスが指定されていない場合は、<see cref="P:System.Net.WebClient.BaseAddress" /> プロパティが、アプリケーションの発信元、つまり、Windows Phone XAP の絶対 URI に初期化されます。..</returns>
+      <exception cref="T:System.ArgumentException">
+        <see cref="P:System.Net.WebClient.BaseAddress" /> が無効な URI に設定されています。この内部例外には、エラーの特定に役立つ情報が含まれている場合があります。</exception>
+    </member>
+    <member name="M:System.Net.WebClient.CancelAsync">
+      <summary>保留中の非同期操作をキャンセルします。</summary>
+      <exception cref="T:System.OutOfMemoryException">プログラムの実行の継続に十分なメモリがありません。</exception>
+      <exception cref="T:System.StackOverflowException">ネストされたメソッド呼び出しが多く含まれすぎているため、実行スタックがオーバーフローしました。</exception>
+      <exception cref="T:System.Threading.ThreadAbortException">スレッドを破棄する <see cref="M:System.Threading.Thread.Abort" /> メソッドが呼び出されています。</exception>
+    </member>
+    <member name="P:System.Net.WebClient.Credentials">
+      <summary>ホストに送信し、要求の認証に使用するネットワーク資格情報を取得または設定します。</summary>
+      <returns>要求の認証資格情報を格納している <see cref="T:System.Net.ICredentials" />。既定値は null です。</returns>
+    </member>
+    <member name="E:System.Net.WebClient.DownloadProgressChanged">
+      <summary>非同期ダウンロード操作で、データの一部またはすべてが正常に転送された場合に発生します。</summary>
+    </member>
+    <member name="M:System.Net.WebClient.DownloadStringAsync(System.Uri)">
+      <summary>指定した <see cref="T:System.Uri" /> にあるリソースを文字列としてダウンロードします。</summary>
+      <param name="address">ダウンロードされるリソースの場所。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> パラメーターが null です。</exception>
+      <exception cref="T:System.OutOfMemoryException">プログラムの実行の継続に十分なメモリがありません。</exception>
+      <exception cref="T:System.StackOverflowException">ネストされたメソッド呼び出しが多く含まれすぎているため、実行スタックがオーバーフローしました。</exception>
+      <exception cref="T:System.Threading.ThreadAbortException">スレッドを破棄する <see cref="M:System.Threading.Thread.Abort" /> メソッドが呼び出されています。</exception>
+    </member>
+    <member name="M:System.Net.WebClient.DownloadStringAsync(System.Uri,System.Object)">
+      <summary>指定した <see cref="T:System.Uri" /> にあるリソースを文字列としてダウンロードします。</summary>
+      <param name="address">ダウンロードされるリソースの場所。</param>
+      <param name="userToken">非同期タスクにユーザー指定の識別子を提供します。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> パラメーターが null です。</exception>
+      <exception cref="T:System.OutOfMemoryException">プログラムの実行の継続に十分なメモリがありません。</exception>
+      <exception cref="T:System.StackOverflowException">ネストされたメソッド呼び出しが多く含まれすぎているため、実行スタックがオーバーフローしました。</exception>
+      <exception cref="T:System.Threading.ThreadAbortException">スレッドを破棄する <see cref="M:System.Threading.Thread.Abort" /> メソッドが呼び出されています。</exception>
+    </member>
+    <member name="E:System.Net.WebClient.DownloadStringCompleted">
+      <summary>非同期のリソース ダウンロード操作の完了時に発生します。</summary>
+    </member>
+    <member name="P:System.Net.WebClient.Encoding">
+      <summary>文字列のアップロードとダウンロードに使用する <see cref="T:System.Text.Encoding" /> を取得または設定します。</summary>
+      <returns>文字列のエンコードに使用する <see cref="T:System.Text.Encoding" />。このプロパティの既定値は <see cref="P:System.Text.Encoding.UTF8" /> です。</returns>
+      <exception cref="T:System.ArgumentNullException">このプロパティを設定するために null 値が渡されました。</exception>
+    </member>
+    <member name="M:System.Net.WebClient.GetWebRequest(System.Uri)">
+      <summary>指定したリソースの <see cref="T:System.Net.WebRequest" /> オブジェクトを返します。</summary>
+      <returns>指定したリソースの新しい <see cref="T:System.Net.WebRequest" /> オブジェクト。</returns>
+      <param name="address">要求するリソースを識別する <see cref="T:System.Uri" />。</param>
+    </member>
+    <member name="M:System.Net.WebClient.GetWebResponse(System.Net.WebRequest,System.IAsyncResult)">
+      <summary>指定した <see cref="T:System.IAsyncResult" /> を使用して、指定した <see cref="T:System.Net.WebRequest" /> の <see cref="T:System.Net.WebResponse" /> を返します。</summary>
+      <returns>指定した <see cref="T:System.Net.WebRequest" /> の応答を格納している <see cref="T:System.Net.WebResponse" />。</returns>
+      <param name="request">応答の取得に使用する <see cref="T:System.Net.WebRequest" />。</param>
+      <param name="result">
+        <see cref="M:System.Net.WebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" /> の以前の呼び出しから取得した <see cref="T:System.IAsyncResult" /> オブジェクト。</param>
+    </member>
+    <member name="P:System.Net.WebClient.Headers">
+      <summary>要求に関連付けられているヘッダーの名前/値ペアのコレクションを取得または設定します。</summary>
+      <returns>要求に関連付けられているヘッダーの名前/値ペアを格納する <see cref="T:System.Net.WebHeaderCollection" />。</returns>
+    </member>
+    <member name="P:System.Net.WebClient.IsBusy">
+      <summary>Web 要求が進行中であるかどうかを示す値を取得します。</summary>
+      <returns>Web 要求が進行中である場合は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="M:System.Net.WebClient.OnDownloadProgressChanged(System.Net.DownloadProgressChangedEventArgs)">
+      <summary>
+        <see cref="E:System.Net.WebClient.DownloadProgressChanged" /> イベントを発生させます。</summary>
+      <param name="e">イベント データを格納している <see cref="T:System.Net.DownloadProgressChangedEventArgs" /> オブジェクト。</param>
+    </member>
+    <member name="M:System.Net.WebClient.OnDownloadStringCompleted(System.Net.DownloadStringCompletedEventArgs)">
+      <summary>
+        <see cref="E:System.Net.WebClient.DownloadStringCompleted" /> イベントを発生させます。</summary>
+      <param name="e">イベント データを格納している <see cref="T:System.Net.DownloadStringCompletedEventArgs" /> オブジェクト。</param>
+    </member>
+    <member name="M:System.Net.WebClient.OnOpenReadCompleted(System.Net.OpenReadCompletedEventArgs)">
+      <summary>
+        <see cref="E:System.Net.WebClient.OpenReadCompleted" /> イベントを発生させます。</summary>
+      <param name="e">イベント データを格納している <see cref="T:System.Net.OpenReadCompletedEventArgs" /> オブジェクト。</param>
+    </member>
+    <member name="M:System.Net.WebClient.OnOpenWriteCompleted(System.Net.OpenWriteCompletedEventArgs)">
+      <summary>
+        <see cref="E:System.Net.WebClient.OpenWriteCompleted" /> イベントを発生させます。</summary>
+      <param name="e">イベント データを格納している <see cref="T:System.Net.OpenWriteCompletedEventArgs" /> オブジェクト。</param>
+    </member>
+    <member name="M:System.Net.WebClient.OnUploadProgressChanged(System.Net.UploadProgressChangedEventArgs)">
+      <summary>
+        <see cref="E:System.Net.WebClient.UploadProgressChanged" /> イベントを発生させます。</summary>
+      <param name="e">イベント データを格納している <see cref="T:System.Net.UploadProgressChangedEventArgs" /> オブジェクト。</param>
+    </member>
+    <member name="M:System.Net.WebClient.OnUploadStringCompleted(System.Net.UploadStringCompletedEventArgs)">
+      <summary>
+        <see cref="E:System.Net.WebClient.UploadStringCompleted" /> イベントを発生させます。</summary>
+      <param name="e">イベント データを格納している <see cref="T:System.Net.UploadStringCompletedEventArgs" /> オブジェクト。</param>
+    </member>
+    <member name="M:System.Net.WebClient.OnWriteStreamClosed(System.Net.WriteStreamClosedEventArgs)">
+      <summary>
+        <see cref="E:System.Net.WebClient.WriteStreamClosed" /> イベントを発生させます。</summary>
+      <param name="e">イベント データを格納している <see cref="T:System.Net.WriteStreamClosedEventArgs" /> オブジェクト。</param>
+    </member>
+    <member name="M:System.Net.WebClient.OpenReadAsync(System.Uri)">
+      <summary>指定されたリソースへの読み取り可能なストリームを開きます。</summary>
+      <param name="address">ダウンロードされるリソースの場所。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> パラメーターが null です。</exception>
+      <exception cref="T:System.OutOfMemoryException">プログラムの実行の継続に十分なメモリがありません。</exception>
+      <exception cref="T:System.StackOverflowException">ネストされたメソッド呼び出しが多く含まれすぎているため、実行スタックがオーバーフローしました。</exception>
+      <exception cref="T:System.Threading.ThreadAbortException">スレッドを破棄する <see cref="M:System.Threading.Thread.Abort" /> メソッドが呼び出されています。</exception>
+    </member>
+    <member name="M:System.Net.WebClient.OpenReadAsync(System.Uri,System.Object)">
+      <summary>指定されたリソースへの読み取り可能なストリームを開きます。</summary>
+      <param name="address">ダウンロードされるリソースの場所。</param>
+      <param name="userToken">非同期タスクにユーザー指定の識別子を提供します。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> パラメーターが null です。</exception>
+      <exception cref="T:System.OutOfMemoryException">プログラムの実行の継続に十分なメモリがありません。</exception>
+      <exception cref="T:System.StackOverflowException">ネストされたメソッド呼び出しが多く含まれすぎているため、実行スタックがオーバーフローしました。</exception>
+      <exception cref="T:System.Threading.ThreadAbortException">スレッドを破棄する <see cref="M:System.Threading.Thread.Abort" /> メソッドが呼び出されています。</exception>
+    </member>
+    <member name="E:System.Net.WebClient.OpenReadCompleted">
+      <summary>非同期のリソース読み取り操作が完了すると発生します。</summary>
+    </member>
+    <member name="M:System.Net.WebClient.OpenWriteAsync(System.Uri)">
+      <summary>指定したリソースにデータを書き込むためのストリームを開きます。このメソッドは、呼び出し元のスレッドをブロックしません。</summary>
+      <param name="address">データを受信するリソースの URI。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> パラメーターが null です。</exception>
+      <exception cref="T:System.OutOfMemoryException">プログラムの実行の継続に十分なメモリがありません。</exception>
+      <exception cref="T:System.StackOverflowException">ネストされたメソッド呼び出しが多く含まれすぎているため、実行スタックがオーバーフローしました。</exception>
+      <exception cref="T:System.Threading.ThreadAbortException">スレッドを破棄する <see cref="M:System.Threading.Thread.Abort" /> メソッドが呼び出されています。</exception>
+    </member>
+    <member name="M:System.Net.WebClient.OpenWriteAsync(System.Uri,System.String)">
+      <summary>指定したリソースにデータを書き込むためのストリームを開きます。このメソッドは、呼び出し元のスレッドをブロックしません。</summary>
+      <param name="address">データを受信するリソースの URI。</param>
+      <param name="method">リソースにデータを送信するために使用するメソッド。null の場合、HTTP の POST が既定で使用されます。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> パラメーターが null です。</exception>
+      <exception cref="T:System.OutOfMemoryException">プログラムの実行の継続に十分なメモリがありません。</exception>
+      <exception cref="T:System.StackOverflowException">ネストされたメソッド呼び出しが多く含まれすぎているため、実行スタックがオーバーフローしました。</exception>
+      <exception cref="T:System.Threading.ThreadAbortException">スレッドを破棄する <see cref="M:System.Threading.Thread.Abort" /> メソッドが呼び出されています。</exception>
+    </member>
+    <member name="M:System.Net.WebClient.OpenWriteAsync(System.Uri,System.String,System.Object)">
+      <summary>指定したメソッドを使用して、指定したリソースにデータを書き込むためのストリームを開きます。このメソッドは、呼び出し元のスレッドをブロックしません。</summary>
+      <param name="address">データを受信するリソースの URI。</param>
+      <param name="method">リソースにデータを送信するために使用するメソッド。null の場合、HTTP の POST が既定で使用されます。</param>
+      <param name="userToken">非同期操作の完了時に呼び出されるメソッドに渡されるユーザー定義のオブジェクト。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> パラメーターが null です。</exception>
+      <exception cref="T:System.OutOfMemoryException">プログラムの実行の継続に十分なメモリがありません。</exception>
+      <exception cref="T:System.StackOverflowException">ネストされたメソッド呼び出しが多く含まれすぎているため、実行スタックがオーバーフローしました。</exception>
+      <exception cref="T:System.Threading.ThreadAbortException">スレッドを破棄する <see cref="M:System.Threading.Thread.Abort" /> メソッドが呼び出されています。</exception>
+      <exception cref="T:System.Net.WebException">
+        <see cref="P:System.Net.WebClient.BaseAddress" /> および <paramref name="address" /> を組み合わせて形成された URI が無効です。またはストリームを開くときにエラーが発生しました。</exception>
+    </member>
+    <member name="E:System.Net.WebClient.OpenWriteCompleted">
+      <summary>リソースにデータを書き込むためにストリームを開く非同期操作の完了時に発生します。</summary>
+    </member>
+    <member name="P:System.Net.WebClient.ResponseHeaders">
+      <summary>応答に関連付けられているヘッダーの名前/値ペアのコレクションを取得します。</summary>
+      <returns>応答に関連付けられているヘッダーの名前/値のペアを格納している <see cref="T:System.Net.WebHeaderCollection" />。応答を受信しなかった場合は null。</returns>
+    </member>
+    <member name="E:System.Net.WebClient.UploadProgressChanged">
+      <summary>非同期アップロード操作で、データの一部またはすべてが正常に送信された場合に発生します。</summary>
+    </member>
+    <member name="M:System.Net.WebClient.UploadStringAsync(System.Uri,System.String)">
+      <summary>指定したリソースに指定した文字列をアップロードします。このメソッドは、呼び出し元のスレッドをブロックしません。</summary>
+      <param name="address">ファイルを受信するリソースの URI。HTTP リソースの場合、この URI は POST メソッドを使用して送信される要求を受け入れることができるリソース (スクリプトや ASP ページなど) を識別するものであることが必要です。</param>
+      <param name="data">アップロードされる文字列。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> パラメーターが null です。または<paramref name="data" /> が null です。</exception>
+      <exception cref="T:System.OutOfMemoryException">プログラムの実行の継続に十分なメモリがありません。</exception>
+      <exception cref="T:System.StackOverflowException">ネストされたメソッド呼び出しが多く含まれすぎているため、実行スタックがオーバーフローしました。</exception>
+      <exception cref="T:System.Threading.ThreadAbortException">スレッドを破棄する <see cref="M:System.Threading.Thread.Abort" /> メソッドが呼び出されています。</exception>
+      <exception cref="T:System.Net.WebException">
+        <see cref="P:System.Net.WebClient.BaseAddress" /> および <paramref name="address" /> を組み合わせて形成された URI が無効です。またはリソースをホストしているサーバーから応答がありませんでした。</exception>
+    </member>
+    <member name="M:System.Net.WebClient.UploadStringAsync(System.Uri,System.String,System.String)">
+      <summary>指定したリソースに指定した文字列をアップロードします。このメソッドは、呼び出し元のスレッドをブロックしません。</summary>
+      <param name="address">ファイルを受信するリソースの URI。HTTP リソースの場合、この URI は POST メソッドを使用して送信される要求を受け入れることができるリソース (スクリプトや ASP ページなど) を識別するものであることが必要です。</param>
+      <param name="method">リソースにファイルを送信するために使用する HTTP メソッド。null の場合、HTTP の POST が既定で使用されます。</param>
+      <param name="data">アップロードされる文字列。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> パラメーターが null です。または<paramref name="data" /> が null です。</exception>
+      <exception cref="T:System.OutOfMemoryException">プログラムの実行の継続に十分なメモリがありません。</exception>
+      <exception cref="T:System.StackOverflowException">ネストされたメソッド呼び出しが多く含まれすぎているため、実行スタックがオーバーフローしました。</exception>
+      <exception cref="T:System.Threading.ThreadAbortException">スレッドを破棄する <see cref="M:System.Threading.Thread.Abort" /> メソッドが呼び出されています。</exception>
+      <exception cref="T:System.Net.WebException">
+        <see cref="P:System.Net.WebClient.BaseAddress" /> および <paramref name="address" /> を組み合わせて形成された URI が無効です。またはリソースをホストしているサーバーから応答がありませんでした。</exception>
+    </member>
+    <member name="M:System.Net.WebClient.UploadStringAsync(System.Uri,System.String,System.String,System.Object)">
+      <summary>指定したリソースに指定した文字列をアップロードします。このメソッドは、呼び出し元のスレッドをブロックしません。</summary>
+      <param name="address">ファイルを受信するリソースの URI。HTTP リソースの場合、この URI は POST メソッドを使用して送信される要求を受け入れることができるリソース (スクリプトや ASP ページなど) を識別するものであることが必要です。</param>
+      <param name="method">リソースにファイルを送信するために使用する HTTP メソッド。null の場合、HTTP の POST が既定で使用されます。</param>
+      <param name="data">アップロードされる文字列。</param>
+      <param name="userToken">非同期操作の完了時に呼び出されるメソッドに渡されるユーザー定義のオブジェクト。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> パラメーターが null です。または<paramref name="data" /> が null です。</exception>
+      <exception cref="T:System.OutOfMemoryException">プログラムの実行の継続に十分なメモリがありません。</exception>
+      <exception cref="T:System.StackOverflowException">ネストされたメソッド呼び出しが多く含まれすぎているため、実行スタックがオーバーフローしました。</exception>
+      <exception cref="T:System.Threading.ThreadAbortException">スレッドを破棄する <see cref="M:System.Threading.Thread.Abort" /> メソッドが呼び出されています。</exception>
+      <exception cref="T:System.Net.WebException">
+        <see cref="P:System.Net.WebClient.BaseAddress" /> および <paramref name="address" /> を組み合わせて形成された URI が無効です。またはリソースをホストしているサーバーから応答がありませんでした。</exception>
+    </member>
+    <member name="E:System.Net.WebClient.UploadStringCompleted">
+      <summary>非同期の文字列アップロード操作の完了時に発生します。</summary>
+    </member>
+    <member name="P:System.Net.WebClient.UseDefaultCredentials">
+      <summary>既定の資格情報が要求と共に送信されるかどうかを制御する <see cref="T:System.Boolean" /> 値を取得または設定します。</summary>
+      <returns>既定の資格情報が使用される場合は true。それ以外の場合は false。既定値は true です。</returns>
+    </member>
+    <member name="E:System.Net.WebClient.WriteStreamClosed">
+      <summary>非同期の書き込みストリーム操作が完了すると発生します。</summary>
+    </member>
+    <member name="T:System.Net.WebException">
+      <summary>プラグ可能プロトコルによるネットワークへのアクセスでエラーが発生した場合にスローされる例外。</summary>
+    </member>
+    <member name="M:System.Net.WebException.#ctor">
+      <summary>
+        <see cref="T:System.Net.WebException" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:System.Net.WebException.#ctor(System.String)">
+      <summary>指定したエラー メッセージを使用して、<see cref="T:System.Net.WebException" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="message">エラー メッセージのテキスト。</param>
+    </member>
+    <member name="M:System.Net.WebException.#ctor(System.String,System.Exception)">
+      <summary>指定したエラー メッセージと入れ子になった例外を使用して、<see cref="T:System.Net.WebException" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="message">エラー メッセージのテキスト。</param>
+      <param name="innerException">入れ子になった例外。</param>
+    </member>
+    <member name="M:System.Net.WebException.#ctor(System.String,System.Exception,System.Net.WebExceptionStatus,System.Net.WebResponse)">
+      <summary>指定したエラー メッセージ、入れ子になった例外、ステータス、および応答を使用して、<see cref="T:System.Net.WebException" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="message">エラー メッセージのテキスト。</param>
+      <param name="status">
+        <see cref="T:System.Net.WebExceptionStatus" /> 値の 1 つ。</param>
+      <param name="response">リモート ホストからの応答を格納する <see cref="T:System.Net.WebResponse" /> インスタンス。</param>
+    </member>
+    <member name="M:System.Net.WebException.#ctor(System.String,System.Net.WebExceptionStatus)">
+      <summary>指定したエラー メッセージとステータスを使用して、<see cref="T:System.Net.WebException" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="message">エラー メッセージのテキスト。</param>
+      <param name="status">
+        <see cref="T:System.Net.WebExceptionStatus" /> 値の 1 つ。</param>
+    </member>
+    <member name="P:System.Net.WebException.Response">
+      <summary>リモート ホストが返す応答を取得します。</summary>
+      <returns>インターネット リソースから応答がある場合は、インターネット リソースからのエラー応答を格納した <see cref="T:System.Net.WebResponse" /> インスタンス。それ以外の場合は null。</returns>
+    </member>
+    <member name="P:System.Net.WebException.Status">
+      <summary>応答の状態を取得します。</summary>
+      <returns>
+        <see cref="T:System.Net.WebExceptionStatus" /> 値の 1 つ。</returns>
+    </member>
+    <member name="T:System.Net.WebExceptionStatus">
+      <summary>
+        <see cref="T:System.Net.WebException" /> クラスのステータス コードを定義します。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.Success">
+      <summary>エラーは発生しませんでした。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.NameResolutionFailure">
+      <summary>名前解決サービスがホスト名を解決できませんでした。サポートされていません。Windows Phone 内に存在します。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.ConnectFailure">
+      <summary>トランスポート レベルで、リモート サービス ポイントと通信できませんでした。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.ReceiveFailure">
+      <summary>リモート サーバーから完全な応答が受信されませんでした。サポートされていません。Windows Phone 内に存在します。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.SendFailure">
+      <summary>完全な要求をリモート サーバーに送信できませんでした。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.PipelineFailure">
+      <summary>要求がパイプライン処理された要求で、応答の受信前に接続が閉じられました。サポートされていません。Windows Phone 内に存在します。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.RequestCanceled">
+      <summary>要求がキャンセルされたか、<see cref="M:System.Net.WebRequest.Abort" /> メソッドが呼び出されたか、または分類できないエラーが発生しました。これは <see cref="P:System.Net.WebException.Status" /> の既定値です。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.ProtocolError">
+      <summary>サーバーから受信した応答は完了しましたが、プロトコルレベルのエラーを示しています。たとえば、"401 アクセス拒否" などの HTTP プロトコル エラーは、このステータスを使用します。サポートされていません。Windows Phone 内に存在します。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.ConnectionClosed">
+      <summary>接続を終了するのが早すぎました。サポートされていません。Windows Phone 内に存在します。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.TrustFailure">
+      <summary>サーバー証明書を検証できませんでした。サポートされていません。Windows Phone 内に存在します。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.SecureChannelFailure">
+      <summary>SSL を使用して接続を確立する際にエラーが発生しました。サポートされていません。Windows Phone 内に存在します。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.ServerProtocolViolation">
+      <summary>サーバー応答が有効な HTTP 応答ではありません。サポートされていません。Windows Phone 内に存在します。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.KeepAliveFailure">
+      <summary>Keep-alive ヘッダーを指定する要求のための接続が予期せずに閉じられました。サポートされていません。Windows Phone 内に存在します。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.Pending">
+      <summary>内部非同期要求が保留中です。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.Timeout">
+      <summary>要求のタイムアウト時間中に応答が受信されませんでした。サポートされていません。Windows Phone 内に存在します。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.ProxyNameResolutionFailure">
+      <summary>名前解決サービスがプロキシ ホスト名を解決できませんでした。サポートされていません。Windows Phone 内に存在します。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.UnknownError">
+      <summary>未知の種類の例外が発生しました。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.MessageLengthLimitExceeded">
+      <summary>サーバーに要求を送信、またはサーバーからの応答を受信しているときに、制限長を超えるメッセージが渡されました。</summary>
+    </member>
+    <member name="T:System.Net.WebHeaderCollection">
+      <summary>要求または応答に関連付けられたプロトコル ヘッダーを格納します。</summary>
+    </member>
+    <member name="M:System.Net.WebHeaderCollection.#ctor">
+      <summary>
+        <see cref="T:System.Net.WebHeaderCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="P:System.Net.WebHeaderCollection.AllKeys">
+      <summary>要求に関連付けられているヘッダー名/値のペアのコレクションを取得または設定します。</summary>
+      <returns>要求に関連付けられたヘッダーの名前/値ペアを格納する <see cref="T:System.Net.WebHeaderCollection" />。</returns>
+    </member>
+    <member name="P:System.Net.WebHeaderCollection.Count">
+      <summary>コレクション内のヘッダーの数を取得します。</summary>
+      <returns>要求に関連付けられている <see cref="T:System.Net.WebHeaderCollection" /> のヘッダー数を示す <see cref="T:System.Int32" /></returns>
+    </member>
+    <member name="P:System.Net.WebHeaderCollection.Item(System.Net.HttpRequestHeader)">
+      <summary>指定された要求ヘッダーを取得または設定します。</summary>
+      <returns>指定したヘッダー値を格納している <see cref="T:System.String" /> インスタンス。</returns>
+      <param name="header">要求ヘッダーの値。</param>
+      <exception cref="T:System.InvalidOperationException">取得または設定操作で、<paramref name="header" /> パラメーターに指定された要求ヘッダーは制限付きヘッダーです。<see cref="T:System.Net.WebHeaderCollection" /> クラスでは、ユーザーはこの <see cref="T:System.Net.WebHeaderCollection" /> インスタンスでこの制限付きヘッダーのインスタンスの取得または設定を許可されていません。</exception>
+    </member>
+    <member name="P:System.Net.WebHeaderCollection.Item(System.String)">
+      <summary>指定された要求ヘッダーを取得または設定します。</summary>
+      <returns>指定したヘッダー値を格納している <see cref="T:System.String" /> インスタンス。</returns>
+      <param name="name">要求されたヘッダーの名前。</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="name" /> パラメーターに無効な文字が含まれています。または<see cref="T:System.Net.HttpWebRequest" /> オブジェクトに関連付けられた <see cref="T:System.Net.WebHeaderCollection" /> オブジェクトに対して制限付きヘッダーを設定しようとしました。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="name" /> パラメーターが null でした。</exception>
+      <exception cref="T:System.InvalidOperationException">取得または設定操作で、<paramref name="name" /> パラメーターに指定された要求ヘッダーは制限付きヘッダーです。<see cref="T:System.Net.WebHeaderCollection" /> クラスでは、ユーザーはこの <see cref="T:System.Net.WebHeaderCollection" /> インスタンスでこの制限付きヘッダーのインスタンスの取得または設定を許可されていません。</exception>
+    </member>
+    <member name="M:System.Net.WebHeaderCollection.System#Collections#IEnumerable#GetEnumerator">
+      <summary>
+        <see cref="T:System.Net.WebHeaderCollection" /> インスタンスを反復処理できる列挙子を返します。</summary>
+      <returns>
+        <see cref="T:System.Net.WebHeaderCollection" /> の <see cref="T:System.Collections.IEnumerator" />。</returns>
+    </member>
+    <member name="M:System.Net.WebHeaderCollection.ToString">
+      <summary>現在の <see cref="T:System.Net.WebHeaderCollection" /> を表す <see cref="T:System.String" /> を返します。</summary>
+      <returns>現在の <see cref="T:System.Net.WebHeaderCollection" /> を表す <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="T:System.Net.WebRequest">
+      <summary>Uniform Resource Identifier (URI) に対する要求を実行します。これは abstract クラスです。</summary>
+    </member>
+    <member name="M:System.Net.WebRequest.#ctor">
+      <summary>
+        <see cref="T:System.Net.WebRequest" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:System.Net.WebRequest.Abort">
+      <summary>要求を中断します。</summary>
+      <exception cref="T:System.NotImplementedException">メソッドが派生クラスでオーバーライドされていないのに、そのメソッドへのアクセスが試行されました。</exception>
+    </member>
+    <member name="M:System.Net.WebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)">
+      <summary>子孫クラスでオーバーライドされると、ストリームを要求するための非同期メソッドを提供します。</summary>
+      <returns>非同期の要求を参照する <see cref="T:System.IAsyncResult" />。</returns>
+      <param name="callback">
+        <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+      <param name="state">この非同期要求に関する状態情報を含むオブジェクト。</param>
+      <exception cref="T:System.NotImplementedException">メソッドが派生クラスでオーバーライドされていないのに、そのメソッドへのアクセスが試行されました。</exception>
+    </member>
+    <member name="M:System.Net.WebRequest.BeginGetResponse(System.AsyncCallback,System.Object)">
+      <summary>子孫クラスでオーバーライドされると、インターネット リソースの非同期要求を開始します。</summary>
+      <returns>非同期の要求を参照する <see cref="T:System.IAsyncResult" />。</returns>
+      <param name="callback">
+        <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+      <param name="state">この非同期要求に関する状態情報を含むオブジェクト。</param>
+      <exception cref="T:System.NotImplementedException">メソッドが派生クラスでオーバーライドされていないのに、そのメソッドへのアクセスが試行されました。</exception>
+    </member>
+    <member name="P:System.Net.WebRequest.ContentLength">
+      <summary>子孫クラスでオーバーライドされると、送信している要求データのコンテンツ長を取得または設定します。</summary>
+      <returns>送信している要求データのバイト数。</returns>
+    </member>
+    <member name="P:System.Net.WebRequest.ContentType">
+      <summary>子孫クラスでオーバーライドされると、送信している要求データのコンテンツ タイプを取得または設定します。</summary>
+      <returns>要求データのコンテンツ タイプ。</returns>
+      <exception cref="T:System.NotImplementedException">プロパティが派生クラスでオーバーライドされていないのに、そのプロパティの取得または設定が試行されました。</exception>
+    </member>
+    <member name="M:System.Net.WebRequest.Create(System.String)">
+      <summary>指定した URI スキーム用に新しい <see cref="T:System.Net.WebRequest" /> のインスタンスを初期化します。</summary>
+      <returns>特定の URI スキーム用の <see cref="T:System.Net.WebRequest" /> 派生クラス。</returns>
+      <param name="requestUriString">インターネット リソースを識別する URI 文字列。</param>
+      <exception cref="T:System.NotSupportedException">
+        <paramref name="requestUriString" /> で指定された要求スキームが登録されていません。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="requestUriString" /> が null です。</exception>
+      <exception cref="T:System.Security.SecurityException">呼び出し元に、要求された URI に接続するためのアクセス許可、または要求のリダイレクト先の URI に接続するためのアクセス許可がありません。</exception>
+      <exception cref="T:System.UriFormatException">
+        <paramref name="requestUriString" /> で指定された URI が有効な URI ではありません。</exception>
+    </member>
+    <member name="M:System.Net.WebRequest.Create(System.Uri)">
+      <summary>指定した URI スキーム用に新しい <see cref="T:System.Net.WebRequest" /> のインスタンスを初期化します。</summary>
+      <returns>特定の URI スキーム用の <see cref="T:System.Net.WebRequest" /> 派生クラス。</returns>
+      <param name="requestUri">要求されたリソースの URI を格納する <see cref="T:System.Uri" />。</param>
+      <exception cref="T:System.NotSupportedException">
+        <paramref name="requestUri" /> で指定された要求スキームが登録されていません。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="requestUri" /> が null です。</exception>
+      <exception cref="T:System.Security.SecurityException">呼び出し元に、要求された URI に接続するためのアクセス許可、または要求のリダイレクト先の URI に接続するためのアクセス許可がありません。</exception>
+    </member>
+    <member name="M:System.Net.WebRequest.CreateHttp(System.String)">
+      <summary>指定した URI 文字列用に新しい <see cref="T:System.Net.HttpWebRequest" /> インスタンスを初期化します。</summary>
+      <returns>指定された URI 文字列の <see cref="T:System.Net.HttpWebRequest" /> インスタンス。</returns>
+      <param name="requestUriString">インターネット リソースを識別する URI 文字列。</param>
+      <exception cref="T:System.NotSupportedException">
+        <paramref name="requestUriString" /> で指定された要求スキームは、http または https スキームです。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="requestUriString" /> が null です。</exception>
+      <exception cref="T:System.Security.SecurityException">呼び出し元に、要求された URI に接続するためのアクセス許可、または要求のリダイレクト先の URI に接続するためのアクセス許可がありません。</exception>
+      <exception cref="T:System.UriFormatException">
+        <paramref name="requestUriString" /> で指定された URI が有効な URI ではありません。</exception>
+    </member>
+    <member name="M:System.Net.WebRequest.CreateHttp(System.Uri)">
+      <summary>指定した URI 用に新しい <see cref="T:System.Net.HttpWebRequest" /> インスタンスを初期化します。</summary>
+      <returns>指定された URI 文字列の <see cref="T:System.Net.HttpWebRequest" /> インスタンス。</returns>
+      <param name="requestUri">インターネット リソースを識別する URI。</param>
+      <exception cref="T:System.NotSupportedException">
+        <paramref name="requestUri" /> で指定された要求スキームは、http または https スキームです。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="requestUri" /> が null です。</exception>
+      <exception cref="T:System.Security.SecurityException">呼び出し元に、要求された URI に接続するためのアクセス許可、または要求のリダイレクト先の URI に接続するためのアクセス許可がありません。</exception>
+      <exception cref="T:System.UriFormatException">
+        <paramref name="requestUri" /> で指定された URI が有効な URI ではありません。</exception>
+    </member>
+    <member name="P:System.Net.WebRequest.CreatorInstance">
+      <summary>子孫クラスでオーバーライドされると、<see cref="T:System.Net.IWebRequestCreate" /> クラスから派生するファクトリ オブジェクトを取得します。このクラスは、指定した URI に対して要求を行うためにインスタンス化される <see cref="T:System.Net.WebRequest" /> の作成に使用されます。</summary>
+      <returns>
+        <see cref="M:System.Net.IWebRequestCreate.Create(System.Uri)" /> メソッドによって返される派生 <see cref="T:System.Net.WebRequest" /> 型。</returns>
+    </member>
+    <member name="P:System.Net.WebRequest.Credentials">
+      <summary>子孫クラスでオーバーライドされると、インターネット リソースの要求の認証に使用するネットワーク資格情報を取得または設定します。</summary>
+      <returns>要求に関連付けられた認証資格情報を格納している <see cref="T:System.Net.ICredentials" />。既定値は null です。</returns>
+      <exception cref="T:System.NotImplementedException">プロパティが派生クラスでオーバーライドされていないのに、そのプロパティの取得または設定が試行されました。</exception>
+    </member>
+    <member name="M:System.Net.WebRequest.EndGetRequestStream(System.IAsyncResult)">
+      <summary>子孫クラスでオーバーライドされると、インターネット リソースにデータを書き込むための <see cref="T:System.IO.Stream" /> を返します。</summary>
+      <returns>データを書き込む <see cref="T:System.IO.Stream" />。</returns>
+      <param name="asyncResult">ストリームの保留中の要求を参照する <see cref="T:System.IAsyncResult" />。</param>
+      <exception cref="T:System.NotImplementedException">メソッドが派生クラスでオーバーライドされていないのに、そのメソッドへのアクセスが試行されました。</exception>
+    </member>
+    <member name="M:System.Net.WebRequest.EndGetResponse(System.IAsyncResult)">
+      <summary>子孫クラスでオーバーライドされると、<see cref="T:System.Net.WebResponse" /> を返します。</summary>
+      <returns>インターネット要求への応答を格納する <see cref="T:System.Net.WebResponse" />。</returns>
+      <param name="asyncResult">応答に対する保留中の要求を参照する <see cref="T:System.IAsyncResult" />。</param>
+      <exception cref="T:System.NotImplementedException">メソッドが派生クラスでオーバーライドされていないのに、そのメソッドへのアクセスが試行されました。</exception>
+    </member>
+    <member name="P:System.Net.WebRequest.Headers">
+      <summary>子孫クラスでオーバーライドされると、要求に関連付けられたヘッダーの名前/値ペアのコレクションを取得または設定します。</summary>
+      <returns>要求に関連付けられたヘッダーの名前/値ペアを格納する <see cref="T:System.Net.WebHeaderCollection" />。</returns>
+      <exception cref="T:System.NotImplementedException">プロパティが派生クラスでオーバーライドされていないのに、そのプロパティの取得または設定が試行されました。</exception>
+    </member>
+    <member name="P:System.Net.WebRequest.Method">
+      <summary>子孫クラスでオーバーライドされると、要求で使用するプロトコル メソッドを取得または設定します。</summary>
+      <returns>要求で使用するプロトコル メソッド。</returns>
+      <exception cref="T:System.NotImplementedException">プロパティが子孫クラスでオーバーライドされていないのに、そのプロパティの取得または設定が試行されました。</exception>
+    </member>
+    <member name="M:System.Net.WebRequest.RegisterPrefix(System.String,System.Net.IWebRequestCreate)">
+      <summary>指定した URI 用の <see cref="T:System.Net.WebRequest" /> 子孫クラスを登録します。</summary>
+      <returns>登録に成功した場合は true。それ以外の場合は false。</returns>
+      <param name="prefix">
+        <see cref="T:System.Net.WebRequest" /> の子孫クラスが処理する完全 URI または URI プレフィックス。</param>
+      <param name="creator">
+        <see cref="T:System.Net.WebRequest" /> が <see cref="T:System.Net.WebRequest" /> 子孫クラスを作成するために呼び出す作成メソッド。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="prefix" /> が null です。または<paramref name="creator" /> が null です。</exception>
+      <exception cref="T:System.NotSupportedException">
+        <paramref name="prefix" /> が不明またはサポートされていません。</exception>
+    </member>
+    <member name="P:System.Net.WebRequest.RequestUri">
+      <summary>子孫クラスでオーバーライドされると、要求に関連付けられたインターネット リソースの URI を取得します。</summary>
+      <returns>要求に関連付けられたリソースを示す <see cref="T:System.Uri" />。</returns>
+      <exception cref="T:System.NotImplementedException">プロパティが派生クラスでオーバーライドされていないのに、そのプロパティの取得または設定が試行されました。</exception>
+    </member>
+    <member name="P:System.Net.WebRequest.UseDefaultCredentials">
+      <summary>子孫クラスでオーバーライドされると、既定の資格情報が要求と共に送信されるかどうかを制御する <see cref="T:System.Boolean" /> 値を取得または設定します。</summary>
+      <returns>既定の資格情報が使用される場合は true。それ以外の場合は false。<see cref="P:System.Net.Browser.WebRequestCreator.ClientHttp" /> スタックを使用して作成された要求の場合、既定値は false です。</returns>
+      <exception cref="T:System.NotImplementedException">このプロパティは実装されていません。</exception>
+    </member>
+    <member name="T:System.Net.WebResponse">
+      <summary>URI (Uniform Resource Identifier) からの応答を利用できるようにします。これは abstract クラスです。</summary>
+    </member>
+    <member name="M:System.Net.WebResponse.#ctor">
+      <summary>
+        <see cref="T:System.Net.WebResponse" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:System.Net.WebResponse.Close">
+      <summary>子孫クラスでオーバーライドされると、応答ストリームを閉じます。</summary>
+      <exception cref="T:System.NotSupportedException">メソッドが派生クラスでオーバーライドされていないのに、そのメソッドへのアクセスが試行されました。</exception>
+    </member>
+    <member name="P:System.Net.WebResponse.ContentLength">
+      <summary>子孫クラスでオーバーライドされると、受信しているデータのコンテンツ長を取得または設定します。</summary>
+      <returns>インターネット リソースから返されるバイト数。</returns>
+      <exception cref="T:System.NotSupportedException">プロパティが派生クラスでオーバーライドされていないのに、そのプロパティの取得または設定が試行されました。</exception>
+    </member>
+    <member name="P:System.Net.WebResponse.ContentType">
+      <summary>子孫クラスでオーバーライドされると、受信しているデータのコンテンツ タイプを取得または設定します。</summary>
+      <returns>応答のコンテンツの種類を含む文字列。</returns>
+      <exception cref="T:System.NotSupportedException">プロパティが派生クラスでオーバーライドされていないのに、そのプロパティの取得または設定が試行されました。</exception>
+    </member>
+    <member name="M:System.Net.WebResponse.Dispose">
+      <summary>
+        <see cref="T:System.Net.WebResponse" /> クラスの現在のインスタンスによって使用されているリソースを解放します。</summary>
+    </member>
+    <member name="M:System.Net.WebResponse.GetResponseStream">
+      <summary>子孫クラスでオーバーライドされると、インターネット リソースからデータ ストリームを返します。</summary>
+      <returns>インターネット リソースからデータを読み取るための <see cref="T:System.IO.Stream" /> クラスのインスタンス。</returns>
+      <exception cref="T:System.NotSupportedException">メソッドが派生クラスでオーバーライドされていないのに、そのメソッドへのアクセスが試行されました。</exception>
+    </member>
+    <member name="P:System.Net.WebResponse.Headers">
+      <summary>子孫クラスでオーバーライドされると、この要求に関連付けられたヘッダーの名前/値ペアのコレクションを取得します。</summary>
+      <returns>この応答に関連付けられたヘッダー値を格納する <see cref="T:System.Net.WebHeaderCollection" /> クラスのインスタンス。</returns>
+      <exception cref="T:System.NotImplementedException">プロパティが派生クラスでオーバーライドされていないのに、そのプロパティの取得または設定が試行されました。</exception>
+    </member>
+    <member name="P:System.Net.WebResponse.ResponseUri">
+      <summary>子孫クラスでオーバーライドされると、要求に実際に応答したインターネット リソースの URI を取得します。</summary>
+      <returns>要求に実際に応答したインターネット リソースの URI を格納する <see cref="T:System.Uri" /> クラスのインスタンス。</returns>
+      <exception cref="T:System.NotSupportedException">プロパティが派生クラスでオーバーライドされていないのに、そのプロパティの取得または設定が試行されました。</exception>
+    </member>
+    <member name="P:System.Net.WebResponse.SupportsHeaders">
+      <summary>
+        <see cref="P:System.Net.WebResponse.Headers" /> プロパティが <see cref="T:System.Net.WebResponse" /> インスタンスの子孫クラスによってサポートされているかどうかを示す値を取得します。</summary>
+      <returns>
+        <see cref="P:System.Net.WebResponse.Headers" /> プロパティが子孫クラスの <see cref="T:System.Net.HttpWebRequest" /> インスタンスにサポートされている場合は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="T:System.Net.WriteStreamClosedEventArgs">
+      <summary>
+        <see cref="E:System.Net.WebClient.WriteStreamClosed" /> イベントのデータを提供します。</summary>
+    </member>
+    <member name="P:System.Net.WriteStreamClosedEventArgs.Error">
+      <summary>
+        <see cref="E:System.Net.WebClient.WriteStreamClosed" /> イベントに関連付けられたエラーを取得します。</summary>
+      <returns>エラーが発生すると <see cref="E:System.Net.WebClient.WriteStreamClosed" /> イベントに関連付けられる例外。</returns>
+    </member>
+    <member name="T:System.Net.WriteStreamClosedEventHandler">
+      <summary>
+        <see cref="T:System.Net.WebClient" /> の <see cref="E:System.Net.WebClient.WriteStreamClosed" /> イベントを処理するメソッドを表します。</summary>
+      <param name="sender">イベントのソース。</param>
+      <param name="e">イベント データを格納している <see cref="T:System.Net.WriteStreamClosedEventArgs" />。</param>
+    </member>
+    <member name="T:System.Net.NetworkInformation.NetworkAddressChangedEventHandler">
+      <summary>ネットワーク インターフェイスのアドレスが変更された場合に呼び出される 1 つ以上のメソッドを参照します。</summary>
+      <param name="sender">イベントのソース。</param>
+      <param name="e">イベントに関するデータを格納する <see cref="T:System.EventArgs" /> オブジェクト。 </param>
+    </member>
+    <member name="T:System.Net.NetworkInformation.NetworkChange">
+      <summary>ネットワーク インターフェイス (ネットワーク カードまたはネットワーク アダプターとも呼ばれる) のインターネット プロトコル (IP) アドレスが変わったときに、アプリケーションが通知を受信できるようにします。</summary>
+    </member>
+    <member name="M:System.Net.NetworkInformation.NetworkChange.#ctor">
+      <summary>
+        <see cref="T:System.Net.NetworkInformation.NetworkChange" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="E:System.Net.NetworkInformation.NetworkChange.NetworkAddressChanged">
+      <summary>ネットワーク インターフェイスの IP アドレスが変更されたときに発生します。</summary>
+    </member>
+    <member name="T:System.Net.NetworkInformation.NetworkInterface">
+      <summary>ネットワーク インターフェイスの利用状況に関する情報を提供します。</summary>
+    </member>
+    <member name="M:System.Net.NetworkInformation.NetworkInterface.#ctor">
+      <summary>
+        <see cref="T:System.Net.NetworkInformation.NetworkInterface" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable">
+      <summary>ネットワーク接続が使用可能かどうかを示します。</summary>
+      <returns>ネットワーク接続を使用できる場合は true、それ以外の場合は false。</returns>
+    </member>
+    <member name="T:System.Net.Sockets.AddressFamily">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> クラスのインスタンスが使用できるアドレス指定方式を指定します。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.AddressFamily.Unknown">
+      <summary>不明のアドレス ファミリ。Windows Phone アプリケーションでの使用はサポートされていません。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.AddressFamily.Unspecified">
+      <summary>アドレス ファミリが指定されていません。Windows Phone アプリケーションでの使用はサポートされていません。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.AddressFamily.InterNetwork">
+      <summary>IP Version 4 のアドレス。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.AddressFamily.InterNetworkV6">
+      <summary>IP Version 6 のアドレス。Windows Phone アプリケーションでの使用はサポートされていません。</summary>
+    </member>
+    <member name="T:System.Net.Sockets.ProtocolType">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> クラスがサポートするプロトコルを指定します。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.ProtocolType.Tcp">
+      <summary>伝送制御プロトコル (TCP)。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.ProtocolType.Udp">
+      <summary>ユーザー データグラム プロトコル (UDP)。このプロトコルの種類は Windows Phone ではサポートされていません。 </summary>
+    </member>
+    <member name="F:System.Net.Sockets.ProtocolType.Unspecified">
+      <summary>プロトコルの種類が指定されていません。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.ProtocolType.Unknown">
+      <summary>不明なプロトコルの種類。</summary>
+    </member>
+    <member name="T:System.Net.Sockets.Socket">
+      <summary>Berkeley ソケット インターフェイスを実装します。</summary>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.#ctor(System.Net.Sockets.AddressFamily,System.Net.Sockets.SocketType,System.Net.Sockets.ProtocolType)">
+      <summary>指定したアドレス ファミリ、ソケットの種類、およびプロトコルを使用して、<see cref="T:System.Net.Sockets.Socket" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="addressFamily">
+        <see cref="T:System.Net.Sockets.AddressFamily" /> 値の 1 つ。</param>
+      <param name="socketType">
+        <see cref="T:System.Net.Sockets.SocketType" /> 値の 1 つ。</param>
+      <param name="protocolType">
+        <see cref="T:System.Net.Sockets.ProtocolType" /> 値の 1 つ。</param>
+      <exception cref="T:System.ArgumentException">パラメーターが無効でした。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">
+        <paramref name="addressFamily" />、<paramref name="socketType" />、および <paramref name="protocolType" /> を組み合わせると、無効なソケットになります。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.AcceptAsync(System.Net.Sockets.SocketAsyncEventArgs)">
+      <summary>受信接続の試行を受け入れる非同期操作を開始します。</summary>
+      <returns>操作が保留中の場合は true を返します。操作の完了時に、e パラメーターの SocketAsyncEventArgs.Completed イベントが発生します。操作が同期的に完了した場合は false を返します。e パラメーターの <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> イベントは発生しません。メソッド呼び出しから制御が戻った直後に、パラメーターとして渡された e オブジェクトを調べて操作の結果を取得できます。</returns>
+      <param name="e">この非同期ソケット操作に使用する <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> オブジェクト。</param>
+    </member>
+    <member name="P:System.Net.Sockets.Socket.AddressFamily">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> のアドレス ファミリを取得します。</summary>
+      <returns>
+        <see cref="T:System.Net.Sockets.AddressFamily" /> 値の 1 つ。</returns>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.Bind(System.Net.EndPoint)">
+      <summary>ソケットを特定のローカル エンドポイントに関連付けます。特定のローカル エンドポイントを使用する必要がない場合は、<see cref="M:System.Net.Sockets.Socket.ConnectAsync(System.Net.Sockets.SocketAsyncEventArgs)" /> メソッドを使用する前に、Bind を呼び出す必要はありません。</summary>
+      <param name="localEP">
+        <see cref="T:System.Net.Sockets.Socket" /> に関連付けるローカル <see cref="T:System.Net.EndPoint" />。</param>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.CancelConnectAsync(System.Net.Sockets.SocketAsyncEventArgs)">
+      <summary>リモート ホスト接続の未処理の非同期ソケット操作を取り消します。</summary>
+      <param name="e">取り消す非同期ソケット操作のための <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> オブジェクト。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="e" /> パラメーターが null です。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.Close">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> 接続を閉じ、関連付けられたすべてのリソースを解放します。</summary>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.Close(System.Int32)">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> 接続を閉じ、指定のタイムアウトに関連付けられたすべてのリソースを解放して、キューに置かれたデータを送信できるようにします。</summary>
+      <param name="timeout">残りのデータを送信してから <see cref="T:System.Net.Sockets.Socket" /> を閉じるために待つ最長時間 (秒単位)。</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="timeout" /> が 0 未満です。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.ConnectAsync(System.Net.Sockets.SocketAsyncEventArgs)">
+      <summary>リモート ホスト接続の非同期要求を開始します。</summary>
+      <returns>I/O 処理が保留中の場合は true を返します。<paramref name="e" /> パラメーターに渡された <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> オブジェクト上の <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> イベントは、処理の完了時に呼び出されます。I/O 処理が同時に完了した場合は false を返します。この場合、<paramref name="e" /> パラメーターに渡された <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> オブジェクト上の <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> イベントは発生しません。<paramref name="e" /> パラメーターに渡された <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> オブジェクトは、メソッド呼び出しが処理結果の取得に戻った後、直ちに検査できます。</returns>
+      <param name="e">この非同期ソケット操作に使用する <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> オブジェクト。</param>
+      <exception cref="T:System.ArgumentException">引数が無効です。この例外は、複数のバッファーが指定されているときに、<see cref="P:System.Net.Sockets.SocketAsyncEventArgs.BufferList" /> プロパティが null ではない場合に発生します。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint" /> に null を指定することはできません。</exception>
+      <exception cref="T:System.InvalidOperationException">
+        <see cref="T:System.Net.Sockets.Socket" /> がリッスン中であるか、<paramref name="e" /> パラメーターに渡された <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> オブジェクトを使用してソケット操作が既に実行中です。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">ソケットへのアクセスを試みているときにエラーが発生しました。詳細については「解説」を参照してください。</exception>
+      <exception cref="T:System.NotSupportedException">このメソッドには Windows XP 以降が必要です。この例外は、<see cref="T:System.Net.Sockets.Socket" /> と <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint" /> のアドレス ファミリが同じアドレス ファミリでない場合にも発生します。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" /> は閉じられました。</exception>
+      <exception cref="T:System.Security.SecurityException">コール スタックの上位にある呼び出し元が、要求された操作のアクセス許可を保持していません。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.ConnectAsync(System.Net.Sockets.SocketType,System.Net.Sockets.ProtocolType,System.Net.Sockets.SocketAsyncEventArgs)">
+      <summary>リモート ホスト接続の非同期要求を開始します。</summary>
+      <returns>I/O 処理が保留中の場合は true を返します。<paramref name="e" /> パラメーターに渡された <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> オブジェクト上の <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> イベントは、処理の完了時に呼び出されます。I/O 処理が同時に完了した場合は false を返します。この場合、<paramref name="e" /> パラメーターに渡された <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> オブジェクト上の <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> イベントは発生しません。<paramref name="e" /> パラメーターに渡された <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> オブジェクトは、メソッド呼び出しが処理結果の取得に戻った後、直ちに検査できます。</returns>
+      <param name="socketType">接続の確立に使用するソケットの種類。</param>
+      <param name="protocolType">接続の確立に使用するプロトコルの種類。</param>
+      <param name="e">この非同期ソケット操作に使用する <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> オブジェクト。</param>
+      <exception cref="T:System.ArgumentException">引数が無効です。この例外は、複数のバッファーが指定されているときに、<see cref="P:System.Net.Sockets.SocketAsyncEventArgs.BufferList" /> プロパティが null ではない場合に発生します。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint" /> に null を指定することはできません。</exception>
+      <exception cref="T:System.InvalidOperationException">
+        <see cref="T:System.Net.Sockets.Socket" /> がリッスン中であるか、<paramref name="e" /> パラメーターに渡された <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> オブジェクトを使用してソケット操作が既に実行中です。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">ソケットへのアクセスを試みているときにエラーが発生しました。詳細については「解説」を参照してください。</exception>
+      <exception cref="T:System.NotSupportedException">このメソッドには Windows XP 以降が必要です。この例外は、<see cref="T:System.Net.Sockets.Socket" /> と <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint" /> のアドレス ファミリが同じアドレス ファミリでない場合にも発生します。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" /> は閉じられました。</exception>
+      <exception cref="T:System.Security.SecurityException">コール スタックの上位にある呼び出し元が、要求された操作のアクセス許可を保持していません。</exception>
+    </member>
+    <member name="P:System.Net.Sockets.Socket.Connected">
+      <summary>最後に実行された操作の時点で、<see cref="T:System.Net.Sockets.Socket" /> がリモート ホストに接続されていたかどうかを示す値を取得します。</summary>
+      <returns>最後に実行された操作の時点で、<see cref="T:System.Net.Sockets.Socket" /> がリモート リソースに接続されていた場合は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.Dispose">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> が使用しているアンマネージ リソースを解放します。オプションでマネージ リソースも破棄します。</summary>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.Dispose(System.Boolean)">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> が使用しているアンマネージ リソースを解放します。オプションでマネージ リソースも破棄します。</summary>
+      <param name="disposing">マネージ リソースとアンマネージ リソースの両方を解放する場合は true。アンマネージ リソースだけを解放する場合は false。</param>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.Finalize">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> クラスによって使用されていたリソースを解放します。</summary>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.Listen(System.Int32)">
+      <summary>受信接続の試行を待機します。</summary>
+      <param name="backlog">保留中の接続のキューの最大長。</param>
+    </member>
+    <member name="P:System.Net.Sockets.Socket.LocalEndPoint">
+      <summary>ソケットがバインドされているローカル IP アドレスとポート番号を格納するローカル エンドポイントを取得します。これはソケットが通信に使用しているエンドポイントです。</summary>
+      <returns>
+        <see cref="T:System.Net.Sockets.Socket" /> が通信に使用している <see cref="T:System.Net.EndPoint" />。</returns>
+    </member>
+    <member name="P:System.Net.Sockets.Socket.NoDelay">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> が Nagle アルゴリズムを使用するかどうかを指定する <see cref="T:System.Boolean" /> 値を取得または設定します。</summary>
+      <returns>
+        <see cref="T:System.Net.Sockets.Socket" /> が Nagle アルゴリズムを使用する場合は false。それ以外の場合は true。既定値は false です。</returns>
+      <exception cref="T:System.Net.Sockets.SocketException">
+        <see cref="T:System.Net.Sockets.Socket" /> へのアクセスを試みているときにエラーが発生しました。詳細については「解説」を参照してください。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" /> は閉じられました。</exception>
+    </member>
+    <member name="P:System.Net.Sockets.Socket.OSSupportsIPv4">
+      <summary>現在のホストで IPv4 サポートが使用可能で有効になっているかどうかを示す値を取得します。</summary>
+      <returns>現在のホストが IPv4 プロトコルをサポートしている場合は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="P:System.Net.Sockets.Socket.OSSupportsIPv6">
+      <summary>現在のホストで IPv6 サポートが使用可能で有効になっているかどうかを示す値を取得します。</summary>
+      <returns>現在のホストが IPv4 プロトコルをサポートしている場合は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="P:System.Net.Sockets.Socket.ProtocolType">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> のプロトコルの種類を取得します。</summary>
+      <returns>
+        <see cref="T:System.Net.Sockets.ProtocolType" /> 値の 1 つ。</returns>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.ReceiveAsync(System.Net.Sockets.SocketAsyncEventArgs)">
+      <summary>接続されている <see cref="T:System.Net.Sockets.Socket" /> オブジェクトからデータを受信する非同期要求を開始します。</summary>
+      <returns>I/O 処理が保留中の場合は true を返します。<paramref name="e" /> パラメーターに渡された <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> オブジェクト上の <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> イベントは、処理の完了時に呼び出されます。I/O 処理が同時に完了した場合は false を返します。この場合、<paramref name="e" /> パラメーターに渡された <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> オブジェクト上の <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> イベントは発生しません。メソッドの呼び出しが値を返して操作の結果を取得した後すぐに <paramref name="e" /> パラメーターの <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> オブジェクトを検査する場合があります。</returns>
+      <param name="e">この非同期ソケット操作に使用する <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> オブジェクト。</param>
+      <exception cref="T:System.ArgumentException">引数が無効です。<paramref name="e" /> パラメーターに渡された <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> オブジェクトの <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> または <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.BufferList" /> プロパティは、有効なバッファーを参照している必要があります。これらのプロパティは、どちらか 1 つを設定できます。一度に両方のプロパティを設定することはできません。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <see cref="T:System.Net.Sockets.Socket" /> に関連付けられた内部ソケット オプションの値が正しくありません。</exception>
+      <exception cref="T:System.InvalidOperationException">
+        <paramref name="e" /> パラメーターに渡された <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> オブジェクトを使用してソケット操作が既に実行中です。</exception>
+      <exception cref="T:System.NotSupportedException">このメソッドには Windows XP 以降が必要です。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" /> は閉じられました。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">ソケットへのアクセスを試みているときにエラーが発生しました。詳細については「解説」を参照してください。</exception>
+    </member>
+    <member name="P:System.Net.Sockets.Socket.ReceiveBufferSize">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> の受信バッファーのサイズを指定する値を取得または設定します。</summary>
+      <returns>受信バッファーのサイズ (バイト単位) を格納している <see cref="T:System.Int32" />。既定値は 8192 です。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">設定操作として指定された値が 0 未満です。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">ソケットへのアクセスを試みているときにエラーが発生しました。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" /> は閉じられました。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.ReceiveFromAsync(System.Net.Sockets.SocketAsyncEventArgs)">
+      <summary>特定のリモート ホストからデータを受信する非同期要求を開始します。</summary>
+      <returns>I/O 処理が保留中の場合は true を返します。操作の完了時に、<paramref name="e" /> パラメーターの <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> イベントが発生します。I/O 処理が同時に完了した場合は false を返します。この場合、<paramref name="e" /> パラメーターの <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> イベントは発生しません。メソッド呼び出しから制御が戻った直後に、パラメーターとして渡された <paramref name="e" /> オブジェクトを調べて操作の結果を取得できます。</returns>
+      <param name="e">この非同期ソケット操作に使用する <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> オブジェクト。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint" /> に null を指定することはできません。</exception>
+      <exception cref="T:System.InvalidOperationException">
+        <paramref name="e" /> パラメーターに指定された <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> オブジェクトを使用してソケット操作が既に進行していました。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" /> は閉じられました。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">ソケットへのアクセスを試みているときにエラーが発生しました。</exception>
+    </member>
+    <member name="P:System.Net.Sockets.Socket.RemoteEndPoint">
+      <summary>リモート エンドポイントを取得します。</summary>
+      <returns>
+        <see cref="T:System.Net.Sockets.Socket" /> の通信先の <see cref="T:System.Net.EndPoint" />。</returns>
+      <exception cref="T:System.Net.Sockets.SocketException">ソケットへのアクセスを試みているときにエラーが発生しました。詳細については「解説」を参照してください。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" /> は閉じられました。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.SendAsync(System.Net.Sockets.SocketAsyncEventArgs)">
+      <summary>接続されている <see cref="T:System.Net.Sockets.Socket" /> オブジェクトに、データを非同期に送信します。</summary>
+      <returns>I/O 処理が保留中の場合は true を返します。<paramref name="e" /> パラメーターに渡された <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> オブジェクト上の <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> イベントは、処理の完了時に呼び出されます。I/O 処理が同時に完了した場合は false を返します。この場合、<paramref name="e" /> パラメーターに渡された <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> オブジェクト上の <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> イベントは発生しません。<paramref name="e" /> パラメーターに渡された <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> オブジェクトは、メソッド呼び出しが処理結果の取得に戻った後、直ちに検査できます。</returns>
+      <param name="e">この非同期ソケット操作に使用する <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> オブジェクト。</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="e" /> パラメーターに渡された <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> オブジェクトの <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> または <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.BufferList" /> プロパティは、有効なバッファーを参照している必要があります。これらのプロパティは、どちらか 1 つを設定できます。一度に両方のプロパティを設定することはできません。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <see cref="T:System.Net.Sockets.Socket" /> に関連付けられた内部ソケット オプションの値が正しくありません。</exception>
+      <exception cref="T:System.InvalidOperationException">
+        <paramref name="e" /> パラメーターに渡された <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> オブジェクトを使用してソケット操作が既に実行中です。</exception>
+      <exception cref="T:System.NotSupportedException">このメソッドには Windows XP 以降が必要です。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" /> は閉じられました。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">
+        <see cref="T:System.Net.Sockets.Socket" /> は接続していません。</exception>
+    </member>
+    <member name="P:System.Net.Sockets.Socket.SendBufferSize">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> の送信バッファーのサイズを指定する値を取得または設定します。</summary>
+      <returns>送信バッファーのサイズ (バイト単位) を格納している <see cref="T:System.Int32" />。既定値は 8192 です。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">設定操作として指定された値が 0 未満です。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">ソケットへのアクセスを試みているときにエラーが発生しました。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" /> は閉じられました。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.SendToAsync(System.Net.Sockets.SocketAsyncEventArgs)">
+      <summary>特定のリモート ホストにデータを非同期的に送信します。</summary>
+      <returns>I/O 処理が保留中の場合は true を返します。操作の完了時に、<paramref name="e" /> パラメーターの <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> イベントが発生します。I/O 処理が同時に完了した場合は false を返します。この場合、<paramref name="e" /> パラメーターの <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> イベントは発生しません。メソッド呼び出しから制御が戻った直後に、パラメーターとして渡された <paramref name="e" /> オブジェクトを調べて操作の結果を取得できます。</returns>
+      <param name="e">この非同期ソケット操作に使用する <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> オブジェクト。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint" /> に null を指定することはできません。</exception>
+      <exception cref="T:System.InvalidOperationException">
+        <paramref name="e" /> パラメーターに指定された <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> オブジェクトを使用してソケット操作が既に進行していました。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" /> は閉じられました。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">ソケットへのアクセスを試みているときにエラーが発生しました。このエラーは、指定されたソケットがコネクション指向の <see cref="F:System.Net.Sockets.SocketType.Stream" /> 型であり、<see cref="T:System.Net.Sockets.Socket" /> が接続されていない場合に発生する可能性があります。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.Shutdown(System.Net.Sockets.SocketShutdown)">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> での送受信を無効にします。</summary>
+      <param name="how">許可されなくなる操作を指定する <see cref="T:System.Net.Sockets.SocketShutdown" /> 値の 1 つ。</param>
+      <exception cref="T:System.Net.Sockets.SocketException">ソケットへのアクセスを試みているときにエラーが発生しました。詳細については「解説」を参照してください。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" /> は閉じられました。</exception>
+    </member>
+    <member name="P:System.Net.Sockets.Socket.Ttl">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> によって送信されたインターネット プロトコル (IP) パケットの Time To Live (TTL) の値を指定する値を取得または設定します。</summary>
+      <returns>TTL 値。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">TTL 値を 0 より小さい値に設定することはできません。</exception>
+      <exception cref="T:System.NotSupportedException">このプロパティは、<see cref="F:System.Net.Sockets.AddressFamily.InterNetwork" /> ファミリまたは <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6" /> ファミリのソケットに対してだけ設定できます。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">ソケットへのアクセスを試みているときにエラーが発生しました。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" /> は閉じられました。</exception>
+    </member>
+    <member name="T:System.Net.Sockets.SocketAsyncEventArgs">
+      <summary>非同期ソケット操作を表します。</summary>
+    </member>
+    <member name="M:System.Net.Sockets.SocketAsyncEventArgs.#ctor">
+      <summary>空の <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> インスタンスを作成します。</summary>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.AcceptSocket">
+      <summary>非同期ソケット メソッドとの接続を受け入れるために使用するソケットまたは作成されたソケットを取得または設定します。</summary>
+      <returns>非同期ソケット メソッドとの接続を受け入れるために使用する <see cref="T:System.Net.Sockets.Socket" /> または作成されたソケット。</returns>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer">
+      <summary>非同期ソケット メソッドで使用するデータ バッファーを取得します。</summary>
+      <returns>非同期ソケット メソッドで使用するデータ バッファーを表す <see cref="T:System.Byte" /> 配列。</returns>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.BufferList">
+      <summary>非同期ソケット メソッドで使用するデータ バッファーの配列を取得または設定します。</summary>
+      <returns>非同期ソケット メソッドで使用するデータ バッファーの配列。</returns>
+      <exception cref="T:System.ArgumentException">設定操作であいまいなバッファーが指定されています。null 以外の値が渡され、<see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> プロパティも null でない場合、この例外が発生します。</exception>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.BytesTransferred">
+      <summary>ソケット操作で転送するバイト数を取得します。</summary>
+      <returns>ソケット操作で転送するバイト数。</returns>
+    </member>
+    <member name="E:System.Net.Sockets.SocketAsyncEventArgs.Completed">
+      <summary>非同期操作が完了したことを示すイベント。</summary>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.ConnectByNameError">
+      <summary>
+        <see cref="T:System.Net.DnsEndPoint" /> を使用して接続に失敗した場合に例外を取得します。</summary>
+      <returns>
+        <see cref="T:System.Net.DnsEndPoint" /> が <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint" /> プロパティに指定された場合の接続エラーの原因を示す<see cref="T:System.Exception" />。</returns>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.ConnectSocket">
+      <summary>
+        <see cref="Overload:System.Net.Sockets.Socket.ConnectAsync" /> メソッドが正常に完了した後に作成され、接続された <see cref="T:System.Net.Sockets.Socket" /> オブジェクト。</summary>
+      <returns>接続された <see cref="T:System.Net.Sockets.Socket" /> オブジェクト。</returns>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.Count">
+      <summary>非同期操作で送信または受信するデータの最大量 (バイト単位) を取得します。</summary>
+      <returns>送信または受信する最大データ量 (バイト単位)。</returns>
+    </member>
+    <member name="M:System.Net.Sockets.SocketAsyncEventArgs.Dispose">
+      <summary>
+        <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> インスタンスが使用するアンマネージ リソースを解放し、必要に応じてマネージ リソースを破棄します。</summary>
+    </member>
+    <member name="M:System.Net.Sockets.SocketAsyncEventArgs.Finalize">
+      <summary>
+        <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> クラスによって使用されていたリソースを解放します。</summary>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.LastOperation">
+      <summary>このオブジェクトで最近実行されたソケット操作の種類を取得します。</summary>
+      <returns>
+        <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> オブジェクトで最近実行されたソケット操作の種類。</returns>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.Offset">
+      <summary>
+        <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> プロパティによって参照されるデータ バッファーへのオフセット (バイト単位) を取得します。</summary>
+      <returns>
+        <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> プロパティで参照されるデータ バッファーへのオフセット (バイト単位)。</returns>
+    </member>
+    <member name="M:System.Net.Sockets.SocketAsyncEventArgs.OnCompleted(System.Net.Sockets.SocketAsyncEventArgs)">
+      <summary>非同期操作の完了時に呼び出されるメソッドを表します。</summary>
+      <param name="e">シグナル状態のイベント。</param>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint">
+      <summary>非同期操作のリモート IP または DNS エンドポイントを取得または設定します。</summary>
+      <returns>非同期操作のリモート IP エンドポイント。</returns>
+    </member>
+    <member name="M:System.Net.Sockets.SocketAsyncEventArgs.SetBuffer(System.Byte[],System.Int32,System.Int32)">
+      <summary>非同期ソケット メソッドで使用するデータ バッファーを設定します。</summary>
+      <param name="buffer">非同期ソケット メソッドで使用するデータ バッファー。</param>
+      <param name="offset">操作が開始するデータ バッファーのバイト単位のオフセット。</param>
+      <param name="count">バッファーで送受信するバイト単位の最大データ量。</param>
+      <exception cref="T:System.ArgumentException">あいまいなバッファーが指定されています。この例外は、<see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> プロパティが null ではなく、<see cref="P:System.Net.Sockets.SocketAsyncEventArgs.BufferList" /> プロパティも null ではない場合に発生します。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">引数が範囲外です。この例外は、<paramref name="offset" /> パラメーターがゼロ未満であるか、<see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> プロパティの配列の長さよりも大きい場合に発生します。また、<paramref name="count" /> パラメーターがゼロ未満であるか、<see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> プロパティの配列の長さから <paramref name="offset" /> パラメーターを引いた長さよりも大きい場合にも、この例外が発生します。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.SocketAsyncEventArgs.SetBuffer(System.Int32,System.Int32)">
+      <summary>非同期ソケット メソッドで使用するデータ バッファーを設定します。</summary>
+      <param name="offset">操作が開始するデータ バッファーのバイト単位のオフセット。</param>
+      <param name="count">バッファーで送受信するバイト単位の最大データ量。</param>
+      <exception cref="T:System.ArgumentException">あいまいなバッファーが指定されています。この例外は、<see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> プロパティが null ではなく、<see cref="P:System.Net.Sockets.SocketAsyncEventArgs.BufferList" /> プロパティも null ではない場合に発生します。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">引数が範囲外です。この例外は、<paramref name="offset" /> パラメーターがゼロ未満であるか、<see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> プロパティの配列の長さよりも大きい場合に発生します。また、<paramref name="count" /> パラメーターがゼロ未満であるか、<see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> プロパティの配列の長さから <paramref name="offset" /> パラメーターを引いた長さよりも大きい場合にも、この例外が発生します。</exception>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.SocketError">
+      <summary>非同期ソケット操作の結果を取得または設定します。</summary>
+      <returns>非同期ソケット操作の結果。</returns>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.UserToken">
+      <summary>この非同期ソケット操作に関連付けられたユーザー オブジェクトまたはアプリケーション オブジェクトを取得または設定します。</summary>
+      <returns>この非同期ソケット操作に関連付けられたユーザー オブジェクトまたはアプリケーション オブジェクトを表すオブジェクト。</returns>
+    </member>
+    <member name="T:System.Net.Sockets.SocketAsyncOperation">
+      <summary>このオブジェクトで最近実行された非同期のソケット操作の種類。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketAsyncOperation.None">
+      <summary>ソケット操作なし。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketAsyncOperation.Accept">
+      <summary>ソケットの Accept 操作。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketAsyncOperation.Connect">
+      <summary>ソケットの Connect 操作。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketAsyncOperation.Receive">
+      <summary>ソケットの Receive 操作。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketAsyncOperation.ReceiveFrom">
+      <summary>ソケットの ReceiveFrom 操作。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketAsyncOperation.Send">
+      <summary>ソケットの Send 操作。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketAsyncOperation.SendTo">
+      <summary>ソケットの SendTo 操作。</summary>
+    </member>
+    <member name="T:System.Net.Sockets.SocketError">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> クラスのエラー コードを定義します。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.Success">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> 操作が正常に行われました。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.SocketError">
+      <summary>特定されない <see cref="T:System.Net.Sockets.Socket" /> エラーが発生しました。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.Interrupted">
+      <summary>ブロッキング <see cref="T:System.Net.Sockets.Socket" /> の呼び出しが取り消されました。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.AccessDenied">
+      <summary>アクセス許可で禁止されている方法で <see cref="T:System.Net.Sockets.Socket" /> にアクセスしようとしました。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.Fault">
+      <summary>基になるソケット プロバイダーによって、無効なポインター アドレスが検出されました。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.InvalidArgument">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> メンバーに無効な引数が提供されました。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.TooManyOpenSockets">
+      <summary>基になるソケット プロバイダーで開いているソケットが多すぎます。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.WouldBlock">
+      <summary>非ブロッキング ソケットでの操作は、すぐに完了できません。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.InProgress">
+      <summary>ブロッキング操作を実行中です。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.AlreadyInProgress">
+      <summary>非ブロッキング <see cref="T:System.Net.Sockets.Socket" /> で操作を実行中です。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.NotSocket">
+      <summary>ソケット以外で <see cref="T:System.Net.Sockets.Socket" /> 操作を実行しようとしました。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.DestinationAddressRequired">
+      <summary>必要なアドレスが <see cref="T:System.Net.Sockets.Socket" /> の操作から省略されています。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.MessageSize">
+      <summary>データグラムが長すぎます。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.ProtocolType">
+      <summary>この <see cref="T:System.Net.Sockets.Socket" /> に対するプロトコルの種類が正しくありません。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.ProtocolOption">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> で使用されたオプションまたはレベルは、不明か、無効か、またはサポートされていません。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.ProtocolNotSupported">
+      <summary>プロトコルが実装されていないか、または構成されていません。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.SocketNotSupported">
+      <summary>このアドレス ファミリでは、指定したソケット タイプはサポートされていません。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.OperationNotSupported">
+      <summary>アドレス ファミリがプロトコル ファミリによってサポートされていません。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.ProtocolFamilyNotSupported">
+      <summary>プロトコル ファミリが実装されていないか、または構成されていません。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.AddressFamilyNotSupported">
+      <summary>指定したアドレス ファミリはサポートされていません。このエラーは、IPv6 スタックがローカル コンピューターにインストールされていない状態で、IPv6 アドレス ファミリを指定した場合に返されます。このエラーは、IPv4 スタックがローカル コンピューターにインストールされていない状態で、IPv4 アドレス ファミリを指定した場合に返されます。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.AddressAlreadyInUse">
+      <summary>通常、アドレスは 1 つしか使用できません。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.AddressNotAvailable">
+      <summary>選択された IP アドレスは、このコンテキストでは有効ではありません。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.NetworkDown">
+      <summary>ネットワークが使用できません。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.NetworkUnreachable">
+      <summary>リモート ホストへのルートが存在しません。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.NetworkReset">
+      <summary>アプリケーションが既にタイム アウトしている接続のオプションを設定しようとしました。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.ConnectionAborted">
+      <summary>.NET Framework または基になるソケット プロバイダーによって接続が中止されました。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.ConnectionReset">
+      <summary>リモート ピアによって接続がリセットされました。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.NoBufferSpaceAvailable">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> 操作用のバッファーの空き領域がありません。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.IsConnected">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> は既に接続されています。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.NotConnected">
+      <summary>アプリケーションがデータを送信または受信しようとしましたが、<see cref="T:System.Net.Sockets.Socket" /> が接続されていません。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.Shutdown">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> が既に閉じられているため、データを送信または受信する要求が許可されませんでした。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.TimedOut">
+      <summary>接続の試行がタイムアウトしたか、または接続されているホストが応答に失敗しました。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.ConnectionRefused">
+      <summary>リモート ホストがアクティブに接続を拒否しています。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.HostDown">
+      <summary>リモート ホストのダウンが原因で操作が失敗しました。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.HostUnreachable">
+      <summary>指定したホストへのネットワーク ルートがありません。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.ProcessLimit">
+      <summary>基になるソケット プロバイダーを使用しているプロセスが多すぎます。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.SystemNotReady">
+      <summary>ネットワーク サブシステムが使用できません。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.VersionNotSupported">
+      <summary>基になるソケット プロバイダーのバージョンが範囲外です。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.NotInitialized">
+      <summary>基になるソケット プロバイダーが初期化されていません。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.Disconnecting">
+      <summary>正常なシャットダウンを実行中です。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.TypeNotFound">
+      <summary>指定したクラスが見つかりませんでした。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.HostNotFound">
+      <summary>そのようなホストは不明です。名前が正式なホスト名またはエイリアスではありません。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.TryAgain">
+      <summary>ホストの名前を解決できませんでした。後でやり直してください。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.NoRecovery">
+      <summary>エラーが回復できないか、または要求されたデータベースが見つかりません。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.NoData">
+      <summary>要求された名前または IP アドレスが、ネーム サーバーで見つかりませんでした。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.IOPending">
+      <summary>アプリケーションが、すぐには完了できない重複操作を開始しました。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.OperationAborted">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> が閉じられたため、重複操作が中止されました。</summary>
+    </member>
+    <member name="T:System.Net.Sockets.SocketException">
+      <summary>ソケット エラーが発生したときにスローされる例外。</summary>
+    </member>
+    <member name="M:System.Net.Sockets.SocketException.#ctor">
+      <summary>直前のオペレーティング システム エラー コードを指定して、<see cref="T:System.Net.Sockets.SocketException" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:System.Net.Sockets.SocketException.#ctor(System.Int32)">
+      <summary>エラー コードを指定して、<see cref="T:System.Net.Sockets.SocketException" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="errorCode">発生したエラーを示すエラー コード。</param>
+    </member>
+    <member name="P:System.Net.Sockets.SocketException.ErrorCode">
+      <summary>この例外に関連付けられたエラー コードを取得します。</summary>
+      <returns>この例外に関連付けられている整数エラー コード。</returns>
+    </member>
+    <member name="P:System.Net.Sockets.SocketException.SocketErrorCode">
+      <summary>この例外に関連付けられたエラー コードを取得します。</summary>
+      <returns>この例外に関連付けられている <see cref="T:System.Net.Sockets.SocketError" />。</returns>
+    </member>
+    <member name="T:System.Net.Sockets.SocketShutdown">
+      <summary>
+        <see cref="M:System.Net.Sockets.Socket.Shutdown(System.Net.Sockets.SocketShutdown)" /> メソッドが使用する定数を定義します。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketShutdown.Receive">
+      <summary>受信の <see cref="T:System.Net.Sockets.Socket" /> を無効にします。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketShutdown.Send">
+      <summary>送信の <see cref="T:System.Net.Sockets.Socket" /> を無効にします。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketShutdown.Both">
+      <summary>送信と受信の両方の <see cref="T:System.Net.Sockets.Socket" /> を無効にします。</summary>
+    </member>
+    <member name="T:System.Net.Sockets.SocketType">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> クラスのインスタンスが表すソケットの種類を指定します。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketType.Stream">
+      <summary>データの複製および境界の維持を行うことなく、信頼性が高く双方向の、接続ベースのバイト ストリームをサポートするソケットの種類。この種類の <see cref="T:System.Net.Sockets.Socket" /> は単一のピアと通信し、通信を開始する前にリモート ホスト接続を確立しておく必要があります。このソケットの種類は伝送制御プロトコル (<see cref="F:System.Net.Sockets.ProtocolType.Tcp" />) および <see cref="T:System.Net.Sockets.AddressFamily" /> を使用します。これは <see cref="F:System.Net.Sockets.AddressFamily.InterNetwork" /> または <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6" /> です。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketType.Dgram">
+      <summary>データグラムをサポートしています。これはコネクションレスで、固定 (通常は短い) 最大長の、信頼性のないメッセージです。メッセージが喪失または複製されたり、正しい順序で受信されない可能性があります。<see cref="F:System.Net.Sockets.SocketType.Dgram" /> 型の Socket はデータの送受信に先立って接続する必要がなく、複数のピアと通信できます。<see cref="F:System.Net.Sockets.SocketType.Dgram" /> はデータグラム プロトコル (<see cref="F:System.Net.Sockets.ProtocolType.Udp" />) と <see cref="F:System.Net.Sockets.AddressFamily.InterNetwork" /> または <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6" /><see cref="T:System.Net.Sockets.AddressFamily" /> を使用します。Windows Phone でサポートされる値ではありません。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketType.Unknown">
+      <summary>不明な Socket の種類。</summary>
+    </member>
+    <member name="T:System.Net.Sockets.UdpAnySourceMulticastClient">
+      <summary>Any Source Multicast (ASM) または Internet Standard Multicast (ISM) とも呼ばれる、任意のソースからのマルチキャスト トラフィックのクライアント受信者。</summary>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.#ctor(System.Net.IPAddress,System.Int32)">
+      <summary>グループ アドレスをサブスクライブして任意の送信元からデータグラムを受信できる新しい <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> UDP クライアントを作成します。</summary>
+      <param name="groupAddress">この受取人が購読するマルチキャスト グループ アドレス。</param>
+      <param name="localPort">この受取人をバインドするローカル ポート。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="groupAddress" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="localPort" /> が 0 未満です。または<paramref name="localPort" /> が 65,535 より大きい値です。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">
+        <paramref name="localPort" /> が 1,024 未満です。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.BeginJoinGroup(System.AsyncCallback,System.Object)">
+      <summary>ソケットをバインドし、マルチキャスト グループへの参加操作を開始して、任意のグループ参加者からデータグラムを受信できるようにします。</summary>
+      <returns>この操作を参照する <see cref="T:System.IAsyncResult" />。</returns>
+      <param name="callback">操作が完了したときに呼び出されるコールバック メソッド。</param>
+      <param name="state">この操作の <paramref name="callback" /> メソッドに渡す省略可能な状態情報。</param>
+      <exception cref="T:System.InvalidOperationException">マルチキャスト グループが既に参加しているか、参加操作が現在実行中です。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> は破棄されています。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">ソケットへのアクセスを試みているときにエラーが発生しました。詳細については「解説」を参照してください。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.BeginReceiveFromGroup(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+      <summary>参加しているマルチキャスト グループからのパケットの受信操作を開始し、パケットが任意の送信者からグループに到着したら、指定したコールバックを呼び出します。</summary>
+      <returns>この操作を参照する <see cref="T:System.IAsyncResult" />。</returns>
+      <param name="buffer">受信したデータを保存するバッファー。</param>
+      <param name="offset">データを格納する <paramref name="buffer" /> の先頭からのオフセット (バイト単位)。</param>
+      <param name="count">受信して <paramref name="buffer" /> に格納する最大バイト数。</param>
+      <param name="callback">操作が完了したときに呼び出されるコールバック メソッド。</param>
+      <param name="state">この操作の <paramref name="callback" /> メソッドに渡す省略可能な状態情報。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="buffer" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が 0 未満です。または<paramref name="offset" /> が <paramref name="buffer" /> の長さを超えています。または<paramref name="count" /> が 0 未満です。または<paramref name="offset" /> に <paramref name="count" /> を加算した値が、<paramref name="buffer" /> の長さを超えています。</exception>
+      <exception cref="T:System.InvalidOperationException">マルチキャスト グループが参加していません。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> は破棄されています。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">送信用のソケットへのアクセス試行中にエラーが発生しました。詳細については「解説」を参照してください。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.BeginSendTo(System.Byte[],System.Int32,System.Int32,System.Net.IPEndPoint,System.AsyncCallback,System.Object)">
+      <summary>指定した送信先へのユニキャスト パケットの送信操作を開始します。</summary>
+      <returns>この操作を参照する <see cref="T:System.IAsyncResult" />。</returns>
+      <param name="buffer">送信するデータを含むバッファー。</param>
+      <param name="offset">送信するデータを読み取る <paramref name="buffer" /> の先頭からのオフセット (バイト単位)。</param>
+      <param name="count">
+        <paramref name="buffer" /> から送信するバイト数。</param>
+      <param name="remoteEndPoint">パケットの送信先のリモート エンドポイント。</param>
+      <param name="callback">操作が完了したときに呼び出されるコールバック メソッド。</param>
+      <param name="state">この操作の <paramref name="callback" /> メソッドに渡す省略可能な状態情報。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="buffer" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が 0 未満です。または<paramref name="offset" /> が <paramref name="buffer" /> の長さを超えています。または<paramref name="count" /> が 0 未満です。または<paramref name="offset" /> に <paramref name="count" /> を加算した値が、<paramref name="buffer" /> の長さを超えています。</exception>
+      <exception cref="T:System.InvalidOperationException">マルチキャスト グループが参加していません。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> は破棄されています。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">送信用のソケットへのアクセス試行中にエラーが発生しました。詳細については「解説」を参照してください。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.BeginSendToGroup(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+      <summary>参加しているマルチキャスト グループへのパケットの送信操作を開始し、パケットがグループに送信されたら、指定したコールバックを呼び出します。</summary>
+      <returns>この操作を参照する <see cref="T:System.IAsyncResult" />。</returns>
+      <param name="buffer">送信するデータを含むバッファー。</param>
+      <param name="offset">送信するデータを読み取る <paramref name="buffer" /> の先頭からのオフセット (バイト単位)。</param>
+      <param name="count">
+        <paramref name="buffer" /> から送信するバイト数。</param>
+      <param name="callback">操作が完了したときに呼び出されるコールバック メソッド。</param>
+      <param name="state">この操作の <paramref name="callback" /> メソッドに渡す省略可能な状態情報。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="buffer" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が 0 未満です。または<paramref name="offset" /> が <paramref name="buffer" /> の長さを超えています。または<paramref name="count" /> が 0 未満です。または<paramref name="offset" /> に <paramref name="count" /> を加算した値が、<paramref name="buffer" /> の長さを超えています。</exception>
+      <exception cref="T:System.InvalidOperationException">マルチキャスト グループが参加していません。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> は破棄されています。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">送信用のソケットへのアクセス試行中にエラーが発生しました。詳細については「解説」を参照してください。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.BlockSource(System.Net.IPAddress)">
+      <summary>送信元をブロックし、その送信元からのマルチキャスト パケットが受信されないようにします。</summary>
+      <param name="sourceAddress">ブロックする送信元のアドレス。</param>
+      <exception cref="T:System.InvalidOperationException">マルチキャスト グループが参加していません。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> は破棄されています。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">ソケットへのアクセスを試みているときにエラーが発生しました。詳細については「解説」を参照してください。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.Dispose">
+      <summary>マルチキャスト グループへの参加を取り消し、<see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> クラスの現在のインスタンスによって使用されたリソースと、基になる <see cref="T:System.Net.Sockets.Socket" /> によって使用されたリソースをすべて解放します。</summary>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.EndJoinGroup(System.IAsyncResult)">
+      <summary>マルチキャスト グループへの非同期グループ参加操作を完了します。</summary>
+      <param name="result">非同期参加操作の結果。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="result" /> が null です。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> は破棄されています。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">ソケットへのアクセスを試みているときにエラーが発生しました。詳細については「解説」を参照してください。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.EndReceiveFromGroup(System.IAsyncResult,System.Net.IPEndPoint@)">
+      <summary>参加しているマルチキャスト グループからのパケットの非同期受信操作を完了し、受信した情報を提供します。</summary>
+      <returns>
+        <see cref="M:System.Net.Sockets.UdpAnySourceMulticastClient.BeginReceiveFromGroup(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" /> メソッドに渡される <paramref name="buffer" /> パラメーターに格納されたメッセージの長さ (バイト単位)。</returns>
+      <param name="result">非同期受信操作の結果。</param>
+      <param name="source">受信したパケットの送信元エンドポイント。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="result" /> が null です。</exception>
+      <exception cref="T:System.InvalidOperationException">マルチキャスト グループが参加していません。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> は破棄されています。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">ソケットへのアクセスを試みているときにエラーが発生しました。詳細については「解説」を参照してください。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.EndSendTo(System.IAsyncResult)">
+      <summary>指定した送信先へのユニキャスト パケットの送信操作を完了します。</summary>
+      <param name="result">非同期送信操作の結果。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="result" /> が null です。</exception>
+      <exception cref="T:System.InvalidOperationException">マルチキャスト グループが参加していません。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> は破棄されています。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">ソケットへのアクセスを試みているときにエラーが発生しました。詳細については「解説」を参照してください。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.EndSendToGroup(System.IAsyncResult)">
+      <summary>マルチキャスト グループへのパケットの送信操作を完了します。</summary>
+      <param name="result">非同期送信操作の結果。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="result" /> が null です。</exception>
+      <exception cref="T:System.InvalidOperationException">マルチキャスト グループが参加していません。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> は破棄されています。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">ソケットへのアクセスを試みているときにエラーが発生しました。詳細については「解説」を参照してください。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.Finalize">
+      <summary>現在の <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> クラスに保持されているリソースを解放します。</summary>
+    </member>
+    <member name="P:System.Net.Sockets.UdpAnySourceMulticastClient.MulticastLoopback">
+      <summary>発信マルチキャスト パケットが送信元アプリケーションに配信されるかどうかを指定する値を取得または設定します。</summary>
+      <returns>マルチキャスト グループへの送信パケットを送信元アプリケーションに配信するかどうかを指定する値。</returns>
+      <exception cref="T:System.InvalidOperationException">マルチキャスト グループが参加していません。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> は破棄されています。</exception>
+    </member>
+    <member name="P:System.Net.Sockets.UdpAnySourceMulticastClient.ReceiveBufferSize">
+      <summary>この <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> インスタンスでのマルチキャスト受信操作に使用される <see cref="T:System.Net.Sockets.Socket" /> の受信バッファーのサイズをバイト単位で取得または設定します。</summary>
+      <returns>受信バッファーのバイト単位のサイズ。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">指定されたバッファー サイズが 0 未満です。</exception>
+      <exception cref="T:System.InvalidOperationException">マルチキャスト グループが参加していません。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> は破棄されています。</exception>
+    </member>
+    <member name="P:System.Net.Sockets.UdpAnySourceMulticastClient.SendBufferSize">
+      <summary>この <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> インスタンスでのマルチキャスト送信操作に使用される <see cref="T:System.Net.Sockets.Socket" /> の送信バッファーのサイズをバイト単位で取得または設定します。</summary>
+      <returns>送信バッファーのバイト単位のサイズ。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">指定されたバッファー サイズが 0 未満です。</exception>
+      <exception cref="T:System.InvalidOperationException">マルチキャスト グループが参加していません。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> は破棄されています。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.UnblockSource(System.Net.IPAddress)">
+      <summary>
+        <see cref="M:System.Net.Sockets.UdpAnySourceMulticastClient.BlockSource(System.Net.IPAddress)" /> メソッドの呼び出しによってブロックされていた送信元のブロックを解除して、その送信元からのマルチキャスト パケットを受信できるようにします。</summary>
+      <param name="sourceAddress">ブロック解除する送信元のアドレス。</param>
+      <exception cref="T:System.InvalidOperationException">マルチキャスト グループが参加していません。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> は破棄されています。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">ソケットへのアクセスを試みているときにエラーが発生しました。詳細については「解説」を参照してください。</exception>
+    </member>
+    <member name="T:System.Net.Sockets.UdpSingleSourceMulticastClient">
+      <summary>単一の送信元からのマルチキャスト トラフィックのクライアント受信元。このマルチキャストは、Source Specific Multicast (SSM) とも呼ばれます。</summary>
+    </member>
+    <member name="M:System.Net.Sockets.UdpSingleSourceMulticastClient.#ctor(System.Net.IPAddress,System.Net.IPAddress,System.Int32)">
+      <summary>グループ アドレスをサブスクライブして単一の送信元からデータグラムを受信できる新しい <see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> UDP クライアントを作成します。</summary>
+      <param name="sourceAddress">この受信元がサブスクライブする送信者の送信元アドレス。</param>
+      <param name="groupAddress">この受取人が購読するマルチキャスト グループ アドレス。</param>
+      <param name="localPort">この受取人をバインドするローカル ポート。</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="sourceAddress" /> と <paramref name="groupAddress" /> は同じアドレス ファミリでなければなりません。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="sourceAddress" /> が null です。または<paramref name="groupAddress" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="localPort" /> が 0 未満です。または<paramref name="localPort" /> が 65,535 より大きい値です。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">
+        <paramref name="localPort" /> が 1,024 未満です。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpSingleSourceMulticastClient.BeginJoinGroup(System.AsyncCallback,System.Object)">
+      <summary>ソケットをバインドし、マルチキャスト グループへの参加操作を開始して、単一の送信元アドレスからデータグラムを受信できるようにします。</summary>
+      <returns>この操作を参照する <see cref="T:System.IAsyncResult" />。</returns>
+      <param name="callback">操作が完了したときに呼び出されるコールバック メソッド。</param>
+      <param name="state">この操作の <paramref name="callback" /> メソッドに渡す省略可能な状態情報。</param>
+      <exception cref="T:System.InvalidOperationException">マルチキャスト グループが既に参加しているか、参加操作が現在実行中です。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> は破棄されています。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">ソケットへのアクセスを試みているときにエラーが発生しました。詳細については「解説」を参照してください。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpSingleSourceMulticastClient.BeginReceiveFromSource(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+      <summary>参加しているマルチキャスト グループからのパケットの受信操作を開始し、パケットが指定された送信者からグループに到着したら、指定されたコールバックを呼び出します。</summary>
+      <returns>この操作を参照する <see cref="T:System.IAsyncResult" />。</returns>
+      <param name="buffer">受信したデータを保存するバッファー。</param>
+      <param name="offset">データを格納する <paramref name="buffer" /> の先頭からのオフセット (バイト単位)。</param>
+      <param name="count">受信して <paramref name="buffer" /> に格納する最大バイト数。</param>
+      <param name="callback">操作が完了したときに呼び出されるコールバック メソッド。</param>
+      <param name="state">この操作の <paramref name="callback" /> メソッドに渡す省略可能な状態情報。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="buffer" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が 0 未満です。または<paramref name="offset" /> が <paramref name="buffer" /> の長さを超えています。または<paramref name="count" /> が 0 未満です。または<paramref name="offset" /> に <paramref name="count" /> を加算した値が、<paramref name="buffer" /> の長さを超えています。</exception>
+      <exception cref="T:System.InvalidOperationException">マルチキャスト グループが参加していません。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> は破棄されています。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">受信するソケットにアクセスしようとしてエラーが発生しました。詳細については「解説」を参照してください。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpSingleSourceMulticastClient.BeginSendToSource(System.Byte[],System.Int32,System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+      <summary>以前指定された送信元へのユニキャスト パケットの送信操作を開始します。</summary>
+      <returns>この操作を参照する <see cref="T:System.IAsyncResult" />。</returns>
+      <param name="buffer">送信するデータを含むバッファー。</param>
+      <param name="offset">送信するデータを読み取る <paramref name="buffer" /> の先頭からのオフセット (バイト単位)。</param>
+      <param name="count">
+        <paramref name="buffer" /> から送信するバイト数。</param>
+      <param name="remotePort">パケットの送信先のリモート ポート。リモート アドレスは、<see cref="M:System.Net.Sockets.UdpSingleSourceMulticastClient.#ctor(System.Net.IPAddress,System.Net.IPAddress,System.Int32)" /> コンストラクターで指定します。</param>
+      <param name="callback">操作が完了したときに呼び出されるコールバック メソッド。</param>
+      <param name="state">この操作の <paramref name="callback" /> メソッドに渡す省略可能な状態情報。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="buffer" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が 0 未満です。または<paramref name="offset" /> が <paramref name="buffer" /> の長さを超えています。または<paramref name="count" /> が 0 未満です。または<paramref name="offset" /> に <paramref name="count" /> を加算した値が、<paramref name="buffer" /> の長さを超えています。<paramref name="remotePort" /> が 0 未満です。または<paramref name="remotePort" /> が 65,535 より大きい値です。</exception>
+      <exception cref="T:System.InvalidOperationException">マルチキャスト グループが参加していません。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> は破棄されています。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">送信用のソケットへのアクセス試行中にエラーが発生しました。詳細については「解説」を参照してください。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpSingleSourceMulticastClient.Dispose">
+      <summary>マルチキャスト グループへの参加を取り消し、<see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> クラスの現在のインスタンスによって使用されたリソースと、基になる <see cref="T:System.Net.Sockets.Socket" /> によって使用されたリソースをすべて解放します。</summary>
+    </member>
+    <member name="M:System.Net.Sockets.UdpSingleSourceMulticastClient.EndJoinGroup(System.IAsyncResult)">
+      <summary>マルチキャスト グループへの非同期グループ参加操作を完了します。</summary>
+      <param name="result">非同期参加操作の結果。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="result" /> が null です。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> は破棄されています。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">ソケットへのアクセスを試みているときにエラーが発生しました。詳細については「解説」を参照してください。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpSingleSourceMulticastClient.EndReceiveFromSource(System.IAsyncResult,System.Int32@)">
+      <summary>参加しているマルチキャスト グループからのパケットの非同期受信操作を完了し、指定された送信者から受信した情報を提供します。</summary>
+      <returns>
+        <see cref="M:System.Net.Sockets.UdpSingleSourceMulticastClient.BeginReceiveFromSource(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" /> メソッドに渡される <paramref name="buffer" /> パラメーターに格納されたメッセージの長さ (バイト単位)。</returns>
+      <param name="result">非同期受信操作の結果。</param>
+      <param name="sourcePort">受信したパケットの送信元ポート。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="result" /> が null です。</exception>
+      <exception cref="T:System.InvalidOperationException">マルチキャスト グループが参加していません。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> は破棄されています。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">ソケットへのアクセスを試みているときにエラーが発生しました。詳細については「解説」を参照してください。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpSingleSourceMulticastClient.EndSendToSource(System.IAsyncResult)">
+      <summary>単一の送信元へのユニキャスト パケットの送信操作を完了します。</summary>
+      <param name="result">非同期送信操作の結果。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="result" /> が null です。</exception>
+      <exception cref="T:System.InvalidOperationException">マルチキャスト グループが参加していません。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> は破棄されています。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">ソケットへのアクセスを試みているときにエラーが発生しました。詳細については「解説」を参照してください。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpSingleSourceMulticastClient.Finalize">
+      <summary>現在の <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> クラスに保持されているリソースを解放します。</summary>
+    </member>
+    <member name="P:System.Net.Sockets.UdpSingleSourceMulticastClient.ReceiveBufferSize">
+      <summary>この <see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> インスタンスでのマルチキャスト受信操作に使用される <see cref="T:System.Net.Sockets.Socket" /> の受信バッファーのサイズをバイト単位で取得または設定します。</summary>
+      <returns>受信バッファーのバイト単位のサイズ。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">指定されたバッファー サイズが 0 未満です。</exception>
+      <exception cref="T:System.InvalidOperationException">マルチキャスト グループが参加していません。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> は破棄されています。</exception>
+    </member>
+    <member name="P:System.Net.Sockets.UdpSingleSourceMulticastClient.SendBufferSize">
+      <summary>この <see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> インスタンスでのマルチキャスト送信操作に使用される <see cref="T:System.Net.Sockets.Socket" /> の送信バッファーのサイズをバイト単位で取得または設定します。</summary>
+      <returns>送信バッファーのバイト単位のサイズ。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">指定されたバッファー サイズが 0 未満です。</exception>
+      <exception cref="T:System.InvalidOperationException">マルチキャスト グループが参加していません。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> は破棄されています。</exception>
+    </member>
+  </members>
+</doc>

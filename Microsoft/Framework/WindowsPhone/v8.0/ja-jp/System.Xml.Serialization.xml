@@ -1,0 +1,766 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.Xml.Serialization</name>
+  </assembly>
+  <members>
+    <member name="T:System.ServiceModel.XmlSerializerFormatAttribute">
+      <summary>メソッドまたはクラスをシリアル化するために、<see cref="T:System.Runtime.Serialization.XmlObjectSerializer" /> ではなく <see cref="T:System.Xml.Serialization.XmlSerializer" /> を使用するように Windows Phone インフラストラクチャに指示します。</summary>
+    </member>
+    <member name="M:System.ServiceModel.XmlSerializerFormatAttribute.#ctor">
+      <summary>
+        <see cref="T:System.ServiceModel.XmlSerializerFormatAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="P:System.ServiceModel.XmlSerializerFormatAttribute.SupportFaults">
+      <summary>エラーがサポートされるかどうかを示す値を取得または設定します。</summary>
+      <returns>エラーがサポートされる場合は true、それ以外の場合は false。</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlAnyAttributeAttribute">
+      <summary>メンバー (<see cref="T:System.Xml.XmlAttribute" /> オブジェクトの配列を返すフィールド) に任意の XML 属性を含めることができるように指定します。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyAttributeAttribute.#ctor">
+      <summary>
+        <see cref="T:System.Xml.Serialization.XmlAnyAttributeAttribute" /> クラスの新しいインスタンスを生成します。</summary>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlAnyElementAttributes">
+      <summary>
+        <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> オブジェクトのコレクションを表します。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.#ctor">
+      <summary>
+        <see cref="T:System.Xml.Serialization.XmlAnyElementAttributes" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.Add(System.Xml.Serialization.XmlAnyElementAttribute)">
+      <summary>
+        <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> オブジェクトのコレクションを表します。</summary>
+      <returns>追加された項目のインデックス。</returns>
+      <param name="attribute">コレクションに追加する <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" />。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.Clear">
+      <summary>コレクションからすべてのオブジェクトを削除します。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.Contains(System.Xml.Serialization.XmlAnyElementAttribute)">
+      <summary>コレクションに指定された <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> が含まれているかどうかを判別します。</summary>
+      <returns>コレクションに指定された <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> が含まれている場合は true。それ以外の場合は false。</returns>
+      <param name="attribute">確認する <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" />。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.CopyTo(System.Xml.Serialization.XmlAnyElementAttribute[],System.Int32)">
+      <summary>
+        <see cref="コピー先の指定したインデックスを開始位置として、T:System.Xml.Serialization.XmlAnyElementAttribute" /> 配列をコレクションにコピーします。</summary>
+      <param name="array">コレクションにコピーする <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> オブジェクトの配列。</param>
+      <param name="index">コピーの開始位置となる、配列の 0 から始まるインデックス。</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttributes.Count">
+      <summary>コレクションに含まれている属性の数を取得します。</summary>
+      <returns>コレクションに含まれている属性の数。</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.GetEnumerator">
+      <summary>コレクションを反復処理できる <see cref="T:System.Collections.IEnumerator" /> を返します。</summary>
+      <returns>コレクションを反復処理できる <see cref="T:System.Collections.IEnumerator" /> オブジェクト。</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.IndexOf(System.Xml.Serialization.XmlAnyElementAttribute)">
+      <summary>指定された <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> がコレクション内で最初に出現する位置の 0 から始まるインデックスを返します。コレクション内に属性が存在しない場合は -1 を返します。</summary>
+      <returns>コレクション内の <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> の最初のインデックス。コレクション内に属性が存在しない場合は -1。</returns>
+      <param name="attribute">コレクション内で検索する <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" />。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.Insert(System.Int32,System.Xml.Serialization.XmlAnyElementAttribute)">
+      <summary>コレクション内の指定されたインデックスの位置に <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> を挿入します。</summary>
+      <param name="index">属性を挿入する位置の 0 から始まるインデックス。</param>
+      <param name="attribute">挿入する <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" />。</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttributes.Item(System.Int32)">
+      <summary>指定されたインデックスの位置にある属性要素を取得または設定します。</summary>
+      <returns>指定されたインデックスの位置にある <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" />。</returns>
+      <param name="index">取得または設定する属性要素の 0 から始まるインデックス。</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> は、対象コレクションに対して有効ではありません。値が大きすぎるか、または 0 未満です。</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.Remove(System.Xml.Serialization.XmlAnyElementAttribute)">
+      <summary>指定された <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> がコレクションに存在する場合は削除します。</summary>
+      <param name="attribute">削除する <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" />。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.RemoveAt(System.Int32)">
+      <summary>指定されたインデックスの位置にある <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> 項目をコレクションから削除します。</summary>
+      <param name="index">削除する項目の 0 から始まるインデックス。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#ICollection#CopyTo(System.Array,System.Int32)">
+      <summary>配列内の指定したインデックスを開始位置として、属性コレクションから配列に要素をコピーします。</summary>
+      <param name="array">
+        <see cref="T:System.Array" /> コレクションからコピーされた属性要素の 1 次元コピー先 <see cref="T:System.Xml.Serialization.XmlAnyElementAttributes" />。</param>
+      <param name="index">コピーの開始位置となる、配列内の 0 から始まるインデックス。</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> が 0 未満です。</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="index" /> が配列の長さより大きいか、属性要素の追加時に配列の長さを超過したか、または <paramref name="array" /> が多次元です。</exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#ICollection#IsSynchronized">
+      <summary>属性コレクションへのアクセスが同期されている (スレッド セーフである) かどうかを示す値を取得します。</summary>
+      <returns>コレクションが同期されている場合 (スレッド セーフの場合) は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#ICollection#SyncRoot">
+      <summary>このメソッドはサポートされていません。</summary>
+      <returns>
+        <see cref="T:System.NotSupportedException" /> をスローします。</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#Add(System.Object)">
+      <summary>項目を属性リストに追加します。</summary>
+      <returns>新しい要素が挿入された位置。</returns>
+      <param name="value">リストに追加するオブジェクト。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#Contains(System.Object)">
+      <summary>属性リストに特定の値が含まれているかどうかを判別します。</summary>
+      <returns>オブジェクトが属性リストに存在する場合は true。それ以外の場合は false。</returns>
+      <param name="value">属性リスト内で検索するオブジェクト。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#IndexOf(System.Object)">
+      <summary>属性リスト内の指定された項目のインデックスを判別します。</summary>
+      <returns>属性リストに含まれている場合は <paramref name="value" /> のインデックス。それ以外の場合は -1。</returns>
+      <param name="value">属性リスト内で検索するオブジェクト。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#Insert(System.Int32,System.Object)">
+      <summary>リスト内の指定されたインデックスの位置に項目を挿入します。</summary>
+      <param name="index">値を挿入する位置の 0 から始まるインデックス。</param>
+      <param name="value">リストに挿入するオブジェクト。</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> は、対象コレクションに対して有効ではありません。値が大きすぎるか、または 0 未満です。</exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#IsFixedSize">
+      <summary>リストが固定サイズであるかどうかを示す値を取得します。</summary>
+      <returns>リストが固定サイズの場合は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#IsReadOnly">
+      <summary>リストが読み取り専用であるかどうかを示す値を取得します。</summary>
+      <returns>リストが読み取り専用の場合は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#Item(System.Int32)">
+      <summary>指定されたインデックスの位置にある要素を取得または設定します。</summary>
+      <returns>指定されたインデックスの位置にある要素。</returns>
+      <param name="index">取得または設定する要素の 0 から始まるインデックス。</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> は、対象コレクションに対して有効ではありません。値が大きすぎるか、または 0 未満です。</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#Remove(System.Object)">
+      <summary>リスト内で最初に見つかった特定のオブジェクトを削除します。</summary>
+      <param name="value">リストから削除するオブジェクト。</param>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlArrayItemAttributes">
+      <summary>
+        <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> オブジェクトのコレクションを表します。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.#ctor">
+      <summary>
+        <see cref="T:System.Xml.Serialization.XmlArrayItemAttributes" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.Add(System.Xml.Serialization.XmlArrayItemAttribute)">
+      <summary>
+        <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> をコレクションに追加します。</summary>
+      <returns>追加された項目のインデックス。</returns>
+      <param name="attribute">コレクションに追加する <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" />。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.Clear">
+      <summary>コレクションからすべてのオブジェクトを削除します。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.Contains(System.Xml.Serialization.XmlArrayItemAttribute)">
+      <summary>コレクションに指定された <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> が含まれているかどうかを判別します。</summary>
+      <returns>コレクションに指定された <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> が含まれている場合は true。それ以外の場合は false。</returns>
+      <param name="attribute">確認する <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" />。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.CopyTo(System.Xml.Serialization.XmlArrayItemAttribute[],System.Int32)">
+      <summary>
+        <see cref="コピー先の指定したインデックスを開始位置として、T:System.Xml.Serialization.XmlArrayItemAttribute" /> 配列をコレクションにコピーします。</summary>
+      <param name="array">コレクションにコピーする <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> オブジェクトの配列。</param>
+      <param name="index">コピーの開始位置となる、配列の 0 から始まるインデックス。</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttributes.Count">
+      <summary>コレクションに含まれている属性の数を取得します。</summary>
+      <returns>コレクションに含まれている属性の数。</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.GetEnumerator">
+      <summary>コレクションを反復処理できる <see cref="T:System.Collections.IEnumerator" /> を返します。</summary>
+      <returns>コレクションを反復処理できる <see cref="T:System.Collections.IEnumerator" /> オブジェクト。</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.IndexOf(System.Xml.Serialization.XmlArrayItemAttribute)">
+      <summary>指定された <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> がコレクション内で最初に出現する位置の 0 から始まるインデックスを返します。コレクション内に属性が存在しない場合は -1 を返します。</summary>
+      <returns>コレクション内の <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> の最初のインデックス。コレクション内に属性が存在しない場合は -1。</returns>
+      <param name="attribute">コレクション内で検索する <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" />。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.Insert(System.Int32,System.Xml.Serialization.XmlArrayItemAttribute)">
+      <summary>コレクション内の指定されたインデックスの位置に <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> を挿入します。</summary>
+      <param name="index">属性を挿入する位置の 0 から始まるインデックス。</param>
+      <param name="attribute">挿入する <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" />。</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttributes.Item(System.Int32)">
+      <summary>指定されたインデックスの位置にある属性要素を取得または設定します。</summary>
+      <returns>指定されたインデックスの位置にある <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" />。</returns>
+      <param name="index">取得または設定する属性要素の 0 から始まるインデックス。</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> は、対象コレクションに対して有効ではありません。値が大きすぎるか、または 0 未満です。</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.Remove(System.Xml.Serialization.XmlArrayItemAttribute)">
+      <summary>指定された <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> がコレクションに存在する場合は削除します。</summary>
+      <param name="attribute">削除する <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" />。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.RemoveAt(System.Int32)">
+      <summary>指定されたインデックスの位置にある <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> 項目をコレクションから削除します。</summary>
+      <param name="index">削除する項目の 0 から始まるインデックス。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#ICollection#CopyTo(System.Array,System.Int32)">
+      <summary>配列内の指定したインデックスを開始位置として、属性コレクションから配列に要素をコピーします。</summary>
+      <param name="array">
+        <see cref="T:System.Array" /> コレクションからコピーされた属性要素の 1 次元コピー先 <see cref="T:System.Xml.Serialization.XmlArrayItemAttributes" />。</param>
+      <param name="index">コピーの開始位置となる、配列内の 0 から始まるインデックス。</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> が 0 未満です。</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="index" /> が配列の長さ以上です。または、追加する属性要素の配列の長さが超過しています。または、<paramref name="array" /> が多次元です。</exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#ICollection#IsSynchronized">
+      <summary>属性コレクションへのアクセスが同期されている (スレッド セーフである) かどうかを示す値を取得します。</summary>
+      <returns>コレクションが同期されている場合 (スレッド セーフの場合) は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#ICollection#SyncRoot">
+      <summary>このメソッドはサポートされていません。</summary>
+      <returns>
+        <see cref="T:System.NotSupportedException" /> をスローします。</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#Add(System.Object)">
+      <summary>項目を属性リストに追加します。</summary>
+      <returns>新しい要素が挿入された位置。</returns>
+      <param name="value">リストに追加するオブジェクト。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#Contains(System.Object)">
+      <summary>属性リストに特定の値が含まれているかどうかを判別します。</summary>
+      <returns>オブジェクトが属性リストに存在する場合は true。それ以外の場合は false。</returns>
+      <param name="value">属性リスト内で検索するオブジェクト。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#IndexOf(System.Object)">
+      <summary>属性リスト内の指定された項目のインデックスを判別します。</summary>
+      <returns>属性リストに含まれている場合は <paramref name="value" /> のインデックス。それ以外の場合は -1。</returns>
+      <param name="value">属性リスト内で検索するオブジェクト。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#Insert(System.Int32,System.Object)">
+      <summary>リスト内の指定されたインデックスの位置に項目を挿入します。</summary>
+      <param name="index">値を挿入する位置の 0 から始まるインデックス。</param>
+      <param name="value">リストに挿入するオブジェクト。</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> は、対象コレクションに対して有効ではありません。値が大きすぎるか、または 0 未満です。</exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#IsFixedSize">
+      <summary>リストが固定サイズであるかどうかを示す値を取得します。</summary>
+      <returns>リストが固定サイズの場合は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#IsReadOnly">
+      <summary>リストが読み取り専用であるかどうかを示す値を取得します。</summary>
+      <returns>リストが読み取り専用の場合は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#Item(System.Int32)">
+      <summary>指定されたインデックスの位置にある要素を取得または設定します。</summary>
+      <returns>指定されたインデックスの位置にある要素。</returns>
+      <param name="index">取得または設定する要素の 0 から始まるインデックス。</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> は、対象コレクションに対して有効ではありません。値が大きすぎるか、または 0 未満です。</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#Remove(System.Object)">
+      <summary>リスト内で最初に見つかった特定のオブジェクトを削除します。</summary>
+      <param name="value">リストから削除するオブジェクト。</param>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlAttributeOverrides">
+      <summary>オブジェクトをシリアル化または逆シリアル化するために <see cref="T:System.Xml.Serialization.XmlSerializer" /> を使用するときに、プロパティ、フィールド、クラスの各属性をユーザーがオーバーライドできるようにします。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAttributeOverrides.#ctor">
+      <summary>
+        <see cref="T:System.Xml.Serialization.XmlAttributeOverrides" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAttributeOverrides.Add(System.Type,System.String,System.Xml.Serialization.XmlAttributes)">
+      <summary>
+        <see cref="T:System.Xml.Serialization.XmlAttributes" /> オブジェクトを <see cref="T:System.Xml.Serialization.XmlAttributes" />オブジェクトのコレクションに追加します。<paramref name="type" /> パラメーターは、オーバーライドされるオブジェクトを指定します。<paramref name="member" /> パラメーターは、オーバーライドされるメンバーの名前を指定します。</summary>
+      <param name="type">オーバーライドするオブジェクトの <see cref="T:System.Type" />。</param>
+      <param name="member">オーバーライドするメンバーの名前。</param>
+      <param name="attributes">オーバーライドする側の属性を表す <see cref="T:System.Xml.Serialization.XmlAttributes" /> オブジェクト。</param>
+      <exception cref="T:System.InvalidOperationException">ある種類のメンバーに複数の <see cref="T:System.Xml.Serialization.XmlAttributes" /> オブジェクトが追加されました。</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAttributeOverrides.Add(System.Type,System.Xml.Serialization.XmlAttributes)">
+      <summary>
+        <see cref="T:System.Xml.Serialization.XmlAttributes" /> オブジェクトを <see cref="T:System.Xml.Serialization.XmlAttributes" />オブジェクトのコレクションに追加します。<paramref name="type" /> パラメーターは、<see cref="T:System.Xml.Serialization.XmlAttributes" /> オブジェクトによってオーバーライドされるオブジェクトを指定します。</summary>
+      <param name="type">オーバーライドされるオブジェクトの <see cref="T:System.Type" />。</param>
+      <param name="attributes">オーバーライドする側の属性を表す <see cref="T:System.Xml.Serialization.XmlAttributes" /> オブジェクト。</param>
+      <exception cref="T:System.InvalidOperationException">ある種類のメンバーに複数の <see cref="T:System.Xml.Serialization.XmlAttributes" /> オブジェクトが追加されました。</exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributeOverrides.Item(System.Type)">
+      <summary>指定された基本クラス型に関連付けられたオブジェクトを取得します。</summary>
+      <returns>オーバーライドする側の属性のコレクションを表す <see cref="T:System.Xml.Serialization.XmlAttributes" />。</returns>
+      <param name="type">取得する属性のコレクションに関連付けられている基本クラスの <see cref="T:System.Type" />。</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributeOverrides.Item(System.Type,System.String)">
+      <summary>指定された基本クラス型に関連付けられたオブジェクトを取得します。<paramref name="member" /> パラメーターには、オーバーライドされる基本クラス メンバーを指定します。</summary>
+      <returns>オーバーライドする側の属性のコレクションを表す <see cref="T:System.Xml.Serialization.XmlAttributes" />。</returns>
+      <param name="type">使用する属性のコレクションに関連付けられている基本クラスの <see cref="T:System.Type" />。</param>
+      <param name="member">返す <see cref="T:System.Xml.Serialization.XmlAttributes" /> を指定する、オーバーライドされたメンバーの名前。</param>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlAttributes">
+      <summary>
+        <see cref="T:System.Xml.Serialization.XmlSerializer" /> がオブジェクトをシリアル化および逆シリアル化する方法を制御する属性オブジェクトのコレクションを示します。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAttributes.#ctor">
+      <summary>
+        <see cref="T:System.Xml.Serialization.XmlAttributes" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAttributes.#ctor(System.Reflection.ICustomAttributeProvider)">
+      <summary>
+        <see cref="T:System.Xml.Serialization.XmlAttributes" /> クラスの新しいインスタンスを初期化し、<see cref="T:System.Xml.Serialization.XmlSerializer" /> がオブジェクトをシリアル化および逆シリアル化する方法をカスタマイズします。</summary>
+      <param name="provider">XML のシリアル化を制御する属性の代替実装を提供できるクラス。</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlAnyAttribute"></member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlAnyElements">
+      <summary>オーバーライドする <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> オブジェクトのコレクションを取得します。</summary>
+      <returns>
+        <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> オブジェクトのコレクションを表す <see cref="T:System.Xml.Serialization.XmlAnyElementAttributes" /> オブジェクト。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlArray">
+      <summary>
+        <see cref="T:System.Xml.Serialization.XmlSerializer" /> が、配列を返すパブリック フィールドまたは読み書き可能プロパティをシリアル化する方法を指定するオブジェクトを取得または設定します。</summary>
+      <returns>配列を返すパブリック フィールドまたは読み書き可能プロパティを <see cref="T:System.Xml.Serialization.XmlSerializer" /> でシリアル化する方法を指定する <see cref="T:System.Xml.Serialization.XmlArrayAttribute" />。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlArrayItems">
+      <summary>パブリック フィールドまたは読み書き可能プロパティによって返された配列に挿入されている項目を <see cref="T:System.Xml.Serialization.XmlSerializer" /> によってシリアル化する方法を指定するオブジェクトのコレクションを取得または設定します。</summary>
+      <returns>
+        <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> オブジェクトのコレクションを格納している <see cref="T:System.Xml.Serialization.XmlArrayItemAttributes" /> オブジェクト。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlAttribute">
+      <summary>
+        <see cref="T:System.Xml.Serialization.XmlSerializer" /> が、パブリック フィールドまたは読み書き可能なパブリック プロパティを XML 属性としてシリアル化する方法を指定するオブジェクトを取得または設定します。</summary>
+      <returns>パブリック フィールドまたは読み書き可能プロパティを XML 属性としてシリアル化する方法を制御する <see cref="T:System.Xml.Serialization.XmlAttributeAttribute" />。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlChoiceIdentifier">
+      <summary>複数の選択肢を区別できるようにするオブジェクトを取得または設定します。</summary>
+      <returns>xsi:choice 要素としてシリアル化されているクラス メンバーに適用できる <see cref="T:System.Xml.Serialization.XmlChoiceIdentifierAttribute" />。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlDefaultValue">
+      <summary>XML 要素または XML 属性の既定値を取得または設定します。</summary>
+      <returns>XML 要素または XML 属性の既定値を表す <see cref="T:System.Object" />。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlElements">
+      <summary>
+        <see cref="T:System.Xml.Serialization.XmlSerializer" /> がパブリック フィールドまたは読み書き可能プロパティを XML 要素としてシリアル化する方法を指定する、オブジェクトのコレクションを取得します。</summary>
+      <returns>
+        <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> オブジェクトのコレクションを格納している <see cref="T:System.Xml.Serialization.XmlElementAttributes" />。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlEnum">
+      <summary>
+        <see cref="T:System.Xml.Serialization.XmlSerializer" /> が列挙メンバーをシリアル化する方法を指定するオブジェクトを取得または指定します。</summary>
+      <returns>
+        <see cref="T:System.Xml.Serialization.XmlSerializer" /> が列挙体メンバーをシリアル化する方法を指定する <see cref="T:System.Xml.Serialization.XmlEnumAttribute" />。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlIgnore">
+      <summary>
+        <see cref="T:System.Xml.Serialization.XmlSerializer" /> がパブリック フィールドまたは読み書き可能なパブリック プロパティをシリアル化するかどうかを指定する値を取得または設定します。</summary>
+      <returns>
+        <see cref="T:System.Xml.Serialization.XmlSerializer" /> でそのフィールドまたはプロパティをシリアル化しない場合は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.Xmlns">
+      <summary>
+        <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" /> オブジェクトを返すメンバーを格納するオブジェクトがオーバーライドされたときに、すべての名前空間宣言を保持するかどうかを示す値を取得または設定します。</summary>
+      <returns>名前空間宣言を保持する場合は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlRoot">
+      <summary>
+        <see cref="T:System.Xml.Serialization.XmlSerializer" /> がクラスを XML ルート要素としてシリアル化する方法を指定するオブジェクトを取得または指定します。</summary>
+      <returns>XML ルート要素として属性が設定されているクラスをオーバーライドする <see cref="T:System.Xml.Serialization.XmlRootAttribute" />。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlText">
+      <summary>
+        <see cref="T:System.Xml.Serialization.XmlSerializer" /> に対して、パブリック フィールドまたは読み書き可能なパブリック プロパティを XML テキストとしてシリアル化するよう指示するオブジェクトを取得または設定します。</summary>
+      <returns>パブリック プロパティまたはフィールドの既定のシリアル化をオーバーライドする <see cref="T:System.Xml.Serialization.XmlTextAttribute" />。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlType">
+      <summary>
+        <see cref="T:System.Xml.Serialization.XmlTypeAttribute" /> が適用されているクラスを <see cref="T:System.Xml.Serialization.XmlSerializer" /> がシリアル化する方法を指定するオブジェクトを取得または指定します。</summary>
+      <returns>クラス宣言に適用された <see cref="T:System.Xml.Serialization.XmlTypeAttribute" /> をオーバーライドする <see cref="T:System.Xml.Serialization.XmlTypeAttribute" />。</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlElementAttributes">
+      <summary>
+        <see cref="T:System.Xml.Serialization.XmlSerializer" /> がクラスをシリアル化する既定の方法をオーバーライドするために使用する、<see cref="T:System.Xml.Serialization.XmlElementAttribute" /> オブジェクトのコレクションを表します。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.#ctor">
+      <summary>
+        <see cref="T:System.Xml.Serialization.XmlElementAttributes" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.Add(System.Xml.Serialization.XmlElementAttribute)">
+      <summary>
+        <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> をコレクションに追加します。</summary>
+      <returns>追加された項目のインデックス。</returns>
+      <param name="attribute">コレクションに追加する <see cref="T:System.Xml.Serialization.XmlElementAttribute" />。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.Clear">
+      <summary>コレクションからすべてのオブジェクトを削除します。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.Contains(System.Xml.Serialization.XmlElementAttribute)">
+      <summary>コレクションに指定された <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> が含まれているかどうかを判別します。</summary>
+      <returns>コレクションに指定された <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> が含まれている場合は true。それ以外の場合は false。</returns>
+      <param name="attribute">確認する <see cref="T:System.Xml.Serialization.XmlElementAttribute" />。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.CopyTo(System.Xml.Serialization.XmlElementAttribute[],System.Int32)">
+      <summary>
+        <see cref="コピー先の指定したインデックスを開始位置として、T:System.Xml.Serialization.XmlElementAttribute" /> 配列をコレクションにコピーします。</summary>
+      <param name="array">コレクションにコピーする <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> オブジェクトの配列。</param>
+      <param name="index">コピーの開始位置となる、配列の 0 から始まるインデックス。</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttributes.Count">
+      <summary>コレクションに含まれている属性の数を取得します。</summary>
+      <returns>コレクションに含まれている属性の数。</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.GetEnumerator">
+      <summary>コレクションを反復処理できる <see cref="T:System.Collections.IEnumerator" /> を返します。</summary>
+      <returns>コレクションを反復処理できる <see cref="T:System.Collections.IEnumerator" /> オブジェクト。</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.IndexOf(System.Xml.Serialization.XmlElementAttribute)">
+      <summary>指定された <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> がコレクション内で最初に出現する位置の 0 から始まるインデックスを返します。コレクション内に属性が存在しない場合は -1 を返します。</summary>
+      <returns>コレクション内の <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> の最初のインデックス。コレクション内に属性が存在しない場合は -1。</returns>
+      <param name="attribute">コレクション内で検索する <see cref="T:System.Xml.Serialization.XmlElementAttribute" />。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.Insert(System.Int32,System.Xml.Serialization.XmlElementAttribute)">
+      <summary>コレクション内の指定されたインデックスの位置に <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> を挿入します。</summary>
+      <param name="index">属性を挿入する位置の 0 から始まるインデックス。</param>
+      <param name="attribute">挿入する <see cref="T:System.Xml.Serialization.XmlElementAttribute" />。</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttributes.Item(System.Int32)">
+      <summary>指定されたインデックスの位置にある属性要素を取得または設定します。</summary>
+      <returns>指定されたインデックスの位置にある <see cref="T:System.Xml.Serialization.XmlElementAttribute" />。</returns>
+      <param name="index">取得または設定する属性要素の 0 から始まるインデックス。</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> は、対象コレクションに対して有効ではありません。値が大きすぎるか、または 0 未満です。</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.Remove(System.Xml.Serialization.XmlElementAttribute)">
+      <summary>指定された <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> がコレクションに存在する場合は削除します。</summary>
+      <param name="attribute">削除する <see cref="T:System.Xml.Serialization.XmlElementAttribute" />。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.RemoveAt(System.Int32)">
+      <summary>指定されたインデックスの位置にある <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> 項目をコレクションから削除します。</summary>
+      <param name="index">削除する項目の 0 から始まるインデックス。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.System#Collections#ICollection#CopyTo(System.Array,System.Int32)">
+      <summary>配列内の指定したインデックスを開始位置として、属性コレクションから配列に要素をコピーします。</summary>
+      <param name="array">
+        <see cref="T:System.Xml.Serialization.XmlElementAttributes" /> コレクションからコピーされた属性要素の 1 次元コピー先 <see cref="T:System.Array" />。</param>
+      <param name="index">コピーの開始位置となる、配列内の 0 から始まるインデックス。</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> が 0 未満です。</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="index" /> が配列の長さより大きいか、属性要素の追加時に配列の長さを超過したか、または <paramref name="array" /> が多次元です。</exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttributes.System#Collections#ICollection#IsSynchronized">
+      <summary>属性コレクションへのアクセスが同期されている (スレッド セーフである) かどうかを示す値を取得します。</summary>
+      <returns>コレクションが同期されている場合 (スレッド セーフの場合) は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttributes.System#Collections#ICollection#SyncRoot">
+      <summary>このメソッドはサポートされていません。</summary>
+      <returns>
+        <see cref="T:System.NotSupportedException" /> をスローします。</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Add(System.Object)">
+      <summary>項目を属性リストに追加します。</summary>
+      <returns>新しい要素が挿入された位置。</returns>
+      <param name="value">リストに追加するオブジェクト。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Contains(System.Object)">
+      <summary>属性リストに特定の値が含まれているかどうかを判別します。</summary>
+      <returns>オブジェクトが属性リストに存在する場合は true。それ以外の場合は false。</returns>
+      <param name="value">属性リスト内で検索するオブジェクト。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#IndexOf(System.Object)">
+      <summary>属性リスト内の指定された項目のインデックスを判別します。</summary>
+      <returns>属性リストに含まれている場合は <paramref name="value" /> のインデックス。それ以外の場合は -1。</returns>
+      <param name="value">属性リスト内で検索するオブジェクト。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Insert(System.Int32,System.Object)">
+      <summary>リスト内の指定されたインデックスの位置に項目を挿入します。</summary>
+      <param name="index">値を挿入する位置の 0 から始まるインデックス。</param>
+      <param name="value">リストに挿入するオブジェクト。</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> は、対象コレクションに対して有効ではありません。値が大きすぎるか、または 0 未満です。</exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#IsFixedSize">
+      <summary>リストが固定サイズであるかどうかを示す値を取得します。</summary>
+      <returns>リストが固定サイズの場合は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#IsReadOnly">
+      <summary>リストが読み取り専用であるかどうかを示す値を取得します。</summary>
+      <returns>リストが読み取り専用の場合は <paramref name="true" />、それ以外の場合は <paramref name="false" />。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Item(System.Int32)">
+      <summary>指定されたインデックスの位置にある要素を取得または設定します。</summary>
+      <returns>指定されたインデックスの位置にある要素。</returns>
+      <param name="index">取得または設定する要素の 0 から始まるインデックス。</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> は、対象コレクションに対して有効ではありません。値が大きすぎるか、または 0 未満です。</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Remove(System.Object)">
+      <summary>リスト内で最初に見つかった特定のオブジェクトを削除します。</summary>
+      <param name="value">リストから削除するオブジェクト。</param>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlMapping">
+      <summary>.NET Framework 型と XML スキーマ データ型間の対応付けをサポートします。</summary>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMapping.ElementName">
+      <summary>対応付けられる要素の名前を取得します。</summary>
+      <returns>対応付けられる要素の名前。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMapping.Namespace">
+      <summary>対応付けられる要素の名前空間を取得します。</summary>
+      <returns>対応付けられる要素の名前空間。</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlMapping.SetKey(System.String)">
+      <summary>対応付けの検索に使用するキーを設定します。</summary>
+      <param name="key">検索キー。</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMapping.XsdElementName">
+      <summary>対応付けの XSD 要素の名前を取得します。</summary>
+      <returns>XSD 要素の名前。</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlMappingAccess">
+      <summary>マッピングを読み込みにするか、書き込みにするか、またはその両方にするか指定します。</summary>
+    </member>
+    <member name="F:System.Xml.Serialization.XmlMappingAccess.None">
+      <summary>書き込みメソッドと読み込みメソッドの両方が生成されます。</summary>
+    </member>
+    <member name="F:System.Xml.Serialization.XmlMappingAccess.Read">
+      <summary>読み込みメソッドが生成されます。</summary>
+    </member>
+    <member name="F:System.Xml.Serialization.XmlMappingAccess.Write">
+      <summary>書き込みメソッドが生成されます。</summary>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlReflectionImporter">
+      <summary>.NET Framework の型または Web サービス メソッド情報に対する XML スキーマ要素宣言 (Web サービス記述言語 (WSDL) ドキュメントのリテラル XML スキーマ定義 (XSD) メッセージ部分を含む) との対応付けを生成します。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.#ctor">
+      <summary>
+        <see cref="T:System.Xml.Serialization.XmlReflectionImporter" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.#ctor(System.String)">
+      <summary>指定した既定の XML 名前空間を使用して、<see cref="T:System.Xml.Serialization.XmlReflectionImporter" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="defaultNamespace">インポートされる型のマッピングに使用する既定の XML 名前空間。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.#ctor(System.Xml.Serialization.XmlAttributeOverrides)">
+      <summary>指定した XML シリアル化オーバーライドを使用して、<see cref="T:System.Xml.Serialization.XmlReflectionImporter" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="attributeOverrides">マップされた型を <see cref="T:System.Xml.Serialization.XmlSerializer" /> クラスでシリアル化する方法をオーバーライドするオブジェクト。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.#ctor(System.Xml.Serialization.XmlAttributeOverrides,System.String)">
+      <summary>指定した XML シリアル化オーバーライドと既定の XML 名前空間を使用して、<see cref="T:System.Xml.Serialization.XmlReflectionImporter" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="attributeOverrides">マップされた型を <see cref="T:System.Xml.Serialization.XmlSerializer" /> クラスでシリアル化する方法をオーバーライドするオブジェクト。</param>
+      <param name="defaultNamespace">インポートされる型のマッピングに使用する既定の XML 名前空間。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type)">
+      <summary>指定した .NET Framework 型に対応する XML スキーマ要素へのマッピングを生成します。</summary>
+      <returns>.NET Framework 内部での XML スキーマ要素に対する型のマッピング。</returns>
+      <param name="type">型のマッピングを生成する .NET Framework 型。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type,System.String)">
+      <summary>指定した型と名前空間を使用して、.NET Framework 型に対応する XML スキーマ要素の対応付け情報を生成します。</summary>
+      <returns>.NET Framework 内部での XML スキーマ要素に対する型のマッピング。</returns>
+      <param name="type">型のマッピングを生成する .NET Framework 型。</param>
+      <param name="defaultNamespace">使用する既定の XML 名前空間。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type,System.Xml.Serialization.XmlRootAttribute)">
+      <summary>指定した型と属性を使用して、.NET Framework 型に対応する XML スキーマ要素の対応付け情報を生成します。</summary>
+      <returns>.NET Framework 型と XML スキーマ要素の対応付けを表す <see cref="T:System.Xml.Serialization.XmlTypeMapping" />。</returns>
+      <param name="type">型のマッピングを生成する .NET Framework 型。</param>
+      <param name="root">型に適用される <see cref="T:System.Xml.Serialization.XmlRootAttribute" /> 属性。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type,System.Xml.Serialization.XmlRootAttribute,System.String)">
+      <summary>指定した型、属性、および名前空間を使用して、.NET Framework 型に対応する XML スキーマ要素の対応付け情報を生成します。</summary>
+      <returns>.NET Framework 型と XML スキーマ要素の内部的な対応付けを格納した <see cref="T:System.Xml.Serialization.XmlTypeMapping" />。</returns>
+      <param name="type">型のマッピングを生成する .NET Framework 型。</param>
+      <param name="root">型に適用される <see cref="T:System.Xml.Serialization.XmlRootAttribute" /> 属性。</param>
+      <param name="defaultNamespace">使用する既定の XML 名前空間。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.IncludeType(System.Type)">
+      <summary>後でインポート メソッドを呼び出すときに使用する型の対応付け情報を格納します。</summary>
+      <param name="type">型の対応付け情報を保存する .NET Framework 型。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.IncludeTypes(System.Reflection.ICustomAttributeProvider)">
+      <summary>後でインポート メソッドを呼び出すときに使用する派生型の対応付け情報を格納します。</summary>
+      <param name="provider">
+        <see cref="T:System.Xml.Serialization.XmlIncludeAttribute" /> 属性から派生したカスタム属性を格納する <see cref="T:System.Reflection.ICustomAttributeProvider" /> クラスのインスタンス。</param>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlSerializer">
+      <summary>オブジェクトから XML ドキュメントへのシリアル化および XML ドキュメントからオブジェクトへの逆シリアル化を行います。<see cref="T:System.Xml.Serialization.XmlSerializer" /> により、オブジェクトを XML にエンコードする方法を制御できます。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor">
+      <summary>
+        <see cref="T:System.Xml.Serialization.XmlSerializer" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type)">
+      <summary>指定した型のオブジェクトを XML ドキュメントにシリアル化したり、XML ドキュメントを指定した型のオブジェクトに逆シリアル化したりできる、<see cref="T:System.Xml.Serialization.XmlSerializer" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="type">この <see cref="T:System.Xml.Serialization.XmlSerializer" /> でシリアル化できるオブジェクトの型。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.String)">
+      <summary>指定した型のオブジェクトを XML ドキュメントにシリアル化したり、XML ドキュメントを指定した型のオブジェクトに逆シリアル化したりできる、<see cref="T:System.Xml.Serialization.XmlSerializer" /> クラスの新しいインスタンスを初期化します。すべての XML 要素の既定の名前空間を指定します。</summary>
+      <param name="type">この <see cref="T:System.Xml.Serialization.XmlSerializer" /> でシリアル化できるオブジェクトの型。</param>
+      <param name="defaultNamespace">すべての XML 要素で使用する既定の名前空間。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Type[])">
+      <summary>指定した型のオブジェクトを XML ドキュメントにシリアル化したり、XML ドキュメントを指定した型のオブジェクトに逆シリアル化したりできる、<see cref="T:System.Xml.Serialization.XmlSerializer" /> クラスの新しいインスタンスを初期化します。プロパティまたはフィールドが配列を返す場合、<paramref name="extraTypes" /> パラメーターには、その配列に挿入できるオブジェクトを指定します。</summary>
+      <param name="type">この <see cref="T:System.Xml.Serialization.XmlSerializer" /> でシリアル化できるオブジェクトの型。</param>
+      <param name="extraTypes">シリアル化する追加のオブジェクトの型の <see cref="T:System.Type" /> 配列。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Xml.Serialization.XmlAttributeOverrides)">
+      <summary>指定した型のオブジェクトを XML ドキュメントにシリアル化したり、XML ドキュメントを指定した型のオブジェクトに逆シリアル化したりできる、<see cref="T:System.Xml.Serialization.XmlSerializer" /> クラスの新しいインスタンスを初期化します。シリアル化される各オブジェクトはそれ自体がクラスのインスタンスを含むことができ、それをこのオーバーロードによって他のクラスでオーバーライドできます。</summary>
+      <param name="type">シリアル化するオブジェクトの型。</param>
+      <param name="overrides">
+        <see cref="T:System.Xml.Serialization.XmlAttributeOverrides" />。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Xml.Serialization.XmlAttributeOverrides,System.Type[],System.Xml.Serialization.XmlRootAttribute,System.String)">
+      <summary>
+        <see cref="T:System.Object" /> 型のオブジェクトを XML ドキュメント インスタンスにシリアル化したり、XML ドキュメント インスタンスを<see cref="T:System.Object" /> 型のオブジェクトに逆シリアル化したりできる、<see cref="T:System.Xml.Serialization.XmlSerializer" /> クラスの新しいインスタンスを初期化します。シリアル化される各オブジェクトはそれ自体がクラスのインスタンスを含むことができ、それをこのオーバーロードによって他のクラスでオーバーライドします。このオーバーロードでは、すべての XML 要素の既定の名前空間、および XML ルート要素として使用するクラスも指定します。</summary>
+      <param name="type">この <see cref="T:System.Xml.Serialization.XmlSerializer" /> でシリアル化できるオブジェクトの型。</param>
+      <param name="overrides">
+        <paramref name="type" /> パラメーターで指定されたクラスの動作を拡張またはオーバーライドする <see cref="T:System.Xml.Serialization.XmlAttributeOverrides" />。</param>
+      <param name="extraTypes">シリアル化する追加のオブジェクトの型の <see cref="T:System.Type" /> 配列。</param>
+      <param name="root">XML ルート要素プロパティを定義する <see cref="T:System.Xml.Serialization.XmlRootAttribute" />。</param>
+      <param name="defaultNamespace">XML ドキュメント内のすべての XML 要素の既定の名前空間。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Xml.Serialization.XmlRootAttribute)">
+      <summary>指定した型のオブジェクトを XML ドキュメントにシリアル化したり、XML ドキュメントを指定した型のオブジェクトに逆シリアル化したりできる、<see cref="T:System.Xml.Serialization.XmlSerializer" /> クラスの新しいインスタンスを初期化します。また、XML ルート要素として使用するクラスを指定します。</summary>
+      <param name="type">この <see cref="T:System.Xml.Serialization.XmlSerializer" /> でシリアル化できるオブジェクトの型。</param>
+      <param name="root">XML ルート要素を表す <see cref="T:System.Xml.Serialization.XmlRootAttribute" />。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Xml.Serialization.XmlTypeMapping)">
+      <summary>ある型を別の型に割り当てるオブジェクトを指定して、<see cref="T:System.Xml.Serialization.XmlSerializer" /> クラスのインスタンスを初期化します。</summary>
+      <param name="xmlTypeMapping">1 つの型から別の型への割り当てを行う <see cref="T:System.Xml.Serialization.XmlTypeMapping" />。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.CanDeserialize(System.Xml.XmlReader)">
+      <summary>
+        <see cref="T:System.Xml.Serialization.XmlSerializer" /> が、指定された XML ドキュメントを逆シリアル化できるかどうかを示す値を取得します。</summary>
+      <returns>
+        <see cref="T:System.Xml.XmlReader" /> が指すオブジェクトをこの <see cref="T:System.Xml.Serialization.XmlSerializer" /> が逆シリアル化できる場合は true。それ以外の場合は false。</returns>
+      <param name="xmlReader">逆シリアル化するドキュメントを指す <see cref="T:System.Xml.XmlReader" />。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Deserialize(System.IO.Stream)">
+      <summary>指定して <see cref="T:System.IO.Stream" /> に格納されている XML ドキュメントを逆シリアル化します。</summary>
+      <returns>逆シリアル化される <see cref="T:System.Object" />。</returns>
+      <param name="stream">逆シリアル化する XML ドキュメントが格納されている <see cref="T:System.IO.Stream" />。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Deserialize(System.IO.TextReader)">
+      <summary>指定して <see cref="T:System.IO.TextReader" /> に格納されている XML ドキュメントを逆シリアル化します。</summary>
+      <returns>逆シリアル化される <see cref="T:System.Object" />。</returns>
+      <param name="textReader">逆シリアル化する XML ドキュメントが格納されている <see cref="T:System.IO.TextReader" />。</param>
+      <exception cref="T:System.InvalidOperationException">逆シリアル化中にエラーが発生しました。元の例外には、<see cref="P:System.Exception.InnerException" /> プロパティを使用してアクセスできます。</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Deserialize(System.Xml.XmlReader)">
+      <summary>指定して <see cref="T:System.xml.XmlReader" /> に格納されている XML ドキュメントを逆シリアル化します。</summary>
+      <returns>逆シリアル化される <see cref="T:System.Object" />。</returns>
+      <param name="xmlReader">逆シリアル化する XML ドキュメントが格納されている <see cref="T:System.xml.XmlReader" />。</param>
+      <exception cref="T:System.InvalidOperationException">逆シリアル化中にエラーが発生しました。元の例外には、<see cref="P:System.Exception.InnerException" /> プロパティを使用してアクセスできます。</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.FromMappings(System.Xml.Serialization.XmlMapping[])">
+      <summary>
+        <see cref="T:System.Xml.Serialization.XmlTypeMapping" /> オブジェクトの配列から作成された、<see cref="T:System.Xml.Serialization.XmlSerializer" /> オブジェクトの配列を返します。</summary>
+      <returns>
+        <see cref="T:System.Xml.Serialization.XmlSerializer" /> オブジェクトの配列。</returns>
+      <param name="mappings">1 つの型から別の型への割り当てを行う <see cref="T:System.Xml.Serialization.XmlTypeMapping" /> の配列。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.FromMappings(System.Xml.Serialization.XmlMapping[],System.Type)">
+      <summary>指定した割り当てから <see cref="T:System.Xml.Serialization.XmlSerializer" /> クラスのインスタンスを返します。</summary>
+      <returns>
+        <see cref="T:System.Xml.Serialization.XmlSerializer" /> クラスのインスタンス。</returns>
+      <param name="mappings">
+        <see cref="T:System.Xml.Serialization.XmlMapping" /> オブジェクトの配列。</param>
+      <param name="type">逆シリアル化されるオブジェクトの <see cref="T:System.Type" />。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.FromTypes(System.Type[])">
+      <summary>型の配列から作成された、<see cref="T:System.Xml.Serialization.XmlSerializer" /> オブジェクトの配列を返します。</summary>
+      <returns>
+        <see cref="T:System.Xml.Serialization.XmlSerializer" /> オブジェクトの配列。</returns>
+      <param name="types">
+        <see cref="T:System.Type" /> オブジェクトの配列。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Serialize(System.IO.Stream,System.Object)">
+      <summary>指定された <see cref="T:System.Object" /> をシリアル化し、指定された <see cref="T:System.IO.Stream" /> を使用して XML ドキュメントをファイルに書き込みます。</summary>
+      <param name="stream">XML ドキュメントを書き込むために使用する <see cref="T:System.IO.Stream" />。</param>
+      <param name="o">シリアル化する <see cref="T:System.Object" />。</param>
+      <exception cref="T:System.InvalidOperationException">シリアル化中にエラーが発生しました。元の例外には、<see cref="P:System.Exception.InnerException" /> プロパティを使用してアクセスできます。</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Serialize(System.IO.Stream,System.Object,System.Xml.Serialization.XmlSerializerNamespaces)">
+      <summary>指定した <see cref="T:System.Object" /> をシリアル化し、指定した名前空間を参照する、指定した <see cref="T:System.IO.Stream" /> を使用して、XML ドキュメントをファイルに書き込みます。</summary>
+      <param name="stream">XML ドキュメントを書き込むために使用する <see cref="T:System.IO.Stream" />。</param>
+      <param name="o">シリアル化する <see cref="T:System.Object" />。</param>
+      <param name="namespaces">オブジェクトから参照される <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />。</param>
+      <exception cref="T:System.InvalidOperationException">シリアル化中にエラーが発生しました。元の例外には、<see cref="P:System.Exception.InnerException" /> プロパティを使用してアクセスできます。</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Serialize(System.IO.TextWriter,System.Object)">
+      <summary>指定された <see cref="T:System.Object" /> をシリアル化し、指定された <see cref="T:System.IO.TextWriter" /> を使用して XML ドキュメントをファイルに書き込みます。</summary>
+      <param name="textWriter">XML ドキュメントを書き込むために使用する <see cref="T:System.IO.TextWriter" />。</param>
+      <param name="o">シリアル化する <see cref="T:System.Object" />。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Serialize(System.IO.TextWriter,System.Object,System.Xml.Serialization.XmlSerializerNamespaces)">
+      <summary>指定された <see cref="T:System.Object" /> をシリアル化し、指定された <see cref="T:System.IO.TextWriter" /> を使用して XML ドキュメントをファイルに書き込み、指定された名前空間を参照します。</summary>
+      <param name="textWriter">XML ドキュメントを書き込むために使用する <see cref="T:System.IO.TextWriter" />。</param>
+      <param name="o">シリアル化する <see cref="T:System.Object" />。</param>
+      <param name="namespaces">生成された XML ドキュメントで使用する名前空間を格納している <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />。</param>
+      <exception cref="T:System.InvalidOperationException">シリアル化中にエラーが発生しました。元の例外には、<see cref="P:System.Exception.InnerException" /> プロパティを使用してアクセスできます。</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Serialize(System.Xml.XmlWriter,System.Object)">
+      <summary>指定された <see cref="T:System.Object" /> をシリアル化し、指定された <see cref="T:System.Xml.XmlWriter" /> を使用して XML ドキュメントをファイルに書き込みます。</summary>
+      <param name="xmlWriter">XML ドキュメントを書き込むために使用する <see cref="T:System.xml.XmlWriter" />。</param>
+      <param name="o">シリアル化する <see cref="T:System.Object" />。</param>
+      <exception cref="T:System.InvalidOperationException">シリアル化中にエラーが発生しました。元の例外には、<see cref="P:System.Exception.InnerException" /> プロパティを使用してアクセスできます。</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Serialize(System.Xml.XmlWriter,System.Object,System.Xml.Serialization.XmlSerializerNamespaces)">
+      <summary>指定された <see cref="T:System.Object" /> をシリアル化し、指定された <see cref="T:System.Xml.XmlWriter" /> を使用して XML ドキュメントをファイルに書き込み、指定された名前空間を参照します。</summary>
+      <param name="xmlWriter">XML ドキュメントを書き込むために使用する <see cref="T:System.xml.XmlWriter" />。</param>
+      <param name="o">シリアル化する <see cref="T:System.Object" />。</param>
+      <param name="namespaces">オブジェクトから参照される <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />。</param>
+      <exception cref="T:System.InvalidOperationException">シリアル化中にエラーが発生しました。元の例外には、<see cref="P:System.Exception.InnerException" /> プロパティを使用してアクセスできます。</exception>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlSerializerNamespaces">
+      <summary>XML ドキュメントのインスタンス内で修飾名を生成するために <see cref="T:System.Xml.Serialization.XmlSerializer" /> によって使用される、XML 名前空間およびプレフィックスを格納します。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializerNamespaces.#ctor">
+      <summary>
+        <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializerNamespaces.#ctor(System.Xml.Serialization.XmlSerializerNamespaces)">
+      <summary>プレフィックスと名前空間のペアのコレクションを格納する、指定された XmlSerializerNamespaces インスタンスを使用して、<see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="namespaces">名前空間とプレフィックスのペアを格納する <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" /> のインスタンス。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializerNamespaces.#ctor(System.Xml.XmlQualifiedName[])">
+      <summary>
+        <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="namespaces">
+        <see cref="T:System.Xml.XmlQualifiedName" /> オブジェクトの配列。</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializerNamespaces.Add(System.String,System.String)">
+      <summary>プレフィックスと名前空間のペアを <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" /> オブジェクトに追加します。</summary>
+      <param name="prefix">XML 名前空間に関連付けられたプレフィックス。</param>
+      <param name="ns">XML 名前空間。</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlSerializerNamespaces.Count">
+      <summary>コレクション内のプレフィックスと名前空間のペアの数を取得します。</summary>
+      <returns>コレクション内のプレフィックスと名前空間のペアの数。</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializerNamespaces.ToArray">
+      <summary>
+        <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" /> オブジェクト内のプレフィックスと名前空間のペアの配列を取得します。</summary>
+      <returns>XML ドキュメントで修飾名として使用される <see cref="T:System.Xml.XmlQualifiedName" /> オブジェクトの配列。</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlTypeMapping">
+      <summary>1 つの型から別の型への割り当てを格納します。</summary>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlTypeMapping.TypeFullName">
+      <summary>名前空間および型を含む完全修飾型名を取得します。</summary>
+      <returns>完全修飾型名。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlTypeMapping.TypeName">
+      <summary>割り当てられたオブジェクトの型名を取得します。</summary>
+      <returns>割り当てられたオブジェクトの型名。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlTypeMapping.XsdTypeName">
+      <summary>割り当てられたオブジェクトの XML 要素名を取得します。</summary>
+      <returns>割り当てられたオブジェクトの XML 要素名。既定値は、オブジェクトのクラス名です。</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlTypeMapping.XsdTypeNamespace">
+      <summary>割り当てられたオブジェクトの XML 名前空間を取得します。</summary>
+      <returns>割り当てられたオブジェクトの XML 名前空間。既定値は空の文字列 ("") です。</returns>
+    </member>
+  </members>
+</doc>

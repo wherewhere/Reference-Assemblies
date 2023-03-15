@@ -1,0 +1,397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) Microsoft Corporation.  All rights reserved. -->
+<doc>
+  <assembly>
+    <name>System.Device</name>
+  </assembly>
+  <members>
+    <member name="T:System.Device.Location.CivicAddress">
+<summary>表示以市政地址表示的位置。</summary>
+    </member>
+    <member name="M:System.Device.Location.CivicAddress.#ctor">
+<summary>初始化 <see cref="T:System.Device.Location.CivicAddress"/> 的新实例，其中每个字段的值为空字符串。</summary>
+    </member>
+    <member name="M:System.Device.Location.CivicAddress.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<summary>使用提供地址数据初始化 <see cref="T:System.Device.Location.CivicAddress"/> 的新实例。</summary>
+<param name="addressLine1">市政地址的第一行，通常用于街道名称和号码。</param>
+<param name="addressLine2">市政地址的第二行。</param>
+<param name="building">市政地址的建筑物名称。</param>
+<param name="city">市政地址的市/县/区。</param>
+<param name="countryRegion">市政地址的国家或地区。</param>
+<param name="floorLevel">市政地址的楼层。</param>
+<param name="postalCode">市政地址的邮政编码。</param>
+<param name="stateProvince">市政地址的省/直辖市。</param>
+    </member>
+    <member name="P:System.Device.Location.CivicAddress.AddressLine1">
+<summary>市政地址的第一行，通常用于街道名称和号码。</summary>
+<returns>类型：<see cref="T:System.String"/>。 </returns>
+    </member>
+    <member name="P:System.Device.Location.CivicAddress.AddressLine2">
+<summary>市政地址的第二行。</summary>
+<returns>类型：<see cref="T:System.String"/>。市政地址的第二行。</returns>
+    </member>
+    <member name="P:System.Device.Location.CivicAddress.Building">
+<summary>市政地址的建筑物名称。</summary>
+<returns>类型：<see cref="T:System.String"/>。市政地址的建筑物名称。</returns>
+    </member>
+    <member name="P:System.Device.Location.CivicAddress.City">
+<summary>市政地址的市/县/区。</summary>
+<returns>类型：<see cref="T:System.String"/>。市政地址的市/县/区。</returns>
+    </member>
+    <member name="P:System.Device.Location.CivicAddress.CountryRegion">
+<summary>市政地址的国家或地区。</summary>
+<returns>类型：<see cref="T:System.String"/>。市政地址的国家或地区。</returns>
+    </member>
+    <member name="P:System.Device.Location.CivicAddress.FloorLevel">
+<summary>市政地址的楼层。</summary>
+<returns>类型：<see cref="T:System.String"/>。市政地址的楼层。</returns>
+    </member>
+    <member name="P:System.Device.Location.CivicAddress.IsUnknown">
+<summary>获取一个值，该值指示 <see cref="T:System.Device.Location.CivicAddress"/> 对象是否包含任何地址数据。</summary>
+<returns>类型：<see cref="T:System.Boolean"/>。如果 <see cref="T:System.Device.Location.CivicAddress"/> 对象的任何字段都不为 null 或空，则为 true。</returns>
+    </member>
+    <member name="P:System.Device.Location.CivicAddress.PostalCode">
+<summary>市政地址的邮政编码。</summary>
+<returns>类型：<see cref="T:System.String"/>。市政地址的邮政编码。</returns>
+    </member>
+    <member name="P:System.Device.Location.CivicAddress.StateProvince">
+<summary>市政地址的省/直辖市。</summary>
+<returns>类型：<see cref="T:System.String"/>。市政地址的省/直辖市。</returns>
+    </member>
+    <member name="F:System.Device.Location.CivicAddress.Unknown">
+<summary>表示不包含任何数据的 <see cref="T:System.Device.Location.CivicAddress"/>。</summary>
+    </member>
+    <member name="T:System.Device.Location.CivicAddressResolver">
+<summary>尝试获取所提供地理坐标的市政地址。</summary>
+    </member>
+    <member name="M:System.Device.Location.CivicAddressResolver.#ctor">
+<summary>初始化 <see cref="T:System.Device.Location.CivicAddressResolver"/> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Device.Location.CivicAddressResolver.ResolveAddress(System.Device.Location.GeoCoordinate)">
+<summary>尝试从提供的地理坐标同步获取市政地址。在当前版本中未实现此方法。</summary>
+<returns>返回 <see cref="T:System.Device.Location.CivicAddress"/>。与提供的地理坐标关联的市政地址。</returns>
+<param name="coordinate">从中解析市政地址的地理坐标。</param>
+    </member>
+    <member name="M:System.Device.Location.CivicAddressResolver.ResolveAddressAsync(System.Device.Location.GeoCoordinate)">
+<summary>尝试从提供的地理坐标异步获取市政地址。在当前版本中未实现此方法。</summary>
+<param name="coordinate">从中解析市政地址的地理坐标。</param>
+    </member>
+    <member name="E:System.Device.Location.CivicAddressResolver.ResolveAddressCompleted">
+<summary>当完成市政地址解析的异步请求时发生。</summary>
+    </member>
+    <member name="T:System.Device.Location.GeoCoordinate">
+<summary>表示以地理坐标表示的位置。此类公开的值使用 WGS 84 标准。</summary>
+    </member>
+    <member name="M:System.Device.Location.GeoCoordinate.#ctor">
+<summary>初始化 <see cref="T:System.Device.Location.GeoCoordinate"/> 类的新实例，该类中每个字段的值都不是数字。</summary>
+    </member>
+    <member name="M:System.Device.Location.GeoCoordinate.#ctor(System.Double,System.Double)">
+<summary>使用提供的纬度和经度初始化 <see cref="T:System.Device.Location.GeoCoordinate"/> 类的新实例。</summary>
+<param name="latitude">地理坐标的纬度。</param>
+<param name="longitude">地理坐标的经度。</param>
+    </member>
+    <member name="M:System.Device.Location.GeoCoordinate.#ctor(System.Double,System.Double,System.Double)">
+<summary>使用提供的纬度、经度和海拔初始化 <see cref="T:System.Device.Location.GeoCoordinate"/> 类的新实例。</summary>
+<param name="latitude">地理坐标的纬度。</param>
+<param name="longitude">地理坐标的经度。</param>
+<param name="altitude">地理坐标的高度。</param>
+    </member>
+    <member name="M:System.Device.Location.GeoCoordinate.#ctor(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+<summary>使用提供的纬度、经度、海拔、精度、速度和航向初始化 <see cref="T:System.Device.Location.GeoCoordinate"/> 类的新实例。</summary>
+<param name="latitude">地理坐标的纬度。</param>
+<param name="longitude">地理坐标的经度。</param>
+<param name="altitude">地理坐标的海拔。</param>
+<param name="horizontalAccuracy">地理坐标的水平精度。</param>
+<param name="verticalAccuracy">地理坐标的垂直精度。</param>
+<param name="speed">地理坐标的速度。</param>
+<param name="course">地理坐标的航向。</param>
+    </member>
+    <member name="P:System.Device.Location.GeoCoordinate.Altitude">
+<summary>获取或设置 <see cref="T:System.Device.Location.GeoCoordinate"/> 的海拔，以米为单位。</summary>
+<returns>类型：<see cref="T:System.Double"/>。<see cref="T:System.Device.Location.GeoCoordinate"/> 的海拔。</returns>
+    </member>
+    <member name="P:System.Device.Location.GeoCoordinate.Course">
+<summary>获取或设置相对于真北的航向，以度为单位。 <see cref="T:System.Device.Location.GeoCoordinate"/>.</summary>
+<returns>类型：<see cref="T:System.Double"/>。<see cref="T:System.Device.Location.GeoCoordinate"/> 的航向。</returns>
+    </member>
+    <member name="M:System.Device.Location.GeoCoordinate.Equals(System.Device.Location.GeoCoordinate)">
+<summary>确定指定的 <see cref="T:System.Device.Location.GeoCoordinate"/> 是否具有与此对象相同的纬度和经度值。</summary>
+<returns>返回 <see cref="T:System.Boolean"/>。如果这两个对象的纬度和经度属性具有相同的值，则为 true。</returns>
+<param name="other">要与当前实例比较的 <see cref="T:System.Device.Location.GeoCoordinate"/> 对象。</param>
+    </member>
+    <member name="M:System.Device.Location.GeoCoordinate.Equals(System.Object)">
+<summary>确定指定的对象是否为与此对象具有相同纬度和经度值的 <see cref="T:System.Device.Location.GeoCoordinate"/>。</summary>
+<returns>返回 <see cref="T:System.Boolean"/>。如果这两个对象的纬度和经度属性具有相同的值，则为 true。</returns>
+<param name="obj">要与当前实例进行比较的对象。</param>
+    </member>
+    <member name="M:System.Device.Location.GeoCoordinate.GetDistanceTo(System.Device.Location.GeoCoordinate)">
+<summary>返回从当前的 <see cref="T:System.Device.Location.GeoCoordinate"/> 到提供的 <see cref="T:System.Device.Location.GeoCoordinate"/> 的计算距离（以米为单位）。</summary>
+<returns>返回 <see cref="T:System.Double"/>。两个地理坐标之间的距离。</returns>
+<param name="other">用于计算与当前 <see cref="T:System.Device.Location.GeoCoordinate"/> 的距离的 <see cref="T:System.Device.Location.GeoCoordinate"/>。</param>
+    </member>
+    <member name="M:System.Device.Location.GeoCoordinate.GetHashCode">
+<summary>返回此实例的哈希代码。</summary>
+<returns>返回 <see cref="T:System.Int32"/>。当前 <see cref="T:System.Device.Location.GeoCoordinate"/> 的哈希代码。</returns>
+    </member>
+    <member name="P:System.Device.Location.GeoCoordinate.HorizontalAccuracy">
+<summary>获取或设置 <see cref="T:System.Device.Location.GeoCoordinate"/> 的水平精度，以米为单位。</summary>
+<returns>类型：<see cref="T:System.Double"/>。<see cref="T:System.Device.Location.GeoCoordinate"/> 的水平精度。</returns>
+    </member>
+    <member name="P:System.Device.Location.GeoCoordinate.IsUnknown">
+<summary>获取一个值，该值指示 <see cref="T:System.Device.Location.GeoCoordinate"/> 是否包含任何地理坐标数据。</summary>
+<returns>返回 <see cref="T:System.Boolean"/>。如果当前实例的纬度和经度不是数字，则为 true。</returns>
+    </member>
+    <member name="P:System.Device.Location.GeoCoordinate.Latitude">
+<summary>获取或设置 <see cref="T:System.Device.Location.GeoCoordinate"/> 的纬度。</summary>
+<returns>类型：<see cref="T:System.Double"/>。<see cref="T:System.Device.Location.GeoCoordinate"/> 的纬度。</returns>
+    </member>
+    <member name="P:System.Device.Location.GeoCoordinate.Longitude">
+<summary>获取或设置 <see cref="T:System.Device.Location.GeoCoordinate"/> 的经度。</summary>
+<returns>类型：<see cref="T:System.Double"/>。<see cref="T:System.Device.Location.GeoCoordinate"/> 的经度。</returns>
+    </member>
+    <member name="M:System.Device.Location.GeoCoordinate.op_Equality(System.Device.Location.GeoCoordinate,System.Device.Location.GeoCoordinate)">
+<summary>确定两个 <see cref="T:System.Device.Location.GeoCoordinate"/> 对象是否相等。</summary>
+<returns>返回 <see cref="T:System.Boolean"/>。如果两个 <see cref="T:System.Device.Location.GeoCoordinate"/> 对象的纬度和经度值相等，则为 true。</returns>
+<param name="left">要测试是否相等的第一个 <see cref="T:System.Device.Location.GeoCoordinate"/>。</param>
+<param name="right">要测试是否相等的第二个 <see cref="T:System.Device.Location.GeoCoordinate"/>。</param>
+    </member>
+    <member name="M:System.Device.Location.GeoCoordinate.op_Inequality(System.Device.Location.GeoCoordinate,System.Device.Location.GeoCoordinate)">
+<summary>确定两个 <see cref="T:System.Device.Location.GeoCoordinate"/> 对象是否不相等。</summary>
+<returns>返回 <see cref="T:System.Boolean"/>。如果两个 <see cref="T:System.Device.Location.GeoCoordinate"/> 对象的纬度和经度值不相等，则为 true。</returns>
+<param name="left">要测试是否不相等的第一个 <see cref="T:System.Device.Location.GeoCoordinate"/>。</param>
+<param name="right">要测试是否不相等的第二个 <see cref="T:System.Device.Location.GeoCoordinate"/>。</param>
+    </member>
+    <member name="P:System.Device.Location.GeoCoordinate.Speed">
+<summary>获取 <see cref="T:System.Device.Location.GeoCoordinate"/> 的速度，单位为米/秒。</summary>
+<returns>类型：<see cref="T:System.Double"/>。<see cref="T:System.Device.Location.GeoCoordinate"/> 的速度。</returns>
+    </member>
+    <member name="M:System.Device.Location.GeoCoordinate.ToString">
+<summary>返回当前 <see cref="T:System.Device.Location.GeoCoordinate"/> 的字符串表示形式。</summary>
+<returns>返回 <see cref="T:System.String"/>。</returns>
+    </member>
+    <member name="F:System.Device.Location.GeoCoordinate.Unknown">
+<summary>表示不包含任何数据的 <see cref="T:System.Device.Location.GeoCoordinate"/>。</summary>
+    </member>
+    <member name="P:System.Device.Location.GeoCoordinate.VerticalAccuracy">
+<summary>获取或设置 <see cref="T:System.Device.Location.GeoCoordinate"/> 的垂直精度，以米为单位。</summary>
+<returns>类型：<see cref="T:System.Double"/>。<see cref="T:System.Device.Location.GeoCoordinate"/> 的垂直精度。</returns>
+    </member>
+    <member name="T:System.Device.Location.GeoCoordinateWatcher">
+<summary>展示 Windows Phone 位置服务的提供程序类。</summary>
+    </member>
+    <member name="M:System.Device.Location.GeoCoordinateWatcher.#ctor">
+<summary>使用 <see cref="F:System.Device.Location.GeoPositionAccuracy.Low"/> 的 <see cref="P:System.Device.Location.GeoCoordinateWatcher.DesiredAccuracy"/> 值初始化 <see cref="T:System.Device.Location.GeoCoordinateWatcher"/> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Device.Location.GeoCoordinateWatcher.#ctor(System.Device.Location.GeoPositionAccuracy)">
+<summary>使用提供的 <see cref="P:System.Device.Location.GeoCoordinateWatcher.DesiredAccuracy"/> 值初始化 <see cref="T:System.Device.Location.GeoCoordinateWatcher"/> 类的新实例。</summary>
+<param name="desiredAccuracy">为 <see cref="T:System.Device.Location.GeoCoordinateWatcher"/> 指定 <see cref="P:System.Device.Location.GeoCoordinateWatcher.DesiredAccuracy"/> 值的 <see cref="T:System.Device.Location.GeoPositionAccuracy"/> 枚举的成员。</param>
+    </member>
+    <member name="P:System.Device.Location.GeoCoordinateWatcher.DesiredAccuracy">
+<summary>从位置服务返回的数据所需的精度。</summary>
+<returns>类型：<see cref="T:System.Device.Location.GeoPositionAccuracy"/>。位置数据所需的精度。</returns>
+    </member>
+    <member name="M:System.Device.Location.GeoCoordinateWatcher.Dispose">
+<summary>释放由 <see cref="T:System.Device.Location.GeoCoordinateWatcher"/> 使用的托管资源和非托管资源并停止从位置服务获取数据。</summary>
+    </member>
+    <member name="M:System.Device.Location.GeoCoordinateWatcher.Dispose(System.Boolean)">
+<summary>释放由 <see cref="T:System.Device.Location.GeoCoordinateWatcher"/> 使用的非托管资源，也可以选择释放托管资源并停止从位置服务获取数据。</summary>
+<param name="disposing">如果释放托管和非托管资源，则为 true；如果只释放托管资源，则为 false。</param>
+    </member>
+    <member name="M:System.Device.Location.GeoCoordinateWatcher.Finalize">
+<summary>释放非托管资源并在垃圾回收器回收 <see cref="T:System.Device.Location.GeoCoordinateWatcher"/> 之前执行其他清理操作。</summary>
+    </member>
+    <member name="P:System.Device.Location.GeoCoordinateWatcher.MovementThreshold">
+<summary>必须在连续的 <see cref="E:System.Device.Location.GeoCoordinateWatcher.PositionChanged"/> 事件之间传送的最小距离。</summary>
+<returns>类型：<see cref="T:System.Double"/>。 必须在连续的 <see cref="E:System.Device.Location.GeoCoordinateWatcher.PositionChanged"/> 事件之间传送的距离，单位为米。此属性的默认值为 0 米。</returns>
+    </member>
+    <member name="M:System.Device.Location.GeoCoordinateWatcher.OnPositionChanged(System.Device.Location.GeoPositionChangedEventArgs{System.Device.Location.GeoCoordinate})">
+<summary>引发 <see cref="E:System.Device.Location.GeoCoordinateWatcher.PositionChanged"/> 事件。</summary>
+<param name="e">包含事件数据的 <see cref="T:System.Device.Location.GeoPositionChangedEventArgs`1"/>。</param>
+    </member>
+    <member name="M:System.Device.Location.GeoCoordinateWatcher.OnPositionStatusChanged(System.Device.Location.GeoPositionStatusChangedEventArgs)">
+<summary>引发 <see cref="E:System.Device.Location.GeoCoordinateWatcher.PositionChanged"/> 事件。</summary>
+<param name="e">包含事件数据的 <see cref="T:System.Device.Location.GeoPositionStatusChangedEventArgs"/> 对象。</param>
+    </member>
+    <member name="M:System.Device.Location.GeoCoordinateWatcher.OnPropertyChanged(System.String)">
+<summary>引发 <see cref="T:System.Device.Location.GeoCoordinateWatcher"/> 类的 PropertyChanged 事件。</summary>
+<param name="propertyName">已更改的属性的名称。</param>
+    </member>
+    <member name="P:System.Device.Location.GeoCoordinateWatcher.Permission">
+<summary>应用程序对位置服务的访问权限级别。</summary>
+<returns>类型：<see cref="T:System.Device.Location.GeoPositionPermission"/>。应用程序对位置服务的访问权限。</returns>
+    </member>
+    <member name="P:System.Device.Location.GeoCoordinateWatcher.Position">
+<summary>从位置服务中获得的最近位置。</summary>
+<returns>类型：<see cref="T:System.Device.Location.GeoPosition`1"/>。从位置服务中获得的最近位置。</returns>
+    </member>
+    <member name="E:System.Device.Location.GeoCoordinateWatcher.PositionChanged">
+<summary>当位置服务检测到位置更改时发生。</summary>
+    </member>
+    <member name="M:System.Device.Location.GeoCoordinateWatcher.Start">
+<summary>开始从位置服务获取数据。</summary>
+    </member>
+    <member name="M:System.Device.Location.GeoCoordinateWatcher.Start(System.Boolean)">
+<summary>开始从位置服务获取数据。</summary>
+<param name="suppressPermissionPrompt">不使用此参数。</param>
+    </member>
+    <member name="P:System.Device.Location.GeoCoordinateWatcher.Status">
+<summary>位置服务的状态。</summary>
+<returns>类型：<see cref="T:System.Device.Location.GeoPositionStatus"/> 位置服务的状态。</returns>
+    </member>
+    <member name="E:System.Device.Location.GeoCoordinateWatcher.StatusChanged">
+<summary>当位置服务的状态发生更改时发生。</summary>
+    </member>
+    <member name="M:System.Device.Location.GeoCoordinateWatcher.Stop">
+<summary>停止从位置服务获取数据。</summary>
+    </member>
+    <member name="E:System.Device.Location.GeoCoordinateWatcher.System#ComponentModel#INotifyPropertyChanged#PropertyChanged">
+<summary>当 <see cref="T:System.Device.Location.GeoCoordinateWatcher"/> 属性发生更改时发生。</summary>
+    </member>
+    <member name="M:System.Device.Location.GeoCoordinateWatcher.TryStart(System.Boolean,System.TimeSpan)">
+<summary>尝试开始从位置服务获取数据。如果在位置服务响应之前已超过提供的超时间隔，则停止位置请求并且此方法返回 false。</summary>
+<returns>返回 <see cref="T:System.Boolean"/>。如果位置服务在超时期限内响应，则为 true。否则为 false。</returns>
+<param name="suppressPermissionPrompt">不使用此参数。</param>
+<param name="timeout">一个 TimeSpan 对象，该对象指定等待开始获取位置数据的时间。</param>
+    </member>
+    <member name="T:System.Device.Location.GeoPosition`1">
+<summary>表示由位置和时间戳组成的地理位置。</summary>
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="M:System.Device.Location.GeoPosition`1.#ctor">
+<summary>不带数据初始化 <see cref="T:System.Device.Location.GeoPosition`1"/> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Device.Location.GeoPosition`1.#ctor(System.DateTimeOffset,`0)">
+<summary>使用提供的时间戳和位置初始化 <see cref="T:System.Device.Location.GeoPosition`1"/> 类的新实例。</summary>
+<param name="timestamp">一个 DateTimeOffset 对象，该对象指定与 <see cref="T:System.Device.Location.GeoPosition`1"/> 对象关联的时间点。</param>
+    </member>
+    <member name="P:System.Device.Location.GeoPosition`1.Location">
+<summary>获取或设置 <see cref="T:System.Device.Location.GeoPosition`1"/> 对象的位置。</summary>
+    </member>
+    <member name="P:System.Device.Location.GeoPosition`1.Timestamp">
+<summary>获取或设置 <see cref="T:System.Device.Location.GeoPosition`1"/> 对象的时间戳。</summary>
+<returns>类型：<see cref="T:System.DateTimeOffset"/>。与 <see cref="T:System.Device.Location.GeoPosition`1"/> 对象关联的时间点。</returns>
+    </member>
+    <member name="T:System.Device.Location.GeoPositionAccuracy">
+<summary>定义可以使用 <see cref="T:System.Device.Location.GeoCoordinateWatcher"/> 构造函数为位置服务配置的精度级别。</summary>
+    </member>
+    <member name="F:System.Device.Location.GeoPositionAccuracy.Default">
+<summary>默认精度。</summary>
+    </member>
+    <member name="F:System.Device.Location.GeoPositionAccuracy.High">
+<summary>高精度。</summary>
+    </member>
+    <member name="T:System.Device.Location.GeoPositionChangedEventArgs`1">
+<summary>为 <see cref="E:System.Device.Location.GeoCoordinateWatcher.PositionChanged"/> 事件提供数据。</summary>
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="M:System.Device.Location.GeoPositionChangedEventArgs`1.#ctor(System.Device.Location.GeoPosition{`0})">
+<summary>初始化 <see cref="T:System.Device.Location.GeoPositionChangedEventArgs`1"/> 类的新实例。</summary>
+<param name="position">包含事件的位置和时间戳数据的 <see cref="T:System.Device.Location.GeoPosition`1"/> 对象。</param>
+    </member>
+    <member name="P:System.Device.Location.GeoPositionChangedEventArgs`1.Position">
+<summary>包含 <see cref="E:System.Device.Location.GeoCoordinateWatcher.PositionChanged"/> 事件的位置和时间戳数据的 <see cref="T:System.Device.Location.GeoPosition`1"/> 对象。</summary>
+<returns>类型：<see cref="T:System.Device.Location.GeoPosition`1"/>。</returns>
+    </member>
+    <member name="T:System.Device.Location.GeoPositionPermission">
+<summary>定义应用程序对位置服务的访问权限级别。由 <see cref="P:System.Device.Location.GeoCoordinateWatcher.Permission"/> 属性使用。</summary>
+    </member>
+    <member name="F:System.Device.Location.GeoPositionPermission.Unknown">
+<summary>对位置服务的访问权限未知。</summary>
+    </member>
+    <member name="F:System.Device.Location.GeoPositionPermission.Granted">
+<summary>已授予对位置服务的访问权限。</summary>
+    </member>
+    <member name="F:System.Device.Location.GeoPositionPermission.Denied">
+<summary>对位置服务的访问被拒绝。</summary>
+    </member>
+    <member name="T:System.Device.Location.GeoPositionStatus">
+<summary>定义位置服务的状态值。由 <see cref="P:System.Device.Location.GeoCoordinateWatcher.Status"/> 属性使用。</summary>
+    </member>
+    <member name="F:System.Device.Location.GeoPositionStatus.Disabled">
+<summary>位置服务被禁用或不受支持。</summary>
+    </member>
+    <member name="F:System.Device.Location.GeoPositionStatus.Ready">
+<summary>位置服务已启用并且已准备就绪。</summary>
+    </member>
+    <member name="F:System.Device.Location.GeoPositionStatus.Initializing">
+<summary>位置服务正在尝试获取数据。</summary>
+    </member>
+    <member name="F:System.Device.Location.GeoPositionStatus.NoData">
+<summary>位置传感器可以访问，但服务无法解析位置数据。</summary>
+    </member>
+    <member name="T:System.Device.Location.GeoPositionStatusChangedEventArgs">
+<summary>为 <see cref="E:System.Device.Location.GeoCoordinateWatcher.StatusChanged"/> 事件提供数据。</summary>
+    </member>
+    <member name="M:System.Device.Location.GeoPositionStatusChangedEventArgs.#ctor(System.Device.Location.GeoPositionStatus)">
+<summary>初始化 <see cref="T:System.Device.Location.GeoPositionStatusChangedEventArgs"/> 类的新实例。</summary>
+<param name="status">描述位置服务的当前状态的 GeoPositionStatus 枚举成员。</param>
+    </member>
+    <member name="P:System.Device.Location.GeoPositionStatusChangedEventArgs.Status">
+<summary>反映位置服务的更新状态的 GeoPositionStatus 值。</summary>
+<returns>类型：<see cref="T:System.Device.Location.GeoPositionStatus"/>。</returns>
+    </member>
+    <member name="T:System.Device.Location.ICivicAddressResolver">
+<summary>定义用于解析市政地址的接口。由 <see cref="T:System.Device.Location.CivicAddressResolver"/> 实现。</summary>
+    </member>
+    <member name="M:System.Device.Location.ICivicAddressResolver.ResolveAddress(System.Device.Location.GeoCoordinate)">
+<summary>尝试从提供的地理坐标同步获取市政地址。</summary>
+<returns>返回 <see cref="T:System.Device.Location.CivicAddress"/>。与提供的地理坐标关联的市政地址。</returns>
+<param name="coordinate">从中解析市政地址的地理坐标。</param>
+    </member>
+    <member name="M:System.Device.Location.ICivicAddressResolver.ResolveAddressAsync(System.Device.Location.GeoCoordinate)">
+<summary>尝试从提供的地理坐标异步获取市政地址。</summary>
+<param name="coordinate">尝试从提供的地理坐标异步获取市政地址。</param>
+    </member>
+    <member name="E:System.Device.Location.ICivicAddressResolver.ResolveAddressCompleted">
+<summary>当完成 <see cref="M:System.Device.Location.ICivicAddressResolver.ResolveAddressAsync(System.Device.Location.GeoCoordinate)"/> 请求时发生。</summary>
+    </member>
+    <member name="T:System.Device.Location.IGeoPositionWatcher`1">
+<summary>定义用于解析地理位置的接口。由 <see cref="T:System.Device.Location.GeoCoordinateWatcher"/> 类实现。</summary>
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="P:System.Device.Location.IGeoPositionWatcher`1.Position">
+<summary>从位置服务中获得的最近位置。</summary>
+<returns>类型：<see cref="T:System.Device.Location.GeoPosition`1"/>。</returns>
+    </member>
+    <member name="E:System.Device.Location.IGeoPositionWatcher`1.PositionChanged">
+<summary>当位置服务检测到位置更改时发生。</summary>
+    </member>
+    <member name="M:System.Device.Location.IGeoPositionWatcher`1.Start">
+<summary>开始从位置服务获取数据。</summary>
+    </member>
+    <member name="M:System.Device.Location.IGeoPositionWatcher`1.Start(System.Boolean)">
+<summary>开始从位置服务获取数据。</summary>
+<param name="suppressPermissionPrompt">不使用此参数。</param>
+    </member>
+    <member name="P:System.Device.Location.IGeoPositionWatcher`1.Status">
+<summary>位置服务的状态。</summary>
+<returns>类型：<see cref="T:System.Device.Location.GeoPositionStatus"/>。</returns>
+    </member>
+    <member name="E:System.Device.Location.IGeoPositionWatcher`1.StatusChanged">
+<summary>当位置服务的状态发生更改时发生。</summary>
+    </member>
+    <member name="M:System.Device.Location.IGeoPositionWatcher`1.Stop">
+<summary>停止从位置服务获取数据。</summary>
+    </member>
+    <member name="M:System.Device.Location.IGeoPositionWatcher`1.TryStart(System.Boolean,System.TimeSpan)">
+<summary>尝试开始从位置服务获取数据。</summary>
+<returns>返回 <see cref="T:System.Boolean"/>。</returns>
+<param name="suppressPermissionPrompt">不使用此参数。</param>
+<param name="timeout">一个 TimeSpan 对象，该对象指定等待开始获取位置数据的时间。</param>
+    </member>
+    <member name="T:System.Device.Location.ResolveAddressCompletedEventArgs">
+<summary>为 <see cref="E:System.Device.Location.CivicAddressResolver.ResolveAddressCompleted"/> 事件提供数据。</summary>
+    </member>
+    <member name="M:System.Device.Location.ResolveAddressCompletedEventArgs.#ctor(System.Device.Location.CivicAddress,System.Exception,System.Boolean,System.Object)">
+<summary>初始化 <see cref="T:System.Device.Location.ResolveAddressCompletedEventArgs"/> 类的新实例。</summary>
+<param name="address">包含解析的地址的 <see cref="T:System.Device.Location.CivicAddress"/> 对象。</param>
+<param name="error">不使用此参数。</param>
+<param name="cancelled">不使用此参数。</param>
+<param name="userState">不使用此参数。</param>
+    </member>
+    <member name="P:System.Device.Location.ResolveAddressCompletedEventArgs.Address">
+<summary>解析的市政地址。</summary>
+<returns>类型：<see cref="T:System.Device.Location.CivicAddress"/>。解析的市政地址。</returns>
+    </member>
+  </members>
+</doc>

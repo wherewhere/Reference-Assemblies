@@ -1,0 +1,694 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.Xml.Serialization</name>
+  </assembly>
+  <members>
+    <member name="T:System.ServiceModel.XmlSerializerFormatAttribute">
+      <summary>Weist die Windows Phone-Infrastruktur an, den <see cref="T:System.Xml.Serialization.XmlSerializer" /> anstelle des <see cref="T:System.Runtime.Serialization.XmlObjectSerializer" /> zum Serialisieren einer Methode oder Klasse zu verwenden.</summary>
+    </member>
+    <member name="M:System.ServiceModel.XmlSerializerFormatAttribute.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:System.ServiceModel.XmlSerializerFormatAttribute" />-Klasse. </summary>
+    </member>
+    <member name="P:System.ServiceModel.XmlSerializerFormatAttribute.SupportFaults">
+      <summary>Ruft einen Wert ab oder legt einen Wert fest, der angibt, ob Fehler unterstützt werden.</summary>
+      <returns>true, wenn Fehler unterstützt werden, andernfalls false.</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlAnyAttributeAttribute">
+      <summary>Gibt an, dass der Member (ein Feld, das ein Array von <see cref="T:System.Xml.XmlAttribute" />-Objekten zurückgibt) XML-Attribute enthalten kann.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyAttributeAttribute.#ctor">
+      <summary>Erstellt eine neue Instanz der <see cref="T:System.Xml.Serialization.XmlAnyAttributeAttribute" />-Klasse.</summary>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlAnyElementAttributes">
+      <summary>Stellt eine Auflistung von <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" />-Objekten dar.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:System.Xml.Serialization.XmlAnyElementAttributes" />-Klasse.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.Add(System.Xml.Serialization.XmlAnyElementAttribute)">
+      <summary>Stellt eine Auflistung von <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" />-Objekten dar.</summary>
+      <returns>Der Index des hinzugefügten Elements.</returns>
+      <param name="attribute">Das <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" />, das der Auflistung hinzugefügt werden soll.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.Clear">
+      <summary>Entfernt alle Objekte aus der Auflistung.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.Contains(System.Xml.Serialization.XmlAnyElementAttribute)">
+      <summary>Bestimmt, ob die Auflistung ein angegebenes <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> enthält.</summary>
+      <returns>true, wenn die Auflistung das angegebene <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> enthält, andernfalls false.</returns>
+      <param name="attribute">Das zu suchende <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" />.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.CopyTo(System.Xml.Serialization.XmlAnyElementAttribute[],System.Int32)">
+      <summary>Kopiert ein <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" />-Array ab dem angegebenen Zielindex in die Auflistung.</summary>
+      <param name="array">Das Array der in die Auflistung zu kopierenden <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" />-Objekte.</param>
+      <param name="index">Der nullbasierte Indexwert, an dem im Array das Kopieren beginnt.</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttributes.Count">
+      <summary>Ruft die Anzahl der Attribute in der Auflistung ab.</summary>
+      <returns>Die Anzahl der Attribute in der Auflistung.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.GetEnumerator">
+      <summary>Gibt einen <see cref="T:System.Collections.IEnumerator" /> zurück, der die Auflistung durchlaufen kann.</summary>
+      <returns>Ein <see cref="T:System.Collections.IEnumerator" />-Objekt, das die Auflistung durchlaufen kann.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.IndexOf(System.Xml.Serialization.XmlAnyElementAttribute)">
+      <summary>Gibt den nullbasierten Index des ersten Auftretens eines angegebenen <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> in der Auflistung oder -1 zurück, wenn das Attribut nicht in der Auflistung gefunden wird. </summary>
+      <returns>Der erste Index von <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> in der Auflistung oder -1, wenn das Attribut nicht in der Auflistung gefunden wird.</returns>
+      <param name="attribute">Das <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" />, das in der Auflistung gesucht werden soll.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.Insert(System.Int32,System.Xml.Serialization.XmlAnyElementAttribute)">
+      <summary>Fügt ein <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> am angegebenen Index in die Auflistung ein.</summary>
+      <param name="index">Der nullbasierte Index, an dem das Attribut eingefügt wird.</param>
+      <param name="attribute">Die einzufügende <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" />.</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttributes.Item(System.Int32)">
+      <summary>Ruft das Attributelement am angegebenen Index ab oder legt dieses fest.</summary>
+      <returns>Das <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> am angegebenen Index.</returns>
+      <param name="index">Der nullbasierte Index des Attributs, das abgerufen oder festgelegt werden soll.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException"> Der <paramref name="index" /> ist nicht gültig für die Auflistung; er ist entweder zu groß oder kleiner als 0.</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.Remove(System.Xml.Serialization.XmlAnyElementAttribute)">
+      <summary>Entfernt ein angegebenes <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" />, falls vorhanden, aus der Auflistung.</summary>
+      <param name="attribute">Das zu entfernende <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" />.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.RemoveAt(System.Int32)">
+      <summary>Entfernt ein <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" />-Element am angegebenen Index aus der Auflistung.</summary>
+      <param name="index">Der nullbasierte Index des zu entfernenden Elements.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#ICollection#CopyTo(System.Array,System.Int32)">
+      <summary>Kopiert die Elemente aus der Attributauflistung in ein Array, wobei am angegebenen Arrayindex begonnen wird.</summary>
+      <param name="array">Das eindimensionale <see cref="T:System.Array" />, welches das Ziel für die aus der <see cref="T:System.Xml.Serialization.XmlAnyElementAttributes" />-Auflistung kopierten Attributelemente ist. </param>
+      <param name="index">Der nullbasierte Index im Array, an dem der Kopiervorgang beginnt.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">Der <paramref name="index" /> ist kleiner als 0 (null).</exception>
+      <exception cref="T:System.ArgumentException">Der <paramref name="index" /> ist größer als die Arraylänge. Die Arraylänge wird überschritten, wenn die Attributelemente hinzugefügt werden oder <paramref name="array" /> mehrdimensional ist.</exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#ICollection#IsSynchronized">
+      <summary>Ruft einen Wert ab, der angibt, ob der Zugriff auf die Attributauflistung synchronisiert (threadsicher) ist.</summary>
+      <returns>true, wenn die Auflistung synchronisiert (threadsicher) ist, andernfalls false.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#ICollection#SyncRoot">
+      <summary>Diese Methode wird nicht unterstützt.</summary>
+      <returns>Löst eine <see cref="T:System.NotSupportedException" /> aus.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#Add(System.Object)">
+      <summary>Fügt der Attributliste ein Element hinzu.</summary>
+      <returns>Die Position, an der das neue Element eingefügt wurde.</returns>
+      <param name="value">Das Objekt, das der Liste hinzugefügt werden soll.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#Contains(System.Object)">
+      <summary>Bestimmt, ob die Attributliste einen bestimmten Wert enthält.</summary>
+      <returns>true, wenn das Objekt in der Attributliste gefunden wird, andernfalls false.</returns>
+      <param name="value">Das Objekt, das in der Attributliste gesucht werden soll.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#IndexOf(System.Object)">
+      <summary>Bestimmt den Index eines bestimmten Elements in der Attributliste.</summary>
+      <returns>Der Index von <paramref name="value" />, wenn das Element in der Attributliste gefunden wird, andernfalls -1.</returns>
+      <param name="value">Das Objekt, das in der Attributliste gesucht werden soll.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#Insert(System.Int32,System.Object)">
+      <summary>Fügt ein Element in der Liste am angegebenen Index ein.</summary>
+      <param name="index">Der nullbasierte Index, an dem der Wert eingefügt werden soll.</param>
+      <param name="value">Das Objekt, das in die Liste eingefügt werden soll.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException"> Der <paramref name="index" /> ist nicht gültig für die Auflistung; er ist entweder zu groß oder kleiner als 0.</exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#IsFixedSize">
+      <summary>Ruft einen Wert ab, der angibt, ob die Liste über eine feste Größe verfügt.</summary>
+      <returns>true, wenn die Liste eine feste Größe hat, andernfalls false.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#IsReadOnly">
+      <summary>Ruft einen Wert ab, der angibt, ob die Liste schreibgeschützt ist.</summary>
+      <returns>true, wenn die Liste schreibgeschützt ist, andernfalls false.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#Item(System.Int32)">
+      <summary>Ruft das Element am angegebenen Index ab oder legt dieses fest.</summary>
+      <returns>Das Element am angegebenen Index.</returns>
+      <param name="index">Der nullbasierte Index des Elements, das abgerufen oder festgelegt werden soll.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException"> Der <paramref name="index" /> ist nicht gültig für die Auflistung; er ist entweder zu groß oder kleiner als 0.</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#Remove(System.Object)">
+      <summary>Entfernt das erste Vorkommen eines bestimmten Objekts aus der Liste.</summary>
+      <param name="value">Das Objekt, das aus der Liste entfernt werden soll.</param>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlArrayItemAttributes">
+      <summary>Stellt eine Auflistung von <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" />-Objekten dar.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:System.Xml.Serialization.XmlArrayItemAttributes" />-Klasse.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.Add(System.Xml.Serialization.XmlArrayItemAttribute)">
+      <summary>Fügt der Auflistung ein <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> hinzu.</summary>
+      <returns>Der Index des hinzugefügten Elements.</returns>
+      <param name="attribute">Das <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" />, das der Auflistung hinzugefügt werden soll.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.Clear">
+      <summary>Entfernt alle Objekte aus der Auflistung.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.Contains(System.Xml.Serialization.XmlArrayItemAttribute)">
+      <summary>Bestimmt, ob die Auflistung ein angegebenes <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> enthält.</summary>
+      <returns>true, wenn die Auflistung das angegebene <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> enthält, andernfalls false.</returns>
+      <param name="attribute">Das zu suchende <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" />.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.CopyTo(System.Xml.Serialization.XmlArrayItemAttribute[],System.Int32)">
+      <summary>Kopiert ein <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" />-Array ab dem angegebenen Zielindex in die Auflistung.</summary>
+      <param name="array">Das Array der in die Auflistung zu kopierenden <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" />-Objekte.</param>
+      <param name="index">Der nullbasierte Indexwert, an dem im Array das Kopieren beginnt.</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttributes.Count">
+      <summary>Ruft die Anzahl der Attribute in der Auflistung ab.</summary>
+      <returns>Die Anzahl der Attribute in der Auflistung.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.GetEnumerator">
+      <summary>Gibt einen <see cref="T:System.Collections.IEnumerator" /> zurück, der die Auflistung durchlaufen kann.</summary>
+      <returns>Ein <see cref="T:System.Collections.IEnumerator" />-Objekt, das die Auflistung durchlaufen kann.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.IndexOf(System.Xml.Serialization.XmlArrayItemAttribute)">
+      <summary>Gibt den nullbasierten Index des ersten Auftretens eines angegebenen <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> in der Auflistung oder -1 zurück, wenn das Attribut nicht in der Auflistung gefunden wird. </summary>
+      <returns>Der erste Index von <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> in der Auflistung oder -1, wenn das Attribut nicht in der Auflistung gefunden wird.</returns>
+      <param name="attribute">Das <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" />, das in der Auflistung gesucht werden soll.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.Insert(System.Int32,System.Xml.Serialization.XmlArrayItemAttribute)">
+      <summary>Fügt ein <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> am angegebenen Index in die Auflistung ein.</summary>
+      <param name="index">Der nullbasierte Index, an dem das Attribut eingefügt wird.</param>
+      <param name="attribute">Die einzufügende <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" />.</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttributes.Item(System.Int32)">
+      <summary>Ruft das Attributelement am angegebenen Index ab oder legt dieses fest.</summary>
+      <returns>Das <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> am angegebenen Index.</returns>
+      <param name="index">Der nullbasierte Index des Attributs, das abgerufen oder festgelegt werden soll.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException"> Der <paramref name="index" /> ist nicht gültig für die Auflistung; er ist entweder zu groß oder kleiner als 0.</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.Remove(System.Xml.Serialization.XmlArrayItemAttribute)">
+      <summary>Entfernt ein angegebenes <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" />, falls vorhanden, aus der Auflistung.</summary>
+      <param name="attribute">Das zu entfernende <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" />.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.RemoveAt(System.Int32)">
+      <summary>Entfernt ein <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" />-Element am angegebenen Index aus der Auflistung.</summary>
+      <param name="index">Der nullbasierte Index des zu entfernenden Elements.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#ICollection#CopyTo(System.Array,System.Int32)">
+      <summary>Kopiert die Elemente aus der Attributauflistung in ein Array, wobei am angegebenen Arrayindex begonnen wird.</summary>
+      <param name="array">Das eindimensionale <see cref="T:System.Array" />, welches das Ziel für die aus der <see cref="T:System.Xml.Serialization.XmlArrayItemAttributes" />-Auflistung kopierten Attributelemente ist. </param>
+      <param name="index">Der nullbasierte Index im Array, an dem der Kopiervorgang beginnt.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">Der <paramref name="index" /> ist kleiner als 0 (null).</exception>
+      <exception cref="T:System.ArgumentException">Der <paramref name="index" /> ist größer als die Arraylänge, oder die Arraylänge wird überschritten, wenn die Attributelemente hinzugefügt werden oder <paramref name="array" /> mehrdimensional ist.</exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#ICollection#IsSynchronized">
+      <summary>Ruft einen Wert ab, der angibt, ob der Zugriff auf die Attributauflistung synchronisiert (threadsicher) ist.</summary>
+      <returns>true, wenn die Auflistung synchronisiert (threadsicher) ist, andernfalls false.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#ICollection#SyncRoot">
+      <summary>Diese Methode wird nicht unterstützt.</summary>
+      <returns>Löst eine <see cref="T:System.NotSupportedException" /> aus.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#Add(System.Object)">
+      <summary>Fügt der Attributliste ein Element hinzu.</summary>
+      <returns>Die Position, an der das neue Element eingefügt wurde.</returns>
+      <param name="value">Das Objekt, das der Liste hinzugefügt werden soll.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#Contains(System.Object)">
+      <summary>Bestimmt, ob die Attributliste einen bestimmten Wert enthält.</summary>
+      <returns>true, wenn das Objekt in der Attributliste gefunden wird, andernfalls false.</returns>
+      <param name="value">Das Objekt, das in der Attributliste gesucht werden soll.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#IndexOf(System.Object)">
+      <summary>Bestimmt den Index eines bestimmten Elements in der Attributliste.</summary>
+      <returns>Der Index von <paramref name="value" />, wenn das Element in der Attributliste gefunden wird, andernfalls -1.</returns>
+      <param name="value">Das Objekt, das in der Attributliste gesucht werden soll.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#Insert(System.Int32,System.Object)">
+      <summary>Fügt ein Element in der Liste am angegebenen Index ein.</summary>
+      <param name="index">Der nullbasierte Index, an dem der Wert eingefügt werden soll.</param>
+      <param name="value">Das Objekt, das in die Liste eingefügt werden soll.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException"> Der <paramref name="index" /> ist nicht gültig für die Auflistung; er ist entweder zu groß oder kleiner als 0.</exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#IsFixedSize">
+      <summary>Ruft einen Wert ab, der angibt, ob die Liste über eine feste Größe verfügt.</summary>
+      <returns>true, wenn die Liste eine feste Größe hat, andernfalls false.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#IsReadOnly">
+      <summary>Ruft einen Wert ab, der angibt, ob die Liste schreibgeschützt ist.</summary>
+      <returns>true, wenn die Liste schreibgeschützt ist, andernfalls false.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#Item(System.Int32)">
+      <summary>Ruft das Element am angegebenen Index ab oder legt dieses fest.</summary>
+      <returns>Das Element am angegebenen Index.</returns>
+      <param name="index">Der nullbasierte Index des Elements, das abgerufen oder festgelegt werden soll.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException"> Der <paramref name="index" /> ist nicht gültig für die Auflistung; er ist entweder zu groß oder kleiner als 0.</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#Remove(System.Object)">
+      <summary>Entfernt das erste Vorkommen eines bestimmten Objekts aus der Liste.</summary>
+      <param name="value">Das Objekt, das aus der Liste entfernt werden soll.</param>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlAttributeOverrides">
+      <summary>Ermöglicht Ihnen, die Eigenschaft, das Feld und die Klassenattribute zu überschreiben, wenn Sie <see cref="T:System.Xml.Serialization.XmlSerializer" /> verwenden, um ein Objekt zu serialisieren oder zu deserialisieren.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAttributeOverrides.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:System.Xml.Serialization.XmlAttributeOverrides" />-Klasse.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAttributeOverrides.Add(System.Type,System.String,System.Xml.Serialization.XmlAttributes)">
+      <summary>Fügt ein <see cref="T:System.Xml.Serialization.XmlAttributes" />-Objekt der Auflistung von <see cref="T:System.Xml.Serialization.XmlAttributes" />-Objekten hinzu.Der <paramref name="type" />-Parameter gibt ein Objekt an, das überschrieben werden soll.Der <paramref name="member" />-Parameter gibt den Namen des Members an, der überschrieben wird.</summary>
+      <param name="type">Der <see cref="T:System.Type" /> des zu überschreibenden Objekts. </param>
+      <param name="member">Der Name des zu überschreibenden Members. </param>
+      <param name="attributes">Ein <see cref="T:System.Xml.Serialization.XmlAttributes" />-Objekt, das die zu überschreibenden Attribute darstellt. </param>
+      <exception cref="T:System.InvalidOperationException">Mindestens ein <see cref="T:System.Xml.Serialization.XmlAttributes" />-Objekt wurde einem Member unbestimmten Typs hinzugefügt.</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAttributeOverrides.Add(System.Type,System.Xml.Serialization.XmlAttributes)">
+      <summary>Fügt ein <see cref="T:System.Xml.Serialization.XmlAttributes" />-Objekt der Auflistung von <see cref="T:System.Xml.Serialization.XmlAttributes" />-Objekten hinzu.Der <paramref name="type" />-Parameter gibt ein Objekt an, das vom <see cref="T:System.Xml.Serialization.XmlAttributes" />-Objekt überschrieben werden soll.</summary>
+      <param name="type">Der <see cref="T:System.Type" /> des Objekts, das überschrieben wird. </param>
+      <param name="attributes">Ein <see cref="T:System.Xml.Serialization.XmlAttributes" />-Objekt, das die zu überschreibenden Attribute darstellt. </param>
+      <exception cref="T:System.InvalidOperationException">Mindestens ein <see cref="T:System.Xml.Serialization.XmlAttributes" />-Objekt wurde einem Member unbestimmten Typs hinzugefügt.</exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributeOverrides.Item(System.Type)">
+      <summary>Ruft das Objekt ab, das mit dem angegebenen Basisklassentyp verknüpft ist.</summary>
+      <returns>Ein <see cref="T:System.Xml.Serialization.XmlAttributes" />, das die Auflistung der überschreibenden Attribute darstellt.</returns>
+      <param name="type">Der Basisklassen-<see cref="T:System.Type" />, der mit der Auflistung der Attribute verknüpft ist, den Sie abrufen möchten. </param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributeOverrides.Item(System.Type,System.String)">
+      <summary>Ruft das Objekt ab, das mit dem angegebenen Basisklassentyp verknüpft ist.Durch den <paramref name="member" />-Parameter wird der zu überschreibende Member der Basisklasse angegeben.</summary>
+      <returns>Ein <see cref="T:System.Xml.Serialization.XmlAttributes" />, das die Auflistung der überschreibenden Attribute darstellt.</returns>
+      <param name="type">Die Basisklasse <see cref="T:System.Type" />, die der gewünschten Auflistung von Attributen zugeordnet ist. </param>
+      <param name="member">Der Name des überschriebenen Member, der die zurückzugebende <see cref="T:System.Xml.Serialization.XmlAttributes" /> angibt. </param>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlAttributes">
+      <summary>Stellt eine Auflistung von Attributobjekten dar, die steuern, wie <see cref="T:System.Xml.Serialization.XmlSerializer" /> ein Objekt serialisiert und deserialisert.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAttributes.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:System.Xml.Serialization.XmlAttributes" />-Klasse.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAttributes.#ctor(System.Reflection.ICustomAttributeProvider)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:System.Xml.Serialization.XmlAttributes" />-Klasse und passt an, wie der <see cref="T:System.Xml.Serialization.XmlSerializer" /> Objekte serialisiert und deserialisiert. </summary>
+      <param name="provider">Eine Klasse, die alternative Implementierungen von Attributen zur Steuerung der XML-Serialisierung bereitstellen kann.</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlAnyAttribute"></member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlAnyElements">
+      <summary>Ruft die Auflistung von zu überschreibenden <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" />-Objekten ab.</summary>
+      <returns>Ein<see cref="T:System.Xml.Serialization.XmlAnyElementAttributes" />-Objekt, das die Auflistung von <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" />-Objekten darstellt.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlArray">
+      <summary>Ruft ein Objekt ab oder legt ein Objekt fest, das angibt, wie <see cref="T:System.Xml.Serialization.XmlSerializer" /> ein öffentliches Feld oder eine Lese-/Schreibeigenschaft serialisiert, die ein Array zurückgibt.</summary>
+      <returns>Ein <see cref="T:System.Xml.Serialization.XmlArrayAttribute" />, das angibt, wie <see cref="T:System.Xml.Serialization.XmlSerializer" /> ein öffentliches Feld oder eine Lese-/Schreibeigenschaft serialisiert, die ein Array zurückgibt.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlArrayItems">
+      <summary>Ruft eine Auflistung von Objekten ab oder legt eine Auflistung von Objekten fest, die angibt, wie <see cref="T:System.Xml.Serialization.XmlSerializer" /> Elemente serialisiert, die in ein Array eingefügt werden, das durch ein öffentliches Feld oder eine Lese-/Schreibeigenschaft zurückgegeben wird.</summary>
+      <returns>Ein <see cref="T:System.Xml.Serialization.XmlArrayItemAttributes" />-Objekt, das eine Auflistung von <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" />-Objekten enthält.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlAttribute">
+      <summary>Ruft ein Objekt ab oder legt ein Objekt fest, das angibt, wie <see cref="T:System.Xml.Serialization.XmlSerializer" /> ein öffentliches Feld oder eine öffentliche Lese-/Schreibeigenschaft als XML-Attribut serialisiert.</summary>
+      <returns>Ein <see cref="T:System.Xml.Serialization.XmlAttributeAttribute" />, das die Serialisierung eines öffentlichen Felds oder einer Lese-/Schreibeigenschaft als XML-Attribut steuert.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlChoiceIdentifier">
+      <summary>Ruft ein Objekt ab, mit dem Sie eine Reihe von Auswahlmöglichkeiten unterscheiden können, oder legt dieses fest.</summary>
+      <returns>Ein <see cref="T:System.Xml.Serialization.XmlChoiceIdentifierAttribute" />, das auf einen Klassenmember angewendet werden kann, der als xsi:choice-Element serialisiert wird.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlDefaultValue">
+      <summary>Ruft den Standardwert eines XML-Elements oder -Attributs ab oder legt diesen fest.</summary>
+      <returns>Ein <see cref="T:System.Object" />, das den Standardwert eines XML-Elements oder -Attributs darstellt.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlElements">
+      <summary>Ruft eine Auflistung von Objekten ab oder legt fest, wie <see cref="T:System.Xml.Serialization.XmlSerializer" /> ein öffentliches Feld oder eine öffentliche Lese-/Schreibeigenschaft als XML-Element serialisiert.</summary>
+      <returns>Ein <see cref="T:System.Xml.Serialization.XmlElementAttributes" />, das eine Auflistung von <see cref="T:System.Xml.Serialization.XmlElementAttribute" />-Objekten enthält.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlEnum">
+      <summary>Ruft ein Objekt ab oder legt ein Objekt fest, das festlegt, wie <see cref="T:System.Xml.Serialization.XmlSerializer" /> einen Aufzählungsmember serialisiert.</summary>
+      <returns>Ein <see cref="T:System.Xml.Serialization.XmlEnumAttribute" />, das angibt, auf welche Weise ein Enumerationsmember von <see cref="T:System.Xml.Serialization.XmlSerializer" /> serialisiert wird.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlIgnore">
+      <summary>Ruft einen Wert ab oder legt einen Wert fest, der angibt, ob <see cref="T:System.Xml.Serialization.XmlSerializer" /> ein öffentliches Feld oder eine öffentliche Lese-/Schreibeigenschaft serialisiert.</summary>
+      <returns>true, wenn <see cref="T:System.Xml.Serialization.XmlSerializer" /> das Feld oder die Eigenschaft nicht serialisieren soll, andernfalls false.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.Xmlns">
+      <summary>Legt einen Wert fest oder ruft einen Wert ab, der festlegt, ob alle Namespacedeklarationen beibehalten werden sollen, wenn ein Objekt mit einem Member, der ein <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />-Objekt zurückgibt, überschrieben wird.</summary>
+      <returns>true, wenn die Namespacedeklarationen beibehalten werden sollen, andernfalls false.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlRoot">
+      <summary>Ruft ein Objekt ab oder legt ein Objekt fest, das angibt, wie <see cref="T:System.Xml.Serialization.XmlSerializer" /> eine Klasse als XML-Stammelement serialisiert.</summary>
+      <returns>Ein <see cref="T:System.Xml.Serialization.XmlRootAttribute" />, das eine Klasse überschreibt, die als XML-Stammelement attribuiert ist.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlText">
+      <summary>Ruft ein Objekt ab oder legt ein Objekt fest, das <see cref="T:System.Xml.Serialization.XmlSerializer" /> anweist, ein öffentliches Feld oder eine öffentliche Lese-/Schreibeigenschaft als XML-Text zu serialisieren.</summary>
+      <returns>Ein <see cref="T:System.Xml.Serialization.XmlTextAttribute" />, das die Standardserialisierung öffentlicher Eigenschaften oder Felder überschreibt.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlType">
+      <summary>Ruft ein Objekt ab oder legt ein Objekt fest, das angibt, wie <see cref="T:System.Xml.Serialization.XmlSerializer" /> eine Klasse serialisiert, auf die <see cref="T:System.Xml.Serialization.XmlTypeAttribute" /> angewendet wurde.</summary>
+      <returns>Ein <see cref="T:System.Xml.Serialization.XmlTypeAttribute" />, das ein <see cref="T:System.Xml.Serialization.XmlTypeAttribute" /> überschreibt, das einer Klassendeklaration zugewiesen wurde.</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlElementAttributes">
+      <summary>Stellt eine Auflistung von <see cref="T:System.Xml.Serialization.XmlElementAttribute" />-Objekten dar, die durch <see cref="T:System.Xml.Serialization.XmlSerializer" /> verwendet wurden, um die Standardmethode zu überschreiben, wie eine Klasse serialisiert wird.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:System.Xml.Serialization.XmlElementAttributes" />-Klasse.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.Add(System.Xml.Serialization.XmlElementAttribute)">
+      <summary>Fügt der Auflistung ein <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> hinzu.</summary>
+      <returns>Der Index des hinzugefügten Elements.</returns>
+      <param name="attribute">Das <see cref="T:System.Xml.Serialization.XmlElementAttribute" />, das der Auflistung hinzugefügt werden soll.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.Clear">
+      <summary>Entfernt alle Objekte aus der Auflistung.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.Contains(System.Xml.Serialization.XmlElementAttribute)">
+      <summary>Bestimmt, ob die Auflistung ein angegebenes <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> enthält.</summary>
+      <returns>true, wenn die Auflistung das angegebene <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> enthält, andernfalls false.</returns>
+      <param name="attribute">Das zu suchende <see cref="T:System.Xml.Serialization.XmlElementAttribute" />.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.CopyTo(System.Xml.Serialization.XmlElementAttribute[],System.Int32)">
+      <summary>Kopiert ein <see cref="T:System.Xml.Serialization.XmlElementAttribute" />-Array ab dem angegebenen Zielindex in die Auflistung.</summary>
+      <param name="array">Das Array der in die Auflistung zu kopierenden <see cref="T:System.Xml.Serialization.XmlElementAttribute" />-Objekte.</param>
+      <param name="index">Der nullbasierte Indexwert, an dem im Array das Kopieren beginnt.</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttributes.Count">
+      <summary>Ruft die Anzahl der Attribute in der Auflistung ab.</summary>
+      <returns>Die Anzahl der Attribute in der Auflistung.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.GetEnumerator">
+      <summary>Gibt einen <see cref="T:System.Collections.IEnumerator" /> zurück, der die Auflistung durchlaufen kann.</summary>
+      <returns>Ein <see cref="T:System.Collections.IEnumerator" />-Objekt, das die Auflistung durchlaufen kann.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.IndexOf(System.Xml.Serialization.XmlElementAttribute)">
+      <summary>Gibt den nullbasierten Index des ersten Auftretens eines angegebenen <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> in der Auflistung oder -1 zurück, wenn das Attribut nicht in der Auflistung gefunden wird. </summary>
+      <returns>Der erste Index von <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> in der Auflistung oder -1, wenn das Attribut nicht in der Auflistung gefunden wird.</returns>
+      <param name="attribute">Das <see cref="T:System.Xml.Serialization.XmlElementAttribute" />, das in der Auflistung gesucht werden soll.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.Insert(System.Int32,System.Xml.Serialization.XmlElementAttribute)">
+      <summary>Fügt ein <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> am angegebenen Index in die Auflistung ein.</summary>
+      <param name="index">Der nullbasierte Index, an dem das Attribut eingefügt wird.</param>
+      <param name="attribute">Die einzufügende <see cref="T:System.Xml.Serialization.XmlElementAttribute" />.</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttributes.Item(System.Int32)">
+      <summary>Ruft das Attributelement am angegebenen Index ab oder legt dieses fest.</summary>
+      <returns>Das <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> am angegebenen Index.</returns>
+      <param name="index">Der nullbasierte Index des Attributs, das abgerufen oder festgelegt werden soll.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException"> Der <paramref name="index" /> ist nicht gültig für die Auflistung; er ist entweder zu groß oder kleiner als 0.</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.Remove(System.Xml.Serialization.XmlElementAttribute)">
+      <summary>Entfernt ein angegebenes <see cref="T:System.Xml.Serialization.XmlElementAttribute" />, falls vorhanden, aus der Auflistung.</summary>
+      <param name="attribute">Das zu entfernende <see cref="T:System.Xml.Serialization.XmlElementAttribute" />.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.RemoveAt(System.Int32)">
+      <summary>Entfernt ein <see cref="T:System.Xml.Serialization.XmlElementAttribute" />-Element am angegebenen Index aus der Auflistung.</summary>
+      <param name="index">Der nullbasierte Index des zu entfernenden Elements.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.System#Collections#ICollection#CopyTo(System.Array,System.Int32)">
+      <summary>Kopiert die Elemente aus der Attributauflistung in ein Array, wobei am angegebenen Arrayindex begonnen wird.</summary>
+      <param name="array">Das eindimensionale <see cref="T:System.Array" />, welches das Ziel für die aus der <see cref="T:System.Xml.Serialization.XmlElementAttributes" />-Auflistung kopierten Attributelemente ist. </param>
+      <param name="index">Der nullbasierte Index im Array, an dem der Kopiervorgang beginnt.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">Der <paramref name="index" /> ist kleiner als 0 (null).</exception>
+      <exception cref="T:System.ArgumentException">Der <paramref name="index" /> ist größer als die Arraylänge. Die Arraylänge wird überschritten, wenn die Attributelemente hinzugefügt werden oder <paramref name="array" /> mehrdimensional ist.</exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttributes.System#Collections#ICollection#IsSynchronized">
+      <summary>Ruft einen Wert ab, der angibt, ob der Zugriff auf die Attributauflistung synchronisiert (threadsicher) ist.</summary>
+      <returns>true, wenn die Auflistung synchronisiert (threadsicher) ist, andernfalls false.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttributes.System#Collections#ICollection#SyncRoot">
+      <summary>Diese Methode wird nicht unterstützt.</summary>
+      <returns>Löst eine <see cref="T:System.NotSupportedException" /> aus.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Add(System.Object)">
+      <summary>Fügt der Attributliste ein Element hinzu.</summary>
+      <returns>Die Position, an der das neue Element eingefügt wurde.</returns>
+      <param name="value">Das Objekt, das der Liste hinzugefügt werden soll.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Contains(System.Object)">
+      <summary>Bestimmt, ob die Attributliste einen bestimmten Wert enthält.</summary>
+      <returns>true, wenn das Objekt in der Attributliste gefunden wird, andernfalls false.</returns>
+      <param name="value">Das Objekt, das in der Attributliste gesucht werden soll.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#IndexOf(System.Object)">
+      <summary>Bestimmt den Index eines bestimmten Elements in der Attributliste.</summary>
+      <returns>Der Index von <paramref name="value" />, wenn das Element in der Attributliste gefunden wird, andernfalls -1.</returns>
+      <param name="value">Das Objekt, das in der Attributliste gesucht werden soll.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Insert(System.Int32,System.Object)">
+      <summary>Fügt ein Element in der Liste am angegebenen Index ein.</summary>
+      <param name="index">Der nullbasierte Index, an dem der Wert eingefügt werden soll.</param>
+      <param name="value">Das Objekt, das in die Liste eingefügt werden soll.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException"> Der <paramref name="index" /> ist nicht gültig für die Auflistung; er ist entweder zu groß oder kleiner als 0.</exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#IsFixedSize">
+      <summary>Ruft einen Wert ab, der angibt, ob die Liste über eine feste Größe verfügt.</summary>
+      <returns>true, wenn die Liste eine feste Größe hat, andernfalls false.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#IsReadOnly">
+      <summary>Ruft einen Wert ab, der angibt, ob die Liste schreibgeschützt ist.</summary>
+      <returns>
+        <paramref name="true" />, wenn die Liste schreibgeschützt ist, andernfalls <paramref name="false" />.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Item(System.Int32)">
+      <summary>Ruft das Element am angegebenen Index ab oder legt dieses fest.</summary>
+      <returns>Das Element am angegebenen Index.</returns>
+      <param name="index">Der nullbasierte Index des Elements, das abgerufen oder festgelegt werden soll.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException"> Der <paramref name="index" /> ist nicht gültig für die Auflistung; er ist entweder zu groß oder kleiner als 0.</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Remove(System.Object)">
+      <summary>Entfernt das erste Vorkommen eines bestimmten Objekts aus der Liste.</summary>
+      <param name="value">Das Objekt, das aus der Liste entfernt werden soll.</param>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlMapping">
+      <summary>Unterstützt Zuordnungen von .NET Framework-Typen zu XML-Schema-Datentypen. </summary>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMapping.ElementName">
+      <summary>Ruft den Namen des zugeordneten Elements ab.</summary>
+      <returns>Der Name des zugeordneten Elements.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMapping.Namespace">
+      <summary>Ruft den Namespace des zugeordneten Elements ab.</summary>
+      <returns>Der Namespace des zugeordneten Elements.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlMapping.SetKey(System.String)">
+      <summary>Legt den Schlüssel fest, der zum Ermitteln der Zuordnung verwendet wird.</summary>
+      <param name="key">Der Suchschlüssel.</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMapping.XsdElementName">
+      <summary>Ruft den Namen des XSD-Elements der Zuordnung ab.</summary>
+      <returns>Der Name des XSD-Elements.</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlMappingAccess">
+      <summary>Gibt an, ob eine Zuordnung über Lese- oder Schreibzugriff oder über beides verfügt.</summary>
+    </member>
+    <member name="F:System.Xml.Serialization.XmlMappingAccess.None">
+      <summary>Es werden sowohl Lese- als auch Schreibmethoden generiert.</summary>
+    </member>
+    <member name="F:System.Xml.Serialization.XmlMappingAccess.Read">
+      <summary>Es werden Lesemethoden generiert.</summary>
+    </member>
+    <member name="F:System.Xml.Serialization.XmlMappingAccess.Write">
+      <summary>Es werden Schreibmethoden generiert.</summary>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlReflectionImporter">
+      <summary>Generiert Zuordnungen zu XML Schema-Elementdeklarationen, wie z. B. literale Nachrichtenteile einer XML Schema Definition (XSD) in einem Dokument des Typs Web Services Description Language (WSDL) für .NET Framework-Typen oder einer Webdienst-Methodeninformation. </summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:System.Xml.Serialization.XmlReflectionImporter" />-Klasse. </summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.#ctor(System.String)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:System.Xml.Serialization.XmlReflectionImporter" />-Klasse mit dem angegebenen XML-Standardnamespace. </summary>
+      <param name="defaultNamespace">Der XML-Standardnamespace, der für importierte Typzuordnungen verwendet wird.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.#ctor(System.Xml.Serialization.XmlAttributeOverrides)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:System.Xml.Serialization.XmlReflectionImporter" />-Klasse mit den angegebenen XML-Serialisierungsüberschreibungen. </summary>
+      <param name="attributeOverrides">Ein Objekt, das überschreibt, wie die <see cref="T:System.Xml.Serialization.XmlSerializer" />-Klasse zugeordnete Typen serialisiert.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.#ctor(System.Xml.Serialization.XmlAttributeOverrides,System.String)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:System.Xml.Serialization.XmlReflectionImporter" />-Klasse mit den angegebenen XML-Serialisierungsüberschreibungen und dem XML-Standardnamespace. </summary>
+      <param name="attributeOverrides">Ein Objekt, das überschreibt, wie die <see cref="T:System.Xml.Serialization.XmlSerializer" />-Klasse zugeordnete Typen serialisiert.</param>
+      <param name="defaultNamespace">Der XML-Standardnamespace, der für importierte Typzuordnungen verwendet wird.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type)">
+      <summary>Generiert eine Zuordnung zu einem XML Schema-Element für einen angegebenen .NET Framework-Typ. </summary>
+      <returns>Interne .NET Framework-Zuordnung eines Typs zu einem XML Schema-Element.</returns>
+      <param name="type">Der .NET Framework-Typ, für den eine Typzuordnung generiert werden soll.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type,System.String)">
+      <summary>Generiert eine Zuordnung zu einem XML Schema-Element für einen .NET Framework-Typ mithilfe des angegebenen Typs und Namespace. </summary>
+      <returns>Interne .NET Framework-Zuordnung eines Typs zu einem XML Schema-Element.</returns>
+      <param name="type">Der .NET Framework-Typ, für den eine Typzuordnung generiert werden soll.</param>
+      <param name="defaultNamespace">Der XML-Standardnamespace, der verwendet werden soll.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type,System.Xml.Serialization.XmlRootAttribute)">
+      <summary>Generiert eine Zuordnung zu einem XML Schema-Element für einen .NET Framework-Typ mithilfe des angegebenen Typs und Attributs. </summary>
+      <returns>Eine <see cref="T:System.Xml.Serialization.XmlTypeMapping" />, die eine Zuordnung eines .NET Framework-Typs zu einem XML Schema-Element darstellt.</returns>
+      <param name="type">Der .NET Framework-Typ, für den eine Typzuordnung generiert werden soll.</param>
+      <param name="root">Ein <see cref="T:System.Xml.Serialization.XmlRootAttribute" />-Attribut, das auf den Typ angewendet wird.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type,System.Xml.Serialization.XmlRootAttribute,System.String)">
+      <summary>Generiert eine Zuordnung zu einem XML Schema-Element für einen .NET Framework-Typ mithilfe des angegebenen Typs, Attributs und Namespace. </summary>
+      <returns>Eine <see cref="T:System.Xml.Serialization.XmlTypeMapping" />, die die interne .NET Framework-Zuordnung eines Typs zu einem XML Schema-Element enthält.</returns>
+      <param name="type">Der .NET Framework-Typ, für den eine Typzuordnung generiert werden soll.</param>
+      <param name="root">Ein <see cref="T:System.Xml.Serialization.XmlRootAttribute" />-Attribut, das auf den Typ angewendet wird.</param>
+      <param name="defaultNamespace">Der XML-Standardnamespace, der verwendet werden soll.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.IncludeType(System.Type)">
+      <summary>Enthält Zuordnungen für einen Typ für die spätere Verwendung, wenn Importmethoden aufgerufen werden. </summary>
+      <param name="type">Der .NET Framework-Typ, für den Typzuordnungsinformationen gespeichert werden sollen.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.IncludeTypes(System.Reflection.ICustomAttributeProvider)">
+      <summary>Enthält Zuordnungen für abgeleitete Typen für die spätere Verwendung, wenn Importmethoden aufgerufen werden. </summary>
+      <param name="provider">Eine Instanz der <see cref="T:System.Reflection.ICustomAttributeProvider" />-Klasse, die vom <see cref="T:System.Xml.Serialization.XmlIncludeAttribute" />-Attribut abgeleitete benutzerdefinierte Attribute enthält.</param>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlSerializer">
+      <summary>Serialisiert und deserialisiert Objekte in und aus XML-Dokumenten.Mit <see cref="T:System.Xml.Serialization.XmlSerializer" /> können Sie steuern, wie Objekte in XML codiert werden.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:System.Xml.Serialization.XmlSerializer" />-Klasse.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:System.Xml.Serialization.XmlSerializer" />-Klasse, die Objekte des angegebenen Typs in XML-Dokumente serialisieren und XML-Dokumente in Objekte des angegebenen Typs deserialisieren kann.</summary>
+      <param name="type">Der Objekttyp, den dieser <see cref="T:System.Xml.Serialization.XmlSerializer" /> serialisieren kann. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.String)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:System.Xml.Serialization.XmlSerializer" />-Klasse, die Objekte des angegebenen Typs in XML-Dokumente serialisieren und XML-Dokumente in Objekte des angegebenen Typs deserialisieren kann.Gibt den Standardnamespace für alle XML-Elemente an.</summary>
+      <param name="type">Der Objekttyp, den dieser <see cref="T:System.Xml.Serialization.XmlSerializer" /> serialisieren kann. </param>
+      <param name="defaultNamespace">Der für alle XML-Elemente zu verwendende Standardnamespace. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Type[])">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:System.Xml.Serialization.XmlSerializer" />-Klasse, die Objekte des angegebenen Typs in XML-Dokumente serialisiert und XML-Dokumente in Objekte eines angegebenen Typs deserialisiert.Wenn eine Eigenschaft oder ein Feld ein Array zurückgibt, werden durch den <paramref name="extraTypes" />-Parameter die Objekte angegeben, die in das Array eingefügt werden können.</summary>
+      <param name="type">Der Objekttyp, den dieser <see cref="T:System.Xml.Serialization.XmlSerializer" /> serialisieren kann. </param>
+      <param name="extraTypes">Ein <see cref="T:System.Type" />-Array von zusätzlichen zu serialisierenden Objekttypen. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Xml.Serialization.XmlAttributeOverrides)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:System.Xml.Serialization.XmlSerializer" />-Klasse, die Objekte des angegebenen Typs in XML-Dokumente serialisieren und XML-Dokumente in Objekte des angegebenen Typs deserialisieren kann.Jedes zu serialisierende Objekt kann selbst Instanzen von Klassen enthalten, die von dieser Überladung durch andere Klassen überschrieben werden können.</summary>
+      <param name="type">Der Typ des zu serialisierenden Objekts. </param>
+      <param name="overrides">Ein <see cref="T:System.Xml.Serialization.XmlAttributeOverrides" />. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Xml.Serialization.XmlAttributeOverrides,System.Type[],System.Xml.Serialization.XmlRootAttribute,System.String)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:System.Xml.Serialization.XmlSerializer" />-Klasse, die Objekte des Typs <see cref="T:System.Object" /> in XML-Dokumentinstanzen serialisiert und XML-Dokumentinstanzen in Objekte des Typs <see cref="T:System.Object" /> deserialisiert.Jedes zu serialisierende Objekt kann selbst Instanzen von Klassen enthalten, die von dieser Überladung durch andere Klassen überschrieben werden können.Diese Überladung gibt außerdem den Standardnamespace für alle XML-Elemente sowie die als XML-Stammelement zu verwendende Klasse an.</summary>
+      <param name="type">Der Objekttyp, den dieser <see cref="T:System.Xml.Serialization.XmlSerializer" /> serialisieren kann. </param>
+      <param name="overrides">Ein <see cref="T:System.Xml.Serialization.XmlAttributeOverrides" />-Objekt, welches das Verhalten der im Parameter <paramref name="type" /> angegebenen Klasse erweitert oder überschreibt. </param>
+      <param name="extraTypes">Ein <see cref="T:System.Type" />-Array von zusätzlichen zu serialisierenden Objekttypen. </param>
+      <param name="root">Ein <see cref="T:System.Xml.Serialization.XmlRootAttribute" />-Objekt, das die Eigenschaften des XML-Stammelements definiert. </param>
+      <param name="defaultNamespace">Der Standardnamespace aller XML-Elemente im XML-Dokument. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Xml.Serialization.XmlRootAttribute)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:System.Xml.Serialization.XmlSerializer" />-Klasse, die Objekte des angegebenen Typs in XML-Dokumente serialisieren und ein XML-Dokument in ein Objekt des angegebenen Typs deserialisieren kann.Außerdem wird die als XML-Stammelement zu verwendende Klasse angegeben.</summary>
+      <param name="type">Der Objekttyp, den dieser <see cref="T:System.Xml.Serialization.XmlSerializer" /> serialisieren kann. </param>
+      <param name="root">Ein <see cref="T:System.Xml.Serialization.XmlRootAttribute" />-Objekt, welches das XML-Stammelement darstellt. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Xml.Serialization.XmlTypeMapping)">
+      <summary>Initialisiert eine Instanz der <see cref="T:System.Xml.Serialization.XmlSerializer" />-Klasse mit einem Objekt, das einen Typ einem anderen Typ zuordnet.</summary>
+      <param name="xmlTypeMapping">Ein <see cref="T:System.Xml.Serialization.XmlTypeMapping" />-Objekt, das einen Typ einem anderen Typ zuordnet. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.CanDeserialize(System.Xml.XmlReader)">
+      <summary>Ruft einen Wert ab, der angibt, ob dieser <see cref="T:System.Xml.Serialization.XmlSerializer" /> ein angegebenes XML-Dokument deserialisieren kann.</summary>
+      <returns>true, wenn dieser <see cref="T:System.Xml.Serialization.XmlSerializer" /> das Objekt deserialisieren kann, auf das <see cref="T:System.Xml.XmlReader" /> zeigt, andernfalls false.</returns>
+      <param name="xmlReader">Ein <see cref="T:System.Xml.XmlReader" />, der auf das zu deserialisierende Objekt zeigt. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Deserialize(System.IO.Stream)">
+      <summary>Deserialisiert das XML-Dokument, das im angegebenen <see cref="T:System.IO.Stream" /> enthalten ist.</summary>
+      <returns>Das <see cref="T:System.Object" />, das gerade deserialisiert wird.</returns>
+      <param name="stream">Der <see cref="T:System.IO.Stream" />, der das zu deserialisierende XML-Dokument enthält. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Deserialize(System.IO.TextReader)">
+      <summary>Deserialisiert das XML-Dokument, das im angegebenen <see cref="T:System.IO.TextReader" /> enthalten ist.</summary>
+      <returns>Das <see cref="T:System.Object" />, das gerade deserialisiert wird.</returns>
+      <param name="textReader">Der <see cref="T:System.IO.TextReader" />, der das zu deserialisierende XML-Dokument enthält. </param>
+      <exception cref="T:System.InvalidOperationException">Während der Deserialisierung ist ein Fehler aufgetreten.Die ursprüngliche Ausnahme ist mithilfe der <see cref="P:System.Exception.InnerException" />-Eigenschaft verfügbar.</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Deserialize(System.Xml.XmlReader)">
+      <summary>Deserialisiert das XML-Dokument, das im angegebenen <see cref="T:System.xml.XmlReader" /> enthalten ist.</summary>
+      <returns>Das <see cref="T:System.Object" />, das gerade deserialisiert wird.</returns>
+      <param name="xmlReader">Der <see cref="T:System.xml.XmlReader" />, der das zu deserialisierende XML-Dokument enthält. </param>
+      <exception cref="T:System.InvalidOperationException">Während der Deserialisierung ist ein Fehler aufgetreten.Die ursprüngliche Ausnahme ist mithilfe der <see cref="P:System.Exception.InnerException" />-Eigenschaft verfügbar.</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.FromMappings(System.Xml.Serialization.XmlMapping[])">
+      <summary>Gibt ein Array von <see cref="T:System.Xml.Serialization.XmlSerializer" />-Objekten zurück, die aus einem Array von <see cref="T:System.Xml.Serialization.XmlTypeMapping" />-Objekten erstellt wurden.</summary>
+      <returns>Ein Array von <see cref="T:System.Xml.Serialization.XmlSerializer" />-Objekten.</returns>
+      <param name="mappings">Eine <see cref="T:System.Xml.Serialization.XmlTypeMapping" />, die einen Typ einem anderen Typ zuordnet. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.FromMappings(System.Xml.Serialization.XmlMapping[],System.Type)">
+      <summary>Gibt eine Instanz der <see cref="T:System.Xml.Serialization.XmlSerializer" />-Klasse aus den angegebenen Zuordnungen zurück.</summary>
+      <returns>Eine Instanz der <see cref="T:System.Xml.Serialization.XmlSerializer" />-Klasse.</returns>
+      <param name="mappings">Ein Array von <see cref="T:System.Xml.Serialization.XmlMapping" />-Objekten.</param>
+      <param name="type">Der <see cref="T:System.Type" /> des deserialisierten Objekts.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.FromTypes(System.Type[])">
+      <summary>Gibt ein Array von <see cref="T:System.Xml.Serialization.XmlSerializer" />-Objekten zurück, das aus einem Array von Typen erstellt wurde.</summary>
+      <returns>Ein Array von <see cref="T:System.Xml.Serialization.XmlSerializer" />-Objekten.</returns>
+      <param name="types">Ein Array von <see cref="T:System.Type" />-Objekten. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Serialize(System.IO.Stream,System.Object)">
+      <summary>Serialisiert das angegebene <see cref="T:System.Object" /> und schreibt das XML-Dokument mithilfe des angegebenen<see cref="T:System.IO.Stream" /> in eine Datei.</summary>
+      <param name="stream">Der zum Schreiben des XML-Dokument verwendete <see cref="T:System.IO.Stream" />. </param>
+      <param name="o">Das zu serialisierende <see cref="T:System.Object" />-Objekt. </param>
+      <exception cref="T:System.InvalidOperationException">Während der Serialisierung ist ein Fehler aufgetreten.Die ursprüngliche Ausnahme ist mithilfe der <see cref="P:System.Exception.InnerException" />-Eigenschaft verfügbar.</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Serialize(System.IO.Stream,System.Object,System.Xml.Serialization.XmlSerializerNamespaces)">
+      <summary>Serialisiert das angegebene <see cref="T:System.Object" />-Objekt und schreibt das XML-Dokument mithilfe des angegebenen<see cref="T:System.IO.Stream" />, der auf den angegebenen Namespace verweist, in eine Datei.</summary>
+      <param name="stream">Der zum Schreiben des XML-Dokument verwendete <see cref="T:System.IO.Stream" />. </param>
+      <param name="o">Das zu serialisierende <see cref="T:System.Object" />-Objekt. </param>
+      <param name="namespaces">Der <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />, auf den das Objekt verweist. </param>
+      <exception cref="T:System.InvalidOperationException">Während der Serialisierung ist ein Fehler aufgetreten.Die ursprüngliche Ausnahme ist mithilfe der <see cref="P:System.Exception.InnerException" />-Eigenschaft verfügbar.</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Serialize(System.IO.TextWriter,System.Object)">
+      <summary>Serialisiert das angegebene <see cref="T:System.Object" /> und schreibt das XML-Dokument mithilfe des angegebenen<see cref="T:System.IO.TextWriter" /> in eine Datei.</summary>
+      <param name="textWriter">Der zum Schreiben des XML-Dokuments verwendete <see cref="T:System.IO.TextWriter" />. </param>
+      <param name="o">Das zu serialisierende <see cref="T:System.Object" />-Objekt. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Serialize(System.IO.TextWriter,System.Object,System.Xml.Serialization.XmlSerializerNamespaces)">
+      <summary>Serialisiert das angegebene <see cref="T:System.Object" />-Objekt, schreibt das XML-Dokument mithilfe des angegebenen<see cref="T:System.IO.TextWriter" /> in eine Datei und verweist auf den angegebenen Namespace.</summary>
+      <param name="textWriter">Der zum Schreiben des XML-Dokuments verwendete <see cref="T:System.IO.TextWriter" />. </param>
+      <param name="o">Das zu serialisierende <see cref="T:System.Object" />-Objekt. </param>
+      <param name="namespaces">Das <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />-Objekt, das Namespaces für das erzeugte XML-Dokument enthält. </param>
+      <exception cref="T:System.InvalidOperationException">Während der Serialisierung ist ein Fehler aufgetreten.Die ursprüngliche Ausnahme ist mithilfe der <see cref="P:System.Exception.InnerException" />-Eigenschaft verfügbar.</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Serialize(System.Xml.XmlWriter,System.Object)">
+      <summary>Serialisiert das angegebene <see cref="T:System.Object" /> und schreibt das XML-Dokument mithilfe des angegebenen<see cref="T:System.Xml.XmlWriter" /> in eine Datei.</summary>
+      <param name="xmlWriter">Der zum Schreiben des XML-Dokuments verwendete <see cref="T:System.xml.XmlWriter" />. </param>
+      <param name="o">Das zu serialisierende <see cref="T:System.Object" />-Objekt. </param>
+      <exception cref="T:System.InvalidOperationException">Während der Serialisierung ist ein Fehler aufgetreten.Die ursprüngliche Ausnahme ist mithilfe der <see cref="P:System.Exception.InnerException" />-Eigenschaft verfügbar.</exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Serialize(System.Xml.XmlWriter,System.Object,System.Xml.Serialization.XmlSerializerNamespaces)">
+      <summary>Serialisiert das angegebene <see cref="T:System.Object" />-Objekt, schreibt das XML-Dokument mithilfe des angegebenen<see cref="T:System.Xml.XmlWriter" /> in eine Datei und verweist auf den angegebenen Namespace.</summary>
+      <param name="xmlWriter">Der zum Schreiben des XML-Dokuments verwendete <see cref="T:System.xml.XmlWriter" />. </param>
+      <param name="o">Das zu serialisierende <see cref="T:System.Object" />-Objekt. </param>
+      <param name="namespaces">Der <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />, auf den das Objekt verweist. </param>
+      <exception cref="T:System.InvalidOperationException">Während der Serialisierung ist ein Fehler aufgetreten.Die ursprüngliche Ausnahme ist mithilfe der <see cref="P:System.Exception.InnerException" />-Eigenschaft verfügbar.</exception>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlSerializerNamespaces">
+      <summary>Enthält die XML-Namespaces und Präfixe, die der <see cref="T:System.Xml.Serialization.XmlSerializer" /> zum Generieren qualifizierter Namen in einer XML-Dokumentinstanz verwendet.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializerNamespaces.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />-Klasse.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializerNamespaces.#ctor(System.Xml.Serialization.XmlSerializerNamespaces)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />-Klasse und verwendet hierzu die angegebene Instanz von XmlSerializerNamespaces, die die Auflistung von Präfix-Namespace-Paaren enthält.</summary>
+      <param name="namespaces">Eine Instanz der <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />-Klasse, welche die Namespace-Präfix-Paare enthält. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializerNamespaces.#ctor(System.Xml.XmlQualifiedName[])">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />-Klasse.</summary>
+      <param name="namespaces">Ein Array von <see cref="T:System.Xml.XmlQualifiedName" />-Objekten. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializerNamespaces.Add(System.String,System.String)">
+      <summary>Fügt einem <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />-Objekt ein Präfix-Namespace-Paar hinzu.</summary>
+      <param name="prefix">Das einem XML-Namespace zugeordnete Präfix. </param>
+      <param name="ns">Ein XML-Namespace. </param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlSerializerNamespaces.Count">
+      <summary>Ruft die Anzahl der Präfix- und Namespacepaare in der Auflistung ab.</summary>
+      <returns>Die Anzahl der Präfix- und Namespacepaare in der Auflistung.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializerNamespaces.ToArray">
+      <summary>Ruft das Array der Präfix- und Namespacepaare in einem <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />-Objekt ab.</summary>
+      <returns>Ein Array von <see cref="T:System.Xml.XmlQualifiedName" />-Objekten, die als qualifizierte Namen in einem XML-Dokument verwendet werden.</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlTypeMapping">
+      <summary>Enthält eine Zuordnung eines Typs zu einem anderen.</summary>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlTypeMapping.TypeFullName">
+      <summary>Der vollqualifizierte Typname, einschließlich des bzw. der Namespaces und des Typs.</summary>
+      <returns>Der vollqualifizierte Typname.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlTypeMapping.TypeName">
+      <summary>Ruft den Typnamen des zugeordneten Objekts ab.</summary>
+      <returns>Der Typname des zugeordneten Objekts.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlTypeMapping.XsdTypeName">
+      <summary>Ruft den XML-Elementnamen des zugeordneten Objekts ab.</summary>
+      <returns>Der XML-Elementname des zugeordneten Objekts.Der Standardwert ist der Klassenname des Objekts.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlTypeMapping.XsdTypeNamespace">
+      <summary>Ruft den XML-Namespace des zugeordneten Objekts ab.</summary>
+      <returns>Der XML-Namespace des zugeordneten Objekts.Der Standardwert ist eine leere Zeichenfolge ("").</returns>
+    </member>
+  </members>
+</doc>

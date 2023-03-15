@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Framework
+    Identifier="WindowsPhoneApp"
+    Profile="*"
+    MinimumVersion="8.1"
+    Family="WindowsPhoneApp"
+    MinimumVisualStudioVersion="12.0"
+    DisplayName="Windows Phone"
+    MinimumVersionDisplayName="8.1"
+    PlatformArchitectures="AnyCPU;x86;ARM"
+    IsBuiltIn="true"
+    IsHidden="false">
+    <Platform
+        Identifier="WindowsPhoneApp"
+        MinimumVersion="8.1" />
+    <RetargetData
+        ProjectLanguage="CSharp"
+        TargetsImport="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets"
+        ProjectTypeGuid="76F1466A-8B6D-4E39-A767-685A06062A39"
+        ConditionalCompilationSymbols="NETFX_CORE;WINDOWS_PHONE_APP" />
+    <RetargetData
+        ProjectLanguage="VisualBasic"
+        TargetsImport="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.VisualBasic.targets"
+        ProjectTypeGuid="76F1466A-8B6D-4E39-A767-685A06062A39"
+        ConditionalCompilationSymbols="NETFX_CORE" />
+</Framework>

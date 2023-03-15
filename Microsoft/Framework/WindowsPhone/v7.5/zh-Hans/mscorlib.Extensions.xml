@@ -1,0 +1,838 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) Microsoft Corporation.  All rights reserved. -->
+<doc>
+  <assembly>
+    <name>mscorlib.Extensions</name>
+  </assembly>
+  <members>
+    <member name="T:System.ApplicationException">
+<summary>发生非致命应用程序错误时引发的异常。</summary>
+    </member>
+    <member name="M:System.ApplicationException.#ctor">
+<summary>初始化 <see cref="T:System.ApplicationException"/> 类的新实例。</summary>
+    </member>
+    <member name="M:System.ApplicationException.#ctor(System.String)">
+<summary>使用指定的错误消息初始化 <see cref="T:System.ApplicationException"/> 类的新实例。</summary>
+<param name="message">描述错误的消息。 </param>
+    </member>
+    <member name="M:System.ApplicationException.#ctor(System.String,System.Exception)">
+<summary>使用指定错误消息和对作为此异常原因的内部异常的引用来初始化 <see cref="T:System.ApplicationException"/> 类的新实例。</summary>
+<param name="message">解释异常原因的错误消息。 </param>
+<param name="innerException">导致当前异常的异常。如果 <paramref name="innerException"/> 参数不为 null 引用，则当前异常在处理内部异常的 catch 块中引发。 </param>
+    </member>
+    <member name="T:System.ComponentModel.INotifyPropertyChanging">
+<summary>定义一个用于通知客户端某个属性值将更改的事件。</summary>
+    </member>
+    <member name="E:System.ComponentModel.INotifyPropertyChanging.PropertyChanging">
+<summary>在属性值更改时发生。</summary>
+    </member>
+    <member name="T:System.ComponentModel.PropertyChangingEventArgs">
+<summary>为 <see cref="E:System.ComponentModel.INotifyPropertyChanging.PropertyChanging"/> 事件提供数据。</summary>
+    </member>
+    <member name="M:System.ComponentModel.PropertyChangingEventArgs.#ctor(System.String)">
+<summary>初始化 <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> 类的新实例。</summary>
+<param name="propertyName">更改的属性的名称。</param>
+    </member>
+    <member name="P:System.ComponentModel.PropertyChangingEventArgs.PropertyName">
+<summary>获取更改的属性的名称。</summary>
+<returns>更改的属性的名称。</returns>
+    </member>
+    <member name="T:System.ComponentModel.PropertyChangingEventHandler">
+<summary>表示将处理 <see cref="E:System.ComponentModel.INotifyPropertyChanging.PropertyChanging"/> 事件的方法。</summary>
+<param name="sender">事件的源。</param>
+<param name="e">事件数据。</param>
+    </member>
+    <member name="T:System.Runtime.CompilerServices.CodeGenerationAttribute">
+<summary>指定用于代码生成的设置。</summary>
+    </member>
+    <member name="M:System.Runtime.CompilerServices.CodeGenerationAttribute.#ctor(System.Runtime.CompilerServices.CodeGenerationFlags)">
+<summary>初始化 <see cref="T:System.Runtime.CompilerServices.CodeGenerationAttribute"/> 类的新实例。</summary>
+    </member>
+    <member name="P:System.Runtime.CompilerServices.CodeGenerationAttribute.CodeGenerationFlags">
+<summary>获取指定如何生成代码的标志。</summary>
+<returns>指定如何生成代码的标志。</returns>
+    </member>
+    <member name="T:System.Runtime.CompilerServices.CodeGenerationFlags">
+<summary>定义指定如何生成代码的标志。</summary>
+    </member>
+    <member name="F:System.Runtime.CompilerServices.CodeGenerationFlags.EnableFPIntrinsicsUsingSIMD">
+<summary>指定实时 (JIT) 编译器可能使用特定矢量和矩阵操作的 SIMD 说明。</summary>
+    </member>
+    <member name="T:System.Security.Cryptography.AsymmetricAlgorithm">
+<summary>表示所有非对称算法的实现都必须从中继承的抽象基类。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.AsymmetricAlgorithm.#ctor">
+<summary>初始化 <see cref="T:System.Security.Cryptography.AsymmetricAlgorithm"/> 类的新实例。</summary>
+<exception cref="T:System.Security.Cryptography.CryptographicException">派生类的实现无效。 </exception>
+    </member>
+    <member name="M:System.Security.Cryptography.AsymmetricAlgorithm.Clear">
+<summary>释放由 <see cref="T:System.Security.Cryptography.AsymmetricAlgorithm"/> 类使用的所有资源。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.AsymmetricAlgorithm.Create">
+<summary>创建用于执行非对称算法的默认加密对象。</summary>
+<returns>一个新的 <see cref="T:System.Security.Cryptography.RSACryptoServiceProvider"/> 实例。</returns>
+    </member>
+    <member name="M:System.Security.Cryptography.AsymmetricAlgorithm.Create(System.String)">
+<summary>创建非对称算法的指定实现的实例。</summary>
+<returns>指定的非对称算法实现的新实例。</returns>
+<param name="algName">要使用的非对称算法实现。下表显示 <paramref name="algName"/> 参数的有效值以及它们映射到的算法。参数值实现 System.Security.Cryptography.AsymmetricAlgorithm<see cref="T:System.Security.Cryptography.AsymmetricAlgorithm"/>RSA<see cref="T:System.Security.Cryptography.RSA"/>System.Security.Cryptography.RSA<see cref="T:System.Security.Cryptography.RSA"/></param>
+    </member>
+    <member name="M:System.Security.Cryptography.AsymmetricAlgorithm.Dispose">
+<summary>释放由 <see cref="T:System.Security.Cryptography.AsymmetricAlgorithm"/> 类的当前实例使用的所有资源。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.AsymmetricAlgorithm.Dispose(System.Boolean)">
+<summary>释放由 <see cref="T:System.Security.Cryptography.AsymmetricAlgorithm"/> 类使用的未托管的资源，并且可以选择释放托管的资源。</summary>
+<param name="disposing">如果释放托管和未托管资源，则为 true；如果只释放未托管资源，则为 false。 </param>
+    </member>
+    <member name="M:System.Security.Cryptography.AsymmetricAlgorithm.FromXmlString(System.String)">
+<summary>当在派生类中重写时，从 XML 字符串重新构造 <see cref="T:System.Security.Cryptography.AsymmetricAlgorithm"/> 对象。</summary>
+<param name="xmlString">用于重新构造 <see cref="T:System.Security.Cryptography.AsymmetricAlgorithm"/> 对象的 XML 字符串。 </param>
+    </member>
+    <member name="P:System.Security.Cryptography.AsymmetricAlgorithm.KeyExchangeAlgorithm">
+<summary>当在派生类中重写时，获取密钥交换算法的名称。</summary>
+<returns>密钥交换算法的名称。</returns>
+    </member>
+    <member name="P:System.Security.Cryptography.AsymmetricAlgorithm.KeySize">
+<summary>获取或设置非对称算法所用密钥模块的大小（以位为单位）。</summary>
+<returns>非对称算法所用密钥模块的大小（以位为单位）。</returns>
+<exception cref="T:System.Security.Cryptography.CryptographicException">密钥模块的大小无效。 </exception>
+    </member>
+    <member name="F:System.Security.Cryptography.AsymmetricAlgorithm.KeySizeValue">
+<summary>表示非对称算法所用密钥模块的大小（以位为单位）。</summary>
+    </member>
+    <member name="P:System.Security.Cryptography.AsymmetricAlgorithm.LegalKeySizes">
+<summary>获取非对称算法支持的密钥大小。</summary>
+<returns>一个数组，包含非对称算法支持的密钥大小。</returns>
+    </member>
+    <member name="F:System.Security.Cryptography.AsymmetricAlgorithm.LegalKeySizesValue">
+<summary>指定非对称算法支持的密钥大小。</summary>
+    </member>
+    <member name="P:System.Security.Cryptography.AsymmetricAlgorithm.SignatureAlgorithm">
+<summary>获取签名算法的名称。</summary>
+<returns>签名算法的名称。</returns>
+    </member>
+    <member name="M:System.Security.Cryptography.AsymmetricAlgorithm.ToXmlString(System.Boolean)">
+<summary>当在派生类中重写时，创建并返回当前 <see cref="T:System.Security.Cryptography.AsymmetricAlgorithm"/> 对象的 XML 字符串表示形式。</summary>
+<returns>当前 <see cref="T:System.Security.Cryptography.AsymmetricAlgorithm"/> 对象的 XML 字符串编码。</returns>
+<param name="includePrivateParameters">要包括私有参数，则为 true；否则为 false。 </param>
+    </member>
+    <member name="T:System.Security.Cryptography.AsymmetricKeyExchangeDeformatter">
+<summary>表示所有非对称密钥交换反格式化工具均从中派生的基类。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.AsymmetricKeyExchangeDeformatter.#ctor">
+<summary>初始化 <see cref="T:System.Security.Cryptography.AsymmetricKeyExchangeDeformatter"/> 的新实例。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.AsymmetricKeyExchangeDeformatter.DecryptKeyExchange(System.Byte[])">
+<summary>当在派生类中重写时，从加密的密钥交换数据中提取机密信息。</summary>
+<returns>从密钥交换数据派生的机密信息。</returns>
+<param name="rgb">其中隐藏有机密信息的密钥交换数据。 </param>
+    </member>
+    <member name="P:System.Security.Cryptography.AsymmetricKeyExchangeDeformatter.Parameters">
+<summary>当在派生类中重写时，获取或设置非对称密钥交换的参数。</summary>
+<returns>XML 格式的字符串，它包含非对称密钥交换操作的参数。</returns>
+    </member>
+    <member name="M:System.Security.Cryptography.AsymmetricKeyExchangeDeformatter.SetKey(System.Security.Cryptography.AsymmetricAlgorithm)">
+<summary>当在派生类中重写时，设置用于解密机密信息的私钥。</summary>
+<param name="key">包含私钥的 <see cref="T:System.Security.Cryptography.AsymmetricAlgorithm"/> 实现的实例。 </param>
+    </member>
+    <member name="T:System.Security.Cryptography.AsymmetricKeyExchangeFormatter">
+<summary>表示所有非对称密钥交换格式化工具均从中派生的基类。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.AsymmetricKeyExchangeFormatter.#ctor">
+<summary>初始化 <see cref="T:System.Security.Cryptography.AsymmetricKeyExchangeFormatter"/> 的新实例。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.AsymmetricKeyExchangeFormatter.CreateKeyExchange(System.Byte[])">
+<summary>当在派生类中重写时，从指定的输入数据创建加密的密钥交换数据。</summary>
+<returns>要发送给目标接收者的加密的密钥交换数据。</returns>
+<param name="data">在密钥交换中要传递的机密信息。 </param>
+    </member>
+    <member name="M:System.Security.Cryptography.AsymmetricKeyExchangeFormatter.CreateKeyExchange(System.Byte[],System.Type)">
+<summary>当在派生类中重写时，从指定的输入数据创建加密的密钥交换数据。</summary>
+<returns>要发送给目标接收者的加密的密钥交换数据。</returns>
+<param name="data">在密钥交换中要传递的机密信息。 </param>
+<param name="symAlgType">在当前版本中不使用此参数。 </param>
+    </member>
+    <member name="P:System.Security.Cryptography.AsymmetricKeyExchangeFormatter.Parameters">
+<summary>当在派生类中重写时，获取非对称密钥交换的参数。</summary>
+<returns>XML 格式的字符串，它包含非对称密钥交换操作的参数。</returns>
+    </member>
+    <member name="M:System.Security.Cryptography.AsymmetricKeyExchangeFormatter.SetKey(System.Security.Cryptography.AsymmetricAlgorithm)">
+<summary>当在派生类中重写时，设置用于加密机密信息的公钥。</summary>
+<param name="key">包含公钥的 <see cref="T:System.Security.Cryptography.AsymmetricAlgorithm"/> 实现的实例。 </param>
+    </member>
+    <member name="T:System.Security.Cryptography.AsymmetricSignatureDeformatter">
+<summary>表示所有非对称签名反格式化工具实现均从中派生的抽象基类。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.AsymmetricSignatureDeformatter.#ctor">
+<summary>初始化 <see cref="T:System.Security.Cryptography.AsymmetricSignatureDeformatter"/> 的新实例。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.AsymmetricSignatureDeformatter.SetHashAlgorithm(System.String)">
+<summary>当在派生类中重写时，设置用于验证签名的哈希算法。</summary>
+<param name="strName">用于验证签名的哈希算法的名称。 </param>
+    </member>
+    <member name="M:System.Security.Cryptography.AsymmetricSignatureDeformatter.SetKey(System.Security.Cryptography.AsymmetricAlgorithm)">
+<summary>当在派生类中重写时，设置用于验证签名的公钥。</summary>
+<param name="key">包含公钥的 <see cref="T:System.Security.Cryptography.AsymmetricAlgorithm"/> 实现的实例。 </param>
+    </member>
+    <member name="M:System.Security.Cryptography.AsymmetricSignatureDeformatter.VerifySignature(System.Byte[],System.Byte[])">
+<summary>当在派生类中重写时，验证指定数据的签名。</summary>
+<returns>如果 <paramref name="rgbSignature"/> 与使用指定的哈希算法和密钥在 <paramref name="rgbHash"/> 上计算出的签名匹配，则为 true；否则，为 false。</returns>
+<param name="rgbHash">用 <paramref name="rgbSignature"/> 签名的数据。 </param>
+<param name="rgbSignature">要为 <paramref name="rgbHash"/> 验证的签名。 </param>
+    </member>
+    <member name="M:System.Security.Cryptography.AsymmetricSignatureDeformatter.VerifySignature(System.Security.Cryptography.HashAlgorithm,System.Byte[])">
+<summary>通过指定的哈希值验证签名。</summary>
+<returns>如果签名对哈希值有效，则为 true；否则，为 false。</returns>
+<param name="hash">用于验证签名的哈希算法。 </param>
+<param name="rgbSignature">要验证的签名。 </param>
+<exception cref="T:System.ArgumentNullException"><paramref name="hash"/> 参数为 null。 </exception>
+    </member>
+    <member name="T:System.Security.Cryptography.AsymmetricSignatureFormatter">
+<summary>表示所有非对称签名格式化工具实现均从中派生的基类。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.AsymmetricSignatureFormatter.#ctor">
+<summary>初始化 <see cref="T:System.Security.Cryptography.AsymmetricSignatureFormatter"/> 的新实例。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.AsymmetricSignatureFormatter.CreateSignature(System.Byte[])">
+<summary>当在派生类中重写时，创建指定数据的签名。</summary>
+<returns><paramref name="rgbHash"/> 参数的数字签名。</returns>
+<param name="rgbHash">要签名的数据。 </param>
+    </member>
+    <member name="M:System.Security.Cryptography.AsymmetricSignatureFormatter.CreateSignature(System.Security.Cryptography.HashAlgorithm)">
+<summary>通过指定的哈希值创建签名。</summary>
+<returns>指定哈希值的签名。</returns>
+<param name="hash">用于创建签名的哈希算法。 </param>
+<exception cref="T:System.ArgumentNullException"><paramref name="hash"/> 参数为 null。 </exception>
+    </member>
+    <member name="M:System.Security.Cryptography.AsymmetricSignatureFormatter.SetHashAlgorithm(System.String)">
+<summary>当在派生类中重写时，设置用于创建签名的哈希算法。</summary>
+<param name="strName">要用于创建签名的哈希算法的名称。 </param>
+    </member>
+    <member name="M:System.Security.Cryptography.AsymmetricSignatureFormatter.SetKey(System.Security.Cryptography.AsymmetricAlgorithm)">
+<summary>当在派生类中重写时，设置用于创建签名的非对称算法。</summary>
+<param name="key">用于创建签名的 <see cref="T:System.Security.Cryptography.AsymmetricAlgorithm"/> 实现的实例。 </param>
+    </member>
+    <member name="T:System.Security.Cryptography.CspKeyContainerInfo">
+<summary>提供有关加密密钥对的附加信息。无法继承此类。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.CspKeyContainerInfo.#ctor(System.Security.Cryptography.CspParameters)">
+<summary>使用指定的参数初始化 <see cref="T:System.Security.Cryptography.CspKeyContainerInfo"/> 类的新实例。</summary>
+<param name="parameters">一个 <see cref="T:System.Security.Cryptography.CspParameters"/> 对象，提供有关密钥的信息。</param>
+    </member>
+    <member name="P:System.Security.Cryptography.CspKeyContainerInfo.KeyContainerName">
+<summary>获取密钥容器名称。</summary>
+<returns>密钥容器名称。</returns>
+    </member>
+    <member name="P:System.Security.Cryptography.CspKeyContainerInfo.KeyNumber">
+<summary>获取一个值，该值描述非对称密钥是否被创建为签名密钥或交换密钥。</summary>
+<returns><see cref="T:System.Security.Cryptography.KeyNumber"/> 值之一，该值描述非对称密钥是否被创建为签名密钥或交换密钥。</returns>
+    </member>
+    <member name="P:System.Security.Cryptography.CspKeyContainerInfo.MachineKeyStore">
+<summary>获取一个值，该值指示某个密钥是否来自计算机密钥集。</summary>
+<returns>如果该密钥来自计算机密钥集，则为 true；否则，为 false。</returns>
+    </member>
+    <member name="P:System.Security.Cryptography.CspKeyContainerInfo.ProviderName">
+<summary>获取密钥的提供程序名称。</summary>
+<returns>提供程序名称。</returns>
+    </member>
+    <member name="P:System.Security.Cryptography.CspKeyContainerInfo.ProviderType">
+<summary>获取密钥的提供程序类型。</summary>
+<returns>提供程序类型。默认值为 1。</returns>
+    </member>
+    <member name="P:System.Security.Cryptography.CspKeyContainerInfo.RandomlyGenerated">
+<summary>获取一个值，该值指示某个密钥容器是否由托管加密类随机生成。</summary>
+<returns>如果该密钥容器是随机生成的，则为 true；否则为 false。</returns>
+    </member>
+    <member name="T:System.Security.Cryptography.CspParameters">
+<summary>包含传递给执行加密计算的加密服务提供程序 (CSP) 的参数。无法继承此类。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.CspParameters.#ctor">
+<summary>初始化 <see cref="T:System.Security.Cryptography.CspParameters"/> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.CspParameters.#ctor(System.Int32)">
+<summary>使用指定的提供程序类型代码初始化 <see cref="T:System.Security.Cryptography.CspParameters"/> 类的新实例。</summary>
+<param name="dwTypeIn">指定要创建的提供程序类型的提供程序类型代码。 </param>
+    </member>
+    <member name="M:System.Security.Cryptography.CspParameters.#ctor(System.Int32,System.String)">
+<summary>使用指定的提供程序类型代码和名称初始化 <see cref="T:System.Security.Cryptography.CspParameters"/> 类的新实例。</summary>
+<param name="dwTypeIn">指定要创建的提供程序类型的提供程序类型代码。</param>
+<param name="strProviderNameIn">提供程序名称。 </param>
+    </member>
+    <member name="M:System.Security.Cryptography.CspParameters.#ctor(System.Int32,System.String,System.String)">
+<summary>使用指定的提供程序类型代码和名称以及指定的容器名称初始化 <see cref="T:System.Security.Cryptography.CspParameters"/> 类的新实例。</summary>
+<param name="dwTypeIn">指定要创建的提供程序类型的提供程序类型代码。</param>
+<param name="strProviderNameIn">提供程序名称。 </param>
+<param name="strContainerNameIn">容器名称。 </param>
+    </member>
+    <member name="P:System.Security.Cryptography.CspParameters.Flags">
+<summary>表示修改加密服务提供程序 (CSP) 的行为的 <see cref="T:System.Security.Cryptography.CspParameters"/> 的标志。</summary>
+<returns>一个枚举值，或枚举值的按位组合。</returns>
+<exception cref="T:System.ArgumentException">值不是有效的枚举值。</exception>
+    </member>
+    <member name="F:System.Security.Cryptography.CspParameters.KeyContainerName">
+<summary>表示 <see cref="T:System.Security.Cryptography.CspParameters"/> 的密钥容器名称。</summary>
+    </member>
+    <member name="F:System.Security.Cryptography.CspParameters.KeyNumber">
+<summary>指定非对称密钥是作为签名密钥还是交换密钥创建。</summary>
+    </member>
+    <member name="F:System.Security.Cryptography.CspParameters.ProviderName">
+<summary>表示 <see cref="T:System.Security.Cryptography.CspParameters"/> 的提供程序名称。</summary>
+    </member>
+    <member name="F:System.Security.Cryptography.CspParameters.ProviderType">
+<summary>表示 <see cref="T:System.Security.Cryptography.CspParameters"/> 的提供程序类型代码。</summary>
+    </member>
+    <member name="T:System.Security.Cryptography.CspProviderFlags">
+<summary>指定修改加密服务提供程序 (CSP) 行为的标志。</summary>
+    </member>
+    <member name="F:System.Security.Cryptography.CspProviderFlags.NoFlags">
+<summary>不指定任何设置。</summary>
+    </member>
+    <member name="F:System.Security.Cryptography.CspProviderFlags.UseMachineKeyStore">
+<summary>使用计算机的密钥存储区中的密钥信息。</summary>
+    </member>
+    <member name="F:System.Security.Cryptography.CspProviderFlags.UseDefaultKeyContainer">
+<summary>使用默认密钥容器中的密钥信息。</summary>
+    </member>
+    <member name="F:System.Security.Cryptography.CspProviderFlags.UseNonExportableKey">
+<summary>使用无法导出的密钥信息。</summary>
+    </member>
+    <member name="F:System.Security.Cryptography.CspProviderFlags.UseExistingKey">
+<summary>使用当前密钥中的密钥信息。</summary>
+    </member>
+    <member name="F:System.Security.Cryptography.CspProviderFlags.UseArchivableKey">
+<summary>允许导出密钥以便存档或恢复。</summary>
+    </member>
+    <member name="F:System.Security.Cryptography.CspProviderFlags.UseUserProtectedKey">
+<summary>当某些操作试图使用密钥时，通过对话框或另一种方法通知用户。 此标志与 <see cref="F:System.Security.Cryptography.CspProviderFlags.NoPrompt"/> 标志不兼容。</summary>
+    </member>
+    <member name="F:System.Security.Cryptography.CspProviderFlags.NoPrompt">
+<summary>防止 CSP 显示此上下文的任何用户界面 (UI)。</summary>
+    </member>
+    <member name="T:System.Security.Cryptography.ICspAsymmetricAlgorithm">
+<summary>定义若干方法，使 <see cref="T:System.Security.Cryptography.AsymmetricAlgorithm"/> 类可以枚举密钥容器信息以及导入和导出 Microsoft Cryptographic API (CAPI) 兼容的密钥 Blob。</summary>
+    </member>
+    <member name="P:System.Security.Cryptography.ICspAsymmetricAlgorithm.CspKeyContainerInfo">
+<summary>获取描述有关加密密钥对的附加信息的 <see cref="T:System.Security.Cryptography.CspKeyContainerInfo"/> 对象。</summary>
+<returns>描述有关加密密钥对的附加信息的 <see cref="T:System.Security.Cryptography.CspKeyContainerInfo"/> 对象。</returns>
+    </member>
+    <member name="M:System.Security.Cryptography.ICspAsymmetricAlgorithm.ExportCspBlob(System.Boolean)">
+<summary>[SECURITY CRITICAL] 导出包含与 <see cref="T:System.Security.Cryptography.AsymmetricAlgorithm"/> 对象关联的密钥信息的 Blob。  </summary>
+<returns>一个字节数组，包含与 <see cref="T:System.Security.Cryptography.AsymmetricAlgorithm"/> 对象关联的密钥信息。</returns>
+<param name="includePrivateParameters">要包括私钥，则为 true；否则为 false。</param>
+    </member>
+    <member name="M:System.Security.Cryptography.ICspAsymmetricAlgorithm.ImportCspBlob(System.Byte[])">
+<summary>[SECURITY CRITICAL] 导入一个表示非对称密钥信息的 Blob。  </summary>
+<param name="rawData">一个表示非对称密钥 Blob 的字节数组。</param>
+    </member>
+    <member name="T:System.Security.Cryptography.KeyNumber">
+<summary>指定是创建非对称签名密钥还是创建非对称交换密钥。 </summary>
+    </member>
+    <member name="F:System.Security.Cryptography.KeyNumber.Exchange">
+<summary>一个交换密钥对，用于加密会话密钥以使它们可以安全存储并与其他用户交换。  </summary>
+    </member>
+    <member name="F:System.Security.Cryptography.KeyNumber.Signature">
+<summary>一个签名密钥对，用于对数字签名的消息或文件进行身份验证。</summary>
+    </member>
+    <member name="T:System.Security.Cryptography.MaskGenerationMethod">
+<summary>表示所有掩码生成器算法均必须从中派生的抽象类。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.MaskGenerationMethod.#ctor">
+<summary>初始化 <see cref="T:System.Security.Cryptography.MaskGenerationMethod"/> 类的新实例。 </summary>
+    </member>
+    <member name="M:System.Security.Cryptography.MaskGenerationMethod.GenerateMask(System.Byte[],System.Int32)">
+<summary>当在派生类中重写时，使用指定的随机种子生成具有指定长度的掩码。</summary>
+<returns>长度等于 <paramref name="cbReturn"/> 参数的随机生成的掩码。</returns>
+<param name="rgbSeed">用于计算掩码的随机种子。 </param>
+<param name="cbReturn">生成的掩码的长度（以字节为单位）。 </param>
+    </member>
+    <member name="T:System.Security.Cryptography.PKCS1MaskGenerationMethod">
+<summary>根据 PKCS #1 计算用于密钥交换算法的掩码。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.PKCS1MaskGenerationMethod.#ctor">
+<summary>初始化 <see cref="T:System.Security.Cryptography.PKCS1MaskGenerationMethod"/> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.PKCS1MaskGenerationMethod.GenerateMask(System.Byte[],System.Int32)">
+<summary>用指定长度的指定随机种子生成并返回掩码。</summary>
+<returns>长度等于 <paramref name="cbReturn"/> 参数的随机生成的掩码。</returns>
+<param name="rgbSeed">用于计算掩码的随机种子。 </param>
+<param name="cbReturn">生成的掩码的长度（以字节为单位）。 </param>
+    </member>
+    <member name="P:System.Security.Cryptography.PKCS1MaskGenerationMethod.HashName">
+<summary>获取或设置用于生成掩码的哈希算法类型的名称。</summary>
+<returns>实现用于计算掩码的哈希算法的类型名称。</returns>
+    </member>
+    <member name="T:System.Security.Cryptography.ProtectedData">
+<summary>为加密和解密数据提供方法。无法继承此类。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.ProtectedData.Protect(System.Byte[],System.Byte[])">
+<summary>在指定的字节数组中加密数据，并返回包含已加密数据的字节数组。</summary>
+<returns>表示已加密数据的字节数组。</returns>
+<param name="userData">包含要加密数据的字节数组。 </param>
+<param name="optionalEntropy">一个用来增加加密复杂度的可选附加字节数组，或 null（如果不要增加复杂度）。</param>
+<exception cref="T:System.ArgumentNullException"><paramref name="userData"/> 参数为 null。</exception>
+<exception cref="T:System.Security.Cryptography.CryptographicException">加密失败。</exception>
+<exception cref="T:System.NotSupportedException">该操作系统不支持此方法。 </exception>
+<exception cref="T:System.OutOfMemoryException">加密数据时系统内存不足。</exception>
+    </member>
+    <member name="M:System.Security.Cryptography.ProtectedData.Unprotect(System.Byte[],System.Byte[])">
+<summary>在指定的字节数组中参数中解密数据并返回包含解密的数据的字节数组。</summary>
+<returns>表示已解密数据的字节数组。</returns>
+<param name="encryptedData">一个字节数组，包含用 <see cref="M:System.Security.Cryptography.ProtectedData.Protect(System.Byte[],System.Byte[])"/> 方法加密的数据。 </param>
+<param name="optionalEntropy">一个用于加密数据的可选附加字节数组或 null（如果不使用附加字节数组）。</param>
+<exception cref="T:System.ArgumentNullException"><paramref name="encryptedData"/> 参数为 null。</exception>
+<exception cref="T:System.Security.Cryptography.CryptographicException">解密失败。</exception>
+<exception cref="T:System.NotSupportedException">该操作系统不支持此方法。 </exception>
+<exception cref="T:System.OutOfMemoryException">内存不足。</exception>
+    </member>
+    <member name="T:System.Security.Cryptography.RSA">
+<summary>表示 <see cref="T:System.Security.Cryptography.RSA"/> 算法的所有实现均从中继承的基类。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.RSA.#ctor">
+<summary>初始化 <see cref="T:System.Security.Cryptography.RSA"/> 的新实例。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.RSA.Create">
+<summary>创建 <see cref="T:System.Security.Cryptography.RSA"/> 算法的默认实现的实例。</summary>
+<returns><see cref="T:System.Security.Cryptography.RSA"/> 的默认实现的新实例。</returns>
+    </member>
+    <member name="M:System.Security.Cryptography.RSA.Create(System.String)">
+<summary>创建 <see cref="T:System.Security.Cryptography.RSA"/> 的指定实现的实例。</summary>
+<returns><see cref="T:System.Security.Cryptography.RSA"/> 的指定实现的新实例。</returns>
+<param name="algName">要使用的 <see cref="T:System.Security.Cryptography.RSA"/> 的实现的名称。 </param>
+    </member>
+    <member name="M:System.Security.Cryptography.RSA.DecryptValue(System.Byte[])">
+<summary>当在派生类中重写时，使用私钥解密输入数据。</summary>
+<returns><paramref name="rgb"/> 参数产生的纯文本形式的解密结果。</returns>
+<param name="rgb">要解密的密码文本。 </param>
+    </member>
+    <member name="M:System.Security.Cryptography.RSA.EncryptValue(System.Byte[])">
+<summary>当在派生类中重写时，使用公钥加密输入数据。</summary>
+<returns><paramref name="rgb"/> 参数产生的密码文本形式的加密结果。</returns>
+<param name="rgb">要加密的纯文本。 </param>
+    </member>
+    <member name="M:System.Security.Cryptography.RSA.ExportParameters(System.Boolean)">
+<summary>当在派生类中重写时，导出 <see cref="T:System.Security.Cryptography.RSAParameters"/>。</summary>
+<returns>RSA 参数。</returns>
+<param name="includePrivateParameters">要包括私有参数，则为 true；否则为 false。 </param>
+    </member>
+    <member name="M:System.Security.Cryptography.RSA.FromXmlString(System.String)">
+<summary>通过 XML 字符串中的密钥信息初始化 <see cref="T:System.Security.Cryptography.RSA"/> 对象。</summary>
+<param name="xmlString">包含 <see cref="T:System.Security.Cryptography.RSA"/> 密钥信息的 XML 字符串。 </param>
+<exception cref="T:System.ArgumentNullException"><paramref name="xmlString"/> 参数为 null。 </exception>
+<exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="xmlString"/> 参数的格式无效。 </exception>
+    </member>
+    <member name="M:System.Security.Cryptography.RSA.ImportParameters(System.Security.Cryptography.RSAParameters)">
+<summary>当在派生类中重写时，导入指定的 <see cref="T:System.Security.Cryptography.RSAParameters"/>。</summary>
+<param name="parameters"><see cref="T:System.Security.Cryptography.RSA"/> 的参数。 </param>
+    </member>
+    <member name="M:System.Security.Cryptography.RSA.ToXmlString(System.Boolean)">
+<summary>创建并返回包含当前 <see cref="T:System.Security.Cryptography.RSA"/> 对象的密钥的 XML 字符串。</summary>
+<returns>包含当前 <see cref="T:System.Security.Cryptography.RSA"/> 对象的密钥的 XML 字符串。</returns>
+<param name="includePrivateParameters">true 表示同时包含 RSA 公钥和私钥；false 表示仅包含公钥。 </param>
+    </member>
+    <member name="T:System.Security.Cryptography.RSACryptoServiceProvider">
+<summary>使用加密服务提供程序 (CSP) 提供的 <see cref="T:System.Security.Cryptography.RSA"/> 算法的实现执行非对称加密和解密。无法继承此类。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.RSACryptoServiceProvider.#ctor">
+<summary>使用默认密钥初始化 <see cref="T:System.Security.Cryptography.RSACryptoServiceProvider"/> 类的新实例。</summary>
+<exception cref="T:System.Security.Cryptography.CryptographicException">无法获取加密服务提供程序 (CSP)。 </exception>
+    </member>
+    <member name="M:System.Security.Cryptography.RSACryptoServiceProvider.#ctor(System.Int32)">
+<summary>使用指定的密钥大小初始化 <see cref="T:System.Security.Cryptography.RSACryptoServiceProvider"/> 类的新实例。</summary>
+<exception cref="T:System.Security.Cryptography.CryptographicException">无法获取加密服务提供程序 (CSP)。 </exception>
+    </member>
+    <member name="M:System.Security.Cryptography.RSACryptoServiceProvider.#ctor(System.Int32,System.Security.Cryptography.CspParameters)">
+<summary>使用指定的密钥大小和参数初始化 <see cref="T:System.Security.Cryptography.RSACryptoServiceProvider"/> 类的新实例。</summary>
+<param name="parameters">要传递给加密服务提供程序 (CSP) 的参数。 </param>
+<exception cref="T:System.Security.Cryptography.CryptographicException">无法获取 CSP。-或- 无法创建密钥。 </exception>
+    </member>
+    <member name="M:System.Security.Cryptography.RSACryptoServiceProvider.#ctor(System.Security.Cryptography.CspParameters)">
+<summary>使用指定的参数初始化 <see cref="T:System.Security.Cryptography.RSACryptoServiceProvider"/> 类的新实例。</summary>
+<param name="parameters">要传递给加密服务提供程序 (CSP) 的参数。 </param>
+<exception cref="T:System.Security.Cryptography.CryptographicException">无法获取 CSP。 </exception>
+    </member>
+    <member name="P:System.Security.Cryptography.RSACryptoServiceProvider.CspKeyContainerInfo">
+<summary>获取描述有关加密密钥对的附加信息的 <see cref="T:System.Security.Cryptography.CspKeyContainerInfo"/> 对象。 </summary>
+<returns>描述有关加密密钥对的附加信息的 <see cref="T:System.Security.Cryptography.CspKeyContainerInfo"/> 对象。</returns>
+    </member>
+    <member name="M:System.Security.Cryptography.RSACryptoServiceProvider.Decrypt(System.Byte[],System.Boolean)">
+<summary>使用 <see cref="T:System.Security.Cryptography.RSA"/> 算法对数据进行解密。</summary>
+<returns>已解密的数据，即加密前的原始纯文本。</returns>
+<param name="rgb">要解密的数据。 </param>
+<param name="fOAEP">如果为 true，则使用 OAEP 填充执行直接的 <see cref="T:System.Security.Cryptography.RSA"/> 解密；否则，如果为 false，则使用 PKCS#1 1.5 版填充。 </param>
+<exception cref="T:System.Security.Cryptography.CryptographicException">无法获取加密服务提供程序 (CSP)。-或- <paramref name="fOAEP"/> 参数为 true，并且 <paramref name="rgb"/> 参数的长度大于 <see cref="P:System.Security.Cryptography.RSACryptoServiceProvider.KeySize"/>。-或- <paramref name="fOAEP"/> 参数为 true，并且不支持 OAEP。 </exception>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="rgb "/> 为 null。</exception>
+    </member>
+    <member name="M:System.Security.Cryptography.RSACryptoServiceProvider.DecryptValue(System.Byte[])">
+<summary>在当前版本中不支持此方法。</summary>
+<returns>已解密的数据，即加密前的原始纯文本。</returns>
+<param name="rgb">要解密的数据。 </param>
+<exception cref="T:System.NotSupportedException">在当前版本中不支持此方法。 </exception>
+    </member>
+    <member name="M:System.Security.Cryptography.RSACryptoServiceProvider.Encrypt(System.Byte[],System.Boolean)">
+<summary>使用 <see cref="T:System.Security.Cryptography.RSA"/> 算法对数据进行加密。</summary>
+<returns>已加密的数据。</returns>
+<param name="rgb">要加密的数据。 </param>
+<param name="fOAEP">如果为 true，则使用 OAEP 填充执行直接的 <see cref="T:System.Security.Cryptography.RSA"/> 加密；否则，如果为 false，则使用 PKCS#1 1.5 版填充。 </param>
+<exception cref="T:System.Security.Cryptography.CryptographicException">无法获取加密服务提供程序 (CSP)。-或- <paramref name="rgb"/> 参数的长度大于最大允许长度。-或- <paramref name="fOAEP"/> 参数为 true，并且不支持 OAEP 填充。 </exception>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="rgb "/> 为 null。</exception>
+    </member>
+    <member name="M:System.Security.Cryptography.RSACryptoServiceProvider.EncryptValue(System.Byte[])">
+<summary>在当前版本中不支持此方法。</summary>
+<returns>已加密的数据。</returns>
+<param name="rgb">要加密的数据。 </param>
+<exception cref="T:System.NotSupportedException">在当前版本中不支持此方法。 </exception>
+    </member>
+    <member name="M:System.Security.Cryptography.RSACryptoServiceProvider.ExportCspBlob(System.Boolean)">
+<summary>[SECURITY CRITICAL] 导出包含与 <see cref="T:System.Security.Cryptography.RSACryptoServiceProvider"/> 对象关联的密钥信息的 Blob。  </summary>
+<returns>一个字节数组，包含与 <see cref="T:System.Security.Cryptography.RSACryptoServiceProvider"/> 对象关联的密钥信息。</returns>
+<param name="includePrivateParameters">要包括私钥，则为 true；否则为 false。</param>
+    </member>
+    <member name="M:System.Security.Cryptography.RSACryptoServiceProvider.ExportParameters(System.Boolean)">
+<summary>导出 <see cref="T:System.Security.Cryptography.RSAParameters"/>。</summary>
+<returns><see cref="T:System.Security.Cryptography.RSA"/> 的参数。</returns>
+<param name="includePrivateParameters">要包括私有参数，则为 true；否则为 false。 </param>
+<exception cref="T:System.Security.Cryptography.CryptographicException">无法导出该密钥。 </exception>
+    </member>
+    <member name="M:System.Security.Cryptography.RSACryptoServiceProvider.ImportCspBlob(System.Byte[])">
+<summary>[SECURITY CRITICAL] 导入一个表示 RSA 密钥信息的 Blob。  </summary>
+<param name="keyBlob">一个表示 RSA 密钥 Blob 的字节数组。</param>
+    </member>
+    <member name="M:System.Security.Cryptography.RSACryptoServiceProvider.ImportParameters(System.Security.Cryptography.RSAParameters)">
+<summary>导入指定的 <see cref="T:System.Security.Cryptography.RSAParameters"/>。</summary>
+<param name="parameters"><see cref="T:System.Security.Cryptography.RSA"/> 的参数。 </param>
+<exception cref="T:System.Security.Cryptography.CryptographicException">无法获取加密服务提供程序 (CSP)。-或- <paramref name="parameters"/> 参数具有缺少的字段。 </exception>
+    </member>
+    <member name="P:System.Security.Cryptography.RSACryptoServiceProvider.KeyExchangeAlgorithm">
+<summary>获取 <see cref="T:System.Security.Cryptography.RSA"/> 的此实现中可用的密钥交换算法的名称。</summary>
+<returns>如果存在密钥交换算法，则为密钥交换算法的名称；否则为 null。</returns>
+    </member>
+    <member name="P:System.Security.Cryptography.RSACryptoServiceProvider.KeySize">
+<summary>获取当前密钥的大小。</summary>
+<returns>密钥的大小（以位为单位）。</returns>
+    </member>
+    <member name="P:System.Security.Cryptography.RSACryptoServiceProvider.PersistKeyInCsp">
+<summary>获取或设置一个值，该值指示密钥是否应该永久驻留在加密服务提供程序 (CSP) 中。</summary>
+<returns>如果密钥应该永久驻留在 CSP 中，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Security.Cryptography.RSACryptoServiceProvider.PublicOnly">
+<summary>获取一个值，该值指示 <see cref="T:System.Security.Cryptography.RSACryptoServiceProvider"/> 对象是否仅包含一个公钥。</summary>
+<returns>如果 <see cref="T:System.Security.Cryptography.RSACryptoServiceProvider"/> 对象仅包含一个公钥，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Security.Cryptography.RSACryptoServiceProvider.SignatureAlgorithm">
+<summary>获取 <see cref="T:System.Security.Cryptography.RSA"/> 的此实现中可用的签名算法的名称。</summary>
+<returns>签名算法的名称。</returns>
+    </member>
+    <member name="M:System.Security.Cryptography.RSACryptoServiceProvider.SignData(System.Byte[],System.Int32,System.Int32,System.Object)">
+<summary>使用指定的哈希算法计算指定字节数组子集的哈希值，并对结果哈希值签名。</summary>
+<returns>指定数据的 <see cref="T:System.Security.Cryptography.RSA"/> 签名。</returns>
+<param name="buffer">要计算其哈希值的输入数据。 </param>
+<param name="offset">数组中的偏移量，从该位置开始使用数据。 </param>
+<param name="count">数组中用作数据的字节数。 </param>
+<param name="halg">用于创建哈希值的哈希算法。 </param>
+<exception cref="T:System.ArgumentNullException"><paramref name="halg"/> 参数为 null。 </exception>
+<exception cref="T:System.ArgumentException"><paramref name="halg"/> 参数不是有效类型。 </exception>
+    </member>
+    <member name="M:System.Security.Cryptography.RSACryptoServiceProvider.SignData(System.Byte[],System.Object)">
+<summary>使用指定的哈希算法计算指定字节数组的哈希值，并对计算所得的哈希值签名。</summary>
+<returns>指定数据的 <see cref="T:System.Security.Cryptography.RSA"/> 签名。</returns>
+<param name="buffer">要计算其哈希值的输入数据。 </param>
+<param name="halg">用于创建哈希值的哈希算法。 </param>
+<exception cref="T:System.ArgumentNullException"><paramref name="halg"/> 参数为 null。 </exception>
+<exception cref="T:System.ArgumentException"><paramref name="halg"/> 参数不是有效类型。 </exception>
+    </member>
+    <member name="M:System.Security.Cryptography.RSACryptoServiceProvider.SignData(System.IO.Stream,System.Object)">
+<summary>使用指定的哈希算法计算指定输入流的哈希值，并对计算所得的哈希值签名。</summary>
+<returns>指定数据的 <see cref="T:System.Security.Cryptography.RSA"/> 签名。</returns>
+<param name="inputStream">要计算其哈希值的输入数据。 </param>
+<param name="halg">用于创建哈希值的哈希算法。 </param>
+<exception cref="T:System.ArgumentNullException"><paramref name="halg"/> 参数为 null。 </exception>
+<exception cref="T:System.ArgumentException"><paramref name="halg"/> 参数不是有效类型。 </exception>
+    </member>
+    <member name="M:System.Security.Cryptography.RSACryptoServiceProvider.SignHash(System.Byte[],System.String)">
+<summary>通过用私钥对其进行加密来计算指定哈希值的签名。</summary>
+<returns>指定哈希值的 <see cref="T:System.Security.Cryptography.RSA"/> 签名。</returns>
+<param name="rgbHash">要签名的数据的哈希值。 </param>
+<param name="str">哈希算法标识符 (OID)，用于创建数据的哈希值。 </param>
+<exception cref="T:System.ArgumentNullException"><paramref name="rgbHash"/> 参数为 null。 </exception>
+<exception cref="T:System.Security.Cryptography.CryptographicException">无法获取加密服务提供程序 (CSP)。-或- 没有私钥。 </exception>
+    </member>
+    <member name="P:System.Security.Cryptography.RSACryptoServiceProvider.UseMachineKeyStore">
+<summary>获取或设置一个值，该值指示密钥是否应永久驻留在计算机的密钥存储区中（而不是永久驻留在用户配置文件存储区中）。</summary>
+<returns>如果密钥应永久驻留在计算机的密钥存储区中，则为 true；否则为 false。</returns>
+    </member>
+    <member name="M:System.Security.Cryptography.RSACryptoServiceProvider.VerifyData(System.Byte[],System.Object,System.Byte[])">
+<summary>通过使用提供的公钥确定签名中的哈希值并将其与所提供数据的哈希值进行比较来验证数字签名是否有效。</summary>
+<returns>如果签名有效，则为 true；否则为 false。</returns>
+<param name="buffer">已签名的数据。 </param>
+<param name="halg">用于创建数据的哈希值的哈希算法名称。 </param>
+<param name="signature">要验证的签名数据。 </param>
+<exception cref="T:System.ArgumentNullException"><paramref name="halg"/> 参数为 null。 </exception>
+<exception cref="T:System.ArgumentException"><paramref name="halg"/> 参数不是有效类型。 </exception>
+    </member>
+    <member name="M:System.Security.Cryptography.RSACryptoServiceProvider.VerifyHash(System.Byte[],System.String,System.Byte[])">
+<summary>通过使用提供的公钥确定签名中的哈希值并将其与提供的哈希值进行比较来验证数字签名是否有效。</summary>
+<returns>如果签名有效，则为 true；否则为 false。</returns>
+<param name="rgbHash">已签名的数据的哈希值。 </param>
+<param name="str">哈希算法标识符 (OID)，用于创建数据的哈希值。 </param>
+<param name="rgbSignature">要验证的签名数据。 </param>
+<exception cref="T:System.ArgumentNullException"><paramref name="rgbHash"/> 参数为 null。-或- <paramref name="rgbSignature"/> 参数为 null。 </exception>
+<exception cref="T:System.Security.Cryptography.CryptographicException">无法获取加密服务提供程序 (CSP)。-或- 无法验证签名。 </exception>
+    </member>
+    <member name="T:System.Security.Cryptography.RSAOAEPKeyExchangeDeformatter">
+<summary>对最优非对称加密填充 (OAEP) 密钥交换数据进行解密。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.RSAOAEPKeyExchangeDeformatter.#ctor">
+<summary>初始化 <see cref="T:System.Security.Cryptography.RSAOAEPKeyExchangeDeformatter"/> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.RSAOAEPKeyExchangeDeformatter.#ctor(System.Security.Cryptography.AsymmetricAlgorithm)">
+<summary>使用指定的密钥初始化 <see cref="T:System.Security.Cryptography.RSAOAEPKeyExchangeDeformatter"/> 类的新实例。</summary>
+<param name="key">包含私钥的 <see cref="T:System.Security.Cryptography.RSA"/> 算法的实例。 </param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="key "/> 为 null。</exception>
+    </member>
+    <member name="M:System.Security.Cryptography.RSAOAEPKeyExchangeDeformatter.DecryptKeyExchange(System.Byte[])">
+<summary>从加密密钥交换数据中提取机密信息。</summary>
+<returns>从密钥交换数据派生的机密信息。</returns>
+<param name="rgbData">其中隐藏有机密信息的密钥交换数据。 </param>
+<exception cref="T:System.Security.Cryptography.CryptographicException">密钥交换数据验证已失败。 </exception>
+<exception cref="T:System.Security.Cryptography.CryptographicUnexpectedOperationException">缺少密钥。</exception>
+    </member>
+    <member name="P:System.Security.Cryptography.RSAOAEPKeyExchangeDeformatter.Parameters">
+<summary>获取最优非对称加密填充 (OAEP) 密钥交换的参数。</summary>
+<returns>XML 字符串，它包含 OAEP 密钥交换操作的参数。</returns>
+    </member>
+    <member name="M:System.Security.Cryptography.RSAOAEPKeyExchangeDeformatter.SetKey(System.Security.Cryptography.AsymmetricAlgorithm)">
+<summary>设置用于解密机密信息的私钥。</summary>
+<param name="key">包含私钥的 <see cref="T:System.Security.Cryptography.RSA"/> 算法的实例。 </param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="key"/> 为 null。</exception>
+    </member>
+    <member name="T:System.Security.Cryptography.RSAOAEPKeyExchangeFormatter">
+<summary>使用 <see cref="T:System.Security.Cryptography.RSA"/> 创建最优非对称加密填充 (OAEP) 密钥交换数据。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.RSAOAEPKeyExchangeFormatter.#ctor">
+<summary>初始化 <see cref="T:System.Security.Cryptography.RSAOAEPKeyExchangeFormatter"/> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.RSAOAEPKeyExchangeFormatter.#ctor(System.Security.Cryptography.AsymmetricAlgorithm)">
+<summary>使用指定的密钥初始化 <see cref="T:System.Security.Cryptography.RSAOAEPKeyExchangeFormatter"/> 类的新实例。</summary>
+<param name="key">包含公钥的 <see cref="T:System.Security.Cryptography.RSA"/> 算法的实例。 </param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="key "/> 为 null。</exception>
+    </member>
+    <member name="M:System.Security.Cryptography.RSAOAEPKeyExchangeFormatter.CreateKeyExchange(System.Byte[])">
+<summary>从指定的输入数据创建加密密钥交换数据。</summary>
+<returns>要发送给目标接收者的加密的密钥交换数据。</returns>
+<param name="rgbData">在密钥交换中要传递的机密信息。 </param>
+<exception cref="T:System.Security.Cryptography.CryptographicUnexpectedOperationException">缺少密钥。</exception>
+    </member>
+    <member name="M:System.Security.Cryptography.RSAOAEPKeyExchangeFormatter.CreateKeyExchange(System.Byte[],System.Type)">
+<summary>从指定的输入数据创建加密密钥交换数据。</summary>
+<returns>要发送给目标接收者的加密的密钥交换数据。</returns>
+<param name="rgbData">在密钥交换中要传递的机密信息。 </param>
+<param name="symAlgType">在当前版本中不使用此参数。 </param>
+    </member>
+    <member name="P:System.Security.Cryptography.RSAOAEPKeyExchangeFormatter.Parameter">
+<summary>获取或设置用于在密钥交换创建过程中创建填充的参数。</summary>
+<returns>参数值。</returns>
+    </member>
+    <member name="P:System.Security.Cryptography.RSAOAEPKeyExchangeFormatter.Parameters">
+<summary>获取最优非对称加密填充 (OAEP) 密钥交换的参数。</summary>
+<returns>XML 字符串，它包含 OAEP 密钥交换操作的参数。</returns>
+    </member>
+    <member name="P:System.Security.Cryptography.RSAOAEPKeyExchangeFormatter.Rng">
+<summary>获取或设置要在密钥交换的创建过程中使用的随机数生成器算法。</summary>
+<returns>要使用的随机数生成器算法的实例。</returns>
+    </member>
+    <member name="M:System.Security.Cryptography.RSAOAEPKeyExchangeFormatter.SetKey(System.Security.Cryptography.AsymmetricAlgorithm)">
+<summary>设置用于对密钥交换数据进行加密的公钥。</summary>
+<param name="key">包含公钥的 <see cref="T:System.Security.Cryptography.RSA"/> 算法的实例。 </param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="key "/> 为 null。</exception>
+    </member>
+    <member name="T:System.Security.Cryptography.RSAParameters">
+<summary>表示 <see cref="T:System.Security.Cryptography.RSA"/> 算法的标准参数。</summary>
+    </member>
+    <member name="F:System.Security.Cryptography.RSAParameters.D">
+<summary>表示 <see cref="T:System.Security.Cryptography.RSA"/> 算法的 D 参数。</summary>
+    </member>
+    <member name="F:System.Security.Cryptography.RSAParameters.DP">
+<summary>表示 <see cref="T:System.Security.Cryptography.RSA"/> 算法的 DP 参数。</summary>
+    </member>
+    <member name="F:System.Security.Cryptography.RSAParameters.DQ">
+<summary>表示 <see cref="T:System.Security.Cryptography.RSA"/> 算法的 DQ 参数。</summary>
+    </member>
+    <member name="F:System.Security.Cryptography.RSAParameters.Exponent">
+<summary>表示 <see cref="T:System.Security.Cryptography.RSA"/> 算法的 Exponent 参数。</summary>
+    </member>
+    <member name="F:System.Security.Cryptography.RSAParameters.InverseQ">
+<summary>表示 <see cref="T:System.Security.Cryptography.RSA"/> 算法的 InverseQ 参数。</summary>
+    </member>
+    <member name="F:System.Security.Cryptography.RSAParameters.Modulus">
+<summary>表示 <see cref="T:System.Security.Cryptography.RSA"/> 算法的 Modulus 参数。</summary>
+    </member>
+    <member name="F:System.Security.Cryptography.RSAParameters.P">
+<summary>表示 <see cref="T:System.Security.Cryptography.RSA"/> 算法的 P 参数。</summary>
+    </member>
+    <member name="F:System.Security.Cryptography.RSAParameters.Q">
+<summary>表示 <see cref="T:System.Security.Cryptography.RSA"/> 算法的 Q 参数。</summary>
+    </member>
+    <member name="T:System.Security.Cryptography.RSAPKCS1KeyExchangeDeformatter">
+<summary>解密 PKCS #1 密钥交换数据。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.RSAPKCS1KeyExchangeDeformatter.#ctor">
+<summary>初始化 <see cref="T:System.Security.Cryptography.RSAPKCS1KeyExchangeDeformatter"/> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.RSAPKCS1KeyExchangeDeformatter.#ctor(System.Security.Cryptography.AsymmetricAlgorithm)">
+<summary>使用指定的密钥初始化 <see cref="T:System.Security.Cryptography.RSAPKCS1KeyExchangeDeformatter"/> 类的新实例。</summary>
+<param name="key">包含私钥的 <see cref="T:System.Security.Cryptography.RSA"/> 算法的实例。 </param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="key"/> 为 null。</exception>
+    </member>
+    <member name="M:System.Security.Cryptography.RSAPKCS1KeyExchangeDeformatter.DecryptKeyExchange(System.Byte[])">
+<summary>从加密密钥交换数据中提取机密信息。</summary>
+<returns>从密钥交换数据派生的机密信息。</returns>
+<param name="rgbIn">其中隐藏有机密信息的密钥交换数据。 </param>
+<exception cref="T:System.Security.Cryptography.CryptographicUnexpectedOperationException">缺少密钥。</exception>
+    </member>
+    <member name="P:System.Security.Cryptography.RSAPKCS1KeyExchangeDeformatter.Parameters">
+<summary>获取 PKCS #1 密钥交换的参数。</summary>
+<returns>XML 字符串，包含 PKCS #1 密钥交换操作的参数。</returns>
+    </member>
+    <member name="P:System.Security.Cryptography.RSAPKCS1KeyExchangeDeformatter.RNG">
+<summary>获取或设置要在密钥交换的创建过程中使用的随机数生成器算法。</summary>
+<returns>要使用的随机数生成器算法的实例。</returns>
+    </member>
+    <member name="M:System.Security.Cryptography.RSAPKCS1KeyExchangeDeformatter.SetKey(System.Security.Cryptography.AsymmetricAlgorithm)">
+<summary>设置用于解密机密信息的私钥。</summary>
+<param name="key">包含私钥的 <see cref="T:System.Security.Cryptography.RSA"/> 算法的实例。 </param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="key"/> 为 null。</exception>
+    </member>
+    <member name="T:System.Security.Cryptography.RSAPKCS1KeyExchangeFormatter">
+<summary>使用 <see cref="T:System.Security.Cryptography.RSA"/> 创建 PKCS#1 密钥交换数据。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.RSAPKCS1KeyExchangeFormatter.#ctor">
+<summary>初始化 <see cref="T:System.Security.Cryptography.RSAPKCS1KeyExchangeFormatter"/> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.RSAPKCS1KeyExchangeFormatter.#ctor(System.Security.Cryptography.AsymmetricAlgorithm)">
+<summary>使用指定的密钥初始化 <see cref="T:System.Security.Cryptography.RSAPKCS1KeyExchangeFormatter"/> 类的新实例。</summary>
+<param name="key">包含公钥的 <see cref="T:System.Security.Cryptography.RSA"/> 算法的实例。 </param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="key "/> 为 null。</exception>
+    </member>
+    <member name="M:System.Security.Cryptography.RSAPKCS1KeyExchangeFormatter.CreateKeyExchange(System.Byte[])">
+<summary>从指定的输入数据创建加密密钥交换数据。</summary>
+<returns>要发送给目标接收者的加密的密钥交换数据。</returns>
+<param name="rgbData">在密钥交换中要传递的机密信息。 </param>
+      <exception cref="T:System.Security.Cryptography.CryptographicException">
+<paramref name="rgbData "/> 太大。</exception>
+<exception cref="T:System.Security.Cryptography.CryptographicUnexpectedOperationException">密钥为 null。</exception>
+    </member>
+    <member name="M:System.Security.Cryptography.RSAPKCS1KeyExchangeFormatter.CreateKeyExchange(System.Byte[],System.Type)">
+<summary>从指定的输入数据创建加密密钥交换数据。</summary>
+<returns>要发送给目标接收者的加密的密钥交换数据。</returns>
+<param name="rgbData">在密钥交换中要传递的机密信息。 </param>
+<param name="symAlgType">在当前版本中不使用此参数。 </param>
+    </member>
+    <member name="P:System.Security.Cryptography.RSAPKCS1KeyExchangeFormatter.Parameters">
+<summary>获取 PKCS #1 密钥交换的参数。</summary>
+<returns>XML 字符串，包含 PKCS #1 密钥交换操作的参数。</returns>
+    </member>
+    <member name="P:System.Security.Cryptography.RSAPKCS1KeyExchangeFormatter.Rng">
+<summary>获取或设置要在密钥交换的创建过程中使用的随机数生成器算法。</summary>
+<returns>要使用的随机数生成器算法的实例。</returns>
+    </member>
+    <member name="M:System.Security.Cryptography.RSAPKCS1KeyExchangeFormatter.SetKey(System.Security.Cryptography.AsymmetricAlgorithm)">
+<summary>设置用于对密钥交换数据进行加密的公钥。</summary>
+<param name="key">包含公钥的 <see cref="T:System.Security.Cryptography.RSA"/> 算法的实例。 </param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="key "/> 为 null。</exception>
+    </member>
+    <member name="T:System.Security.Cryptography.RSAPKCS1SignatureDeformatter">
+<summary>验证 <see cref="T:System.Security.Cryptography.RSA"/> PKCS #1 1.5 版签名。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.RSAPKCS1SignatureDeformatter.#ctor">
+<summary>初始化 <see cref="T:System.Security.Cryptography.RSAPKCS1SignatureDeformatter"/> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.RSAPKCS1SignatureDeformatter.#ctor(System.Security.Cryptography.AsymmetricAlgorithm)">
+<summary>使用指定的密钥初始化 <see cref="T:System.Security.Cryptography.RSAPKCS1SignatureDeformatter"/> 类的新实例。</summary>
+<param name="key">包含公钥的 <see cref="T:System.Security.Cryptography.RSA"/> 的实例。 </param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="key "/> 为 null。</exception>
+    </member>
+    <member name="M:System.Security.Cryptography.RSAPKCS1SignatureDeformatter.SetHashAlgorithm(System.String)">
+<summary>设置用于验证签名的哈希算法。</summary>
+<param name="strName">用于验证签名的哈希算法的名称。 </param>
+    </member>
+    <member name="M:System.Security.Cryptography.RSAPKCS1SignatureDeformatter.SetKey(System.Security.Cryptography.AsymmetricAlgorithm)">
+<summary>设置用于验证签名的公钥。</summary>
+<param name="key">包含公钥的 <see cref="T:System.Security.Cryptography.RSA"/> 的实例。 </param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="key "/> 为 null。</exception>
+    </member>
+    <member name="M:System.Security.Cryptography.RSAPKCS1SignatureDeformatter.VerifySignature(System.Byte[],System.Byte[])">
+<summary>验证指定数据的 <see cref="T:System.Security.Cryptography.RSA"/> PKCS#1 签名。</summary>
+<returns>如果 <paramref name="rgbSignature"/> 与使用指定的哈希算法和密钥在 <paramref name="rgbHash"/> 上计算出的签名匹配，则为 true；否则，为 false。</returns>
+<param name="rgbHash">用 <paramref name="rgbSignature"/> 签名的数据。 </param>
+<param name="rgbSignature">要为 <paramref name="rgbHash"/> 验证的签名。 </param>
+<exception cref="T:System.Security.Cryptography.CryptographicUnexpectedOperationException">密钥为 null。-或- 该哈希算法为 null。 </exception>
+<exception cref="T:System.ArgumentNullException"><paramref name="rgbHash"/> 参数为 null。-或- <paramref name="rgbSignature"/> 参数为 null。 </exception>
+    </member>
+    <member name="T:System.Security.Cryptography.RSAPKCS1SignatureFormatter">
+<summary>创建 <see cref="T:System.Security.Cryptography.RSA"/> PKCS #1 1.5 版签名。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.RSAPKCS1SignatureFormatter.#ctor">
+<summary>初始化 <see cref="T:System.Security.Cryptography.RSAPKCS1SignatureFormatter"/> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.RSAPKCS1SignatureFormatter.#ctor(System.Security.Cryptography.AsymmetricAlgorithm)">
+<summary>使用指定的密钥初始化 <see cref="T:System.Security.Cryptography.RSAPKCS1SignatureFormatter"/> 类的新实例。</summary>
+<param name="key">包含私钥的 <see cref="T:System.Security.Cryptography.RSA"/> 算法的实例。 </param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="key"/> 为 null。</exception>
+    </member>
+    <member name="M:System.Security.Cryptography.RSAPKCS1SignatureFormatter.CreateSignature(System.Byte[])">
+<summary>创建指定数据的 <see cref="T:System.Security.Cryptography.RSA"/> PKCS #1 签名。</summary>
+<returns><paramref name="rgbHash"/> 的数字签名。</returns>
+<param name="rgbHash">要签名的数据。 </param>
+<exception cref="T:System.Security.Cryptography.CryptographicUnexpectedOperationException">密钥为 null。-或- 该哈希算法为 null。 </exception>
+<exception cref="T:System.ArgumentNullException"><paramref name="rgbHash"/> 参数为 null。 </exception>
+    </member>
+    <member name="M:System.Security.Cryptography.RSAPKCS1SignatureFormatter.SetHashAlgorithm(System.String)">
+<summary>设置用于创建签名的哈希算法。</summary>
+<param name="strName">要用于创建签名的哈希算法的名称。 </param>
+    </member>
+    <member name="M:System.Security.Cryptography.RSAPKCS1SignatureFormatter.SetKey(System.Security.Cryptography.AsymmetricAlgorithm)">
+<summary>设置用于创建签名的私钥。</summary>
+<param name="key">包含私钥的 <see cref="T:System.Security.Cryptography.RSA"/> 算法的实例。 </param>
+      <exception cref="T:System.ArgumentNullException">
+<paramref name="key"/> 为 null。</exception>
+    </member>
+    <member name="T:System.Threading.Mutex">
+<summary>一个同步基元，也可用于进程间同步。 </summary>
+    </member>
+    <member name="M:System.Threading.Mutex.#ctor(System.Boolean,System.String)">
+<summary>用一个指示调用线程是否应拥有互斥体的初始所属权的布尔值和一个作为互斥体名称的字符串来初始化 <see cref="T:System.Threading.Mutex"/> 类的新实例。</summary>
+<param name="initiallyOwned">如果为 true，则给予调用线程已命名的系统互斥体的初始所属权（如果已命名的系统互斥体是通过此调用创建的）；否则为 false。 </param>
+<param name="name"><see cref="T:System.Threading.Mutex"/> 的名称。如果值为 null，则 <see cref="T:System.Threading.Mutex"/> 是未命名的。 </param>
+<exception cref="T:System.UnauthorizedAccessException">命名的互斥体存在并具有访问控制安全性，但用户不具有 <see cref="F:System.Security.AccessControl.MutexRights.FullControl"/>。</exception>
+<exception cref="T:System.ApplicationException">无法创建命名的互斥体，原因可能是与其他类型的等待句柄同名。</exception>
+      <exception cref="T:System.ArgumentException">
+<paramref name="name"/> 的长度超过 260 个字符。</exception>
+    </member>
+    <member name="M:System.Threading.Mutex.ReleaseMutex">
+<summary>释放 <see cref="T:System.Threading.Mutex"/> 一次。</summary>
+<exception cref="T:System.ApplicationException">调用线程不拥有互斥体。 </exception>
+    </member>
+    <member name="M:System.Threading.Mutex.WaitOne">
+<summary>阻止当前线程，直到当前 <see cref="T:System.Threading.Mutex"/> 收到信号。</summary>
+<returns>如果当前实例收到信号，则为 true。如果当前实例永远收不到信号，则 <see cref="M:System.Threading.Mutex.WaitOne"/> 永不返回。</returns>
+    </member>
+    <member name="M:System.Threading.Mutex.WaitOne(System.Int32)">
+<summary>在指定的时间内阻止调用线程，直到当前 <see cref="T:System.Threading.WaitHandle"/> 收到信号为止。</summary>
+<returns>如果当前实例收到信号，则为 true。如果当前实例永远收不到信号，则 <see cref="M:System.Threading.Mutex.WaitOne"/> 永不返回。</returns>
+<param name="millisecondsTimeout">阻止当前线程的时间。</param>
+    </member>
+  </members>
+</doc>

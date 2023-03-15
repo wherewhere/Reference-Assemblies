@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) Microsoft Corporation.  All rights reserved. -->
+<doc>
+  <assembly>
+    <name>Microsoft.Devices.Sensors</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.Devices.Sensors.Accelerometer">
+<summary>为 Windows Phone 应用程序提供对设备加速计传感器的访问。</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Accelerometer.#ctor">
+<summary>创建 <see cref="T:Microsoft.Devices.Sensors.Accelerometer"/> 对象的新实例。</summary>
+<exception cref="T:SensorFailedException">已达到每应用程序 10 个加速计类并发实例的限制。</exception>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Accelerometer.Dispose">
+<summary>释放由 <see cref="T:Microsoft.Devices.Sensors.Accelerometer"/> 使用的托管资源和非托管资源。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.Accelerometer.IsSupported">
+<summary>获取或设置其上运行应用程序的设备是否支持加速计传感器。</summary>
+<returns>类型：<see cref="T:System.Boolean"/>。如果其上运行应用程序的设备支持加速计传感器，则为 true；否则为 false。</returns>
+    </member>
+    <member name="E:Microsoft.Devices.Sensors.Accelerometer.ReadingChanged">
+<summary>在从加速计获得新数据时发生。在当前版本中不再使用此方法。应用程序应该使用 <see cref="T:Microsoft.Devices.Sensors.SensorBase`1"/> 类的 <see cref="E:Microsoft.Devices.Sensors.SensorBase`1.CurrentValueChanged"/> 事件。</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Accelerometer.Start">
+<summary>开始从加速计获取数据。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.Accelerometer.State">
+<summary>获取加速计的当前状态。该值是 <see cref="T:Microsoft.Devices.Sensors.SensorState"/> 枚举的一个成员。</summary>
+<returns>类型：<see cref="T:Microsoft.Devices.Sensors.SensorState"/>。</returns>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Accelerometer.Stop">
+<summary>停止从加速计获取数据。</summary>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.AccelerometerFailedException">
+<summary>在调用 <see cref="M:Microsoft.Devices.Sensors.Accelerometer.Start"/> 或 <see cref="M:Microsoft.Devices.Sensors.Accelerometer.Stop"/> 的过程中可能引发的异常。“消息”字段描述异常的原因，而 <see cref="P:Microsoft.Devices.Sensors.AccelerometerFailedException.ErrorId"/> 字段包含来自加速计框架的基础本机代码实现的错误代码。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerFailedException.ErrorId">
+<summary>来自加速计框架的基础本机代码实现的错误代码。</summary>
+<returns>类型 <see cref="T:System.Int32"/>。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.AccelerometerReading">
+<summary>包含加速度以及加速计读数的时间戳，指示作用于设备的力的大小和方向。  </summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReading.Acceleration">
+<summary>获取设备的加速度矢量（采用重力单位）。</summary>
+<returns>类型：<see cref="T:Microsoft.Xna.Framework.Vector3"/>。设备的加速度。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReading.Timestamp">
+<summary>获取一个时间戳，该时间戳指示获取加速计读数的时间。可以使用该时间戳将各个传感器上的读数相关联，并为处理原始传感器数据的算法提供额外的输入。</summary>
+<returns>类型：<see cref="T:System.DateTimeOffset"/>。获取加速计读数的时间。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.AccelerometerReadingEventArgs">
+<summary>为 <see cref="E:Microsoft.Devices.Sensors.Accelerometer.ReadingChanged"/> 事件提供数据。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReadingEventArgs.Timestamp">
+<summary>一个时间戳，该时间戳指示获取加速计读数的时间。</summary>
+<returns>类型：<see cref="T:System.DateTimeOffset"/>。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReadingEventArgs.X">
+<summary>X 方向的加速度（采用重力单位）。</summary>
+<returns>类型：<see cref="T:System.Double"/>。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReadingEventArgs.Y">
+<summary>Y 方向的加速度（采用重力单位）。</summary>
+<returns>类型：<see cref="T:System.Double"/>。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReadingEventArgs.Z">
+<summary>Z 方向的加速度（采用重力单位）。</summary>
+<returns>类型：<see cref="T:System.Double"/>。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.AttitudeReading">
+<summary>包含在空间中有关设备方向的信息。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.Pitch">
+<summary>获取飞行姿态读数的 pitch（以弧度为单位）。</summary>
+<returns>类型：<see cref="T:System.Double"/>。飞行姿态读数的 pitch。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.Quaternion">
+<summary>获取飞行姿态读数的四元数表示形式。</summary>
+<returns>类型：<see cref="T:Microsoft.Xna.Framework.Quaternion"/>。飞行姿态读数的四元数表示形式。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.Roll">
+<summary>获取飞行姿态读数的 roll（以弧度为单位）。</summary>
+<returns>类型：<see cref="T:System.Double"/>。飞行姿态读数的 roll。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.RotationMatrix">
+<summary>获取飞行姿态读数的矩阵表示形式。</summary>
+<returns>类型：<see cref="T:Microsoft.Xna.Framework.Matrix"/>。飞行姿态读数的矩阵表示形式。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.Timestamp">
+<summary>获取一个时间戳，该时间戳指示获取加速计读数的时间。可以使用该时间戳将各个传感器上的读数相关联，并为处理原始传感器数据的算法提供额外的输入。</summary>
+<returns>类型：<see cref="T:System.DateTimeOffset"/>。获取飞行姿态读数的时间。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.Yaw">
+<summary>获取飞行姿态读数的 yaw（以弧度为单位）。</summary>
+<returns>类型：<see cref="T:System.Double"/>。飞行姿态读数的 yaw。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.CalibrationEventArgs">
+<summary>为 <see cref="E:Microsoft.Devices.Sensors.Compass.Calibrate"/> 和事件提供数据。</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.CalibrationEventArgs.#ctor">
+<summary>初始化 <see cref="T:Microsoft.Devices.Sensors.CalibrationEventArgs"/> 类的新实例。</summary>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.Compass">
+<summary>为 Windows Phone 应用程序提供对设备罗盘传感器的访问。</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Compass.#ctor">
+<summary>初始化 <see cref="T:Microsoft.Devices.Sensors.Compass"/> 类的新实例。</summary>
+<exception cref="T:SensorFailedException">已达到每应用程序 10 个罗盘类并发实例的限制。</exception>
+    </member>
+    <member name="E:Microsoft.Devices.Sensors.Compass.Calibrate">
+<summary>当操作系统检测到罗盘需要校准时发生。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.Compass.IsSupported">
+<summary>获取或设置其上运行应用程序的设备是否支持罗盘传感器。</summary>
+<returns>类型：<see cref="T:System.Boolean"/>。如果其上运行应用程序的设备支持罗盘传感器，则为 true；否则为 false。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.CompassReading">
+<summary>包含有关设备的罗盘传感器检测到的磁场的信息，该信息可以用来确定设备相对于地球磁场的方向。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.CompassReading.HeadingAccuracy">
+<summary>获取罗盘航向读数的精度（以度为单位）。</summary>
+<returns>类型：<see cref="T:System.Double"/>。罗盘航向读数的精度。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.CompassReading.MagneticHeading">
+<summary>获取航向（以度为单位），从地球磁场北极按顺时针方向测量。</summary>
+<returns>类型：<see cref="T:System.Double"/>。相对于地球磁场北极的航向。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.CompassReading.MagnetometerReading">
+<summary>获取原始磁力计读数（以微特斯拉为单位）。</summary>
+<returns>类型：<see cref="T:Microsoft.Xna.Framework.Vector3"/>。原始磁力计读数。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.CompassReading.Timestamp">
+<summary>获取一个时间戳，该时间戳指示获取加速计读数的时间。可以使用该时间戳将各个传感器上的读数相关联，并为处理原始传感器数据的算法提供额外的输入。</summary>
+<returns>类型：<see cref="T:System.DateTimeOffset"/>。获取罗盘读数的时间。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.CompassReading.TrueHeading">
+<summary>获取航向（以度为单位），从地球地理北极按顺时针方向测量。</summary>
+<returns>类型：<see cref="T:System.Double"/>。相对于地球地理北极的航向。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.Gyroscope">
+<summary>为 Windows Phone 应用程序提供对设备陀螺仪传感器的访问。</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Gyroscope.#ctor">
+<summary>初始化 Gyroscope 类的新实例。</summary>
+<exception cref="T:SensorFailedException">已达到每应用程序 10 个陀螺仪类并发实例的限制。</exception>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.Gyroscope.IsSupported">
+<summary>获取或设置其上运行应用程序的设备是否支持陀螺仪传感器。</summary>
+<returns>类型：<see cref="T:System.Boolean"/>。如果其上运行应用程序的设备支持陀螺仪传感器，则为 true；否则为 false。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.GyroscopeReading">
+<summary>包含有关设备旋转加速度的信息。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.GyroscopeReading.RotationRate">
+<summary>获取围绕设备每个轴的旋转速度（以弧度/秒为单位）。</summary>
+<returns>类型：<see cref="T:Microsoft.Xna.Framework.Vector3"/>。围绕设备每个轴的旋转速度。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.GyroscopeReading.Timestamp">
+<summary>获取一个时间戳，该时间戳指示获取加速计读数的时间。可以使用该时间戳将各个传感器上的读数相关联，并为处理原始传感器数据的算法提供额外的输入。</summary>
+<returns>类型：<see cref="T:System.DateTimeOffset"/>。获取陀螺仪读数的时间。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.ISensorReading">
+<summary>由所有传感器读数类实现的接口。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.ISensorReading.Timestamp">
+<summary>获取一个时间戳，该时间戳指示获取传感器读数的时间。可以使用该时间戳将各个传感器上的读数相关联，并为处理原始传感器数据的算法提供额外的输入。</summary>
+<returns>类型：<see cref="T:System.DateTimeOffset"/>。获取传感器读数的时间。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.Motion">
+<summary>为 Windows Phone 应用程序提供有关设备方向和运动的信息。</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Motion.#ctor">
+<summary>初始化 <see cref="T:Microsoft.Devices.Sensors.Motion"/> 类的新实例。</summary>
+<exception cref="T:SensorFailedException">已达到每应用程序 10 个运动类并发实例的限制。</exception>
+    </member>
+    <member name="E:Microsoft.Devices.Sensors.Motion.Calibrate">
+<summary>当操作检测到罗盘需要校准时发生。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.Motion.IsSupported">
+<summary>获取或设置其上运行应用程序的设备是否支持 <see cref="T:Microsoft.Devices.Sensors.Motion"/> 类所需的传感器。</summary>
+<returns>类型：<see cref="T:System.Boolean"/>。如果其上运行应用程序的设备支持 <see cref="T:Microsoft.Devices.Sensors.Motion"/> 类所需的传感器，则为 true；否则为 false。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.MotionReading">
+<summary>包含有关设备的方向和运行的信息。 </summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.MotionReading.Attitude">
+<summary>获取设备的飞行姿态（yaw、pitch、roll）（以弧度为单位）。</summary>
+<returns>设备的飞行姿态。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.MotionReading.DeviceAcceleration">
+<summary>获取设备的线性加速度（采用重力单位）。</summary>
+<returns>设备的线性加速度。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.MotionReading.DeviceRotationRate">
+<summary>获取设备的旋转速度（以弧度/秒为单位）。</summary>
+<returns>设备的旋转速度。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.MotionReading.Gravity">
+<summary>获取与 <see cref="T:Microsoft.Devices.Sensors.MotionReading"/> 关联的重力矢量。</summary>
+<returns>与 MotionReading 关联的重力矢量。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.MotionReading.Timestamp">
+<summary>获取一个时间戳，该时间戳指示计算 <see cref="T:Microsoft.Devices.Sensors.MotionReading"/> 的时间。可以使用该时间戳将各个传感器上的读数相关联，并为处理原始传感器数据的算法提供额外的输入。</summary>
+<returns>类型：<see cref="T:System.DateTimeOffset"/>。计算 MotionReading 的时间。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.SensorBase`1">
+<summary>所有 Windows Phone 传感器类的基类。</summary>
+      <typeparam name="TSensorReading"></typeparam>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.SensorBase`1.CurrentValue">
+<summary>获取一个对象，该对象实现包含传感器当前值的 <see cref="T:Microsoft.Devices.Sensors.ISensorReading"/>。</summary>
+<returns>类型：<see cref="{0}"/>。实现包含传感器当前值的 <see cref="T:Microsoft.Devices.Sensors.ISensorReading"/> 的对象。</returns>
+    </member>
+    <member name="E:Microsoft.Devices.Sensors.SensorBase`1.CurrentValueChanged">
+<summary>在从传感器获得新数据时发生。</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.SensorBase`1.Dispose">
+<summary>释放由传感器使用的托管资源和非托管资源。</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.SensorBase`1.Finalize">
+<summary>允许对象尝试释放资源并在垃圾回收站回收该对象之前执行其他清理操作。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.SensorBase`1.IsDataValid">
+<summary>获取传感器数据的有效性。</summary>
+<returns>类型：<see cref="T:System.Boolean"/>。如果传感器的数据有效，则为 true；否则为 false。</returns>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.SensorBase`1.Start">
+<summary>开始从传感器获取数据。</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.SensorBase`1.Stop">
+<summary>停止从传感器获取数据。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.SensorBase`1.TimeBetweenUpdates">
+<summary>获取或设置 <see cref="E:Microsoft.Devices.Sensors.SensorBase`1.CurrentValueChanged"/> 事件之间的首选时间。</summary>
+<returns>类型：<see cref="T:System.TimeSpan"/>。CurrentValueChanged 事件之间的首选时间。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.SensorFailedException">
+<summary>表示传感器操作失败时引发的异常。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.SensorFailedException.ErrorId">
+<summary>指示异常原因的错误 ID。</summary>
+<returns>类型：<see cref="T:System.Int32"/>。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.SensorReadingEventArgs`1">
+<summary>为 <see cref="E:Microsoft.Devices.Sensors.SensorBase`1.CurrentValueChanged"/> 事件提供数据。 </summary>
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.SensorReadingEventArgs`1.#ctor">
+<summary>初始化 <see cref="T:Microsoft.Devices.Sensors.SensorReadingEventArgs`1"/> 类的新实例。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.SensorReadingEventArgs`1.SensorReading">
+<summary>获取与 SensorReadingEventArgs 关联的传感器读数数据。</summary>
+<returns>与 SensorReadingEventArgs 关联的传感器读数数据。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.SensorState">
+<summary>表示加速计当前状态的值的枚举。可以使用其 <see cref="P:Microsoft.Devices.Sensors.Accelerometer.State"/> 属性获得传感器的状态。</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.NotSupported">
+<summary>传感器硬件不可用。</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.Ready">
+<summary>传感器可用并且正在解析数据。</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.Initializing">
+<summary>传感器可用并且正在初始化。</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.NoData">
+<summary>传感器无法获取数据。</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.NoPermissions">
+<summary>调用方没有权限访问传感器的数据。</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.Disabled">
+<summary>传感器被禁用。</summary>
+    </member>
+  </members>
+</doc>

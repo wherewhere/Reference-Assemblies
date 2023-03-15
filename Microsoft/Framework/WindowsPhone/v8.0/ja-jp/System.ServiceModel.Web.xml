@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.ServiceModel.Web</name>
+  </assembly>
+  <members>
+    <member name="T:System.Runtime.Serialization.DateTimeFormat">
+      <summary>日付/時刻形式のオプションを指定します。</summary>
+    </member>
+    <member name="M:System.Runtime.Serialization.DateTimeFormat.#ctor(System.String)">
+      <summary>書式指定文字列を使用して、<see cref="T:System.Runtime.Serialization.DateTimeFormat" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="formatString">書式指定文字列。</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.DateTimeFormat.#ctor(System.String,System.IFormatProvider)">
+      <summary>書式指定文字列と書式プロバイダーを使用して、<see cref="T:System.Runtime.Serialization.DateTimeFormat" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="formatString">書式指定文字列。</param>
+      <param name="formatProvider">書式プロバイダー。</param>
+    </member>
+    <member name="P:System.Runtime.Serialization.DateTimeFormat.DateTimeStyles">
+      <summary>いくつかの日時解析メソッドによる文字列の解析をカスタマイズする書式指定オプションを取得または設定します。</summary>
+      <returns>いくつかの日時解析メソッドによる文字列の解析をカスタマイズする書式指定オプション。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.DateTimeFormat.FormatProvider">
+      <summary>書式を制御するオブジェクトを取得します。</summary>
+    </member>
+    <member name="P:System.Runtime.Serialization.DateTimeFormat.FormatString">
+      <summary>日付または時刻が文字列として表されるときに生成される書式を制御する書式指定文字列を取得します。</summary>
+      <returns>日付または時刻が文字列として表されるときに生成される書式を制御する書式指定文字列。</returns>
+    </member>
+    <member name="T:System.Runtime.Serialization.EmitTypeInformation">
+      <summary>型情報を生成する頻度を指定します。</summary>
+    </member>
+    <member name="F:System.Runtime.Serialization.EmitTypeInformation.Always">
+      <summary>常に型情報を生成します。</summary>
+    </member>
+    <member name="F:System.Runtime.Serialization.EmitTypeInformation.AsNeeded">
+      <summary>必要に応じて型情報を生成します。</summary>
+    </member>
+    <member name="F:System.Runtime.Serialization.EmitTypeInformation.Never">
+      <summary>型情報を生成しません。</summary>
+    </member>
+    <member name="T:System.Runtime.Serialization.Json.DataContractJsonSerializer">
+      <summary>オブジェクトを JavaScript Object Notation (JSON) にシリアル化し、JSON データをオブジェクトに逆シリアル化します。このクラスは継承できません。</summary>
+    </member>
+    <member name="M:System.Runtime.Serialization.Json.DataContractJsonSerializer.#ctor(System.Type)">
+      <summary>
+        <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer" /> クラスの新規インスタンスを初期化して、指定された種類のオブジェクトをシリアル化またはシリアル化解除します。</summary>
+      <param name="type">シリアル化または逆シリアル化するインスタンスの型。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="type" /> が null です。</exception>
+    </member>
+    <member name="M:System.Runtime.Serialization.Json.DataContractJsonSerializer.#ctor(System.Type,System.Collections.Generic.IEnumerable{System.Type})">
+      <summary>
+        <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer" /> クラスの新しいインスタンスを初期化し、オブジェクト グラフにある既知の型のコレクションと共に、指定された型のオブジェクトをシリアル化または逆シリアル化します。</summary>
+      <param name="type">シリアル化または逆シリアル化するインスタンスの型。</param>
+      <param name="knownTypes">オブジェクト グラフに存在する可能性のある型を含む <see cref="T:System.Type" /> の <see cref="T:System.Collections.Generic.IEnumerable`1" />。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="type" /> が null です。</exception>
+    </member>
+    <member name="M:System.Runtime.Serialization.Json.DataContractJsonSerializer.#ctor(System.Type,System.Runtime.Serialization.Json.DataContractJsonSerializerSettings)">
+      <summary>
+        <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer" /> クラスの新しいインスタンスを初期化して指定した型およびシリアライザー設定のオブジェクトをシリアル化または逆シリアル化します。</summary>
+      <param name="type">シリアル化またはシリアル化解除するインスタンスの種類。</param>
+      <param name="settings">JSON シリアライザーのシリアライザー設定。</param>
+    </member>
+    <member name="P:System.Runtime.Serialization.Json.DataContractJsonSerializer.DateTimeFormat">
+      <summary>オブジェクト グラフ内の日時型項目の形式を取得します。</summary>
+      <returns>オブジェクト グラフ内の日時型項目の形式。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.Json.DataContractJsonSerializer.EmitTypeInformation">
+      <summary>型情報を生成するためのデータ コントラクト JSON シリアライザーの設定を取得または設定します。</summary>
+      <returns>型情報を生成するためのデータ コントラクト JSON シリアライザーの設定。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.Json.DataContractJsonSerializer.KnownTypes">
+      <summary>
+        <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer" /> のインスタンスを使用してシリアル化されたオブジェクト グラフに存在する可能性のある型のコレクションを取得します。</summary>
+      <returns>
+        <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer" /> コンストラクターに既知の型として渡された型 (予期された型) が含まれている <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />。</returns>
+    </member>
+    <member name="M:System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(System.IO.Stream)">
+      <summary>JSON (JavaScript Object Notation) 形式でドキュメント ストリームを読み取り、逆シリアル化されたオブジェクトを返します。</summary>
+      <returns>逆シリアル化されたオブジェクト。</returns>
+      <param name="stream">読み取る <see cref="T:System.IO.Stream" />。</param>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">逆シリアル化の際にエラーが発生しました。</exception>
+    </member>
+    <member name="P:System.Runtime.Serialization.Json.DataContractJsonSerializer.SerializeReadOnlyTypes">
+      <summary>読み取り専用の型をシリアル化するかどうかを指定する値を取得または設定します。</summary>
+      <returns>読み取り専用の型をシリアル化する場合は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.Json.DataContractJsonSerializer.UseSimpleDictionaryFormat">
+      <summary>簡易ディレクトリ形式を使用するかどうかを指定する値を取得または設定します。</summary>
+      <returns>簡易ディレクトリ形式を使用する場合は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="M:System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject(System.IO.Stream,System.Object)">
+      <summary>指定されたオブジェクトを JavaScript Object Notation (JSON) にシリアル化し、JSON をストリームに書き込みます。</summary>
+      <param name="stream">書き込み先の <see cref="T:System.IO.Stream" />。</param>
+      <param name="graph">ストリームに書き込むデータが含まれたオブジェクト。</param>
+      <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">データ コントラクト ルールに準拠していない種類をシリアル化しています。たとえば、<see cref="T:System.Runtime.Serialization.DataContractAttribute" /> 属性はこの型には適用されていません。</exception>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">書き込み中のインスタンスに問題があります。</exception>
+    </member>
+    <member name="T:System.Runtime.Serialization.Json.DataContractJsonSerializerSettings">
+      <summary>
+        <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer" /> 設定を指定します。</summary>
+    </member>
+    <member name="M:System.Runtime.Serialization.Json.DataContractJsonSerializerSettings.#ctor">
+      <summary>
+        <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializerSettings" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="P:System.Runtime.Serialization.Json.DataContractJsonSerializerSettings.DateTimeFormat">
+      <summary>カルチャに対応する、日時の表示形式を定義する DateTimeFormat を取得または設定します。</summary>
+      <returns>カルチャに対応する、日時の表示形式を定義する DateTimeFormat。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.Json.DataContractJsonSerializerSettings.EmitTypeInformation">
+      <summary>型情報を生成するデータ コントラクト JSON シリアライザー設定を取得または設定します。</summary>
+      <returns>型情報を生成するデータ コントラクト JSON シリアライザー設定。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.Json.DataContractJsonSerializerSettings.KnownTypes">
+      <summary>DataContractJsonSerializerSettings のインスタンスを使用してシリアル化されたオブジェクト グラフに存在する可能性のある種類のコレクションを取得または設定します。</summary>
+      <returns>DataContractJsonSerializerSettings のインスタンスを使用してシリアル化されたオブジェクト グラフに存在する可能性のある種類のコレクション。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.Json.DataContractJsonSerializerSettings.MaxItemsInObjectGraph">
+      <summary>シリアル化または逆シリアル化するオブジェクト グラフの項目の最大数を取得または設定します。</summary>
+      <returns>シリアル化または逆シリアル化するオブジェクト グラフの項目の最大数。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.Json.DataContractJsonSerializerSettings.RootName">
+      <summary>選択したオブジェクトのルート名を取得または設定します。</summary>
+      <returns>選択したオブジェクトのルート名。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.Json.DataContractJsonSerializerSettings.SerializeReadOnlyTypes">
+      <summary>読み取り専用の型をシリアル化するかどうかを指定する値を取得または設定します。</summary>
+      <returns>読み取り専用の型をシリアル化する場合は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.Json.DataContractJsonSerializerSettings.UseSimpleDictionaryFormat">
+      <summary>単純なディクショナリ書式を使用するかどうかを指定する値を取得または設定します。</summary>
+      <returns>単純なディクショナリ書式を使用する場合は true。それ以外の場合は false。</returns>
+    </member>
+  </members>
+</doc>

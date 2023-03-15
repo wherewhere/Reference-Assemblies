@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>mscorlib.Extensions</name>
+  </assembly>
+  <members>
+    <member name="T:System.Runtime.CompilerServices.CodeGenerationAttribute">
+      <summary>Specifies settings for code generation.</summary>
+    </member>
+    <member name="M:System.Runtime.CompilerServices.CodeGenerationAttribute.#ctor(System.Runtime.CompilerServices.CodeGenerationFlags)">
+      <summary>Initializes a new instance of the <see cref="T:System.Runtime.CompilerServices.CodeGenerationAttribute" /> class.</summary>
+      <param name="flags">Flags that specify how code is generated.</param>
+    </member>
+    <member name="P:System.Runtime.CompilerServices.CodeGenerationAttribute.CodeGenerationFlags">
+      <summary>Gets the flags that specify how code is generated.</summary>
+      <returns>The flags that specify how code is generated.</returns>
+    </member>
+    <member name="T:System.Runtime.CompilerServices.CodeGenerationFlags">
+      <summary>Defines flags that specify how code is generated.</summary>
+    </member>
+    <member name="F:System.Runtime.CompilerServices.CodeGenerationFlags.EnableFPIntrinsicsUsingSIMD">
+      <summary>Specifies that the just-in-time (JIT) compiler may use SIMD instructions for certain vector and matrix operations.</summary>
+    </member>
+    <member name="T:System.Security.Cryptography.ProtectedData">
+      <summary>Provides methods for encrypting and decrypting data. This class cannot be inherited.</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.ProtectedData.Protect(System.Byte[],System.Byte[])">
+      <summary>Encrypts the data in a specified byte array and returns a byte array that contains the encrypted data.</summary>
+      <returns>A byte array representing the encrypted data.</returns>
+      <param name="userData">A byte array that contains data to encrypt. </param>
+      <param name="optionalEntropy">An optional additional byte array used to increase the complexity of the encryption, or null for no additional complexity.</param>
+      <exception cref="T:System.ArgumentNullException">The <paramref name="userData" /> parameter is null.</exception>
+      <exception cref="T:System.Security.Cryptography.CryptographicException">The encryption failed.</exception>
+      <exception cref="T:System.NotSupportedException">The operating system does not support this method. </exception>
+      <exception cref="T:System.OutOfMemoryException">The system ran out of memory while encrypting the data.</exception>
+    </member>
+    <member name="M:System.Security.Cryptography.ProtectedData.Unprotect(System.Byte[],System.Byte[])">
+      <summary>Decrypts the data in a specified byte array and returns a byte array that contains the decrypted data.</summary>
+      <returns>A byte array representing the decrypted data.</returns>
+      <param name="encryptedData">A byte array containing data encrypted using the <see cref="M:System.Security.Cryptography.ProtectedData.Protect(System.Byte[],System.Byte[])" /> method. </param>
+      <param name="optionalEntropy">An optional additional byte array that was used to encrypt the data, or null if the additional byte array was not used.</param>
+      <exception cref="T:System.ArgumentNullException">The <paramref name="encryptedData" /> parameter is null.</exception>
+      <exception cref="T:System.Security.Cryptography.CryptographicException">The decryption failed.</exception>
+      <exception cref="T:System.NotSupportedException">The operating system does not support this method. </exception>
+      <exception cref="T:System.OutOfMemoryException">Out of memory.</exception>
+    </member>
+  </members>
+</doc>

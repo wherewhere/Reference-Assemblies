@@ -1,0 +1,672 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>UIAutomationProvider</name>
+  </assembly>
+  <members>
+    <member name="T:System.Windows.Automation.Provider.AutomationInteropProvider">
+      <summary>为 UI 自动化提供程序和 UI 自动化客户端应用程序间的通信提供支持。</summary>
+    </member>
+    <member name="F:System.Windows.Automation.Provider.AutomationInteropProvider.AppendRuntimeId">
+      <summary>包含一个值，该值在作为由 UI 自动化提供程序传递给 <see cref="M:System.Windows.Automation.Provider.IRawElementProviderFragment.GetRuntimeId" /> 的数组的第一个元素返回时，指示该 ID 为部分 ID 并且应追加到基提供程序提供的 ID 中。</summary>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.AutomationInteropProvider.ClientsAreListening">
+      <summary>获取一个值，该值指定所有 UI 自动化客户端应用程序是否都应订阅 UI 自动化事件。</summary>
+      <returns>如果客户端订阅事件，则为 true；否则为 false。</returns>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.AutomationInteropProvider.HostProviderFromHandle(System.IntPtr)">
+      <summary>返回表示指定窗口的 UI 自动化提供程序。</summary>
+      <returns>指定窗口的原始元素提供程序。</returns>
+      <param name="hwnd">窗口的句柄。</param>
+    </member>
+    <member name="F:System.Windows.Automation.Provider.AutomationInteropProvider.InvalidateLimit">
+      <summary>指定在进行批处理之前要发送的最大事件数。</summary>
+    </member>
+    <member name="F:System.Windows.Automation.Provider.AutomationInteropProvider.ItemsInvalidateLimit">
+      <summary>在批处理容器中的项之前要发送的事件的最大数目。</summary>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.AutomationInteropProvider.RaiseAutomationEvent(System.Windows.Automation.AutomationEvent,System.Windows.Automation.Provider.IRawElementProviderSimple,System.Windows.Automation.AutomationEventArgs)">
+      <summary>引发一个模式事件或自定义事件。</summary>
+      <param name="eventId">事件标识符。</param>
+      <param name="provider">与事件关联的元素。</param>
+      <param name="e">有关事件的信息。</param>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.AutomationInteropProvider.RaiseAutomationPropertyChangedEvent(System.Windows.Automation.Provider.IRawElementProviderSimple,System.Windows.Automation.AutomationPropertyChangedEventArgs)">
+      <summary>当 UI 自动化属性更改时引发事件。</summary>
+      <param name="element">与事件关联的元素。</param>
+      <param name="e">有关事件的信息。</param>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.AutomationInteropProvider.RaiseStructureChangedEvent(System.Windows.Automation.Provider.IRawElementProviderSimple,System.Windows.Automation.StructureChangedEventArgs)">
+      <summary>在 UI 自动化树更改时引发事件。</summary>
+      <param name="provider">与事件关联的元素。</param>
+      <param name="e">有关事件的信息。</param>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.AutomationInteropProvider.ReturnRawElementProvider(System.IntPtr,System.IntPtr,System.IntPtr,System.Windows.Automation.Provider.IRawElementProviderSimple)">
+      <summary>返回元素的 UI 自动化提供程序，以响应 WM_GETOBJECT 消息。</summary>
+      <returns>一个指向数据的指针，在将消息传递给基窗口过程之前应将此指针分配给 <see cref="P:System.Windows.Forms.Message.Result" />。</returns>
+      <param name="hwnd">元素的窗口的句柄。</param>
+      <param name="wParam">WM_GETOBJECT  消息的 wParam 成员。</param>
+      <param name="lParam">WM_GETOBJECT 消息的 lParam 成员。</param>
+      <param name="el">元素的 UI 自动化提供程序。</param>
+    </member>
+    <member name="F:System.Windows.Automation.Provider.AutomationInteropProvider.RootObjectId">
+      <summary>包含一个值，该值用在 WM_GETOBJECT 消息的 lParam 成员中，指出服务器应该返回一个对根原始元素提供程序的引用。</summary>
+    </member>
+    <member name="T:System.Windows.Automation.Provider.IDockProvider">
+      <summary>公开一些方法和属性，UI 自动化客户端可通过这些方法和属性来访问在某个停靠容器内公开其停靠属性的控件。</summary>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.IDockProvider.DockPosition">
+      <summary>获取控件在停靠容器内的当前 <see cref="T:System.Windows.Automation.DockPosition" />。</summary>
+      <returns>控件相对于停靠容器和容器内其他元素的边界的 <see cref="T:System.Windows.Automation.DockPosition" />。</returns>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.IDockProvider.SetDockPosition(System.Windows.Automation.DockPosition)">
+      <summary>在停靠容器内停靠控件。</summary>
+      <param name="dockPosition">相对于停靠容器和容器内其他元素的边界的停靠位置。</param>
+    </member>
+    <member name="T:System.Windows.Automation.Provider.IExpandCollapseProvider">
+      <summary>公开一些方法和属性，UI 自动化客户端可通过这些方法和属性访问能够以可视方式进行展开（以显示内容）和折叠（以隐藏内容）的控件。</summary>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.IExpandCollapseProvider.Collapse">
+      <summary>隐藏属于控件子代的所有节点、控件或内容。</summary>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.IExpandCollapseProvider.Expand">
+      <summary>显示控件的所有子级节点、控件或内容。</summary>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.IExpandCollapseProvider.ExpandCollapseState">
+      <summary>获取控件的状态（展开或折叠）。</summary>
+      <returns>控件的状态（展开或折叠）。</returns>
+    </member>
+    <member name="T:System.Windows.Automation.Provider.IGridItemProvider">
+      <summary>公开一些方法和属性，UI 自动化客户端可通过这些方法和属性访问实现 <see cref="T:System.Windows.Automation.Provider.IGridProvider" /> 的容器的各个子控件。</summary>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.IGridItemProvider.Column">
+      <summary>获取包含单元格或项的列的序号。</summary>
+      <returns>一个从零开始的序号，标识了包含该单元格或项的列。</returns>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.IGridItemProvider.ColumnSpan">
+      <summary>获取单元格或项跨的列数。</summary>
+      <returns>跨越的列数。</returns>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.IGridItemProvider.ContainingGrid">
+      <summary>获取一个 UI 自动化提供程序，它实现 <see cref="T:System.Windows.Automation.Provider.IGridProvider" /> 并表示单元格或项的容器。</summary>
+      <returns>一个 UI 自动化提供程序，它实现 <see cref="T:System.Windows.Automation.GridPattern" /> 并表示单元格或项容器。</returns>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.IGridItemProvider.Row">
+      <summary>获取包含单元格或项的行的序号。</summary>
+      <returns>一个从零开始的序号，标识了包含该单元格或项的行。</returns>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.IGridItemProvider.RowSpan">
+      <summary>获取某个单元格或项跨的行数。</summary>
+      <returns>跨过的行数。</returns>
+    </member>
+    <member name="T:System.Windows.Automation.Provider.IGridProvider">
+      <summary>公开一些方法和属性，UI 自动化客户端可通过这些方法和属性访问充当某个子元素集合的容器的控件。 此元素的子级必须实现 <see cref="T:System.Windows.Automation.Provider.IGridItemProvider" />，而且必须组织在可以使用键盘进行遍历的一个二维逻辑坐标系中（即，UI 自动化客户端可以移动到相邻控件）。</summary>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.IGridProvider.ColumnCount">
+      <summary>获取网格中的总列数。</summary>
+      <returns>网格中的总列数。</returns>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.IGridProvider.GetItem(System.Int32,System.Int32)">
+      <summary>检索指定单元格的 UI 自动化提供程序。</summary>
+      <returns>指定单元格的 UI 自动化提供程序。</returns>
+      <param name="row">相关行的序号。</param>
+      <param name="column">相关列的序号。</param>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.IGridProvider.RowCount">
+      <summary>获取网格中的总行数。</summary>
+      <returns>网格中的总行数。</returns>
+    </member>
+    <member name="T:System.Windows.Automation.Provider.IInvokeProvider">
+      <summary>公开一些方法和属性，UI 自动化客户端可通过这些方法和属性访问发起或执行一个明确操作并且在激活后不维护状态的控件。</summary>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.IInvokeProvider.Invoke">
+      <summary>发送一个请求，以激活控件并启动控件的单个明确操作。</summary>
+      <exception cref="T:System.Windows.Automation.ElementNotEnabledException">如果控件未启用。</exception>
+    </member>
+    <member name="T:System.Windows.Automation.Provider.IItemContainerProvider">
+      <summary>公开一种方法，使应用程序能够在容器（例如虚拟化列表）中查找元素。</summary>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.IItemContainerProvider.FindItemByProperty(System.Windows.Automation.Provider.IRawElementProviderSimple,System.Int32,System.Object)">
+      <summary>按指定的属性值检索元素。</summary>
+      <returns>符合搜索条件的第一个项；如果没有匹配项，则为 null。</returns>
+      <param name="startAfter">容器中的某个项，将从它后面开始搜索。</param>
+      <param name="propertyId">包含要检索的值的属性。</param>
+      <param name="value">要检索的值。</param>
+    </member>
+    <member name="T:System.Windows.Automation.Provider.IMultipleViewProvider">
+      <summary>公开一些方法和属性，UI 自动化客户端可以通过这些方法和属性访问提供同一组信息或子控件的多种表示方式（并能够在这些表示方式之间切换）的控件。</summary>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.IMultipleViewProvider.CurrentView">
+      <summary>获取特定于控件的当前视图。</summary>
+      <returns>UI 自动化元素的当前视图的值。</returns>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.IMultipleViewProvider.GetSupportedViews">
+      <summary>检索一个特定于控件的视图标识符集合。</summary>
+      <returns>一个值的集合，该集合标识了可用于 UI 自动化元素的视图。</returns>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.IMultipleViewProvider.GetViewName(System.Int32)">
+      <summary>检索特定于控件的视图的名称。</summary>
+      <returns>视图的本地化名称。</returns>
+      <param name="viewId">视图标识符。</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="viewId" /> 不是受支持视图集合的成员。</exception>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.IMultipleViewProvider.SetCurrentView(System.Int32)">
+      <summary>设置当前的特定于控件的视图。</summary>
+      <param name="viewId">一个视图标识符。</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="viewId" /> 不是受支持视图集合的成员。</exception>
+    </member>
+    <member name="T:System.Windows.Automation.Provider.IRangeValueProvider">
+      <summary>公开一些方法和属性，UI 自动化客户端可通过这些方法和属性来访问能够设置为某个范围中的一个值的控件。</summary>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.IRangeValueProvider.IsReadOnly">
+      <summary>获取一个值，该值指定控件的值是否是只读的。</summary>
+      <returns>如果值为只读的，则为 true；如果可以修改它，则为 false。</returns>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.IRangeValueProvider.LargeChange">
+      <summary>获取一个值，当发生大更改时（例如按下了 Page Down 键），会将 <see cref="P:System.Windows.Automation.Provider.IRangeValueProvider.Value" /> 属性加上该值或从中减去该值。</summary>
+      <returns>控件支持的大更改值；如果控件不支持 <see cref="P:System.Windows.Automation.Provider.IRangeValueProvider.LargeChange" />，则为 null（在 Microsoft Visual Basic .NET 中为 Nothing）。</returns>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.IRangeValueProvider.Maximum">
+      <summary>获取控件支持的最大范围值。</summary>
+      <returns>控件支持的最大值；如果控件不支持 <see cref="P:System.Windows.Automation.Provider.IRangeValueProvider.Maximum" />，则为 null（在 Microsoft Visual Basic .NET 中为 Nothing）。</returns>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.IRangeValueProvider.Minimum">
+      <summary>获取控件支持的最小范围值。</summary>
+      <returns>控件支持的最小值；如果控件不支持 <see cref="P:System.Windows.Automation.Provider.IRangeValueProvider.Minimum" />，则为 null（在 Microsoft Visual Basic .NET 中为 Nothing）。</returns>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.IRangeValueProvider.SetValue(System.Double)">
+      <summary>设置控件的值。</summary>
+      <param name="value">要设置的值。</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">在 <paramref name="value" /> 小于控件的最小值或大于控件的最大值时。</exception>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.IRangeValueProvider.SmallChange">
+      <summary>获取一个值，当发生小更改时（例如按下了某个箭头键），会将 <see cref="P:System.Windows.Automation.Provider.IRangeValueProvider.Value" /> 属性加上该值或从中减去该值。</summary>
+      <returns>对于控件唯一的小更改值；如果控件不支持 <see cref="P:System.Windows.Automation.Provider.IRangeValueProvider.SmallChange" />，则为 null（在 Microsoft Visual Basic .NET 中为 Nothing）。</returns>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.IRangeValueProvider.Value">
+      <summary>获取控件的值。</summary>
+      <returns>控件的值；如果控件不支持 <see cref="P:System.Windows.Automation.Provider.IRangeValueProvider.Value" />，则为 null（在 Microsoft Visual Basic .NET 中为 Nothing）。</returns>
+    </member>
+    <member name="T:System.Windows.Automation.Provider.IRawElementProviderAdviseEvents">
+      <summary>公开一些方法，在 UI 自动化客户端应用程序开始或结束侦听事件时，可通过调用这些方法将相关信息通知片段的根元素。</summary>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.IRawElementProviderAdviseEvents.AdviseEventAdded(System.Int32,System.Int32[])">
+      <summary>当 UI 自动化客户端开始侦听特定事件（包括属性更改事件）时，通知 UI 自动化提供程序。</summary>
+      <param name="eventId">要添加的事件的标识符。</param>
+      <param name="properties">要添加的属性标识符；如果要添加的事件侦听器不侦听属性事件，则为 null。</param>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.IRawElementProviderAdviseEvents.AdviseEventRemoved(System.Int32,System.Int32[])">
+      <summary>当 UI 自动化客户端停止侦听特定事件（包括属性更改事件）时，通知 UI 自动化提供程序。</summary>
+      <param name="eventId">要移除的事件的标识符</param>
+      <param name="properties">要移除的属性标识符；如果要移除的事件侦听器不侦听属性事件，则为 null。</param>
+    </member>
+    <member name="T:System.Windows.Automation.Provider.IRawElementProviderFragment">
+      <summary>公开 用户界面 (UI) 元素的一些方法和属性，这些元素是具有多级深度的某个结构（例如列表框或列表项）的一部分。 由 UI 自动化提供程序实现。</summary>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.IRawElementProviderFragment.BoundingRectangle">
+      <summary>获取此元素的边框。</summary>
+      <returns>以屏幕坐标形式表示的边框。</returns>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.IRawElementProviderFragment.FragmentRoot">
+      <summary>检索片段的根节点。</summary>
+      <returns>根节点。</returns>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.IRawElementProviderFragment.GetEmbeddedFragmentRoots">
+      <summary>检索包含嵌入在 UI 自动化元素树中的片段根的一个数组，该元素树以当前元素作为根节点。</summary>
+      <returns>根片段的数组，或者 null。</returns>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.IRawElementProviderFragment.GetRuntimeId">
+      <summary>检索元素的运行时标识符。</summary>
+      <returns>元素的唯一运行时标识符。</returns>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.IRawElementProviderFragment.Navigate(System.Windows.Automation.Provider.NavigateDirection)">
+      <summary>按照指定方向在树中检索 UI 自动化元素。</summary>
+      <returns>指定方向上的元素；如果该方向上没有任何元素，则为 null。</returns>
+      <param name="direction">导航方向。</param>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.IRawElementProviderFragment.SetFocus">
+      <summary>将焦点设置到此元素。</summary>
+    </member>
+    <member name="T:System.Windows.Automation.Provider.IRawElementProviderFragmentRoot">
+      <summary>公开片段中根元素的方法和属性。</summary>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.IRawElementProviderFragmentRoot.ElementProviderFromPoint(System.Double,System.Double)">
+      <summary>检索此片段中位于指定点处的元素。</summary>
+      <returns>位于指定点处的子元素的提供程序（如果存在），或者为根提供程序（如果该点位于此元素上而不是位于任何子元素上）。 否则，返回 null。</returns>
+      <param name="x">X 坐标。</param>
+      <param name="y">Y 坐标。</param>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.IRawElementProviderFragmentRoot.GetFocus">
+      <summary>检索此片段中具有输入焦点的元素。</summary>
+      <returns>此片段中具有输入焦点的元素（如果有）的提供程序；否则为 null 引用（在 Visual Basic 中为 Nothing）。</returns>
+    </member>
+    <member name="T:System.Windows.Automation.Provider.IRawElementProviderHwndOverride">
+      <summary>公开一个方法，通过该方法，可以重新定位片段的 UI 自动化树中基于窗口的元素。</summary>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.IRawElementProviderHwndOverride.GetOverrideProviderForHwnd(System.IntPtr)">
+      <summary>检索指定元素的 UI 自动化提供程序。</summary>
+      <returns>指定元素的提供程序；如果未重写该元素的默认提供程序，则为一个 null 引用（在 Microsoft Visual Basic .NET 中为 Nothing）。</returns>
+      <param name="hwnd">元素的窗口句柄。</param>
+    </member>
+    <member name="T:System.Windows.Automation.Provider.IRawElementProviderSimple">
+      <summary>提供了公开 UI 元素基本信息的方法和属性。</summary>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.IRawElementProviderSimple.GetPatternProvider(System.Int32)">
+      <summary>检索一个对象，该对象在 UI 自动化元素上提供对控件模式的支持。</summary>
+      <returns>实现模式接口的对象；或者，如果不支持模式，则为 null。</returns>
+      <param name="patternId">模式的标识符。</param>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.IRawElementProviderSimple.GetPropertyValue(System.Int32)">
+      <summary>检索 UI 自动化提供程序支持的某个属性的值。</summary>
+      <returns>属性的值；如果此提供程序不支持该属性，则为 null；如果根本不支持该属性，则为 <see cref="F:System.Windows.Automation.AutomationElementIdentifiers.NotSupported" />。</returns>
+      <param name="propertyId">属性标识符。</param>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.IRawElementProviderSimple.HostRawElementProvider">
+      <summary>获取此元素的基提供程序。</summary>
+      <returns>基提供程序，或者为 null。</returns>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.IRawElementProviderSimple.ProviderOptions">
+      <summary>获取一个值，该值指定 UI 自动化提供程序的特征；例如，它是客户端提供程序还是服务器端提供程序。</summary>
+      <returns>为 <see cref="F:System.Windows.Automation.Provider.ProviderOptions.ClientSideProvider" /> 或 <see cref="F:System.Windows.Automation.Provider.ProviderOptions.ServerSideProvider" />。</returns>
+    </member>
+    <member name="T:System.Windows.Automation.Provider.IScrollItemProvider">
+      <summary>公开一些方法和属性，UI 自动化客户端可通过这些方法和属性访问实现 <see cref="T:System.Windows.Automation.Provider.IScrollProvider" /> 的容器的各个子控件。</summary>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.IScrollItemProvider.ScrollIntoView">
+      <summary>滚动容器对象的内容区域，以便在容器的可见区域（视区）中显示控件。</summary>
+      <exception cref="T:System.InvalidOperationException">无法将项滚动到视区中。</exception>
+    </member>
+    <member name="T:System.Windows.Automation.Provider.IScrollProvider">
+      <summary>公开一些方法和属性，UI 自动化客户端可通过这些方法和属性访问作为一个子对象集合的可滚动容器的控件。 此控件的子控件必须实现 <see cref="T:System.Windows.Automation.Provider.IScrollItemProvider" />。</summary>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.IScrollProvider.HorizontallyScrollable">
+      <summary>获取一个值，该值指示控件是否可以水平滚动。</summary>
+      <returns>如果控件可以水平滚动，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.IScrollProvider.HorizontalScrollPercent">
+      <summary>获取当前水平滚动位置。</summary>
+      <returns>以控件内整个内容区域的一个百分比表示的水平滚动位置。</returns>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.IScrollProvider.HorizontalViewSize">
+      <summary>获取当前的水平视图大小。</summary>
+      <returns>以控件内整个内容区域的一个百分比表示的可见区域的水平大小。</returns>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.IScrollProvider.Scroll(System.Windows.Automation.ScrollAmount,System.Windows.Automation.ScrollAmount)">
+      <summary>水平和垂直滚动内容区域的可见区域。</summary>
+      <param name="horizontalAmount">特定于控件的水平增量。 如果控件不能在此方向滚动，应传入 <see cref="F:System.Windows.Automation.ScrollPatternIdentifiers.NoScroll" />。</param>
+      <param name="verticalAmount">特定于控件的垂直增量。 如果控件不能在此方向滚动，应传入 <see cref="F:System.Windows.Automation.ScrollPatternIdentifiers.NoScroll" />。</param>
+      <exception cref="T:System.ArgumentException">如果控件仅支持用于水平或垂直滚动的 <see cref="F:System.Windows.Automation.ScrollAmount.SmallIncrement" /> 值，但传入了 <see cref="F:System.Windows.Automation.ScrollAmount.LargeIncrement" /> 值。</exception>
+      <exception cref="T:System.InvalidOperationException">尝试在不支持的方向上进行滚动。</exception>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.IScrollProvider.SetScrollPercent(System.Double,System.Double)">
+      <summary>将水平和垂直滚动位置设置为控件内整个内容区域的一个百分比。</summary>
+      <param name="horizontalPercent">以内容区域总范围的一个百分比表示的水平位置。 如果控件不能在此方向滚动，应传入 <see cref="F:System.Windows.Automation.ScrollPatternIdentifiers.NoScroll" />。</param>
+      <param name="verticalPercent">以内容区域总范围的一个百分比表示的垂直位置。 如果控件不能在此方向滚动，应传入 <see cref="F:System.Windows.Automation.ScrollPatternIdentifiers.NoScroll" />。</param>
+      <exception cref="T:System.ArgumentException">传入的值不能转换为 double 类型。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">传入的值大于 100 或小于 0（-1 除外，它等效于 <see cref="F:System.Windows.Automation.ScrollPatternIdentifiers.NoScroll" />）。 <see cref="P:System.Windows.Automation.Provider.IScrollProvider.HorizontalScrollPercent" /> 和 <see cref="P:System.Windows.Automation.Provider.IScrollProvider.VerticalScrollPercent" /> 值被规范化为 100% 或 0%。</exception>
+      <exception cref="T:System.InvalidOperationException">尝试在不支持的方向上进行滚动。</exception>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.IScrollProvider.VerticallyScrollable">
+      <summary>获取一个值，该值指示控件是否可以垂直滚动。</summary>
+      <returns>如果控件可垂直滚动，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.IScrollProvider.VerticalScrollPercent">
+      <summary>获取当前垂直滚动位置。</summary>
+      <returns>以控件内整个内容区域的一个百分比表示的垂直滚动位置。</returns>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.IScrollProvider.VerticalViewSize">
+      <summary>获取垂直视图的大小。</summary>
+      <returns>以控件内整个内容区域的一个百分比表示的可见区域的垂直大小。</returns>
+    </member>
+    <member name="T:System.Windows.Automation.Provider.ISelectionItemProvider">
+      <summary>公开一些方法和属性，UI 自动化客户端可通过这些方法和属性访问实现 <see cref="T:System.Windows.Automation.Provider.ISelectionProvider" /> 的容器的各个可选择的子控件。</summary>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.ISelectionItemProvider.AddToSelection">
+      <summary>将当前元素添加到所选项的集合。</summary>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.ISelectionItemProvider.IsSelected">
+      <summary>获取一个值，该值指示某个项是否处于选定状态。</summary>
+      <returns>如果元素已选定，则为 true；否则为 false。</returns>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.ISelectionItemProvider.RemoveFromSelection">
+      <summary>从选定项的集合中移除当前元素。</summary>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.ISelectionItemProvider.Select">
+      <summary>取消所有已选中的项，然后选择当前元素。</summary>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.ISelectionItemProvider.SelectionContainer">
+      <summary>获取实现 <see cref="T:System.Windows.Automation.Provider.ISelectionProvider" /> 并且充当调用对象的容器的 UI 自动化提供程序。</summary>
+      <returns>支持 <see cref="T:System.Windows.Automation.Provider.ISelectionProvider" /> 的提供程序。</returns>
+    </member>
+    <member name="T:System.Windows.Automation.Provider.ISelectionProvider">
+      <summary>公开一些方法和属性，UI 自动化客户端可通过这些方法和属性访问作为单个可选择子项集合的容器的控件。 此控件的子控件必须实现 <see cref="T:System.Windows.Automation.Provider.ISelectionItemProvider" />。</summary>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.ISelectionProvider.CanSelectMultiple">
+      <summary>获取一个值，该值指定 UI 自动化提供程序是否允许同时选择多个子元素。</summary>
+      <returns>如果允许多重选择，则为 true；否则为 false。</returns>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.ISelectionProvider.GetSelection">
+      <summary>检索选择的每个子元素的 UI 自动化提供程序。</summary>
+      <returns>UI 自动化提供程序的集合。</returns>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.ISelectionProvider.IsSelectionRequired">
+      <summary>获取一个值，该值指定 UI 自动化提供程序是否要求至少选择一个子元素。</summary>
+      <returns>如果必须进行选择，则为 true；否则为 false。</returns>
+    </member>
+    <member name="T:System.Windows.Automation.Provider.ISynchronizedInputProvider">
+      <summary>公开一些方法，以方便 UI 自动化客户端访问支持同步输入的控件。</summary>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.ISynchronizedInputProvider.Cancel">
+      <summary>停止对输入的侦听。</summary>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.ISynchronizedInputProvider.StartListening(System.Windows.Automation.SynchronizedInputType)">
+      <summary>指定提供程序开始对指定类型的输入进行侦听。</summary>
+      <param name="inputType">要侦听的输入的类型。</param>
+    </member>
+    <member name="T:System.Windows.Automation.Provider.ITableItemProvider">
+      <summary>公开一些方法和属性，UI 自动化客户端可通过这些方法和属性访问实现 <see cref="T:System.Windows.Automation.Provider.ITableProvider" /> 的容器的子控件。</summary>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.ITableItemProvider.GetColumnHeaderItems">
+      <summary>检索 UI 自动化提供程序的集合，表示与某一表项或单元格关联的所有列标题。</summary>
+      <returns>UI 自动化提供程序的集合。</returns>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.ITableItemProvider.GetRowHeaderItems">
+      <summary>检索 UI 自动化提供程序的集合，表示与某一表项或单元格关联的所有行标题。</summary>
+      <returns>UI 自动化提供程序的集合。</returns>
+    </member>
+    <member name="T:System.Windows.Automation.Provider.ITableProvider">
+      <summary>公开一些方法和属性，UI 自动化客户端可通过这些方法和属性访问充当某个子元素集合的容器的控件。 此元素的子级必须实现 <see cref="T:System.Windows.Automation.Provider.ITableItemProvider" />，而且必须组织在可以使用键盘进行遍历的一个二维逻辑坐标系中（即，UI 自动化客户端可以移动到相邻控件）。</summary>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.ITableProvider.GetColumnHeaders">
+      <summary>获取一个表示表格中所有列标题的 UI 自动化提供程序的集合。</summary>
+      <returns>UI 自动化提供程序的集合。</returns>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.ITableProvider.GetRowHeaders">
+      <summary>检索表示表格中所有行标题的 UI 自动化提供程序的集合。</summary>
+      <returns>UI 自动化提供程序的集合。</returns>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.ITableProvider.RowOrColumnMajor">
+      <summary>检索表格的首要遍历方向。</summary>
+      <returns>首要遍历方向。</returns>
+    </member>
+    <member name="T:System.Windows.Automation.Provider.ITextProvider">
+      <summary>公开一些方法和属性，UI 自动化客户端可通过这些方法和属性访问包含文本的控件。</summary>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.ITextProvider.DocumentRange">
+      <summary>获取包含文档主文本的文本范围。</summary>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.ITextProvider.GetSelection">
+      <summary>检索与当前文本选择（或多个文本选择）关联的不连续文本范围的集合。</summary>
+      <returns>不连续文本范围的集合。</returns>
+      <exception cref="T:System.InvalidOperationException">如果 UI 自动化提供程序不支持文本选择。</exception>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.ITextProvider.GetVisibleRanges">
+      <summary>从文本容器中检索一个不连续文本范围的数组，其中每个文本范围都以第一个部分可见的行开始，以最后一个部分可见的行结束。</summary>
+      <returns>容器内可见文本范围的集合或者一个空数组。 从不返回 null 引用（在 Microsoft Visual Basic .NET 中为 Nothing）。</returns>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.ITextProvider.RangeFromChild(System.Windows.Automation.Provider.IRawElementProviderSimple)">
+      <summary>检索包含子元素（例如图像、超链接或其他嵌入对象）的一个文本范围。</summary>
+      <returns>涵盖子元素的一个范围。</returns>
+      <param name="childElement">所包含的对象。</param>
+      <exception cref="T:System.ArgumentException">如果该子元素为 null 引用（在 Microsoft Visual Basic .NET 中为 Nothing）。</exception>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.ITextProvider.RangeFromPoint(System.Windows.Point)">
+      <summary>返回与指定屏幕坐标最接近的退化（空）文本范围。</summary>
+      <returns>与指定位置最接近的退化范围。 从不返回 null 引用（在 Microsoft Visual Basic .NET 中为 Nothing）。</returns>
+      <param name="screenLocation">以屏幕坐标的形式表示的位置。</param>
+      <exception cref="T:System.ArgumentException">如果给定点位于与文本模式关联的 UI 自动化元素外部。</exception>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.ITextProvider.SupportedTextSelection">
+      <summary>获取一个指定文本提供程序是否支持文本选择的值，并在支持文本选择的情况下获取所支持的选择的类型。</summary>
+      <returns>
+        <see cref="T:System.Windows.Automation.SupportedTextSelection" /> 枚举的 None、Single 或 Multiple 值中的一个值。</returns>
+    </member>
+    <member name="T:System.Windows.Automation.Provider.ITextRangeProvider">
+      <summary>公开一些方法和属性，UI 自动化客户端可通过这些方法和属性访问用于实现 <see cref="T:System.Windows.Automation.Provider.ITextProvider" /> 的文本容器中的一块连续文本。</summary>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.ITextRangeProvider.AddToSelection">
+      <summary>添加到突出显示文本集合中，该集合位于支持多个不连续选择的文本容器中。</summary>
+      <exception cref="T:System.InvalidOperationException">如果文本提供程序不支持选择多个不连续的文本范围（即，<see cref="P:System.Windows.Automation.Provider.ITextProvider.SupportedTextSelection" /> 的值必须为 Multiple）。</exception>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.ITextRangeProvider.Clone">
+      <summary>返回与原始 <see cref="T:System.Windows.Automation.Provider.ITextRangeProvider" /> 完全相同并且继承了其所有属性的一个新的 <see cref="T:System.Windows.Automation.Provider.ITextRangeProvider" />。</summary>
+      <returns>新的文本范围。 从不返回 null 引用（在 Microsoft Visual Basic .NET 中为 Nothing）。</returns>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.ITextRangeProvider.Compare(System.Windows.Automation.Provider.ITextRangeProvider)">
+      <summary>返回一个值，该值指出文本范围的跨度（<see cref="F:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start" /> 端点到 <see cref="F:System.Windows.Automation.Text.TextPatternRangeEndpoint.End" /> 端点）是否与另一个文本范围相同。</summary>
+      <returns>如果两个文本范围的跨度相同，则为 true；否则为 false。</returns>
+      <param name="range">要比较的文本范围</param>
+      <exception cref="T:System.ArgumentException">如果进行比较的范围不是来自同一个文本提供程序。</exception>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.ITextRangeProvider.CompareEndpoints(System.Windows.Automation.Text.TextPatternRangeEndpoint,System.Windows.Automation.Provider.ITextRangeProvider,System.Windows.Automation.Text.TextPatternRangeEndpoint)">
+      <summary>返回一个指出两个文本范围是否具有相同端点的值。</summary>
+      <returns>如果调用方的端点在文本中比目标端点先出现，则返回一个负值。 如果调用方的端点与目标端点处于同一位置，则返回零。 如果调用方的端点在文本中比目标端点后出现，则返回一个正值。</returns>
+      <param name="endpoint">调用方的 <see cref="F:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start" /> 或 <see cref="F:System.Windows.Automation.Text.TextPatternRangeEndpoint.End" /> 端点。</param>
+      <param name="targetRange">要进行比较的目标范围。</param>
+      <param name="targetEndpoint">目标方的 <see cref="F:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start" /> 或 <see cref="F:System.Windows.Automation.Text.TextPatternRangeEndpoint.End" /> 端点。</param>
+      <exception cref="T:System.ArgumentException">如果 <paramref name="targetRange" /> 来自不同的文本提供程序。</exception>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.ITextRangeProvider.ExpandToEnclosingUnit(System.Windows.Automation.Text.TextUnit)">
+      <summary>将文本范围扩展到指定的文本单位。</summary>
+      <param name="unit">文本单位。</param>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.ITextRangeProvider.FindAttribute(System.Int32,System.Object,System.Boolean)">
+      <summary>返回具有指定特性值的文本范围子集。</summary>
+      <returns>具有匹配特性和特性值的文本范围；否则为 null（在 Microsoft Visual Basic .NET 中为 Nothing）。</returns>
+      <param name="attribute">要搜索的特性。</param>
+      <param name="value">要搜索的属性值。 此值必须与为特性指定的类型匹配。</param>
+      <param name="backward">如果应该返回最后一个匹配的文本范围而不是第一个，则为 true；否则为 false。</param>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.ITextRangeProvider.FindText(System.String,System.Boolean,System.Boolean)">
+      <summary>返回包含指定文本的文本范围子集。</summary>
+      <returns>与指定文本匹配的文本范围；否则为 null（在 Microsoft Visual Basic .NET 中为 Nothing）。</returns>
+      <param name="text">要搜索的文本字符串。</param>
+      <param name="backward">如果应该返回最后一个匹配的文本范围而不是第一个，则为 true；否则为 false。</param>
+      <param name="ignoreCase">如果应该忽略大小写，则为 true；否则为 false。</param>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.ITextRangeProvider.GetAttributeValue(System.Int32)">
+      <summary>检索整个文本范围内指定特性的值。</summary>
+      <returns>检索一个表示指定特性的值的对象。 例如，GetAttributeValue(TextPattern.FontNameAttribute) 将返回一个字符串，该字符串表示文本范围的字体名称，而 GetAttributeValue(TextPattern.IsItalicAttribute) 将返回一个 <see cref="T:System.Boolean" /> 类型的值。 如果指定特性的值在文本范围内会发生变化，则返回 <see cref="F:System.Windows.Automation.TextPattern.MixedAttributeValue" />。 如果提供程序或控件不支持指定的特性，则返回 <see cref="F:System.Windows.Automation.AutomationElement.NotSupported" />。</returns>
+      <param name="attribute">文本特性。</param>
+      <exception cref="T:System.ArgumentException">如果指定的特性无效。</exception>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.ITextRangeProvider.GetBoundingRectangles">
+      <summary>检索由文本范围中每个完全或部分可见的文本行的边框组成的集合。</summary>
+      <returns>文本范围中每个完全或部分可见的文本行的边框组成的数组。 对于退化范围，则为一个空数组。 对于其屏幕坐标完全位于屏幕之外的文本范围、滚动到视图之外的文本范围或者被某个重叠窗口遮盖住的文本范围，为一个空数组。</returns>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.ITextRangeProvider.GetChildren">
+      <summary>检索文本范围内的所有嵌入对象的集合。</summary>
+      <returns>文本范围内的子对象的集合。 与文本范围发生重叠但是并未完全包括在文本范围内的子对象也会包括在该集合中。 如果不存在任何子对象，则返回一个空集合。</returns>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.ITextRangeProvider.GetEnclosingElement">
+      <summary>返回包含该文本范围的最内层控件。</summary>
+      <returns>包含控件，通常是提供该文本范围的文本提供程序。 但是，如果文本提供程序支持表格或超链接这样的子元素，那么包含元素可能为文本提供程序的子代。</returns>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.ITextRangeProvider.GetText(System.Int32)">
+      <summary>检索文本范围的纯文本。</summary>
+      <returns>文本范围的纯文本（可能在指定 <paramref name="maxLength" /> 处截断）。</returns>
+      <param name="maxLength">要返回的字符串的最大长度。 如果没有任何限制，则使用 -1。</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">如果 <paramref name="maxLength" /> 小于 -1。</exception>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.ITextRangeProvider.Move(System.Windows.Automation.Text.TextUnit,System.Int32)">
+      <summary>将文本范围移动指定数量的文本单位。</summary>
+      <returns>实际移动的单位数。 如果新的文本范围端点大于或小于 <see cref="P:System.Windows.Automation.Provider.ITextProvider.DocumentRange" /> 端点，则它可能小于请求移动的单位数。</returns>
+      <param name="unit">文本单位的边界。</param>
+      <param name="count">要移动的文本单位数。 正值表示将文本范围向前移动，负值则表示向后移动文本范围，如果为 0，则不会进行任何移动。</param>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.ITextRangeProvider.MoveEndpointByRange(System.Windows.Automation.Text.TextPatternRangeEndpoint,System.Windows.Automation.Provider.ITextRangeProvider,System.Windows.Automation.Text.TextPatternRangeEndpoint)">
+      <summary>将文本范围的一个端点移动到第二个文本范围的指定端点。</summary>
+      <param name="endpoint">要移动的端点。</param>
+      <param name="targetRange">同一文本提供程序中的另一个范围。</param>
+      <param name="targetEndpoint">另一个范围中的端点。</param>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.ITextRangeProvider.MoveEndpointByUnit(System.Windows.Automation.Text.TextPatternRangeEndpoint,System.Windows.Automation.Text.TextUnit,System.Int32)">
+      <summary>在文档范围内将文本范围的一个端点移动指定数量的文本单位。</summary>
+      <returns>实际移动的单位数，如果移动端点时遇到了文档的开始或结尾，则可能小于请求移动的单位数。</returns>
+      <param name="endpoint">要移动的端点。</param>
+      <param name="unit">移动时使用的文本单位。</param>
+      <param name="count">要移动的单元的数量。 正值表示向前移动端点。 负值表示向后移动端点。 0 值表示不做任何移动。</param>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.ITextRangeProvider.RemoveFromSelection">
+      <summary>从支持多个不连续文本选择的文本容器中的突出显示文本集合中，删除与调用方的 <see cref="F:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start" /> 和 <see cref="F:System.Windows.Automation.Text.TextPatternRangeEndpoint.End" /> 端点对应的突出显示文本部分。</summary>
+      <exception cref="T:System.InvalidOperationException">如果文本提供程序不支持选择多个不连续的文本范围（例如，<see cref="P:System.Windows.Automation.TextPattern.SupportedTextSelection" /> 的值必须为 Multiple）。</exception>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.ITextRangeProvider.ScrollIntoView(System.Boolean)">
+      <summary>导致文本控件垂直滚动，直到文本范围在视区中可见。</summary>
+      <param name="alignToTop">如果文本控件应该滚动以便文本范围与视区顶部对齐，则为 true；如果应该与视区底部对齐，则为 false。</param>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.ITextRangeProvider.Select">
+      <summary>突出显示文本控件中与文本范围的 <see cref="F:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start" /> 和 <see cref="F:System.Windows.Automation.Text.TextPatternRangeEndpoint.End" /> 端点对应的文本。</summary>
+      <exception cref="T:System.InvalidOperationException">在文本控件不支持选择文本时发生。</exception>
+    </member>
+    <member name="T:System.Windows.Automation.Provider.IToggleProvider">
+      <summary>公开一些方法和属性，UI 自动化客户端可通过它们访问循环通过一组状态并在设置之后保持某个状态的控件。</summary>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.IToggleProvider.Toggle">
+      <summary>循环通过控件的多个切换状态。</summary>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.IToggleProvider.ToggleState">
+      <summary>获取控件的切换状态。</summary>
+      <returns>控件的 <see cref="T:System.Windows.Automation.ToggleState" />。</returns>
+    </member>
+    <member name="T:System.Windows.Automation.Provider.ITransformProvider">
+      <summary>公开一些方法和属性，UI 自动化客户端可通过这些方法和属性访问可以在二维空间中移动、调整大小或旋转的控件。</summary>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.ITransformProvider.CanMove">
+      <summary>获取一个值，该值指示控件是否可移动。</summary>
+      <returns>如果元素可以移动，则为 true，否则为 false。</returns>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.ITransformProvider.CanResize">
+      <summary>获取一个值，该值指示 UI 自动化元素是否可以调整大小。</summary>
+      <returns>如果元素可以调整大小，则为 true，否则为 false。</returns>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.ITransformProvider.CanRotate">
+      <summary>获取一个值，该值指示控件是否可旋转。</summary>
+      <returns>如果元素可以旋转，则为 true，否则为 false。</returns>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.ITransformProvider.Move(System.Double,System.Double)">
+      <summary>移动控件。</summary>
+      <param name="x">控件左侧的绝对屏幕坐标。</param>
+      <param name="y">控件顶部的绝对屏幕坐标。</param>
+      <exception cref="T:System.InvalidOperationException">如果 <see cref="P:System.Windows.Automation.Provider.ITransformProvider.CanMove" /> 属性为 false。</exception>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.ITransformProvider.Resize(System.Double,System.Double)">
+      <summary>调整控件大小。</summary>
+      <param name="width">窗口的新宽度（以像素为单位）。</param>
+      <param name="height">窗口的新高度（以像素为单位）。</param>
+      <exception cref="T:System.InvalidOperationException">如果 <see cref="P:System.Windows.Automation.Provider.ITransformProvider.CanResize" /> 属性为 false。</exception>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.ITransformProvider.Rotate(System.Double)">
+      <summary>旋转控件。</summary>
+      <param name="degrees">控件的旋转角度。 正值表示顺时针旋转；负值表示逆时针旋转。</param>
+      <exception cref="T:System.InvalidOperationException">如果 <see cref="P:System.Windows.Automation.Provider.ITransformProvider.CanRotate" /> 属性为 false。</exception>
+    </member>
+    <member name="T:System.Windows.Automation.Provider.IValueProvider">
+      <summary>公开一些方法和属性，UI 自动化客户端可通过这些方法和属性访问具有某个内部值的控件，该内部值不跨跃某个范围而且可以表示为字符串。</summary>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.IValueProvider.IsReadOnly">
+      <summary>获取一个值，该值指定控件的值是否是只读的。</summary>
+      <returns>如果值为只读的，则为 true；如果可以修改它，则为 false。</returns>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.IValueProvider.SetValue(System.String)">
+      <summary>设置控件的值。</summary>
+      <exception cref="T:System.InvalidOperationException">如果向控件传递了格式不正确的区域设置特定信息（如格式不正确的日期）。</exception>
+      <exception cref="T:System.ArgumentException">如果无法将新值从字符串转换为控件可识别的格式。</exception>
+      <exception cref="T:System.Windows.Automation.ElementNotEnabledException">当尝试操作未启用的控件时。</exception>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.IValueProvider.Value">
+      <summary>获取控件的值。</summary>
+      <returns>以字符串形式表示的控件值。</returns>
+    </member>
+    <member name="T:System.Windows.Automation.Provider.IVirtualizedItemProvider">
+      <summary>公开一种方法，以支持虚拟化项控件模式。</summary>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.IVirtualizedItemProvider.Realize">
+      <summary>使虚拟项像 UI 自动化元素一样可完全访问。</summary>
+    </member>
+    <member name="T:System.Windows.Automation.Provider.IWindowProvider">
+      <summary>公开一些方法和属性，UI 自动化客户端可通过它们访问传统图形用户界面 (GUI) 内提供基于窗口的重要功能的控件。</summary>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.IWindowProvider.Close">
+      <summary>尝试关闭窗口。</summary>
+      <exception cref="T:System.InvalidOperationException">当控件无法执行请求的操作时。</exception>
+      <exception cref="T:System.Windows.Automation.ElementNotAvailableException">当目标元素不再可用时（例如，窗口已关闭）。</exception>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.IWindowProvider.InteractionState">
+      <summary>获取窗口的交互状态。</summary>
+      <returns>控件的 <see cref="T:System.Windows.Automation.WindowInteractionState" />。</returns>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.IWindowProvider.IsModal">
+      <summary>获取一个值，该值指定窗口是否为模式窗口。</summary>
+      <returns>如果窗口为模式窗口，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.IWindowProvider.IsTopmost">
+      <summary>获取一个值，该值指定窗口是否为 z 顺序中的最顶层元素。</summary>
+      <returns>如果窗口是最顶层元素，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.IWindowProvider.Maximizable">
+      <summary>获取一个值，该值指定窗口是否可以最大化。</summary>
+      <returns>如果窗口可以最大化，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.IWindowProvider.Minimizable">
+      <summary>获取一个值，该值指定窗口是否可以最小化。</summary>
+      <returns>如果窗口可以最小化，则为 true；否则为 false。</returns>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.IWindowProvider.SetVisualState(System.Windows.Automation.WindowVisualState)">
+      <summary>更改窗口的可视状态。 例如，将窗口最小化或最大化。</summary>
+      <param name="state">所请求的窗口可视状态。</param>
+      <exception cref="T:System.InvalidOperationException">当控件不支持请求的行为时。</exception>
+    </member>
+    <member name="P:System.Windows.Automation.Provider.IWindowProvider.VisualState">
+      <summary>获取窗口的可视状态。</summary>
+      <returns>窗口的可视状态。</returns>
+    </member>
+    <member name="M:System.Windows.Automation.Provider.IWindowProvider.WaitForInputIdle(System.Int32)">
+      <summary>导致调用代码阻止指定的时间或者一直保持在阻止状态直到关联进程进入空闲状态（以首先达到的条件为准）。</summary>
+      <returns>如果窗口已进入空闲状态，则为 true；如果发生超时。则为 false。</returns>
+      <param name="milliseconds">等待关联进程变为空闲的时间（以毫秒为单位）。 最大值为 <see cref="F:System.Int32.MaxValue" />。</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">当传递的参数不是有效的数字时。</exception>
+    </member>
+    <member name="T:System.Windows.Automation.Provider.NavigateDirection">
+      <summary>包含一些值，可使用这些值指定 UI 自动化树内的导航方向。</summary>
+    </member>
+    <member name="F:System.Windows.Automation.Provider.NavigateDirection.FirstChild">
+      <summary>导航方向朝向第一个子级元素。</summary>
+    </member>
+    <member name="F:System.Windows.Automation.Provider.NavigateDirection.LastChild">
+      <summary>导航方向朝向最后一个子级元素。</summary>
+    </member>
+    <member name="F:System.Windows.Automation.Provider.NavigateDirection.NextSibling">
+      <summary>导航方向朝向下一个同级元素。</summary>
+    </member>
+    <member name="F:System.Windows.Automation.Provider.NavigateDirection.Parent">
+      <summary>导航方向朝向父级。</summary>
+    </member>
+    <member name="F:System.Windows.Automation.Provider.NavigateDirection.PreviousSibling">
+      <summary>导航方向朝向上一个同级元素。</summary>
+    </member>
+    <member name="T:System.Windows.Automation.Provider.ProviderOptions">
+      <summary>包含用于指定 UI 自动化提供程序的类型的值。</summary>
+    </member>
+    <member name="F:System.Windows.Automation.Provider.ProviderOptions.ClientSideProvider">
+      <summary>UI 自动化提供程序是一个客户端提供程序。</summary>
+    </member>
+    <member name="F:System.Windows.Automation.Provider.ProviderOptions.NonClientAreaProvider">
+      <summary>UI 自动化提供程序是一个非客户端区域提供程序。</summary>
+    </member>
+    <member name="F:System.Windows.Automation.Provider.ProviderOptions.OverrideProvider">
+      <summary>UI 自动化提供程序重写另一个提供程序。</summary>
+    </member>
+    <member name="F:System.Windows.Automation.Provider.ProviderOptions.ProviderOwnsSetFocus">
+      <summary>UI 自动化提供程序自己处理焦点问题，而且在调用 <see cref="M:System.Windows.Automation.AutomationElement.SetFocus" /> 时不希望 UI 自动化代表它将焦点设置到最靠近的窗口。 此选项通常由提供程序使用，用于那些看起来可获得焦点但实际上不接收 Win32 焦点的窗口，例如菜单和下拉菜单。</summary>
+    </member>
+    <member name="F:System.Windows.Automation.Provider.ProviderOptions.ServerSideProvider">
+      <summary>UI 自动化提供程序是一个服务器端提供程序。</summary>
+    </member>
+    <member name="F:System.Windows.Automation.Provider.ProviderOptions.UseComThreading">
+      <summary>UI “自动化提供程序” 预期调用基于线程规则的 COM。 如果提供程序在单线程单元中，它将只在单线程单元中被调用。 只有服务器端提供程序能使用此选择。</summary>
+    </member>
+  </members>
+</doc>

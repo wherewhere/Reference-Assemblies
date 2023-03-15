@@ -1,0 +1,649 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.Runtime.WindowsRuntime</name>
+  </assembly>
+  <members>
+    <member name="T:System.WindowsRuntimeSystemExtensions">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Proporciona los métodos de extensión para la conversión entre las tareas y las operaciones y acciones asincrónicas de . </summary>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsAsyncAction(System.Threading.Tasks.Task)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Devuelve una acción asincrónica de  que representa una tarea iniciada. </summary>
+      <returns>Una instancia de Windows.Foundation.IAsyncAction que representa la tarea iniciada. </returns>
+      <param name="source">La tarea iniciada. </param>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsAsyncOperation``1(System.Threading.Tasks.Task{``0})">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Devuelve una operación asincrónica de  que representa una tarea iniciada que devuelve un resultado. </summary>
+      <returns>Una instancia de Windows.Foundation.IAsyncOperation&lt;TResult&gt; que representa la tarea iniciada. </returns>
+      <param name="source">La tarea iniciada. </param>
+      <typeparam name="TResult">El tipo que devuelve el resultado. </typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask(Windows.Foundation.IAsyncAction)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Devuelve una tarea que representa una acción asincrónica de . </summary>
+      <returns>Una tarea que representa la operación asincrónica. </returns>
+      <param name="source">Acción asincrónica. </param>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask(Windows.Foundation.IAsyncAction,System.Threading.CancellationToken)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Devuelve una tarea que representa una acción asincrónica de  que puede cancelarse. </summary>
+      <returns>Una tarea que representa la operación asincrónica. </returns>
+      <param name="source">Acción asincrónica. </param>
+      <param name="cancellationToken">Un símbolo (token) que se puede utilizar para solicitar la cancelación de la acción asincrónica. </param>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask``1(Windows.Foundation.IAsyncActionWithProgress{``0})">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Devuelve una tarea que representa una acción asincrónica de . </summary>
+      <returns>Una tarea que representa la operación asincrónica. </returns>
+      <param name="source">Acción asincrónica. </param>
+      <typeparam name="TProgress">El tipo de objeto que proporciona los datos indicadores de progreso. </typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask``1(Windows.Foundation.IAsyncActionWithProgress{``0},System.IProgress{``0})">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Devuelve una tarea que representa una acción asincrónica de  que notifica el progreso. </summary>
+      <returns>Una tarea que representa la operación asincrónica. </returns>
+      <param name="source">Acción asincrónica. </param>
+      <param name="progress">Un objeto que recibe las actualizaciones de progreso. </param>
+      <typeparam name="TProgress">El tipo de objeto que proporciona los datos indicadores de progreso. </typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask``1(Windows.Foundation.IAsyncActionWithProgress{``0},System.Threading.CancellationToken)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Devuelve una tarea que representa una acción asincrónica de  que puede cancelarse. </summary>
+      <returns>Una tarea que representa la operación asincrónica. </returns>
+      <param name="source">Acción asincrónica. </param>
+      <param name="cancellationToken">Un símbolo (token) que se puede utilizar para solicitar la cancelación de la acción asincrónica. </param>
+      <typeparam name="TProgress">El tipo de objeto que proporciona los datos indicadores de progreso. </typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask``1(Windows.Foundation.IAsyncActionWithProgress{``0},System.Threading.CancellationToken,System.IProgress{``0})">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Devuelve una tarea que representa una acción asincrónica de  que notifica el progreso y se puede cancelar.</summary>
+      <returns>Una tarea que representa la operación asincrónica. </returns>
+      <param name="source">Acción asincrónica. </param>
+      <param name="cancellationToken">Un símbolo (token) que se puede utilizar para solicitar la cancelación de la acción asincrónica. </param>
+      <param name="progress">Un objeto que recibe las actualizaciones de progreso. </param>
+      <typeparam name="TProgress">El tipo de objeto que proporciona los datos indicadores de progreso. </typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask``1(Windows.Foundation.IAsyncOperation{``0})">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Devuelve una tarea que representa una operación asincrónica de  que devuelve un resultado. </summary>
+      <returns>Una tarea que representa la operación asincrónica. </returns>
+      <param name="source">La operación asincrónica. </param>
+      <typeparam name="TResult">El tipo de objeto que devuelve el resultado de la operación asincrónica. </typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask``1(Windows.Foundation.IAsyncOperation{``0},System.Threading.CancellationToken)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Devuelve una tarea que representa una operación asincrónica de  que devuelve un resultado y se puede cancelar. </summary>
+      <returns>Una tarea que representa la operación asincrónica. </returns>
+      <param name="source">La operación asincrónica. </param>
+      <param name="cancellationToken">Un símbolo (token) que se puede utilizar para solicitar la cancelación de la operación asincrónica. </param>
+      <typeparam name="TResult">El tipo de objeto que devuelve el resultado de la operación asincrónica. </typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask``2(Windows.Foundation.IAsyncOperationWithProgress{``0,``1})">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Devuelve una tarea que representa una operación asincrónica de  que devuelve un resultado. </summary>
+      <returns>Una tarea que representa la operación asincrónica. </returns>
+      <param name="source">La operación asincrónica. </param>
+      <typeparam name="TResult">El tipo de objeto que devuelve el resultado de la operación asincrónica. </typeparam>
+      <typeparam name="TProgress">El tipo de objeto que proporciona los datos indicadores de progreso. </typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask``2(Windows.Foundation.IAsyncOperationWithProgress{``0,``1},System.IProgress{``1})">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Devuelve una tarea que representa una operación asincrónica de  que devuelve un resultado e informa del progreso. </summary>
+      <returns>Una tarea que representa la operación asincrónica. </returns>
+      <param name="source">La operación asincrónica. </param>
+      <param name="progress">Un objeto que recibe las actualizaciones de progreso. </param>
+      <typeparam name="TResult">El tipo de objeto que devuelve el resultado de la operación asincrónica. </typeparam>
+      <typeparam name="TProgress">El tipo de objeto que proporciona los datos indicadores de progreso. </typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask``2(Windows.Foundation.IAsyncOperationWithProgress{``0,``1},System.Threading.CancellationToken)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Devuelve una tarea que representa una operación asincrónica de  que devuelve un resultado y se puede cancelar. </summary>
+      <returns>Una tarea que representa la operación asincrónica. </returns>
+      <param name="source">La operación asincrónica. </param>
+      <param name="cancellationToken">Un símbolo (token) que se puede utilizar para solicitar la cancelación de la operación asincrónica. </param>
+      <typeparam name="TResult">El tipo de objeto que devuelve el resultado de la operación asincrónica. </typeparam>
+      <typeparam name="TProgress">El tipo de objeto que proporciona los datos indicadores de progreso. </typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask``2(Windows.Foundation.IAsyncOperationWithProgress{``0,``1},System.Threading.CancellationToken,System.IProgress{``1})">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Devuelve una tarea que representa una operación asincrónica de  que devuelve un resultado, informa del progreso y se puede cancelar. </summary>
+      <returns>Una tarea que representa la operación asincrónica. </returns>
+      <param name="source">La operación asincrónica. </param>
+      <param name="cancellationToken">Un símbolo (token) que se puede utilizar para solicitar la cancelación de la operación asincrónica. </param>
+      <param name="progress">Un objeto que recibe las actualizaciones de progreso. </param>
+      <typeparam name="TResult">El tipo de objeto que devuelve el resultado de la operación asincrónica. </typeparam>
+      <typeparam name="TProgress">El tipo de objeto que proporciona los datos indicadores de progreso. </typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.GetAwaiter(Windows.Foundation.IAsyncAction)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Devuelve un objeto que espera una acción asincrónica. </summary>
+      <returns>Un objeto que espera la acción asincrónica especificada. </returns>
+      <param name="source">La acción asincrónica que se espera. </param>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.GetAwaiter``1(Windows.Foundation.IAsyncActionWithProgress{``0})">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Devuelve un objeto que espera una acción asincrónica que notifica el progreso. </summary>
+      <returns>Un objeto que espera la acción asincrónica especificada. </returns>
+      <param name="source">La acción asincrónica que se espera. </param>
+      <typeparam name="TProgress">El tipo de objeto que proporciona los datos indicadores de progreso. </typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.GetAwaiter``1(Windows.Foundation.IAsyncOperation{``0})">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Devuelve un objeto que espera una operación asincrónica que devuelve un resultado.</summary>
+      <returns>Un objeto que espera la acción asincrónica especificada. </returns>
+      <param name="source">La operación asincrónica que se espera. </param>
+      <typeparam name="TResult">El tipo de objeto que devuelve el resultado de la operación asincrónica. </typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.GetAwaiter``2(Windows.Foundation.IAsyncOperationWithProgress{``0,``1})">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Devuelve un objeto que espera una operación asincrónica que notifica el progreso y devuelve un resultado. </summary>
+      <returns>Un objeto que espera la acción asincrónica especificada. </returns>
+      <param name="source">La operación asincrónica que se espera. </param>
+      <typeparam name="TResult">El tipo de objeto que devuelve el resultado de la operación asincrónica.</typeparam>
+      <typeparam name="TProgress">El tipo de objeto que proporciona los datos indicadores de progreso. </typeparam>
+    </member>
+    <member name="T:System.IO.WindowsRuntimeStorageExtensions">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Contiene métodos de extensión para las interfaces IStorageFile y IStorageFolder en  al desarrollar aplicaciones  para Windows.</summary>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStorageExtensions.OpenStreamForReadAsync(Windows.Storage.IStorageFile)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Recupera una secuencia para leer de un archivo especificado.</summary>
+      <returns>Una tarea que representa la operación de lectura asincrónica.</returns>
+      <param name="windowsRuntimeFile">Objecto IStorageFile desde el que se va a leer.</param>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStorageExtensions.OpenStreamForReadAsync(Windows.Storage.IStorageFolder,System.String)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Recupera una secuencia para leer de un archivo en la carpeta principal especificada.</summary>
+      <returns>Una tarea que representa la operación de lectura asincrónica.</returns>
+      <param name="rootDirectory">El objeto IStorageFolder que contiene el archivo del que se va a leer.</param>
+      <param name="relativePath">La ruta de acceso, relativa a la carpeta raíz, para el archivo del que se va a leer.</param>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStorageExtensions.OpenStreamForWriteAsync(Windows.Storage.IStorageFile)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Recupera una secuencia para escribir en un archivo especificado.</summary>
+      <returns>Una tarea que representa la operación de escritura asincrónica.</returns>
+      <param name="windowsRuntimeFile">Objecto IStorageFile al que se va a escribir.</param>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStorageExtensions.OpenStreamForWriteAsync(Windows.Storage.IStorageFolder,System.String,Windows.Storage.CreationCollisionOption)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Recupera una secuencia para escribir en un archivo en la carpeta principal especificada.</summary>
+      <returns>Una tarea que representa la operación de escritura asincrónica.</returns>
+      <param name="rootDirectory">El objeto IStorageFolder que contiene el archivo al que se va a escribir.</param>
+      <param name="relativePath">La ruta de acceso, relativa a la carpeta raíz, para el archivo al que se va a escribir.</param>
+      <param name="creationCollisionOption">El valor de enumeración CreationCollisionOption que especifica el comportamiento que se utiliza cuando el nombre del archivo que se va a crear es el mismo que el nombre de un archivo existente.</param>
+    </member>
+    <member name="T:System.IO.WindowsRuntimeStreamExtensions">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Contiene métodos de extensión para la conversión entre las secuencias en y las secuencias administradas en .</summary>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStreamExtensions.AsInputStream(System.IO.Stream)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Convierte una secuencia administrada en el  en un flujo de entrada en el .</summary>
+      <returns>Un objeto IInputStream que representa la secuencia convertida.</returns>
+      <param name="stream">La secuencia que se va a convertir.</param>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStreamExtensions.AsOutputStream(System.IO.Stream)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Convierte una secuencia administrada en el  en un flujo de salida en el .</summary>
+      <returns>Un objeto IOutputStream que representa la secuencia convertida.</returns>
+      <param name="stream">La secuencia que se va a convertir.</param>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStreamExtensions.AsStream(Windows.Storage.Streams.IRandomAccessStream)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Convierte una secuencia de acceso aleatorio en el  en una secuencia administrada en el .</summary>
+      <returns>La secuencia convertida.</returns>
+      <param name="windowsRuntimeStream">Objeto IRandomAccessStream que se va a convertir.</param>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStreamExtensions.AsStream(Windows.Storage.Streams.IRandomAccessStream,System.Int32)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Convierte una secuencia de acceso aleatorio en el  en una secuencia administrada en el  mediante el tamaño de búfer especificado.</summary>
+      <returns>La secuencia convertida.</returns>
+      <param name="windowsRuntimeStream">Objeto IRandomAccessStream que se va a convertir.</param>
+      <param name="bufferSize">El tamaño, en bytes, del búfer. Este valor no puede ser negativo, pero puede ser cero (0) para deshabilitar el almacenamiento en búfer.</param>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStreamExtensions.AsStreamForRead(Windows.Storage.Streams.IInputStream)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Convierte una secuencia de entrada en el  en una secuencia administrada en el .</summary>
+      <returns>La secuencia convertida.</returns>
+      <param name="windowsRuntimeStream">Objeto IInputStream que se va a convertir.</param>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStreamExtensions.AsStreamForRead(Windows.Storage.Streams.IInputStream,System.Int32)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Convierte una secuencia de flujo de entrada en el  en una secuencia administrada en el  mediante el tamaño de búfer especificado.</summary>
+      <returns>La secuencia convertida.</returns>
+      <param name="windowsRuntimeStream">Objeto IInputStream que se va a convertir.</param>
+      <param name="bufferSize">El tamaño, en bytes, del búfer. Este valor no puede ser negativo, pero puede ser cero (0) para deshabilitar el almacenamiento en búfer.</param>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStreamExtensions.AsStreamForWrite(Windows.Storage.Streams.IOutputStream)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Convierte una secuencia de salida en el  en una secuencia administrada en el .</summary>
+      <returns>La secuencia convertida.</returns>
+      <param name="windowsRuntimeStream">Objeto IOutputStream que se va a convertir.</param>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStreamExtensions.AsStreamForWrite(Windows.Storage.Streams.IOutputStream,System.Int32)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Convierte una secuencia de flujo de salida en el  en una secuencia administrada en el  mediante el tamaño de búfer especificado.</summary>
+      <returns>La secuencia convertida.</returns>
+      <param name="windowsRuntimeStream">Objeto IOutputStream que se va a convertir.</param>
+      <param name="bufferSize">El tamaño, en bytes, del búfer. Este valor no puede ser negativo, pero puede ser cero (0) para deshabilitar el almacenamiento en búfer.</param>
+    </member>
+    <member name="T:System.Runtime.InteropServices.WindowsRuntime.AsyncInfo">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Proporciona métodos de generador para crear representaciones de tareas gestionadas que son compatibles con las acciones asincrónicas y las operaciones de . </summary>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.AsyncInfo.Run``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}})">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Crea e inicia una operación asincrónica de  mediante el uso de una función que genera una tarea iniciada que devuelve resultados. La tarea puede admitir la cancelación. </summary>
+      <returns>Una instancia iniciada de Windows.Foundation.IAsyncOperation&lt;TResult&gt; que representa la tarea que genera <paramref name="taskProvider" />. </returns>
+      <param name="taskProvider">Un delegado que representa la función que crea e inicia la tarea. La tarea iniciada está representada por la operación asincrónica  que se devuelve. La función recibe un símbolo (token) de cancelación que la tarea puede supervisar para que se le notifiquen las solicitudes de cancelación; puede pasar por alto el símbolo (token) si la tarea no admite cancelación. </param>
+      <typeparam name="TResult">El tipo que devuelve el resultado. </typeparam>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.AsyncInfo.Run(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task})">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Crea e inicia una acción asincrónica de  mediante el uso de una función que genera una tarea iniciada. La tarea puede admitir la cancelación. </summary>
+      <returns>Una instancia iniciada de Windows.Foundation.IAsyncAction que representa la tarea que genera  <paramref name="taskProvider" />. </returns>
+      <param name="taskProvider">Un delegado que representa la función que crea e inicia la tarea. La tarea iniciada está representada por la acción asincrónica  que se devuelve. La función recibe un símbolo (token) de cancelación que la tarea puede supervisar para que se le notifiquen las solicitudes de cancelación; puede pasar por alto el símbolo (token) si la tarea no admite cancelación. </param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.AsyncInfo.Run``2(System.Func{System.Threading.CancellationToken,System.IProgress{``1},System.Threading.Tasks.Task{``0}})">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Crea e inicia una operación asincrónica de  que incluye actualizaciones de progreso mediante el uso de una función que genera una tarea iniciada que devuelve resultados. La tarea puede admitir la cancelación y el informe de progreso. </summary>
+      <returns>Una instancia iniciada de Windows.Foundation.IAsyncOperationWithProgress&lt;TResult,TProgress&gt; que representa la tarea que genera <paramref name="taskProvider" />. </returns>
+      <param name="taskProvider">Un delegado que representa la función que crea e inicia la tarea. La tarea iniciada está representada por la acción asincrónica  que se devuelve. La función se pasa un símbolo (token) de cancelación que puede supervisar la tarea que se le notifique de las solicitudes de cancelación y una interfaz para informar sobre el progreso. Puede pasar por alto cualquiera de los dos elementos (o ambos) si la tarea no admite cancelación o informes sobre progreso. </param>
+      <typeparam name="TResult">El tipo que devuelve el resultado. </typeparam>
+      <typeparam name="TProgress">El tipo que se utiliza para las notificaciones de progreso. </typeparam>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.AsyncInfo.Run``1(System.Func{System.Threading.CancellationToken,System.IProgress{``0},System.Threading.Tasks.Task})">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Crea e inicia una acción asincrónica de  que incluye actualizaciones de progreso mediante el uso de una función que genera una tarea iniciada. La tarea puede admitir la cancelación y el informe de progreso. </summary>
+      <returns>Una instancia iniciada de Windows.Foundation.IAsyncActionWithProgress&lt;TProgress&gt; que representa la tarea que genera <paramref name="taskProvider" />. </returns>
+      <param name="taskProvider">Un delegado que representa la función que crea e inicia la tarea. La tarea iniciada está representada por la acción asincrónica  que se devuelve. La función se pasa un símbolo (token) de cancelación que puede supervisar la tarea que se le notifique de las solicitudes de cancelación y una interfaz para informar sobre el progreso. Puede pasar por alto cualquiera de los dos elementos (o ambos) si la tarea no admite cancelación o informes sobre progreso. </param>
+      <typeparam name="TProgress">El tipo que se utiliza para las notificaciones de progreso. </typeparam>
+    </member>
+    <member name="T:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBuffer">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Proporciona una implementación de la interfaz IBuffer (Windows.Storage.Streams.IBuffer) y todas las interfaces necesarias adicionales. </summary>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBuffer.Create(System.Byte[],System.Int32,System.Int32,System.Int32)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Devuelve una interfaz Windows.Storage.Streams.IBuffer que contiene un intervalo especificado de bytes copiados desde una matriz de bytes. Si la capacidad especificada es mayor que el número de bytes copiados, el resto del búfer se rellena con ceros. </summary>
+      <returns>Interfaz de Windows.Storage.Streams.IBuffer que contiene el intervalo especificado de bytes. Si <paramref name="capacity" /> es mayor que <paramref name="length" />, el resto del búfer se rellena con ceros. </returns>
+      <param name="data">La matriz de bytes desde donde se va a copiar. </param>
+      <param name="offset">Desplazamiento en <paramref name="data" /> desde donde se inicia la copia. </param>
+      <param name="length">Número de bytes que se van a copiar. </param>
+      <param name="capacity">El número máximo de bytes que puede contener el búfer; si es mayor que <paramref name="length" />, el resto de los bytes del búfer se inicializan en 0 (cero).</param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBuffer.Create(System.Int32)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Devuelve una interfaz de Windows.Storage.Streams.IBuffer vacía que tiene la capacidad máxima especificada. </summary>
+      <returns>Interfaz de Windows.Storage.Streams.IBuffer que tiene la capacidad especificada y una propiedad Lenght igual a 0 (cero). </returns>
+      <param name="capacity">Número de bytes máximo que el búfer puede contener. </param>
+    </member>
+    <member name="T:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Proporciona los métodos de extensión para el funcionamiento en búferes de  (interfaz de Windows.Storage.Streams.IBuffer). </summary>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.AsBuffer(System.Byte[])">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Devuelve una interfaz de Windows.Storage.Streams.IBuffer que representa la matriz de bytes especificada. </summary>
+      <returns>Interfaz de Windows.Storage.Streams.IBuffer que representa la matriz de bytes especificada. </returns>
+      <param name="source">La matriz que se va a representar. </param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.AsBuffer(System.Byte[],System.Int32,System.Int32)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Devuelve una interfaz de Windows.Storage.Streams.IBuffer que representa un intervalo de bytes en la matriz de bytes especificada. </summary>
+      <returns>Una interfaz de IBuffer que representa el intervalo especificado de bytes in <paramref name="source" />.</returns>
+      <param name="source">La matriz que contiene el intervalo de bytes que se representa mediante el IBuffer. </param>
+      <param name="offset">El desplazamiento en <paramref name="source" /> donde empieza el intervalo. </param>
+      <param name="length">Longitud del rango que representa el IBuffer. </param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.AsBuffer(System.Byte[],System.Int32,System.Int32,System.Int32)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Devuelve una interfaz de Windows.Storage.Streams.IBuffer que representa un intervalo de bytes en la matriz de bytes especificada. Opcionalmente, establece la propiedad Lenght de IBuffer a un valor menor que la capacidad. </summary>
+      <returns>Interfaz de IBuffer que representa el rango de bytes especificado en <paramref name="source" /> y que tiene el valor de la propiedad Length especificado. </returns>
+      <param name="source">La matriz que contiene el intervalo de bytes que se representa mediante el IBuffer. </param>
+      <param name="offset">El desplazamiento en <paramref name="source" /> donde empieza el intervalo. </param>
+      <param name="length">El valor de la propiedad Lenght del IBuffer. </param>
+      <param name="capacity">Tamaño del rango que representa el IBuffer. La propiedad Capacity del IBuffer se establece en este valor. </param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.AsStream(Windows.Storage.Streams.IBuffer)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Devuelve una secuencia que representa la misma memoria que representa la interfaz de Windows.Storage.Streams.IBuffer. </summary>
+      <returns>Una secuencia que representa la misma memoria que representa la interfaz de Windows.Storage.Streams.IBuffer. </returns>
+      <param name="source">IBuffer que se va a representar como secuencia. </param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.CopyTo(System.Byte[],System.Int32,Windows.Storage.Streams.IBuffer,System.UInt32,System.Int32)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Copia bytes de la matriz de origen al búfer de destino (Windows.Storage.Streams.IBuffer) y que especifica el índice de inicio en la matriz de origen, el índice de inicio del búfer de destino y el número de bytes que se van a copiar. El método no actualiza la propiedad Length del búfer de destino. </summary>
+      <param name="source">La matriz de la que copiar datos. </param>
+      <param name="sourceIndex">El índice de <paramref name="source" /> del que comenzar a copiar datos. </param>
+      <param name="destination">El búfer al que se van a copiar datos. </param>
+      <param name="destinationIndex">El índice de <paramref name="destination" /> al que se comenzará a copiar datos. </param>
+      <param name="count">Número de bytes que se van a copiar. </param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.CopyTo(System.Byte[],Windows.Storage.Streams.IBuffer)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Copia todos los bytes de la matriz de origen al búfer de destino (Windows.Storage.Streams.IBuffer), empezando en la posición 0 (cero) en ambos. El método no actualiza la longitud del búfer de destino. </summary>
+      <param name="source">La matriz de la que copiar datos. </param>
+      <param name="destination">El búfer al que se van a copiar datos. </param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.CopyTo(Windows.Storage.Streams.IBuffer,System.Byte[])">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Copia todos los bytes de la búfer de origen (Windows.Storage.Streams.IBuffer) a la matriz de destino, empezando en la posición 0 (cero) en ambos. </summary>
+      <param name="source">El búfer del que se van a copiar datos. </param>
+      <param name="destination">La matriz en la que se van a copiar datos. </param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.CopyTo(Windows.Storage.Streams.IBuffer,System.UInt32,System.Byte[],System.Int32,System.Int32)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Copia bytes del búfer de origen (Windows.Storage.Streams.IBuffer) a la matriz de destino y que especifica el índice de inicio en el búfer de origen, el índice de inicio de la matriz de destino y el número de bytes que se van a copiar. </summary>
+      <param name="source">El búfer del que se van a copiar datos. </param>
+      <param name="sourceIndex">El índice de <paramref name="source" /> del que comenzar a copiar datos. </param>
+      <param name="destination">La matriz en la que se van a copiar datos. </param>
+      <param name="destinationIndex">El índice de <paramref name="destination" /> al que se comenzará a copiar datos. </param>
+      <param name="count">Número de bytes que se van a copiar. </param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.CopyTo(Windows.Storage.Streams.IBuffer,System.UInt32,Windows.Storage.Streams.IBuffer,System.UInt32,System.UInt32)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Copia bytes del búfer de origen (Windows.Storage.Streams.IBuffer) al búfer de destino y que especifica el índice de inicio en el origen, el índice de inicio en el destino y el número de bytes que se van a copiar.</summary>
+      <param name="source">El búfer del que se van a copiar datos. </param>
+      <param name="sourceIndex">El índice de <paramref name="source" /> del que comenzar a copiar datos. </param>
+      <param name="destination">El búfer al que se van a copiar datos. </param>
+      <param name="destinationIndex">El índice de <paramref name="destination" /> al que se comenzará a copiar datos. </param>
+      <param name="count">Número de bytes que se van a copiar. </param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.CopyTo(Windows.Storage.Streams.IBuffer,Windows.Storage.Streams.IBuffer)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Copia todos los bytes de la búfer de origen (Windows.Storage.Streams.IBuffer) al búfer de destino, empezando en la posición 0 (cero) en ambos. </summary>
+      <param name="source">Búfer de origen. </param>
+      <param name="destination">Búfer de destino. </param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.GetByte(Windows.Storage.Streams.IBuffer,System.UInt32)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Devuelve el byte en el desplazamiento especificado en la interfaz Windows.Storage.Streams.IBuffer especificada.</summary>
+      <returns>El byte en el desplazamiento especificado. </returns>
+      <param name="source">El búfer del que se va a obtener el byte. </param>
+      <param name="byteOffset">Desplazamiento del byte. </param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.GetWindowsRuntimeBuffer(System.IO.MemoryStream)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Devuelve una interfaz Windows.Storage.Streams.IBuffer que representa una memoria igual a la secuencia de memoria especificada. </summary>
+      <returns>Interfaz de Windows.Storage.Streams.IBuffer que está respaldado por la misma memoria que respalda la secuencia de memoria especificada.</returns>
+      <param name="underlyingStream">La secuencia que proporciona la memoria de respaldo para IBuffer. </param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.GetWindowsRuntimeBuffer(System.IO.MemoryStream,System.Int32,System.Int32)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Devuelve una interfaz Windows.Storage.Streams.IBuffer que representa una región dentro de la memoria que representa la secuencia de memoria especificada. </summary>
+      <returns>Interfaz de Windows.Storage.Streams.IBuffer que está respaldada por una región dentro en la misma memoria que respalda la secuencia de memoria especificada. </returns>
+      <param name="underlyingStream">La secuencia que comparte memoria con IBuffer. </param>
+      <param name="positionInStream">La posición de la región de memoria compartida en <paramref name="underlyingStream" />. </param>
+      <param name="length">El tamaño máximo de la región de memoria compartida. Si el número de bytes en <paramref name="underlyingStream" />, comenzando en <paramref name="positionInStream" />, es menor que <paramref name="length" />, el IBuffer que se devuelve representa solo los bytes disponibles. </param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.IsSameData(Windows.Storage.Streams.IBuffer,Windows.Storage.Streams.IBuffer)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Devuelve un valor que indica si dos búferes (objetos Windows.Storage.Streams.IBuffer) representan la misma región de memoria subyacente. </summary>
+      <returns>True si las regiones de memoria que se representan mediante dos búferes tienen el mismo punto de partida; de lo contrario, false. </returns>
+      <param name="buffer">Búfer principal. </param>
+      <param name="otherBuffer">Búfer secundario. </param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.ToArray(Windows.Storage.Streams.IBuffer)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Devuelve una matriz nueva que se crea a partir del contenido del búfer especificado (Windows.Storage.Streams.IBuffer). El tamaño de la matriz es el valor de la propiedad Length del IBuffer. </summary>
+      <returns>La matriz de bytes que contiene los bytes en el IBuffer especificado, comenzando en el desplazamiento 0 (cero) y que incluye un número de bytes igual al valor de la propiedad Length del IBuffer. </returns>
+      <param name="source">El búfer con cuyo contenido se rellena la nueva matriz. </param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.ToArray(Windows.Storage.Streams.IBuffer,System.UInt32,System.Int32)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Devuelve una nueva matriz que se crea a partir de los contenidos del búfer especificado (Windows.Storage.Streams.IBuffer), comenzando en un desplazamiento especificado y que incluye un número especificado de bytes. </summary>
+      <returns>Una matriz de bytes que contiene el rango especificado de bytes. </returns>
+      <param name="source">El búfer con cuyo contenido se rellena la nueva matriz. </param>
+      <param name="sourceIndex">El índice de <paramref name="source" /> del que comenzar a copiar datos. </param>
+      <param name="count">Número de bytes que se van a copiar. </param>
+    </member>
+    <member name="T:Windows.Foundation.Point">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Representa un par de coordenadas x e y en un espacio bidimensional. También puede representar un punto lógico para determinados usos de propiedad.</summary>
+    </member>
+    <member name="M:Windows.Foundation.Point.#ctor(System.Double,System.Double)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Inicializa una estructura <see cref="T:Windows.Foundation.Point" /> que contiene los valores especificados. </summary>
+      <param name="x">Valor de la coordenada X de la estructura <see cref="T:Windows.Foundation.Point" />. </param>
+      <param name="y">Valor de la coordenada Y de la estructura <see cref="T:Windows.Foundation.Point" />. </param>
+    </member>
+    <member name="M:Windows.Foundation.Point.Equals(System.Object)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Determina si el objeto especificado es una estructura <see cref="T:Windows.Foundation.Point" /> y si contiene los mismos valores que esta estructura <see cref="T:Windows.Foundation.Point" />. </summary>
+      <returns>Es true si <paramref name="obj" /> es una <see cref="T:Windows.Foundation.Point" /> y contiene los mismos valores de <see cref="P:Windows.Foundation.Point.X" /> y <see cref="P:Windows.Foundation.Point.Y" /> que esta <see cref="T:Windows.Foundation.Point" />; en caso contrario, es false.</returns>
+      <param name="o">Objeto que se compara.</param>
+    </member>
+    <member name="M:Windows.Foundation.Point.Equals(Windows.Foundation.Point)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Compara dos estructuras <see cref="T:Windows.Foundation.Point" /> para determinar si son iguales.</summary>
+      <returns>true si las dos estructuras <see cref="T:Windows.Foundation.Point" /> contienen los mismos valores <see cref="P:Windows.Foundation.Point.X" /> y <see cref="P:Windows.Foundation.Point.Y" />; de lo contrario, false.</returns>
+      <param name="value">Punto que se va a comparar con esta instancia.</param>
+    </member>
+    <member name="M:Windows.Foundation.Point.GetHashCode">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Devuelve el código hash de este objeto <see cref="T:Windows.Foundation.Point" />.</summary>
+      <returns>Código hash para esta estructura <see cref="T:Windows.Foundation.Point" />.</returns>
+    </member>
+    <member name="M:Windows.Foundation.Point.op_Equality(Windows.Foundation.Point,Windows.Foundation.Point)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Compara dos estructuras <see cref="T:Windows.Foundation.Point" /> para determinar si son iguales.</summary>
+      <returns>true si los valores <see cref="P:Windows.Foundation.Point.X" /> y <see cref="P:Windows.Foundation.Point.Y" /> de <paramref name="point1" /> y <paramref name="point2" /> son iguales; de lo contrario, false.</returns>
+      <param name="point1">La primera estructura <see cref="T:Windows.Foundation.Point" /> que se va a comparar.</param>
+      <param name="point2">La segunda estructura <see cref="T:Windows.Foundation.Point" /> que se va a comparar.</param>
+    </member>
+    <member name="M:Windows.Foundation.Point.op_Inequality(Windows.Foundation.Point,Windows.Foundation.Point)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Compara dos estructuras <see cref="T:Windows.Foundation.Point" /> para determinar si no son iguales.</summary>
+      <returns>Es true si <paramref name="point1" /> y <paramref name="point2" /> tienen diferentes valores <see cref="P:Windows.Foundation.Point.X" /> o <see cref="P:Windows.Foundation.Point.Y" />; false si <paramref name="point1" /> y <paramref name="point2" /> tienen los mismos valores <see cref="P:Windows.Foundation.Point.X" /> y <see cref="P:Windows.Foundation.Point.Y" />.</returns>
+      <param name="point1">Primer punto que se va a comparar.</param>
+      <param name="point2">Segundo punto que se va a comparar.</param>
+    </member>
+    <member name="M:Windows.Foundation.Point.System#IFormattable#ToString(System.String,System.IFormatProvider)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Para obtener una descripción de este miembro, vea <see cref="M:System.IFormattable.ToString(System.String,System.IFormatProvider)" />.</summary>
+      <returns>Cadena que contiene el valor de la instancia actual con el formato especificado.</returns>
+      <param name="format">Cadena que especifica el formato que se va a utilizar. -O bien- null para utilizar el formato predeterminado que se define para el tipo de la implementación de IFormattable. </param>
+      <param name="provider">El IFormatProvider que se va a utilizar para dar formato al valor. -O bien- null para obtener la información de formato para valores numéricos de la configuración regional actual del sistema operativo. </param>
+    </member>
+    <member name="M:Windows.Foundation.Point.ToString">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Crea una representación de tipo <see cref="T:System.String" /> de este objeto <see cref="T:Windows.Foundation.Point" />. </summary>
+      <returns>
+        <see cref="T:System.String" /> que contiene los valores de <see cref="P:Windows.Foundation.Point.X" /> e <see cref="P:Windows.Foundation.Point.Y" /> de esta estructura <see cref="T:Windows.Foundation.Point" />.</returns>
+    </member>
+    <member name="M:Windows.Foundation.Point.ToString(System.IFormatProvider)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Crea una representación de tipo <see cref="T:System.String" /> de este objeto <see cref="T:Windows.Foundation.Point" />. </summary>
+      <returns>
+        <see cref="T:System.String" /> que contiene los valores de <see cref="P:Windows.Foundation.Point.X" /> e <see cref="P:Windows.Foundation.Point.Y" /> de esta estructura <see cref="T:Windows.Foundation.Point" />.</returns>
+      <param name="provider">Información de formato específica de la referencia cultural.</param>
+    </member>
+    <member name="P:Windows.Foundation.Point.X">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Obtiene o establece el valor de la coordenada <see cref="P:Windows.Foundation.Point.X" /> de esta estructura <see cref="T:Windows.Foundation.Point" />. </summary>
+      <returns>Valor de la coordenada <see cref="P:Windows.Foundation.Point.X" /> de esta estructura <see cref="T:Windows.Foundation.Point" />. El valor predeterminado es 0.</returns>
+    </member>
+    <member name="P:Windows.Foundation.Point.Y">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Obtiene o establece el valor de la coordenada <see cref="P:Windows.Foundation.Point.Y" /> de esta estructura <see cref="T:Windows.Foundation.Point" />. </summary>
+      <returns>Valor de la coordenada <see cref="P:Windows.Foundation.Point.Y" /> de esta estructura <see cref="T:Windows.Foundation.Point" />.  El valor predeterminado es 0.</returns>
+    </member>
+    <member name="T:Windows.Foundation.Rect">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Describe el ancho, el alto y el punto de origen de un rectángulo. </summary>
+    </member>
+    <member name="M:Windows.Foundation.Rect.#ctor(System.Double,System.Double,System.Double,System.Double)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Inicializa una estructura <see cref="T:Windows.Foundation.Rect" /> que tiene las coordenadas X e Y especificadas, así como el ancho y alto especificados. </summary>
+      <param name="x">Coordenada X de la esquina superior izquierda del rectángulo.</param>
+      <param name="y">Coordenada Y de la esquina superior izquierda del rectángulo.</param>
+      <param name="width">Ancho del rectángulo.</param>
+      <param name="height">Alto del rectángulo.</param>
+    </member>
+    <member name="M:Windows.Foundation.Rect.#ctor(Windows.Foundation.Point,Windows.Foundation.Point)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Inicializa una estructura <see cref="T:Windows.Foundation.Rect" /> que es justamente lo suficientemente grande como para contener los dos puntos especificados. </summary>
+      <param name="point1">Primer punto que debe contener el nuevo rectángulo.</param>
+      <param name="point2">Segundo punto que debe contener el nuevo rectángulo.</param>
+    </member>
+    <member name="M:Windows.Foundation.Rect.#ctor(Windows.Foundation.Point,Windows.Foundation.Size)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Inicializa una estructura <see cref="T:Windows.Foundation.Rect" /> basada en un origen y un tamaño. </summary>
+      <param name="location">Origen del nuevo objeto <see cref="T:Windows.Foundation.Rect" />.</param>
+      <param name="size">Tamaño del nuevo objeto <see cref="T:Windows.Foundation.Rect" />.</param>
+    </member>
+    <member name="P:Windows.Foundation.Rect.Bottom">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Obtiene el valor del eje Y de la parte inferior del rectángulo. </summary>
+      <returns>Valor del eje Y de la parte inferior del rectángulo. Si el rectángulo está vacío, el valor es <see cref="F:System.Double.NegativeInfinity" />.</returns>
+    </member>
+    <member name="M:Windows.Foundation.Rect.Contains(Windows.Foundation.Point)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Indica si el rectángulo descrito por <see cref="T:Windows.Foundation.Rect" /> contiene el punto especificado.</summary>
+      <returns>true si el rectángulo descrito por <see cref="T:Windows.Foundation.Rect" /> contiene el punto especificado; de lo contrario, false.</returns>
+      <param name="point">Punto que se va a comprobar.</param>
+    </member>
+    <member name="P:Windows.Foundation.Rect.Empty">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Obtiene un valor especial que representa un rectángulo sin posición ni área. </summary>
+      <returns>Rectángulo vacío, que tiene los valores de las propiedades <see cref="P:Windows.Foundation.Rect.X" /> y <see cref="P:Windows.Foundation.Rect.Y" /> de <see cref="F:System.Double.PositiveInfinity" />, así como los valores de las propiedades <see cref="P:Windows.Foundation.Rect.Width" /> y <see cref="P:Windows.Foundation.Rect.Height" /> de <see cref="F:System.Double.NegativeInfinity" />.</returns>
+    </member>
+    <member name="M:Windows.Foundation.Rect.Equals(System.Object)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Indica si el objeto especificado es igual que el actual objeto <see cref="T:Windows.Foundation.Rect" />.</summary>
+      <returns>true si <paramref name="o" /> es <see cref="T:Windows.Foundation.Rect" /> y tiene los mismos valores de x,y,width,height que el objeto <see cref="T:Windows.Foundation.Rect" /> actual; en caso contrario, false.</returns>
+      <param name="o">Objeto que se va a comparar con el rectángulo actual.</param>
+    </member>
+    <member name="M:Windows.Foundation.Rect.Equals(Windows.Foundation.Rect)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Indica si el objeto <see cref="T:Windows.Foundation.Rect" /> especificado es igual al objeto <see cref="T:Windows.Foundation.Rect" /> actual. </summary>
+      <returns>true si la <see cref="T:Windows.Foundation.Rect" /> especificada tiene los mismos valores de propiedad x,y,width,height que el objeto <see cref="T:Windows.Foundation.Rect" /> actual; en caso contrario, false.</returns>
+      <param name="value">Rectángulo que se va a comparar con el rectángulo actual.</param>
+    </member>
+    <member name="M:Windows.Foundation.Rect.GetHashCode">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Crea un código hash para <see cref="T:Windows.Foundation.Rect" />. </summary>
+      <returns>Código hash para la estructura <see cref="T:Windows.Foundation.Rect" /> actual.</returns>
+    </member>
+    <member name="P:Windows.Foundation.Rect.Height">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Obtiene o establece el alto del rectángulo. </summary>
+      <returns>Valor que representa el alto del rectángulo. El valor predeterminado es 0.</returns>
+    </member>
+    <member name="M:Windows.Foundation.Rect.Intersect(Windows.Foundation.Rect)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Busca la intersección del rectángulo representado por el objeto <see cref="T:Windows.Foundation.Rect" /> actual y el rectángulo representado por el objeto <see cref="T:Windows.Foundation.Rect" /> especificado, y almacena el resultado como el objeto <see cref="T:Windows.Foundation.Rect" /> actual. </summary>
+      <param name="rect">Rectángulo que se va a intersecar con el rectángulo actual.</param>
+    </member>
+    <member name="P:Windows.Foundation.Rect.IsEmpty">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Obtiene un valor que indica si el rectángulo es el rectángulo de la propiedad <see cref="P:Windows.Foundation.Rect.Empty" />.</summary>
+      <returns>Es true si el rectángulo es el rectángulo <see cref="P:Windows.Foundation.Rect.Empty" />; en caso contrario, es false.</returns>
+    </member>
+    <member name="P:Windows.Foundation.Rect.Left">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Obtiene el valor del eje X del lado izquierdo del rectángulo. </summary>
+      <returns>Valor del eje X del lado izquierdo del rectángulo.</returns>
+    </member>
+    <member name="M:Windows.Foundation.Rect.op_Equality(Windows.Foundation.Rect,Windows.Foundation.Rect)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Compara dos estructuras <see cref="T:Windows.Foundation.Rect" /> para determinar si son iguales.</summary>
+      <returns>true si las estructuras <see cref="T:Windows.Foundation.Rect" /> tienen los mismos valores de propiedad x,y,width,height; en caso contrario, false.</returns>
+      <param name="rect1">Primer rectángulo que se va a comparar.</param>
+      <param name="rect2">Segundo rectángulo que se va a comparar.</param>
+    </member>
+    <member name="M:Windows.Foundation.Rect.op_Inequality(Windows.Foundation.Rect,Windows.Foundation.Rect)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Compara la desigualdad de dos estructuras <see cref="T:Windows.Foundation.Rect" />.  </summary>
+      <returns>true si las estructuras <see cref="T:Windows.Foundation.Rect" /> no tienen los mismos valores de propiedad x,y,width,height; en caso contrario, false.</returns>
+      <param name="rect1">Primer rectángulo que se va a comparar.</param>
+      <param name="rect2">Segundo rectángulo que se va a comparar.</param>
+    </member>
+    <member name="P:Windows.Foundation.Rect.Right">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Obtiene el valor del eje X del lado derecho del rectángulo.  </summary>
+      <returns>Valor del eje X del lado derecho del rectángulo.</returns>
+    </member>
+    <member name="M:Windows.Foundation.Rect.System#IFormattable#ToString(System.String,System.IFormatProvider)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Para obtener una descripción de este miembro, vea <see cref="M:System.IFormattable.ToString(System.String,System.IFormatProvider)" />.</summary>
+      <returns>Cadena que contiene el valor de la instancia actual con el formato especificado.</returns>
+      <param name="format">Cadena que especifica el formato que se va a utilizar. -O bien- null para utilizar el formato predeterminado que se define para el tipo de la implementación de IFormattable. </param>
+      <param name="provider">El IFormatProvider que se va a utilizar para dar formato al valor. -O bien- null para obtener la información de formato para valores numéricos de la configuración regional actual del sistema operativo. </param>
+    </member>
+    <member name="P:Windows.Foundation.Rect.Top">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Obtiene la posición del eje Y de la parte superior del rectángulo. </summary>
+      <returns>Posición del eje Y de la parte superior del rectángulo.</returns>
+    </member>
+    <member name="M:Windows.Foundation.Rect.ToString">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Devuelve una representación de cadena de la estructura <see cref="T:Windows.Foundation.Rect" />. </summary>
+      <returns>Representación en forma de cadena de la estructura <see cref="T:Windows.Foundation.Rect" /> actual. La cadena tiene este formato: "<see cref="P:Windows.Foundation.Rect.X" />,<see cref="P:Windows.Foundation.Rect.Y" />,<see cref="P:Windows.Foundation.Rect.Width" />,<see cref="P:Windows.Foundation.Rect.Height" />".</returns>
+    </member>
+    <member name="M:Windows.Foundation.Rect.ToString(System.IFormatProvider)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Devuelve una representación de cadena del rectángulo usando el proveedor de formato especificado. </summary>
+      <returns>Representación de cadena del rectángulo actual que determina el proveedor de formato especificado.</returns>
+      <param name="provider">Información de formato específica de la referencia cultural.</param>
+    </member>
+    <member name="M:Windows.Foundation.Rect.Union(Windows.Foundation.Point)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Expande el rectángulo representado por el objeto <see cref="T:Windows.Foundation.Rect" /> actual con la precisión exacta para contener el punto especificado. </summary>
+      <param name="point">Punto que se va a incluir.</param>
+    </member>
+    <member name="M:Windows.Foundation.Rect.Union(Windows.Foundation.Rect)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Expande el rectángulo representado por el objeto <see cref="T:Windows.Foundation.Rect" /> actual con la precisión exacta para contener el rectángulo especificado. </summary>
+      <param name="rect">Rectángulo se va a incluir.</param>
+    </member>
+    <member name="P:Windows.Foundation.Rect.Width">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Obtiene o establece el ancho del rectángulo.  </summary>
+      <returns>Valor que representa el ancho del rectángulo en píxeles. El valor predeterminado es 0.</returns>
+    </member>
+    <member name="P:Windows.Foundation.Rect.X">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Obtiene o establece el valor del eje X del lado izquierdo del rectángulo. </summary>
+      <returns>Valor del eje X del lado izquierdo del rectángulo. Este valor se interpreta como píxeles dentro del espacio de coordenadas.</returns>
+    </member>
+    <member name="P:Windows.Foundation.Rect.Y">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Obtiene o establece el valor del eje Y del lado superior del rectángulo. </summary>
+      <returns>Valor del eje Y del lado superior del rectángulo. Este valor se interpreta como píxeles dentro del espacio de coordenadas.</returns>
+    </member>
+    <member name="T:Windows.Foundation.Size">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Describe el ancho y alto de un objeto. </summary>
+    </member>
+    <member name="M:Windows.Foundation.Size.#ctor(System.Double,System.Double)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Inicializa una nueva instancia de la estructura <see cref="T:Windows.Foundation.Size" /> y le asigna un valor inicial de <paramref name="width" /> y <paramref name="height" />.</summary>
+      <param name="width">Ancho inicial de la instancia de <see cref="T:Windows.Foundation.Size" />.</param>
+      <param name="height">Alto inicial de la instancia de <see cref="T:Windows.Foundation.Size" />.</param>
+    </member>
+    <member name="P:Windows.Foundation.Size.Empty">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Obtiene un valor que representa una instancia vacía y estática de <see cref="T:Windows.Foundation.Size" />. </summary>
+      <returns>Instancia vacía de <see cref="T:Windows.Foundation.Size" />.</returns>
+    </member>
+    <member name="M:Windows.Foundation.Size.Equals(System.Object)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Compara un objeto con una instancia de <see cref="T:Windows.Foundation.Size" /> para determinar si son iguales. </summary>
+      <returns>true si los tamaños son iguales; de lo contrario, false.</returns>
+      <param name="o">Estructura <see cref="T:System.Object" /> que se va comparar.</param>
+    </member>
+    <member name="M:Windows.Foundation.Size.Equals(Windows.Foundation.Size)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Compara un valor con una instancia de <see cref="T:Windows.Foundation.Size" /> para determinar si son iguales. </summary>
+      <returns>true si las instancias de <see cref="T:Windows.Foundation.Size" /> son iguales; en caso contrario, false.</returns>
+      <param name="value">Tamaño que se va a comparar con la actual instancia de <see cref="T:Windows.Foundation.Size" />.</param>
+    </member>
+    <member name="M:Windows.Foundation.Size.GetHashCode">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Obtiene el código hash para esta instancia de <see cref="T:Windows.Foundation.Size" />. </summary>
+      <returns>Código hash de esta instancia de <see cref="T:Windows.Foundation.Size" />.</returns>
+    </member>
+    <member name="P:Windows.Foundation.Size.Height">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Obtiene o establece el alto de esta instancia de <see cref="T:Windows.Foundation.Size" />. </summary>
+      <returns>
+        <see cref="P:Windows.Foundation.Size.Height" /> de esta instancia de <see cref="T:Windows.Foundation.Size" />, en píxeles. El valor predeterminado es 0. No puede ser un valor negativo.</returns>
+    </member>
+    <member name="P:Windows.Foundation.Size.IsEmpty">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Obtiene un valor que indica si esta instancia de <see cref="T:Windows.Foundation.Size" /> es <see cref="P:Windows.Foundation.Size.Empty" />. </summary>
+      <returns>true si esta instancia del tamaño es <see cref="P:Windows.Foundation.Size.Empty" />; de lo contrario, false.</returns>
+    </member>
+    <member name="M:Windows.Foundation.Size.op_Equality(Windows.Foundation.Size,Windows.Foundation.Size)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Compara dos instancias de <see cref="T:Windows.Foundation.Size" /> para determinar si son iguales. </summary>
+      <returns>true si las dos instancias de <see cref="T:Windows.Foundation.Size" /> son iguales; en caso contrario, false.</returns>
+      <param name="size1">Primera instancia de <see cref="T:Windows.Foundation.Size" /> que se va a comparar.</param>
+      <param name="size2">Segunda instancia de <see cref="T:Windows.Foundation.Size" /> que se va a comparar.</param>
+    </member>
+    <member name="M:Windows.Foundation.Size.op_Inequality(Windows.Foundation.Size,Windows.Foundation.Size)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Compara dos instancias de <see cref="T:Windows.Foundation.Size" /> para determinar si no son iguales. </summary>
+      <returns>true si las instancias de <see cref="T:Windows.Foundation.Size" /> no son iguales; en caso contrario, false.</returns>
+      <param name="size1">Primera instancia de <see cref="T:Windows.Foundation.Size" /> que se va a comparar.</param>
+      <param name="size2">Segunda instancia de <see cref="T:Windows.Foundation.Size" /> que se va a comparar.</param>
+    </member>
+    <member name="M:Windows.Foundation.Size.ToString">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Devuelve una representación de cadena de este objeto <see cref="T:Windows.Foundation.Size" />.</summary>
+      <returns>Representación de cadena de esta instancia de <see cref="T:Windows.Foundation.Size" />.</returns>
+    </member>
+    <member name="P:Windows.Foundation.Size.Width">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Obtiene o establece el ancho de esta instancia de <see cref="T:Windows.Foundation.Size" />. </summary>
+      <returns>
+        <see cref="P:Windows.Foundation.Size.Width" /> de esta instancia de <see cref="T:Windows.Foundation.Size" />, en píxeles. El valor predeterminado es 0. El valor no puede ser negativo.</returns>
+    </member>
+    <member name="T:Windows.UI.Color">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Describe un color en términos de canales alfa, rojo, verde y azul. </summary>
+    </member>
+    <member name="P:Windows.UI.Color.A">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Obtiene o establece el valor de canal alfa sRGB del color. </summary>
+      <returns>Valor de canal alfa sRGB del color, como un valor comprendido entre 0 y 255.</returns>
+    </member>
+    <member name="P:Windows.UI.Color.B">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Obtiene o establece el valor de canal azul sRGB del color. </summary>
+      <returns>Valor de canal azul sRGB, como un valor comprendido entre 0 y 255.</returns>
+    </member>
+    <member name="M:Windows.UI.Color.Equals(System.Object)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Comprueba si el objeto especificado es una estructura <see cref="T:Windows.UI.Color" /> y si equivale al color actual. </summary>
+      <returns>Es true si el objeto especificado es una estructura <see cref="T:Windows.UI.Color" /> y si es idéntico a la estructura actual <see cref="T:Windows.UI.Color" />; en caso contrario, es false.</returns>
+      <param name="o">Objeto que se va a comparar con la estructura <see cref="T:Windows.UI.Color" /> actual.</param>
+    </member>
+    <member name="M:Windows.UI.Color.Equals(Windows.UI.Color)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Comprueba si la estructura <see cref="T:Windows.UI.Color" /> especificada es idéntica al color actual.</summary>
+      <returns>Es true si la estructura <see cref="T:Windows.UI.Color" /> especificada es idéntica a la estructura actual <see cref="T:Windows.UI.Color" />; en caso contrario, es false.</returns>
+      <param name="color">Estructura <see cref="T:Windows.UI.Color" /> que se va a comparar con la estructura <see cref="T:Windows.UI.Color" /> actual.</param>
+    </member>
+    <member name="M:Windows.UI.Color.FromArgb(System.Byte,System.Byte,System.Byte,System.Byte)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Crea una nueva estructura <see cref="T:Windows.UI.Color" /> utilizando el canal alfa sRGB y los valores de canales de color especificados. </summary>
+      <returns>Estructura <see cref="T:Windows.UI.Color" /> con los valores especificados.</returns>
+      <param name="a">Canal alfa, <see cref="P:Windows.UI.Color.A" />, del nuevo color. El valor debe estar comprendido entre 0 y 255.</param>
+      <param name="r">Canal rojo, <see cref="P:Windows.UI.Color.R" />, del nuevo color. El valor debe estar comprendido entre 0 y 255.</param>
+      <param name="g">Canal verde, <see cref="P:Windows.UI.Color.G" />, del nuevo color. El valor debe estar comprendido entre 0 y 255.</param>
+      <param name="b">Canal azul, <see cref="P:Windows.UI.Color.B" />, del nuevo color. El valor debe estar comprendido entre 0 y 255.</param>
+    </member>
+    <member name="P:Windows.UI.Color.G">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Obtiene o establece el valor de canal verde sRGB del color. </summary>
+      <returns>Valor de canal verde sRGB, como un valor comprendido entre 0 y 255.</returns>
+    </member>
+    <member name="M:Windows.UI.Color.GetHashCode">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Obtiene código hash para la estructura <see cref="T:Windows.UI.Color" /> actual. </summary>
+      <returns>Código hash para la estructura <see cref="T:Windows.UI.Color" /> actual.</returns>
+    </member>
+    <member name="M:Windows.UI.Color.op_Equality(Windows.UI.Color,Windows.UI.Color)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Comprueba si dos estructuras <see cref="T:Windows.UI.Color" /> son idénticas. </summary>
+      <returns>true si <paramref name="color1" /> y <paramref name="color2" /> son exactamente idénticos; de lo contrario, false.</returns>
+      <param name="color1">La primera estructura <see cref="T:Windows.UI.Color" /> que se va a comparar.</param>
+      <param name="color2">La segunda estructura <see cref="T:Windows.UI.Color" /> que se va a comparar.</param>
+    </member>
+    <member name="M:Windows.UI.Color.op_Inequality(Windows.UI.Color,Windows.UI.Color)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Comprueba si dos estructuras <see cref="T:Windows.UI.Color" /> no son idénticas. </summary>
+      <returns>Es true si <paramref name="color1" /> y <paramref name="color2" /> no son iguales; de lo contrario, es false.</returns>
+      <param name="color1">La primera estructura <see cref="T:Windows.UI.Color" /> que se va a comparar.</param>
+      <param name="color2">La segunda estructura <see cref="T:Windows.UI.Color" /> que se va a comparar.</param>
+    </member>
+    <member name="P:Windows.UI.Color.R">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Obtiene o establece el valor de canal rojo sRGB del color. </summary>
+      <returns>Valor de canal rojo sRGB, como un valor comprendido entre 0 y 255.</returns>
+    </member>
+    <member name="M:Windows.UI.Color.System#IFormattable#ToString(System.String,System.IFormatProvider)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Para obtener una descripción de este miembro, vea <see cref="M:System.IFormattable.ToString(System.String,System.IFormatProvider)" />.</summary>
+      <returns>Cadena que contiene el valor de la instancia actual con el formato especificado.</returns>
+      <param name="format">Cadena que especifica el formato que se va a utilizar. -O bien- null para utilizar el formato predeterminado que se define para el tipo de la implementación de IFormattable. </param>
+      <param name="provider">El IFormatProvider que se va a utilizar para dar formato al valor. -O bien- null para obtener la información de formato para valores numéricos de la configuración regional actual del sistema operativo. </param>
+    </member>
+    <member name="M:Windows.UI.Color.ToString">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Crea una representación en forma de cadena del color utilizando los canales ARGB en notación hexadecimal. </summary>
+      <returns>Representación de cadena del color.</returns>
+    </member>
+    <member name="M:Windows.UI.Color.ToString(System.IFormatProvider)">
+      <summary>[CRÍTICO PARA LA SEGURIDAD] Crea una representación en forma de cadena del color utilizando los canales ARGB y el proveedor de formato especificado. </summary>
+      <returns>Representación de cadena del color.</returns>
+      <param name="provider">Información de formato específica de la referencia cultural.</param>
+    </member>
+  </members>
+</doc>

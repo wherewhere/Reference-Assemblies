@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Microsoft.Devices.Sensors</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.Devices.Sensors.Accelerometer">
+      <summary>Provides Windows Phone applications access to the device’s accelerometer sensor.</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Accelerometer.#ctor">
+      <summary>Creates a new instance of the <see cref="T:Microsoft.Devices.Sensors.Accelerometer" /> object.</summary>
+      <exception cref="T:Microsoft.Devices.Sensors.SensorFailedException">The limit of 10 simultaneous instances of the Accelerometer class per application has been exceeded.</exception>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Accelerometer.Dispose">
+      <summary>Releases the managed and unmanaged resources used by the <see cref="T:Microsoft.Devices.Sensors.Accelerometer" />.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.Accelerometer.IsSupported">
+      <summary>Gets or sets whether the device on which the application is running supports the accelerometer sensor.</summary>
+      <returns>true if the device on which the application is running supports the accelerometer sensor; otherwise, false.</returns>
+    </member>
+    <member name="E:Microsoft.Devices.Sensors.Accelerometer.ReadingChanged">
+      <summary>Occurs when new data arrives from the accelerometer. This method is deprecated in the current release. Applications should use the <see cref="E:Microsoft.Devices.Sensors.SensorBase`1.CurrentValueChanged" /> event of the <see cref="T:Microsoft.Devices.Sensors.SensorBase`1" /> class instead.</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Accelerometer.Start">
+      <summary>Starts data acquisition from the accelerometer.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.Accelerometer.State">
+      <summary>Gets the current state of the accelerometer. The value is a member of the <see cref="T:Microsoft.Devices.Sensors.SensorState" /> enumeration.</summary>
+      <returns>Type: <see cref="T:Microsoft.Devices.Sensors.SensorState" />.</returns>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Accelerometer.Stop">
+      <summary>Stops data acquisition from the accelerometer.</summary>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.AccelerometerFailedException">
+      <summary>The exception that may be thrown during a call to <see cref="M:Microsoft.Devices.Sensors.Accelerometer.Start" /> or <see cref="M:Microsoft.Devices.Sensors.Accelerometer.Stop" />. The Message field describes the reason for the exception and the <see cref="P:Microsoft.Devices.Sensors.AccelerometerFailedException.ErrorId" /> field contains the error code from the underlying native code implementation of the accelerometer framework.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerFailedException.ErrorId">
+      <summary>The error code from the underlying native code implementation of the accelerometer framework.</summary>
+      <returns>Type: <see cref="T:System.Int32" />.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.AccelerometerReading">
+      <summary>Contains the acceleration and timestamp for an accelerometer reading, indicating the magnitude and direction of forces applied to the device.  </summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReading.Acceleration">
+      <summary>Gets the acceleration vector of the device, in gravitational units.</summary>
+      <returns>The acceleration of the device.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReading.Timestamp">
+      <summary>Gets a timestamp indicating the time at which the accelerometer reading was taken. This can be used to correlate readings across sensors and provide additional input to algorithms that process raw sensor data.</summary>
+      <returns>The time at which the accelerometer reading was taken.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.AccelerometerReadingEventArgs">
+      <summary>Provides data for <see cref="E:Microsoft.Devices.Sensors.Accelerometer.ReadingChanged" /> events.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReadingEventArgs.Timestamp">
+      <summary>A timestamp indicating the time at which the accelerometer reading was taken.</summary>
+      <returns>Type: <see cref="T:System.DateTimeOffset" />.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReadingEventArgs.X">
+      <summary>The acceleration in the X direction, in gravitational units.</summary>
+      <returns>Type: <see cref="T:System.Double" />.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReadingEventArgs.Y">
+      <summary>The acceleration in the Y direction, in gravitational units.</summary>
+      <returns>Type: <see cref="T:System.Double" />.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReadingEventArgs.Z">
+      <summary>The acceleration in the Z direction, in gravitational units.</summary>
+      <returns>Type: <see cref="T:System.Double" />.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.AttitudeReading">
+      <summary>Contains information about the orientation of the device in space.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.Pitch">
+      <summary>Gets the pitch of the attitude reading in radians.</summary>
+      <returns>The pitch of the attitude reading.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.Quaternion">
+      <summary>Gets the quaternion representation of the attitude reading.</summary>
+      <returns>The quaternion representation of the attitude reading.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.Roll">
+      <summary>Gets the roll of the attitude reading in radians.</summary>
+      <returns>The roll of the attitude reading.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.RotationMatrix">
+      <summary>Gets the matrix representation of the attitude reading.</summary>
+      <returns>The matrix representation of the attitude reading.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.Timestamp">
+      <summary>Gets a timestamp indicating the time at which the accelerometer reading was taken. This can be used to correlate readings across sensors and provide additional input to algorithms that process raw sensor data.</summary>
+      <returns>The time at which the attitude reading was taken.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.Yaw">
+      <summary>Gets the yaw of the attitude reading in radians.</summary>
+      <returns>The yaw of the attitude reading.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.CalibrationEventArgs">
+      <summary>Provides data for <see cref="E:Microsoft.Devices.Sensors.Compass.Calibrate" /> and  events.</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.CalibrationEventArgs.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:Microsoft.Devices.Sensors.CalibrationEventArgs" /> class.</summary>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.Compass">
+      <summary>Provides Windows Phone applications access to the device’s compass sensor.</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Compass.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:Microsoft.Devices.Sensors.Compass" /> class.</summary>
+      <exception cref="T:Microsoft.Devices.Sensors.SensorFailedException">The limit of 10 simultaneous instances of the Compass class per application has been exceeded.</exception>
+    </member>
+    <member name="E:Microsoft.Devices.Sensors.Compass.Calibrate">
+      <summary>Occurs when the operating system detects that the compass needs calibration.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.Compass.IsSupported">
+      <summary>Gets whether the device on which the application is running supports the compass sensor.</summary>
+      <returns>Type: <see cref="T:System.Boolean" />. true if the device on which the application is running supports the compass sensor; otherwise, false.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.CompassReading">
+      <summary>Contains information about the magnetic field detected by the device’s compass sensor, which can be used to determine the orientation of the device relative to the Earth’s magnetic field.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.CompassReading.HeadingAccuracy">
+      <summary>Gets the accuracy, in degrees, of the compass heading readings.</summary>
+      <returns>The accuracy of the compass heading readings.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.CompassReading.MagneticHeading">
+      <summary>Gets the heading, in degrees, measured clockwise from the Earth’s magnetic north.</summary>
+      <returns>The heading relative to the Earth’s magnetic north.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.CompassReading.MagnetometerReading">
+      <summary>Gets the raw magnetometer reading in microteslas.</summary>
+      <returns>The raw magnetometer reading.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.CompassReading.Timestamp">
+      <summary>Gets a timestamp indicating the time at which the compass reading was taken. This can be used to correlate readings across sensors and provide additional input to algorithms that process raw sensor data.</summary>
+      <returns>The time at which the compass reading was taken.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.CompassReading.TrueHeading">
+      <summary>Gets the heading, in degrees, measured clockwise from the Earth’s geographic north.</summary>
+      <returns>The heading relative to the Earth’s geographic north.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.Gyroscope">
+      <summary>Provides Windows Phone applications access to the device’s gyroscope sensor.</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Gyroscope.#ctor">
+      <summary>Initializes a new instance of the Gyroscope class.</summary>
+      <exception cref="T:Microsoft.Devices.Sensors.SensorFailedException">The limit of 10 simultaneous instances of the Gyroscope class per application has been exceeded.</exception>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.Gyroscope.IsSupported">
+      <summary>Gets or sets whether the device on which the application is running supports the gyroscope sensor.</summary>
+      <returns>true if the device on which the application is running supports the gyroscope sensor; otherwise, false.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.GyroscopeReading">
+      <summary>Contains information about the rotation acceleration of the device.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.GyroscopeReading.RotationRate">
+      <summary>Gets the rotational velocity around each axis of the device, in radians per second.</summary>
+      <returns>The rotational velocity around each axis of the device.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.GyroscopeReading.Timestamp">
+      <summary>Gets a timestamp indicating the time at which the gyroscope reading was taken. This can be used to correlate readings across sensors and provide additional input to algorithms that process raw sensor data.</summary>
+      <returns>The time at which the gyroscope reading was taken.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.ISensorReading">
+      <summary>The interface that is implemented by all sensor reading classes.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.ISensorReading.Timestamp">
+      <summary>Gets a timestamp indicating the time at which the sensor reading was taken. This can be used to correlate readings across sensors and provide additional input to algorithms that process raw sensor data.</summary>
+      <returns>Type: <see cref="T:System.DateTimeOffset" />. The time at which the sensor reading was taken.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.Motion">
+      <summary>Provides Windows Phone applications information about the device’s orientation and motion.</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Motion.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:Microsoft.Devices.Sensors.Motion" /> class.</summary>
+      <exception cref="T:Microsoft.Devices.Sensors.SensorFailedException">The limit of 10 simultaneous instances of the Motion class per application has been exceeded.</exception>
+    </member>
+    <member name="E:Microsoft.Devices.Sensors.Motion.Calibrate">
+      <summary>Occurs when the operating detects that the compass needs calibration.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.Motion.IsSupported">
+      <summary>Gets or sets whether the device on which the application is running supports the sensors required by the <see cref="T:Microsoft.Devices.Sensors.Motion" /> class.</summary>
+      <returns>true if the device on which the application is running supports the sensors required by the <see cref="T:Microsoft.Devices.Sensors.Motion" /> class; otherwise, false.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.MotionReading">
+      <summary>Contains information about the orientation and movement of the device. </summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.MotionReading.Attitude">
+      <summary>Gets the attitude (yaw, pitch, and roll) of the device, in radians.</summary>
+      <returns>The attitude of the device.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.MotionReading.DeviceAcceleration">
+      <summary>Gets the linear acceleration of the device, in gravitational units.</summary>
+      <returns>The linear acceleration of the device.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.MotionReading.DeviceRotationRate">
+      <summary>Gets the rotational velocity of the device, in radians per second.</summary>
+      <returns>The rotational velocity of the device.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.MotionReading.Gravity">
+      <summary>Gets the gravity vector associated with the <see cref="T:Microsoft.Devices.Sensors.MotionReading" />.</summary>
+      <returns>The gravity vector associated with the MotionReading.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.MotionReading.Timestamp">
+      <summary>Gets a timestamp indicating the time at which the <see cref="T:Microsoft.Devices.Sensors.MotionReading" /> was calculated. This can be used to correlate readings across sensors and provide additional input to algorithms that process raw sensor data.</summary>
+      <returns>Type: <see cref="T:System.DateTimeOffset" />. The time at which the MotionReading was calculated.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.SensorBase`1">
+      <summary>The base class for all Windows Phone sensor classes.</summary>
+      <typeparam name="TSensorReading">The type of reading returned by the sensor.</typeparam>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.SensorBase`1.CurrentValue">
+      <summary>Gets an object that implements <see cref="T:Microsoft.Devices.Sensors.ISensorReading" /> that contains the current value of the sensor. This object will be one of the following types, depending on which sensor is being referenced: <see cref="T:Microsoft.Devices.Sensors.AccelerometerReading" />, <see cref="T:Microsoft.Devices.Sensors.CompassReading" />, <see cref="T:Microsoft.Devices.Sensors.GyroscopeReading" />, <see cref="T:Microsoft.Devices.Sensors.MotionReading" />.</summary>
+      <returns>An object that implements <see cref="T:Microsoft.Devices.Sensors.ISensorReading" /> that contains the current value of the sensor.</returns>
+    </member>
+    <member name="E:Microsoft.Devices.Sensors.SensorBase`1.CurrentValueChanged">
+      <summary>Occurs when new data arrives from the sensor.</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.SensorBase`1.Dispose">
+      <summary>Releases the managed and unmanaged resources used by the sensor.</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.SensorBase`1.Finalize">
+      <summary>Allows an object to try to free resources and perform other cleanup operations before the Object is reclaimed by garbage collection.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.SensorBase`1.IsDataValid">
+      <summary>Gets the validity of the sensor’s data.</summary>
+      <returns>Type: <see cref="T:System.Boolean" />. true if the sensor’s data is valid; otherwise, false.</returns>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.SensorBase`1.Start">
+      <summary>Starts acquisition of data from the sensor.</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.SensorBase`1.Stop">
+      <summary>Stops acquisition of data from the sensor.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.SensorBase`1.TimeBetweenUpdates">
+      <summary>Gets or sets the preferred time between <see cref="E:Microsoft.Devices.Sensors.SensorBase`1.CurrentValueChanged" /> events.</summary>
+      <returns>Type: <see cref="T:System.TimeSpan" />. The preferred time between CurrentValueChanged events.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.SensorFailedException">
+      <summary>Represents the exception that is thrown when a sensor operation fails.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.SensorFailedException.ErrorId">
+      <summary>The error ID indicating the cause of the exception.</summary>
+      <returns>Type: <see cref="T:System.Int32" />.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.SensorReadingEventArgs`1">
+      <summary>Provides data for <see cref="E:Microsoft.Devices.Sensors.SensorBase`1.CurrentValueChanged" /> events. </summary>
+      <typeparam name="T">The type of reading contained in the event data.</typeparam>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.SensorReadingEventArgs`1.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:Microsoft.Devices.Sensors.SensorReadingEventArgs`1" /> class.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.SensorReadingEventArgs`1.SensorReading">
+      <summary>Gets the sensor reading data associated with the SensorReadingEventArgs.</summary>
+      <returns>The sensor reading data associated with the SensorReadingEventArgs.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.SensorState">
+      <summary>An enumeration of values for expressing the current state of the accelerometer. The state of a sensor can be obtained using its <see cref="P:Microsoft.Devices.Sensors.Accelerometer.State" /> property.</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.NotSupported">
+      <summary>The sensor hardware is unavailable.</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.Ready">
+      <summary>The sensor is available and resolving data.</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.Initializing">
+      <summary>The sensor is available and initializing.</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.NoData">
+      <summary>The sensor is unable to obtain data.</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.NoPermissions">
+      <summary>The caller does not have permission to access the sensor’s data.</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.Disabled">
+      <summary>The sensor is disabled.</summary>
+    </member>
+  </members>
+</doc>

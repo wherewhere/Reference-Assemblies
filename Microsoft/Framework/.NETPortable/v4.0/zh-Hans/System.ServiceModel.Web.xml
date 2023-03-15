@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.ServiceModel.Web</name>
+  </assembly>
+  <members>
+    <member name="T:System.Runtime.Serialization.Json.DataContractJsonSerializer">
+      <summary>将对象序列化为 JavaScript 对象表示法 (JSON)，并将 JSON 数据反序列化为对象。 此类不能被继承。</summary>
+    </member>
+    <member name="M:System.Runtime.Serialization.Json.DataContractJsonSerializer.#ctor(System.Type)">
+      <summary>初始化 <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer" /> 类的新实例，以便序列化或反序列化指定类型的对象。</summary>
+      <param name="type">序列化或反序列化的实例的类型。</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.Json.DataContractJsonSerializer.#ctor(System.Type,System.Collections.Generic.IEnumerable{System.Type})">
+      <summary>初始化 <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer" /> 类的新实例，以便序列化或反序列化指定类型的对象以及可在对象图中呈现的已知类型的集合。</summary>
+      <param name="type">序列化或反序列化的实例的类型。</param>
+      <param name="knownTypes">
+        <see cref="T:System.Type" /> 的一个 <see cref="T:System.Collections.Generic.IEnumerable`1" />，其中包含可在对象图中呈现的类型。</param>
+    </member>
+    <member name="P:System.Runtime.Serialization.Json.DataContractJsonSerializer.KnownTypes">
+      <summary>获取一个类型集合，这些类型可呈现在使用此 <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer" /> 实例序列化的对象图中。</summary>
+      <returns>一个 <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />，它包含作为已知类型传入 <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer" /> 构造函数的预期类型。</returns>
+    </member>
+    <member name="M:System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(System.IO.Stream)">
+      <summary>以 JSON（JavaScript 对象表示法）格式读取文档流，并返回反序列化的对象。</summary>
+      <returns>反序列化的对象。</returns>
+      <param name="stream">要读取的 <see cref="T:System.IO.Stream" />。</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject(System.IO.Stream,System.Object)">
+      <summary>将指定对象序列化为 JavaScript 对象表示法 (JSON) 数据，并将生成的 JSON 写入流中。</summary>
+      <param name="stream">用于写入 <see cref="T:System.IO.Stream" />。</param>
+      <param name="graph">包含要写入流的数据的对象。</param>
+      <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">正在序列化的类型不符合数据协定规则。 例如，<see cref="T:System.Runtime.Serialization.DataContractAttribute" /> 特性未应用于该类型。</exception>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">正在写入的实例出现问题。</exception>
+      <exception cref="T:System.ServiceModel.QuotaExceededException">已超出要序列化的对象的最大数量。 请检查 <see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" /> 属性。</exception>
+    </member>
+  </members>
+</doc>

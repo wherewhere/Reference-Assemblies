@@ -1,0 +1,647 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.Web.ApplicationServices</name>
+  </assembly>
+  <members>
+    <member name="T:System.Web.Configuration.MembershipPasswordCompatibilityMode">
+      <summary>枚举 ASP.NET 成员资格的密码兼容性模式。</summary>
+    </member>
+    <member name="F:System.Web.Configuration.MembershipPasswordCompatibilityMode.Framework20">
+      <summary>密码采用 ASP.NET 2.0 模式。</summary>
+    </member>
+    <member name="F:System.Web.Configuration.MembershipPasswordCompatibilityMode.Framework40">
+      <summary>密码采用 ASP.NET 4 模式。</summary>
+    </member>
+    <member name="T:System.Web.Hosting.CustomLoaderAttribute">
+      <summary>Provides a custom loader to ASP.NET so that an application can provide its own implementation of the hosting environment.</summary>
+    </member>
+    <member name="M:System.Web.Hosting.CustomLoaderAttribute.#ctor(System.Type)">
+      <summary>Initializes a new instance of the <see cref="T:System.Web.Hosting.CustomLoaderAttribute" /> class.</summary>
+    </member>
+    <member name="P:System.Web.Hosting.CustomLoaderAttribute.CustomLoaderType">
+      <summary>Gets the type of the custom loader.</summary>
+      <returns>The type of the custom loader.</returns>
+    </member>
+    <member name="T:System.Web.Security.MembershipCreateStatus">
+      <summary>描述 <see cref="M:System.Web.Security.Membership.CreateUser(System.String,System.String)" /> 操作的结果。</summary>
+    </member>
+    <member name="F:System.Web.Security.MembershipCreateStatus.DuplicateEmail">
+      <summary>电子邮件地址已存在于应用程序的数据库中。</summary>
+    </member>
+    <member name="F:System.Web.Security.MembershipCreateStatus.DuplicateProviderUserKey">
+      <summary>提供程序用户键值已存在于应用程序的数据库中。</summary>
+    </member>
+    <member name="F:System.Web.Security.MembershipCreateStatus.DuplicateUserName">
+      <summary>用户名已存在于应用程序的数据库中。</summary>
+    </member>
+    <member name="F:System.Web.Security.MembershipCreateStatus.InvalidAnswer">
+      <summary>密码提示问题答案的格式设置不正确。</summary>
+    </member>
+    <member name="F:System.Web.Security.MembershipCreateStatus.InvalidEmail">
+      <summary>电子邮件地址的格式设置不正确。</summary>
+    </member>
+    <member name="F:System.Web.Security.MembershipCreateStatus.InvalidPassword">
+      <summary>密码的格式设置不正确。</summary>
+    </member>
+    <member name="F:System.Web.Security.MembershipCreateStatus.InvalidProviderUserKey">
+      <summary>提供程序用户键值的类型或格式无效。</summary>
+    </member>
+    <member name="F:System.Web.Security.MembershipCreateStatus.InvalidQuestion">
+      <summary>密码提示问题的格式设置不正确。</summary>
+    </member>
+    <member name="F:System.Web.Security.MembershipCreateStatus.InvalidUserName">
+      <summary>在数据库中未找到用户名。</summary>
+    </member>
+    <member name="F:System.Web.Security.MembershipCreateStatus.ProviderError">
+      <summary>提供程序返回一个未由其他 <see cref="T:System.Web.Security.MembershipCreateStatus" /> 枚举值描述的错误。</summary>
+    </member>
+    <member name="F:System.Web.Security.MembershipCreateStatus.Success">
+      <summary>创建用户成功。</summary>
+    </member>
+    <member name="F:System.Web.Security.MembershipCreateStatus.UserRejected">
+      <summary>因为提供程序定义的某个原因而未创建用户。</summary>
+    </member>
+    <member name="T:System.Web.Security.MembershipCreateUserException">
+      <summary>当成员资格提供程序未能成功创建用户时引发的异常。</summary>
+    </member>
+    <member name="M:System.Web.Security.MembershipCreateUserException.#ctor">
+      <summary>初始化 <see cref="T:System.Web.Security.MembershipCreateUserException" /> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Web.Security.MembershipCreateUserException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+      <summary>用提供的序列化信息和上下文初始化 <see cref="T:System.Web.Security.MembershipCreateUserException" /> 类的新实例。</summary>
+      <param name="info">
+        <see cref="T:System.Runtime.Serialization.SerializationInfo" />，它存有有关所引发的异常的序列化对象数据。</param>
+      <param name="context">
+        <see cref="T:System.Runtime.Serialization.StreamingContext" />，它包含有关源或目标的上下文信息。</param>
+    </member>
+    <member name="M:System.Web.Security.MembershipCreateUserException.#ctor(System.String)">
+      <summary>初始化 <see cref="T:System.Web.Security.MembershipCreateUserException" /> 类的新实例，并将 <see cref="P:System.Exception.Message" /> 属性设置为提供的 <paramref name="message" /> 参数值。</summary>
+      <param name="message">异常原因的说明。</param>
+    </member>
+    <member name="M:System.Web.Security.MembershipCreateUserException.#ctor(System.String,System.Exception)">
+      <summary>初始化 <see cref="T:System.Web.Security.MembershipCreateUserException" /> 类的新实例并将 <see cref="P:System.Exception.Message" /> 属性设置为提供的 <paramref name="message" />，将 <see cref="P:System.Exception.InnerException" /> 属性设置为提供的 <paramref name="innerException" />。</summary>
+      <param name="message">异常原因的说明。</param>
+      <param name="innerException">引发了 <see cref="T:System.Web.Security.MembershipCreateUserException" /> 的异常。</param>
+    </member>
+    <member name="M:System.Web.Security.MembershipCreateUserException.#ctor(System.Web.Security.MembershipCreateStatus)">
+      <summary>使用指定的 <see cref="P:System.Web.Security.MembershipCreateUserException.StatusCode" /> 值初始化 <see cref="T:System.Web.Security.MembershipCreateUserException" /> 类的新实例。</summary>
+      <param name="statusCode">描述异常的原因的 <see cref="T:System.Web.Security.MembershipCreateStatus" /> 枚举值。</param>
+    </member>
+    <member name="M:System.Web.Security.MembershipCreateUserException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+      <summary>使用将目标对象序列化所需的数据填充 <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</summary>
+      <param name="info">要填充数据的 <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+      <param name="context">用于指定该序列化的目标的 <see cref="T:System.Runtime.Serialization.StreamingContext" />。</param>
+    </member>
+    <member name="P:System.Web.Security.MembershipCreateUserException.StatusCode">
+      <summary>获取异常原因的说明。</summary>
+      <returns>描述异常的原因的 <see cref="T:System.Web.Security.MembershipCreateStatus" /> 枚举值。</returns>
+    </member>
+    <member name="T:System.Web.Security.MembershipPasswordException">
+      <summary>当无法从密码存储区检索密码时引发的异常。</summary>
+    </member>
+    <member name="M:System.Web.Security.MembershipPasswordException.#ctor">
+      <summary>初始化 <see cref="T:System.Web.Security.MembershipPasswordException" /> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Web.Security.MembershipPasswordException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+      <summary>用所提供的序列化信息和上下文初始化 <see cref="T:System.Web.Security.MembershipPasswordException" /> 类的新实例。</summary>
+      <param name="info">
+        <see cref="T:System.Runtime.Serialization.SerializationInfo" />，它存有有关所引发的异常的序列化对象数据。</param>
+      <param name="context">
+        <see cref="T:System.Runtime.Serialization.StreamingContext" />，它包含有关源或目标的上下文信息。</param>
+    </member>
+    <member name="M:System.Web.Security.MembershipPasswordException.#ctor(System.String)">
+      <summary>初始化 <see cref="T:System.Web.Security.MembershipPasswordException" /> 类的新实例，并将 <see cref="P:System.Exception.Message" /> 属性设置为提供的 <paramref name="message" />。</summary>
+      <param name="message">异常原因的说明。</param>
+    </member>
+    <member name="M:System.Web.Security.MembershipPasswordException.#ctor(System.String,System.Exception)">
+      <summary>初始化 <see cref="T:System.Web.Security.MembershipPasswordException" /> 类的新实例，并将 <see cref="P:System.Exception.Message" /> 属性设置为 <paramref name="message" />，将 <see cref="P:System.Exception.InnerException" /> 属性设置为提供的 <paramref name="innerException" />。</summary>
+      <param name="message">异常原因的说明。</param>
+      <param name="innerException">引起 <see cref="T:System.Web.Security.MembershipPasswordException" /> 的异常。</param>
+    </member>
+    <member name="T:System.Web.Security.MembershipPasswordFormat">
+      <summary>描述存储成员用户密码的加密格式。</summary>
+    </member>
+    <member name="F:System.Web.Security.MembershipPasswordFormat.Clear">
+      <summary>密码未加密。</summary>
+    </member>
+    <member name="F:System.Web.Security.MembershipPasswordFormat.Encrypted">
+      <summary>密码使用由 machineKey 元素（ASP.NET 设置架构） 元素配置确定的加密设置进行加密。</summary>
+    </member>
+    <member name="F:System.Web.Security.MembershipPasswordFormat.Hashed">
+      <summary>密码使用 SHA1 哈希算法进行单向加密。</summary>
+    </member>
+    <member name="T:System.Web.Security.MembershipProvider">
+      <summary>定义 ASP.NET 为使用自定义成员资格提供程序提供成员资格服务而实现的协定。</summary>
+    </member>
+    <member name="M:System.Web.Security.MembershipProvider.#ctor">
+      <summary>初始化 <see cref="T:System.Web.Security.MembershipProvider" /> 类的新实例。</summary>
+    </member>
+    <member name="P:System.Web.Security.MembershipProvider.ApplicationName">
+      <summary>使用自定义成员资格提供程序的应用程序的名称。</summary>
+      <returns>使用自定义成员资格提供程序的应用程序的名称。</returns>
+    </member>
+    <member name="M:System.Web.Security.MembershipProvider.ChangePassword(System.String,System.String,System.String)">
+      <summary>处理更新成员资格用户密码的请求。</summary>
+      <returns>如果密码更新成功，则为 true；否则为 false。</returns>
+      <param name="username">为其更新密码的用户。</param>
+      <param name="oldPassword">指定的用户的当前密码。</param>
+      <param name="newPassword">指定的用户的新密码。</param>
+    </member>
+    <member name="M:System.Web.Security.MembershipProvider.ChangePasswordQuestionAndAnswer(System.String,System.String,System.String,System.String)">
+      <summary>处理更新成员资格用户的密码提示问题和答案的请求。</summary>
+      <returns>如果成功更新密码提示问题和答案，则为 true；否则，为 false。</returns>
+      <param name="username">要为其更改密码提示问题和答案的用户。</param>
+      <param name="password">指定的用户的密码。</param>
+      <param name="newPasswordQuestion">指定的用户的新密码提示问题。</param>
+      <param name="newPasswordAnswer">指定的用户的新密码提示问题答案。</param>
+    </member>
+    <member name="M:System.Web.Security.MembershipProvider.CreateUser(System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Object,System.Web.Security.MembershipCreateStatus@)">
+      <summary>将新的成员资格用户添加到数据源。</summary>
+      <returns>一个用新创建的用户的信息填充的 <see cref="T:System.Web.Security.MembershipUser" /> 对象。</returns>
+      <param name="username">新用户的用户名。</param>
+      <param name="password">新用户的密码。</param>
+      <param name="email">新用户的电子邮件地址。</param>
+      <param name="passwordQuestion">新用户的密码提示问题。</param>
+      <param name="passwordAnswer">新用户的密码提示问题答案。</param>
+      <param name="isApproved">是否允许验证新用户。</param>
+      <param name="providerUserKey">成员资格数据源中该用户的唯一标识符。</param>
+      <param name="status">一个 <see cref="T:System.Web.Security.MembershipCreateStatus" /> 枚举值，指示是否已成功创建用户。</param>
+    </member>
+    <member name="M:System.Web.Security.MembershipProvider.DecryptPassword(System.Byte[])">
+      <summary>解密已加密的密码。</summary>
+      <returns>包含已解密密码的字节数组。</returns>
+      <param name="encodedPassword">一个字节数组，包含要解密的加密密码。</param>
+      <exception cref="T:System.Configuration.Provider.ProviderException">将 <see cref="P:System.Web.Configuration.MachineKeySection.ValidationKey" /> 属性或 <see cref="P:System.Web.Configuration.MachineKeySection.DecryptionKey" /> 属性设置为 AutoGenerate。</exception>
+      <exception cref="T:System.PlatformNotSupportedException">此方法不可用。 如果应用程序面向 .NET Framework 4 Client Profile，则将发生这种情况。 要避免此异常，请重写该方法，或将应用程序更改为面向 .NET Framework 的所有版本。</exception>
+    </member>
+    <member name="M:System.Web.Security.MembershipProvider.DeleteUser(System.String,System.Boolean)">
+      <summary>从成员资格数据源删除一个用户。</summary>
+      <returns>如果用户被成功删除，则为 true；否则为 false。</returns>
+      <param name="username">要删除的用户的名称。</param>
+      <param name="deleteAllRelatedData">如果为 true，则从数据库中删除与该用户相关的数据；如果为 false，则将与该用户相关的数据保留在数据库。</param>
+    </member>
+    <member name="P:System.Web.Security.MembershipProvider.EnablePasswordReset">
+      <summary>指示成员资格提供程序是否配置为允许用户重置其密码。</summary>
+      <returns>如果成员资格提供程序支持密码重置，则为 true；否则为 false。 默认值为 true。</returns>
+    </member>
+    <member name="P:System.Web.Security.MembershipProvider.EnablePasswordRetrieval">
+      <summary>指示成员资格提供程序是否配置为允许用户检索其密码。</summary>
+      <returns>如果成员资格提供程序配置为支持密码检索，则为 true，否则为 false。 默认值为 false。</returns>
+    </member>
+    <member name="M:System.Web.Security.MembershipProvider.EncryptPassword(System.Byte[])">
+      <summary>对密码进行加密。</summary>
+      <returns>包含已加密的密码的字节数组。</returns>
+      <param name="password">包含要加密的密码的字节数组。</param>
+      <exception cref="T:System.Configuration.Provider.ProviderException">将 <see cref="P:System.Web.Configuration.MachineKeySection.ValidationKey" /> 属性或 <see cref="P:System.Web.Configuration.MachineKeySection.DecryptionKey" /> 属性设置为 AutoGenerate。</exception>
+      <exception cref="T:System.PlatformNotSupportedException">此方法不可用。 如果应用程序面向 .NET Framework 4 Client Profile，则将发生这种情况。 要避免此异常，请重写该方法，或将应用程序更改为面向 .NET Framework 的所有版本。</exception>
+    </member>
+    <member name="M:System.Web.Security.MembershipProvider.EncryptPassword(System.Byte[],System.Web.Configuration.MembershipPasswordCompatibilityMode)">
+      <summary>使用指定的密码兼容性模式对指定密码进行加密。</summary>
+      <returns>包含已加密的密码的字节数组。</returns>
+      <param name="password">包含要加密的密码的字节数组。</param>
+      <param name="legacyPasswordCompatibilityMode">成员资格密码兼容性模式。</param>
+      <exception cref="T:System.Configuration.Provider.ProviderException">将 <see cref="P:System.Web.Configuration.MachineKeySection.ValidationKey" /> 属性或 <see cref="P:System.Web.Configuration.MachineKeySection.DecryptionKey" /> 属性设置为 AutoGenerate。</exception>
+      <exception cref="T:System.PlatformNotSupportedException">此方法不可用。 如果应用程序面向 .NET Framework 4 Client Profile，则将发生这种情况。 要避免此异常，请重写该方法，或将应用程序更改为面向 .NET Framework 的所有版本。</exception>
+    </member>
+    <member name="M:System.Web.Security.MembershipProvider.FindUsersByEmail(System.String,System.Int32,System.Int32,System.Int32@)">
+      <summary>获取一个成员资格用户的集合，其中的电子邮件地址包含要匹配的指定电子邮件地址。</summary>
+      <returns>包含一页 <paramref name="pageSize" /><see cref="T:System.Web.Security.MembershipUser" /> 对象的 <see cref="T:System.Web.Security.MembershipUserCollection" /> 集合，这些对象从 <paramref name="pageIndex" /> 指定的页开始。</returns>
+      <param name="emailToMatch">要搜索的电子邮件地址。</param>
+      <param name="pageIndex">要返回的结果页的索引。 <paramref name="pageIndex" /> 从零开始。</param>
+      <param name="pageSize">要返回的结果页的大小。</param>
+      <param name="totalRecords">匹配用户的总数。</param>
+    </member>
+    <member name="M:System.Web.Security.MembershipProvider.FindUsersByName(System.String,System.Int32,System.Int32,System.Int32@)">
+      <summary>获取一个成员资格用户的集合，其中的用户名包含要匹配的指定用户名。</summary>
+      <returns>包含一页 <paramref name="pageSize" /><see cref="T:System.Web.Security.MembershipUser" /> 对象的 <see cref="T:System.Web.Security.MembershipUserCollection" /> 集合，这些对象从 <paramref name="pageIndex" /> 指定的页开始。</returns>
+      <param name="usernameToMatch">要搜索的用户名。</param>
+      <param name="pageIndex">要返回的结果页的索引。 <paramref name="pageIndex" /> 从零开始。</param>
+      <param name="pageSize">要返回的结果页的大小。</param>
+      <param name="totalRecords">匹配用户的总数。</param>
+    </member>
+    <member name="M:System.Web.Security.MembershipProvider.GetAllUsers(System.Int32,System.Int32,System.Int32@)">
+      <summary>获取数据源中的所有用户的集合，并显示在数据页中。</summary>
+      <returns>包含一页 <paramref name="pageSize" /><see cref="T:System.Web.Security.MembershipUser" /> 对象的 <see cref="T:System.Web.Security.MembershipUserCollection" /> 集合，这些对象从 <paramref name="pageIndex" /> 指定的页开始。</returns>
+      <param name="pageIndex">要返回的结果页的索引。 <paramref name="pageIndex" /> 从零开始。</param>
+      <param name="pageSize">要返回的结果页的大小。</param>
+      <param name="totalRecords">匹配用户的总数。</param>
+    </member>
+    <member name="M:System.Web.Security.MembershipProvider.GetNumberOfUsersOnline">
+      <summary>获取当前访问该应用程序的用户数。</summary>
+      <returns>当前访问该应用程序的用户数。</returns>
+    </member>
+    <member name="M:System.Web.Security.MembershipProvider.GetPassword(System.String,System.String)">
+      <summary>从数据源获取指定用户名所对应的密码。</summary>
+      <returns>指定用户名所对应的密码。</returns>
+      <param name="username">为其检索密码的用户。</param>
+      <param name="answer">用户的密码提示问题答案。</param>
+    </member>
+    <member name="M:System.Web.Security.MembershipProvider.GetUser(System.Object,System.Boolean)">
+      <summary>根据成员资格用户的唯一标识符从数据源获取用户信息。 提供一个更新用户最近一次活动的日期/时间戳的选项。</summary>
+      <returns>用数据源中指定用户的信息填充的 <see cref="T:System.Web.Security.MembershipUser" /> 对象。</returns>
+      <param name="providerUserKey">要获取其信息的成员资格用户的唯一标识符。</param>
+      <param name="userIsOnline">如果为 true，则更新用户最近一次活动的日期/时间戳；如果为 false，则返回用户信息，但不更新用户最近一次活动的日期/时间戳。</param>
+    </member>
+    <member name="M:System.Web.Security.MembershipProvider.GetUser(System.String,System.Boolean)">
+      <summary>从数据源获取用户的信息。 提供一个更新用户最近一次活动的日期/时间戳的选项。</summary>
+      <returns>用数据源中指定用户的信息填充的 <see cref="T:System.Web.Security.MembershipUser" /> 对象。</returns>
+      <param name="username">要获取其信息的用户名。</param>
+      <param name="userIsOnline">如果为 true，则更新用户最近一次活动的日期/时间戳；如果为 false，则返回用户信息，但不更新用户最近一次活动的日期/时间戳。</param>
+    </member>
+    <member name="M:System.Web.Security.MembershipProvider.GetUserNameByEmail(System.String)">
+      <summary>获取与指定的电子邮件地址关联的用户名。</summary>
+      <returns>与指定的电子邮件地址关联的用户名。 如果未找到匹配项，则返回 null。</returns>
+      <param name="email">要搜索的电子邮件地址。</param>
+    </member>
+    <member name="P:System.Web.Security.MembershipProvider.MaxInvalidPasswordAttempts">
+      <summary>获取锁定成员资格用户前允许的无效密码或无效密码提示问题答案尝试次数。</summary>
+      <returns>锁定成员资格用户之前允许的无效密码或无效密码提示问题答案尝试次数。</returns>
+    </member>
+    <member name="P:System.Web.Security.MembershipProvider.MinRequiredNonAlphanumericCharacters">
+      <summary>获取有效密码中必须包含的最少特殊字符数。</summary>
+      <returns>有效密码中必须包含的最少特殊字符数。</returns>
+    </member>
+    <member name="P:System.Web.Security.MembershipProvider.MinRequiredPasswordLength">
+      <summary>获取密码所要求的最小长度。</summary>
+      <returns>密码所要求的最小长度。</returns>
+    </member>
+    <member name="M:System.Web.Security.MembershipProvider.OnValidatingPassword(System.Web.Security.ValidatePasswordEventArgs)">
+      <summary>如果定义了事件处理程序，则引发 <see cref="E:System.Web.Security.MembershipProvider.ValidatingPassword" /> 事件。</summary>
+      <param name="e">传递给 <see cref="E:System.Web.Security.MembershipProvider.ValidatingPassword" /> 事件处理程序的 <see cref="T:System.Web.Security.ValidatePasswordEventArgs" />。</param>
+    </member>
+    <member name="P:System.Web.Security.MembershipProvider.PasswordAttemptWindow">
+      <summary>获取在锁定成员资格用户之前允许的最大无效密码或无效密码提示问题答案尝试次数的分钟数。</summary>
+      <returns>在锁定成员资格用户之前允许的最大无效密码或无效密码提示问题答案尝试次数的分钟数。</returns>
+    </member>
+    <member name="P:System.Web.Security.MembershipProvider.PasswordFormat">
+      <summary>获取一个值，该值指示在成员资格数据存储区中存储密码的格式。</summary>
+      <returns>
+        <see cref="T:System.Web.Security.MembershipPasswordFormat" /> 值之一，该值指示在数据存储区中存储密码的格式。</returns>
+    </member>
+    <member name="P:System.Web.Security.MembershipProvider.PasswordStrengthRegularExpression">
+      <summary>获取用于计算密码的正则表达式。</summary>
+      <returns>用于计算密码的正则表达式。</returns>
+    </member>
+    <member name="P:System.Web.Security.MembershipProvider.RequiresQuestionAndAnswer">
+      <summary>获取一个值，该值指示成员资格提供程序是否配置为要求用户在进行密码重置和检索时回答密码提示问题。</summary>
+      <returns>如果密码重置和检索需要提供密码提示问题答案，则为 true；否则为 false。 默认值为 true。</returns>
+    </member>
+    <member name="P:System.Web.Security.MembershipProvider.RequiresUniqueEmail">
+      <summary>获取一个值，指示成员资格提供程序是否配置为要求每个用户名具有唯一的电子邮件地址。</summary>
+      <returns>如果成员资格提供程序要求唯一的电子邮件地址，则返回 true；否则返回 false。 默认值为 true。</returns>
+    </member>
+    <member name="M:System.Web.Security.MembershipProvider.ResetPassword(System.String,System.String)">
+      <summary>将用户密码重置为一个自动生成的新密码。</summary>
+      <returns>指定的用户的新密码。</returns>
+      <param name="username">为其重置密码的用户。</param>
+      <param name="answer">指定的用户的密码提示问题答案。</param>
+    </member>
+    <member name="M:System.Web.Security.MembershipProvider.UnlockUser(System.String)">
+      <summary>清除锁定，以便可以验证该成员资格用户。</summary>
+      <returns>如果成功取消成员资格用户的锁定，则为 true；否则为 false。</returns>
+      <param name="userName">要清除其锁定状态的成员资格用户。</param>
+    </member>
+    <member name="M:System.Web.Security.MembershipProvider.UpdateUser(System.Web.Security.MembershipUser)">
+      <summary>更新数据源中有关用户的信息。</summary>
+      <param name="user">一个 <see cref="T:System.Web.Security.MembershipUser" /> 对象，表示要更新的用户及其更新信息。</param>
+    </member>
+    <member name="M:System.Web.Security.MembershipProvider.ValidateUser(System.String,System.String)">
+      <summary>验证数据源中是否存在指定的用户名和密码。</summary>
+      <returns>如果指定的用户名和密码有效，则为 true；否则为 false。</returns>
+      <param name="username">要验证的用户的名称。</param>
+      <param name="password">指定的用户的密码。</param>
+    </member>
+    <member name="E:System.Web.Security.MembershipProvider.ValidatingPassword">
+      <summary>在创建用户、更改密码或重置密码时发生。</summary>
+    </member>
+    <member name="T:System.Web.Security.MembershipProviderCollection">
+      <summary>继承 <see cref="T:System.Web.Security.MembershipProvider" /> 抽象类的对象的集合。</summary>
+    </member>
+    <member name="M:System.Web.Security.MembershipProviderCollection.#ctor">
+      <summary>创建一个新的空白成员资格提供程序集合。</summary>
+    </member>
+    <member name="M:System.Web.Security.MembershipProviderCollection.Add(System.Configuration.Provider.ProviderBase)">
+      <summary>将一个成员资格提供程序添加到该集合中。</summary>
+      <param name="provider">要添加到该集合中的成员资格提供程序。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="provider" /> 为 null。</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="provider" /> 的类型不是继承 <see cref="T:System.Web.Security.MembershipProvider" /> 抽象类的类型。</exception>
+    </member>
+    <member name="M:System.Web.Security.MembershipProviderCollection.CopyTo(System.Web.Security.MembershipProvider[],System.Int32)">
+      <summary>将成员提供程序集合复制到一维数组中。</summary>
+      <param name="array">一个一维数组，它是从 <see cref="T:System.Web.Security.MembershipProviderCollection" /> 复制的元素的目标。 该数组的索引必须从零开始。</param>
+      <param name="index">
+        <paramref name="array" /> 中从零开始的索引，从此索引处开始进行复制。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> 为 null。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> 小于零。</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="array" /> 是多维的。 - 或 - 源数组中的元素数目大于从 <paramref name="index" /> 到目标 <paramref name="array" /> 末尾之间的可用空间。</exception>
+      <exception cref="T:System.InvalidCastException">源数组的类型无法自动转换为目标 <paramref name="array" /> 的类型。</exception>
+    </member>
+    <member name="P:System.Web.Security.MembershipProviderCollection.Item(System.String)">
+      <summary>获取集合中由指定的提供程序名称引用的成员资格提供程序。</summary>
+      <returns>继承 <see cref="T:System.Web.Security.MembershipProvider" /> 抽象类的对象。</returns>
+      <param name="name">成员资格提供程序的名称。</param>
+    </member>
+    <member name="T:System.Web.Security.MembershipUser">
+      <summary>公开和更新成员资格数据存储区中的成员资格用户信息。</summary>
+    </member>
+    <member name="M:System.Web.Security.MembershipUser.#ctor">
+      <summary>为继承 <see cref="T:System.Web.Security.MembershipUser" /> 类的类创建一个 <see cref="T:System.Web.Security.MembershipUser" /> 对象的新实例。</summary>
+    </member>
+    <member name="M:System.Web.Security.MembershipUser.#ctor(System.String,System.String,System.Object,System.String,System.String,System.String,System.Boolean,System.Boolean,System.DateTime,System.DateTime,System.DateTime,System.DateTime,System.DateTime)">
+      <summary>使用指定的属性值创建新的成员资格用户对象。</summary>
+      <param name="providerName">成员资格用户的 <see cref="P:System.Web.Security.MembershipUser.ProviderName" /> 字符串。</param>
+      <param name="name">成员资格用户的 <see cref="P:System.Web.Security.MembershipUser.UserName" /> 字符串。</param>
+      <param name="providerUserKey">成员资格用户的 <see cref="P:System.Web.Security.MembershipUser.ProviderUserKey" /> 标识符。</param>
+      <param name="email">成员资格用户的 <see cref="P:System.Web.Security.MembershipUser.Email" /> 字符串。</param>
+      <param name="passwordQuestion">成员资格用户的 <see cref="P:System.Web.Security.MembershipUser.PasswordQuestion" /> 字符串。</param>
+      <param name="comment">成员资格用户的 <see cref="P:System.Web.Security.MembershipUser.Comment" /> 字符串。</param>
+      <param name="isApproved">成员资格用户的 <see cref="P:System.Web.Security.MembershipUser.IsApproved" /> 值。</param>
+      <param name="isLockedOut">如果锁定成员资格用户，则为 true；否则为 false。</param>
+      <param name="creationDate">成员资格用户的 <see cref="P:System.Web.Security.MembershipUser.CreationDate" /><see cref="T:System.DateTime" /> 对象。</param>
+      <param name="lastLoginDate">成员资格用户的 <see cref="P:System.Web.Security.MembershipUser.LastLoginDate" /><see cref="T:System.DateTime" /> 对象。</param>
+      <param name="lastActivityDate">成员资格用户的 <see cref="P:System.Web.Security.MembershipUser.LastActivityDate" /><see cref="T:System.DateTime" /> 对象。</param>
+      <param name="lastPasswordChangedDate">成员资格用户的 <see cref="P:System.Web.Security.MembershipUser.LastPasswordChangedDate" /><see cref="T:System.DateTime" /> 对象。</param>
+      <param name="lastLockoutDate">成员资格用户的 <see cref="P:System.Web.Security.MembershipUser.LastLockoutDate" /><see cref="T:System.DateTime" /> 对象。</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="providerName" /> 为 null。 - 或 - 在 <see cref="P:System.Web.Security.Membership.Providers" /> 集合中找不到 <paramref name="providerName" />。</exception>
+      <exception cref="T:System.PlatformNotSupportedException">该构造函数不可用。 如果应用程序面向 .NET Framework 4 Client Profile，则将发生这种情况。 为避免此异常，从类型派生类，然后调用默认受保护的构造函数，或更改应用到目标的 .NET Framework 完整版本。</exception>
+    </member>
+    <member name="M:System.Web.Security.MembershipUser.ChangePassword(System.String,System.String)">
+      <summary>更新成员资格数据存储区中成员资格用户的密码。</summary>
+      <returns>如果更新成功，则为 true；否则为 false。</returns>
+      <param name="oldPassword">成员资格用户的当前密码。</param>
+      <param name="newPassword">成员资格用户的新密码。</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="oldPassword" /> 是空字符串。 - 或 - <paramref name="newPassword" /> 是空字符串。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="oldPassword" /> 为 null。 - 或 - <paramref name="newPassword" /> 为 null。</exception>
+      <exception cref="T:System.PlatformNotSupportedException">此方法不可用。 如果应用程序面向 .NET Framework 4 Client Profile，则将发生这种情况。 要避免此异常，请重写该方法，或将应用程序更改为面向 .NET Framework 的所有版本。</exception>
+    </member>
+    <member name="M:System.Web.Security.MembershipUser.ChangePasswordQuestionAndAnswer(System.String,System.String,System.String)">
+      <summary>更新成员资格数据存储区中成员资格用户的密码提示问题和密码提示问题答案。</summary>
+      <returns>如果更新成功，则为 true；否则为 false。</returns>
+      <param name="password">成员资格用户的当前密码。</param>
+      <param name="newPasswordQuestion">成员资格用户的新密码提示问题的值。</param>
+      <param name="newPasswordAnswer">成员资格用户的新密码提示问题答案的值。</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="password" /> 是空字符串。 - 或 - <paramref name="newPasswordQuestion" /> 是空字符串。 - 或 - <paramref name="newPasswordAnswer" /> 是空字符串。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="password" /> 为 null。</exception>
+      <exception cref="T:System.PlatformNotSupportedException">此方法不可用。 如果应用程序面向 .NET Framework 4 Client Profile，则将发生这种情况。 要避免此异常，请重写该方法，或将应用程序更改为面向 .NET Framework 的所有版本。</exception>
+    </member>
+    <member name="P:System.Web.Security.MembershipUser.Comment">
+      <summary>获取或设置成员资格用户的特定于应用程序的信息。</summary>
+      <returns>成员资格用户的特定于应用程序的信息。</returns>
+    </member>
+    <member name="P:System.Web.Security.MembershipUser.CreationDate">
+      <summary>获取将用户添加到成员资格数据存储区的日期和时间。</summary>
+      <returns>将用户添加到成员资格数据存储区时的日期和时间。</returns>
+    </member>
+    <member name="P:System.Web.Security.MembershipUser.Email">
+      <summary>获取或设置成员资格用户的电子邮件地址。</summary>
+      <returns>成员资格用户的电子邮件地址。</returns>
+    </member>
+    <member name="M:System.Web.Security.MembershipUser.GetPassword">
+      <summary>从成员资格数据存储区获取成员资格用户的密码。</summary>
+      <returns>成员资格用户的密码。</returns>
+      <exception cref="T:System.PlatformNotSupportedException">此方法不可用。 如果应用程序面向 .NET Framework 4 Client Profile，则将发生这种情况。 要避免此异常，请重写该方法，或将应用程序更改为面向 .NET Framework 的所有版本。</exception>
+    </member>
+    <member name="M:System.Web.Security.MembershipUser.GetPassword(System.String)">
+      <summary>从成员资格数据存储区获取成员资格用户的密码。</summary>
+      <returns>成员资格用户的密码。</returns>
+      <param name="passwordAnswer">成员资格用户的密码提示问题答案。</param>
+      <exception cref="T:System.PlatformNotSupportedException">此方法不可用。 如果应用程序面向 .NET Framework 4 Client Profile，则将发生这种情况。 要避免此异常，请重写该方法，或将应用程序更改为面向 .NET Framework 的所有版本。</exception>
+    </member>
+    <member name="P:System.Web.Security.MembershipUser.IsApproved">
+      <summary>获取或设置一个值，表示是否可以对成员资格用户进行身份验证。</summary>
+      <returns>如果可以对用户进行身份验证，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Web.Security.MembershipUser.IsLockedOut">
+      <summary>获取一个值，该值指示成员资格用户是否因被锁定而无法进行验证。</summary>
+      <returns>如果成员资格用户因被锁定而无法进行验证，则为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Web.Security.MembershipUser.IsOnline">
+      <summary>获取一个值，表示用户当前是否联机。</summary>
+      <returns>如果用户已联机，则为 true；否则为 false。</returns>
+      <exception cref="T:System.PlatformNotSupportedException">此方法不可用。 如果应用程序面向 .NET Framework 4 Client Profile，则将发生这种情况。 要避免此异常，请重写该方法，或将应用程序更改为面向 .NET Framework 的所有版本。</exception>
+    </member>
+    <member name="P:System.Web.Security.MembershipUser.LastActivityDate">
+      <summary>获取或设置成员资格用户上次进行身份验证或访问应用程序的日期和时间。</summary>
+      <returns>成员资格用户上次进行身份验证或访问应用程序的日期和时间。</returns>
+    </member>
+    <member name="P:System.Web.Security.MembershipUser.LastLockoutDate">
+      <summary>获取最近一次锁定成员资格用户的日期和时间。</summary>
+      <returns>一个 <see cref="T:System.DateTime" /> 对象，表示最近一次锁定成员资格用户的日期和时间。</returns>
+    </member>
+    <member name="P:System.Web.Security.MembershipUser.LastLoginDate">
+      <summary>获取或设置用户上次进行身份验证的日期和时间。</summary>
+      <returns>用户上次进行身份验证的日期和时间。</returns>
+    </member>
+    <member name="P:System.Web.Security.MembershipUser.LastPasswordChangedDate">
+      <summary>获取上次更新成员资格用户的密码的日期和时间。</summary>
+      <returns>上次更新成员资格用户的密码的日期和时间。</returns>
+    </member>
+    <member name="P:System.Web.Security.MembershipUser.PasswordQuestion">
+      <summary>获取成员资格用户的密码提示问题。</summary>
+      <returns>成员资格用户的密码提示问题。</returns>
+    </member>
+    <member name="P:System.Web.Security.MembershipUser.ProviderName">
+      <summary>获取成员资格提供程序的名称，该提供程序存储并检索成员资格用户的用户信息。</summary>
+      <returns>成员资格提供程序的名称，该提供程序存储并检索成员资格用户的用户信息。</returns>
+    </member>
+    <member name="P:System.Web.Security.MembershipUser.ProviderUserKey">
+      <summary>从用户的成员资格数据源获取用户标识符。</summary>
+      <returns>用户的成员资格数据源中的用户标识符。</returns>
+    </member>
+    <member name="M:System.Web.Security.MembershipUser.ResetPassword">
+      <summary>将用户密码重置为一个自动生成的新密码。</summary>
+      <returns>成员资格用户的新密码。</returns>
+      <exception cref="T:System.PlatformNotSupportedException">此方法不可用。 如果应用程序面向 .NET Framework 4 Client Profile，则将发生这种情况。 要避免此异常，请重写该方法，或将应用程序更改为面向 .NET Framework 的所有版本。</exception>
+    </member>
+    <member name="M:System.Web.Security.MembershipUser.ResetPassword(System.String)">
+      <summary>将用户密码重置为一个自动生成的新密码。</summary>
+      <returns>成员资格用户的新密码。</returns>
+      <param name="passwordAnswer">成员资格用户的密码提示问题答案。</param>
+      <exception cref="T:System.PlatformNotSupportedException">此方法不可用。 如果应用程序面向 .NET Framework 4 Client Profile，则将发生这种情况。 要避免此异常，请重写该方法，或将应用程序更改为面向 .NET Framework 的所有版本。</exception>
+    </member>
+    <member name="M:System.Web.Security.MembershipUser.ToString">
+      <summary>返回成员资格用户的用户名。</summary>
+      <returns>成员资格用户的 <see cref="P:System.Web.Security.MembershipUser.UserName" />。</returns>
+    </member>
+    <member name="M:System.Web.Security.MembershipUser.UnlockUser">
+      <summary>清除用户的锁定状态以便可以验证成员资格用户。</summary>
+      <returns>如果成功取消成员资格用户的锁定，则为 true；否则为 false。</returns>
+      <exception cref="T:System.PlatformNotSupportedException">此方法不可用。 如果应用程序面向 .NET Framework 4 Client Profile，则将发生这种情况。 要避免此异常，请重写该方法，或将应用程序更改为面向 .NET Framework 的所有版本。</exception>
+    </member>
+    <member name="P:System.Web.Security.MembershipUser.UserName">
+      <summary>获取成员资格用户的登录名。</summary>
+      <returns>成员资格用户的登录名。</returns>
+    </member>
+    <member name="T:System.Web.Security.MembershipUserCollection">
+      <summary>
+        <see cref="T:System.Web.Security.MembershipUser" /> 对象的集合。</summary>
+    </member>
+    <member name="M:System.Web.Security.MembershipUserCollection.#ctor">
+      <summary>创建一个新的空白成员资格用户集合。</summary>
+    </member>
+    <member name="M:System.Web.Security.MembershipUserCollection.Add(System.Web.Security.MembershipUser)">
+      <summary>将指定的成员资格用户添加到集合。</summary>
+      <param name="user">要添加到集合中的 <see cref="T:System.Web.Security.MembershipUser" /> 对象。</param>
+      <exception cref="T:System.NotSupportedException">该集合为只读。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="user" /> 的 <see cref="P:System.Web.Security.MembershipUser.UserName" /> 为 null。</exception>
+      <exception cref="T:System.ArgumentException">与 <paramref name="user" /> 具有相同的 <see cref="P:System.Web.Security.MembershipUser.UserName" /> 值的 <see cref="T:System.Web.Security.MembershipUser" /> 对象已在集合中存在。</exception>
+    </member>
+    <member name="M:System.Web.Security.MembershipUserCollection.Clear">
+      <summary>从集合中移除所有成员资格用户对象。</summary>
+    </member>
+    <member name="M:System.Web.Security.MembershipUserCollection.CopyTo(System.Web.Security.MembershipUser[],System.Int32)">
+      <summary>将成员资格用户集合复制到一维数组中。</summary>
+      <param name="array">类型为 <see cref="T:System.Web.Security.MembershipUser" /> 的一维数组，它是从 <see cref="T:System.Web.Security.MembershipUserCollection" /> 复制的元素的目标。 该数组的索引必须从零开始。</param>
+      <param name="index">复制开始时所在的数组中的从零开始的索引。</param>
+    </member>
+    <member name="P:System.Web.Security.MembershipUserCollection.Count">
+      <summary>获取集合中的成员资格用户对象数。</summary>
+      <returns>集合中的 <see cref="T:System.Web.Security.MembershipUser" /> 对象数。</returns>
+    </member>
+    <member name="M:System.Web.Security.MembershipUserCollection.GetEnumerator">
+      <summary>获取可循环访问成员资格用户集合的枚举数。</summary>
+      <returns>用于整个 <see cref="T:System.Web.Security.MembershipUserCollection" /> 的 <see cref="T:System.Collections.IEnumerator" />。</returns>
+    </member>
+    <member name="P:System.Web.Security.MembershipUserCollection.IsSynchronized">
+      <summary>获取一个指示成员资格用户集合是否为线程安全的值。</summary>
+      <returns>因为不支持线程安全成员资格用户集合，所以始终为 false。</returns>
+    </member>
+    <member name="P:System.Web.Security.MembershipUserCollection.Item(System.String)">
+      <summary>获取集合中由指定的用户名引用的成员资格用户。</summary>
+      <returns>表示由 <paramref name="name" /> 指定的用户的 <see cref="T:System.Web.Security.MembershipUser" /> 对象。</returns>
+      <param name="name">要从集合中检索的 <see cref="T:System.Web.Security.MembershipUser" /> 的 <see cref="P:System.Web.Security.MembershipUser.UserName" />。</param>
+    </member>
+    <member name="M:System.Web.Security.MembershipUserCollection.Remove(System.String)">
+      <summary>从集合中移除具有指定用户名的成员资格用户对象。</summary>
+      <param name="name">要从集合中移除的 <see cref="T:System.Web.Security.MembershipUser" /> 对象的用户名。</param>
+      <exception cref="T:System.NotSupportedException">该集合为只读。</exception>
+    </member>
+    <member name="M:System.Web.Security.MembershipUserCollection.SetReadOnly">
+      <summary>使成员资格用户集合的内容成为只读内容。</summary>
+    </member>
+    <member name="P:System.Web.Security.MembershipUserCollection.SyncRoot">
+      <summary>获取同步根。</summary>
+      <returns>因为不支持成员资格用户集合的同步，所以始终为 this。</returns>
+    </member>
+    <member name="M:System.Web.Security.MembershipUserCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)">
+      <summary>从特定的 <see cref="T:System.Array" /> 索引开始，将 <see cref="T:System.Web.Security.MembershipUserCollection" /> 对象的内容复制到 <see cref="T:System.Array" /> 中。</summary>
+      <param name="array">一维 <see cref="T:System.Array" />，它是从 <see cref="T:System.Web.Security.MembershipUserCollection" /> 对象复制的对象的目标位置。 <see cref="T:System.Array" /> 必须具有从零开始的索引。</param>
+      <param name="index">
+        <paramref name="array" /> 中从零开始的索引，从此索引处开始进行复制。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> 为 null。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> 小于 0。</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="array" /> 是多维的。 - 或 - <paramref name="index" /> 大于或等于 <paramref name="array" /> 的长度。 - 或 - 源 <see cref="T:System.Web.Security.MembershipUserCollection" /> 中的元素数大于从 <paramref name="index" /> 到目标数组末尾的可用空间。</exception>
+      <exception cref="T:System.InvalidCastException">源 <see cref="T:System.Web.Security.MembershipUserCollection" /> 的类型无法自动转换为目标数组的类型。</exception>
+    </member>
+    <member name="T:System.Web.Security.MembershipValidatePasswordEventHandler">
+      <summary>表示将处理 <see cref="T:System.Web.Security.MembershipProvider" /> 类的 <see cref="E:System.Web.Security.MembershipProvider.ValidatingPassword" /> 事件的方法。</summary>
+      <param name="sender">引发 <see cref="E:System.Web.Security.MembershipProvider.ValidatingPassword" /> 事件的 <see cref="T:System.Web.Security.MembershipProvider" />。</param>
+      <param name="e">包含事件数据的 <see cref="T:System.Web.Security.ValidatePasswordEventArgs" /> 对象。</param>
+    </member>
+    <member name="T:System.Web.Security.RoleProvider">
+      <summary>定义 ASP.NET 为使用自定义角色提供程序提供角色管理服务而实现的协定。</summary>
+    </member>
+    <member name="M:System.Web.Security.RoleProvider.#ctor">
+      <summary>初始化 <see cref="T:System.Web.Security.RoleProvider" /> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Web.Security.RoleProvider.AddUsersToRoles(System.String[],System.String[])">
+      <summary>将指定用户名添加到已配置的 applicationName 的指定角色名。</summary>
+      <param name="usernames">一个字符串数组，其中包含要添加到指定角色的用户名。</param>
+      <param name="roleNames">一个字符串数组，其中包含要将指定用户名添加到的角色的名称。</param>
+    </member>
+    <member name="P:System.Web.Security.RoleProvider.ApplicationName">
+      <summary>获取或设置要存储和检索其角色信息的应用程序的名称。</summary>
+      <returns>要存储和检索其角色信息的应用程序的名称。</returns>
+    </member>
+    <member name="M:System.Web.Security.RoleProvider.CreateRole(System.String)">
+      <summary>在数据源中为已配置的 applicationName 添加一个新角色。</summary>
+      <param name="roleName">要创建的角色的名称。</param>
+    </member>
+    <member name="M:System.Web.Security.RoleProvider.DeleteRole(System.String,System.Boolean)">
+      <summary>从数据源中移除已配置的 applicationName 的角色。</summary>
+      <returns>如果成功删除角色，则为 true；否则为 false。</returns>
+      <param name="roleName">要删除的角色的名称。</param>
+      <param name="throwOnPopulatedRole">如果为 true，则在 <paramref name="roleName" /> 具有一个或多个成员时引发异常，并且不删除 <paramref name="roleName" />。</param>
+    </member>
+    <member name="M:System.Web.Security.RoleProvider.FindUsersInRole(System.String,System.String)">
+      <summary>获取属于某个角色且与指定的用户名相匹配的用户名的数组。</summary>
+      <returns>一个字符串数组，包含用户名与 <paramref name="usernameToMatch" /> 匹配且用户是指定角色的成员的所有用户的名称。</returns>
+      <param name="roleName">作为搜索范围的角色。</param>
+      <param name="usernameToMatch">要搜索的用户名。</param>
+    </member>
+    <member name="M:System.Web.Security.RoleProvider.GetAllRoles">
+      <summary>获取已配置的 applicationName 的所有角色的列表。</summary>
+      <returns>一个字符串数组，包含在数据源中存储的已配置的 applicationName 的所有角色的名称。</returns>
+    </member>
+    <member name="M:System.Web.Security.RoleProvider.GetRolesForUser(System.String)">
+      <summary>获取指定用户对于已配置的 applicationName 所属于的角色的列表。</summary>
+      <returns>一个字符串数组，其中包含指定用户对于已配置的 applicationName 所属于的所有角色的名称。</returns>
+      <param name="username">要为其返回角色列表的用户。</param>
+    </member>
+    <member name="M:System.Web.Security.RoleProvider.GetUsersInRole(System.String)">
+      <summary>获取属于已配置的 applicationName 的指定角色的用户的列表。</summary>
+      <returns>一个字符串数组，其中包含属于已配置的 applicationName 的指定角色的成员的所有用户名。</returns>
+      <param name="roleName">一个角色名称，将获取该角色的用户列表。</param>
+    </member>
+    <member name="M:System.Web.Security.RoleProvider.IsUserInRole(System.String,System.String)">
+      <summary>获取一个值，指示指定用户是否属于已配置的 applicationName 的指定角色。</summary>
+      <returns>如果指定用户属于已配置的 applicationName 的指定角色，则为 true；否则为 false。</returns>
+      <param name="username">要搜索的用户名。</param>
+      <param name="roleName">作为搜索范围的角色。</param>
+    </member>
+    <member name="M:System.Web.Security.RoleProvider.RemoveUsersFromRoles(System.String[],System.String[])">
+      <summary>移除已配置的 applicationName 的指定角色中的指定用户名。</summary>
+      <param name="usernames">一个字符串数组，其中包含要从指定角色中移除的用户名。</param>
+      <param name="roleNames">一个字符串数组，其中包含要将指定用户名从中移除的角色的名称。</param>
+    </member>
+    <member name="M:System.Web.Security.RoleProvider.RoleExists(System.String)">
+      <summary>获取一个值，该值指示指定角色名是否已存在于已配置的 applicationName 的角色数据源中。</summary>
+      <returns>如果角色名已存在于已配置的 applicationName 的数据源中，则为 true；否则为 false。</returns>
+      <param name="roleName">要在数据源中搜索的角色的名称。</param>
+    </member>
+    <member name="T:System.Web.Security.ValidatePasswordEventArgs">
+      <summary>为 <see cref="T:System.Web.Security.MembershipProvider" /> 类的 <see cref="E:System.Web.Security.MembershipProvider.ValidatingPassword" /> 事件提供事件数据。</summary>
+    </member>
+    <member name="M:System.Web.Security.ValidatePasswordEventArgs.#ctor(System.String,System.String,System.Boolean)">
+      <summary>创建 <see cref="T:System.Web.Security.ValidatePasswordEventArgs" /> 类的新实例。</summary>
+      <param name="userName">当前创建用户、更改密码或重置密码操作的成员资格用户名。</param>
+      <param name="password">指定的成员资格用户的新密码。</param>
+      <param name="isNewUser">如果创建新用户过程中发生该事件则为 true；否则为 false。</param>
+    </member>
+    <member name="P:System.Web.Security.ValidatePasswordEventArgs.Cancel">
+      <summary>获取或设置一个值，用于指示是否将取消当前的创建用户、更改密码或重置密码操作。</summary>
+      <returns>如果将取消当前的创建用户、更改密码或重置密码操作，将返回 true；否则返回 false。 默认值为 false。</returns>
+    </member>
+    <member name="P:System.Web.Security.ValidatePasswordEventArgs.FailureInformation">
+      <summary>获取或设置一个描述密码验证失败原因的异常。</summary>
+      <returns>一个描述密码验证失败原因的 <see cref="T:System.Exception" />。</returns>
+    </member>
+    <member name="P:System.Web.Security.ValidatePasswordEventArgs.IsNewUser">
+      <summary>获取一个值，该值指示在调用 <see cref="M:System.Web.Security.MembershipProvider.CreateUser(System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Object,System.Web.Security.MembershipCreateStatus@)" /> 方法期间是否引发 <see cref="E:System.Web.Security.MembershipProvider.ValidatingPassword" /> 事件。</summary>
+      <returns>如果在调用 <see cref="M:System.Web.Security.MembershipProvider.CreateUser(System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Object,System.Web.Security.MembershipCreateStatus@)" /> 方法期间引发了 <see cref="E:System.Web.Security.MembershipProvider.ValidatingPassword" /> 事件，则获取的值为 true；否则为 false。</returns>
+    </member>
+    <member name="P:System.Web.Security.ValidatePasswordEventArgs.Password">
+      <summary>获取当前创建用户、更改密码或重置密码操作的密码。</summary>
+      <returns>当前创建用户、更改密码或重置密码操作的密码。</returns>
+    </member>
+    <member name="P:System.Web.Security.ValidatePasswordEventArgs.UserName">
+      <summary>获取当前创建用户、更改密码或重置密码操作的成员资格用户名。</summary>
+      <returns>当前创建用户、更改密码或重置密码操作的成员资格用户名。</returns>
+    </member>
+  </members>
+</doc>
