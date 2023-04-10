@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>mscorlib.Extensions</name>
+  </assembly>
+  <members>
+    <member name="T:System.Runtime.CompilerServices.CodeGenerationAttribute">
+      <summary>Задает параметры создания кода.</summary>
+    </member>
+    <member name="M:System.Runtime.CompilerServices.CodeGenerationAttribute.#ctor(System.Runtime.CompilerServices.CodeGenerationFlags)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.Runtime.CompilerServices.CodeGenerationAttribute" />.</summary>
+      <param name="flags">Флаги создания кода.</param>
+    </member>
+    <member name="P:System.Runtime.CompilerServices.CodeGenerationAttribute.CodeGenerationFlags">
+      <summary>Получает флаги создания кода.</summary>
+      <returns>Флаги создания кода.</returns>
+    </member>
+    <member name="T:System.Runtime.CompilerServices.CodeGenerationFlags">
+      <summary>Определяет флаги создания кода.</summary>
+    </member>
+    <member name="F:System.Runtime.CompilerServices.CodeGenerationFlags.EnableFPIntrinsicsUsingSIMD">
+      <summary>Указывает, что для JIT-компилятора данной сборки включено использование SIMD для векторных и матричных операций.</summary>
+    </member>
+    <member name="T:System.Security.Cryptography.ProtectedData">
+      <summary>Предоставляет методы для шифрования и расшифровки данных. Этот класс не может быть унаследован.</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.ProtectedData.Protect(System.Byte[],System.Byte[])">
+      <summary>Зашифровывает данные в заданном массиве байтов и возвращает массив байтов, содержащий зашифрованные данные.</summary>
+      <returns>Массив байтов, представляющий зашифрованные данные.</returns>
+      <param name="userData">Массив байтов, содержащий данные для зашифровки. </param>
+      <param name="optionalEntropy">Необязательный дополнительный байтовый массив, который используется для увеличения сложности шифрования, или null для отсутствия дополнительной сложности.</param>
+      <exception cref="T:System.ArgumentNullException">Значением параметра <paramref name="userData" /> является null.</exception>
+      <exception cref="T:System.Security.Cryptography.CryptographicException">Сбой шифрования.</exception>
+      <exception cref="T:System.NotSupportedException">Этот метод не поддерживается операционной системой. </exception>
+      <exception cref="T:System.OutOfMemoryException">Системе не хватило памяти для зашифрования данных.</exception>
+    </member>
+    <member name="M:System.Security.Cryptography.ProtectedData.Unprotect(System.Byte[],System.Byte[])">
+      <summary>Расшифровывает данные в заданном массиве байтов и возвращает массив байтов, содержащий расшифрованные данные.</summary>
+      <returns>Массив байтов, представляющий расшифрованные данные.</returns>
+      <param name="encryptedData">Массив данных, в котором содержатся данные, зашифрованные с помощью метода <see cref="M:System.Security.Cryptography.ProtectedData.Protect(System.Byte[],System.Byte[])" />. </param>
+      <param name="optionalEntropy">Необязательный дополнительный байтовый массив, который был использован для шифрования данных, или null, если дополнительный байтовый массив не используется.</param>
+      <exception cref="T:System.ArgumentNullException">Значением параметра <paramref name="encryptedData" /> является null.</exception>
+      <exception cref="T:System.Security.Cryptography.CryptographicException">Сбой расшифровки.</exception>
+      <exception cref="T:System.NotSupportedException">Этот метод не поддерживается операционной системой. </exception>
+      <exception cref="T:System.OutOfMemoryException">Недостаточно памяти.</exception>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.IO.Compression</name>
+  </assembly>
+  <members>
+    <member name="T:System.IO.Compression.CompressionLevel">
+      <summary>Определяет значения, указывающие, для какой характеристики оптимизируется сжатие: скорость или размер.</summary>
+    </member>
+    <member name="F:System.IO.Compression.CompressionLevel.Fastest">
+      <summary>Операция сжатия должна завершиться как можно быстрее, даже если результирующий файл не будет сжат оптимально.</summary>
+    </member>
+    <member name="F:System.IO.Compression.CompressionLevel.NoCompression">
+      <summary>Файл не требуется сжимать.</summary>
+    </member>
+    <member name="F:System.IO.Compression.CompressionLevel.Optimal">
+      <summary>При операции сжатия должно применяться оптимальное сжатие, даже если это увеличивает длительность ее выполнения.</summary>
+    </member>
+    <member name="T:System.IO.Compression.CompressionMode">
+      <summary>Задает, следует ли сжимать или распаковывать основной поток.</summary>
+    </member>
+    <member name="F:System.IO.Compression.CompressionMode.Compress">
+      <summary>Сжимает основной поток.</summary>
+    </member>
+    <member name="F:System.IO.Compression.CompressionMode.Decompress">
+      <summary>Распаковывает основной поток.</summary>
+    </member>
+    <member name="T:System.IO.Compression.DeflateStream">
+      <summary>Предоставляет методы и свойства для сжатия и распаковки потоков с использованием алгоритма Deflate.</summary>
+    </member>
+    <member name="M:System.IO.Compression.DeflateStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionLevel)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.IO.Compression.DeflateStream" /> с использованием указанного потока и уровня сжатия.</summary>
+      <param name="stream">Поток для сжатия.</param>
+      <param name="compressionLevel">Одно из значений перечисления, указывающее, акцентировать ли внимание на скорости или эффективности сжатия при сжатии потока.</param>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="stream" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentException">Поток не поддерживает операции записи, например сжатие. (Свойство <see cref="P:System.IO.Stream.CanWrite" /> в объекте потока имеет значение false).</exception>
+    </member>
+    <member name="M:System.IO.Compression.DeflateStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionLevel,System.Boolean)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.IO.Compression.DeflateStream" /> с помощью указанного потока и уровня сжатия, а также при необходимости оставляет поток открытым.</summary>
+      <param name="stream">Поток для сжатия.</param>
+      <param name="compressionLevel">Одно из значений перечисления, указывающее, акцентировать ли внимание на скорости или эффективности сжатия при сжатии потока.</param>
+      <param name="leaveOpen">Значение true, чтобы оставить объект потока открытым после удаления объекта <see cref="T:System.IO.Compression.DeflateStream" />; в противном случае — значение false.</param>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="stream" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentException">Поток не поддерживает операции записи, например сжатие. (Свойство <see cref="P:System.IO.Stream.CanWrite" /> в объекте потока имеет значение false).</exception>
+    </member>
+    <member name="M:System.IO.Compression.DeflateStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionMode)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.IO.Compression.DeflateStream" /> с использованием указанного потока и режима сжатия.</summary>
+      <param name="stream">Поток, который нужно сжать или распаковать.</param>
+      <param name="mode">Одно из значений перечисления, указывающее, нужно ли выполнить сжатие или распаковку потока.</param>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="stream" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="mode" /> не является допустимым значением <see cref="T:System.IO.Compression.CompressionMode" />. -или- <see cref="T:System.IO.Compression.CompressionMode" /> равняется <see cref="F:System.IO.Compression.CompressionMode.Compress" />, и <see cref="P:System.IO.Stream.CanWrite" /> равняется false. -или- <see cref="T:System.IO.Compression.CompressionMode" /> равняется <see cref="F:System.IO.Compression.CompressionMode.Decompress" />, и <see cref="P:System.IO.Stream.CanRead" /> равняется false.</exception>
+    </member>
+    <member name="M:System.IO.Compression.DeflateStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionMode,System.Boolean)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.IO.Compression.DeflateStream" /> с помощью указанного потока и режима сжатия, а также при необходимости оставляет поток открытым.</summary>
+      <param name="stream">Поток, который нужно сжать или распаковать.</param>
+      <param name="mode">Одно из значений перечисления, указывающее, нужно ли выполнить сжатие или распаковку потока.</param>
+      <param name="leaveOpen">Значение true, чтобы оставить поток открытым после удаления объекта <see cref="T:System.IO.Compression.DeflateStream" />; в противном случае — значение false.</param>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="stream" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="mode" /> не является допустимым значением <see cref="T:System.IO.Compression.CompressionMode" />. -или- <see cref="T:System.IO.Compression.CompressionMode" /> равняется <see cref="F:System.IO.Compression.CompressionMode.Compress" />, и <see cref="P:System.IO.Stream.CanWrite" /> равняется false. -или- <see cref="T:System.IO.Compression.CompressionMode" /> равняется <see cref="F:System.IO.Compression.CompressionMode.Decompress" />, и <see cref="P:System.IO.Stream.CanRead" /> равняется false.</exception>
+    </member>
+    <member name="P:System.IO.Compression.DeflateStream.BaseStream">
+      <summary>Получает ссылку на основной поток.</summary>
+      <returns>Объект потока, представляющий основной поток.</returns>
+      <exception cref="T:System.ObjectDisposedException">Основной поток закрыт.</exception>
+    </member>
+    <member name="P:System.IO.Compression.DeflateStream.CanRead">
+      <summary>Получает значение, указывающее, поддерживает ли поток чтение во время распаковки файла.</summary>
+      <returns>Значение true, если значение <see cref="T:System.IO.Compression.CompressionMode" /> равно Decompress и основной поток открыт и поддерживает чтение; в противном случае — false.</returns>
+    </member>
+    <member name="P:System.IO.Compression.DeflateStream.CanSeek">
+      <summary>Возвращает значение, указывающее, поддерживает ли поток поиск.</summary>
+      <returns>Во всех случаях — значение false.</returns>
+    </member>
+    <member name="P:System.IO.Compression.DeflateStream.CanWrite">
+      <summary>Получает значение, определяющее, поддерживает ли поток операции записи.</summary>
+      <returns>Значение true, если значение <see cref="T:System.IO.Compression.CompressionMode" /> равно Compress и основной поток поддерживает запись и не закрыт; в противном случае — false.</returns>
+    </member>
+    <member name="M:System.IO.Compression.DeflateStream.Dispose(System.Boolean)">
+      <summary>Освобождает неуправляемые ресурсы, используемые объектом <see cref="T:System.IO.Compression.DeflateStream" />, а при необходимости освобождает также управляемые ресурсы.</summary>
+      <param name="disposing">Значение true позволяет освободить управляемые и неуправляемые ресурсы; значение false позволяет освободить только неуправляемые ресурсы.</param>
+    </member>
+    <member name="M:System.IO.Compression.DeflateStream.Flush">
+      <summary>Текущая реализация этого метода не функциональна.</summary>
+      <exception cref="T:System.ObjectDisposedException">Поток закрыт.</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="P:System.IO.Compression.DeflateStream.Length">
+      <summary>Это свойство не поддерживается и всегда вызывает исключение <see cref="T:System.NotSupportedException" />.</summary>
+      <returns>Значение типа long.</returns>
+      <exception cref="T:System.NotSupportedException">Для данного потока это свойство не поддерживается.</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="P:System.IO.Compression.DeflateStream.Position">
+      <summary>Это свойство не поддерживается и всегда вызывает исключение <see cref="T:System.NotSupportedException" />.</summary>
+      <returns>Значение типа long.</returns>
+      <exception cref="T:System.NotSupportedException">Для данного потока это свойство не поддерживается.</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.IO.Compression.DeflateStream.Read(System.Byte[],System.Int32,System.Int32)">
+      <summary>Считывает число распакованных байтов в указанный массив байтов.</summary>
+      <returns>Число байтов, которые были считаны в массив байтов.</returns>
+      <param name="array">Массив для хранения распакованных байтов.</param>
+      <param name="offset">Смещение в байтах в массиве <paramref name="array" />, в который считанные байты будут помещены.</param>
+      <param name="count">Максимальное число распакованных байтов для считывания.</param>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="array" /> имеет значение null.</exception>
+      <exception cref="T:System.InvalidOperationException">При создании объекта значение <see cref="T:System.IO.Compression.CompressionMode" /> было равно Compress. - или -  Основной поток не поддерживает чтение.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="offset" /> или <paramref name="count" /> меньше нуля. -или- Длина массива <paramref name="array" /> минус начальная точка индекса меньше чем <paramref name="count" />.</exception>
+      <exception cref="T:System.IO.InvalidDataException">Недопустимый формат данных.</exception>
+      <exception cref="T:System.ObjectDisposedException">Поток закрыт.</exception>
+    </member>
+    <member name="M:System.IO.Compression.DeflateStream.Seek(System.Int64,System.IO.SeekOrigin)">
+      <summary>Эта операция не поддерживается и всегда вызывает исключение <see cref="T:System.NotSupportedException" />.</summary>
+      <returns>Значение типа long.</returns>
+      <param name="offset">Расположение в потоке.</param>
+      <param name="origin">Одно из значений <see cref="T:System.IO.SeekOrigin" />.</param>
+      <exception cref="T:System.NotSupportedException">Для данного потока это свойство не поддерживается.</exception>
+    </member>
+    <member name="M:System.IO.Compression.DeflateStream.SetLength(System.Int64)">
+      <summary>Эта операция не поддерживается и всегда вызывает исключение <see cref="T:System.NotSupportedException" />.</summary>
+      <param name="value">Длина потока.</param>
+      <exception cref="T:System.NotSupportedException">Для данного потока это свойство не поддерживается.</exception>
+    </member>
+    <member name="M:System.IO.Compression.DeflateStream.Write(System.Byte[],System.Int32,System.Int32)">
+      <summary>Записывает сжатые байты в основной поток из указанного массива байтов.</summary>
+      <param name="array">Буфер, содержащий данные для сжатия.</param>
+      <param name="offset">Смещение байтов в <paramref name="array" />, из которого будут считываться байты.</param>
+      <param name="count">Максимальное число байтов для записи.</param>
+    </member>
+    <member name="T:System.IO.Compression.GZipStream">
+      <summary>Предоставляет методы и свойства, используемые для сжатия и распаковки потоков.</summary>
+    </member>
+    <member name="M:System.IO.Compression.GZipStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionLevel)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.IO.Compression.GZipStream" /> с использованием указанного потока и уровня сжатия.</summary>
+      <param name="stream">Поток для сжатия.</param>
+      <param name="compressionLevel">Одно из значений перечисления, указывающее, акцентировать ли внимание на скорости или эффективности сжатия при сжатии потока.</param>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="stream" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentException">Поток не поддерживает операции записи, например сжатие. (Свойство <see cref="P:System.IO.Stream.CanWrite" /> в объекте потока имеет значение false).</exception>
+    </member>
+    <member name="M:System.IO.Compression.GZipStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionLevel,System.Boolean)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.IO.Compression.GZipStream" /> с помощью указанного потока и уровня сжатия, а также при необходимости оставляет поток открытым.</summary>
+      <param name="stream">Поток для сжатия.</param>
+      <param name="compressionLevel">Одно из значений перечисления, указывающее, акцентировать ли внимание на скорости или эффективности сжатия при сжатии потока.</param>
+      <param name="leaveOpen">Значение true, чтобы оставить объект потока открытым после удаления объекта <see cref="T:System.IO.Compression.GZipStream" />; в противном случае — значение false.</param>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="stream" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentException">Поток не поддерживает операции записи, например сжатие. (Свойство <see cref="P:System.IO.Stream.CanWrite" /> в объекте потока имеет значение false).</exception>
+    </member>
+    <member name="M:System.IO.Compression.GZipStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionMode)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.IO.Compression.GZipStream" /> с использованием указанного потока и режима сжатия.</summary>
+      <param name="stream">Поток, который нужно сжать или распаковать.</param>
+      <param name="mode">Одно из значений перечисления, указывающее, нужно ли выполнить сжатие или распаковку потока.</param>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="stream" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="mode" /> не является допустимым значением перечисления <see cref="T:System.IO.Compression.CompressionMode" />. -или- <see cref="T:System.IO.Compression.CompressionMode" /> равняется <see cref="F:System.IO.Compression.CompressionMode.Compress" />, и <see cref="P:System.IO.Stream.CanWrite" /> равняется false. -или- <see cref="T:System.IO.Compression.CompressionMode" /> равняется <see cref="F:System.IO.Compression.CompressionMode.Decompress" />, и <see cref="P:System.IO.Stream.CanRead" /> равняется false.</exception>
+    </member>
+    <member name="M:System.IO.Compression.GZipStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionMode,System.Boolean)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.IO.Compression.GZipStream" /> с помощью указанного потока и режима сжатия, а также при необходимости оставляет поток открытым.</summary>
+      <param name="stream">Поток, который нужно сжать или распаковать.</param>
+      <param name="mode">Одно из значений перечисления, указывающее, нужно ли выполнить сжатие или распаковку потока.</param>
+      <param name="leaveOpen">Значение true, чтобы оставить поток открытым после удаления объекта <see cref="T:System.IO.Compression.GZipStream" />; в противном случае — значение false.</param>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="stream" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="mode" /> не является допустимым значением <see cref="T:System.IO.Compression.CompressionMode" />. -или- <see cref="T:System.IO.Compression.CompressionMode" /> равняется <see cref="F:System.IO.Compression.CompressionMode.Compress" />, и <see cref="P:System.IO.Stream.CanWrite" /> равняется false. -или- <see cref="T:System.IO.Compression.CompressionMode" /> равняется <see cref="F:System.IO.Compression.CompressionMode.Decompress" />, и <see cref="P:System.IO.Stream.CanRead" /> равняется false.</exception>
+    </member>
+    <member name="P:System.IO.Compression.GZipStream.BaseStream">
+      <summary>Получает ссылку на основной поток.</summary>
+      <returns>Объект потока, представляющий основной поток.</returns>
+      <exception cref="T:System.ObjectDisposedException">Основной поток закрыт.</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="P:System.IO.Compression.GZipStream.CanRead">
+      <summary>Получает значение, указывающее, поддерживает ли поток чтение во время распаковки файла.</summary>
+      <returns>Значение true, если значение <see cref="T:System.IO.Compression.CompressionMode" /> равно Decompress, и основной поток поддерживает чтение и не закрыт; в противном случае — false.</returns>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="P:System.IO.Compression.GZipStream.CanSeek">
+      <summary>Возвращает значение, указывающее, поддерживает ли поток поиск.</summary>
+      <returns>Во всех случаях — значение false.</returns>
+    </member>
+    <member name="P:System.IO.Compression.GZipStream.CanWrite">
+      <summary>Получает значение, определяющее, поддерживает ли поток операции записи.</summary>
+      <returns>Значение true, если значение <see cref="T:System.IO.Compression.CompressionMode" /> равно Compress и основной поток поддерживает запись и не закрыт; в противном случае — false.</returns>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.IO.Compression.GZipStream.Dispose(System.Boolean)">
+      <summary>Освобождает неуправляемые ресурсы, используемые объектом <see cref="T:System.IO.Compression.GZipStream" />, а при необходимости освобождает также управляемые ресурсы.</summary>
+      <param name="disposing">Значение true позволяет освободить управляемые и неуправляемые ресурсы; значение false позволяет освободить только неуправляемые ресурсы.</param>
+    </member>
+    <member name="M:System.IO.Compression.GZipStream.Flush">
+      <summary>Текущая реализация этого метода не функциональна.</summary>
+      <exception cref="T:System.ObjectDisposedException">Поток закрыт.</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="P:System.IO.Compression.GZipStream.Length">
+      <summary>Это свойство не поддерживается и всегда вызывает исключение <see cref="T:System.NotSupportedException" />.</summary>
+      <returns>Значение типа long.</returns>
+      <exception cref="T:System.NotSupportedException">Для данного потока это свойство не поддерживается.</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="P:System.IO.Compression.GZipStream.Position">
+      <summary>Это свойство не поддерживается и всегда вызывает исключение <see cref="T:System.NotSupportedException" />.</summary>
+      <returns>Значение типа long.</returns>
+      <exception cref="T:System.NotSupportedException">Для данного потока это свойство не поддерживается.</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.IO.Compression.GZipStream.Read(System.Byte[],System.Int32,System.Int32)">
+      <summary>Считывает число распакованных байтов в указанный массив байтов.</summary>
+      <returns>Число байтов, которые были распакованы в массив байтов. Если достигнут конец потока, возвращаемое значение представляет собой число считанных байтов или же равно нулю.</returns>
+      <param name="array">Массив, используемый для хранения распакованных байтов.</param>
+      <param name="offset">Смещение в байтах в массиве <paramref name="array" />, в который считанные байты будут помещены.</param>
+      <param name="count">Максимальное число распакованных байтов для считывания.</param>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="array" /> имеет значение null.</exception>
+      <exception cref="T:System.InvalidOperationException">При создании объекта значение <see cref="T:System.IO.Compression.CompressionMode" /> было равно Compress. - или - Основной поток не поддерживает чтение.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="offset" /> или <paramref name="count" /> меньше нуля. -или- Длина массива <paramref name="array" /> минус начальная точка индекса меньше чем <paramref name="count" />.</exception>
+      <exception cref="T:System.IO.InvalidDataException">Недопустимый формат данных.</exception>
+      <exception cref="T:System.ObjectDisposedException">Поток закрыт.</exception>
+    </member>
+    <member name="M:System.IO.Compression.GZipStream.Seek(System.Int64,System.IO.SeekOrigin)">
+      <summary>Это свойство не поддерживается и всегда вызывает исключение <see cref="T:System.NotSupportedException" />.</summary>
+      <returns>Значение типа long.</returns>
+      <param name="offset">Расположение в потоке.</param>
+      <param name="origin">Одно из значений <see cref="T:System.IO.SeekOrigin" />.</param>
+      <exception cref="T:System.NotSupportedException">Для данного потока это свойство не поддерживается.</exception>
+    </member>
+    <member name="M:System.IO.Compression.GZipStream.SetLength(System.Int64)">
+      <summary>Это свойство не поддерживается и всегда вызывает исключение <see cref="T:System.NotSupportedException" />.</summary>
+      <param name="value">Длина потока.</param>
+      <exception cref="T:System.NotSupportedException">Для данного потока это свойство не поддерживается.</exception>
+    </member>
+    <member name="M:System.IO.Compression.GZipStream.Write(System.Byte[],System.Int32,System.Int32)">
+      <summary>Записывает сжатые байты в основной поток из указанного массива байтов.</summary>
+      <param name="array">Буфер, содержащий данные для сжатия.</param>
+      <param name="offset">Смещение байтов в <paramref name="array" />, из которого будут считываться байты.</param>
+      <param name="count">Максимальное число байтов для записи.</param>
+      <exception cref="T:System.ObjectDisposedException">Операция записи не может быть выполнена, поскольку поток закрыт.</exception>
+    </member>
+    <member name="T:System.IO.Compression.ZipArchive">
+      <summary>Представляет пакет сжатых файлов в формате ZIP архива.</summary>
+    </member>
+    <member name="M:System.IO.Compression.ZipArchive.#ctor(System.IO.Stream)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.IO.Compression.ZipArchive" /> из указанного потока.</summary>
+      <param name="stream">Поток, содержащий архив для чтения.</param>
+      <exception cref="T:System.ArgumentException">Поток был закрыт до начала операции или не поддерживает чтение.</exception>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="stream" /> имеет значение null.</exception>
+      <exception cref="T:System.IO.InvalidDataException">Формат содержимого потока отличен от ZIP-архива.</exception>
+    </member>
+    <member name="M:System.IO.Compression.ZipArchive.#ctor(System.IO.Stream,System.IO.Compression.ZipArchiveMode)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.IO.Compression.ZipArchive" /> из указанного потока с указанным режимом.</summary>
+      <param name="stream">Входной или выходной поток.</param>
+      <param name="mode">Одно из значений перечисления, указывающее, для чтения, создания или обновления записей используется ZIP-архив.</param>
+      <exception cref="T:System.ArgumentException">Поток уже закрыт или возможности потока не соответствует режиму.</exception>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="stream" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Недопустимое значение параметра <paramref name="mode" />.</exception>
+      <exception cref="T:System.IO.InvalidDataException">Содержимое потока не удалось интерпретировать как ZIP-архив. -или- <paramref name="mode" /> имеет значение <see cref="F:System.IO.Compression.ZipArchiveMode.Update" /> и запись отсутствует в архиве или повреждена и не может быть прочитана. -или- <paramref name="mode" /> имеет значение <see cref="F:System.IO.Compression.ZipArchiveMode.Update" /> и запись слишком велика, чтобы поместиться в памяти.</exception>
+    </member>
+    <member name="M:System.IO.Compression.ZipArchive.#ctor(System.IO.Stream,System.IO.Compression.ZipArchiveMode,System.Boolean)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.IO.Compression.ZipArchive" /> на указанном потоке для указанного режима, а также при необходимости оставляет поток открытым.</summary>
+      <param name="stream">Входной или выходной поток.</param>
+      <param name="mode">Одно из значений перечисления, указывающее, для чтения, создания или обновления записей используется ZIP-архив.</param>
+      <param name="leaveOpen">Значение true, чтобы оставить поток открытым после удаления объекта <see cref="T:System.IO.Compression.ZipArchive" />; в противном случае — значение false.</param>
+      <exception cref="T:System.ArgumentException">Поток уже закрыт или возможности потока не соответствует режиму.</exception>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="stream" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Недопустимое значение параметра <paramref name="mode" />.</exception>
+      <exception cref="T:System.IO.InvalidDataException">Содержимое потока не удалось интерпретировать как ZIP-архив. -или- <paramref name="mode" /> имеет значение <see cref="F:System.IO.Compression.ZipArchiveMode.Update" /> и запись отсутствует в архиве или повреждена и не может быть прочитана. -или- <paramref name="mode" /> имеет значение <see cref="F:System.IO.Compression.ZipArchiveMode.Update" /> и запись слишком велика, чтобы поместиться в памяти.</exception>
+    </member>
+    <member name="M:System.IO.Compression.ZipArchive.#ctor(System.IO.Stream,System.IO.Compression.ZipArchiveMode,System.Boolean,System.Text.Encoding)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.IO.Compression.ZipArchive" /> на указанном потоке для указанного режима, использует указанную кодировку для кодировку для имен записей, а также при необходимости оставляет поток открытым.</summary>
+      <param name="stream">Входной или выходной поток.</param>
+      <param name="mode">Одно из значений перечисления, указывающее, для чтения, создания или обновления записей используется ZIP-архив.</param>
+      <param name="leaveOpen">Значение true, чтобы оставить поток открытым после удаления объекта <see cref="T:System.IO.Compression.ZipArchive" />; в противном случае — значение false.</param>
+      <param name="entryNameEncoding">Кодирование, используемое при чтении или записи имен записей в этом архиве. Задайте значение для этого параметра, только если кодирование требуется для взаимодействия с инструментами и библиотеками ZIP-архива, которые не поддерживают кодирование UTF-8 для имен записей.</param>
+      <exception cref="T:System.ArgumentException">Поток уже закрыт или возможности потока не соответствует режиму.</exception>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="stream" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Недопустимое значение параметра <paramref name="mode" />.</exception>
+      <exception cref="T:System.IO.InvalidDataException">Содержимое потока не удалось интерпретировать как ZIP-архив. -или- <paramref name="mode" /> имеет значение <see cref="F:System.IO.Compression.ZipArchiveMode.Update" /> и запись отсутствует в архиве или повреждена и не может быть прочитана. -или- <paramref name="mode" /> имеет значение <see cref="F:System.IO.Compression.ZipArchiveMode.Update" /> и запись слишком велика, чтобы поместиться в памяти.</exception>
+    </member>
+    <member name="M:System.IO.Compression.ZipArchive.CreateEntry(System.String)">
+      <summary>Создает пустую запись, которая имеет указанные путь и имя записи в ZIP архиве.</summary>
+      <returns>Пустая запись в ZIP-архиве.</returns>
+      <param name="entryName">Путь относительно корня архива, который указывает имя создаваемой записи.</param>
+      <exception cref="T:System.ArgumentException">Параметр <paramref name="entryName" /> имеет значение <see cref="F:System.String.Empty" />.</exception>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="entryName" /> имеет значение null.</exception>
+      <exception cref="T:System.NotSupportedException">ZIP-архив не поддерживает запись.</exception>
+      <exception cref="T:System.ObjectDisposedException">ZIP-архив был удален.</exception>
+    </member>
+    <member name="M:System.IO.Compression.ZipArchive.CreateEntry(System.String,System.IO.Compression.CompressionLevel)">
+      <summary>Создает пустую запись, которая имеет указанные имя и уровень сжатия ZIP записи в архиве.</summary>
+      <returns>Пустая запись в ZIP-архиве.</returns>
+      <param name="entryName">Путь относительно корня архива, который указывает имя создаваемой записи.</param>
+      <param name="compressionLevel">Одно из значений перечисления, указывающее, акцентировать ли внимание на скорости или эффективности сжатия при создании записи.</param>
+      <exception cref="T:System.ArgumentException">Параметр <paramref name="entryName" /> имеет значение <see cref="F:System.String.Empty" />.</exception>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="entryName" /> имеет значение null.</exception>
+      <exception cref="T:System.NotSupportedException">ZIP-архив не поддерживает запись.</exception>
+      <exception cref="T:System.ObjectDisposedException">ZIP-архив был удален.</exception>
+    </member>
+    <member name="M:System.IO.Compression.ZipArchive.Dispose">
+      <summary>Освобождает ресурсы, используемые текущим экземпляром класса <see cref="T:System.IO.Compression.ZipArchive" />.</summary>
+    </member>
+    <member name="M:System.IO.Compression.ZipArchive.Dispose(System.Boolean)">
+      <summary>Вызывается методами <see cref="M:System.IO.Compression.ZipArchive.Dispose" /> и <see cref="M:System.Object.Finalize" />, чтобы освободить неуправляемые ресурсы, используемые текущим экземпляром класса <see cref="T:System.IO.Compression.ZipArchive" />, и необязательно заканчивает запись архива и высвобождает управляемые ресурсы.</summary>
+      <param name="disposing">Значение true для завершения записи архива и освобождения управляемых и неуправляемых ресурсов; значение false для освобождения только неуправляемых ресурсов.</param>
+    </member>
+    <member name="P:System.IO.Compression.ZipArchive.Entries">
+      <summary>Получает коллекцию сущностей, которые находятся в ZIP-архиве в текущий момент.</summary>
+      <returns>Коллекция записей, которые находятся в ZIP-архиве в текущий момент.</returns>
+      <exception cref="T:System.NotSupportedException">ZIP-архив не поддерживает чтение.</exception>
+      <exception cref="T:System.ObjectDisposedException">ZIP-архив был удален.</exception>
+      <exception cref="T:System.IO.InvalidDataException">ZIP-архив поврежден, и его записи не могут быть извлечены.</exception>
+    </member>
+    <member name="M:System.IO.Compression.ZipArchive.GetEntry(System.String)">
+      <summary>Извлекает Программу-оболочку для заданной записи в ZIP-архиве.</summary>
+      <returns>Программа-оболочка для определенной записи в архиве; null если запись не существует в архиве.</returns>
+      <param name="entryName">Путь относительно корня архива, который указывает запись для получения.</param>
+      <exception cref="T:System.ArgumentException">Параметр <paramref name="entryName" /> имеет значение <see cref="F:System.String.Empty" />.</exception>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="entryName" /> имеет значение null.</exception>
+      <exception cref="T:System.NotSupportedException">ZIP-архив не поддерживает чтение.</exception>
+      <exception cref="T:System.ObjectDisposedException">ZIP-архив был удален.</exception>
+      <exception cref="T:System.IO.InvalidDataException">ZIP-архив поврежден, и его записи не могут быть извлечены.</exception>
+    </member>
+    <member name="P:System.IO.Compression.ZipArchive.Mode">
+      <summary>Получает значение, которое описывает тип действий, которые ZIP-архив может выполнять на записях.</summary>
+      <returns>Одно из значений перечисления, описывающее тип действия (чтение, создание или обновление), которое ZIP-архив может выполнять над записями.</returns>
+    </member>
+    <member name="T:System.IO.Compression.ZipArchiveEntry">
+      <summary>Представляет сжатый файл внутри ZIP-архива.</summary>
+    </member>
+    <member name="P:System.IO.Compression.ZipArchiveEntry.Archive">
+      <summary>Получает ZIP-архив, к которому принадлежит запись.</summary>
+      <returns>ZIP-архив, которому принадлежит запись, или значение null, если запись была удалена.</returns>
+    </member>
+    <member name="P:System.IO.Compression.ZipArchiveEntry.CompressedLength">
+      <summary>Получает сжатый размер записи в ZIP-архиве.</summary>
+      <returns>Сжатый размер записи в ZIP-архиве.</returns>
+      <exception cref="T:System.InvalidOperationException">Значение свойства недоступно, поскольку запись была изменена.</exception>
+    </member>
+    <member name="M:System.IO.Compression.ZipArchiveEntry.Delete">
+      <summary>Удаляет запись из ZIP-архива.</summary>
+      <exception cref="T:System.IO.IOException">Сущность уже открыта для чтения или записи.</exception>
+      <exception cref="T:System.NotSupportedException">ZIP-архив для данной записи был открыт в режиме, отличном от <see cref="F:System.IO.Compression.ZipArchiveMode.Update" />.</exception>
+      <exception cref="T:System.ObjectDisposedException">ZIP-архив для данной записи был удален.</exception>
+    </member>
+    <member name="P:System.IO.Compression.ZipArchiveEntry.FullName">
+      <summary>Получает относительный путь записи в ZIP-архиве.</summary>
+      <returns>Относительный путь записи в ZIP-архиве.</returns>
+    </member>
+    <member name="P:System.IO.Compression.ZipArchiveEntry.LastWriteTime">
+      <summary>Получает или задает время последнего изменения записи в ZIP-архиве.</summary>
+      <returns>Время последнего изменения записи в ZIP-архиве.</returns>
+      <exception cref="T:System.NotSupportedException">Попытка задать это свойство завершилась ошибкой, потому что ZIP-архив для записи находится в режиме <see cref="F:System.IO.Compression.ZipArchiveMode.Read" />.</exception>
+      <exception cref="T:System.IO.IOException">Режим архива имеет значение <see cref="F:System.IO.Compression.ZipArchiveMode.Create" />. - или - Режим архива имеет значение <see cref="F:System.IO.Compression.ZipArchiveMode.Update" />, и запись была открыта.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Была предпринята попытка присвоить этому свойству значение, более раннее, чем 1-ое января 1980 года 0:00:00 (полночь) или более позднее чем 31-ое декабря 2107 года 23:59:58 (за одну секунду до полуночи).</exception>
+    </member>
+    <member name="P:System.IO.Compression.ZipArchiveEntry.Length">
+      <summary>Получает несжатый размер записи в ZIP-архиве.</summary>
+      <returns>Несжатый размер записи в ZIP-архиве.</returns>
+      <exception cref="T:System.InvalidOperationException">Значение свойства недоступно, поскольку запись была изменена.</exception>
+    </member>
+    <member name="P:System.IO.Compression.ZipArchiveEntry.Name">
+      <summary>Получает имя файла записи в ZIP-архиве.</summary>
+      <returns>Имя файла записи в ZIP-архиве.</returns>
+    </member>
+    <member name="M:System.IO.Compression.ZipArchiveEntry.Open">
+      <summary>Открывает запись из ZIP-архива.</summary>
+      <returns>Поток, представляющий содержимое записи.</returns>
+      <exception cref="T:System.IO.IOException">Сущность уже открыта для записи. -или- Сущность была удалена из архива. -или- Архив для данной записи был открыт в режиме <see cref="F:System.IO.Compression.ZipArchiveMode.Create" />, и в эту запись уже были записаны данные.</exception>
+      <exception cref="T:System.IO.InvalidDataException">Запись или отсутствует в архиве, или повреждена и не может быть прочитана.  -или- Запись сжата с помощью неподдерживаемого метода сжатия.</exception>
+      <exception cref="T:System.ObjectDisposedException">ZIP-архив для данной записи был удален.</exception>
+    </member>
+    <member name="M:System.IO.Compression.ZipArchiveEntry.ToString">
+      <summary>Извлекает относительный путь записи в ZIP-архиве.</summary>
+      <returns>Относительный путь записи, который является значением, хранящимся в свойстве <see cref="P:System.IO.Compression.ZipArchiveEntry.FullName" />.</returns>
+    </member>
+    <member name="T:System.IO.Compression.ZipArchiveMode">
+      <summary>Определяет значения для взаимодействия с записями ZIP-архива.</summary>
+    </member>
+    <member name="F:System.IO.Compression.ZipArchiveMode.Create">
+      <summary>Разрешено только создание новых записей архива.</summary>
+    </member>
+    <member name="F:System.IO.Compression.ZipArchiveMode.Read">
+      <summary>Разрешено только чтение записей архива.</summary>
+    </member>
+    <member name="F:System.IO.Compression.ZipArchiveMode.Update">
+      <summary>Операции чтение и запись разрешены для записей архива.</summary>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,507 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.Text.Encoding</name>
+  </assembly>
+  <members>
+    <member name="T:System.Text.Decoder">
+      <summary>將編碼的位元組序列轉換成一組字元。</summary>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Decoder.#ctor">
+      <summary>初始化 <see cref="T:System.Text.Decoder" /> 類別的新執行個體。</summary>
+    </member>
+    <member name="M:System.Text.Decoder.Convert(System.Byte[],System.Int32,System.Int32,System.Char[],System.Int32,System.Int32,System.Boolean,System.Int32@,System.Int32@,System.Boolean@)">
+      <summary>將編碼的位元組陣列轉換成 UTF-16 編碼的字元，然後將結果存放在字元陣列中。</summary>
+      <param name="bytes">要轉換的位元組陣列。</param>
+      <param name="byteIndex">要轉換的第一個 <paramref name="bytes" /> 項目。</param>
+      <param name="byteCount">要轉換的 <paramref name="bytes" /> 元素數目。</param>
+      <param name="chars">存放已轉換字元的陣列。</param>
+      <param name="charIndex">存放資料的第一個 <paramref name="chars" /> 項目。</param>
+      <param name="charCount">用於轉換的 <paramref name="chars" /> 項目的最大數目。</param>
+      <param name="flush">true 指示沒有進一步的資料要進行轉換，否則為 false。</param>
+      <param name="bytesUsed">當這個方法傳回時，會包含轉換作業中所用的位元組數目。 這個參數會以未初始化的狀態傳遞。</param>
+      <param name="charsUsed">當這個方法傳回時，會包含轉換作業所產生的 <paramref name="chars" /> 的字元數。 這個參數會以未初始化的狀態傳遞。</param>
+      <param name="completed">當這個方法傳回時，如果由 <paramref name="byteCount" /> 所指定的所有字元都已轉換，則會包含 true，否則會包含 false。 這個參數會以未初始化的狀態傳遞。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="chars" /> 或 <paramref name="bytes" /> 為 null  (Nothing)。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="charIndex" />、<paramref name="charCount" />、<paramref name="byteIndex" /> 或 <paramref name="byteCount" /> 小於零。 -或- <paramref name="chars" /> 的長度。  -<paramref name="charIndex" /> 小於 <paramref name="charCount" />。 -或- <paramref name="bytes" /> 的長度。  -<paramref name="byteIndex" /> 小於 <paramref name="byteCount" />。</exception>
+      <exception cref="T:System.ArgumentException">輸出緩衝區太小，無法容納任何已轉換的輸入。 輸出緩衝區應該大於或等於 <see cref="Overload:System.Text.Decoder.GetCharCount" /> 方法所指示的大小。</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">發生的後援 (如需更完整的說明，請參閱.NET Framework 中的字元編碼方式)。 -和- <see cref="P:System.Text.Decoder.Fallback" /> 設定為 <see cref="T:System.Text.DecoderExceptionFallback" />。</exception>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="M:System.Text.Decoder.GetCharCount(System.Byte[],System.Int32,System.Int32)">
+      <summary>在衍生類別中覆寫時，計算從指定的位元組陣列解碼位元組序列所產生的字元數目。</summary>
+      <returns>解碼指定位元組序列及內部緩衝區內任何位元組所產生的字元數目。</returns>
+      <param name="bytes">包含要解碼之位元組序列的位元組陣列。</param>
+      <param name="index">要解碼的第一個位元組索引。</param>
+      <param name="count">要解碼的位元組數。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="bytes" /> 為 null  (Nothing)。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> 或 <paramref name="count" /> 小於零。 -或- <paramref name="index" /> 和 <paramref name="count" /> 不代表 <paramref name="bytes" /> 中有效的範圍。</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">發生的後援 (如需更完整的說明，請參閱.NET Framework 中的字元編碼方式)。 -和- <see cref="P:System.Text.Decoder.Fallback" /> 設定為 <see cref="T:System.Text.DecoderExceptionFallback" />。</exception>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="M:System.Text.Decoder.GetCharCount(System.Byte[],System.Int32,System.Int32,System.Boolean)">
+      <summary>在衍生類別中覆寫時，計算從指定的位元組陣列解碼位元組序列所產生的字元數目。 參數會指示，在計算之後是否要清除解碼器的內部狀態。</summary>
+      <returns>解碼指定位元組序列及內部緩衝區內任何位元組所產生的字元數目。</returns>
+      <param name="bytes">包含要解碼之位元組序列的位元組陣列。</param>
+      <param name="index">要解碼的第一個位元組索引。</param>
+      <param name="count">要解碼的位元組數。</param>
+      <param name="flush">true 表示要在計算之後模擬編碼器內部狀態的清除動作，否則為 false。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="bytes" /> 為 null  (Nothing)。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> 或 <paramref name="count" /> 小於零。 -或- <paramref name="index" /> 和 <paramref name="count" /> 不代表 <paramref name="bytes" /> 中有效的範圍。</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">發生的後援 (如需更完整的說明，請參閱.NET Framework 中的字元編碼方式)。 -和- <see cref="P:System.Text.Decoder.Fallback" /> 設定為 <see cref="T:System.Text.DecoderExceptionFallback" />。</exception>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="M:System.Text.Decoder.GetChars(System.Byte[],System.Int32,System.Int32,System.Char[],System.Int32)">
+      <summary>在衍生類別中覆寫時，將指定位元組陣列中的位元組序列以及內部緩衝區內的任何位元組，解碼成指定的字元陣列。</summary>
+      <returns>實際寫入 <paramref name="chars" /> 的字元數。</returns>
+      <param name="bytes">包含要解碼之位元組序列的位元組陣列。</param>
+      <param name="byteIndex">要解碼的第一個位元組索引。</param>
+      <param name="byteCount">要解碼的位元組數。</param>
+      <param name="chars">包含產生的一組字元之字元陣列。</param>
+      <param name="charIndex">要開始寫入產生的一組字元之索引。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="bytes" /> 為 null  (Nothing)。 -或- <paramref name="chars" /> 為 null (Nothing)。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="byteIndex" />、<paramref name="byteCount" /> 或 <paramref name="charIndex" /> 小於零。 -或- <paramref name="byteindex" /> 和 <paramref name="byteCount" /> 不代表 <paramref name="bytes" /> 中有效的範圍。 -或- <paramref name="charIndex" /> 在 <paramref name="chars" /> 中不是有效的索引。</exception>
+      <exception cref="T:System.ArgumentException">從 <paramref name="charIndex" /> 到陣列結尾處，<paramref name="chars" /> 沒有足夠的容量容納結果字元。</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">發生的後援 (如需更完整的說明，請參閱.NET Framework 中的字元編碼方式)。 -和- <see cref="P:System.Text.Decoder.Fallback" /> 設定為 <see cref="T:System.Text.DecoderExceptionFallback" />。</exception>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="M:System.Text.Decoder.GetChars(System.Byte[],System.Int32,System.Int32,System.Char[],System.Int32,System.Boolean)">
+      <summary>在衍生類別中覆寫時，將指定位元組陣列中的位元組序列以及內部緩衝區內的任何位元組，解碼成指定的字元陣列。 參數會指示，在轉換之後是否要清除解碼器的內部狀態。</summary>
+      <returns>實際寫入 <paramref name="chars" /> 參數的字元數。</returns>
+      <param name="bytes">包含要解碼之位元組序列的位元組陣列。</param>
+      <param name="byteIndex">要解碼的第一個位元組索引。</param>
+      <param name="byteCount">要解碼的位元組數。</param>
+      <param name="chars">包含產生的一組字元之字元陣列。</param>
+      <param name="charIndex">要開始寫入產生的一組字元之索引。</param>
+      <param name="flush">true 表示要在轉換之後清除解碼器的內部狀態，否則為 false。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="bytes" /> 為 null  (Nothing)。 -或- <paramref name="chars" /> 為 null (Nothing)。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="byteIndex" />、<paramref name="byteCount" /> 或 <paramref name="charIndex" /> 小於零。 -或- <paramref name="byteindex" /> 和 <paramref name="byteCount" /> 不代表 <paramref name="bytes" /> 中有效的範圍。 -或- <paramref name="charIndex" /> 在 <paramref name="chars" /> 中不是有效的索引。</exception>
+      <exception cref="T:System.ArgumentException">從 <paramref name="charIndex" /> 到陣列結尾處，<paramref name="chars" /> 沒有足夠的容量容納結果字元。</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">發生的後援 (如需更完整的說明，請參閱.NET Framework 中的字元編碼方式)。 -和- <see cref="P:System.Text.Decoder.Fallback" /> 設定為 <see cref="T:System.Text.DecoderExceptionFallback" />。</exception>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="M:System.Text.Decoder.Reset">
+      <summary>在衍生類別中覆寫時，將解碼器設定回其初始狀態。</summary>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="T:System.Text.DecoderFallbackException">
+      <summary>當解碼器後援作業失敗時，所擲回的例外狀況。 此類別無法被繼承。</summary>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="M:System.Text.DecoderFallbackException.#ctor">
+      <summary>初始化 <see cref="T:System.Text.DecoderFallbackException" /> 類別的新執行個體。</summary>
+    </member>
+    <member name="M:System.Text.DecoderFallbackException.#ctor(System.String)">
+      <summary>初始化 <see cref="T:System.Text.DecoderFallbackException" /> 類別的新執行個體。 參數會指定錯誤訊息。</summary>
+      <param name="message">錯誤訊息。</param>
+    </member>
+    <member name="M:System.Text.DecoderFallbackException.#ctor(System.String,System.Byte[],System.Int32)">
+      <summary>初始化 <see cref="T:System.Text.DecoderFallbackException" /> 類別的新執行個體。 參數會指定錯誤訊息、所要解碼的位元組陣列，以及無法解碼的位元組索引。</summary>
+      <param name="message">錯誤訊息。</param>
+      <param name="bytesUnknown">輸入位元組陣列。</param>
+      <param name="index">
+        <paramref name="bytesUnknown" /> 中無法解碼的位元組的索引位置。</param>
+    </member>
+    <member name="M:System.Text.DecoderFallbackException.#ctor(System.String,System.Exception)">
+      <summary>初始化 <see cref="T:System.Text.DecoderFallbackException" /> 類別的新執行個體。 參數會指定錯誤訊息，以及造成此例外狀況的內部例外狀況。</summary>
+      <param name="message">錯誤訊息。</param>
+      <param name="innerException">造成此例外狀況的例外狀況。</param>
+    </member>
+    <member name="P:System.Text.DecoderFallbackException.BytesUnknown">
+      <summary>取得造成例外狀況的輸入位元組序列。</summary>
+      <returns>無法解碼的輸入位元組陣列。</returns>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="P:System.Text.DecoderFallbackException.Index">
+      <summary>取得位元組的輸入位元組序列中造成例外狀況的索引位置。</summary>
+      <returns>位元組的輸入位元組陣列中無法解碼的索引位置。 索引位置以零起始。</returns>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="T:System.Text.Encoder">
+      <summary>將一組字元轉換成位元組序列。</summary>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoder.#ctor">
+      <summary>初始化 <see cref="T:System.Text.Encoder" /> 類別的新執行個體。</summary>
+    </member>
+    <member name="M:System.Text.Encoder.Convert(System.Char[],System.Int32,System.Int32,System.Byte[],System.Int32,System.Int32,System.Boolean,System.Int32@,System.Int32@,System.Boolean@)">
+      <summary>將 Unicode 字元陣列轉換成編碼的位元組序列，然後將結果存放在位元組陣列中。</summary>
+      <param name="chars">要進行轉換的字元陣列。</param>
+      <param name="charIndex">要轉換的第一個 <paramref name="chars" /> 項目。</param>
+      <param name="charCount">要轉換的 <paramref name="chars" /> 元素數目。</param>
+      <param name="bytes">存放已轉換位元組的陣列。</param>
+      <param name="byteIndex">存放資料的第一個 <paramref name="bytes" /> 項目。</param>
+      <param name="byteCount">用於轉換的 <paramref name="bytes" /> 項目的最大數目。</param>
+      <param name="flush">true 指示沒有進一步的資料要進行轉換，否則為 false。</param>
+      <param name="charsUsed">當這個方法傳回時，會包含 <paramref name="chars" /> 中用於轉換的字元數目。 這個參數會以未初始化的狀態傳遞。</param>
+      <param name="bytesUsed">當這個方法傳回時，會包含轉換作業所產生的位元組數目。 這個參數會以未初始化的狀態傳遞。</param>
+      <param name="completed">當這個方法傳回時，如果由 <paramref name="charCount" /> 所指定的所有字元都已轉換，則會包含 true，否則會包含 false。 這個參數會以未初始化的狀態傳遞。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="chars" /> 或 <paramref name="bytes" /> 為 null  (Nothing)。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="charIndex" />、<paramref name="charCount" />、<paramref name="byteIndex" /> 或 <paramref name="byteCount" /> 小於零。 -或- <paramref name="chars" /> 的長度。  -<paramref name="charIndex" /> 小於 <paramref name="charCount" />。 -或- <paramref name="bytes" /> 的長度。  -<paramref name="byteIndex" /> 小於 <paramref name="byteCount" />。</exception>
+      <exception cref="T:System.ArgumentException">輸出緩衝區太小，無法容納任何已轉換的輸入。 輸出緩衝區應該大於或等於 <see cref="Overload:System.Text.Encoder.GetByteCount" /> 方法所指示的大小。</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">發生的後援 (如需更完整的說明，請參閱.NET Framework 中的字元編碼方式)。 -和- <see cref="P:System.Text.Encoder.Fallback" /> 設定為 <see cref="T:System.Text.EncoderExceptionFallback" />。</exception>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoder.GetByteCount(System.Char[],System.Int32,System.Int32,System.Boolean)">
+      <summary>在衍生類別中覆寫時，計算從指定的字元陣列編碼一組字元所產生的位元組數目。 參數會指示，在計算之後是否要清除編碼器的內部狀態。</summary>
+      <returns>編碼指定的字元及內部緩衝區內任何字元所產生的位元組數目。</returns>
+      <param name="chars">包含要解碼之一組字元的字元陣列。</param>
+      <param name="index">要編碼的第一個字元索引。</param>
+      <param name="count">要編碼的字元數。</param>
+      <param name="flush">true 表示要在計算之後模擬編碼器內部狀態的清除動作，否則為 false。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="chars" /> 為 null。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> 或 <paramref name="count" /> 小於零。 -或- <paramref name="index" /> 和 <paramref name="count" /> 不代表 <paramref name="chars" /> 中有效的範圍。</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">發生的後援 (如需更完整的說明，請參閱.NET Framework 中的字元編碼方式)。 -和- <see cref="P:System.Text.Encoder.Fallback" /> 設定為 <see cref="T:System.Text.EncoderExceptionFallback" />。</exception>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoder.GetBytes(System.Char[],System.Int32,System.Int32,System.Byte[],System.Int32,System.Boolean)">
+      <summary>在衍生類別中覆寫時，將指定字元陣列中的一組字元以及內部緩衝區內的任何字元，編碼成指定的位元組陣列。 參數會指示，在轉換之後是否要清除編碼器的內部狀態。</summary>
+      <returns>寫入 <paramref name="bytes" /> 的實際位元組數。</returns>
+      <param name="chars">包含要解碼之一組字元的字元陣列。</param>
+      <param name="charIndex">要編碼的第一個字元索引。</param>
+      <param name="charCount">要編碼的字元數。</param>
+      <param name="bytes">要包含結果位元組序列的位元組陣列。</param>
+      <param name="byteIndex">要開始寫入結果位元組序列的索引。</param>
+      <param name="flush">true 表示要在轉換之後清除編碼器的內部狀態，否則為 false。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="chars" /> 為 null (Nothing)。 -或- <paramref name="bytes" /> 為 null  (Nothing)。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="charIndex" />、<paramref name="charCount" /> 或 <paramref name="byteIndex" /> 小於零。 -或- <paramref name="charIndex" /> 和 <paramref name="charCount" /> 不代表 <paramref name="chars" /> 中有效的範圍。 -或- <paramref name="byteIndex" /> 在 <paramref name="bytes" /> 中不是有效的索引。</exception>
+      <exception cref="T:System.ArgumentException">從 <paramref name="byteIndex" /> 到陣列結尾處，<paramref name="bytes" /> 沒有足夠的容量容納結果位元組。</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">發生的後援 (如需更完整的說明，請參閱.NET Framework 中的字元編碼方式)。 -和- <see cref="P:System.Text.Encoder.Fallback" /> 設定為 <see cref="T:System.Text.EncoderExceptionFallback" />。</exception>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="T:System.Text.EncoderFallbackException">
+      <summary>當編碼器後援作業失敗時，所擲回的例外狀況。 此類別無法被繼承。</summary>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="M:System.Text.EncoderFallbackException.#ctor">
+      <summary>初始化 <see cref="T:System.Text.EncoderFallbackException" /> 類別的新執行個體。</summary>
+    </member>
+    <member name="M:System.Text.EncoderFallbackException.#ctor(System.String)">
+      <summary>初始化 <see cref="T:System.Text.EncoderFallbackException" /> 類別的新執行個體。 參數會指定錯誤訊息。</summary>
+      <param name="message">錯誤訊息。</param>
+    </member>
+    <member name="M:System.Text.EncoderFallbackException.#ctor(System.String,System.Exception)">
+      <summary>初始化 <see cref="T:System.Text.EncoderFallbackException" /> 類別的新執行個體。 參數會指定錯誤訊息，以及造成此例外狀況的內部例外狀況。</summary>
+      <param name="message">錯誤訊息。</param>
+      <param name="innerException">造成此例外狀況的例外狀況。</param>
+    </member>
+    <member name="P:System.Text.EncoderFallbackException.CharUnknown">
+      <summary>取得造成例外狀況的輸入字元。</summary>
+      <returns>無法編碼的字元。</returns>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="P:System.Text.EncoderFallbackException.CharUnknownHigh">
+      <summary>取得造成例外狀況之 Surrogate 字組的高元件字元。</summary>
+      <returns>無法編碼之 Surrogate 字組的高元件字元。</returns>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="P:System.Text.EncoderFallbackException.CharUnknownLow">
+      <summary>取得造成例外狀況之 Surrogate 字組的低元件字元。</summary>
+      <returns>無法編碼之 Surrogate 字組的低元件字元。</returns>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="P:System.Text.EncoderFallbackException.Index">
+      <summary>取得字元的輸入緩衝區中造成例外狀況的索引位置。</summary>
+      <returns>取得無法編碼之字元輸入緩衝區中的索引位置。</returns>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="T:System.Text.Encoding">
+      <summary>表示字元編碼方式。</summary>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.#ctor">
+      <summary>初始化 <see cref="T:System.Text.Encoding" /> 類別的新執行個體。</summary>
+    </member>
+    <member name="P:System.Text.Encoding.BigEndianUnicode">
+      <summary>取得 UTF-16 格式的編碼方式，其使用由大到小的位元組順序。</summary>
+      <returns>UTF-16 格式的編碼物件，這個格式使用位元組由大到小的位元組順序。</returns>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.Convert(System.Text.Encoding,System.Text.Encoding,System.Byte[])">
+      <summary>將整個位元組陣列從一種編碼方式轉換成另一種編碼方式。</summary>
+      <returns>
+        <see cref="T:System.Byte" /> 型別的陣列，包含將 <paramref name="bytes" /> 從 <paramref name="srcEncoding" /> 轉換成 <paramref name="dstEncoding" /> 的結果。</returns>
+      <param name="srcEncoding">
+        <paramref name="bytes" /> 的編碼格式。</param>
+      <param name="dstEncoding">目標編碼格式。</param>
+      <param name="bytes">要轉換的位元組。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="srcEncoding" /> 為 null。 -或- <paramref name="dstEncoding" /> 為 null。 -或- <paramref name="bytes" /> 為 null。</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">發生的後援 (如需完整說明，請參閱.NET Framework 中的字元編碼方式)。 -和- srcEncoding。<see cref="P:System.Text.Encoding.DecoderFallback" /> 會設定為 <see cref="T:System.Text.DecoderExceptionFallback" />。</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">發生的後援 (如需完整說明，請參閱.NET Framework 中的字元編碼方式)。 -和- dstEncoding。<see cref="P:System.Text.Encoding.EncoderFallback" /> 會設定為 <see cref="T:System.Text.EncoderExceptionFallback" />。</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.Convert(System.Text.Encoding,System.Text.Encoding,System.Byte[],System.Int32,System.Int32)">
+      <summary>將位元組陣列中的某一位元組範圍由一種編碼方式轉換成另一種編碼方式。</summary>
+      <returns>
+        <see cref="T:System.Byte" /> 型別的陣列，其中包含將 <paramref name="bytes" /> 中的某個位元組範圍從 <paramref name="srcEncoding" /> 轉換成 <paramref name="dstEncoding" /> 的結果。</returns>
+      <param name="srcEncoding">來源陣列 <paramref name="bytes" /> 的編碼方式。</param>
+      <param name="dstEncoding">輸出陣列的編碼方式。</param>
+      <param name="bytes">要進行轉換的位元組陣列。</param>
+      <param name="index">
+        <paramref name="bytes" /> 中要轉換的第一個項目索引。</param>
+      <param name="count">要進行轉換的位元組數。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="srcEncoding" /> 為 null。 -或- <paramref name="dstEncoding" /> 為 null。 -或- <paramref name="bytes" /> 為 null。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> 和 <paramref name="count" /> 不會指定位元組陣列中的有效範圍。</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">發生的後援 (如需完整說明，請參閱.NET Framework 中的字元編碼方式)。 -和- srcEncoding。<see cref="P:System.Text.Encoding.DecoderFallback" /> 會設定為 <see cref="T:System.Text.DecoderExceptionFallback" />。</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">發生的後援 (如需完整說明，請參閱.NET Framework 中的字元編碼方式)。 -和- dstEncoding。<see cref="P:System.Text.Encoding.EncoderFallback" /> 會設定為 <see cref="T:System.Text.EncoderExceptionFallback" />。</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.Equals(System.Object)">
+      <summary>判斷指定的 <see cref="T:System.Object" /> 和目前的執行個體是否相等。</summary>
+      <returns>如果 <paramref name="value" /> 是 <see cref="T:System.Text.Encoding" /> 的執行個體，並且等於目前的執行個體，則為 true，否則為 false。</returns>
+      <param name="value">要與目前執行個體比較的 <see cref="T:System.Object" />。</param>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetByteCount(System.Char[])">
+      <summary>在衍生類別中覆寫時，計算編碼指定字元陣列中所有字元所產生的位元組數目。</summary>
+      <returns>編碼指定字元陣列中所有字元所產生的位元組數目。</returns>
+      <param name="chars">字元陣列，包含要編碼的字元。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="chars" /> 為 null。</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">發生的後援 (如需完整說明，請參閱.NET Framework 中的字元編碼方式)。 -和- <see cref="P:System.Text.Encoding.EncoderFallback" /> 設定為 <see cref="T:System.Text.EncoderExceptionFallback" />。</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetByteCount(System.Char[],System.Int32,System.Int32)">
+      <summary>在衍生類別中覆寫時，計算從指定的字元陣列編碼一組字元所產生的位元組數目。</summary>
+      <returns>編碼指定字元所產生的位元組數。</returns>
+      <param name="chars">包含要解碼之一組字元的字元陣列。</param>
+      <param name="index">要編碼的第一個字元索引。</param>
+      <param name="count">要編碼的字元數。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="chars" /> 為 null。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> 或 <paramref name="count" /> 小於零。 -或- <paramref name="index" /> 和 <paramref name="count" /> 不代表 <paramref name="chars" /> 中有效的範圍。</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">發生的後援 (如需完整說明，請參閱.NET Framework 中的字元編碼方式)。 -和- <see cref="P:System.Text.Encoding.EncoderFallback" /> 設定為 <see cref="T:System.Text.EncoderExceptionFallback" />。</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetByteCount(System.String)">
+      <summary>在衍生類別中覆寫時，計算編碼指定的字串字元所產生的位元組數目。</summary>
+      <returns>編碼指定字元所產生的位元組數。</returns>
+      <param name="s">字串，包含要編碼的一組字元。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="s" /> 為 null。</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">發生的後援 (如需完整說明，請參閱.NET Framework 中的字元編碼方式)。 -和- <see cref="P:System.Text.Encoding.EncoderFallback" /> 設定為 <see cref="T:System.Text.EncoderExceptionFallback" />。</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetBytes(System.Char[])">
+      <summary>在衍生類別中覆寫時，將指定字元陣列中的所有字元編碼成位元組序列。</summary>
+      <returns>位元組陣列，包含將指定之一組字元編碼之後的結果。</returns>
+      <param name="chars">字元陣列，包含要編碼的字元。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="chars" /> 為 null。</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">發生的後援 (如需完整說明，請參閱.NET Framework 中的字元編碼方式)。 -和- <see cref="P:System.Text.Encoding.EncoderFallback" /> 設定為 <see cref="T:System.Text.EncoderExceptionFallback" />。</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetBytes(System.Char[],System.Int32,System.Int32)">
+      <summary>在衍生類別中覆寫時，將指定字元陣列中的一組字元編碼成位元組序列。</summary>
+      <returns>位元組陣列，包含將指定之一組字元編碼之後的結果。</returns>
+      <param name="chars">包含要解碼之一組字元的字元陣列。</param>
+      <param name="index">要編碼的第一個字元索引。</param>
+      <param name="count">要編碼的字元數。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="chars" /> 為 null。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> 或 <paramref name="count" /> 小於零。 -或- <paramref name="index" /> 和 <paramref name="count" /> 不代表 <paramref name="chars" /> 中有效的範圍。</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">發生的後援 (如需完整說明，請參閱.NET Framework 中的字元編碼方式)。 -和- <see cref="P:System.Text.Encoding.EncoderFallback" /> 設定為 <see cref="T:System.Text.EncoderExceptionFallback" />。</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetBytes(System.Char[],System.Int32,System.Int32,System.Byte[],System.Int32)">
+      <summary>在衍生類別中覆寫時，將指定字元陣列中的一組字元編碼成指定的位元組陣列。</summary>
+      <returns>寫入 <paramref name="bytes" /> 的實際位元組數。</returns>
+      <param name="chars">包含要解碼之一組字元的字元陣列。</param>
+      <param name="charIndex">要編碼的第一個字元索引。</param>
+      <param name="charCount">要編碼的字元數。</param>
+      <param name="bytes">要包含結果位元組序列的位元組陣列。</param>
+      <param name="byteIndex">要開始寫入結果位元組序列的索引。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="chars" /> 為 null。 -或- <paramref name="bytes" /> 為 null。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="charIndex" />、<paramref name="charCount" /> 或 <paramref name="byteIndex" /> 小於零。 -或- <paramref name="charIndex" /> 和 <paramref name="charCount" /> 不代表 <paramref name="chars" /> 中有效的範圍。 -或- <paramref name="byteIndex" /> 在 <paramref name="bytes" /> 中不是有效的索引。</exception>
+      <exception cref="T:System.ArgumentException">從 <paramref name="byteIndex" /> 到陣列結尾處，<paramref name="bytes" /> 沒有足夠的容量容納結果位元組。</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">發生的後援 (如需完整說明，請參閱.NET Framework 中的字元編碼方式)。 -和- <see cref="P:System.Text.Encoding.EncoderFallback" /> 設定為 <see cref="T:System.Text.EncoderExceptionFallback" />。</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetBytes(System.String)">
+      <summary>在衍生類別中覆寫時，將指定字串中的所有字元編碼成位元組序列。</summary>
+      <returns>位元組陣列，包含將指定之一組字元編碼之後的結果。</returns>
+      <param name="s">字串，包含要編碼的字元。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="s" /> 為 null。</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">發生的後援 (如需完整說明，請參閱.NET Framework 中的字元編碼方式)。 -和- <see cref="P:System.Text.Encoding.EncoderFallback" /> 設定為 <see cref="T:System.Text.EncoderExceptionFallback" />。</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetBytes(System.String,System.Int32,System.Int32,System.Byte[],System.Int32)">
+      <summary>在衍生類別中覆寫時，將指定字串中的一組字元編碼成指定的位元組陣列。</summary>
+      <returns>寫入 <paramref name="bytes" /> 的實際位元組數。</returns>
+      <param name="s">字串，包含要編碼的一組字元。</param>
+      <param name="charIndex">要編碼的第一個字元索引。</param>
+      <param name="charCount">要編碼的字元數。</param>
+      <param name="bytes">要包含結果位元組序列的位元組陣列。</param>
+      <param name="byteIndex">要開始寫入結果位元組序列的索引。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="s" /> 為 null。 -或- <paramref name="bytes" /> 為 null。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="charIndex" />、<paramref name="charCount" /> 或 <paramref name="byteIndex" /> 小於零。 -或- <paramref name="charIndex" /> 和 <paramref name="charCount" /> 不代表 <paramref name="chars" /> 中有效的範圍。 -或- <paramref name="byteIndex" /> 在 <paramref name="bytes" /> 中不是有效的索引。</exception>
+      <exception cref="T:System.ArgumentException">從 <paramref name="byteIndex" /> 到陣列結尾處，<paramref name="bytes" /> 沒有足夠的容量容納結果位元組。</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">發生的後援 (如需完整說明，請參閱.NET Framework 中的字元編碼方式)。 -和- <see cref="P:System.Text.Encoding.EncoderFallback" /> 設定為 <see cref="T:System.Text.EncoderExceptionFallback" />。</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetCharCount(System.Byte[])">
+      <summary>在衍生類別中覆寫時，計算解碼指定位元組陣列中所有位元組所產生的字元數目。</summary>
+      <returns>解碼指定位元組序列所產生的字元數。</returns>
+      <param name="bytes">包含要解碼之位元組序列的位元組陣列。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="bytes" /> 為 null。</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">發生的後援 (如需完整說明，請參閱.NET Framework 中的字元編碼方式)。 -和- <see cref="P:System.Text.Encoding.DecoderFallback" /> 設定為 <see cref="T:System.Text.DecoderExceptionFallback" />。</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetCharCount(System.Byte[],System.Int32,System.Int32)">
+      <summary>在衍生類別中覆寫時，計算從指定的位元組陣列解碼位元組序列所產生的字元數目。</summary>
+      <returns>解碼指定位元組序列所產生的字元數。</returns>
+      <param name="bytes">包含要解碼之位元組序列的位元組陣列。</param>
+      <param name="index">要解碼的第一個位元組索引。</param>
+      <param name="count">要解碼的位元組數。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="bytes" /> 為 null。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> 或 <paramref name="count" /> 小於零。 -或- <paramref name="index" /> 和 <paramref name="count" /> 不代表 <paramref name="bytes" /> 中有效的範圍。</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">發生的後援 (如需完整說明，請參閱.NET Framework 中的字元編碼方式)。 -和- <see cref="P:System.Text.Encoding.DecoderFallback" /> 設定為 <see cref="T:System.Text.DecoderExceptionFallback" />。</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetChars(System.Byte[])">
+      <summary>在衍生類別中覆寫時，將指定位元組陣列中的所有位元組解碼成一組字元。</summary>
+      <returns>字元陣列，包含解碼指定位元組序列的結果。</returns>
+      <param name="bytes">包含要解碼之位元組序列的位元組陣列。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="bytes" /> 為 null。</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">發生的後援 (如需完整說明，請參閱.NET Framework 中的字元編碼方式)。 -和- <see cref="P:System.Text.Encoding.DecoderFallback" /> 設定為 <see cref="T:System.Text.DecoderExceptionFallback" />。</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetChars(System.Byte[],System.Int32,System.Int32)">
+      <summary>在衍生類別中覆寫時，將指定位元組陣列中的位元組序列解碼成一組字元。</summary>
+      <returns>字元陣列，包含解碼指定位元組序列的結果。</returns>
+      <param name="bytes">包含要解碼之位元組序列的位元組陣列。</param>
+      <param name="index">要解碼的第一個位元組索引。</param>
+      <param name="count">要解碼的位元組數。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="bytes" /> 為 null。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> 或 <paramref name="count" /> 小於零。 -或- <paramref name="index" /> 和 <paramref name="count" /> 不代表 <paramref name="bytes" /> 中有效的範圍。</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">發生的後援 (如需完整說明，請參閱.NET Framework 中的字元編碼方式)。 -和- <see cref="P:System.Text.Encoding.DecoderFallback" /> 設定為 <see cref="T:System.Text.DecoderExceptionFallback" />。</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetChars(System.Byte[],System.Int32,System.Int32,System.Char[],System.Int32)">
+      <summary>在衍生類別中覆寫時，將指定位元組陣列中的位元組序列解碼成指定的字元陣列。</summary>
+      <returns>實際寫入 <paramref name="chars" /> 的字元數。</returns>
+      <param name="bytes">包含要解碼之位元組序列的位元組陣列。</param>
+      <param name="byteIndex">要解碼的第一個位元組索引。</param>
+      <param name="byteCount">要解碼的位元組數。</param>
+      <param name="chars">包含產生的一組字元之字元陣列。</param>
+      <param name="charIndex">要開始寫入產生的一組字元之索引。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="bytes" /> 為 null。 -或- <paramref name="chars" /> 為 null。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="byteIndex" />、<paramref name="byteCount" /> 或 <paramref name="charIndex" /> 小於零。 -或- <paramref name="byteindex" /> 和 <paramref name="byteCount" /> 不代表 <paramref name="bytes" /> 中有效的範圍。 -或- <paramref name="charIndex" /> 在 <paramref name="chars" /> 中不是有效的索引。</exception>
+      <exception cref="T:System.ArgumentException">從 <paramref name="charIndex" /> 到陣列結尾處，<paramref name="chars" /> 沒有足夠的容量容納結果字元。</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">發生的後援 (如需完整說明，請參閱.NET Framework 中的字元編碼方式)。 -和- <see cref="P:System.Text.Encoding.DecoderFallback" /> 設定為 <see cref="T:System.Text.DecoderExceptionFallback" />。</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetDecoder">
+      <summary>在衍生類別中覆寫時，取得會將編碼的位元組序列轉換成字元序列的解碼器。</summary>
+      <returns>
+        <see cref="T:System.Text.Decoder" />，會將編碼的位元組序列轉換成字元序列。</returns>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetEncoder">
+      <summary>在衍生類別中覆寫時，取得會將 Unicode 字元序列轉換成編碼的位元組序列的編碼器。</summary>
+      <returns>
+        <see cref="T:System.Text.Encoder" />，會將 Unicode 字元序列轉換成編碼的位元組序列。</returns>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetEncoding(System.String)">
+      <summary>傳回與指定字碼頁名稱相關聯的編碼方式。</summary>
+      <returns>與指定字碼頁相關聯的編碼方式。</returns>
+      <param name="name">慣用編碼方式的字碼頁名稱。 <see cref="P:System.Text.Encoding.WebName" /> 屬性傳回的任何值都是有效值。 <see cref="T:System.Text.Encoding" /> 類別主題中表格的名稱欄列出可能值。</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="name" /> 不是有效的字碼頁名稱。 -或- 主要平台尚不支援以 <paramref name="name" /> 所指示的字碼頁。</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetHashCode">
+      <summary>傳回目前執行個體的雜湊碼。</summary>
+      <returns>目前執行個體的雜湊程式碼。</returns>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetMaxByteCount(System.Int32)">
+      <summary>在衍生類別中覆寫時，計算編碼指定的字元數所產生的最大位元組數目。</summary>
+      <returns>編碼指定字元數所產生的最大位元組數。</returns>
+      <param name="charCount">要編碼的字元數。</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="charCount" /> 小於零。</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">發生的後援 (如需完整說明，請參閱.NET Framework 中的字元編碼方式)。 -和- <see cref="P:System.Text.Encoding.EncoderFallback" /> 設定為 <see cref="T:System.Text.EncoderExceptionFallback" />。</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetMaxCharCount(System.Int32)">
+      <summary>在衍生類別中覆寫時，計算解碼指定的位元組數目所產生的最大字元數目。</summary>
+      <returns>解碼指定位元組數所產生的最大字元數。</returns>
+      <param name="byteCount">要解碼的位元組數。</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="byteCount" /> 小於零。</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">發生的後援 (如需完整說明，請參閱.NET Framework 中的字元編碼方式)。 -和- <see cref="P:System.Text.Encoding.DecoderFallback" /> 設定為 <see cref="T:System.Text.DecoderExceptionFallback" />。</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetPreamble">
+      <summary>在衍生類別中覆寫時，傳回可指定所用編碼方式的位元組序列。</summary>
+      <returns>位元組陣列，包含可指定所用編碼方式的位元組序列。 -或- 如果不需要前序編碼，則位元組陣列的長度為零。</returns>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetString(System.Byte[],System.Int32,System.Int32)">
+      <summary>在衍生類別中覆寫時，將指定位元組陣列中的位元組序列解碼成字串。</summary>
+      <returns>字串，包含將指定之位元組序列解碼的結果。</returns>
+      <param name="bytes">包含要解碼之位元組序列的位元組陣列。</param>
+      <param name="index">要解碼的第一個位元組索引。</param>
+      <param name="count">要解碼的位元組數。</param>
+      <exception cref="T:System.ArgumentException">位元組陣列包含無效的 Unicode 字碼指標。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="bytes" /> 為 null。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> 或 <paramref name="count" /> 小於零。 -或- <paramref name="index" /> 和 <paramref name="count" /> 不代表 <paramref name="bytes" /> 中有效的範圍。</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">發生的後援 (如需完整說明，請參閱.NET Framework 中的字元編碼方式)。 -和- <see cref="P:System.Text.Encoding.DecoderFallback" /> 設定為 <see cref="T:System.Text.DecoderExceptionFallback" />。</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="P:System.Text.Encoding.Unicode">
+      <summary>以位元組由小到大位元組順序取得 UTF-16 格式的編碼方式。</summary>
+      <returns>UTF-16 格式的編碼方式，使用位元組由小到大的位元組順序。</returns>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="P:System.Text.Encoding.UTF8">
+      <summary>取得 UTF-8 格式的編碼方式。</summary>
+      <returns>UTF-8 格式的編碼方式。</returns>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="P:System.Text.Encoding.WebName">
+      <summary>在衍生類別中覆寫時，若要取得目前的編碼方式，請取得向 Internet Assigned Numbers Authority (IANA) 註冊的名稱。</summary>
+      <returns>目前 <see cref="T:System.Text.Encoding" /> 的 IANA 名稱。</returns>
+      <filterpriority>2</filterpriority>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,509 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.Text.Encoding</name>
+  </assembly>
+  <members>
+    <member name="T:System.Text.Decoder">
+      <summary>Convertit une séquence d'octets encodés en un jeu de caractères.</summary>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Decoder.#ctor">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Text.Decoder" />.</summary>
+    </member>
+    <member name="M:System.Text.Decoder.Convert(System.Byte[],System.Int32,System.Int32,System.Char[],System.Int32,System.Int32,System.Boolean,System.Int32@,System.Int32@,System.Boolean@)">
+      <summary>Convertit un tableau d'octets encodés en caractères encodés UTF-16 et stocke le résultat dans un tableau de caractères.</summary>
+      <param name="bytes">Tableau d'octets à convertir.</param>
+      <param name="byteIndex">Premier élément de <paramref name="bytes" /> à convertir.</param>
+      <param name="byteCount">Nombre d'éléments de <paramref name="bytes" /> à convertir.</param>
+      <param name="chars">Tableau pour stocker les caractères convertis.</param>
+      <param name="charIndex">Premier élément de <paramref name="chars" /> dans lequel les données sont stockées.</param>
+      <param name="charCount">Nombre maximal d'éléments de <paramref name="chars" /> à utiliser dans la conversion.</param>
+      <param name="flush">true pour indiquer qu'aucune autre donnée ne doit être convertie ; sinon, false.</param>
+      <param name="bytesUsed">Lorsque cette méthode est retournée, contient le nombre d'octets utilisés dans la conversion. Ce paramètre est passé sans être initialisé.</param>
+      <param name="charsUsed">Lorsque cette méthode est retournée, contient le nombre de caractères de <paramref name="chars" /> produits par la conversion. Ce paramètre est passé sans être initialisé.</param>
+      <param name="completed">Lorsque cette méthode est retournée, contient true si tous les caractères spécifiés par <paramref name="byteCount" /> ont été convertis ; sinon, false. Ce paramètre est passé sans être initialisé.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="chars" /> ou <paramref name="bytes" /> est null  (Nothing).</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="charIndex" />, <paramref name="charCount" />, <paramref name="byteIndex" /> ou <paramref name="byteCount" /> est inférieur à zéro. ou Longueur de <paramref name="chars" />  - <paramref name="charIndex" /> est inférieur à <paramref name="charCount" />. ou Longueur de <paramref name="bytes" />  - <paramref name="byteIndex" /> est inférieur à <paramref name="byteCount" />.</exception>
+      <exception cref="T:System.ArgumentException">La mémoire tampon de sortie est trop petite pour contenir le moindre élément de l'entrée convertie. La mémoire tampon de sortie doit être supérieure ou égale à la taille indiquée par la méthode <see cref="Overload:System.Text.Decoder.GetCharCount" />.</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">Un secours s'est produit (consultez Encodage de caractères dans le .NET Framework pour obtenir une explication plus complète) – et – <see cref="P:System.Text.Decoder.Fallback" /> a la valeur <see cref="T:System.Text.DecoderExceptionFallback" />.</exception>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="M:System.Text.Decoder.GetCharCount(System.Byte[],System.Int32,System.Int32)">
+      <summary>En cas de substitution dans une classe dérivée, calcule le nombre de caractères produits par le décodage d'une séquence d'octets du tableau d'octets spécifié.</summary>
+      <returns>Nombre de caractères produits en décodant la séquence d'octets spécifiée et les octets de la mémoire tampon interne.</returns>
+      <param name="bytes">Tableau d'octets contenant la séquence d'octets à décoder.</param>
+      <param name="index">Index du premier octet à décoder.</param>
+      <param name="count">Nombre d'octets à décoder.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="bytes" /> est null  (Nothing).</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> ou <paramref name="count" /> est inférieur à zéro. ou  <paramref name="index" /> et <paramref name="count" /> ne désignent pas une plage valide de <paramref name="bytes" />.</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">Un secours s'est produit (consultez Encodage de caractères dans le .NET Framework pour obtenir une explication plus complète) – et – <see cref="P:System.Text.Decoder.Fallback" /> a la valeur <see cref="T:System.Text.DecoderExceptionFallback" />.</exception>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="M:System.Text.Decoder.GetCharCount(System.Byte[],System.Int32,System.Int32,System.Boolean)">
+      <summary>En cas de substitution dans une classe dérivée, calcule le nombre de caractères produits par le décodage d'une séquence d'octets du tableau d'octets spécifié. Un paramètre indique si l'état interne du décodeur doit être effacé après le calcul.</summary>
+      <returns>Nombre de caractères produits en décodant la séquence d'octets spécifiée et les octets de la mémoire tampon interne.</returns>
+      <param name="bytes">Tableau d'octets contenant la séquence d'octets à décoder.</param>
+      <param name="index">Index du premier octet à décoder.</param>
+      <param name="count">Nombre d'octets à décoder.</param>
+      <param name="flush">true pour simuler l'effacement de l'état interne de l'encodeur après le calcul ; sinon, false.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="bytes" /> est null  (Nothing).</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> ou <paramref name="count" /> est inférieur à zéro. ou  <paramref name="index" /> et <paramref name="count" /> ne désignent pas une plage valide de <paramref name="bytes" />.</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">Un secours s'est produit (consultez Encodage de caractères dans le .NET Framework pour obtenir une explication plus complète) – et – <see cref="P:System.Text.Decoder.Fallback" /> a la valeur <see cref="T:System.Text.DecoderExceptionFallback" />.</exception>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="M:System.Text.Decoder.GetChars(System.Byte[],System.Int32,System.Int32,System.Char[],System.Int32)">
+      <summary>En cas de substitution dans une classe dérivée, décode une séquence d'octets du tableau d'octets spécifié et les octets de la mémoire tampon interne dans le tableau de caractères spécifié.</summary>
+      <returns>Nombre réel de caractères écrits dans <paramref name="chars" />.</returns>
+      <param name="bytes">Tableau d'octets contenant la séquence d'octets à décoder.</param>
+      <param name="byteIndex">Index du premier octet à décoder.</param>
+      <param name="byteCount">Nombre d'octets à décoder.</param>
+      <param name="chars">Tableau de caractères contenant le jeu de caractères obtenu.</param>
+      <param name="charIndex">Index auquel commencer l'écriture du jeu de caractères obtenu.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="bytes" /> est null  (Nothing). ou  <paramref name="chars" /> est null  (Nothing).</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="byteIndex" />, <paramref name="byteCount" /> ou <paramref name="charIndex" /> est inférieur à zéro. ou  <paramref name="byteindex" /> et <paramref name="byteCount" /> ne désignent pas une plage valide de <paramref name="bytes" />. ou  <paramref name="charIndex" /> n'est pas un index valide dans <paramref name="chars" />.</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="chars" /> ne possède pas une capacité suffisante entre <paramref name="charIndex" /> et la fin du tableau pour prendre en charge les caractères obtenus.</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">Un secours s'est produit (consultez Encodage de caractères dans le .NET Framework pour obtenir une explication plus complète) – et – <see cref="P:System.Text.Decoder.Fallback" /> a la valeur <see cref="T:System.Text.DecoderExceptionFallback" />.</exception>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="M:System.Text.Decoder.GetChars(System.Byte[],System.Int32,System.Int32,System.Char[],System.Int32,System.Boolean)">
+      <summary>En cas de substitution dans une classe dérivée, décode une séquence d'octets du tableau d'octets spécifié et les octets de la mémoire tampon interne dans le tableau de caractères spécifié. Un paramètre indique si l'état interne du décodeur doit être effacé après la conversion.</summary>
+      <returns>Nombre réel de caractères écrits dans le paramètre <paramref name="chars" />.</returns>
+      <param name="bytes">Tableau d'octets contenant la séquence d'octets à décoder.</param>
+      <param name="byteIndex">Index du premier octet à décoder.</param>
+      <param name="byteCount">Nombre d'octets à décoder.</param>
+      <param name="chars">Tableau de caractères contenant le jeu de caractères obtenu.</param>
+      <param name="charIndex">Index auquel commencer l'écriture du jeu de caractères obtenu.</param>
+      <param name="flush">true pour effacer l'état interne du décodeur après la conversion ; sinon, false.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="bytes" /> est null  (Nothing). ou  <paramref name="chars" /> est null  (Nothing).</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="byteIndex" />, <paramref name="byteCount" /> ou <paramref name="charIndex" /> est inférieur à zéro. ou  <paramref name="byteindex" /> et <paramref name="byteCount" /> ne désignent pas une plage valide de <paramref name="bytes" />. ou  <paramref name="charIndex" /> n'est pas un index valide dans <paramref name="chars" />.</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="chars" /> ne possède pas une capacité suffisante entre <paramref name="charIndex" /> et la fin du tableau pour prendre en charge les caractères obtenus.</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">Un secours s'est produit (consultez Encodage de caractères dans le .NET Framework pour obtenir une explication plus complète) – et – <see cref="P:System.Text.Decoder.Fallback" /> a la valeur <see cref="T:System.Text.DecoderExceptionFallback" />.</exception>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="M:System.Text.Decoder.Reset">
+      <summary>En cas de substitution dans une classe dérivée, redéfinit le décodeur à son état initial.</summary>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="T:System.Text.DecoderFallbackException">
+      <summary>Exception levée en cas d'échec de l'opération du décodeur de secours. Cette classe ne peut pas être héritée.</summary>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="M:System.Text.DecoderFallbackException.#ctor">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Text.DecoderFallbackException" />.</summary>
+    </member>
+    <member name="M:System.Text.DecoderFallbackException.#ctor(System.String)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Text.DecoderFallbackException" />. Un paramètre spécifie le message d'erreur.</summary>
+      <param name="message">Message d'erreur.</param>
+    </member>
+    <member name="M:System.Text.DecoderFallbackException.#ctor(System.String,System.Byte[],System.Int32)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Text.DecoderFallbackException" />. Les paramètres spécifient le message d'erreur, le tableau d'octets en cours de décodage, et l'index de l'octet qui ne peut être décodé.</summary>
+      <param name="message">Message d'erreur.</param>
+      <param name="bytesUnknown">Tableau d'octets en entrée.</param>
+      <param name="index">Position d'index dans <paramref name="bytesUnknown" /> de l'octet qui ne peut pas être décodé.</param>
+    </member>
+    <member name="M:System.Text.DecoderFallbackException.#ctor(System.String,System.Exception)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Text.DecoderFallbackException" />. Les paramètres spécifient le message d'erreur et l'exception interne à l'origine de cette exception.</summary>
+      <param name="message">Message d'erreur.</param>
+      <param name="innerException">Exception qui est la cause de cette exception.</param>
+    </member>
+    <member name="P:System.Text.DecoderFallbackException.BytesUnknown">
+      <summary>Obtient la séquence d'octets en entrée qui a provoqué l'exception.</summary>
+      <returns>Tableau d'octets en entrée qui ne peut pas être décodé.</returns>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="P:System.Text.DecoderFallbackException.Index">
+      <summary>Obtient la position d'index, dans la séquence d'octets en entrée, de l'octet qui a provoqué l'exception.</summary>
+      <returns>Position d'index, dans le tableau d'octets en entrée, de l'octet qui ne peut pas être décodé. La position d'index est de base zéro.</returns>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="T:System.Text.Encoder">
+      <summary>Convertit un jeu de caractères en une séquence d'octets.</summary>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoder.#ctor">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Text.Encoder" />.</summary>
+    </member>
+    <member name="M:System.Text.Encoder.Convert(System.Char[],System.Int32,System.Int32,System.Byte[],System.Int32,System.Int32,System.Boolean,System.Int32@,System.Int32@,System.Boolean@)">
+      <summary>Convertit un tableau de caractères Unicode en une séquence d'octets encodée et stocke le résultat dans un tableau d'octets.</summary>
+      <param name="chars">Tableau de caractères à convertir.</param>
+      <param name="charIndex">Premier élément de <paramref name="chars" /> à convertir.</param>
+      <param name="charCount">Nombre d'éléments de <paramref name="chars" /> à convertir.</param>
+      <param name="bytes">Tableau où sont stockés les octets convertis.</param>
+      <param name="byteIndex">Premier élément de <paramref name="bytes" /> dans lequel les données sont stockées.</param>
+      <param name="byteCount">Nombre maximal d'éléments de <paramref name="bytes" /> à utiliser dans la conversion.</param>
+      <param name="flush">true pour indiquer qu'aucune autre donnée ne doit être convertie ; sinon, false.</param>
+      <param name="charsUsed">Lorsque cette méthode est retournée, contient le nombre de caractères de <paramref name="chars" /> utilisés dans la conversion. Ce paramètre est passé sans être initialisé.</param>
+      <param name="bytesUsed">Lorsque cette méthode est retournée, contient le nombre d'octets produits par la conversion. Ce paramètre est passé sans être initialisé.</param>
+      <param name="completed">Lorsque cette méthode est retournée, contient true si tous les caractères spécifiés par <paramref name="charCount" /> ont été convertis ; sinon, false. Ce paramètre est passé sans être initialisé.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="chars" /> ou <paramref name="bytes" /> est null  (Nothing).</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="charIndex" />, <paramref name="charCount" />, <paramref name="byteIndex" /> ou <paramref name="byteCount" /> est inférieur à zéro. ou Longueur de <paramref name="chars" />  - <paramref name="charIndex" /> est inférieur à <paramref name="charCount" />. ou Longueur de <paramref name="bytes" />  - <paramref name="byteIndex" /> est inférieur à <paramref name="byteCount" />.</exception>
+      <exception cref="T:System.ArgumentException">La mémoire tampon de sortie est trop petite pour contenir le moindre élément de l'entrée convertie. La mémoire tampon de sortie doit être supérieure ou égale à la taille indiquée par la méthode <see cref="Overload:System.Text.Encoder.GetByteCount" />.</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">Un secours s'est produit (consultez Encodage de caractères dans le .NET Framework pour obtenir une explication plus complète) – et – <see cref="P:System.Text.Encoder.Fallback" /> a la valeur <see cref="T:System.Text.EncoderExceptionFallback" />.</exception>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoder.GetByteCount(System.Char[],System.Int32,System.Int32,System.Boolean)">
+      <summary>En cas de substitution dans une classe dérivée, calcule le nombre d'octets produits par l'encodage d'un jeu de caractères du tableau de caractères spécifié. Un paramètre indique si l'état interne de l'encodeur doit être effacé après le calcul.</summary>
+      <returns>Nombre d'octets produits en encodant les caractères spécifiés et ceux de la mémoire tampon interne.</returns>
+      <param name="chars">Tableau de caractères contenant le jeu de caractères à encoder.</param>
+      <param name="index">Index du premier caractère à encoder.</param>
+      <param name="count">Nombre de caractères à encoder.</param>
+      <param name="flush">true pour simuler l'effacement de l'état interne de l'encodeur après le calcul ; sinon, false.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="chars" /> a la valeur null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> ou <paramref name="count" /> est inférieur à zéro. ou  <paramref name="index" /> et <paramref name="count" /> ne désignent pas une plage valide de <paramref name="chars" />.</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">Un secours s'est produit (consultez Encodage de caractères dans le .NET Framework pour obtenir une explication plus complète) – et – <see cref="P:System.Text.Encoder.Fallback" /> a la valeur <see cref="T:System.Text.EncoderExceptionFallback" />.</exception>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoder.GetBytes(System.Char[],System.Int32,System.Int32,System.Byte[],System.Int32,System.Boolean)">
+      <summary>En cas de substitution dans une classe dérivée, encode un jeu de caractères du tableau de caractères spécifié et les caractères de la mémoire tampon interne dans le tableau d'octets spécifié. Un paramètre indique si l'état interne de l'encodeur doit être effacé après la conversion.</summary>
+      <returns>Nombre réel d'octets écrits dans <paramref name="bytes" />.</returns>
+      <param name="chars">Tableau de caractères contenant le jeu de caractères à encoder.</param>
+      <param name="charIndex">Index du premier caractère à encoder.</param>
+      <param name="charCount">Nombre de caractères à encoder.</param>
+      <param name="bytes">Tableau d'octets contenant la séquence d'octets obtenue.</param>
+      <param name="byteIndex">Index auquel commencer l'écriture de la séquence d'octets obtenue.</param>
+      <param name="flush">true pour effacer l'état interne de l'encodeur après la conversion ; sinon, false.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="chars" /> est null  (Nothing). ou  <paramref name="bytes" /> est null  (Nothing).</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="charIndex" />, <paramref name="charCount" /> ou <paramref name="byteIndex" /> est inférieur à zéro. ou  <paramref name="charIndex" /> et <paramref name="charCount" /> ne désignent pas une plage valide de <paramref name="chars" />. ou  <paramref name="byteIndex" /> n'est pas un index valide dans <paramref name="bytes" />.</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="bytes" /> ne possède pas une capacité suffisante entre <paramref name="byteIndex" /> et la fin du tableau pour prendre en charge les octets obtenus.</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">Un secours s'est produit (consultez Encodage de caractères dans le .NET Framework pour obtenir une explication plus complète) – et – <see cref="P:System.Text.Encoder.Fallback" /> a la valeur <see cref="T:System.Text.EncoderExceptionFallback" />.</exception>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="T:System.Text.EncoderFallbackException">
+      <summary>Exception levée en cas d'échec de l'opération de l'encodeur de secours. Cette classe ne peut pas être héritée.</summary>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="M:System.Text.EncoderFallbackException.#ctor">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Text.EncoderFallbackException" />.</summary>
+    </member>
+    <member name="M:System.Text.EncoderFallbackException.#ctor(System.String)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Text.EncoderFallbackException" />. Un paramètre spécifie le message d'erreur.</summary>
+      <param name="message">Message d'erreur.</param>
+    </member>
+    <member name="M:System.Text.EncoderFallbackException.#ctor(System.String,System.Exception)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Text.EncoderFallbackException" />. Les paramètres spécifient le message d'erreur et l'exception interne à l'origine de cette exception.</summary>
+      <param name="message">Message d'erreur.</param>
+      <param name="innerException">Exception qui est la cause de cette exception.</param>
+    </member>
+    <member name="P:System.Text.EncoderFallbackException.CharUnknown">
+      <summary>Obtient le caractère en entrée qui a provoqué l'exception.</summary>
+      <returns>Caractère ne pouvant pas être encodé.</returns>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="P:System.Text.EncoderFallbackException.CharUnknownHigh">
+      <summary>Obtient le caractère composant étendu de la paire de substitution ayant provoqué l'exception.</summary>
+      <returns>Caractère composant étendu de la paire de substitution qui ne peut pas être encodé.</returns>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="P:System.Text.EncoderFallbackException.CharUnknownLow">
+      <summary>Obtient le caractère composant faible de la paire de substitution ayant provoqué l'exception.</summary>
+      <returns>Caractère composant faible de la paire de substitution qui ne peut pas être encodé.</returns>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="P:System.Text.EncoderFallbackException.Index">
+      <summary>Obtient la position d'index, dans la mémoire tampon d'entrée, du caractère qui a provoqué l'exception.</summary>
+      <returns>Position d'index dans la mémoire tampon d'entrée du caractère qui ne peut pas être encodé.</returns>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="T:System.Text.Encoding">
+      <summary>Représente un encodage de caractères.</summary>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.#ctor">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Text.Encoding" />.</summary>
+    </member>
+    <member name="P:System.Text.Encoding.BigEndianUnicode">
+      <summary>Obtient un encodage pour le format UTF-16 qui utilise l'ordre d'octet avec primauté des octets de poids fort (big-endian).</summary>
+      <returns>Objet d'encodage pour le format UTF-16 avec primauté des octets de poids fort (big-endian).</returns>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.Convert(System.Text.Encoding,System.Text.Encoding,System.Byte[])">
+      <summary>Convertit un tableau complet d'octets d'un encodage en un autre.</summary>
+      <returns>Tableau de type <see cref="T:System.Byte" /> contenant le résultat de la conversion de <paramref name="bytes" /> de <paramref name="srcEncoding" /> en <paramref name="dstEncoding" />.</returns>
+      <param name="srcEncoding">Format d'encodage de <paramref name="bytes" />.</param>
+      <param name="dstEncoding">Format d'encodage cible.</param>
+      <param name="bytes">Octets à convertir.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="srcEncoding" /> a la valeur null. ou  <paramref name="dstEncoding" /> a la valeur null. ou  <paramref name="bytes" /> a la valeur null.</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">Un secours s'est produit (consultez Encodage de caractères dans le .NET Framework pour obtenir une explication complète) – et – srcEncoding.<see cref="P:System.Text.Encoding.DecoderFallback" /> est défini sur <see cref="T:System.Text.DecoderExceptionFallback" />.</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">Un secours s'est produit (consultez Encodage de caractères dans le .NET Framework pour obtenir une explication complète) – et – dstEncoding.<see cref="P:System.Text.Encoding.EncoderFallback" /> est défini sur <see cref="T:System.Text.EncoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.Convert(System.Text.Encoding,System.Text.Encoding,System.Byte[],System.Int32,System.Int32)">
+      <summary>Convertit une plage d'octets d'un encodage à un autre dans un tableau d'octets.</summary>
+      <returns>Tableau de type <see cref="T:System.Byte" /> contenant le résultat de la conversion d'une plage d'octets de <paramref name="bytes" /> de <paramref name="srcEncoding" /> en <paramref name="dstEncoding" />.</returns>
+      <param name="srcEncoding">Encodage du tableau source, <paramref name="bytes" />.</param>
+      <param name="dstEncoding">Encodage du tableau de sortie.</param>
+      <param name="bytes">Tableau d'octets à convertir.</param>
+      <param name="index">Index du premier élément de <paramref name="bytes" /> à convertir.</param>
+      <param name="count">Nombre d'octets à convertir.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="srcEncoding" /> a la valeur null. ou  <paramref name="dstEncoding" /> a la valeur null. ou  <paramref name="bytes" /> a la valeur null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> et <paramref name="count" /> ne spécifient pas une plage valide du tableau d'octets.</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">Un secours s'est produit (consultez Encodage de caractères dans le .NET Framework pour obtenir une explication complète) – et – srcEncoding.<see cref="P:System.Text.Encoding.DecoderFallback" /> est défini sur <see cref="T:System.Text.DecoderExceptionFallback" />.</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">Un secours s'est produit (consultez Encodage de caractères dans le .NET Framework pour obtenir une explication complète) – et – dstEncoding.<see cref="P:System.Text.Encoding.EncoderFallback" /> est défini sur <see cref="T:System.Text.EncoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.Equals(System.Object)">
+      <summary>Détermine si l'objet <see cref="T:System.Object" /> spécifié est égal à l'instance actuelle.</summary>
+      <returns>true si <paramref name="value" /> est une instance de <see cref="T:System.Text.Encoding" /> et s'il est égal à l'instance actuelle ; sinon, false.</returns>
+      <param name="value">
+        <see cref="T:System.Object" /> à comparer à l'instance actuelle.</param>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetByteCount(System.Char[])">
+      <summary>En cas de substitution dans une classe dérivée, calcule le nombre d'octets produits par l'encodage de tous les caractères du tableau de caractères spécifié.</summary>
+      <returns>Nombre d'octets générés par l'encodage de tous les caractères du tableau de caractères spécifié.</returns>
+      <param name="chars">Tableau de caractères contenant les caractères à encoder.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="chars" /> a la valeur null.</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">Un secours s'est produit (consultez Encodage de caractères dans le .NET Framework pour obtenir une explication complète) – et – <see cref="P:System.Text.Encoding.EncoderFallback" /> a la valeur <see cref="T:System.Text.EncoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetByteCount(System.Char[],System.Int32,System.Int32)">
+      <summary>En cas de substitution dans une classe dérivée, calcule le nombre d'octets produits par l'encodage d'un jeu de caractères du tableau de caractères spécifié.</summary>
+      <returns>Nombre d'octets produits par l'encodage des caractères spécifiés.</returns>
+      <param name="chars">Tableau de caractères contenant le jeu de caractères à encoder.</param>
+      <param name="index">Index du premier caractère à encoder.</param>
+      <param name="count">Nombre de caractères à encoder.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="chars" /> a la valeur null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> ou <paramref name="count" /> est inférieur à zéro. ou  <paramref name="index" /> et <paramref name="count" /> ne désignent pas une plage valide de <paramref name="chars" />.</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">Un secours s'est produit (consultez Encodage de caractères dans le .NET Framework pour obtenir une explication complète) – et – <see cref="P:System.Text.Encoding.EncoderFallback" /> a la valeur <see cref="T:System.Text.EncoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetByteCount(System.String)">
+      <summary>En cas de substitution dans une classe dérivée, calcule le nombre d'octets produits par l'encodage des caractères de la chaîne spécifiée.</summary>
+      <returns>Nombre d'octets produits par l'encodage des caractères spécifiés.</returns>
+      <param name="s">Chaîne contenant le jeu de caractères à encoder.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="s" /> a la valeur null.</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">Un secours s'est produit (consultez Encodage de caractères dans le .NET Framework pour obtenir une explication complète) – et – <see cref="P:System.Text.Encoding.EncoderFallback" /> a la valeur <see cref="T:System.Text.EncoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetBytes(System.Char[])">
+      <summary>En cas de substitution dans une classe dérivée, encode tous les caractères du tableau de caractères spécifié en une séquence d'octets.</summary>
+      <returns>Tableau d'octets contenant les résultats de l'encodage du jeu de caractères spécifié.</returns>
+      <param name="chars">Tableau de caractères contenant les caractères à encoder.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="chars" /> a la valeur null.</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">Un secours s'est produit (consultez Encodage de caractères dans le .NET Framework pour obtenir une explication complète) – et – <see cref="P:System.Text.Encoding.EncoderFallback" /> a la valeur <see cref="T:System.Text.EncoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetBytes(System.Char[],System.Int32,System.Int32)">
+      <summary>En cas de substitution dans une classe dérivée, encode un jeu de caractères du tableau de caractères spécifié en une séquence d'octets.</summary>
+      <returns>Tableau d'octets contenant les résultats de l'encodage du jeu de caractères spécifié.</returns>
+      <param name="chars">Tableau de caractères contenant le jeu de caractères à encoder.</param>
+      <param name="index">Index du premier caractère à encoder.</param>
+      <param name="count">Nombre de caractères à encoder.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="chars" /> a la valeur null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> ou <paramref name="count" /> est inférieur à zéro. ou  <paramref name="index" /> et <paramref name="count" /> ne désignent pas une plage valide de <paramref name="chars" />.</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">Un secours s'est produit (consultez Encodage de caractères dans le .NET Framework pour obtenir une explication complète) – et – <see cref="P:System.Text.Encoding.EncoderFallback" /> a la valeur <see cref="T:System.Text.EncoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetBytes(System.Char[],System.Int32,System.Int32,System.Byte[],System.Int32)">
+      <summary>En cas de substitution dans une classe dérivée, encode un jeu de caractères du tableau de caractères spécifié en un tableau d'octets.</summary>
+      <returns>Nombre réel d'octets écrits dans <paramref name="bytes" />.</returns>
+      <param name="chars">Tableau de caractères contenant le jeu de caractères à encoder.</param>
+      <param name="charIndex">Index du premier caractère à encoder.</param>
+      <param name="charCount">Nombre de caractères à encoder.</param>
+      <param name="bytes">Tableau d'octets contenant la séquence d'octets obtenue.</param>
+      <param name="byteIndex">Index auquel commencer l'écriture de la séquence d'octets obtenue.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="chars" /> a la valeur null. ou  <paramref name="bytes" /> a la valeur null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="charIndex" />, <paramref name="charCount" /> ou <paramref name="byteIndex" /> est inférieur à zéro. ou  <paramref name="charIndex" /> et <paramref name="charCount" /> ne désignent pas une plage valide de <paramref name="chars" />. ou  <paramref name="byteIndex" /> n'est pas un index valide dans <paramref name="bytes" />.</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="bytes" /> ne possède pas une capacité suffisante entre <paramref name="byteIndex" /> et la fin du tableau pour prendre en charge les octets obtenus.</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">Un secours s'est produit (consultez Encodage de caractères dans le .NET Framework pour obtenir une explication complète) – et – <see cref="P:System.Text.Encoding.EncoderFallback" /> a la valeur <see cref="T:System.Text.EncoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetBytes(System.String)">
+      <summary>En cas de substitution dans une classe dérivée, encode tous les caractères de la chaîne spécifiée en une séquence d'octets.</summary>
+      <returns>Tableau d'octets contenant les résultats de l'encodage du jeu de caractères spécifié.</returns>
+      <param name="s">Chaîne contenant les caractères à encoder.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="s" /> a la valeur null.</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">Un secours s'est produit (consultez Encodage de caractères dans le .NET Framework pour obtenir une explication complète) – et – <see cref="P:System.Text.Encoding.EncoderFallback" /> a la valeur <see cref="T:System.Text.EncoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetBytes(System.String,System.Int32,System.Int32,System.Byte[],System.Int32)">
+      <summary>En cas de substitution dans une classe dérivée, encode un jeu de caractères de la chaîne spécifiée en un tableau d'octets.</summary>
+      <returns>Nombre réel d'octets écrits dans <paramref name="bytes" />.</returns>
+      <param name="s">Chaîne contenant le jeu de caractères à encoder.</param>
+      <param name="charIndex">Index du premier caractère à encoder.</param>
+      <param name="charCount">Nombre de caractères à encoder.</param>
+      <param name="bytes">Tableau d'octets contenant la séquence d'octets obtenue.</param>
+      <param name="byteIndex">Index auquel commencer l'écriture de la séquence d'octets obtenue.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="s" /> a la valeur null. ou  <paramref name="bytes" /> a la valeur null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="charIndex" />, <paramref name="charCount" /> ou <paramref name="byteIndex" /> est inférieur à zéro. ou  <paramref name="charIndex" /> et <paramref name="charCount" /> ne désignent pas une plage valide de <paramref name="chars" />. ou  <paramref name="byteIndex" /> n'est pas un index valide dans <paramref name="bytes" />.</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="bytes" /> ne possède pas une capacité suffisante entre <paramref name="byteIndex" /> et la fin du tableau pour prendre en charge les octets obtenus.</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">Un secours s'est produit (consultez Encodage de caractères dans le .NET Framework pour obtenir une explication complète) – et – <see cref="P:System.Text.Encoding.EncoderFallback" /> a la valeur <see cref="T:System.Text.EncoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetCharCount(System.Byte[])">
+      <summary>En cas de substitution dans une classe dérivée, calcule le nombre de caractères produits par le décodage de tous les octets du tableau d'octets spécifié.</summary>
+      <returns>Nombre de caractères produits par le décodage de la séquence d'octets spécifiée.</returns>
+      <param name="bytes">Tableau d'octets contenant la séquence d'octets à décoder.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="bytes" /> a la valeur null.</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">Un secours s'est produit (consultez Encodage de caractères dans le .NET Framework pour obtenir une explication complète) – et – <see cref="P:System.Text.Encoding.DecoderFallback" /> a la valeur <see cref="T:System.Text.DecoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetCharCount(System.Byte[],System.Int32,System.Int32)">
+      <summary>En cas de substitution dans une classe dérivée, calcule le nombre de caractères produits par le décodage d'une séquence d'octets du tableau d'octets spécifié.</summary>
+      <returns>Nombre de caractères produits par le décodage de la séquence d'octets spécifiée.</returns>
+      <param name="bytes">Tableau d'octets contenant la séquence d'octets à décoder.</param>
+      <param name="index">Index du premier octet à décoder.</param>
+      <param name="count">Nombre d'octets à décoder.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="bytes" /> a la valeur null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> ou <paramref name="count" /> est inférieur à zéro. ou  <paramref name="index" /> et <paramref name="count" /> ne désignent pas une plage valide de <paramref name="bytes" />.</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">Un secours s'est produit (consultez Encodage de caractères dans le .NET Framework pour obtenir une explication complète) – et – <see cref="P:System.Text.Encoding.DecoderFallback" /> a la valeur <see cref="T:System.Text.DecoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetChars(System.Byte[])">
+      <summary>Lors de la substitution dans une classe dérivée, décode tous les octets du tableau d'octets spécifié en un jeu de caractères.</summary>
+      <returns>Tableau de caractères contenant les résultats du décodage de la séquence d'octets spécifiée.</returns>
+      <param name="bytes">Tableau d'octets contenant la séquence d'octets à décoder.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="bytes" /> a la valeur null.</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">Un secours s'est produit (consultez Encodage de caractères dans le .NET Framework pour obtenir une explication complète) – et – <see cref="P:System.Text.Encoding.DecoderFallback" /> a la valeur <see cref="T:System.Text.DecoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetChars(System.Byte[],System.Int32,System.Int32)">
+      <summary>En cas de substitution dans une classe dérivée, décode une séquence d'octets du tableau d'octets spécifié en un jeu de caractères.</summary>
+      <returns>Tableau de caractères contenant les résultats du décodage de la séquence d'octets spécifiée.</returns>
+      <param name="bytes">Tableau d'octets contenant la séquence d'octets à décoder.</param>
+      <param name="index">Index du premier octet à décoder.</param>
+      <param name="count">Nombre d'octets à décoder.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="bytes" /> a la valeur null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> ou <paramref name="count" /> est inférieur à zéro. ou  <paramref name="index" /> et <paramref name="count" /> ne désignent pas une plage valide de <paramref name="bytes" />.</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">Un secours s'est produit (consultez Encodage de caractères dans le .NET Framework pour obtenir une explication complète) – et – <see cref="P:System.Text.Encoding.DecoderFallback" /> a la valeur <see cref="T:System.Text.DecoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetChars(System.Byte[],System.Int32,System.Int32,System.Char[],System.Int32)">
+      <summary>En cas de substitution dans une classe dérivée, décode une séquence d'octets du tableau d'octets spécifié en un tableau de caractères.</summary>
+      <returns>Nombre réel de caractères écrits dans <paramref name="chars" />.</returns>
+      <param name="bytes">Tableau d'octets contenant la séquence d'octets à décoder.</param>
+      <param name="byteIndex">Index du premier octet à décoder.</param>
+      <param name="byteCount">Nombre d'octets à décoder.</param>
+      <param name="chars">Tableau de caractères contenant le jeu de caractères obtenu.</param>
+      <param name="charIndex">Index auquel commencer l'écriture du jeu de caractères obtenu.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="bytes" /> a la valeur null. ou  <paramref name="chars" /> a la valeur null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="byteIndex" />, <paramref name="byteCount" /> ou <paramref name="charIndex" /> est inférieur à zéro. ou  <paramref name="byteindex" /> et <paramref name="byteCount" /> ne désignent pas une plage valide de <paramref name="bytes" />. ou  <paramref name="charIndex" /> n'est pas un index valide dans <paramref name="chars" />.</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="chars" /> ne possède pas une capacité suffisante entre <paramref name="charIndex" /> et la fin du tableau pour prendre en charge les caractères obtenus.</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">Un secours s'est produit (consultez Encodage de caractères dans le .NET Framework pour obtenir une explication complète) – et – <see cref="P:System.Text.Encoding.DecoderFallback" /> a la valeur <see cref="T:System.Text.DecoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetDecoder">
+      <summary>En cas de substitution dans une classe dérivée, obtient un décodeur qui convertit une séquence d'octets encodée en une séquence de caractères.</summary>
+      <returns>
+        <see cref="T:System.Text.Decoder" /> qui convertit une séquence d'octets encodée en une séquence de caractères.</returns>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetEncoder">
+      <summary>Lors de la substitution dans une classe dérivée, obtient un encodeur qui convertit une séquence de caractères Unicode en une séquence encodée d'octets.</summary>
+      <returns>
+        <see cref="T:System.Text.Encoder" /> qui convertit une séquence de caractères Unicode en une séquence d'octets encodée.</returns>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetEncoding(System.String)">
+      <summary>Retourne l'encodage associé au nom de la page de codes spécifiée.</summary>
+      <returns>Encodage associé à la page de codes spécifiée.</returns>
+      <param name="name">Nom de la page de codes de l'encodage principal. Toute valeur retournée par la propriété <see cref="P:System.Text.Encoding.WebName" /> est valide. Les valeurs possibles apparaissent dans la colonne Nom de la table qui s'affiche dans la rubrique de la classe <see cref="T:System.Text.Encoding" />.</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="name" /> n'est pas un nom de page de codes valide. ou  La page de codes indiquée par <paramref name="name" /> n'est pas prise en charge par la plateforme sous-jacente.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetHashCode">
+      <summary>Retourne le code de hachage pour l'instance actuelle.</summary>
+      <returns>Code de hachage de l'instance actuelle.</returns>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetMaxByteCount(System.Int32)">
+      <summary>En cas de substitution dans une classe dérivée, calcule le nombre maximal d'octets produits par l'encodage du nombre de caractères spécifié.</summary>
+      <returns>Nombre maximal d'octets produits par l'encodage du nombre de caractères spécifié.</returns>
+      <param name="charCount">Nombre de caractères à encoder.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="charCount" /> est inférieur à zéro.</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">Un secours s'est produit (consultez Encodage de caractères dans le .NET Framework pour obtenir une explication complète) – et – <see cref="P:System.Text.Encoding.EncoderFallback" /> a la valeur <see cref="T:System.Text.EncoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetMaxCharCount(System.Int32)">
+      <summary>En cas de substitution dans une classe dérivée, calcule le nombre maximal de caractères produits par le décodage du nombre de caractères spécifié.</summary>
+      <returns>Nombre maximal de caractères produits par le décodage du nombre d'octets spécifié.</returns>
+      <param name="byteCount">Nombre d'octets à décoder.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="byteCount" /> est inférieur à zéro.</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">Un secours s'est produit (consultez Encodage de caractères dans le .NET Framework pour obtenir une explication complète) – et – <see cref="P:System.Text.Encoding.DecoderFallback" /> a la valeur <see cref="T:System.Text.DecoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetPreamble">
+      <summary>En cas de substitution dans une classe dérivée, retourne une séquence d'octets qui spécifie l'encodage utilisé.</summary>
+      <returns>Tableau d'octets qui contient une séquence d'octets spécifiant l'encodage utilisé. ou  Tableau d'octets de zéro de longueur, si un préambule n'est pas requis.</returns>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.Encoding.GetString(System.Byte[],System.Int32,System.Int32)">
+      <summary>En cas de substitution dans une classe dérivée, décode une séquence d'octets du tableau d'octets spécifié en une chaîne.</summary>
+      <returns>Chaîne contenant les résultats du décodage de la séquence d'octets spécifiée.</returns>
+      <param name="bytes">Tableau d'octets contenant la séquence d'octets à décoder.</param>
+      <param name="index">Index du premier octet à décoder.</param>
+      <param name="count">Nombre d'octets à décoder.</param>
+      <exception cref="T:System.ArgumentException">Le tableau d'octets contient des points de code Unicode non valides.</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="bytes" /> a la valeur null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> ou <paramref name="count" /> est inférieur à zéro. ou  <paramref name="index" /> et <paramref name="count" /> ne désignent pas une plage valide de <paramref name="bytes" />.</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">Un secours s'est produit (consultez Encodage de caractères dans le .NET Framework pour obtenir une explication complète) – et – <see cref="P:System.Text.Encoding.DecoderFallback" /> a la valeur <see cref="T:System.Text.DecoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="P:System.Text.Encoding.Unicode">
+      <summary>Obtient un encodage pour le format UTF-16 avec primauté des octets de poids faible (little-endian).</summary>
+      <returns>Un encodage pour le format UTF-16 qui utilise l'ordre d'octet avec primauté des octets de poids faible (Little Endian).</returns>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="P:System.Text.Encoding.UTF8">
+      <summary>Obtient un encodage pour le format UTF-8.</summary>
+      <returns>Encodage pour le format UTF-8.</returns>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="P:System.Text.Encoding.WebName">
+      <summary>Lors de la substitution dans une classe dérivée, obtient le nom enregistré auprès de l'IANA (Internet Assigned Numbers Authority) pour l'encodage en cours.</summary>
+      <returns>Nom IANA du <see cref="T:System.Text.Encoding" /> en cours.</returns>
+      <filterpriority>2</filterpriority>
+    </member>
+  </members>
+</doc>

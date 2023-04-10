@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>mscorlib.Extensions</name>
+  </assembly>
+  <members>
+    <member name="T:System.Runtime.CompilerServices.CodeGenerationAttribute">
+      <summary>Spécifie les paramètres pour la génération de codes.</summary>
+    </member>
+    <member name="M:System.Runtime.CompilerServices.CodeGenerationAttribute.#ctor(System.Runtime.CompilerServices.CodeGenerationFlags)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Runtime.CompilerServices.CodeGenerationAttribute" />.</summary>
+      <param name="flags">Indicateurs spécifiant comment le code est généré.</param>
+    </member>
+    <member name="P:System.Runtime.CompilerServices.CodeGenerationAttribute.CodeGenerationFlags">
+      <summary>Obtient les indicateurs spécifiant comment le code est généré.</summary>
+      <returns>Indicateurs spécifiant comment le code est généré.</returns>
+    </member>
+    <member name="T:System.Runtime.CompilerServices.CodeGenerationFlags">
+      <summary>Définit les indicateurs spécifiant comment le code est généré.</summary>
+    </member>
+    <member name="F:System.Runtime.CompilerServices.CodeGenerationFlags.EnableFPIntrinsicsUsingSIMD">
+      <summary>Spécifie que le compilateur juste-à-temps (JIT) peut utiliser des instructions SIMD pour certaines opérations de matrix et vectorielles</summary>
+    </member>
+    <member name="T:System.Security.Cryptography.ProtectedData">
+      <summary>Fournit des méthodes de chiffrement et de déchiffrement des données. Cette classe ne peut pas être héritée.</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.ProtectedData.Protect(System.Byte[],System.Byte[])">
+      <summary>Chiffre les données contenues dans un tableau d'octets spécifié et retourne un tableau d'octets qui contient les données chiffrées.</summary>
+      <returns>Tableau d'octets représentant les données chiffrées.</returns>
+      <param name="userData">Tableau d'octets qui contient les données à chiffrer. </param>
+      <param name="optionalEntropy">Tableau d'octets supplémentaire facultatif utilisé pour augmenter la complexité du chiffrement, ou null pour aucune complexité supplémentaire.</param>
+      <exception cref="T:System.ArgumentNullException">Le paramètre <paramref name="userData" /> est null.</exception>
+      <exception cref="T:System.Security.Cryptography.CryptographicException">Le chiffrement a échoué.</exception>
+      <exception cref="T:System.NotSupportedException">Le système d'exploitation ne prend pas en charge cette méthode. </exception>
+      <exception cref="T:System.OutOfMemoryException">Le système s'est trouvé à court de mémoire pendant le chiffrement des données.</exception>
+    </member>
+    <member name="M:System.Security.Cryptography.ProtectedData.Unprotect(System.Byte[],System.Byte[])">
+      <summary>Déchiffre les données contenues dans un tableau d'octets spécifié et retourne un tableau d'octets qui contient les données déchiffrées.</summary>
+      <returns>Tableau d'octets représentant les données déchiffrées.</returns>
+      <param name="encryptedData">Un tableau d'octets contenant des données chiffrées à l'aide de la méthode <see cref="M:System.Security.Cryptography.ProtectedData.Protect(System.Byte[],System.Byte[])" />. </param>
+      <param name="optionalEntropy">Tableau d'octets supplémentaire facultatif qui a été utilisé pour chiffrer les données ou null si le tableau d'octets supplémentaire n'a pas été utilisé.</param>
+      <exception cref="T:System.ArgumentNullException">Le paramètre <paramref name="encryptedData" /> est null.</exception>
+      <exception cref="T:System.Security.Cryptography.CryptographicException">Le déchiffrement a échoué.</exception>
+      <exception cref="T:System.NotSupportedException">Le système d'exploitation ne prend pas en charge cette méthode. </exception>
+      <exception cref="T:System.OutOfMemoryException">Mémoire insuffisante.</exception>
+    </member>
+  </members>
+</doc>

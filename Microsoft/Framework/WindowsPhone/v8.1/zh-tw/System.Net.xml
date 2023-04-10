@@ -1,0 +1,2566 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.Net</name>
+  </assembly>
+  <members>
+    <member name="T:System.Net.Cookie">
+      <summary>提供與 HTTP 要求搭配使用的物件，以保存 Windows Phone 應用程式的狀態資訊。</summary>
+    </member>
+    <member name="M:System.Net.Cookie.#ctor">
+      <summary>初始化 <see cref="T:System.Net.Cookie" /> 類別的新執行個體。</summary>
+    </member>
+    <member name="M:System.Net.Cookie.#ctor(System.String,System.String)">
+      <summary>使用指定的名稱和值來初始化 <see cref="T:System.Net.Cookie" /> 類別的新執行個體。</summary>
+      <param name="name">
+        <see cref="T:System.Net.Cookie" /> 的名稱。<paramref name="name" /> 參數不能包含下列字元：等號 (=)、分號 (;)、逗號 (,)、新行字元 (\n)、換行字元 (\r)、定位字元 (\t) 及空白字元。貨幣符號字元 ($) 不能是第 1 個字元。</param>
+      <param name="value">
+        <see cref="T:System.Net.Cookie" /> 的值。<paramref name="value" /> 參數不能包含分號 (;) 或逗號 (,)，除非這些字元包含在逸出雙引號內。</param>
+      <exception cref="T:System.Net.CookieException">
+        <paramref name="name" /> 為 null 或空字串 ("")。-或-<paramref name="name" /> 包含未經許可使用的字元。使用下列任一字元都會造成例外狀況：等號 (=)分號 (;)逗號 (,)新行字元 (\n)換行字元 (\r)定位字元 (\t)空白字元做為第一個字元的貨幣符號 ($)-或-<paramref name="value" /> 為 null，或是含有未包含在逸出雙引號內的分號 (;) 或逗號 (,)。</exception>
+    </member>
+    <member name="M:System.Net.Cookie.#ctor(System.String,System.String,System.String)">
+      <summary>使用指定的名稱、值和路徑來初始化 <see cref="T:System.Net.Cookie" /> 類別的新執行個體。</summary>
+      <param name="name">
+        <see cref="T:System.Net.Cookie" /> 的名稱。<paramref name="name" /> 參數不能包含下列字元：等號 (=)、分號 (;)、逗號 (,)、新行字元 (\n)、換行字元 (\r)、定位字元 (\t) 及空白字元。貨幣符號字元 ($) 不能是第 1 個字元。</param>
+      <param name="value">
+        <see cref="T:System.Net.Cookie" /> 的值。<paramref name="value" /> 參數不能包含分號 (;) 或逗號 (,)，除非這些字元包含在逸出雙引號內。</param>
+      <param name="path">套用此 cookie 之 URI 的路徑部分。</param>
+      <exception cref="T:System.Net.CookieException">
+        <paramref name="name" /> 為 null 或空字串 ("")。-或-<paramref name="name" /> 包含未經許可使用的字元。使用下列任一字元都會造成例外狀況：等號 (=)分號 (;)逗號 (,)新行字元 (\n)換行字元 (\r)定位字元 (\t)空白字元做為第一個字元的貨幣符號 ($)-或-<paramref name="value" /> 為 null，或是含有未包含在逸出雙引號內的分號 (;) 或逗號 (,)。</exception>
+    </member>
+    <member name="M:System.Net.Cookie.#ctor(System.String,System.String,System.String,System.String)">
+      <summary>使用指定的名稱、值、路徑和網域來初始化 <see cref="T:System.Net.Cookie" /> 類別的新執行個體。</summary>
+      <param name="name">
+        <see cref="T:System.Net.Cookie" /> 的名稱。<paramref name="name" /> 參數不能包含下列字元：等號 (=)、分號 (;)、逗號 (,)、新行字元 (\n)、換行字元 (\r)、定位字元 (\t) 及空白字元。貨幣符號字元 ($) 不能是第 1 個字元。</param>
+      <param name="value">
+        <see cref="T:System.Net.Cookie" /> 的值。<paramref name="value" /> 參數不能包含分號 (;) 或逗號 (,)，除非這些字元包含在逸出雙引號內。</param>
+      <param name="path">套用此 cookie 之 URI 的路徑部分。</param>
+      <param name="domain">此 Cookie 套用到之 URI 的網域部分。</param>
+      <exception cref="T:System.Net.CookieException">
+        <paramref name="name" /> 為 null 或空字串 ("")。-或-<paramref name="name" /> 包含未經許可使用的字元。使用下列任一字元都會造成例外狀況：等號 (=)分號 (;)逗號 (,)新行字元 (\n)換行字元 (\r)定位字元 (\t)空白字元做為第一個字元的貨幣符號 ($)-或-<paramref name="value" /> 為 null，或是含有未包含在逸出雙引號內的分號 (;) 或逗號 (,)。</exception>
+    </member>
+    <member name="P:System.Net.Cookie.Comment">
+      <summary>取得或設定提供 Cookie 用途的選用註解。</summary>
+      <returns>Cookie 的用途。</returns>
+    </member>
+    <member name="P:System.Net.Cookie.CommentUri">
+      <summary>取得或設定伺服器為此 <see cref="T:System.Net.Cookie" /> 提供的統一資源識別項 (URI) 註解。</summary>
+      <returns>伺服器為此 <see cref="T:System.Net.Cookie" /> 提供的 URI 註解。</returns>
+    </member>
+    <member name="P:System.Net.Cookie.Discard">
+      <summary>取得或設定值，該值可指出用戶端是否要在目前工作階段結束時捨棄 <see cref="T:System.Net.Cookie" />。</summary>
+      <returns>如果用戶端應該在工作階段結束時捨棄 <see cref="T:System.Net.Cookie" />，則為 true；否則為 false。預設值為 false。</returns>
+    </member>
+    <member name="P:System.Net.Cookie.Domain">
+      <summary>取得或設定 Cookie 具有效力之統一資源識別項 (URI) 的網域。</summary>
+      <returns>Cookie 具有效力之 URI 的網域。預設值為空白字串 ("")。</returns>
+    </member>
+    <member name="M:System.Net.Cookie.Equals(System.Object)">
+      <summary>判斷兩個 <see cref="T:System.Net.Cookie" /> 物件是否相等。</summary>
+      <returns>如果 Cookie 物件相等則為 true；否則為 false。</returns>
+      <param name="comparand">要與此 <see cref="T:System.Net.Cookie" /> 比較是否相等的 <see cref="T:System.Net.Cookie" />。</param>
+    </member>
+    <member name="P:System.Net.Cookie.Expired">
+      <summary>取得或設定值，該值可指出此 <see cref="T:System.Net.Cookie" /> 是否不再有效。</summary>
+      <returns>如果 Cookie 不再有效則為 true；否則為 false。預設值為 false。</returns>
+    </member>
+    <member name="P:System.Net.Cookie.Expires">
+      <summary>取得或設定 <see cref="T:System.Net.Cookie" /> 的到期日期和時間。</summary>
+      <returns>
+        <see cref="T:System.Net.Cookie" /> 的到期日期和時間。預設值為 <see cref="F:System.DateTime.MinValue" />。</returns>
+    </member>
+    <member name="M:System.Net.Cookie.GetHashCode">
+      <summary>取得此 <see cref="T:System.Net.Cookie" /> 的雜湊程式碼。</summary>
+      <returns>此 <see cref="T:System.Net.Cookie" /> 的雜湊程式碼。</returns>
+    </member>
+    <member name="P:System.Net.Cookie.HttpOnly">
+      <summary>取得或設定值，該值可指出頁面指令碼或其他使用中內容是否可存取此 Cookie。</summary>
+      <returns>true 以指出頁面指令碼或其他使用中內容無法存取此 <see cref="T:System.Net.Cookie" />；否則為 false。預設值為 false。</returns>
+    </member>
+    <member name="P:System.Net.Cookie.Name">
+      <summary>取得或設定此 Cookie 的名稱。</summary>
+      <returns>Cookie 的名稱。</returns>
+      <exception cref="T:System.Net.CookieException">為一組作業指定的值為 null 或空字串 ("")。-或-為設定作業所指定的值包含未經許可使用的字元。使用下列任一字元都會造成例外狀況：等號 (=)分號 (;)逗號 (,)新行字元 (\n)換行字元 (\r)定位字元 (\t)空白字元做為第一個字元的貨幣符號 ($)</exception>
+    </member>
+    <member name="P:System.Net.Cookie.Path">
+      <summary>取得或設定此 Cookie 套用到之統一資源識別項 (URI) 的路徑部分。</summary>
+      <returns>套用此 cookie 之 URI 的路徑部分。</returns>
+    </member>
+    <member name="P:System.Net.Cookie.Port">
+      <summary>取得或設定此 Cookie 套用到的傳輸控制通訊協定 (TCP) 連接埠清單。</summary>
+      <returns>此 Cookie 套用到之 TCP 連接埠的逗號分隔清單。</returns>
+      <exception cref="T:System.Net.CookieException">
+        <see cref="P:System.Net.Cookie.Port" /> 設定為不正確的格式。</exception>
+    </member>
+    <member name="P:System.Net.Cookie.Secure">
+      <summary>取得或設定值，該值可指出在後續的用戶端要求上包含 Cookie 時，是否需要以「安全超文字傳輸通訊協定 (HTTPS)」傳送要求。</summary>
+      <returns>如果在後續的用戶端要求上包含 Cookie 時，需要使用 HTTPS 傳送要求，則為 true；否則為 false。預設值為 false。</returns>
+    </member>
+    <member name="P:System.Net.Cookie.TimeStamp">
+      <summary>取得此 <see cref="T:System.Net.Cookie" /> 的建立日期和時間。</summary>
+      <returns>此 Cookie 的建立日期和時間。</returns>
+    </member>
+    <member name="M:System.Net.Cookie.ToString">
+      <summary>傳回適合納入 HTTP Cookie 要求之 <see cref="T:System.Net.Cookie" /> 的字串表示。</summary>
+      <returns>適合納入 HTTP Cookie 要求之 <see cref="T:System.Net.Cookie" /> 的字串表示。</returns>
+    </member>
+    <member name="P:System.Net.Cookie.Value">
+      <summary>取得或設定 <see cref="T:System.Net.Cookie" /> 的值。</summary>
+      <returns>
+        <see cref="T:System.Net.Cookie" /> 的值。</returns>
+    </member>
+    <member name="P:System.Net.Cookie.Version">
+      <summary>取得或設定單一數字，此數字指出 Cookie 符合之 HTTP 狀態維護的版本。</summary>
+      <returns>指出 Cookie 符合之 HTTP 狀態維護版本的單一數字。預設為 0。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">指定的值小於零。</exception>
+    </member>
+    <member name="T:System.Net.CookieCollection">
+      <summary>表示 <see cref="T:System.Net.Cookie" /> 物件的集合。</summary>
+    </member>
+    <member name="M:System.Net.CookieCollection.#ctor">
+      <summary>初始化 <see cref="T:System.Net.CookieCollection" /> 類別的新執行個體。</summary>
+    </member>
+    <member name="M:System.Net.CookieCollection.Add(System.Net.Cookie)">
+      <summary>將指定的 <see cref="T:System.Net.Cookie" /> 加入至集合。</summary>
+      <param name="cookie">要加入至集合的 <see cref="T:System.Net.Cookie" />。</param>
+    </member>
+    <member name="M:System.Net.CookieCollection.Add(System.Net.CookieCollection)">
+      <summary>將指定 <see cref="T:System.Net.CookieCollection" /> 的內容加入至此集合。</summary>
+      <param name="cookies">要加入至此集合的 <see cref="T:System.Net.CookieCollection" />。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="cookies" /> 為 null。</exception>
+    </member>
+    <member name="M:System.Net.CookieCollection.CopyTo(System.Array,System.Int32)">
+      <summary>將此 <see cref="T:System.Net.CookieCollection" /> 的內容複製到指定的陣列 (從指定的索引開始)。</summary>
+      <param name="array">要將集合的內容複製到的陣列。</param>
+      <param name="index">目的地陣列中用來開始複製作業之以 0 為基底的索引。</param>
+    </member>
+    <member name="P:System.Net.CookieCollection.Count">
+      <summary>取得 <see cref="T:System.Net.CookieCollection" /> 中包含的 Cookie 數目。</summary>
+      <returns>
+        <see cref="T:System.Net.CookieCollection" /> 中包含的 Cookie 數目。</returns>
+    </member>
+    <member name="M:System.Net.CookieCollection.GetEnumerator">
+      <summary>取得透過 <see cref="T:System.Net.CookieCollection" /> 逐一查看的列舉程式。</summary>
+      <returns>透過 <see cref="T:System.Net.CookieCollection" /> 逐一查看的列舉程式。</returns>
+    </member>
+    <member name="P:System.Net.CookieCollection.IsReadOnly">
+      <summary>取得可指出 <see cref="T:System.Net.CookieCollection" /> 是否為唯讀的值。</summary>
+      <returns>true 以指出這個集合是唯讀的；否則為 false。預設值為 true。</returns>
+    </member>
+    <member name="P:System.Net.CookieCollection.IsSynchronized">
+      <summary>取得可指出 <see cref="T:System.Net.CookieCollection" /> 存取權是否為安全執行緒的值。</summary>
+      <returns>如果 <see cref="T:System.Net.CookieCollection" /> 存取權是安全執行緒則為 true；否則為 false。預設值為 false。</returns>
+    </member>
+    <member name="P:System.Net.CookieCollection.Item(System.String)">
+      <summary>從集合取得具有指定名稱的 Cookie。</summary>
+      <returns>具有指定名稱的 Cookie。</returns>
+      <param name="name">要從集合擷取之 Cookie 的名稱。</param>
+    </member>
+    <member name="P:System.Net.CookieCollection.SyncRoot">
+      <summary>取得可用來同步處理 <see cref="T:System.Net.CookieCollection" /> 存取權的物件。</summary>
+      <returns>可用來同步處理 <see cref="T:System.Net.CookieCollection" /> 存取權的物件。</returns>
+    </member>
+    <member name="T:System.Net.CookieContainer">
+      <summary>提供 <see cref="T:System.Net.CookieCollection" /> 物件集合的容器。</summary>
+    </member>
+    <member name="M:System.Net.CookieContainer.#ctor">
+      <summary>初始化 <see cref="T:System.Net.CookieContainer" /> 類別的新執行個體。</summary>
+    </member>
+    <member name="M:System.Net.CookieContainer.Add(System.Uri,System.Net.Cookie)">
+      <summary>將具有指定統一資源識別項 (URI) 的指定 <see cref="T:System.Net.Cookie" /> 加入至此 <see cref="T:System.Net.CookieContainer" />。</summary>
+      <param name="uri">要加入至此 <see cref="T:System.Net.CookieContainer" /> 之 Cookie 的 URI。</param>
+      <param name="cookie">要加入至此 <see cref="T:System.Net.CookieContainer" /> 的 <see cref="T:System.Net.Cookie" />。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="cookie" /> 為 null。</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="cookie" /> 的網域為 null。</exception>
+      <exception cref="T:System.Net.CookieException">
+        <paramref name="cookie" /> 大於 <see cref="P:System.Net.CookieContainer.MaxCookieSize" />。-或-<paramref name="cookie" /> 的網域不是有效的 URI。</exception>
+    </member>
+    <member name="M:System.Net.CookieContainer.Add(System.Uri,System.Net.CookieCollection)">
+      <summary>將具有指定統一資源識別項 (URI) 之指定 <see cref="T:System.Net.CookieCollection" /> 的內容加入至此 <see cref="T:System.Net.CookieContainer" />。</summary>
+      <param name="uri">要加入至此 <see cref="T:System.Net.CookieContainer" /> 之 <see cref="T:System.Net.CookieCollection" /> 的 URI。</param>
+      <param name="cookies">包含要加入至此 <see cref="T:System.Net.CookieContainer" /> 之 Cookie 的 <see cref="T:System.Net.CookieCollection" />。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="cookies" /> 為 null。</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="cookies" /> 中 Cookie 物件之一的網域為 null。</exception>
+      <exception cref="T:System.Net.CookieException">
+        <paramref name="cookies" /> 中的 Cookie 物件之一包含無效的網域。</exception>
+    </member>
+    <member name="P:System.Net.CookieContainer.Capacity">
+      <summary>取得此 <see cref="T:System.Net.CookieContainer" /> 可包含的 <see cref="T:System.Net.Cookie" /> 物件數目。</summary>
+      <returns>此 <see cref="T:System.Net.CookieContainer" /> 可包含的 <see cref="T:System.Net.Cookie" /> 物件數目。預設為 300。</returns>
+    </member>
+    <member name="P:System.Net.CookieContainer.Count">
+      <summary>。取得此 <see cref="T:System.Net.CookieContainer" /> 包含的 <see cref="T:System.Net.Cookie" /> 物件數目。</summary>
+      <returns>此 <see cref="T:System.Net.CookieContainer" /> 包含的 <see cref="T:System.Net.Cookie" /> 物件數目。</returns>
+    </member>
+    <member name="F:System.Net.CookieContainer.DefaultCookieLengthLimit">
+      <summary>表示 <see cref="T:System.Net.CookieContainer" /> 可保留之 <see cref="T:System.Net.Cookie" /> 物件的預設大小上限 (位元組)。此欄位為常數。</summary>
+      <returns>一律會傳回 4096。</returns>
+    </member>
+    <member name="F:System.Net.CookieContainer.DefaultCookieLimit">
+      <summary>表示 <see cref="T:System.Net.CookieContainer" /> 可保留之 <see cref="T:System.Net.Cookie" /> 物件的預設數量上限。此欄位為常數。</summary>
+      <returns>一律會傳回 300。</returns>
+    </member>
+    <member name="F:System.Net.CookieContainer.DefaultPerDomainCookieLimit">
+      <summary>表示 <see cref="T:System.Net.CookieContainer" /> 在每個網域中可參照之 <see cref="T:System.Net.Cookie" /> 物件的預設數量上限。此欄位為常數。</summary>
+      <returns>一律會傳回 20。</returns>
+    </member>
+    <member name="M:System.Net.CookieContainer.GetCookieHeader(System.Uri)">
+      <summary>取得 HTTP Cookie 標頭，此標頭包含與指定之統一資源識別項 (URI) 有關的 Cookie。</summary>
+      <returns>表示與指定 URI 相關聯之 Cookie 標頭的字串。</returns>
+      <param name="uri">要擷取 Cookie 的 URI。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="uri" /> 為 null。</exception>
+    </member>
+    <member name="M:System.Net.CookieContainer.GetCookies(System.Uri)">
+      <summary>取得與指定之統一資源識別項 (URI) 相關聯的 <see cref="T:System.Net.CookieCollection" />。</summary>
+      <returns>與指定 URI 相關聯的 Cookie 集合。</returns>
+      <param name="uri">要擷取 <see cref="T:System.Net.CookieCollection" /> 的 URI。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="uri" /> 為 null。</exception>
+    </member>
+    <member name="P:System.Net.CookieContainer.MaxCookieSize">
+      <summary>取得 <see cref="T:System.Net.CookieContainer" /> 中 Cookie 的 Cookie 長度上限。</summary>
+      <returns>
+        <see cref="T:System.Net.CookieContainer" /> 中 Cookie 的 Cookie 長度上限。預設為 4096。</returns>
+    </member>
+    <member name="P:System.Net.CookieContainer.PerDomainCapacity">
+      <summary>取得和設定 <see cref="T:System.Net.CookieContainer" /> 在每個網域中可保留的 <see cref="T:System.Net.Cookie" /> 執行個體數目。</summary>
+      <returns>
+        <see cref="T:System.Net.CookieContainer" /> 在每個網域中可保留的 <see cref="T:System.Net.Cookie" /> 執行個體數目。預設為 20。</returns>
+    </member>
+    <member name="M:System.Net.CookieContainer.SetCookies(System.Uri,System.String)">
+      <summary>為 HTTP Cookie 標頭中指定的 Cookie 建立 Cookie 執行個體，並將其加入至與指定之統一資源識別項 (URI) 相關聯的 <see cref="T:System.Net.CookieContainer" />。</summary>
+      <param name="uri">與 Cookie 容器相關聯的 URI。</param>
+      <param name="cookieHeader">包含要加入至 <see cref="T:System.Net.CookieContainer" /> 之 Cookie 的 HTTP 標頭。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="uri" /> 為 null-或-<paramref name="cookieHeader" /> 為 null</exception>
+      <exception cref="T:System.Net.CookieException">其中一個 Cookie 無效。-或-將其中一個 Cookie 加入容器時發生錯誤。</exception>
+    </member>
+    <member name="T:System.Net.CookieException">
+      <summary>將 <see cref="T:System.Net.Cookie" /> 加入至 <see cref="T:System.Net.CookieCollection" /> 時擲回的例外狀況。</summary>
+    </member>
+    <member name="M:System.Net.CookieException.#ctor">
+      <summary>初始化 <see cref="T:System.Net.CookieException" /> 類別的新執行個體。 </summary>
+    </member>
+    <member name="T:System.Net.DnsEndPoint">
+      <summary>將網路端點表示為主機名稱，或表示為 IP 位址和連接埠號碼的字串表示。</summary>
+    </member>
+    <member name="M:System.Net.DnsEndPoint.#ctor(System.String,System.Int32)">
+      <summary>使用主機名稱或 IP 位址和連接埠號碼的字串表示來初始化 <see cref="T:System.Net.DnsEndPoint" /> 類別的新執行個體。</summary>
+      <param name="host">主機名稱或 IP 位址的字串表示。</param>
+      <param name="port">與 <paramref name="address" /> 關聯的通訊埠編號，或 0 指定任何可用的通訊埠。<paramref name="port" /> 依主機順序。</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="host" /> 參數包含空字串。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="host" /> 參數為 null。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="port" /> 小於 0-或-<paramref name="port" /> 大於 0xffff。</exception>
+    </member>
+    <member name="M:System.Net.DnsEndPoint.#ctor(System.String,System.Int32,System.Net.Sockets.AddressFamily)">
+      <summary>使用主機名稱或 IP 位址、連接埠號碼和位址家族的字串表示來初始化 <see cref="T:System.Net.DnsEndPoint" /> 類別的新執行個體。</summary>
+      <param name="host">主機名稱或 IP 位址的字串表示。</param>
+      <param name="port">與 <paramref name="address" /> 關聯的通訊埠編號，或 0 指定任何可用的通訊埠。<paramref name="port" /> 依主機順序。</param>
+      <param name="addressFamily">其中一個 <see cref="T:System.Net.Sockets.AddressFamily" /> 值。</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="host" /> 參數包含空字串。-或-<paramref name="addressFamily" /> 參數指定為 <see cref="F:System.Net.Sockets.AddressFamily.Unknown" />。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="host" /> 參數為 null。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="port" /> 小於 0-或-<paramref name="port" /> 大於 0xffff。</exception>
+    </member>
+    <member name="P:System.Net.DnsEndPoint.AddressFamily">
+      <summary>取得網際網路通訊協定 (IP) 位址家族。</summary>
+      <returns>其中一個 <see cref="T:System.Net.Sockets.AddressFamily" /> 值。</returns>
+    </member>
+    <member name="M:System.Net.DnsEndPoint.Equals(System.Object)">
+      <summary>比較兩個 <see cref="T:System.Net.DnsEndPoint" /> 物件。</summary>
+      <returns>如果兩個 <see cref="T:System.Net.DnsEndPoint" /> 執行個體相等則為 true；否則為 false。</returns>
+      <param name="comparand">要與目前執行個體比較的某個 <see cref="T:System.Net.DnsEndPoint" /> 執行個體。</param>
+    </member>
+    <member name="M:System.Net.DnsEndPoint.GetHashCode">
+      <summary>傳回 <see cref="T:System.Net.DnsEndPoint" /> 的雜湊值。</summary>
+      <returns>
+        <see cref="T:System.Net.DnsEndPoint" /> 的整數雜湊值。</returns>
+    </member>
+    <member name="P:System.Net.DnsEndPoint.Host">
+      <summary>取得主機名稱或主機之網際網路通訊協定 (IP) 位址的字串表示。</summary>
+      <returns>主機名稱或 IP 位址的字串表示。</returns>
+    </member>
+    <member name="P:System.Net.DnsEndPoint.Port">
+      <summary>取得 <see cref="T:System.Net.DnsEndPoint" /> 的連接埠號碼。</summary>
+      <returns>指出 <see cref="T:System.Net.DnsEndPoint" /> 之連接埠號碼的整數值，範圍為 0 到 0xffff。</returns>
+    </member>
+    <member name="M:System.Net.DnsEndPoint.ToString">
+      <summary>傳回 <see cref="T:System.Net.DnsEndPoint" /> 的主機名稱或 IP 位址和連接埠號碼的字串表示。</summary>
+      <returns>包含指定之 <see cref="T:System.Net.DnsEndPoint" /> 的位址家族、主機名稱或 IP 位址字串和連接埠號碼的字串。</returns>
+    </member>
+    <member name="T:System.Net.DownloadProgressChangedEventArgs">
+      <summary>提供 <see cref="T:System.Net.WebClient" /> 之 <see cref="E:System.Net.WebClient.DownloadProgressChanged" /> 事件的資料。</summary>
+    </member>
+    <member name="P:System.Net.DownloadProgressChangedEventArgs.BytesReceived">
+      <summary>取得接收到的位元組數。</summary>
+      <returns>指出接收到之位元組數的 <see cref="T:System.Int64" /> 值。</returns>
+    </member>
+    <member name="P:System.Net.DownloadProgressChangedEventArgs.TotalBytesToReceive">
+      <summary>取得 <see cref="T:System.Net.WebClient" /> 資料下載作業中的位元組總數。</summary>
+      <returns>指出將接收到之位元組數的 <see cref="T:System.Int64" /> 值。</returns>
+    </member>
+    <member name="T:System.Net.DownloadProgressChangedEventHandler">
+      <summary>表示將處理 <see cref="T:System.Net.WebClient" /> 之 <see cref="E:System.Net.WebClient.DownloadProgressChanged" /> 事件的方法。</summary>
+      <param name="sender">事件來源。</param>
+      <param name="e">包含事件資料的 <see cref="T:System.Net.DownloadProgressChangedEventArgs" />。</param>
+    </member>
+    <member name="T:System.Net.DownloadStringCompletedEventArgs">
+      <summary>提供 <see cref="E:System.Net.WebClient.DownloadStringCompleted" /> 事件的資料。</summary>
+    </member>
+    <member name="P:System.Net.DownloadStringCompletedEventArgs.Result">
+      <summary>取得 <see cref="Overload:System.Net.WebClient.DownloadStringAsync" /> 方法下載的資料。</summary>
+      <returns>包含下載之資料的 <see cref="T:System.String" />。</returns>
+      <exception cref="T:System.InvalidOperationException">非同步要求已取消。 </exception>
+    </member>
+    <member name="T:System.Net.DownloadStringCompletedEventHandler">
+      <summary>表示將處理 <see cref="T:System.Net.WebClient" /> 之 <see cref="E:System.Net.WebClient.DownloadStringCompleted" /> 事件的方法。</summary>
+      <param name="sender">事件來源。</param>
+      <param name="e">包含事件資料的 <see cref="T:System.Net.DownloadStringCompletedEventArgs" />。</param>
+    </member>
+    <member name="T:System.Net.EndPoint">
+      <summary>識別網路位址。這是 abstract 類別。</summary>
+    </member>
+    <member name="M:System.Net.EndPoint.#ctor">
+      <summary>初始化 <see cref="T:System.Net.EndPoint" /> 類別的新執行個體。</summary>
+    </member>
+    <member name="P:System.Net.EndPoint.AddressFamily">
+      <summary>取得端點所屬的位址家族。</summary>
+      <returns>其中一個 <see cref="T:System.Net.Sockets.AddressFamily" /> 值。</returns>
+      <exception cref="T:System.NotImplementedException">未在子系類別中覆寫此屬性時，會進行各種嘗試以取得或設定該屬性。</exception>
+    </member>
+    <member name="M:System.Net.EndPoint.Create(System.Net.SocketAddress)">
+      <summary>從 <see cref="T:System.Net.SocketAddress" /> 執行個體建立 <see cref="T:System.Net.EndPoint" /> 執行個體。</summary>
+      <returns>從指定之 <see cref="T:System.Net.SocketAddress" /> 執行個體初始化的新 <see cref="T:System.Net.EndPoint" /> 執行個體。</returns>
+      <param name="socketAddress">做為連接端點的通訊端位址。</param>
+      <exception cref="T:System.NotImplementedException">未在子系類別中覆寫方法時，為了存取此方法所做的任何嘗試。</exception>
+    </member>
+    <member name="M:System.Net.EndPoint.Serialize">
+      <summary>將端點資訊序列化至 <see cref="T:System.Net.SocketAddress" /> 執行個體。</summary>
+      <returns>包含端點資訊的 <see cref="T:System.Net.SocketAddress" /> 執行個體。</returns>
+      <exception cref="T:System.NotImplementedException">未在子系類別中覆寫方法時，為了存取此方法所做的任何嘗試。 </exception>
+    </member>
+    <member name="T:System.Net.HttpRequestHeader">
+      <summary>可在用戶端要求中指定的 HTTP 標頭。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.CacheControl">
+      <summary>Cache-Control 標頭，指定沿著要求/回應鏈結的所有快取控制機制必須遵守的指示詞。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Connection">
+      <summary>Connection 標頭，指定特定連接所需要的選項。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Date">
+      <summary>Date 標頭，指定要求的產生日期和時間。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.KeepAlive">
+      <summary>Keep-Alive 標頭，指定用來維持永久連接的參數。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Pragma">
+      <summary>Pragma 標頭，指定可能套用到要求/回應鏈結沿線之任何代理程式的實作特定指示詞。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Trailer">
+      <summary>Trailer 標頭，指定以區塊傳輸編碼所編碼之訊息尾端中出現的標頭欄位。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.TransferEncoding">
+      <summary>Transfer-Encoding 標頭，指定已套用至訊息本文的轉換類型 (若有)。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Upgrade">
+      <summary>Upgrade 標頭，指定用戶端支援的其他通訊協定。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Via">
+      <summary>Via 標頭，指定閘道和 Proxy 代理程式所要使用的中繼通訊協定。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Warning">
+      <summary>Warning 標頭，指定訊息中可能未反映之訊息狀態或轉換的其餘資訊。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Allow">
+      <summary>Allow 標頭，指定支援的 HTTP 方法集。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.ContentLength">
+      <summary>Content-Length 標頭，指定隨附的本文資料長度 (位元組)。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.ContentType">
+      <summary>Content-Type 標頭，指定隨附本文資料的 MIME 類型。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.ContentEncoding">
+      <summary>Content-Encoding 標頭，指定已套用至隨附本文資料的編碼。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.ContentLanguage">
+      <summary>Content-Langauge 標頭，指定隨附本文資料的自然語言。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.ContentLocation">
+      <summary>Content-Location 標頭，指定可從中取得隨附本文的 URI。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.ContentMd5">
+      <summary>Content-MD5 標頭，指定隨附本文資料的 MD5 摘要，以便提供端對端訊息完整性檢查。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.ContentRange">
+      <summary>Content-Range 標頭，指定應該在完整本文的哪個位置套用隨附的部分本文。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Expires">
+      <summary>Expires 標頭，指定日期和時間，在此時間點後就應該將隨附本文資料視為過時。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.LastModified">
+      <summary>Last-Modified 標頭，指定前次修改隨附本文資料的日期和時間。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Accept">
+      <summary>Accept 標頭，指定回應可接受的 MIME 類型。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.AcceptCharset">
+      <summary>Accept-Charset 標頭，指定回應可接受的字元集。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.AcceptEncoding">
+      <summary>Accept-Encoding 標頭，指定回應可接受的內容編碼。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.AcceptLanguage">
+      <summary>Accept-Langauge 標頭，指定回應所慣用的自然語言。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Authorization">
+      <summary>Authorization 標頭，指定用戶端向伺服器自我驗證時所出示的認證。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Cookie">
+      <summary>Cookie 標頭，指定向伺服器呈現的特定 Cookie 資料。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Expect">
+      <summary>Expect 標頭，指定用戶端要求的特定伺服器行為。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.From">
+      <summary>From 標頭，指定控制提出要求之使用者代理程式的使用者的網際網路電子郵件地址。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Host">
+      <summary>Host 標頭，指定正在要求之資源的主機名稱和連接埠號碼。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.IfMatch">
+      <summary>If-Match 標頭，指定只有當用戶端的指示資源快取複本是最新時，才應該執行要求的作業。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.IfModifiedSince">
+      <summary>If-Modified-Since 標頭，指定只有當要求的資源於指出的日期和時間之後已有所修改時，才應該執行要求的作業。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.IfNoneMatch">
+      <summary>If-None-Match 標頭，指定只有當用戶端的指示資源快取複本都不是最新時，才應該執行要求的作業。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.IfRange">
+      <summary>If-Range 標頭，指定只有當用戶端的快取複本是最新時，才應該傳送要求之資源的指定範圍。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.IfUnmodifiedSince">
+      <summary>If-Unmodified-Since 標頭，指定只有當要求的資源於指出的日期和時間之後未有所修改時，才應該執行要求的作業。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.MaxForwards">
+      <summary>Max-Forwards 標頭，指出整數來表示此要求剩餘的可轉寄次數。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.ProxyAuthorization">
+      <summary>Proxy-Authorization 標頭，指定用戶端向 Proxy 自我驗證時所出示的認證。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Referer">
+      <summary>Referer 標頭，指定從中取得要求 URI 之資源的 URI。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Range">
+      <summary>Range 標頭，指定代替整個回應傳回用戶端要求之回應的子範圍。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Te">
+      <summary>TE 標頭，指定回應可接受的傳送編碼。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Translate">
+      <summary>Translate 標頭，與 WebDAV 功能一起使用之 HTTP 規格的 Microsoft 延伸。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.UserAgent">
+      <summary>User-Agent 標頭，指定用戶端代理程式的相關資訊。</summary>
+    </member>
+    <member name="T:System.Net.HttpStatusCode">
+      <summary>包含為 HTTP 定義的狀態碼值。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Continue">
+      <summary>等同於 HTTP 狀態 100。<see cref="F:System.Net.HttpStatusCode.Continue" /> 指出用戶端可繼續其要求。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.SwitchingProtocols">
+      <summary>等同於 HTTP 狀態 101。<see cref="F:System.Net.HttpStatusCode.SwitchingProtocols" /> 指出通訊協定版本或通訊協定正在變更。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.OK">
+      <summary>等同於 HTTP 狀態 200。<see cref="F:System.Net.HttpStatusCode.OK" /> 指出要求成功，且要求的資訊位於回應中。這是最常接收到的狀態碼。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Created">
+      <summary>等同於 HTTP 狀態 201。<see cref="F:System.Net.HttpStatusCode.Created" /> 指出要求導致建立新資源，而後才傳送回應。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Accepted">
+      <summary>等同於 HTTP 狀態 202。<see cref="F:System.Net.HttpStatusCode.Accepted" /> 指出已接受要求來進一步處理。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.NonAuthoritativeInformation">
+      <summary>等同於 HTTP 狀態 203。<see cref="F:System.Net.HttpStatusCode.NonAuthoritativeInformation" /> 指出傳回的中繼資料資訊是來自快取的複本而非原始伺服器，因此可能不正確。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.NoContent">
+      <summary>等同於 HTTP 狀態 204。<see cref="F:System.Net.HttpStatusCode.NoContent" /> 指出要求已成功處理，且回應將刻意留空。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.ResetContent">
+      <summary>等同於 HTTP 狀態 205。<see cref="F:System.Net.HttpStatusCode.ResetContent" /> 指出用戶端應重設 (而非重新載入) 目前的資源。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.PartialContent">
+      <summary>等同於 HTTP 狀態 206。<see cref="F:System.Net.HttpStatusCode.PartialContent" /> 指出回應是包含位元組範圍的 GET 要求所要求的部分回應。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.MultipleChoices">
+      <summary>等同於 HTTP 狀態 300。<see cref="F:System.Net.HttpStatusCode.MultipleChoices" /> 指出要求的資訊具有多個表示法。預設動作是將此狀態視為重新導向，並遵循與此回應相關聯的 Location 標頭內容。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Ambiguous">
+      <summary>等同於 HTTP 狀態 300。<see cref="F:System.Net.HttpStatusCode.Ambiguous" /> 指出要求的資訊具有多個表示法。預設動作是將此狀態視為重新導向，並遵循與此回應相關聯的 Location 標頭內容。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.MovedPermanently">
+      <summary>等同於 HTTP 狀態 301。<see cref="F:System.Net.HttpStatusCode.MovedPermanently" /> 指出已將要求的資訊移至 Location 標頭中指定的 URI。在接收此狀態時，預設動作會跟隨與回應相關的 Location 標頭。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Moved">
+      <summary>等同於 HTTP 狀態 301。<see cref="F:System.Net.HttpStatusCode.Moved" /> 指出已將要求的資訊移至 Location 標頭中指定的 URI。在接收此狀態時，預設動作會跟隨與回應相關的 Location 標頭。當原始要求方法是 POST 時，重新導向的要求會使用 GET 方法。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Found">
+      <summary>等同於 HTTP 狀態 302。<see cref="F:System.Net.HttpStatusCode.Found" /> 指出要求的資訊位於 Location 標頭中指定的 URI。在接收此狀態時，預設動作會跟隨與回應相關的 Location 標頭。當原始要求方法是 POST 時，重新導向的要求會使用 GET 方法。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Redirect">
+      <summary>等同於 HTTP 狀態 302。<see cref="F:System.Net.HttpStatusCode.Redirect" /> 指出要求的資訊位於 Location 標頭中指定的 URI。在接收此狀態時，預設動作會跟隨與回應相關的 Location 標頭。當原始要求方法是 POST 時，重新導向的要求會使用 GET 方法。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.SeeOther">
+      <summary>等同於 HTTP 狀態 303。<see cref="F:System.Net.HttpStatusCode.SeeOther" /> 將用戶端自動地重新導向至 Location 標頭中指定的 URI，做為 POST 的結果。將使用 GET 製作 Location 標頭所指定的資源要求。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.RedirectMethod">
+      <summary>等同於 HTTP 狀態 303。<see cref="F:System.Net.HttpStatusCode.RedirectMethod" /> 將用戶端自動地重新導向至 Location 標頭中指定的 URI，做為 POST 的結果。將使用 GET 製作 Location 標頭所指定的資源要求。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.NotModified">
+      <summary>等同於 HTTP 狀態 304。<see cref="F:System.Net.HttpStatusCode.NotModified" /> 指出用戶端的快取複本是最新的。不會傳送資源的內容。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.UseProxy">
+      <summary>等同於 HTTP 狀態 305。<see cref="F:System.Net.HttpStatusCode.UseProxy" /> 指出要求應使用 Location 標頭指定之 URI 中的 Proxy 伺服器。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Unused">
+      <summary>等同於 HTTP 狀態 306。<see cref="F:System.Net.HttpStatusCode.Unused" /> 是未完整指定的 HTTP/1.1 規格的提議延伸。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.TemporaryRedirect">
+      <summary>等同於 HTTP 狀態 307。<see cref="F:System.Net.HttpStatusCode.TemporaryRedirect" /> 指出要求資訊位於 Location 標頭中指定的 URI。在接收此狀態時，預設動作會跟隨與回應相關的 Location 標頭。當原始的要求方法是 POST 時，重新導向的要求也將使用 POST 方法。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.RedirectKeepVerb">
+      <summary>等同於 HTTP 狀態 307。<see cref="F:System.Net.HttpStatusCode.RedirectKeepVerb" /> 指出要求資訊位於 Location 標頭中指定的 URI。在接收此狀態時，預設動作會跟隨與回應相關的 Location 標頭。當原始的要求方法是 POST 時，重新導向的要求也將使用 POST 方法。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.BadRequest">
+      <summary>等同於 HTTP 狀態 400。<see cref="F:System.Net.HttpStatusCode.BadRequest" /> 指出伺服器無法理解要求。沒有其他適用的錯誤時，或實際錯誤不明或沒有其本身的錯誤碼時，將傳送 <see cref="F:System.Net.HttpStatusCode.BadRequest" />。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Unauthorized">
+      <summary>等同於 HTTP 狀態 401。<see cref="F:System.Net.HttpStatusCode.Unauthorized" /> 指出要求的資源需要驗證。WWW-Authenticate 標頭包含如何執行驗證的詳細資料。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.PaymentRequired">
+      <summary>等同於 HTTP 狀態 402。將保留 <see cref="F:System.Net.HttpStatusCode.PaymentRequired" /> 供未來使用。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Forbidden">
+      <summary>等同於 HTTP 狀態 403。<see cref="F:System.Net.HttpStatusCode.Forbidden" /> 指出伺服器拒絕完成要求。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.NotFound">
+      <summary>等同於 HTTP 狀態 404。<see cref="F:System.Net.HttpStatusCode.NotFound" /> 指出伺服器上不存在要求的資源。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.MethodNotAllowed">
+      <summary>等同於 HTTP 狀態 405。<see cref="F:System.Net.HttpStatusCode.MethodNotAllowed" /> 指出要求的資源上不允許要求方法 (POST 或 GET)。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.NotAcceptable">
+      <summary>等同於 HTTP 狀態 406。<see cref="F:System.Net.HttpStatusCode.NotAcceptable" /> 指出用戶端已使用 Accept 標頭指出，其不會接受任何可用的資源表示。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.ProxyAuthenticationRequired">
+      <summary>等同於 HTTP 狀態 407。<see cref="F:System.Net.HttpStatusCode.ProxyAuthenticationRequired" /> 指出要求的 Proxy 需要驗證。Proxy-authenticate 標頭包含如何執行驗證的詳細資料。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.RequestTimeout">
+      <summary>等同於 HTTP 狀態 408。<see cref="F:System.Net.HttpStatusCode.RequestTimeout" /> 指出用戶端未在伺服器預期要求的時間內傳送要求。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Conflict">
+      <summary>等同於 HTTP 狀態 409。<see cref="F:System.Net.HttpStatusCode.Conflict" /> 指出因伺服器發生衝突而無法執行要求。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Gone">
+      <summary>等同於 HTTP 狀態 410。<see cref="F:System.Net.HttpStatusCode.Gone" /> 指出無法再使用要求的資源。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.LengthRequired">
+      <summary>等同於 HTTP 狀態 411。<see cref="F:System.Net.HttpStatusCode.LengthRequired" /> 指出缺少必要的 Content-length 標頭。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.PreconditionFailed">
+      <summary>等同於 HTTP 狀態 412。<see cref="F:System.Net.HttpStatusCode.PreconditionFailed" /> 指出此要求的條件集失敗，且無法執行要求。條件是使用條件式要求標頭所設定，例如 If-Match、If-None-Match 或 If-Unmodified-Since。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.RequestEntityTooLarge">
+      <summary>等同於 HTTP 狀態 413。<see cref="F:System.Net.HttpStatusCode.RequestEntityTooLarge" /> 指出要求過大，導致伺服器無法處理。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.RequestUriTooLong">
+      <summary>等同於 HTTP 狀態 414。<see cref="F:System.Net.HttpStatusCode.RequestUriTooLong" /> 指出 URI 過長。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.UnsupportedMediaType">
+      <summary>等同於 HTTP 狀態 415。<see cref="F:System.Net.HttpStatusCode.UnsupportedMediaType" /> 指出要求的類型不受支援。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.RequestedRangeNotSatisfiable">
+      <summary>等同於 HTTP 狀態 416。<see cref="F:System.Net.HttpStatusCode.RequestedRangeNotSatisfiable" /> 指出無法傳回資源所要求的資料範圍，原因可能是範圍開頭位於資源開頭前面，或範圍結尾位於資源結尾後面。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.ExpectationFailed">
+      <summary>等同於 HTTP 狀態 417。<see cref="F:System.Net.HttpStatusCode.ExpectationFailed" /> 指出伺服器無法符合 Expect 標頭中提供的預期。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.InternalServerError">
+      <summary>等同於 HTTP 狀態 500。<see cref="F:System.Net.HttpStatusCode.InternalServerError" /> 指出伺服器已發生一般錯誤。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.NotImplemented">
+      <summary>等同於 HTTP 狀態 501。<see cref="F:System.Net.HttpStatusCode.NotImplemented" /> 指出伺服器不支援要求的函式。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.BadGateway">
+      <summary>等同於 HTTP 狀態 502。<see cref="F:System.Net.HttpStatusCode.BadGateway" /> 指出中繼 Proxy 伺服器接收到來自其他 Proxy 或原始伺服器的錯誤回應。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.ServiceUnavailable">
+      <summary>等同於 HTTP 狀態 503。<see cref="F:System.Net.HttpStatusCode.ServiceUnavailable" /> 指出伺服器暫時無法使用，而這通常是因為高負載或維護。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.GatewayTimeout">
+      <summary>等同於 HTTP 狀態 504。<see cref="F:System.Net.HttpStatusCode.GatewayTimeout" /> 指出中繼 Proxy 伺服器在等待其他 Proxy 或原始伺服器的回應時發生逾時。</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.HttpVersionNotSupported">
+      <summary>等同於 HTTP 狀態 505。<see cref="F:System.Net.HttpStatusCode.HttpVersionNotSupported" /> 指出伺服器不支援要求的 HTTP 版本。</summary>
+    </member>
+    <member name="T:System.Net.HttpWebRequest">
+      <summary>提供 <see cref="T:System.Net.WebRequest" /> 類別的 HTTP 特定實作。</summary>
+    </member>
+    <member name="M:System.Net.HttpWebRequest.#ctor">
+      <summary>初始化 <see cref="T:System.Net.HttpWebRequest" /> 類別的新執行個體。</summary>
+    </member>
+    <member name="M:System.Net.HttpWebRequest.Abort">
+      <summary>取消網際網路資源的要求。</summary>
+      <exception cref="T:System.NotImplementedException">未實作此方法。</exception>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.Accept">
+      <summary>取得或設定 Accept HTTP 標頭的值。</summary>
+      <returns>Accept HTTP 標頭的值。預設值為 null。</returns>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.AllowAutoRedirect">
+      <summary>取得或設定值，該值可指出要求是否應遵循重新導向回應。</summary>
+      <returns>如果要求應自動遵循來自網際網路資源的重新導向回應，則為 true；否則為 false。預設值為 true。</returns>
+      <exception cref="T:System.NotImplementedException">未實作此屬性。 </exception>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.AllowReadStreamBuffering">
+      <summary>在子系類別中覆寫時取得或設定值，該值可指出是否要緩衝從網際網路資源讀取的資料。</summary>
+      <returns>true 以啟用從網際網路資源接收到之資料的緩衝；false 以停用緩衝。預設值為 true。</returns>
+      <exception cref="T:System.NotImplementedException">未實作此屬性。</exception>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.AllowWriteStreamBuffering"></member>
+    <member name="M:System.Net.HttpWebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)">
+      <summary>開始非同步要求，供 <see cref="T:System.IO.Stream" /> 物件用來寫入資料。</summary>
+      <returns>參照非同步要求的 <see cref="T:System.IAsyncResult" />。</returns>
+      <param name="callback">
+        <see cref="T:System.AsyncCallback" /> 委派。</param>
+      <param name="state">此要求的狀態物件。</param>
+      <exception cref="T:System.Net.ProtocolViolationException">
+        <see cref="P:System.Net.HttpWebRequest.Method" /> 屬性為 GET-或-<see cref="P:System.Net.WebRequest.ContentLength" /> 屬性已設定為不符合所提供之要求主體大小的值。</exception>
+      <exception cref="T:System.InvalidOperationException">資料流正在由先前對 <see cref="M:System.Net.HttpWebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)" /> 的呼叫所使用。-或-執行緒集區中的執行緒即將用盡。</exception>
+      <exception cref="T:System.NotImplementedException">未實作此方法。</exception>
+      <exception cref="T:System.NotSupportedException">要求快取驗證程式指出，可從快取服務此要求的回應，但寫入資料的要求不可使用快取。如果使用未正確實作的自訂快取驗證程式，則可能發生此例外狀況。</exception>
+      <exception cref="T:System.Net.WebException">先前已呼叫過 <see cref="M:System.Net.HttpWebRequest.Abort" />。</exception>
+      <exception cref="T:System.ObjectDisposedException">在 .NET Framework 應用程式中，未正確取得及關閉內容長度為零的要求串流。</exception>
+    </member>
+    <member name="M:System.Net.HttpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)">
+      <summary>開始非同步網際網路資源要求。</summary>
+      <returns>參照回應之非同步要求的 <see cref="T:System.IAsyncResult" />。</returns>
+      <param name="callback">
+        <see cref="T:System.AsyncCallback" /> 委派</param>
+      <param name="state">此要求的狀態物件。</param>
+      <exception cref="T:System.InvalidOperationException">資料流已經由先前對 <see cref="M:System.Net.HttpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" /> 的呼叫使用。-或-執行緒集區中的執行緒即將用盡。</exception>
+      <exception cref="T:System.NotImplementedException">未實作此方法。</exception>
+      <exception cref="T:System.NotSupportedException">
+        <paramref name="callback" /> 參數為 null。</exception>
+      <exception cref="T:System.Net.ProtocolViolationException">
+        <see cref="P:System.Net.HttpWebRequest.Method" /> 是 GET。</exception>
+      <exception cref="T:System.Net.WebException">先前已呼叫過 <see cref="M:System.Net.HttpWebRequest.Abort" />。</exception>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.ContentLength"></member>
+    <member name="P:System.Net.HttpWebRequest.ContentType">
+      <summary>取得或設定 Content-type HTTP 標頭的值。</summary>
+      <returns>Content-type HTTP 標頭的值。預設值為 null。</returns>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.CookieContainer">
+      <summary>指定與 HTTP 要求相關聯的 <see cref="T:System.Net.CookieCollection" /> 物件集合。</summary>
+      <returns>包含與 HTTP 要求相關聯之 <see cref="T:System.Net.CookieCollection" /> 物件集合的 <see cref="T:System.Net.CookieContainer" />。</returns>
+      <exception cref="T:System.NotImplementedException">未實作此屬性。</exception>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.Credentials">
+      <summary>取得或設定要求的驗證資訊。</summary>
+      <returns>包含與要求相關聯之驗證認證的 <see cref="T:System.Net.ICredentials" />。預設值為 null。</returns>
+    </member>
+    <member name="M:System.Net.HttpWebRequest.EndGetRequestStream(System.IAsyncResult)">
+      <summary>結束非同步要求，供 <see cref="T:System.IO.Stream" /> 物件用來寫入資料。</summary>
+      <returns>用來寫入要求資料的 <see cref="T:System.IO.Stream" />。</returns>
+      <param name="asyncResult">串流的擱置要求。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="asyncResult" /> 為 null。</exception>
+      <exception cref="T:System.IO.IOException">要求未完成，沒有串流可以使用。</exception>
+      <exception cref="T:System.ArgumentException">目前執行個體沒有在呼叫 <see cref="M:System.Net.HttpWebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)" /> 之後傳回 <paramref name="asyncResult" />。</exception>
+      <exception cref="T:System.InvalidOperationException">這個方法先前已使用 <paramref name="asyncResult" /> 呼叫過。</exception>
+      <exception cref="T:System.NotImplementedException">未實作此方法。</exception>
+      <exception cref="T:System.Net.WebException">先前已呼叫過 <see cref="M:System.Net.HttpWebRequest.Abort" />。-或-處理要求時發生錯誤。</exception>
+    </member>
+    <member name="M:System.Net.HttpWebRequest.EndGetResponse(System.IAsyncResult)">
+      <summary>結束非同步網際網路資源要求。</summary>
+      <returns>包含來自網際網路資源之回應的 <see cref="T:System.Net.WebResponse" />。</returns>
+      <param name="asyncResult">回應的擱置要求。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="asyncResult" /> 為 null。</exception>
+      <exception cref="T:System.InvalidOperationException">這個方法先前已使用 <paramref name="asyncResult." /> 呼叫過。</exception>
+      <exception cref="T:System.NotImplementedException">未實作此方法。</exception>
+      <exception cref="T:System.Net.WebException">先前已呼叫過 <see cref="M:System.Net.HttpWebRequest.Abort" />。-或-處理要求時發生錯誤。</exception>
+      <exception cref="T:System.ArgumentException">目前執行個體沒有在呼叫 <see cref="M:System.Net.HttpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" /> 之後傳回 <paramref name="asyncResult" />。</exception>
+    </member>
+    <member name="M:System.Net.HttpWebRequest.Finalize">
+      <summary>釋放目前的 <see cref="T:System.Net.HttpWebRequest" /> 執行個體所保留的資源。</summary>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.HaveResponse">
+      <summary>取得可指出是否已從網際網路資源接收到回應的值。</summary>
+      <returns>如果已接收到回應則為 true；否則為 false。</returns>
+      <exception cref="T:System.NotImplementedException">未實作此屬性。</exception>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.Headers">
+      <summary>指定組成 HTTP 標頭的名稱/值配對集合。</summary>
+      <returns>包含組成 HTTP 要求標頭之名稱/值配對的 <see cref="T:System.Net.WebHeaderCollection" />。</returns>
+      <exception cref="T:System.InvalidOperationException">已藉由呼叫 <see cref="M:System.Net.HttpWebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)" /> 或 <see cref="M:System.Net.HttpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" /> 方法來啟動要求。</exception>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.Method">
+      <summary>取得或設定要求的方法。</summary>
+      <returns>用來連絡網際網路資源的要求方法。預設值為 GET。</returns>
+      <exception cref="T:System.ArgumentException">未提供方法。-或-方法字串含有無效字元。</exception>
+      <exception cref="T:System.NotImplementedException">未實作此屬性。</exception>
+      <exception cref="T:System.NotSupportedException">
+        <see cref="P:System.Net.HttpWebRequest.Method" /> 屬性不是 GET 或 POST。</exception>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.RequestUri">
+      <summary>取得要求的原始統一資源識別項 (URI)。</summary>
+      <returns>包含傳遞至 <see cref="M:System.Net.WebRequest.Create(System.Uri)" /> 方法之網際網路資源 URI 的 <see cref="T:System.Uri" />。</returns>
+      <exception cref="T:System.NotImplementedException">未實作此屬性。</exception>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.SupportsCookieContainer">
+      <summary>取得可指出 <see cref="T:System.Net.HttpWebRequest" /> 執行個體是否支援 <see cref="P:System.Net.HttpWebRequest.CookieContainer" /> 屬性的值。</summary>
+      <returns>如果 <see cref="T:System.Net.HttpWebRequest" /> 執行個體支援 <see cref="P:System.Net.HttpWebRequest.CookieContainer" /> 屬性則為 true；否則為 false。</returns>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.UserAgent">
+      <summary>取得或設定 User-agent HTTP 標頭的值。</summary>
+      <returns>User-agent HTTP 標頭的值。預設值為 null。Note:這個屬性的值儲存在 <see cref="T:System.Net.WebHeaderCollection" /> 中。如果設定 WebHeaderCollection，則將遺失此屬性值。</returns>
+    </member>
+    <member name="T:System.Net.HttpWebResponse">
+      <summary>提供 <see cref="T:System.Net.WebResponse" /> 類別的 HTTP 特定實作。</summary>
+    </member>
+    <member name="M:System.Net.HttpWebResponse.#ctor">
+      <summary>初始化 <see cref="T:System.Net.WebResponse" /> 類別的新執行個體。</summary>
+    </member>
+    <member name="M:System.Net.HttpWebResponse.Close">
+      <summary>關閉回應串流。</summary>
+    </member>
+    <member name="P:System.Net.HttpWebResponse.ContentLength">
+      <summary>取得要求傳回的內容長度。</summary>
+      <returns>要求傳回的位元組數。內容長度不含標頭資訊。</returns>
+    </member>
+    <member name="P:System.Net.HttpWebResponse.ContentType">
+      <summary>取得回應的內容類型。</summary>
+      <returns>包含回應之內容類型的字串。</returns>
+    </member>
+    <member name="P:System.Net.HttpWebResponse.Cookies">
+      <summary>取得用來保存 HTTP 回應之狀態資訊的 Cookie。</summary>
+      <returns>與 HTTP 回應相關聯的 <see cref="T:System.Net.CookieCollection" /> 物件。</returns>
+      <exception cref="T:System.NotImplementedException">未實作此屬性。</exception>
+    </member>
+    <member name="M:System.Net.HttpWebResponse.Dispose(System.Boolean)">
+      <summary>釋放 <see cref="T:System.Net.HttpWebResponse" /> 所使用的 Unmanaged 資源，並選擇性釋放 Managed 資源。</summary>
+      <param name="disposing">指出是否應一併釋放 Managed 資源的布林值。</param>
+    </member>
+    <member name="M:System.Net.HttpWebResponse.GetResponseStream">
+      <summary>取得可用來讀取伺服器之回應本文的串流。</summary>
+      <returns>包含回應本文的 <see cref="T:System.IO.Stream" />。</returns>
+    </member>
+    <member name="P:System.Net.HttpWebResponse.Headers">
+      <summary>取得與伺服器之此回應相關聯的標頭。</summary>
+      <returns>包含與回應一起傳回之標頭資訊的 <see cref="T:System.Net.WebHeaderCollection" />。</returns>
+    </member>
+    <member name="P:System.Net.HttpWebResponse.Method">
+      <summary>取得用來傳回回應的方法。</summary>
+      <returns>包含可用來傳回回應之 HTTP 方法的字串。</returns>
+      <exception cref="T:System.ObjectDisposedException">已處置目前的執行個體。</exception>
+    </member>
+    <member name="P:System.Net.HttpWebResponse.ResponseUri">
+      <summary>取得回應要求之網際網路資源的 URI。</summary>
+      <returns>包含回應要求之網際網路資源 URI 的 <see cref="T:System.Uri" />。</returns>
+    </member>
+    <member name="P:System.Net.HttpWebResponse.StatusCode">
+      <summary>取得回應的狀態。</summary>
+      <returns>其中一個 <see cref="T:System.Net.HttpStatusCode" /> 值。</returns>
+      <exception cref="T:System.ObjectDisposedException">已處置目前的執行個體。</exception>
+    </member>
+    <member name="P:System.Net.HttpWebResponse.StatusDescription">
+      <summary>取得與回應一起傳回的狀態描述。</summary>
+      <returns>說明回應狀態的字串。</returns>
+      <exception cref="T:System.ObjectDisposedException">已處置目前的執行個體。</exception>
+    </member>
+    <member name="M:System.Net.HttpWebResponse.System#IDisposable#Dispose">
+      <summary>釋放 <see cref="T:System.Net.HttpWebResponse" /> 所使用的所有資源。</summary>
+    </member>
+    <member name="T:System.Net.ICredentials">
+      <summary>提供用以擷取網頁用戶端驗證之認證的基本驗證介面。</summary>
+    </member>
+    <member name="M:System.Net.ICredentials.GetCredential(System.Uri,System.String)">
+      <summary>傳回與指定 URI 和驗證類型相關聯的 <see cref="T:System.Net.NetworkCredential" /> 物件。</summary>
+      <returns>
+        <see cref="T:System.Net.NetworkCredential" />，與指定的 URI 和驗證類型相關聯，或者，如果沒有可用的認證，則為 null。</returns>
+      <param name="uri">用戶端為其提供驗證的 <see cref="T:System.Uri" />。</param>
+      <param name="authType">指定驗證類型的字串。</param>
+    </member>
+    <member name="T:System.Net.IPAddress">
+      <summary>提供網際網路通訊協定 (IP) 位址。</summary>
+    </member>
+    <member name="M:System.Net.IPAddress.#ctor(System.Byte[])">
+      <summary>使用指定為 <see cref="T:System.Byte" /> 陣列的位址初始化 <see cref="T:System.Net.IPAddress" /> 類別的新執行個體。</summary>
+      <param name="address">包含 IP 位址的位元組陣列。</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="address" /> 參數的長度不是 IPv4 位址所需的 4 位元組或 IPv6 位址所需的 16 位元組。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> 參數為 null。</exception>
+    </member>
+    <member name="M:System.Net.IPAddress.#ctor(System.Byte[],System.Int64)">
+      <summary>使用指定為 <see cref="T:System.Byte" /> 陣列和指定範圍識別項的 IPv6 位址來初始化 <see cref="T:System.Net.IPAddress" /> 類別的新執行個體。</summary>
+      <param name="address">IPv6 位址的位元組陣列值。</param>
+      <param name="scopeid">範圍識別項的 Long 值。</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="address" /> 參數的長度不是 IPv6 位址所需的 16 位元組。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> 參數為 null。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="scopeid" /> 參數小於 0 或<paramref name="scopeid" /> 大於 0x00000000FFFFFFFF。</exception>
+    </member>
+    <member name="M:System.Net.IPAddress.#ctor(System.Int64)">
+      <summary>使用指定為 <see cref="T:System.Int64" /> 的位址初始化 <see cref="T:System.Net.IPAddress" /> 類別的新執行個體。</summary>
+      <param name="newAddress">IP 位址的 Long 值。例如，big-endian 格式的值 0x2414188f 將是 IP 位址 "143.24.20.36"。</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="newAddress" /> 參數超出 IPv4 位址的範圍。</exception>
+    </member>
+    <member name="P:System.Net.IPAddress.Address">
+      <summary>取得或設定 IPv4 的網際網路通訊協定 (IP) 位址。</summary>
+      <returns>以整數表示的 IPv4 位址。</returns>
+      <exception cref="T:System.Net.Sockets.SocketException">
+        <see cref="P:System.Net.IPAddress.AddressFamily" /> 屬性為 <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6" />。</exception>
+    </member>
+    <member name="P:System.Net.IPAddress.AddressFamily">
+      <summary>取得 IP 位址的位址家族。</summary>
+      <returns>傳回 IPv4 的 <see cref="F:System.Net.Sockets.AddressFamily.InterNetwork" />，或傳回 IPv6 的 <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6" />。</returns>
+    </member>
+    <member name="F:System.Net.IPAddress.Any">
+      <summary>提供 IPv4 位址，指出伺服器必須針對 IPv4，在所有網路介面上接聽用戶端活動。此欄位為唯讀的。</summary>
+    </member>
+    <member name="F:System.Net.IPAddress.Broadcast">
+      <summary>提供 IPv4 廣播位址。此欄位為唯讀的。</summary>
+    </member>
+    <member name="M:System.Net.IPAddress.Equals(System.Object)">
+      <summary>比較兩個 IP 位址。</summary>
+      <returns>如果兩個位址相等則為 true；否則為 false。</returns>
+      <param name="comparand">要與目前執行個體比較的某個 <see cref="T:System.Net.IPAddress" /> 執行個體。</param>
+    </member>
+    <member name="M:System.Net.IPAddress.GetAddressBytes">
+      <summary>提供 <see cref="T:System.Net.IPAddress" /> 複本做為位元組陣列。</summary>
+      <returns>表示 <see cref="T:System.Net.IPAddress" /> 執行個體的位元組陣列。</returns>
+    </member>
+    <member name="M:System.Net.IPAddress.GetHashCode">
+      <summary>傳回 IP 位址的雜湊值。</summary>
+      <returns>IP 位址的整數雜湊值。</returns>
+    </member>
+    <member name="M:System.Net.IPAddress.HostToNetworkOrder(System.Int16)">
+      <summary>將主機位元組順序的 Short 值轉換成網路位元組順序。</summary>
+      <returns>以網路位元組順序表示的 Short 值。</returns>
+      <param name="host">要轉換的數字 (依主機位元組順序表示)。</param>
+    </member>
+    <member name="M:System.Net.IPAddress.HostToNetworkOrder(System.Int32)">
+      <summary>將主機位元組順序的整數值轉換成網路位元組順序。</summary>
+      <returns>以網路位元組順序表示的整數值。</returns>
+      <param name="host">要轉換的數字 (依主機位元組順序表示)。</param>
+    </member>
+    <member name="M:System.Net.IPAddress.HostToNetworkOrder(System.Int64)">
+      <summary>將主機位元組順序的 Long 值轉換成網路位元組順序。</summary>
+      <returns>以網路位元組順序表示的 Long 值。</returns>
+      <param name="host">要轉換的數字 (依主機位元組順序表示)。</param>
+    </member>
+    <member name="F:System.Net.IPAddress.IPv6Any">
+      <summary>提供 IPv6 位址，指出伺服器必須針對 IPv6，在所有網路介面上接聽用戶端活動。此欄位為唯讀的。</summary>
+    </member>
+    <member name="F:System.Net.IPAddress.IPv6Loopback">
+      <summary>提供 IP 回送位址。此屬性是唯讀的。</summary>
+    </member>
+    <member name="F:System.Net.IPAddress.IPv6None">
+      <summary>提供 IPv6 位址，指出不應使用網路介面。此屬性是唯讀的。</summary>
+    </member>
+    <member name="P:System.Net.IPAddress.IsIPv6LinkLocal">
+      <summary>取得位址是否為 IPv6 連結本機位址。</summary>
+      <returns>如果 IP 位址是 IPv6 連結本機位址則為 true；否則為 false。</returns>
+    </member>
+    <member name="P:System.Net.IPAddress.IsIPv6Multicast">
+      <summary>取得位址是否為 IPv6 多點傳送全域位址。</summary>
+      <returns>如果 IP 位址是 IPv6 多點傳送全域位址則為 true；否則為 false。</returns>
+    </member>
+    <member name="P:System.Net.IPAddress.IsIPv6SiteLocal">
+      <summary>取得位址是否為 IPv6 網站本機位址。</summary>
+      <returns>如果 IP 位址是 IPv6 站台本機位址則為 true；否則為 false。</returns>
+    </member>
+    <member name="M:System.Net.IPAddress.IsLoopback(System.Net.IPAddress)">
+      <summary>指出指定的 IP 位址是否為回送位址。</summary>
+      <returns>如果 <paramref name="address" /> 是回送位址則為 true；否則為 false。</returns>
+      <param name="address">IP 位址。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> 參數為 null。</exception>
+    </member>
+    <member name="F:System.Net.IPAddress.Loopback">
+      <summary>提供 IPv4 回送位址。此欄位為唯讀的。</summary>
+    </member>
+    <member name="M:System.Net.IPAddress.NetworkToHostOrder(System.Int16)">
+      <summary>將網路位元組順序的 Short 值轉換成主機位元組順序。</summary>
+      <returns>以主機位元組順序表示的 Short 值。</returns>
+      <param name="network">要轉換的數字 (依網路位元組順序表示)。</param>
+    </member>
+    <member name="M:System.Net.IPAddress.NetworkToHostOrder(System.Int32)">
+      <summary>將網路位元組順序的整數值轉換成主機位元組順序。</summary>
+      <returns>以主機位元組順序表示的整數值。</returns>
+      <param name="network">要轉換的數字 (依網路位元組順序表示)。</param>
+    </member>
+    <member name="M:System.Net.IPAddress.NetworkToHostOrder(System.Int64)">
+      <summary>將網路位元組順序的 Long 值轉換成主機位元組順序。</summary>
+      <returns>以主機位元組順序表示的 Long 值。</returns>
+      <param name="network">要轉換的數字 (依網路位元組順序表示)。</param>
+    </member>
+    <member name="F:System.Net.IPAddress.None">
+      <summary>提供 IP 位址，指出不應使用網路介面。此欄位為唯讀的。</summary>
+    </member>
+    <member name="M:System.Net.IPAddress.Parse(System.String)">
+      <summary>將 IP 位址字串轉換成 <see cref="T:System.Net.IPAddress" /> 執行個體。</summary>
+      <returns>
+        <see cref="T:System.Net.IPAddress" /> 執行個體。</returns>
+      <param name="ipString">一個字串，包含 IPv4 以點區隔四數字之標記法所表示的 IP 位址，及 IPv6 以冒號十六進位標記法所表示的 IP 位址。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="ipString" /> 參數為 null。</exception>
+      <exception cref="T:System.FormatException">
+        <paramref name="ipString" /> 參數不是有效的 IP 位址。</exception>
+    </member>
+    <member name="P:System.Net.IPAddress.ScopeId">
+      <summary>取得或設定 IPv6 位址範圍識別項。</summary>
+      <returns>指定位址範圍的 Long Integer。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">當設定 ScopeId 時，這個值小於 0 或值大於 0x00000000FFFFFFFF。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">
+        <see cref="P:System.Net.IPAddress.AddressFamily" /> 屬性指定為 <see cref="F:System.Net.Sockets.AddressFamily.InterNetwork" />。</exception>
+    </member>
+    <member name="M:System.Net.IPAddress.ToString">
+      <summary>將網際網路位址轉換成其標準標記法。</summary>
+      <returns>一個字串，包含以 IPv4 的點區隔四數字或 IPv6 的冒號十六進位標記法所表示的 IP 位址。</returns>
+      <exception cref="T:System.Net.Sockets.SocketException">防止 IPv6 位址轉換成字串的錯誤。</exception>
+    </member>
+    <member name="M:System.Net.IPAddress.TryParse(System.String,System.Net.IPAddress@)">
+      <summary>判斷字串是否為有效的 IP 位址。</summary>
+      <returns>如果 <paramref name="ipString" /> 是有效的 IP 位址則為 true；否則為 false。</returns>
+      <param name="ipString">要驗證的字串。</param>
+      <param name="address">字串的 <see cref="T:System.Net.IPAddress" /> 版本。</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="ipString" /> 無法剖析為 IP 位址。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="ipString" /> 為 null。</exception>
+      <exception cref="T:System.FormatException">
+        <paramref name="ipString" /> 不是有效的 IP 位址。</exception>
+    </member>
+    <member name="T:System.Net.IPEndPoint">
+      <summary>將網路端點表示為 IP 位址和連接埠號碼。</summary>
+    </member>
+    <member name="M:System.Net.IPEndPoint.#ctor(System.Int64,System.Int32)">
+      <summary>使用指定的 IP 位址和連接埠號碼初始化 <see cref="T:System.Net.IPEndPoint" /> 類別的新執行個體。</summary>
+      <param name="address">網際網路主機之 IP 位址的 Long 值。例如，big-endian 格式的值 0x2414188f 將是 IP 位址 "143.24.20.36"。</param>
+      <param name="port">與 <paramref name="address" /> 關聯的通訊埠編號，或 0 指定任何可用的通訊埠。<paramref name="port" /> 依主機順序。</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="port" /> 小於 <see cref="F:System.Net.IPEndPoint.MinPort" />。-或-<paramref name="port" /> 大於 <see cref="F:System.Net.IPEndPoint.MaxPort" />。-或-<paramref name="address" /> 超出 IPv4 位址範圍。</exception>
+    </member>
+    <member name="M:System.Net.IPEndPoint.#ctor(System.Net.IPAddress,System.Int32)">
+      <summary>使用指定的位址和連接埠號碼初始化 <see cref="T:System.Net.IPEndPoint" /> 類別的新執行個體。</summary>
+      <param name="address">表示為 <see cref="T:System.Net.IPAddress" /> 之網際網路主機的 IP 位址。</param>
+      <param name="port">與 <paramref name="address" /> 關聯的通訊埠編號，或 0 指定任何可用的通訊埠。<paramref name="port" /> 依主機順序。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> 參數為 null。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="port" /> 小於 <see cref="F:System.Net.IPEndPoint.MinPort" />。-或-<paramref name="port" /> 大於 <see cref="F:System.Net.IPEndPoint.MaxPort" />。</exception>
+    </member>
+    <member name="P:System.Net.IPEndPoint.Address">
+      <summary>取得或設定端點的 IP 位址。</summary>
+      <returns>端點的 IP 位址。</returns>
+    </member>
+    <member name="P:System.Net.IPEndPoint.AddressFamily">
+      <summary>取得網際網路通訊協定 (IP) 位址家族。</summary>
+      <returns>其中一個 <see cref="T:System.Net.Sockets.AddressFamily" /> 值。</returns>
+    </member>
+    <member name="M:System.Net.IPEndPoint.Create(System.Net.SocketAddress)">
+      <summary>從通訊端位址建立端點。</summary>
+      <returns>使用指定之通訊端位址的 <see cref="T:System.Net.EndPoint" /> 執行個體。</returns>
+      <param name="socketAddress">要用於端點的 <see cref="T:System.Net.SocketAddress" />。</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="socketAddress" /> 的 AddressFamily 不等於目前執行個體的 AddressFamily。-或-<paramref name="socketAddress" />.Size &amp;lt; 8。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="socketAddress" /> 參數為 null。</exception>
+    </member>
+    <member name="M:System.Net.IPEndPoint.Equals(System.Object)">
+      <summary>判斷指定的 <see cref="T:System.Object" /> 和目前的 <see cref="T:System.Net.IPEndPoint" /> 執行個體是否相等。</summary>
+      <returns>如果兩個 IP 端點相等則為 true；否則為 false。</returns>
+      <param name="comparand">指定的 <see cref="T:System.Object" />，用來測試與目前的 <see cref="T:System.Net.IPEndPoint" /> 執行個體是否相等。</param>
+    </member>
+    <member name="M:System.Net.IPEndPoint.GetHashCode">
+      <summary>傳回 IP 端點的雜湊值。</summary>
+      <returns>IP 端點的整數雜湊值。</returns>
+    </member>
+    <member name="F:System.Net.IPEndPoint.MaxPort">
+      <summary>指定可指派給 <see cref="P:System.Net.IPEndPoint.Port" /> 屬性的最大值。MaxPort 值設定為 0x0000FFFF。此欄位為唯讀的。</summary>
+    </member>
+    <member name="F:System.Net.IPEndPoint.MinPort">
+      <summary>指定可指派給 <see cref="P:System.Net.IPEndPoint.Port" /> 屬性的最小值。此欄位為唯讀的。</summary>
+    </member>
+    <member name="P:System.Net.IPEndPoint.Port">
+      <summary>取得或設定端點的連接埠號碼。</summary>
+      <returns>指出端點之連接埠號碼的整數值，範圍為 <see cref="F:System.Net.IPEndPoint.MinPort" /> 到 <see cref="F:System.Net.IPEndPoint.MaxPort" />。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">指定給設定作業的值小於 <see cref="F:System.Net.IPEndPoint.MinPort" /> 或大於 <see cref="F:System.Net.IPEndPoint.MaxPort" />。</exception>
+    </member>
+    <member name="M:System.Net.IPEndPoint.Serialize">
+      <summary>將端點資訊序列化至 <see cref="T:System.Net.SocketAddress" /> 執行個體。</summary>
+      <returns>包含端點之通訊端位址的 <see cref="T:System.Net.SocketAddress" /> 執行個體。</returns>
+    </member>
+    <member name="M:System.Net.IPEndPoint.ToString">
+      <summary>傳回指定端點的 IP 位址和連接埠號碼。</summary>
+      <returns>包含指定端點之 IP 位址和連接埠號碼的字串。</returns>
+    </member>
+    <member name="T:System.Net.IWebRequestCreate">
+      <summary>提供用以建立 <see cref="T:System.Net.WebRequest" /> 執行個體的基本介面。</summary>
+    </member>
+    <member name="M:System.Net.IWebRequestCreate.Create(System.Uri)">
+      <summary>建立 <see cref="T:System.Net.WebRequest" /> 執行個體。</summary>
+      <returns>
+        <see cref="T:System.Net.WebRequest" /> 執行個體。</returns>
+      <param name="uri">Web 資源的統一資源識別項 (URI)。</param>
+      <exception cref="T:System.NotSupportedException">此 <see cref="T:System.Net.IWebRequestCreate" /> 執行個體不支援 <paramref name="uri" /> 中指定的要求配置。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="uri" /> 為 null。</exception>
+      <exception cref="T:System.Security.SecurityException">呼叫端沒有權限連線到要求的 URI 或此要求重新導向至的 URI。</exception>
+      <exception cref="T:System.UriFormatException">在 <paramref name="uri" /> 中指定的 URI 不是有效的 URI。 </exception>
+    </member>
+    <member name="T:System.Net.NetworkCredential">
+      <summary>為密碼型驗證配置提供認證，例如基本、摘要、NTLM 和 Kerberos 驗證。</summary>
+    </member>
+    <member name="M:System.Net.NetworkCredential.#ctor">
+      <summary>初始化 <see cref="T:System.Net.NetworkCredential" /> 類別的新執行個體。</summary>
+    </member>
+    <member name="M:System.Net.NetworkCredential.#ctor(System.String,System.String)">
+      <summary>使用指定的使用者名稱和密碼初始化 <see cref="T:System.Net.NetworkCredential" /> 類別的新執行個體。</summary>
+      <param name="userName">與認證關聯的使用者名稱。</param>
+      <param name="password">與認證相關聯之使用者名稱的密碼。</param>
+    </member>
+    <member name="M:System.Net.NetworkCredential.#ctor(System.String,System.String,System.String)">
+      <summary>使用指定的使用者名稱、密碼和網域初始化 <see cref="T:System.Net.NetworkCredential" /> 類別的新執行個體。</summary>
+      <param name="userName">與認證關聯的使用者名稱。</param>
+      <param name="password">與認證相關聯之使用者名稱的密碼。</param>
+      <param name="domain">與這些認證相關聯的網域。</param>
+    </member>
+    <member name="P:System.Net.NetworkCredential.Domain">
+      <summary>取得或設定用來驗證認證的網域或電腦名稱。</summary>
+      <returns>與認證相關聯之網域的名稱。</returns>
+    </member>
+    <member name="M:System.Net.NetworkCredential.GetCredential(System.Uri,System.String)">
+      <summary>為指定的統一資源識別項 (URI) 和驗證類型傳回 <see cref="T:System.Net.NetworkCredential" /> 類別的執行個體。</summary>
+      <returns>
+        <see cref="T:System.Net.NetworkCredential" /> 物件。</returns>
+      <param name="uri">用戶端為其提供驗證的 URI。</param>
+      <param name="authType">指定要求之驗證類型的字串。</param>
+    </member>
+    <member name="P:System.Net.NetworkCredential.Password">
+      <summary>取得或設定與認證相關聯之使用者名稱的密碼。</summary>
+      <returns>與認證相關聯的密碼。</returns>
+    </member>
+    <member name="P:System.Net.NetworkCredential.UserName">
+      <summary>取得或設定與認證相關聯的使用者名稱。</summary>
+      <returns>與認證關聯的使用者名稱。</returns>
+    </member>
+    <member name="T:System.Net.OpenReadCompletedEventArgs">
+      <summary>提供 <see cref="E:System.Net.WebClient.OpenReadCompleted" /> 事件的資料。</summary>
+    </member>
+    <member name="P:System.Net.OpenReadCompletedEventArgs.Result">
+      <summary>取得包含 <see cref="M:System.Net.WebClient.OpenReadAsync(System.Uri,System.Object)" /> 方法之結果的可讀取串流。</summary>
+      <returns>包含 <see cref="M:System.Net.WebClient.OpenReadAsync(System.Uri,System.Object)" /> 方法之結果的 <see cref="T:System.IO.Stream" />。</returns>
+      <exception cref="T:System.InvalidOperationException">非同步要求已取消。 </exception>
+    </member>
+    <member name="T:System.Net.OpenReadCompletedEventHandler">
+      <summary>表示將處理 <see cref="T:System.Net.WebClient" /> 之 <see cref="M:System.Net.WebClient.OpenReadAsync(System.Uri)" /> 事件的方法。</summary>
+      <param name="sender">事件來源。</param>
+      <param name="e">包含事件資料的 <see cref="T:System.Net.OpenReadCompletedEventArgs" />。 </param>
+    </member>
+    <member name="T:System.Net.OpenWriteCompletedEventArgs">
+      <summary>提供 <see cref="E:System.Net.WebClient.OpenWriteCompleted" /> 事件的資料。</summary>
+    </member>
+    <member name="P:System.Net.OpenWriteCompletedEventArgs.Result">
+      <summary>取得可用來將資料傳送至伺服器的可寫入串流。</summary>
+      <returns>可在其中寫入要上傳之資料的 <see cref="T:System.IO.Stream" />。</returns>
+      <exception cref="T:System.InvalidOperationException">非同步要求已取消。 </exception>
+    </member>
+    <member name="T:System.Net.OpenWriteCompletedEventHandler">
+      <summary>表示將處理 <see cref="T:System.Net.WebClient" /> 之 <see cref="E:System.Net.WebClient.OpenWriteCompleted" /> 事件的方法。</summary>
+      <param name="sender">事件來源。</param>
+      <param name="e">包含事件資料的 <see cref="T:System.Net.OpenWriteCompletedEventArgs" />。</param>
+    </member>
+    <member name="T:System.Net.ProtocolViolationException">
+      <summary>使用網路通訊協定發生錯誤時所擲回的例外狀況。</summary>
+    </member>
+    <member name="M:System.Net.ProtocolViolationException.#ctor">
+      <summary>初始化 <see cref="T:System.Net.ProtocolViolationException" /> 類別的新執行個體。</summary>
+    </member>
+    <member name="M:System.Net.ProtocolViolationException.#ctor(System.String)">
+      <summary>使用指定的訊息來初始化 <see cref="T:System.Net.ProtocolViolationException" /> 類別的新執行個體。</summary>
+      <param name="message">錯誤訊息字串。</param>
+    </member>
+    <member name="T:System.Net.SocketAddress">
+      <summary>儲存來自 <see cref="T:System.Net.EndPoint" /> 衍生類別的序列化資訊。</summary>
+    </member>
+    <member name="M:System.Net.SocketAddress.#ctor(System.Net.Sockets.AddressFamily)">
+      <summary>為指定的位址家族建立 <see cref="T:System.Net.SocketAddress" /> 類別的新執行個體。</summary>
+      <param name="family">
+        <see cref="T:System.Net.Sockets.AddressFamily" /> 列舉值。</param>
+    </member>
+    <member name="M:System.Net.SocketAddress.#ctor(System.Net.Sockets.AddressFamily,System.Int32)">
+      <summary>使用指定的位址家族和緩衝區大小建立 <see cref="T:System.Net.SocketAddress" /> 類別的新執行個體。</summary>
+      <param name="family">
+        <see cref="T:System.Net.Sockets.AddressFamily" /> 列舉值。</param>
+      <param name="size">為 <see cref="P:System.Net.SocketAddress.Size" /> 屬性所設定的值，其可影響要針對基礎緩衝區配置的位元組數。</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="size" /> 小於 2。需要這些 2 位元組才能儲存 <paramref name="family" />。</exception>
+    </member>
+    <member name="M:System.Net.SocketAddress.Equals(System.Object)">
+      <summary>判斷指定的 <see cref="T:System.Object" /> 和目前的 <see cref="T:System.Net.SocketAddress" /> 執行個體是否相等。</summary>
+      <returns>如果兩個 <see cref="T:System.Net.SocketAddress" /> 執行個體相等則為 true；否則為 false。</returns>
+      <param name="comparand">要與目前的 <see cref="T:System.Net.SocketAddress" /> 執行個體進行比較的指定 <see cref="T:System.Object" />。</param>
+    </member>
+    <member name="P:System.Net.SocketAddress.Family">
+      <summary>取得目前 <see cref="T:System.Net.SocketAddress" /> 的 <see cref="T:System.Net.Sockets.AddressFamily" /> 列舉值。</summary>
+      <returns>其中一個 <see cref="T:System.Net.Sockets.AddressFamily" /> 列舉值。</returns>
+    </member>
+    <member name="M:System.Net.SocketAddress.GetHashCode">
+      <summary>傳回 <see cref="T:System.Net.SocketAddress" /> 的雜湊值。</summary>
+      <returns>通訊端位址的整數雜湊值。</returns>
+    </member>
+    <member name="P:System.Net.SocketAddress.Item(System.Int32)">
+      <summary>取得或設定基礎緩衝區中的指定索引元素。</summary>
+      <returns>基礎緩衝區中的指定索引元素值。</returns>
+      <param name="offset">所需資訊的陣列索引元素。</param>
+      <exception cref="T:System.IndexOutOfRangeException">緩衝區中不存在指定的索引 (<paramref name="offset" /> 小於 0，或大於或等於 <see cref="P:System.Net.SocketAddress.Size" /> 屬性)。</exception>
+    </member>
+    <member name="P:System.Net.SocketAddress.Size">
+      <summary>取得可用於 <see cref="T:System.Net.SocketAddress" /> 的可用緩衝區大小。</summary>
+      <returns>
+        <see cref="T:System.Net.SocketAddress" /> 的可用緩衝區大小 (位元組)。</returns>
+    </member>
+    <member name="M:System.Net.SocketAddress.ToString">
+      <summary>傳回表示通訊端位址相關資訊的字串。</summary>
+      <returns>包含 <see cref="T:System.Net.SocketAddress" /> 相關資訊的字串。</returns>
+    </member>
+    <member name="T:System.Net.UploadProgressChangedEventArgs">
+      <summary>提供 <see cref="T:System.Net.WebClient" /> 之 <see cref="E:System.Net.WebClient.UploadProgressChanged" /> 事件的資料。</summary>
+    </member>
+    <member name="P:System.Net.UploadProgressChangedEventArgs.BytesReceived">
+      <summary>取得接收到的位元組數</summary>
+      <returns>指出接收到之位元組數的 <see cref="T:System.Int64" /> 值。</returns>
+    </member>
+    <member name="P:System.Net.UploadProgressChangedEventArgs.BytesSent">
+      <summary>取得傳送的位元組數。</summary>
+      <returns>指出傳送之位元組數的 <see cref="T:System.Int64" /> 值。</returns>
+    </member>
+    <member name="P:System.Net.UploadProgressChangedEventArgs.TotalBytesToReceive">
+      <summary>取得 <see cref="T:System.Net.WebClient" /> 資料上傳作業中的位元組總數。</summary>
+      <returns>指出將接收到之位元組數的 <see cref="T:System.Int64" /> 值。</returns>
+    </member>
+    <member name="P:System.Net.UploadProgressChangedEventArgs.TotalBytesToSend">
+      <summary>取得要傳送的位元組總數。</summary>
+      <returns>指出將傳送之位元組數的 <see cref="T:System.Int64" /> 值。</returns>
+    </member>
+    <member name="T:System.Net.UploadProgressChangedEventHandler">
+      <summary>表示將處理 <see cref="T:System.Net.WebClient" /> 之 <see cref="E:System.Net.WebClient.UploadProgressChanged" /> 事件的方法。</summary>
+      <param name="sender">事件來源。</param>
+      <param name="e">包含事件資料的 <see cref="T:System.Net.UploadProgressChangedEventArgs" />。</param>
+    </member>
+    <member name="T:System.Net.UploadStringCompletedEventArgs">
+      <summary>提供 <see cref="E:System.Net.WebClient.UploadStringCompleted" /> 事件的資料。</summary>
+    </member>
+    <member name="P:System.Net.UploadStringCompletedEventArgs.Result">
+      <summary>取得針對呼叫 <see cref="Overload:System.Net.WebClient.UploadStringAsync" /> 方法所啟動之字串上傳作業所作出的伺服器回覆。</summary>
+      <returns>包含伺服器回覆的 <see cref="T:System.Byte" /> 陣列。</returns>
+      <exception cref="T:System.InvalidOperationException">非同步要求已取消。 </exception>
+    </member>
+    <member name="T:System.Net.UploadStringCompletedEventHandler">
+      <summary>表示將處理 <see cref="T:System.Net.WebClient" /> 之 <see cref="E:System.Net.WebClient.UploadStringCompleted" /> 事件的方法。</summary>
+      <param name="sender">事件來源。</param>
+      <param name="e">包含事件資料的 <see cref="T:System.Net.UploadStringCompletedEventArgs" />。</param>
+    </member>
+    <member name="T:System.Net.WebClient">
+      <summary>提供一般方法，用來將資料傳送至 URI 識別的資源，或從該資源接收資料。</summary>
+    </member>
+    <member name="M:System.Net.WebClient.#ctor">
+      <summary>初始化 <see cref="T:System.Net.WebClient" /> 類別的新執行個體。</summary>
+    </member>
+    <member name="P:System.Net.WebClient.AllowReadStreamBuffering">
+      <summary>取得或設定值，該值可指出是否要針對 <see cref="T:System.Net.WebClient" /> 執行個體，緩衝從網際網路資源讀取的資料。</summary>
+      <returns>true 可啟用從網際網路資源接收到之資料的緩衝，false 則可停用緩衝。預設值為 true。</returns>
+    </member>
+    <member name="P:System.Net.WebClient.AllowWriteStreamBuffering">
+      <summary>取得或設定值，該值可指出是否要針對 <see cref="T:System.Net.WebClient" /> 執行個體，緩衝寫入網際網路資源的資料。</summary>
+      <returns>true 以啟用緩衝處理寫入網際網路資源的資料；false 以停用緩衝處理。預設值為 true。</returns>
+    </member>
+    <member name="P:System.Net.WebClient.BaseAddress">
+      <summary>取得或設定 <see cref="T:System.Net.WebClient" /> 所提出之要求的基本 URI。</summary>
+      <returns>
+        <see cref="T:System.Net.WebClient" /> 所提出之要求的基本 URI。如果未指定基底位址，<see cref="P:System.Net.WebClient.BaseAddress" /> 屬性會初始化為應用程式原點 (Windows Phone XAP 的絕對 URI)。..</returns>
+      <exception cref="T:System.ArgumentException">
+        <see cref="P:System.Net.WebClient.BaseAddress" /> 是設為無效的 URI。內部例外狀況可能包含能協助您找出錯誤的資訊。</exception>
+    </member>
+    <member name="M:System.Net.WebClient.CancelAsync">
+      <summary>取消擱置的非同步作業。</summary>
+      <exception cref="T:System.OutOfMemoryException">沒有足夠的記憶體可繼續執行程式。</exception>
+      <exception cref="T:System.StackOverflowException">執行堆疊溢位，因為它包含太多巢狀方法呼叫。</exception>
+      <exception cref="T:System.Threading.ThreadAbortException">已對 <see cref="M:System.Threading.Thread.Abort" /> 方法發出呼叫，以摧毀執行緒。</exception>
+    </member>
+    <member name="P:System.Net.WebClient.Credentials">
+      <summary>取得或設定網路認證，這些認證將傳送至主機並用來驗證要求。</summary>
+      <returns>包含要求之驗證認證的 <see cref="T:System.Net.ICredentials" />。預設值為 null。</returns>
+    </member>
+    <member name="E:System.Net.WebClient.DownloadProgressChanged">
+      <summary>發生於非同步下載作業成功傳送部分或所有資料時。</summary>
+    </member>
+    <member name="M:System.Net.WebClient.DownloadStringAsync(System.Uri)">
+      <summary>將指定之 <see cref="T:System.Uri" /> 中的資源當做字串下載。</summary>
+      <param name="address">要下載之資源的位置。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> 參數為 null。</exception>
+      <exception cref="T:System.OutOfMemoryException">沒有足夠的記憶體可繼續執行程式。</exception>
+      <exception cref="T:System.StackOverflowException">執行堆疊溢位，因為它包含太多巢狀方法呼叫。</exception>
+      <exception cref="T:System.Threading.ThreadAbortException">已對 <see cref="M:System.Threading.Thread.Abort" /> 方法發出呼叫，以摧毀執行緒。</exception>
+    </member>
+    <member name="M:System.Net.WebClient.DownloadStringAsync(System.Uri,System.Object)">
+      <summary>將指定之 <see cref="T:System.Uri" /> 中的資源當做字串下載。</summary>
+      <param name="address">要下載之資源的位置。</param>
+      <param name="userToken">為非同步工作提供使用者指定的識別項。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> 參數為 null。</exception>
+      <exception cref="T:System.OutOfMemoryException">沒有足夠的記憶體可繼續執行程式。</exception>
+      <exception cref="T:System.StackOverflowException">執行堆疊溢位，因為它包含太多巢狀方法呼叫。</exception>
+      <exception cref="T:System.Threading.ThreadAbortException">已對 <see cref="M:System.Threading.Thread.Abort" /> 方法發出呼叫，以摧毀執行緒。</exception>
+    </member>
+    <member name="E:System.Net.WebClient.DownloadStringCompleted">
+      <summary>發生於非同步資源下載作業完成時。</summary>
+    </member>
+    <member name="P:System.Net.WebClient.Encoding">
+      <summary>取得和設定用來上傳和下載字串的 <see cref="T:System.Text.Encoding" />。</summary>
+      <returns>用來編碼字串的 <see cref="T:System.Text.Encoding" />。這個屬性的預設值為 <see cref="P:System.Text.Encoding.UTF8" />。</returns>
+      <exception cref="T:System.ArgumentNullException">已傳遞 null 值來設定此屬性。</exception>
+    </member>
+    <member name="M:System.Net.WebClient.GetWebRequest(System.Uri)">
+      <summary>傳回指定資源的 <see cref="T:System.Net.WebRequest" /> 物件。</summary>
+      <returns>指定資源的新 <see cref="T:System.Net.WebRequest" /> 物件。</returns>
+      <param name="address">識別要要求之資源的 <see cref="T:System.Uri" />。</param>
+    </member>
+    <member name="M:System.Net.WebClient.GetWebResponse(System.Net.WebRequest,System.IAsyncResult)">
+      <summary>使用指定的 <see cref="T:System.IAsyncResult" />，傳回指定之 <see cref="T:System.Net.WebRequest" /> 的 <see cref="T:System.Net.WebResponse" />。</summary>
+      <returns>包含指定 <see cref="T:System.Net.WebRequest" /> 之回應的 <see cref="T:System.Net.WebResponse" />。</returns>
+      <param name="request">用來取得回應的 <see cref="T:System.Net.WebRequest" />。</param>
+      <param name="result">從先前的 <see cref="M:System.Net.WebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" /> 呼叫取得的 <see cref="T:System.IAsyncResult" /> 物件。</param>
+    </member>
+    <member name="P:System.Net.WebClient.Headers">
+      <summary>取得或設定與要求相關聯的標頭名稱/值配對集合。</summary>
+      <returns>包含與此要求相關聯之標頭名稱/值配對的 <see cref="T:System.Net.WebHeaderCollection" />。</returns>
+    </member>
+    <member name="P:System.Net.WebClient.IsBusy">
+      <summary>取得可指出 Web 要求是否進行中的值。</summary>
+      <returns>true 表示 Web 要求進行中；否則為 false。</returns>
+    </member>
+    <member name="M:System.Net.WebClient.OnDownloadProgressChanged(System.Net.DownloadProgressChangedEventArgs)">
+      <summary>引發 <see cref="E:System.Net.WebClient.DownloadProgressChanged" /> 事件。</summary>
+      <param name="e">包含事件資料的 <see cref="T:System.Net.DownloadProgressChangedEventArgs" /> 物件。</param>
+    </member>
+    <member name="M:System.Net.WebClient.OnDownloadStringCompleted(System.Net.DownloadStringCompletedEventArgs)">
+      <summary>引發 <see cref="E:System.Net.WebClient.DownloadStringCompleted" /> 事件。</summary>
+      <param name="e">包含事件資料的 <see cref="T:System.Net.DownloadStringCompletedEventArgs" /> 物件。</param>
+    </member>
+    <member name="M:System.Net.WebClient.OnOpenReadCompleted(System.Net.OpenReadCompletedEventArgs)">
+      <summary>引發 <see cref="E:System.Net.WebClient.OpenReadCompleted" /> 事件。</summary>
+      <param name="e">包含事件資料的 <see cref="T:System.Net.OpenReadCompletedEventArgs" /> 物件。</param>
+    </member>
+    <member name="M:System.Net.WebClient.OnOpenWriteCompleted(System.Net.OpenWriteCompletedEventArgs)">
+      <summary>引發 <see cref="E:System.Net.WebClient.OpenWriteCompleted" /> 事件。</summary>
+      <param name="e">包含事件資料的 <see cref="T:System.Net.OpenWriteCompletedEventArgs" /> 物件。</param>
+    </member>
+    <member name="M:System.Net.WebClient.OnUploadProgressChanged(System.Net.UploadProgressChangedEventArgs)">
+      <summary>引發 <see cref="E:System.Net.WebClient.UploadProgressChanged" /> 事件。</summary>
+      <param name="e">包含事件資料的 <see cref="T:System.Net.UploadProgressChangedEventArgs" /> 物件。</param>
+    </member>
+    <member name="M:System.Net.WebClient.OnUploadStringCompleted(System.Net.UploadStringCompletedEventArgs)">
+      <summary>引發 <see cref="E:System.Net.WebClient.UploadStringCompleted" /> 事件。</summary>
+      <param name="e">包含事件資料的 <see cref="T:System.Net.UploadStringCompletedEventArgs" /> 物件。</param>
+    </member>
+    <member name="M:System.Net.WebClient.OnWriteStreamClosed(System.Net.WriteStreamClosedEventArgs)">
+      <summary>引發 <see cref="E:System.Net.WebClient.WriteStreamClosed" /> 事件。</summary>
+      <param name="e">包含事件資料的 <see cref="T:System.Net.WriteStreamClosedEventArgs" /> 物件。</param>
+    </member>
+    <member name="M:System.Net.WebClient.OpenReadAsync(System.Uri)">
+      <summary>開啟指定之資源的可讀取資料流。</summary>
+      <param name="address">要下載之資源的位置。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> 參數為 null。</exception>
+      <exception cref="T:System.OutOfMemoryException">沒有足夠的記憶體可繼續執行程式。</exception>
+      <exception cref="T:System.StackOverflowException">執行堆疊溢位，因為它包含太多巢狀方法呼叫。</exception>
+      <exception cref="T:System.Threading.ThreadAbortException">已對 <see cref="M:System.Threading.Thread.Abort" /> 方法發出呼叫，以摧毀執行緒。</exception>
+    </member>
+    <member name="M:System.Net.WebClient.OpenReadAsync(System.Uri,System.Object)">
+      <summary>開啟指定之資源的可讀取資料流。</summary>
+      <param name="address">要下載之資源的位置。</param>
+      <param name="userToken">為非同步工作提供使用者指定的識別項。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> 參數為 null。</exception>
+      <exception cref="T:System.OutOfMemoryException">沒有足夠的記憶體可繼續執行程式。</exception>
+      <exception cref="T:System.StackOverflowException">執行堆疊溢位，因為它包含太多巢狀方法呼叫。</exception>
+      <exception cref="T:System.Threading.ThreadAbortException">已對 <see cref="M:System.Threading.Thread.Abort" /> 方法發出呼叫，以摧毀執行緒。</exception>
+    </member>
+    <member name="E:System.Net.WebClient.OpenReadCompleted">
+      <summary>發生於非同步資源讀取作業完成時。</summary>
+    </member>
+    <member name="M:System.Net.WebClient.OpenWriteAsync(System.Uri)">
+      <summary>開啟用以將資料寫入指定資源的串流。此方法未封鎖呼叫執行緒。</summary>
+      <param name="address">用來接收資料之資源的 URI。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> 參數為 null。</exception>
+      <exception cref="T:System.OutOfMemoryException">沒有足夠的記憶體可繼續執行程式。</exception>
+      <exception cref="T:System.StackOverflowException">執行堆疊溢位，因為它包含太多巢狀方法呼叫。</exception>
+      <exception cref="T:System.Threading.ThreadAbortException">已對 <see cref="M:System.Threading.Thread.Abort" /> 方法發出呼叫，以摧毀執行緒。</exception>
+    </member>
+    <member name="M:System.Net.WebClient.OpenWriteAsync(System.Uri,System.String)">
+      <summary>開啟用以將資料寫入指定資源的串流。此方法未封鎖呼叫執行緒。</summary>
+      <param name="address">用來接收資料之資源的 URI。</param>
+      <param name="method">用來將資料傳送至資源的方法。如果為 null，則 HTTP 的預設值為 POST。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> 參數為 null。</exception>
+      <exception cref="T:System.OutOfMemoryException">沒有足夠的記憶體可繼續執行程式。</exception>
+      <exception cref="T:System.StackOverflowException">執行堆疊溢位，因為它包含太多巢狀方法呼叫。</exception>
+      <exception cref="T:System.Threading.ThreadAbortException">已對 <see cref="M:System.Threading.Thread.Abort" /> 方法發出呼叫，以摧毀執行緒。</exception>
+    </member>
+    <member name="M:System.Net.WebClient.OpenWriteAsync(System.Uri,System.String,System.Object)">
+      <summary>使用指定的方法開啟用以將資料寫入指定資源的串流。此方法未封鎖呼叫執行緒。</summary>
+      <param name="address">用來接收資料之資源的 URI。</param>
+      <param name="method">用來將資料傳送至資源的方法。如果為 null，則 HTTP 的預設值為 POST。</param>
+      <param name="userToken">完成非同步作業時，傳遞至叫用之方法的使用者定義物件</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> 參數為 null。</exception>
+      <exception cref="T:System.OutOfMemoryException">沒有足夠的記憶體可繼續執行程式。</exception>
+      <exception cref="T:System.StackOverflowException">執行堆疊溢位，因為它包含太多巢狀方法呼叫。</exception>
+      <exception cref="T:System.Threading.ThreadAbortException">已對 <see cref="M:System.Threading.Thread.Abort" /> 方法發出呼叫，以摧毀執行緒。</exception>
+      <exception cref="T:System.Net.WebException">合併 <see cref="P:System.Net.WebClient.BaseAddress" /> 和 <paramref name="address" /> 而形成的 URI 是無效的。-或-開啟資料流時發生錯誤。</exception>
+    </member>
+    <member name="E:System.Net.WebClient.OpenWriteCompleted">
+      <summary>發生於開啟串流以將資料寫入資源的非同步作業完成時。</summary>
+    </member>
+    <member name="P:System.Net.WebClient.ResponseHeaders">
+      <summary>取得與回應相關聯的標頭名稱/值配對集合。</summary>
+      <returns>
+        <see cref="T:System.Net.WebHeaderCollection" />，包含與回應關聯的標頭名稱/值組，或如果未接收到回應，則為 null。</returns>
+    </member>
+    <member name="E:System.Net.WebClient.UploadProgressChanged">
+      <summary>發生於非同步上傳作業成功傳送部分或所有資料時。</summary>
+    </member>
+    <member name="M:System.Net.WebClient.UploadStringAsync(System.Uri,System.String)">
+      <summary>將指定的字串上傳至指定的資源。此方法未封鎖呼叫執行緒。</summary>
+      <param name="address">要接收檔案之資源的 URI。對於 HTTP 資源而言，此 URI 必須識別出可以接受使用 POST 方法傳送之要求的資源，例如指令碼或 ASP 網頁。</param>
+      <param name="data">要上載的字串。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> 參數為 null-或-<paramref name="data" /> 為 null。</exception>
+      <exception cref="T:System.OutOfMemoryException">沒有足夠的記憶體可繼續執行程式。</exception>
+      <exception cref="T:System.StackOverflowException">執行堆疊溢位，因為它包含太多巢狀方法呼叫。</exception>
+      <exception cref="T:System.Threading.ThreadAbortException">已對 <see cref="M:System.Threading.Thread.Abort" /> 方法發出呼叫，以摧毀執行緒。</exception>
+      <exception cref="T:System.Net.WebException">合併 <see cref="P:System.Net.WebClient.BaseAddress" /> 和 <paramref name="address" /> 而形成的 URI 是無效的。-或-沒有來自裝載 (Host) 資源之伺服器的回應。</exception>
+    </member>
+    <member name="M:System.Net.WebClient.UploadStringAsync(System.Uri,System.String,System.String)">
+      <summary>將指定的字串上傳至指定的資源。此方法未封鎖呼叫執行緒。</summary>
+      <param name="address">要接收檔案之資源的 URI。對於 HTTP 資源而言，此 URI 必須識別出可以接受使用 POST 方法傳送之要求的資源，例如指令碼或 ASP 網頁。</param>
+      <param name="method">用來將檔案傳送至資源的 HTTP 方法。如果為 null，則 HTTP 的預設值為 POST。</param>
+      <param name="data">要上載的字串。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> 參數為 null-或-<paramref name="data" /> 為 null。</exception>
+      <exception cref="T:System.OutOfMemoryException">沒有足夠的記憶體可繼續執行程式。</exception>
+      <exception cref="T:System.StackOverflowException">執行堆疊溢位，因為它包含太多巢狀方法呼叫。</exception>
+      <exception cref="T:System.Threading.ThreadAbortException">已對 <see cref="M:System.Threading.Thread.Abort" /> 方法發出呼叫，以摧毀執行緒。</exception>
+      <exception cref="T:System.Net.WebException">合併 <see cref="P:System.Net.WebClient.BaseAddress" /> 和 <paramref name="address" /> 而形成的 URI 是無效的。-或-沒有來自裝載 (Host) 資源之伺服器的回應。</exception>
+    </member>
+    <member name="M:System.Net.WebClient.UploadStringAsync(System.Uri,System.String,System.String,System.Object)">
+      <summary>將指定的字串上傳至指定的資源。此方法未封鎖呼叫執行緒。</summary>
+      <param name="address">要接收檔案之資源的 URI。對於 HTTP 資源而言，此 URI 必須識別出可以接受使用 POST 方法傳送之要求的資源，例如指令碼或 ASP 網頁。</param>
+      <param name="method">用來將檔案傳送至資源的 HTTP 方法。如果為 null，則 HTTP 的預設值為 POST。</param>
+      <param name="data">要上載的字串。</param>
+      <param name="userToken">完成非同步作業時，傳遞至叫用之方法的使用者定義物件。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> 參數為 null-或-<paramref name="data" /> 為 null。</exception>
+      <exception cref="T:System.OutOfMemoryException">沒有足夠的記憶體可繼續執行程式。</exception>
+      <exception cref="T:System.StackOverflowException">執行堆疊溢位，因為它包含太多巢狀方法呼叫。</exception>
+      <exception cref="T:System.Threading.ThreadAbortException">已對 <see cref="M:System.Threading.Thread.Abort" /> 方法發出呼叫，以摧毀執行緒。</exception>
+      <exception cref="T:System.Net.WebException">合併 <see cref="P:System.Net.WebClient.BaseAddress" /> 和 <paramref name="address" /> 而形成的 URI 是無效的。-或-沒有來自裝載 (Host) 資源之伺服器的回應。</exception>
+    </member>
+    <member name="E:System.Net.WebClient.UploadStringCompleted">
+      <summary>發生於非同步字串上傳作業完成時。</summary>
+    </member>
+    <member name="P:System.Net.WebClient.UseDefaultCredentials">
+      <summary>取得或設定 <see cref="T:System.Boolean" /> 值，該值可控制是否要與要求一起傳送預設認證。</summary>
+      <returns>如果使用預設認證，則為 true；否則為 false。預設值為 true。</returns>
+    </member>
+    <member name="E:System.Net.WebClient.WriteStreamClosed">
+      <summary>發生於非同步寫入串流作業完成時。</summary>
+    </member>
+    <member name="T:System.Net.WebException">
+      <summary>透過插入式通訊協定存取網路時，於發生錯誤時所擲回的例外狀況。</summary>
+    </member>
+    <member name="M:System.Net.WebException.#ctor">
+      <summary>初始化 <see cref="T:System.Net.WebException" /> 類別的新執行個體。</summary>
+    </member>
+    <member name="M:System.Net.WebException.#ctor(System.String)">
+      <summary>使用指定的錯誤訊息來初始化 <see cref="T:System.Net.WebException" /> 類別的新執行個體。</summary>
+      <param name="message">錯誤訊息的文字。</param>
+    </member>
+    <member name="M:System.Net.WebException.#ctor(System.String,System.Exception)">
+      <summary>使用指定的錯誤訊息和巢狀例外狀況初始化 <see cref="T:System.Net.WebException" /> 類別的新執行個體。</summary>
+      <param name="message">錯誤訊息的文字。</param>
+      <param name="innerException">巢狀例外狀況。</param>
+    </member>
+    <member name="M:System.Net.WebException.#ctor(System.String,System.Exception,System.Net.WebExceptionStatus,System.Net.WebResponse)">
+      <summary>使用指定的錯誤訊息、巢狀例外狀況、狀態和回應來初始化 <see cref="T:System.Net.WebException" /> 類別的新執行個體。</summary>
+      <param name="message">錯誤訊息的文字。</param>
+      <param name="status">其中一個 <see cref="T:System.Net.WebExceptionStatus" /> 值。</param>
+      <param name="response">包含遠端主機回應的 <see cref="T:System.Net.WebResponse" /> 執行個體。</param>
+    </member>
+    <member name="M:System.Net.WebException.#ctor(System.String,System.Net.WebExceptionStatus)">
+      <summary>使用指定的錯誤訊息和狀態初始化 <see cref="T:System.Net.WebException" /> 類別的新執行個體。</summary>
+      <param name="message">錯誤訊息的文字。</param>
+      <param name="status">其中一個 <see cref="T:System.Net.WebExceptionStatus" /> 值。</param>
+    </member>
+    <member name="P:System.Net.WebException.Response">
+      <summary>取得遠端主機傳回的回應。</summary>
+      <returns>如果可以從網際網路資源使用回應，則為包含來自網際網路資源之錯誤回應的 <see cref="T:System.Net.WebResponse" /> 執行個體；否則為 null。</returns>
+    </member>
+    <member name="P:System.Net.WebException.Status">
+      <summary>取得回應的狀態。</summary>
+      <returns>其中一個 <see cref="T:System.Net.WebExceptionStatus" /> 值。</returns>
+    </member>
+    <member name="T:System.Net.WebExceptionStatus">
+      <summary>定義 <see cref="T:System.Net.WebException" /> 類別的狀態碼。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.Success">
+      <summary>未遇到錯誤。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.NameResolutionFailure">
+      <summary>名稱解析程式服務無法解析主機名稱。不支援。出現在 Windows Phone。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.ConnectFailure">
+      <summary>無法在傳輸層聯繫遠端服務點。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.ReceiveFailure">
+      <summary>未從遠端伺服器接收到完成回應。不支援。出現在 Windows Phone。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.SendFailure">
+      <summary>無法將完成要求傳送至遠端伺服器。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.PipelineFailure">
+      <summary>此要求是管線要求，且在接收到回應之前關閉連接。不支援。出現在 Windows Phone。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.RequestCanceled">
+      <summary>已取消要求、已呼叫 <see cref="M:System.Net.WebRequest.Abort" /> 方法，或發生無法分類的錯誤。這是 <see cref="P:System.Net.WebException.Status" /> 的預設值。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.ProtocolError">
+      <summary>接收自伺服器的回應已完成，但指出通訊協定層錯誤。例如，HTTP 通訊協定錯誤 (例如 401 拒絕存取) 即會使用此狀態。不支援。出現在 Windows Phone。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.ConnectionClosed">
+      <summary>過早關閉連接。不支援。出現在 Windows Phone。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.TrustFailure">
+      <summary>無法驗證伺服器憑證。不支援。出現在 Windows Phone。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.SecureChannelFailure">
+      <summary>使用 SSL 建立連接時發生錯誤。不支援。出現在 Windows Phone。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.ServerProtocolViolation">
+      <summary>伺服器回應不是有效的 HTTP 回應。不支援。出現在 Windows Phone。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.KeepAliveFailure">
+      <summary>指定 Keep-alive 標頭之要求的連接意外關閉。不支援。出現在 Windows Phone。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.Pending">
+      <summary>內部非同步要求擱置中。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.Timeout">
+      <summary>在要求的逾時期間未接收到回應。不支援。出現在 Windows Phone。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.ProxyNameResolutionFailure">
+      <summary>名稱解析程式服務無法解析 Proxy 主機名稱。不支援。出現在 Windows Phone。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.UnknownError">
+      <summary>已發生不明類型的例外狀況。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.MessageLengthLimitExceeded">
+      <summary>將要求傳送至伺服器，或從伺服器接收回應時，接收到超出指定限制的訊息。</summary>
+    </member>
+    <member name="T:System.Net.WebHeaderCollection">
+      <summary>包含與要求或回應相關聯的通訊協定標頭。</summary>
+    </member>
+    <member name="M:System.Net.WebHeaderCollection.#ctor">
+      <summary>初始化 <see cref="T:System.Net.WebHeaderCollection" /> 類別的新執行個體。</summary>
+    </member>
+    <member name="P:System.Net.WebHeaderCollection.AllKeys">
+      <summary>取得與要求相關聯的標頭名稱/值配對集合。</summary>
+      <returns>包含與此要求相關聯之標頭名稱/值配對的 <see cref="T:System.Net.WebHeaderCollection" />。</returns>
+    </member>
+    <member name="P:System.Net.WebHeaderCollection.Count">
+      <summary>取得集合中的標頭數目。</summary>
+      <returns>指出與要求相關聯之 <see cref="T:System.Net.WebHeaderCollection" /> 中標頭數目的 <see cref="T:System.Int32" />。</returns>
+    </member>
+    <member name="P:System.Net.WebHeaderCollection.Item(System.Net.HttpRequestHeader)">
+      <summary>取得或設定指定的要求標頭。</summary>
+      <returns>包含指定標頭值的 <see cref="T:System.String" /> 執行個體。</returns>
+      <param name="header">要求標頭值。</param>
+      <exception cref="T:System.InvalidOperationException">在取得或設定作業中，<paramref name="header" /> 參數中指定的要求標頭為受限標頭。<see cref="T:System.Net.WebHeaderCollection" /> 類別不允許使用者在此 <see cref="T:System.Net.WebHeaderCollection" /> 執行個體中取得或設定此受限標頭的執行個體。</exception>
+    </member>
+    <member name="P:System.Net.WebHeaderCollection.Item(System.String)">
+      <summary>取得或設定指定的要求標頭。</summary>
+      <returns>包含指定標頭值的 <see cref="T:System.String" /> 執行個體。</returns>
+      <param name="name">要求之標頭的名稱。</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="name" /> 參數包含不合法的字元 -或-嘗試在與 <see cref="T:System.Net.HttpWebRequest" /> 物件相關聯的 <see cref="T:System.Net.WebHeaderCollection" /> 物件上設定受限制的標頭。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="name" /> 參數為 null。</exception>
+      <exception cref="T:System.InvalidOperationException">在取得或設定作業中，<paramref name="name" /> 參數中指定的要求標頭為受限標頭。<see cref="T:System.Net.WebHeaderCollection" /> 類別不允許使用者在此 <see cref="T:System.Net.WebHeaderCollection" /> 執行個體中取得或設定此受限標頭的執行個體。</exception>
+    </member>
+    <member name="M:System.Net.WebHeaderCollection.System#Collections#IEnumerable#GetEnumerator">
+      <summary>傳回可透過 <see cref="T:System.Net.WebHeaderCollection" /> 執行個體逐一查看的列舉程式。</summary>
+      <returns>
+        <see cref="T:System.Net.WebHeaderCollection" /> 的 <see cref="T:System.Collections.IEnumerator" />。</returns>
+    </member>
+    <member name="M:System.Net.WebHeaderCollection.ToString">
+      <summary>傳回 <see cref="T:System.String" />，表示目前的 <see cref="T:System.Net.WebHeaderCollection" />。</summary>
+      <returns>
+        <see cref="T:System.String" />，表示目前的 <see cref="T:System.Net.WebHeaderCollection" />。</returns>
+    </member>
+    <member name="T:System.Net.WebRequest">
+      <summary>要求統一資源識別項 (URI)。這是 abstract 類別。</summary>
+    </member>
+    <member name="M:System.Net.WebRequest.#ctor">
+      <summary>初始化 <see cref="T:System.Net.WebRequest" /> 類別的新執行個體。</summary>
+    </member>
+    <member name="M:System.Net.WebRequest.Abort">
+      <summary>中止要求。</summary>
+      <exception cref="T:System.NotImplementedException">未在子系類別中覆寫方法時，為了存取此方法所做的任何嘗試。</exception>
+    </member>
+    <member name="M:System.Net.WebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)">
+      <summary>在子系類別中覆寫時，提供非同步方法來要求串流。</summary>
+      <returns>參照非同步要求的 <see cref="T:System.IAsyncResult" />。</returns>
+      <param name="callback">
+        <see cref="T:System.AsyncCallback" /> 委派。</param>
+      <param name="state">包含此非同步要求之狀態資訊的物件。</param>
+      <exception cref="T:System.NotImplementedException">未在子系類別中覆寫方法時，為了存取此方法所做的任何嘗試。</exception>
+    </member>
+    <member name="M:System.Net.WebRequest.BeginGetResponse(System.AsyncCallback,System.Object)">
+      <summary>在子系類別中覆寫時，開始網際網路資源的非同步要求。</summary>
+      <returns>參照非同步要求的 <see cref="T:System.IAsyncResult" />。</returns>
+      <param name="callback">
+        <see cref="T:System.AsyncCallback" /> 委派。</param>
+      <param name="state">包含此非同步要求之狀態資訊的物件。</param>
+      <exception cref="T:System.NotImplementedException">未在子系類別中覆寫方法時，為了存取此方法所做的任何嘗試。</exception>
+    </member>
+    <member name="P:System.Net.WebRequest.ContentLength">
+      <summary>在子系類別中覆寫時，取得或設定正在傳送之要求資料的內容長度。</summary>
+      <returns>正在傳送要求資料的位元組數。</returns>
+    </member>
+    <member name="P:System.Net.WebRequest.ContentType">
+      <summary>在子系類別中覆寫時，取得或設定正在傳送之要求資料的內容類型。</summary>
+      <returns>要求資料的內容類型。</returns>
+      <exception cref="T:System.NotImplementedException">未在子系類別中覆寫屬性時，為了取得或設定此屬性所做的任何嘗試。</exception>
+    </member>
+    <member name="M:System.Net.WebRequest.Create(System.String)">
+      <summary>初始化指定之 URI 配置的新 <see cref="T:System.Net.WebRequest" /> 執行個體。</summary>
+      <returns>特定 URI 配置的 <see cref="T:System.Net.WebRequest" /> 子系。</returns>
+      <param name="requestUriString">識別網際網路資源的 URI 字串。</param>
+      <exception cref="T:System.NotSupportedException">
+        <paramref name="requestUriString" /> 中指定的要求配置尚未登錄。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="requestUriString" /> 為 null。</exception>
+      <exception cref="T:System.Security.SecurityException">呼叫端沒有權限連線到要求的 URI 或此要求重新導向至的 URI。</exception>
+      <exception cref="T:System.UriFormatException">
+        <paramref name="requestUriString" /> 中指定的 URI 為無效的 URI。</exception>
+    </member>
+    <member name="M:System.Net.WebRequest.Create(System.Uri)">
+      <summary>初始化指定之 URI 配置的新 <see cref="T:System.Net.WebRequest" /> 執行個體。</summary>
+      <returns>特定 URI 配置的 <see cref="T:System.Net.WebRequest" /> 子系。</returns>
+      <param name="requestUri">包含要求資源之 URI 的 <see cref="T:System.Uri" />。</param>
+      <exception cref="T:System.NotSupportedException">
+        <paramref name="requestUri" /> 中指定的要求配置尚未註冊。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="requestUri" /> 為 null。</exception>
+      <exception cref="T:System.Security.SecurityException">呼叫端沒有權限連線到要求的 URI 或此要求重新導向至的 URI。</exception>
+    </member>
+    <member name="M:System.Net.WebRequest.CreateHttp(System.String)">
+      <summary>初始化指定之 URI 字串的新 <see cref="T:System.Net.HttpWebRequest" /> 執行個體。</summary>
+      <returns>特定 URI 字串的 <see cref="T:System.Net.HttpWebRequest" /> 執行個體。</returns>
+      <param name="requestUriString">識別網際網路資源的 URI 字串。</param>
+      <exception cref="T:System.NotSupportedException">
+        <paramref name="requestUriString" /> 中指定的要求配置為 http 或 https 配置。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="requestUriString" /> 為 null。</exception>
+      <exception cref="T:System.Security.SecurityException">呼叫端沒有權限連線到要求的 URI 或此要求重新導向至的 URI。</exception>
+      <exception cref="T:System.UriFormatException">
+        <paramref name="requestUriString" /> 中指定的 URI 為無效的 URI。</exception>
+    </member>
+    <member name="M:System.Net.WebRequest.CreateHttp(System.Uri)">
+      <summary>初始化指定之 URI 的新 <see cref="T:System.Net.HttpWebRequest" /> 執行個體。</summary>
+      <returns>特定 URI 字串的 <see cref="T:System.Net.HttpWebRequest" /> 執行個體。</returns>
+      <param name="requestUri">識別網際網路資源的 URI。</param>
+      <exception cref="T:System.NotSupportedException">
+        <paramref name="requestUri" /> 中指定的要求配置為 http 或 https 配置。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="requestUri" /> 為 null。</exception>
+      <exception cref="T:System.Security.SecurityException">呼叫端沒有權限連線到要求的 URI 或此要求重新導向至的 URI。</exception>
+      <exception cref="T:System.UriFormatException">
+        <paramref name="requestUri" /> 中指定的 URI 不是有效的 URI。</exception>
+    </member>
+    <member name="P:System.Net.WebRequest.CreatorInstance">
+      <summary>在子系類別中覆寫時，取得 Factory 物件，衍生出該物件的 <see cref="T:System.Net.IWebRequestCreate" /> 類別可用來建立為要求指定之 URI 而具現化的 <see cref="T:System.Net.WebRequest" />。</summary>
+      <returns>
+        <see cref="M:System.Net.IWebRequestCreate.Create(System.Uri)" /> 方法所傳回的衍生 <see cref="T:System.Net.WebRequest" /> 類型。</returns>
+    </member>
+    <member name="P:System.Net.WebRequest.Credentials">
+      <summary>在子系類別中覆寫時，取得或設定用於驗證網際網路資源要求的網路認證。</summary>
+      <returns>包含與要求相關聯之驗證認證的 <see cref="T:System.Net.ICredentials" />。預設值為 null。</returns>
+      <exception cref="T:System.NotImplementedException">未在子系類別中覆寫屬性時，為了取得或設定此屬性所做的任何嘗試。</exception>
+    </member>
+    <member name="M:System.Net.WebRequest.EndGetRequestStream(System.IAsyncResult)">
+      <summary>在子系類別中覆寫時，傳回用於將資料寫入網際網路資源的 <see cref="T:System.IO.Stream" />。</summary>
+      <returns>要寫入資料的 <see cref="T:System.IO.Stream" />。</returns>
+      <param name="asyncResult">參照串流之擱置要求的 <see cref="T:System.IAsyncResult" />。</param>
+      <exception cref="T:System.NotImplementedException">未在子系類別中覆寫方法時，為了存取此方法所做的任何嘗試。</exception>
+    </member>
+    <member name="M:System.Net.WebRequest.EndGetResponse(System.IAsyncResult)">
+      <summary>在子系類別中覆寫時，傳回 <see cref="T:System.Net.WebResponse" />。</summary>
+      <returns>包含網際網路要求回應的 <see cref="T:System.Net.WebResponse" />。</returns>
+      <param name="asyncResult">參照回應之擱置要求的 <see cref="T:System.IAsyncResult" />。</param>
+      <exception cref="T:System.NotImplementedException">未在子系類別中覆寫方法時，為了存取此方法所做的任何嘗試。</exception>
+    </member>
+    <member name="P:System.Net.WebRequest.Headers">
+      <summary>在子系類別中覆寫時，取得或設定與要求相關聯的標頭名稱/值配對集合。</summary>
+      <returns>包含與此要求相關聯之標頭名稱/值配對的 <see cref="T:System.Net.WebHeaderCollection" />。</returns>
+      <exception cref="T:System.NotImplementedException">未在子系類別中覆寫屬性時，為了取得或設定此屬性所做的任何嘗試。</exception>
+    </member>
+    <member name="P:System.Net.WebRequest.Method">
+      <summary>在子系類別中覆寫時，取得或設定要在此要求中使用的通訊協定方法。</summary>
+      <returns>要在此要求中使用的通訊協定方法。</returns>
+      <exception cref="T:System.NotImplementedException">若未在子系類別中覆寫此屬性，則會進行各種嘗試以取得或設定該屬性。</exception>
+    </member>
+    <member name="M:System.Net.WebRequest.RegisterPrefix(System.String,System.Net.IWebRequestCreate)">
+      <summary>註冊指定 URI 的 <see cref="T:System.Net.WebRequest" /> 子系。</summary>
+      <returns>如果註冊成功則為 true；否則為 false。</returns>
+      <param name="prefix">
+        <see cref="T:System.Net.WebRequest" /> 子系所服務的完整 URI 或 URI 首碼。</param>
+      <param name="creator">
+        <see cref="T:System.Net.WebRequest" /> 為了建立 <see cref="T:System.Net.WebRequest" /> 子系所呼叫的建立方法。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="prefix" /> 為 null-或-<paramref name="creator" /> 為 null。</exception>
+      <exception cref="T:System.NotSupportedException">
+        <paramref name="prefix" /> 不明或不受支援。</exception>
+    </member>
+    <member name="P:System.Net.WebRequest.RequestUri">
+      <summary>在子系類別中覆寫時，取得與要求相關聯之網際網路資源的 URI。</summary>
+      <returns>表示與要求相關聯之資源的 <see cref="T:System.Uri" />。</returns>
+      <exception cref="T:System.NotImplementedException">未在子系類別中覆寫屬性時，為了取得或設定此屬性所做的任何嘗試。</exception>
+    </member>
+    <member name="P:System.Net.WebRequest.UseDefaultCredentials">
+      <summary>在子系類別中覆寫時，取得或設定可控制是否與要求一起傳送預設認證的 <see cref="T:System.Boolean" /> 值。</summary>
+      <returns>如果使用預設認證，則為 true；否則為 false。對於使用預設 <see cref="P:System.Net.Browser.WebRequestCreator.ClientHttp" /> 堆疊建立的要求，預設值為 false。</returns>
+      <exception cref="T:System.NotImplementedException">未實作此屬性。</exception>
+    </member>
+    <member name="T:System.Net.WebResponse">
+      <summary>提供來自統一資源識別項 (URI) 的回應。這是 abstract 類別。</summary>
+    </member>
+    <member name="M:System.Net.WebResponse.#ctor">
+      <summary>初始化 <see cref="T:System.Net.WebResponse" /> 類別的新執行個體。</summary>
+    </member>
+    <member name="M:System.Net.WebResponse.Close">
+      <summary>以子系類別覆寫時，關閉回應串流。</summary>
+      <exception cref="T:System.NotSupportedException">未在子系類別中覆寫方法時，為了存取此方法所做的任何嘗試。</exception>
+    </member>
+    <member name="P:System.Net.WebResponse.ContentLength">
+      <summary>在子系類別中覆寫時，取得或設定正在接收之資料的內容長度。</summary>
+      <returns>從網際網路資源傳回的位元組數。</returns>
+      <exception cref="T:System.NotSupportedException">未在子系類別中覆寫屬性時，為了取得或設定此屬性所做的任何嘗試。</exception>
+    </member>
+    <member name="P:System.Net.WebResponse.ContentType">
+      <summary>在衍生類別中覆寫時，取得或設定正在接收之資料的內容內容。</summary>
+      <returns>包含回應之內容類型的字串。</returns>
+      <exception cref="T:System.NotSupportedException">未在子系類別中覆寫屬性時，為了取得或設定此屬性所做的任何嘗試。</exception>
+    </member>
+    <member name="M:System.Net.WebResponse.Dispose">
+      <summary>將 <see cref="T:System.Net.WebResponse" /> 類別目前的執行個體所使用的資源釋出。</summary>
+    </member>
+    <member name="M:System.Net.WebResponse.GetResponseStream">
+      <summary>在子系類別中覆寫時，傳回來自網際網路資源的資料串流。</summary>
+      <returns>用於從網際網路資源讀取資料的 <see cref="T:System.IO.Stream" /> 類別執行個體。</returns>
+      <exception cref="T:System.NotSupportedException">未在子系類別中覆寫方法時，為了存取此方法所做的任何嘗試。</exception>
+    </member>
+    <member name="P:System.Net.WebResponse.Headers">
+      <summary>在衍生類別中覆寫時，取得與此要求相關聯的標頭名稱/值配對集合。</summary>
+      <returns>包含與此回應相關聯之標頭值的 <see cref="T:System.Net.WebHeaderCollection" /> 類別執行個體。</returns>
+      <exception cref="T:System.NotImplementedException">未在子系類別中覆寫屬性時，為了取得或設定此屬性所做的任何嘗試。</exception>
+    </member>
+    <member name="P:System.Net.WebResponse.ResponseUri">
+      <summary>在衍生類別中覆寫時，取得實際回應要求之網際網路資源的 URI。</summary>
+      <returns>包含實際回應要求之網際網路資源 URI 的<see cref="T:System.Uri" /> 類別執行個體。</returns>
+      <exception cref="T:System.NotSupportedException">未在子系類別中覆寫屬性時，為了取得或設定此屬性所做的任何嘗試。</exception>
+    </member>
+    <member name="P:System.Net.WebResponse.SupportsHeaders">
+      <summary>取得可指出 <see cref="T:System.Net.WebResponse" /> 執行個體的子系類別是否支援 <see cref="P:System.Net.WebResponse.Headers" /> 屬性的值。</summary>
+      <returns>如果子系類別中的 <see cref="T:System.Net.HttpWebRequest" /> 執行個體支援 <see cref="P:System.Net.WebResponse.Headers" /> 屬性則為 true；否則為 false。</returns>
+    </member>
+    <member name="T:System.Net.WriteStreamClosedEventArgs">
+      <summary>提供 <see cref="E:System.Net.WebClient.WriteStreamClosed" /> 事件的資料。</summary>
+    </member>
+    <member name="P:System.Net.WriteStreamClosedEventArgs.Error">
+      <summary>取得與 <see cref="E:System.Net.WebClient.WriteStreamClosed" /> 事件相關聯的錯誤。</summary>
+      <returns>發生錯誤時，與<see cref="E:System.Net.WebClient.WriteStreamClosed" /> 事件相關聯的例外狀況。</returns>
+    </member>
+    <member name="T:System.Net.WriteStreamClosedEventHandler">
+      <summary>表示將處理 <see cref="T:System.Net.WebClient" /> 之 <see cref="E:System.Net.WebClient.WriteStreamClosed" /> 事件的方法。</summary>
+      <param name="sender">事件來源。</param>
+      <param name="e">包含事件資料的 <see cref="T:System.Net.WriteStreamClosedEventArgs" />。</param>
+    </member>
+    <member name="T:System.Net.NetworkInformation.NetworkAddressChangedEventHandler">
+      <summary>參照一或多個當網路介面位址變更時所要呼叫的方法。</summary>
+      <param name="sender">事件來源。</param>
+      <param name="e">包含事件相關資料的 <see cref="T:System.EventArgs" /> 物件。 </param>
+    </member>
+    <member name="T:System.Net.NetworkInformation.NetworkChange">
+      <summary>可讓應用程式在網路介面 (也稱為網路卡或介面卡) 的網際網路通訊協定 (IP) 位址變更時接收通知。</summary>
+    </member>
+    <member name="M:System.Net.NetworkInformation.NetworkChange.#ctor">
+      <summary>初始化 <see cref="T:System.Net.NetworkInformation.NetworkChange" /> 類別的新執行個體。</summary>
+    </member>
+    <member name="E:System.Net.NetworkInformation.NetworkChange.NetworkAddressChanged">
+      <summary>發生於網路介面的 IP 位址變更時。</summary>
+    </member>
+    <member name="T:System.Net.NetworkInformation.NetworkInterface">
+      <summary>提供網路介面的可用性資訊。</summary>
+    </member>
+    <member name="M:System.Net.NetworkInformation.NetworkInterface.#ctor">
+      <summary>初始化 <see cref="T:System.Net.NetworkInformation.NetworkInterface" /> 類別的新執行個體。</summary>
+    </member>
+    <member name="M:System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable">
+      <summary>指出是否有任何可用的網路連接。</summary>
+      <returns>如果可以使用網路連接則為 true；否則為 false。</returns>
+    </member>
+    <member name="T:System.Net.Sockets.AddressFamily">
+      <summary>指定 <see cref="T:System.Net.Sockets.Socket" /> 類別的執行個體可使用的定址配置。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.AddressFamily.Unknown">
+      <summary>不明位址家族。不支援用於 Windows Phone 應用程式中。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.AddressFamily.Unspecified">
+      <summary>尚未指定位址家族。不支援用於 Windows Phone 應用程式中。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.AddressFamily.InterNetwork">
+      <summary>IP 第 4 版的位址。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.AddressFamily.InterNetworkV6">
+      <summary>IP 第 6 版的位址。不支援用於 Windows Phone 應用程式中。</summary>
+    </member>
+    <member name="T:System.Net.Sockets.ProtocolType">
+      <summary>指定 <see cref="T:System.Net.Sockets.Socket" /> 類別支援的通訊協定。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.ProtocolType.Tcp">
+      <summary>傳輸控制通訊協定 (TCP)。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.ProtocolType.Udp">
+      <summary>使用者資料包通訊協定 (UDP)。Windows Phone 不支援此通訊協定類型。 </summary>
+    </member>
+    <member name="F:System.Net.Sockets.ProtocolType.Unspecified">
+      <summary>未指定通訊協定類型。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.ProtocolType.Unknown">
+      <summary>通訊協定類型不明。</summary>
+    </member>
+    <member name="T:System.Net.Sockets.Socket">
+      <summary>實作柏克萊通訊端介面。</summary>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.#ctor(System.Net.Sockets.AddressFamily,System.Net.Sockets.SocketType,System.Net.Sockets.ProtocolType)">
+      <summary>使用指定的位址家族、通訊端類型和通訊協定初始化 <see cref="T:System.Net.Sockets.Socket" /> 類別的新執行個體。</summary>
+      <param name="addressFamily">其中一個 <see cref="T:System.Net.Sockets.AddressFamily" /> 值。</param>
+      <param name="socketType">其中一個 <see cref="T:System.Net.Sockets.SocketType" /> 值。</param>
+      <param name="protocolType">其中一個 <see cref="T:System.Net.Sockets.ProtocolType" /> 值。</param>
+      <exception cref="T:System.ArgumentException">參數無效。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">
+        <paramref name="addressFamily" />、<paramref name="socketType" /> 和 <paramref name="protocolType" /> 組合會導致無效的通訊端。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.AcceptAsync(System.Net.Sockets.SocketAsyncEventArgs)">
+      <summary>開始非同步作業以接受連入的連接嘗試。</summary>
+      <returns>如果作業擱置中，則傳回 true。作業完成時，將引發 e 參數上的 SocketAsyncEventArgs.Completed 事件。如果作業已同步完成，則傳回 false。不會引發與 e 參數有關的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件，而在方法呼叫傳回後會立即檢查做為參數傳遞的 e 物件，以擷取作業的結果。</returns>
+      <param name="e">要用於此非同步通訊端操作的 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 物件。</param>
+    </member>
+    <member name="P:System.Net.Sockets.Socket.AddressFamily">
+      <summary>取得 <see cref="T:System.Net.Sockets.Socket" /> 的位址家族。</summary>
+      <returns>其中一個 <see cref="T:System.Net.Sockets.AddressFamily" /> 值。</returns>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.Bind(System.Net.EndPoint)">
+      <summary>使通訊端與本機端點建立關聯。使用 <see cref="M:System.Net.Sockets.Socket.ConnectAsync(System.Net.Sockets.SocketAsyncEventArgs)" /> 方法之前並不需要呼叫 Bind ，除非您需要使用特定的本機端點。</summary>
+      <param name="localEP">要與 <see cref="T:System.Net.Sockets.Socket" /> 關聯的本機 <see cref="T:System.Net.EndPoint" />。</param>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.CancelConnectAsync(System.Net.Sockets.SocketAsyncEventArgs)">
+      <summary>取消遠端主機連接的未執行非同步通訊端作業。</summary>
+      <param name="e">應該取消之非同步通訊端作業的 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 物件。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="e" /> 參數為 null。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.Close">
+      <summary>關閉 <see cref="T:System.Net.Sockets.Socket" /> 連接並釋放所有相關資源。</summary>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.Close(System.Int32)">
+      <summary>使用指定的逾時來關閉 <see cref="T:System.Net.Sockets.Socket" /> 連接並釋放所有相關聯的資源，以允許傳送佇列的資料。</summary>
+      <param name="timeout">要傳送剩餘資料然後關閉 <see cref="T:System.Net.Sockets.Socket" /> 所需等待的時間量上限 (秒)。</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="timeout" /> 小於 0。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.ConnectAsync(System.Net.Sockets.SocketAsyncEventArgs)">
+      <summary>開始遠端主機連接的非同步要求。</summary>
+      <returns>如果 I/O 作業擱置中，則傳回 true。在作業完成時，會引發傳入 <paramref name="e" /> 參數之 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 物件上的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件。如果 I/O 作業同步完成，則傳回 false。在此情況下，不會引發傳入 <paramref name="e" /> 參數之 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 物件上的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件。在方法呼叫傳回後，可以立即檢查傳入 <paramref name="e" /> 參數的 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 物件，以擷取作業的結果。</returns>
+      <param name="e">要用於此非同步通訊端操作的 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 物件。</param>
+      <exception cref="T:System.ArgumentException">引數無效。如果指定多個緩衝區而 <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.BufferList" /> 屬性不是 null，就會發生這個例外狀況。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint" /> 不可以是 null。</exception>
+      <exception cref="T:System.InvalidOperationException">
+        <see cref="T:System.Net.Sockets.Socket" /> 處於接聽狀態，或通訊端作業已經使用 <paramref name="e" /> 參數中傳遞的 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 物件在進行中。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">嘗試存取通訊端時發生錯誤。如需相關資訊，請參閱「備註」一節。</exception>
+      <exception cref="T:System.NotSupportedException">此方法需要 Windows XP 或更新版本。如果 <see cref="T:System.Net.Sockets.Socket" /> 與 <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint" /> 的位址家族不同，也會發生此例外狀況。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" /> 已經關閉。</exception>
+      <exception cref="T:System.Security.SecurityException">呼叫堆疊中較高的呼叫端沒有所要求作業的權限。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.ConnectAsync(System.Net.Sockets.SocketType,System.Net.Sockets.ProtocolType,System.Net.Sockets.SocketAsyncEventArgs)">
+      <summary>開始遠端主機連接的非同步要求。</summary>
+      <returns>如果 I/O 作業擱置中，則傳回 true。在作業完成時，會引發傳入 <paramref name="e" /> 參數之 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 物件上的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件。如果 I/O 作業同步完成，則傳回 false。在此情況下，不會引發傳入 <paramref name="e" /> 參數之 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 物件上的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件。在方法呼叫傳回後，可以立即檢查傳入 <paramref name="e" /> 參數的 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 物件，以擷取作業的結果。</returns>
+      <param name="socketType">建立連接時所使用的通訊端類型。</param>
+      <param name="protocolType">建立連接時所使用的通訊協定類型。</param>
+      <param name="e">要用於此非同步通訊端操作的 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 物件。</param>
+      <exception cref="T:System.ArgumentException">引數無效。如果指定多個緩衝區而 <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.BufferList" /> 屬性不是 null，就會發生這個例外狀況。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint" /> 不可以是 null。</exception>
+      <exception cref="T:System.InvalidOperationException">
+        <see cref="T:System.Net.Sockets.Socket" /> 處於接聽狀態，或通訊端作業已經使用 <paramref name="e" /> 參數中傳遞的 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 物件在進行中。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">嘗試存取通訊端時發生錯誤。如需相關資訊，請參閱「備註」一節。</exception>
+      <exception cref="T:System.NotSupportedException">此方法需要 Windows XP 或更新版本。如果 <see cref="T:System.Net.Sockets.Socket" /> 與 <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint" /> 的位址家族不同，也會發生此例外狀況。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" /> 已經關閉。</exception>
+      <exception cref="T:System.Security.SecurityException">呼叫堆疊中較高的呼叫端沒有所要求作業的權限。</exception>
+    </member>
+    <member name="P:System.Net.Sockets.Socket.Connected">
+      <summary>取得可指出從前一次作業之後，<see cref="T:System.Net.Sockets.Socket" /> 是否連接至遠端主機的值。</summary>
+      <returns>如果 <see cref="T:System.Net.Sockets.Socket" /> 自最近作業後曾連接至遠端資源，則為 true；否則為 false。</returns>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.Dispose">
+      <summary>釋放 <see cref="T:System.Net.Sockets.Socket" /> 所使用的 Unmanaged 資源，並選擇性處置 Managed 資源。</summary>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.Dispose(System.Boolean)">
+      <summary>釋放 <see cref="T:System.Net.Sockets.Socket" /> 所使用的 Unmanaged 資源，並選擇性處置 Managed 資源。</summary>
+      <param name="disposing">true 可以釋放 Managed 和 Unmanaged 資源，false 則僅釋放 Unmanaged 資源。</param>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.Finalize">
+      <summary>釋放由 <see cref="T:System.Net.Sockets.Socket" /> 類別所使用的資源。</summary>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.Listen(System.Int32)">
+      <summary>接聽連入連線嘗試。</summary>
+      <param name="backlog">暫止連接佇列的最大長度。</param>
+    </member>
+    <member name="P:System.Net.Sockets.Socket.LocalEndPoint">
+      <summary>取得本機端點，其中包含通訊端繫結至的本機 IP 位址和連接埠編號。這是通訊端用於通訊的端點。</summary>
+      <returns>
+        <see cref="T:System.Net.EndPoint" />，<see cref="T:System.Net.Sockets.Socket" /> 正將它用於通訊。</returns>
+    </member>
+    <member name="P:System.Net.Sockets.Socket.NoDelay">
+      <summary>取得或設定可指定 <see cref="T:System.Net.Sockets.Socket" /> 是否使用 Nagle 演算法的 <see cref="T:System.Boolean" /> 值。</summary>
+      <returns>如果 <see cref="T:System.Net.Sockets.Socket" /> 使用 Nagle 演算法則為 false；否則為 true。預設值為 false。</returns>
+      <exception cref="T:System.Net.Sockets.SocketException">嘗試存取 <see cref="T:System.Net.Sockets.Socket" /> 時發生錯誤。如需相關資訊，請參閱「備註」一節。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" /> 已經關閉。</exception>
+    </member>
+    <member name="P:System.Net.Sockets.Socket.OSSupportsIPv4">
+      <summary>取得值，指出是否能在目前的主機上使用和啟用 IPv4 支援。</summary>
+      <returns>如果目前的主機支援 IPv4 通訊協定則為 true；否則為 false。</returns>
+    </member>
+    <member name="P:System.Net.Sockets.Socket.OSSupportsIPv6">
+      <summary>取得值，指出是否能在目前的主機上使用和啟用 IPv6 支援。</summary>
+      <returns>如果目前的主機支援 IPv4 通訊協定則為 true；否則為 false。</returns>
+    </member>
+    <member name="P:System.Net.Sockets.Socket.ProtocolType">
+      <summary>取得 <see cref="T:System.Net.Sockets.Socket" /> 的通訊協定類型。</summary>
+      <returns>其中一個 <see cref="T:System.Net.Sockets.ProtocolType" /> 值。</returns>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.ReceiveAsync(System.Net.Sockets.SocketAsyncEventArgs)">
+      <summary>開始從連接之 <see cref="T:System.Net.Sockets.Socket" /> 物件接收資料的非同步要求。</summary>
+      <returns>如果 I/O 作業擱置中，則傳回 true。在作業完成時，會引發傳入 <paramref name="e" /> 參數之 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 物件上的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件。如果 I/O 作業同步完成，則傳回 false。在此情況下，不會引發傳入 <paramref name="e" /> 參數之 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 物件上的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件。當方法呼叫返回以擷取作業的結果時，可能將立即檢查 <paramref name="e" /> 參數中的 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 物件。</returns>
+      <param name="e">要用於此非同步通訊端操作的 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 物件。</param>
+      <exception cref="T:System.ArgumentException">引數無效。<paramref name="e" /> 參數傳遞之 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 物件上的 <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> 或 <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.BufferList" /> 屬性必須參照有效的緩衝區。可設定這些屬性的任何一個，但不可同時設定二者。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">與 <see cref="T:System.Net.Sockets.Socket" /> 相關聯的內部通訊端選項值不正確。</exception>
+      <exception cref="T:System.InvalidOperationException">通訊端作業已經使用 <paramref name="e" /> 參數中傳遞的 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 物件在進行中。</exception>
+      <exception cref="T:System.NotSupportedException">此方法需要 Windows XP 或更新版本。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" /> 已經關閉。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">嘗試存取通訊端時發生錯誤。如需相關資訊，請參閱「備註」一節。</exception>
+    </member>
+    <member name="P:System.Net.Sockets.Socket.ReceiveBufferSize">
+      <summary>取得或設定可指定 <see cref="T:System.Net.Sockets.Socket" /> 之接收緩衝區大小的值。</summary>
+      <returns>包含接收緩衝區大小 (位元組) 的 <see cref="T:System.Int32" />。預設為 8192。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">為設定作業指定的值小於 0。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">嘗試存取通訊端時發生錯誤。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" /> 已經關閉。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.ReceiveFromAsync(System.Net.Sockets.SocketAsyncEventArgs)">
+      <summary>開始從特定遠端主機接收資料的非同步要求。</summary>
+      <returns>如果 I/O 作業擱置中，則傳回 true。作業完成時會引發與 <paramref name="e" /> 參數有關的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件。如果 I/O 作業同步完成，則傳回 false。在這種情況下，將不會引發 <paramref name="e" /> 參數上的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件，且在方法呼叫傳回後，會立即檢查以參數形式傳入的 <paramref name="e" /> 物件，以擷取作業的結果。</returns>
+      <param name="e">要用於此非同步通訊端操作的 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 物件。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint" /> 不可以是 null。</exception>
+      <exception cref="T:System.InvalidOperationException">使用 <paramref name="e" /> 參數中指定之 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 物件的通訊端作業已經在進行中。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" /> 已經關閉。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">嘗試存取通訊端時發生錯誤。</exception>
+    </member>
+    <member name="P:System.Net.Sockets.Socket.RemoteEndPoint">
+      <summary>取得遠端端點。</summary>
+      <returns>
+        <see cref="T:System.Net.Sockets.Socket" /> 正在通訊的 <see cref="T:System.Net.EndPoint" />。</returns>
+      <exception cref="T:System.Net.Sockets.SocketException">嘗試存取通訊端時發生錯誤。如需相關資訊，請參閱「備註」一節。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" /> 已經關閉。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.SendAsync(System.Net.Sockets.SocketAsyncEventArgs)">
+      <summary>將資料非同步地傳送至已連接的 <see cref="T:System.Net.Sockets.Socket" /> 物件。</summary>
+      <returns>如果 I/O 作業擱置中，則傳回 true。在作業完成時，會引發傳入 <paramref name="e" /> 參數之 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 物件上的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件。如果 I/O 作業同步完成，則傳回 false。在此情況下，不會引發傳入 <paramref name="e" /> 參數之 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 物件上的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件。在方法呼叫傳回後，可以立即檢查傳入 <paramref name="e" /> 參數的 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 物件，以擷取作業的結果。</returns>
+      <param name="e">要用於此非同步通訊端操作的 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 物件。</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="e" /> 參數傳遞之 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 物件上的 <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> 或 <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.BufferList" /> 屬性必須參照有效的緩衝區。可設定這些屬性的任何一個，但不可同時設定二者。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">與 <see cref="T:System.Net.Sockets.Socket" /> 相關聯的內部通訊端選項值不正確。</exception>
+      <exception cref="T:System.InvalidOperationException">通訊端作業已經使用 <paramref name="e" /> 參數中傳遞的 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 物件在進行中。</exception>
+      <exception cref="T:System.NotSupportedException">此方法需要 Windows XP 或更新版本。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" /> 已經關閉。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">尚未連接 <see cref="T:System.Net.Sockets.Socket" />。</exception>
+    </member>
+    <member name="P:System.Net.Sockets.Socket.SendBufferSize">
+      <summary>取得或設定可指定 <see cref="T:System.Net.Sockets.Socket" /> 之傳送緩衝區大小的值。</summary>
+      <returns>包含傳送緩衝區大小 (位元組) 的 <see cref="T:System.Int32" />。預設值為 8192。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">為設定作業指定的值小於 0。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">嘗試存取通訊端時發生錯誤。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" /> 已經關閉。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.SendToAsync(System.Net.Sockets.SocketAsyncEventArgs)">
+      <summary>將資料非同步地傳送至特定的遠端主機。</summary>
+      <returns>如果 I/O 作業擱置中，則傳回 true。作業完成時會引發與 <paramref name="e" /> 參數有關的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件。如果 I/O 作業同步完成，則傳回 false。在這種情況下，將不會引發 <paramref name="e" /> 參數上的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件，且在方法呼叫傳回後，會立即檢查以參數形式傳入的 <paramref name="e" /> 物件，以擷取作業的結果。</returns>
+      <param name="e">要用於此非同步通訊端操作的 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 物件。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint" /> 不可以是 null。</exception>
+      <exception cref="T:System.InvalidOperationException">使用 <paramref name="e" /> 參數中指定之 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 物件的通訊端作業已經在進行中。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" /> 已經關閉。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">嘗試存取通訊端時發生錯誤。如果指定的通訊端是屬於 <see cref="F:System.Net.Sockets.SocketType.Stream" /> 型別的通訊導向通訊端，但尚未連接 <see cref="T:System.Net.Sockets.Socket" /> 時，便會發生此問題。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.Shutdown(System.Net.Sockets.SocketShutdown)">
+      <summary>停用 <see cref="T:System.Net.Sockets.Socket" /> 上的傳送和接收。</summary>
+      <param name="how">用來指定不再允許之作業的其中一個 <see cref="T:System.Net.Sockets.SocketShutdown" /> 值。</param>
+      <exception cref="T:System.Net.Sockets.SocketException">嘗試存取通訊端時發生錯誤。如需相關資訊，請參閱「備註」一節。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" /> 已經關閉。</exception>
+    </member>
+    <member name="P:System.Net.Sockets.Socket.Ttl">
+      <summary>取得或設定可指定 <see cref="T:System.Net.Sockets.Socket" /> 所傳送網際網路通訊協定 (IP) 封包之存留時間 (TTL) 值的值。</summary>
+      <returns>TTL 值。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">無法將 TTL 值設定為小於 0 的值。</exception>
+      <exception cref="T:System.NotSupportedException">只能為 <see cref="F:System.Net.Sockets.AddressFamily.InterNetwork" /> 或 <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6" /> 家族中的通訊端設定此屬性。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">嘗試存取通訊端時發生錯誤。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" /> 已經關閉。</exception>
+    </member>
+    <member name="T:System.Net.Sockets.SocketAsyncEventArgs">
+      <summary>表示非同步通訊端作業。</summary>
+    </member>
+    <member name="M:System.Net.Sockets.SocketAsyncEventArgs.#ctor">
+      <summary>建立空白的 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 執行個體。</summary>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.AcceptSocket">
+      <summary>取得或設定要使用的通訊端，或是已建立並且使用非同步通訊端方法接受連線的通訊端。</summary>
+      <returns>要使用的 <see cref="T:System.Net.Sockets.Socket" />，或是已建立並且使用非同步通訊端方法接受連線的通訊端。</returns>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer">
+      <summary>取得要與非同步通訊端方法搭配使用的資料緩衝區。</summary>
+      <returns>表示要與非同步通訊端方法搭配使用之資料緩衝區的 <see cref="T:System.Byte" /> 陣列。</returns>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.BufferList">
+      <summary>取得或設定要與非同步通訊端方法搭配使用之資料緩衝區的陣列。</summary>
+      <returns>要與非同步通訊端方法搭配使用之資料緩衝區的陣列。</returns>
+      <exception cref="T:System.ArgumentException">在設定作業上指定了模稜兩可的緩衝區。若傳遞 null 以外的值，且 <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> 屬性也不是 null，則會發生此例外狀況。</exception>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.BytesTransferred">
+      <summary>取得通訊端作業中傳送的位元組數。</summary>
+      <returns>通訊端作業中傳送的位元組數。</returns>
+    </member>
+    <member name="E:System.Net.Sockets.SocketAsyncEventArgs.Completed">
+      <summary>指出非同步作業已完成的事件。</summary>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.ConnectByNameError">
+      <summary>在使用 <see cref="T:System.Net.DnsEndPoint" /> 時發生連接失敗的情況下，取得例外狀況。</summary>
+      <returns>
+        <see cref="T:System.Exception" />，指出為 <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint" /> 屬性指定 <see cref="T:System.Net.DnsEndPoint" /> 時發生連接錯誤的原因。</returns>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.ConnectSocket">
+      <summary>成功完成 <see cref="Overload:System.Net.Sockets.Socket.ConnectAsync" /> 方法後所建立及連接的 <see cref="T:System.Net.Sockets.Socket" /> 物件。</summary>
+      <returns>連接的 <see cref="T:System.Net.Sockets.Socket" /> 物件。</returns>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.Count">
+      <summary>取得要在非同步作業中傳送或接收的資料量上限 (位元組)。</summary>
+      <returns>要傳送或接收的資料量上限 (位元組)。</returns>
+    </member>
+    <member name="M:System.Net.Sockets.SocketAsyncEventArgs.Dispose">
+      <summary>釋放 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 執行個體使用的 Unmanaged 資源，並選擇是否處置 Managed 資源。</summary>
+    </member>
+    <member name="M:System.Net.Sockets.SocketAsyncEventArgs.Finalize">
+      <summary>釋放由 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 類別所使用的資源。</summary>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.LastOperation">
+      <summary>取得最近使用此物件執行的通訊端作業類型。</summary>
+      <returns>最近使用此 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 物件執行的通訊端作業類型。</returns>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.Offset">
+      <summary>取得 <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> 屬性參照的資料緩衝區內位移 (位元組)。</summary>
+      <returns>
+        <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> 屬性參照的資料緩衝區內位移 (位元組)。</returns>
+    </member>
+    <member name="M:System.Net.Sockets.SocketAsyncEventArgs.OnCompleted(System.Net.Sockets.SocketAsyncEventArgs)">
+      <summary>指出非同步作業完成時呼叫的方法。</summary>
+      <param name="e">發出信號的事件。</param>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint">
+      <summary>取得或設定非同步作業的遠端 IP 或 DNS 端點。</summary>
+      <returns>非同步作業的遠端 IP 端點。</returns>
+    </member>
+    <member name="M:System.Net.Sockets.SocketAsyncEventArgs.SetBuffer(System.Byte[],System.Int32,System.Int32)">
+      <summary>設定要與非同步通訊端方法搭配使用的資料緩衝區。</summary>
+      <param name="buffer">要與非同步通訊端方法搭配使用的資料緩衝區。</param>
+      <param name="offset">作業啟動所在的資料緩衝區內位移 (位元組)。</param>
+      <param name="count">要在緩衝區中傳送或接收的資料量上限 (位元組)。</param>
+      <exception cref="T:System.ArgumentException">指定了模稜兩可的緩衝區。如果 <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> 屬性和 <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.BufferList" /> 屬性都不是 null，就會發生這個例外狀況。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">引數超出範圍。如果 <paramref name="offset" /> 參數小於零或大於 <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> 屬性中的陣列長度，就會發生這個例外狀況。如果 <paramref name="count" /> 參數小於零或大於 <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> 屬性中的陣列長度減去 <paramref name="offset" /> 參數，也會發生這個例外狀況。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.SocketAsyncEventArgs.SetBuffer(System.Int32,System.Int32)">
+      <summary>設定要與非同步通訊端方法搭配使用的資料緩衝區。</summary>
+      <param name="offset">作業啟動所在的資料緩衝區內位移 (位元組)。</param>
+      <param name="count">要在緩衝區中傳送或接收的資料量上限 (位元組)。</param>
+      <exception cref="T:System.ArgumentException">指定了模稜兩可的緩衝區。如果 <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> 屬性和 <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.BufferList" /> 屬性都不是 null，就會發生這個例外狀況。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">引數超出範圍。如果 <paramref name="offset" /> 參數小於零或大於 <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> 屬性中的陣列長度，就會發生這個例外狀況。如果 <paramref name="count" /> 參數小於零或大於 <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> 屬性中的陣列長度減去 <paramref name="offset" /> 參數，也會發生這個例外狀況。</exception>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.SocketError">
+      <summary>取得或設定非同步通訊端作業的結果。</summary>
+      <returns>非同步通訊端作業的結果。</returns>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.UserToken">
+      <summary>取得或設定與此非同步通訊端作業相關聯的使用者或應用程式物件。</summary>
+      <returns>表示與此非同步通訊端作業相關聯之使用者或應用程式物件的物件。</returns>
+    </member>
+    <member name="T:System.Net.Sockets.SocketAsyncOperation">
+      <summary>最近使用此物件執行的非同步通訊端作業類型。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketAsyncOperation.None">
+      <summary>不屬通訊端作業。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketAsyncOperation.Accept">
+      <summary>通訊端 Accept 作業。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketAsyncOperation.Connect">
+      <summary>通訊端連接作業。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketAsyncOperation.Receive">
+      <summary>通訊端接收作業。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketAsyncOperation.ReceiveFrom">
+      <summary>通訊端 ReceiveFrom 作業。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketAsyncOperation.Send">
+      <summary>通訊端傳送作業。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketAsyncOperation.SendTo">
+      <summary>通訊端 SendTo 作業。</summary>
+    </member>
+    <member name="T:System.Net.Sockets.SocketError">
+      <summary>定義 <see cref="T:System.Net.Sockets.Socket" /> 類別的錯誤碼。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.Success">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> 作業順利完成。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.SocketError">
+      <summary>發生未指定的 <see cref="T:System.Net.Sockets.Socket" /> 錯誤。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.Interrupted">
+      <summary>已取消封鎖 <see cref="T:System.Net.Sockets.Socket" /> 呼叫。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.AccessDenied">
+      <summary>嘗試以 <see cref="T:System.Net.Sockets.Socket" /> 存取權限所禁止的方式對其進行存取。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.Fault">
+      <summary>基礎通訊端提供者偵測到無效的指標位址。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.InvalidArgument">
+      <summary>提供給 <see cref="T:System.Net.Sockets.Socket" /> 成員的引數無效。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.TooManyOpenSockets">
+      <summary>基礎通訊端提供者有過多開啟的通訊端。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.WouldBlock">
+      <summary>無法立即完成非封鎖通訊端上的作業。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.InProgress">
+      <summary>封鎖作業進行中。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.AlreadyInProgress">
+      <summary>非封鎖 <see cref="T:System.Net.Sockets.Socket" /> 已有進行中的作業。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.NotSocket">
+      <summary>已在非通訊端上嘗試 <see cref="T:System.Net.Sockets.Socket" /> 作業。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.DestinationAddressRequired">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> 上的作業已省略必要的位址。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.MessageSize">
+      <summary>資料包過長。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.ProtocolType">
+      <summary>此 <see cref="T:System.Net.Sockets.Socket" /> 的通訊協定類型不正確。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.ProtocolOption">
+      <summary>搭配 <see cref="T:System.Net.Sockets.Socket" /> 使用的選項或層級不明、無效或不受支援。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.ProtocolNotSupported">
+      <summary>未實作或尚未設定通訊協定。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.SocketNotSupported">
+      <summary>此位址家族中不存在指定的通訊端類型支援。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.OperationNotSupported">
+      <summary>通訊協定家族不支援位址家族。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.ProtocolFamilyNotSupported">
+      <summary>未實作或尚未設定通訊協定家族。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.AddressFamilyNotSupported">
+      <summary>不支援指定的位址家族。如果已指定 IPv6 位址家族，且未在本機電腦上安裝 IPv6 堆疊，則會傳回此錯誤。如果已指定 IPv4 位址家族，且未在本機電腦上安裝 IPv4 堆疊，則會傳回此錯誤。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.AddressAlreadyInUse">
+      <summary>通常只允許使用一個位址。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.AddressNotAvailable">
+      <summary>選取的 IP 位址在此內容中無效。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.NetworkDown">
+      <summary>網路無法使用。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.NetworkUnreachable">
+      <summary>不存在至遠端主機的路由。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.NetworkReset">
+      <summary>應用程式嘗試在已逾時的連接上設定選項。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.ConnectionAborted">
+      <summary>.NET Framework 或基礎通訊端提供者已中止連接。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.ConnectionReset">
+      <summary>遠端對等電腦已重設連接。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.NoBufferSpaceAvailable">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> 作業無可用的緩衝區空間。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.IsConnected">
+      <summary>已連接 <see cref="T:System.Net.Sockets.Socket" />。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.NotConnected">
+      <summary>應用程式嘗試傳送或接收資料，且未連接 <see cref="T:System.Net.Sockets.Socket" />。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.Shutdown">
+      <summary>已禁止傳送或接收資料的要求，因為 <see cref="T:System.Net.Sockets.Socket" /> 已關閉。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.TimedOut">
+      <summary>連接嘗試逾時，或連接的主機已無法回應。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.ConnectionRefused">
+      <summary>遠端主機正在主動拒絕連接。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.HostDown">
+      <summary>作業因遠端主機關閉而失敗。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.HostUnreachable">
+      <summary>沒有至指定主機的網路路由。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.ProcessLimit">
+      <summary>使用基礎通訊端提供者的處理序過多。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.SystemNotReady">
+      <summary>網路子系統無法使用。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.VersionNotSupported">
+      <summary>基礎通訊端提供者的版本超出範圍。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.NotInitialized">
+      <summary>尚未初始化基礎通訊端提供者。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.Disconnecting">
+      <summary>非失誤性關機進行中。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.TypeNotFound">
+      <summary>找不到指定的類別。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.HostNotFound">
+      <summary>無已知的此類主機。此名稱不是正式的主機名稱或別名。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.TryAgain">
+      <summary>無法解析主機的名稱。請稍後再試。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.NoRecovery">
+      <summary>此錯誤無法復原，或找不到要求的資料庫。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.NoData">
+      <summary>在名稱伺服器上找不到要求的名稱或 IP 位址。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.IOPending">
+      <summary>應用程式已初始化無法立即完成的重疊作業。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.OperationAborted">
+      <summary>重疊作業因 <see cref="T:System.Net.Sockets.Socket" /> 關閉而中止。</summary>
+    </member>
+    <member name="T:System.Net.Sockets.SocketException">
+      <summary>發生通訊端錯誤時所擲回的例外狀況。</summary>
+    </member>
+    <member name="M:System.Net.Sockets.SocketException.#ctor">
+      <summary>使用前次的作業系統錯誤碼初始化 <see cref="T:System.Net.Sockets.SocketException" /> 類別的新執行個體。</summary>
+    </member>
+    <member name="M:System.Net.Sockets.SocketException.#ctor(System.Int32)">
+      <summary>使用指定的錯誤碼初始化 <see cref="T:System.Net.Sockets.SocketException" /> 類別的新執行個體。</summary>
+      <param name="errorCode">指出所發生之錯誤的錯誤碼。</param>
+    </member>
+    <member name="P:System.Net.Sockets.SocketException.ErrorCode">
+      <summary>取得與此例外狀況相關聯的錯誤碼。</summary>
+      <returns>與此例外狀況相關聯的整數錯誤碼。</returns>
+    </member>
+    <member name="P:System.Net.Sockets.SocketException.SocketErrorCode">
+      <summary>取得與此例外狀況相關聯的錯誤碼。</summary>
+      <returns>與此例外狀況相關聯的 <see cref="T:System.Net.Sockets.SocketError" />。</returns>
+    </member>
+    <member name="T:System.Net.Sockets.SocketShutdown">
+      <summary>定義 <see cref="M:System.Net.Sockets.Socket.Shutdown(System.Net.Sockets.SocketShutdown)" /> 方法使用的常數。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketShutdown.Receive">
+      <summary>停用要接收的 <see cref="T:System.Net.Sockets.Socket" />。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketShutdown.Send">
+      <summary>停用用於進行傳送的 <see cref="T:System.Net.Sockets.Socket" />。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketShutdown.Both">
+      <summary>停用用於進行傳送與接收的 <see cref="T:System.Net.Sockets.Socket" />。</summary>
+    </member>
+    <member name="T:System.Net.Sockets.SocketType">
+      <summary>指定 <see cref="T:System.Net.Sockets.Socket" /> 類別的執行個體所表示的通訊端類型。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketType.Stream">
+      <summary>支援不含資料重複及界限保留的可靠、雙向、連接型位元組串流的通訊端類型。與單一對等電腦通訊的此類 <see cref="T:System.Net.Sockets.Socket" />，必須先具備遠端主機連接才能開始通訊。此通訊端類型使用傳輸控制通訊協定 (<see cref="F:System.Net.Sockets.ProtocolType.Tcp" />)，且 <see cref="T:System.Net.Sockets.AddressFamily" /> 可為 <see cref="F:System.Net.Sockets.AddressFamily.InterNetwork" /> 或 <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6" />。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketType.Dgram">
+      <summary>支援資料包，亦即長度上限固定 (通常長度較短) 的無連線、不可靠訊息。訊息可能會遺失或重複，並且可能會未依序到達。<see cref="F:System.Net.Sockets.SocketType.Dgram" /> 型別的通訊端必須具有連線才能傳送或接收資料，且能和多個對等個體通訊。<see cref="F:System.Net.Sockets.SocketType.Dgram" /> 使用資料包通訊協定 (<see cref="F:System.Net.Sockets.ProtocolType.Udp" />) 和 <see cref="F:System.Net.Sockets.AddressFamily.InterNetwork" /> 或 <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6" /><see cref="T:System.Net.Sockets.AddressFamily" />。不是 Windows Phone 支援的值。</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketType.Unknown">
+      <summary>不明的 Socket 型別。</summary>
+    </member>
+    <member name="T:System.Net.Sockets.UdpAnySourceMulticastClient">
+      <summary>來自任何來源之多點傳送流量的用戶端接收者，也稱為「任何來源多點傳送 (ASM)」或「網際網路標準多點傳送 (ISM)」。</summary>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.#ctor(System.Net.IPAddress,System.Int32)">
+      <summary>建立新 <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> UDP 用戶端，該用戶端可訂閱群組位址，及接收來自任何來源的資料包。</summary>
+      <param name="groupAddress">此接收者要訂閱的多點傳送群組位址。</param>
+      <param name="localPort">此接收者繫結到的本機連接埠。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="groupAddress" /> 為 null。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="localPort" /> 小於 0-或-<paramref name="localPort" /> 大於 65,535。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">
+        <paramref name="localPort" /> 小於 1,024。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.BeginJoinGroup(System.AsyncCallback,System.Object)">
+      <summary>繫結通訊端並針對多點傳送群組開始聯結作業，以允許從任何群組參與者接收資料包。</summary>
+      <returns>參照此作業的 <see cref="T:System.IAsyncResult" />。</returns>
+      <param name="callback">作業完成時要叫用的回呼方法。</param>
+      <param name="state">要傳送至此作業之 <paramref name="callback" /> 方法的選用狀態資訊。</param>
+      <exception cref="T:System.InvalidOperationException">已聯結多點傳送群組，或聯結作業目前進行中。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> 已經處置。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">嘗試存取通訊端時發生錯誤。如需相關資訊，請參閱「備註」一節。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.BeginReceiveFromGroup(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+      <summary>開始從聯結的多點傳送群組接收封包的作業，並在封包從任何傳送者抵達群組時叫用指定的回呼。</summary>
+      <returns>參照此作業的 <see cref="T:System.IAsyncResult" />。</returns>
+      <param name="buffer">用來儲存所接收資料的緩衝區。</param>
+      <param name="offset">從應該儲存資料的 <paramref name="buffer" /> 開頭起算的位移 (位元組)。</param>
+      <param name="count">要在 <paramref name="buffer" /> 中接收和儲存的位元組數上限。</param>
+      <param name="callback">在作業完成時所要叫用的回呼方法。</param>
+      <param name="state">要傳送至此作業之 <paramref name="callback" /> 方法的選用狀態資訊。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="buffer" /> 為 null。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> 小於 0-或-<paramref name="offset" /> 大於 <paramref name="buffer" /> 的長度。-或-<paramref name="count" /> 小於 0-或-<paramref name="offset" /> 加上 <paramref name="count" /> 大於 <paramref name="buffer" /> 的長度。</exception>
+      <exception cref="T:System.InvalidOperationException">尚未聯結多點傳送群組。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> 已經處置。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">嘗試存取通訊端進行傳送時發生錯誤。如需相關資訊，請參閱「備註」一節。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.BeginSendTo(System.Byte[],System.Int32,System.Int32,System.Net.IPEndPoint,System.AsyncCallback,System.Object)">
+      <summary>開始將單點傳送封包傳送至指定目的地的作業。</summary>
+      <returns>參照此作業的 <see cref="T:System.IAsyncResult" />。</returns>
+      <param name="buffer">包含要傳送之資料的緩衝區。</param>
+      <param name="offset">從 <paramref name="buffer" /> 起始處算起的位移 (位元組)，用來讀取要傳送的資料。</param>
+      <param name="count">要從 <paramref name="buffer" /> 傳送的位元組數目。</param>
+      <param name="remoteEndPoint">封包要傳送到的遠端端點。</param>
+      <param name="callback">在作業完成時所要叫用的回呼方法。</param>
+      <param name="state">要傳送至此作業之 <paramref name="callback" /> 方法的選用狀態資訊。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="buffer" /> 為 null。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> 小於 0-或-<paramref name="offset" /> 大於 <paramref name="buffer" /> 的長度。-或-<paramref name="count" /> 小於 0-或-<paramref name="offset" /> 加上 <paramref name="count" /> 大於 <paramref name="buffer" /> 的長度。</exception>
+      <exception cref="T:System.InvalidOperationException">尚未聯結多點傳送群組。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> 已經處置。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">嘗試存取通訊端進行傳送時發生錯誤。如需相關資訊，請參閱「備註」一節。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.BeginSendToGroup(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+      <summary>開始將封包傳送至所聯結多點傳送群組的作業，並在封包傳送至群組時叫用指定的回呼。</summary>
+      <returns>參照此作業的 <see cref="T:System.IAsyncResult" />。</returns>
+      <param name="buffer">包含要傳送之資料的緩衝區。</param>
+      <param name="offset">從 <paramref name="buffer" /> 起始處算起的位移 (位元組)，用來讀取要傳送的資料。</param>
+      <param name="count">要從 <paramref name="buffer" /> 傳送的位元組數目。</param>
+      <param name="callback">在作業完成時所要叫用的回呼方法。</param>
+      <param name="state">要傳送至此作業之 <paramref name="callback" /> 方法的選用狀態資訊。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="buffer" /> 為 null。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> 小於 0-或-<paramref name="offset" /> 大於 <paramref name="buffer" /> 的長度。-或-<paramref name="count" /> 小於 0-或-<paramref name="offset" /> 加上 <paramref name="count" /> 大於 <paramref name="buffer" /> 的長度。</exception>
+      <exception cref="T:System.InvalidOperationException">尚未聯結多點傳送群組。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> 已經處置。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">嘗試存取通訊端進行傳送時發生錯誤。如需相關資訊，請參閱「備註」一節。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.BlockSource(System.Net.IPAddress)">
+      <summary>封鎖來源，不再接收該來源所產生的多點傳送封包。</summary>
+      <param name="sourceAddress">要封鎖之來源的位址。</param>
+      <exception cref="T:System.InvalidOperationException">尚未聯結多點傳送群組。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> 已經處置。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">嘗試存取通訊端時發生錯誤。如需相關資訊，請參閱「備註」一節。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.Dispose">
+      <summary>離開多點傳送群組，並釋放 <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> 類別的目前執行個體和基礎 <see cref="T:System.Net.Sockets.Socket" /> 使用的所有資源。</summary>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.EndJoinGroup(System.IAsyncResult)">
+      <summary>完成多點傳送群組的非同步聯結群組作業。</summary>
+      <param name="result">非同步聯結作業的結果。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="result" /> 為 null。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> 已經處置。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">嘗試存取通訊端時發生錯誤。如需相關資訊，請參閱「備註」一節。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.EndReceiveFromGroup(System.IAsyncResult,System.Net.IPEndPoint@)">
+      <summary>完成從所聯結多點傳送群組接收封包的非同步作業，及提供接收到的資訊。</summary>
+      <returns>儲存於 <paramref name="buffer" /> 參數並傳遞至 <see cref="M:System.Net.Sockets.UdpAnySourceMulticastClient.BeginReceiveFromGroup(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" /> 方法的訊息長度 (位元組)。</returns>
+      <param name="result">非同步接收作業的結果。</param>
+      <param name="source">從中接收封包的來源端點。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="result" /> 為 null。</exception>
+      <exception cref="T:System.InvalidOperationException">尚未聯結多點傳送群組。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> 已經處置。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">嘗試存取通訊端時發生錯誤。如需相關資訊，請參閱「備註」一節。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.EndSendTo(System.IAsyncResult)">
+      <summary>完成將單點傳送封包傳送至指定目的地的作業。</summary>
+      <param name="result">非同步傳送作業的結果。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="result" /> 為 null。</exception>
+      <exception cref="T:System.InvalidOperationException">尚未聯結多點傳送群組。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> 已經處置。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">嘗試存取通訊端時發生錯誤。如需相關資訊，請參閱「備註」一節。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.EndSendToGroup(System.IAsyncResult)">
+      <summary>完成將封包傳送至多點傳送群組的作業。</summary>
+      <param name="result">非同步傳送作業的結果。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="result" /> 為 null。</exception>
+      <exception cref="T:System.InvalidOperationException">尚未聯結多點傳送群組。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> 已經處置。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">嘗試存取通訊端時發生錯誤。如需相關資訊，請參閱「備註」一節。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.Finalize">
+      <summary>釋放目前的 <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> 類別所保留的資源。</summary>
+    </member>
+    <member name="P:System.Net.Sockets.UdpAnySourceMulticastClient.MulticastLoopback">
+      <summary>取得或設定可指定是否將連出多點傳送封包傳遞至傳送應用程式的值。</summary>
+      <returns>可指出是否將傳至多點傳送群組的連出封包傳遞至傳送應用程式的值。</returns>
+      <exception cref="T:System.InvalidOperationException">尚未聯結多點傳送群組。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> 已經處置。</exception>
+    </member>
+    <member name="P:System.Net.Sockets.UdpAnySourceMulticastClient.ReceiveBufferSize">
+      <summary>取得或設定此 <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> 執行個體上多點傳送接收作業所使用之 <see cref="T:System.Net.Sockets.Socket" /> 的接收緩衝區大小 (位元組)。</summary>
+      <returns>接收緩衝區的大小 (位元組)。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">指定的緩衝區大小小於 0。</exception>
+      <exception cref="T:System.InvalidOperationException">尚未聯結多點傳送群組。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> 已經處置。</exception>
+    </member>
+    <member name="P:System.Net.Sockets.UdpAnySourceMulticastClient.SendBufferSize">
+      <summary>取得或設定此 <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> 執行個體上多點傳送傳送作業所使用之 <see cref="T:System.Net.Sockets.Socket" /> 的傳送緩衝區大小 (位元組)。</summary>
+      <returns>傳送緩衝區的大小 (位元組)。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">指定的緩衝區大小小於 0。</exception>
+      <exception cref="T:System.InvalidOperationException">尚未聯結多點傳送群組。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> 已經處置。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.UnblockSource(System.Net.IPAddress)">
+      <summary>取消 <see cref="M:System.Net.Sockets.UdpAnySourceMulticastClient.BlockSource(System.Net.IPAddress)" /> 方法呼叫先前所封鎖的來源，以接收其產生的多點傳送封包。</summary>
+      <param name="sourceAddress">要取消封鎖之來源的位址。</param>
+      <exception cref="T:System.InvalidOperationException">尚未聯結多點傳送群組。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> 已經處置。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">嘗試存取通訊端時發生錯誤。如需相關資訊，請參閱「備註」一節。</exception>
+    </member>
+    <member name="T:System.Net.Sockets.UdpSingleSourceMulticastClient">
+      <summary>來自單一來源之多點傳送流量的用戶端接收者，也稱為「來源特定多點傳送 (SSM)」。</summary>
+    </member>
+    <member name="M:System.Net.Sockets.UdpSingleSourceMulticastClient.#ctor(System.Net.IPAddress,System.Net.IPAddress,System.Int32)">
+      <summary>建立新 <see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> UDP 用戶端，該用戶端可訂閱群組位址，及接收來自單一來源的資料包。</summary>
+      <param name="sourceAddress">此接收者要訂閱的傳送者來源位址。</param>
+      <param name="groupAddress">此接收者要訂閱的多點傳送群組位址。</param>
+      <param name="localPort">此接收者繫結到的本機連接埠。</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="sourceAddress" /> 和 <paramref name="groupAddress" /> 必須是相同的位址家族。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="sourceAddress" /> 為 null。-或-<paramref name="groupAddress" /> 為 null。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="localPort" /> 小於 0-或-<paramref name="localPort" /> 大於 65,535。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">
+        <paramref name="localPort" /> 小於 1,024。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpSingleSourceMulticastClient.BeginJoinGroup(System.AsyncCallback,System.Object)">
+      <summary>繫結通訊端並針對多點傳送群組開始聯結作業，以允許從單一來源位址接收資料包。</summary>
+      <returns>參照此作業的 <see cref="T:System.IAsyncResult" />。</returns>
+      <param name="callback">作業完成時要叫用的回呼方法。</param>
+      <param name="state">要傳送至此作業之 <paramref name="callback" /> 方法的選用狀態資訊。</param>
+      <exception cref="T:System.InvalidOperationException">已聯結多點傳送群組，或聯結作業目前進行中。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> 已經處置。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">嘗試存取通訊端時發生錯誤。如需相關資訊，請參閱「備註」一節。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpSingleSourceMulticastClient.BeginReceiveFromSource(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+      <summary>開始從聯結的多點傳送群組接收封包的作業，並在封包從指定的傳送者抵達群組時叫用指定的回呼。</summary>
+      <returns>參照此作業的 <see cref="T:System.IAsyncResult" />。</returns>
+      <param name="buffer">用來儲存所接收資料的緩衝區。</param>
+      <param name="offset">從應該儲存資料的 <paramref name="buffer" /> 開頭起算的位移 (位元組)。</param>
+      <param name="count">要在 <paramref name="buffer" /> 中接收和儲存的位元組數上限。</param>
+      <param name="callback">在作業完成時所要叫用的回呼方法。</param>
+      <param name="state">要傳送至此作業之 <paramref name="callback" /> 方法的選用狀態資訊。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="buffer" /> 為 null。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> 小於 0-或-<paramref name="offset" /> 大於 <paramref name="buffer" /> 的長度。-或-<paramref name="count" /> 小於 0-或-<paramref name="offset" /> 加上 <paramref name="count" /> 大於 <paramref name="buffer" /> 的長度。</exception>
+      <exception cref="T:System.InvalidOperationException">尚未聯結多點傳送群組。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> 已經處置。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">嘗試存取用於進行接收的通訊端時發生錯誤。如需相關資訊，請參閱「備註」一節。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpSingleSourceMulticastClient.BeginSendToSource(System.Byte[],System.Int32,System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+      <summary>開始將單點傳送封包傳送至先前指定之來源的作業。</summary>
+      <returns>參照此作業的 <see cref="T:System.IAsyncResult" />。</returns>
+      <param name="buffer">包含要傳送之資料的緩衝區。</param>
+      <param name="offset">從 <paramref name="buffer" /> 起始處算起的位移 (位元組)，用來讀取要傳送的資料。</param>
+      <param name="count">要從 <paramref name="buffer" /> 傳送的位元組數目。</param>
+      <param name="remotePort">封包要傳送到的遠端連接埠。遠端位址是由 <see cref="M:System.Net.Sockets.UdpSingleSourceMulticastClient.#ctor(System.Net.IPAddress,System.Net.IPAddress,System.Int32)" /> 建構函式指定。</param>
+      <param name="callback">在作業完成時所要叫用的回呼方法。</param>
+      <param name="state">要傳送至此作業之 <paramref name="callback" /> 方法的選用狀態資訊。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="buffer" /> 為 null。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> 小於 0-或-<paramref name="offset" /> 大於 <paramref name="buffer" /> 的長度。-或-<paramref name="count" /> 小於 0-或-<paramref name="offset" /> 加上 <paramref name="count" /> 大於 <paramref name="buffer" /> 的長度。<paramref name="remotePort" /> 小於 0-或-<paramref name="remotePort" /> 大於 65,535。</exception>
+      <exception cref="T:System.InvalidOperationException">尚未聯結多點傳送群組。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> 已經處置。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">嘗試存取通訊端進行傳送時發生錯誤。如需相關資訊，請參閱「備註」一節。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpSingleSourceMulticastClient.Dispose">
+      <summary>離開多點傳送群組，並釋放 <see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> 類別的目前執行個體和基礎 <see cref="T:System.Net.Sockets.Socket" /> 使用的所有資源。</summary>
+    </member>
+    <member name="M:System.Net.Sockets.UdpSingleSourceMulticastClient.EndJoinGroup(System.IAsyncResult)">
+      <summary>完成多點傳送群組的非同步聯結群組作業。</summary>
+      <param name="result">非同步聯結作業的結果。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="result" /> 為 null。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> 已經處置。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">嘗試存取通訊端時發生錯誤。如需相關資訊，請參閱「備註」一節。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpSingleSourceMulticastClient.EndReceiveFromSource(System.IAsyncResult,System.Int32@)">
+      <summary>完成從所聯結多點傳送群組接收封包的非同步作業，及提供從指定的傳送者接收到的資訊。</summary>
+      <returns>儲存於 <paramref name="buffer" /> 參數並傳遞至 <see cref="M:System.Net.Sockets.UdpSingleSourceMulticastClient.BeginReceiveFromSource(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" /> 方法的訊息長度 (位元組)。</returns>
+      <param name="result">非同步接收作業的結果。</param>
+      <param name="sourcePort">從中接收封包的來源連接埠。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="result" /> 為 null。</exception>
+      <exception cref="T:System.InvalidOperationException">尚未聯結多點傳送群組。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> 已經處置。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">嘗試存取通訊端時發生錯誤。如需相關資訊，請參閱「備註」一節。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpSingleSourceMulticastClient.EndSendToSource(System.IAsyncResult)">
+      <summary>完成將單點傳送封包傳送至單一來源的作業。</summary>
+      <param name="result">非同步傳送作業的結果。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="result" /> 為 null。</exception>
+      <exception cref="T:System.InvalidOperationException">尚未聯結多點傳送群組。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> 已經處置。</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">嘗試存取通訊端時發生錯誤。如需相關資訊，請參閱「備註」一節。</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpSingleSourceMulticastClient.Finalize">
+      <summary>釋放目前的 <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> 類別所保留的資源。</summary>
+    </member>
+    <member name="P:System.Net.Sockets.UdpSingleSourceMulticastClient.ReceiveBufferSize">
+      <summary>取得或設定此 <see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> 執行個體上多點傳送接收作業所使用之 <see cref="T:System.Net.Sockets.Socket" /> 的接收緩衝區大小 (位元組)。</summary>
+      <returns>接收緩衝區的大小 (位元組)。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">指定的緩衝區大小小於 0。</exception>
+      <exception cref="T:System.InvalidOperationException">尚未聯結多點傳送群組。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> 已經處置。</exception>
+    </member>
+    <member name="P:System.Net.Sockets.UdpSingleSourceMulticastClient.SendBufferSize">
+      <summary>取得或設定此 <see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> 執行個體上多點傳送傳送作業所使用之 <see cref="T:System.Net.Sockets.Socket" /> 的傳送緩衝區大小 (位元組)。</summary>
+      <returns>傳送緩衝區的大小 (位元組)。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">指定的緩衝區大小小於 0。</exception>
+      <exception cref="T:System.InvalidOperationException">尚未聯結多點傳送群組。</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> 已經處置。</exception>
+    </member>
+  </members>
+</doc>

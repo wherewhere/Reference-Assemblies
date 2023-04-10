@@ -1,0 +1,2737 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.Net</name>
+  </assembly>
+  <members>
+    <member name="T:System.Net.Cookie">
+      <summary>Windows Phone 기반 응용프로그램에 대해 상태 정보를 유지하기 위해 HTTP 요청에 사용할 개체를 제공합니다.</summary>
+    </member>
+    <member name="M:System.Net.Cookie.#ctor">
+      <summary>
+        <see cref="T:System.Net.Cookie" /> 클래스의 새 인스턴스를 초기화합니다. </summary>
+    </member>
+    <member name="M:System.Net.Cookie.#ctor(System.String,System.String)">
+      <summary>지정된 이름과 값을 사용하여 <see cref="T:System.Net.Cookie" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+      <param name="name">
+        <see cref="T:System.Net.Cookie" />의 이름입니다. <paramref name="name" /> 매개 변수는 다음 문자를 포함할 수 없습니다. 등호(=), 세미콜론(;), 쉼표(,), 줄 바꿈(\n), 리턴(\r), 탭(\t) 및 공백 문자 달러 기호 문자($)는 첫 문자로 사용할 수 없습니다.</param>
+      <param name="value">
+        <see cref="T:System.Net.Cookie" />의 값입니다. <paramref name="value" /> 매개 변수에는 이스케이프된 큰 따옴표로 묶지 않을 경우 세미콜론(;)이나 쉼표(,)를 사용할 수 없습니다.</param>
+      <exception cref="T:System.Net.CookieException">
+        <paramref name="name" />이 null이거나 빈 문자열("")인 경우 -또는-<paramref name="name" />에 사용할 수 없는 문자가 있을 경우. 다음 문자 중 하나를 사용하면 예외가 발생합니다. 등호(=)세미콜론(;) 쉼표(,)줄 바꿈(\n)리턴(\r) 탭(\t) 공백 문자 달러 기호($)(첫 문자로 사용할 경우)-또는-<paramref name="value" />가 null이거나 이스케이프된 큰 따옴표로 묶지 않은 세미콜론(;) 또는 쉼표(,)를 포함할 경우</exception>
+    </member>
+    <member name="M:System.Net.Cookie.#ctor(System.String,System.String,System.String)">
+      <summary>지정된 이름, 값 및 경로를 사용하여 <see cref="T:System.Net.Cookie" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+      <param name="name">
+        <see cref="T:System.Net.Cookie" />의 이름입니다. <paramref name="name" /> 매개 변수는 다음 문자를 포함할 수 없습니다. 등호(=), 세미콜론(;), 쉼표(,), 줄 바꿈(\n), 리턴(\r), 탭(\t) 및 공백 문자 달러 기호 문자($)는 첫 문자로 사용할 수 없습니다.</param>
+      <param name="value">
+        <see cref="T:System.Net.Cookie" />의 값입니다. <paramref name="value" /> 매개 변수에는 이스케이프된 큰 따옴표로 묶지 않을 경우 세미콜론(;)이나 쉼표(,)를 사용할 수 없습니다.</param>
+      <param name="path">이 쿠키가 적용될 URI의 경로 부분입니다.</param>
+      <exception cref="T:System.Net.CookieException">
+        <paramref name="name" />이 null이거나 빈 문자열("")인 경우 -또는-<paramref name="name" />에 사용할 수 없는 문자가 있을 경우. 다음 문자 중 하나를 사용하면 예외가 발생합니다. 등호(=)세미콜론(;) 쉼표(,)줄 바꿈(\n)리턴(\r) 탭(\t) 공백 문자 달러 기호($)(첫 문자로 사용할 경우)-또는-<paramref name="value" />가 null이거나 이스케이프된 큰 따옴표로 묶지 않은 세미콜론(;) 또는 쉼표(,)를 포함할 경우</exception>
+    </member>
+    <member name="M:System.Net.Cookie.#ctor(System.String,System.String,System.String,System.String)">
+      <summary>지정된 이름, 값, 경로 및 도메인을 사용하여 <see cref="T:System.Net.Cookie" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+      <param name="name">
+        <see cref="T:System.Net.Cookie" />의 이름입니다. <paramref name="name" /> 매개 변수는 다음 문자를 포함할 수 없습니다. 등호(=), 세미콜론(;), 쉼표(,), 줄 바꿈(\n), 리턴(\r), 탭(\t) 및 공백 문자 달러 기호 문자($)는 첫 문자로 사용할 수 없습니다.</param>
+      <param name="value">
+        <see cref="T:System.Net.Cookie" />의 값입니다. <paramref name="value" /> 매개 변수에는 이스케이프된 큰 따옴표로 묶지 않을 경우 세미콜론(;)이나 쉼표(,)를 사용할 수 없습니다.</param>
+      <param name="path">이 쿠키가 적용될 URI의 경로 부분입니다.</param>
+      <param name="domain">이 쿠키가 적용될 URI의 도메인 부분입니다.</param>
+      <exception cref="T:System.Net.CookieException">
+        <paramref name="name" />이 null이거나 빈 문자열("")인 경우 -또는-<paramref name="name" />에 사용할 수 없는 문자가 있을 경우. 다음 문자 중 하나를 사용하면 예외가 발생합니다. 등호(=)세미콜론(;) 쉼표(,)줄 바꿈(\n)리턴(\r) 탭(\t) 공백 문자 달러 기호($)(첫 문자로 사용할 경우)-또는-<paramref name="value" />가 null이거나 이스케이프된 큰 따옴표로 묶지 않은 세미콜론(;) 또는 쉼표(,)를 포함할 경우</exception>
+    </member>
+    <member name="P:System.Net.Cookie.Comment">
+      <summary>쿠키의 용도를 설명하는 선택적 주석을 가져오거나 설정합니다. </summary>
+      <returns>쿠키의 용도입니다.</returns>
+    </member>
+    <member name="P:System.Net.Cookie.CommentUri">
+      <summary>서버가 이 <see cref="T:System.Net.Cookie" />에 대해 제공하는 URI(Uniform Resource Identifier) 주석을 가져오거나 설정합니다.</summary>
+      <returns>서버가 이 <see cref="T:System.Net.Cookie" />에 대해 제공하는 URI 주석입니다.</returns>
+    </member>
+    <member name="P:System.Net.Cookie.Discard">
+      <summary>클라이언트가 현재 세션의 끝부분에 있는 <see cref="T:System.Net.Cookie" />를 삭제해야 할지 여부를 나타내는 값을 가져오거나 설정합니다.</summary>
+      <returns>클라이언트가 세션의 끝 부분에 있는 <see cref="T:System.Net.Cookie" />를 삭제해야 하면 true이고, 그렇지 않으면 false입니다. 기본값은 false입니다.</returns>
+    </member>
+    <member name="P:System.Net.Cookie.Domain">
+      <summary>쿠키가 유효한 URI(Uniform Resource identifier)의 도메인을 가져오거나 설정합니다.</summary>
+      <returns>쿠키가 유효한 URI의 도메인입니다. 기본값은 빈 문자열("")입니다.</returns>
+    </member>
+    <member name="M:System.Net.Cookie.Equals(System.Object)">
+      <summary>두 <see cref="T:System.Net.Cookie" /> 개체가 같은지 여부를 확인합니다.</summary>
+      <returns>쿠키 개체가 서로 같으면 true이고, 그렇지 않으면 false입니다.</returns>
+      <param name="comparand">이 <see cref="T:System.Net.Cookie" />와 같은지 비교할 <see cref="T:System.Net.Cookie" />입니다.</param>
+    </member>
+    <member name="P:System.Net.Cookie.Expired">
+      <summary>이 <see cref="T:System.Net.Cookie" />가 더 이상 유효한지 않은지 여부를 나타내는 값을 가져오거나 설정합니다.</summary>
+      <returns>쿠키가 더 이상 유효하지 않으면 true이고, 그렇지 않으면 false입니다. 기본값은 false입니다.</returns>
+    </member>
+    <member name="P:System.Net.Cookie.Expires">
+      <summary>
+        <see cref="T:System.Net.Cookie" />의 만료 날짜 및 시간을 가져오거나 설정합니다.</summary>
+      <returns>
+        <see cref="T:System.Net.Cookie" />의 만료 날짜 및 시간입니다. 기본값은 <see cref="F:System.DateTime.MinValue" />입니다.</returns>
+    </member>
+    <member name="M:System.Net.Cookie.GetHashCode">
+      <summary>이 <see cref="T:System.Net.Cookie" />의 해시 코드를 가져옵니다.</summary>
+      <returns>이 <see cref="T:System.Net.Cookie" />에 대한 해시 코드입니다.</returns>
+    </member>
+    <member name="P:System.Net.Cookie.HttpOnly">
+      <summary>페이지 스크립트 또는 다른 활성 콘텐츠에서 이 쿠키에 액세스할 수 있는지 여부를 나타내는 값을 가져오거나 설정합니다. </summary>
+      <returns>페이지 스크립트나 다른 활성 콘텐츠가 이 <see cref="T:System.Net.Cookie" />에 액세스할 수 없음을 나타내려면 true이고, 그렇지 않으면 false입니다. 기본값은 false입니다.</returns>
+    </member>
+    <member name="P:System.Net.Cookie.Name">
+      <summary>이 쿠키의 이름을 가져오거나 설정합니다.</summary>
+      <returns>쿠키의 이름입니다.</returns>
+      <exception cref="T:System.Net.CookieException">설정 작업에 지정된 값이 null이거나 빈 문자열("")인 경우 -또는-set 작업에 지정된 값에 잘못된 문자가 포함되어 있을 경우. 다음 문자 중 하나를 사용하면 예외가 발생합니다. 등호(=)세미콜론(;) 쉼표(,)줄 바꿈(\n)리턴(\r) 탭(\t) 공백 문자 달러 기호($)(첫 문자로 사용할 경우) </exception>
+    </member>
+    <member name="P:System.Net.Cookie.Path">
+      <summary>이 쿠키가 적용되는 URI(Uniform Resource identifier)의 경로 부분을 가져오거나 설정합니다.</summary>
+      <returns>이 쿠키가 적용될 URI의 경로 부분입니다.</returns>
+    </member>
+    <member name="P:System.Net.Cookie.Port">
+      <summary>이 쿠키가 적용되는 TCP(Transmission Control Protocol) 포트를 가져오거나 설정합니다.</summary>
+      <returns>이 쿠키가 적용되는 TCP 포트의 쉼표로 구분된 목록입니다.</returns>
+      <exception cref="T:System.Net.CookieException">
+        <see cref="P:System.Net.Cookie.Port" />가 잘못된 형식으로 설정되어 있습니다.</exception>
+    </member>
+    <member name="P:System.Net.Cookie.Secure">
+      <summary>이후 클라이언트 요청에 쿠키를 포함하려는 경우 HTTPS(Secure Hypertext Transport Protocol)와 함께 요청을 전송해야 하는지 여부를 나타내는 값을 가져오거나 설정합니다.</summary>
+      <returns>이후 클라이언트 요청에 쿠키를 포함하려는 경우 HTTPS와 함께 요청을 전송해야 하면 true이고, 그렇지 않으면 false입니다. 기본값은 false입니다.</returns>
+    </member>
+    <member name="P:System.Net.Cookie.TimeStamp">
+      <summary>이 <see cref="T:System.Net.Cookie" />가 만들어진 날짜 및 시간을 가져옵니다.</summary>
+      <returns>이 쿠키가 만들어진 날짜와 시간입니다.</returns>
+    </member>
+    <member name="M:System.Net.Cookie.ToString">
+      <summary>HTTP 쿠키 요청에 포함하기에 적합한 <see cref="T:System.Net.Cookie" />의 문자열 표현을 반환합니다.</summary>
+      <returns>HTTP 쿠키 요청에 포함하기에 적합한 <see cref="T:System.Net.Cookie" />의 문자열 표현입니다.</returns>
+    </member>
+    <member name="P:System.Net.Cookie.Value">
+      <summary>
+        <see cref="T:System.Net.Cookie" />의 값을 가져오거나 설정합니다.</summary>
+      <returns>
+        <see cref="T:System.Net.Cookie" />의 값입니다.</returns>
+    </member>
+    <member name="P:System.Net.Cookie.Version">
+      <summary>쿠키가 준수하는 HTTP 상태 유지 관리 버전을 나타내는 단일 숫자를 가져오거나 설정합니다.</summary>
+      <returns>쿠키가 준수하는 HTTP 상태 유지 관리 버전을 나타내는 단일 숫자입니다. 기본값은 0입니다. </returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">지정된 값이 0보다 작은 경우</exception>
+    </member>
+    <member name="T:System.Net.CookieCollection">
+      <summary>
+        <see cref="T:System.Net.Cookie" /> 개체의 컬렉션을 나타냅니다.</summary>
+    </member>
+    <member name="M:System.Net.CookieCollection.#ctor">
+      <summary>
+        <see cref="T:System.Net.CookieCollection" /> 클래스의 새 인스턴스를 초기화합니다. </summary>
+    </member>
+    <member name="M:System.Net.CookieCollection.Add(System.Net.Cookie)">
+      <summary>지정된 <see cref="T:System.Net.Cookie" />를 컬렉션에 추가합니다.</summary>
+      <param name="cookie">컬렉션에 추가할 <see cref="T:System.Net.Cookie" />입니다.</param>
+    </member>
+    <member name="M:System.Net.CookieCollection.Add(System.Net.CookieCollection)">
+      <summary>지정된 <see cref="T:System.Net.CookieCollection" />의 내용을 이 컬렉션에 추가합니다.</summary>
+      <param name="cookies">이 컬렉션에 추가할 <see cref="T:System.Net.CookieCollection" />입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="cookies" />가 null인 경우</exception>
+    </member>
+    <member name="M:System.Net.CookieCollection.CopyTo(System.Array,System.Int32)">
+      <summary>지정된 인덱스에서 시작하여 이 <see cref="T:System.Net.CookieCollection" />의 내용을 지정된 배열에 복사합니다.</summary>
+      <param name="array">컬렉션 내용을 복사할 배열입니다.</param>
+      <param name="index">복사 작업이 시작될 대상 배열의 인덱스(0부터 시작)입니다.</param>
+    </member>
+    <member name="P:System.Net.CookieCollection.Count">
+      <summary>
+        <see cref="T:System.Net.CookieCollection" />에 포함된 쿠키 수를 가져옵니다.</summary>
+      <returns>
+        <see cref="T:System.Net.CookieCollection" />에 포함된 쿠키 수입니다.</returns>
+    </member>
+    <member name="M:System.Net.CookieCollection.GetEnumerator">
+      <summary>
+        <see cref="T:System.Net.CookieCollection" />을 반복하는 열거자를 가져옵니다.  </summary>
+      <returns>
+        <see cref="T:System.Net.CookieCollection" />을 반복하는 열거자입니다.</returns>
+    </member>
+    <member name="P:System.Net.CookieCollection.IsReadOnly">
+      <summary>
+        <see cref="T:System.Net.CookieCollection" />이 읽기 전용인지 여부를 나타내는 값을 가져옵니다.</summary>
+      <returns>컬렉션이 읽기 전용임을 나타내려면 true이고, 그렇지 않으면 false입니다. 기본값은 true입니다.</returns>
+    </member>
+    <member name="P:System.Net.CookieCollection.IsSynchronized">
+      <summary>
+        <see cref="T:System.Net.CookieCollection" />에 대한 액세스가 스레드로부터 안전한지 여부를 나타내는 값을 가져옵니다.</summary>
+      <returns>
+        <see cref="T:System.Net.CookieCollection" />에 대한 액세스가 스레드로부터 안전하게 보호되면 true이고, 그렇지 않으면 false입니다. 기본값은 false입니다.</returns>
+    </member>
+    <member name="P:System.Net.CookieCollection.Item(System.String)">
+      <summary>컬렉션에서 지정된 이름의 쿠키를 가져옵니다.</summary>
+      <returns>지정된 이름의 쿠키입니다.</returns>
+      <param name="name">컬렉션에서 검색할 쿠키의 이름입니다.</param>
+    </member>
+    <member name="P:System.Net.CookieCollection.SyncRoot">
+      <summary>
+        <see cref="T:System.Net.CookieCollection" />에 대한 액세스를 동기화하는 데 사용할 수 있는 개체를 가져옵니다.</summary>
+      <returns>
+        <see cref="T:System.Net.CookieCollection" />에 대한 액세스를 동기화하는 데 사용할 수 있는 개체입니다.</returns>
+    </member>
+    <member name="T:System.Net.CookieContainer">
+      <summary>
+        <see cref="T:System.Net.CookieCollection" /> 개체의 컬렉션에 대한 컨테이너를 제공합니다. </summary>
+    </member>
+    <member name="M:System.Net.CookieContainer.#ctor">
+      <summary>
+        <see cref="T:System.Net.CookieContainer" /> 클래스의 새 인스턴스를 초기화합니다. </summary>
+    </member>
+    <member name="M:System.Net.CookieContainer.Add(System.Uri,System.Net.Cookie)">
+      <summary>지정된 URI(Uniform Resource Identifier)가 적용되어 있는 지정된 <see cref="T:System.Net.Cookie" />를 이 <see cref="T:System.Net.CookieContainer" />에 추가합니다.</summary>
+      <param name="uri">이 <see cref="T:System.Net.CookieContainer" />에 추가할 쿠키의 URI입니다.</param>
+      <param name="cookie">이 <see cref="T:System.Net.CookieContainer" />에 추가할 <see cref="T:System.Net.Cookie" />입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="cookie" />가 null입니다. </exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="cookie" />의 도메인이 null인 경우 </exception>
+      <exception cref="T:System.Net.CookieException">
+        <paramref name="cookie" />가 <see cref="P:System.Net.CookieContainer.MaxCookieSize" />보다 큰 경우 -또는- <paramref name="cookie" />의 도메인이 올바른 URI가 아닌 경우 </exception>
+    </member>
+    <member name="M:System.Net.CookieContainer.Add(System.Uri,System.Net.CookieCollection)">
+      <summary>지정한 URI(Uniform Resource Identifier)를 가진 지정한 <see cref="T:System.Net.CookieCollection" />의 내용을 <see cref="T:System.Net.CookieContainer" />에 추가합니다.</summary>
+      <param name="uri">이 <see cref="T:System.Net.CookieContainer" />에 추가할 <see cref="T:System.Net.CookieCollection" />의 URI입니다.</param>
+      <param name="cookies">이 <see cref="T:System.Net.CookieContainer" />에 추가할 쿠키가 들어 있는 <see cref="T:System.Net.CookieCollection" />입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="cookies" />가 null인 경우</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="cookies" />의 쿠키 개체 중 하나에 대한 도메인이 null인 경우 </exception>
+      <exception cref="T:System.Net.CookieException">
+        <paramref name="cookies" />의 쿠키 개체 중 하나에 잘못된 도메인이 들어 있는 경우 </exception>
+    </member>
+    <member name="P:System.Net.CookieContainer.Capacity">
+      <summary>이 <see cref="T:System.Net.CookieContainer" />에 포함할 수 있는 <see cref="T:System.Net.Cookie" /> 개체 수를 가져옵니다.</summary>
+      <returns>이 <see cref="T:System.Net.CookieContainer" />에 포함할 수 있는 <see cref="T:System.Net.Cookie" /> 개체 수입니다. 기본값은 300입니다.</returns>
+    </member>
+    <member name="P:System.Net.CookieContainer.Count">
+      <summary>이 <see cref="T:System.Net.CookieContainer" />에 포함된 <see cref="T:System.Net.Cookie" /> 개체 수를 가져옵니다.</summary>
+      <returns>이 <see cref="T:System.Net.CookieContainer" />에 포함된 <see cref="T:System.Net.Cookie" /> 개체 수입니다.</returns>
+    </member>
+    <member name="F:System.Net.CookieContainer.DefaultCookieLengthLimit">
+      <summary>
+        <see cref="T:System.Net.CookieContainer" />가 보유할 수 있는 <see cref="T:System.Net.Cookie" /> 개체의 기본 최대 크기(바이트)를 나타냅니다. 이 필드는 상수입니다.</summary>
+      <returns>항상 4096을 반환합니다.</returns>
+    </member>
+    <member name="F:System.Net.CookieContainer.DefaultCookieLimit">
+      <summary>
+        <see cref="T:System.Net.CookieContainer" />가 보유할 수 있는 기본 최대 <see cref="T:System.Net.Cookie" /> 개체 수를 나타냅니다. 이 필드는 상수입니다. </summary>
+      <returns>항상 300을 반환합니다.</returns>
+    </member>
+    <member name="F:System.Net.CookieContainer.DefaultPerDomainCookieLimit">
+      <summary>
+        <see cref="T:System.Net.CookieContainer" />가 각 도메인을 참조할 수 있는 기본 최대 <see cref="T:System.Net.Cookie" /> 개체 수를 나타냅니다. 이 필드는 상수입니다.</summary>
+      <returns>항상 20을 반환합니다.</returns>
+    </member>
+    <member name="M:System.Net.CookieContainer.GetCookieHeader(System.Uri)">
+      <summary>지정된 URI(Uniform Resource Identifier)와 관련된 쿠키가 들어 있는 HTTP 쿠키 헤더를 가져옵니다.</summary>
+      <returns>지정된 URI와 연결된 쿠키 헤더를 나타내는 문자열입니다.</returns>
+      <param name="uri">쿠키를 검색할 URI입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="uri" />가 null인 경우</exception>
+    </member>
+    <member name="M:System.Net.CookieContainer.GetCookies(System.Uri)">
+      <summary>지정된 URI(Uniform Resource Identifier)와 연결된 <see cref="T:System.Net.CookieCollection" />을 가져옵니다.</summary>
+      <returns>지정된 URI와 연결된 쿠키 컬렉션입니다.</returns>
+      <param name="uri">
+        <see cref="T:System.Net.CookieCollection" />을 검색할 URI입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="uri" />가 null인 경우</exception>
+    </member>
+    <member name="P:System.Net.CookieContainer.MaxCookieSize">
+      <summary>
+        <see cref="T:System.Net.CookieContainer" />의 쿠키에 대한 최대 쿠키 길이를 가져옵니다.</summary>
+      <returns>
+        <see cref="T:System.Net.CookieContainer" />의 쿠키에 대한 최대 쿠키 길이입니다. 기본값은 4096입니다.</returns>
+    </member>
+    <member name="P:System.Net.CookieContainer.PerDomainCapacity">
+      <summary>
+        <see cref="T:System.Net.CookieContainer" />가 도메인당 보유할 수 있는 <see cref="T:System.Net.Cookie" /> 인스턴스의 수를 가져오거나 설정합니다.</summary>
+      <returns>
+        <see cref="T:System.Net.CookieContainer" />가 도메인당 보유할 수 있는 <see cref="T:System.Net.Cookie" /> 인스턴스의 수입니다. 기본값은 20입니다.</returns>
+    </member>
+    <member name="M:System.Net.CookieContainer.SetCookies(System.Uri,System.String)">
+      <summary>HTTP 쿠키 헤더에 지정된 쿠키에 대한 쿠키 인스턴스를 만들어서 지정된 URI(Uniform Resource Identifier)에 연결된 <see cref="T:System.Net.CookieContainer" />에 추가합니다.</summary>
+      <param name="uri">쿠키 컨테이너와 연결된 URI입니다.</param>
+      <param name="cookieHeader">
+        <see cref="T:System.Net.CookieContainer" />에 추가할 쿠키가 들어 있는 HTTP 헤더입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="uri" />가 null입니다.-또는-<paramref name="cookieHeader" />가 null입니다.</exception>
+      <exception cref="T:System.Net.CookieException">쿠키 중 하나가 잘못된 경우 -또는- 쿠키 중 하나를 컨테이너에 추가하는 동안 오류가 발생한 경우 </exception>
+    </member>
+    <member name="T:System.Net.CookieException">
+      <summary>
+        <see cref="T:System.Net.Cookie" />를 <see cref="T:System.Net.CookieCollection" />에 추가하는 동안 throw된 예외입니다.</summary>
+    </member>
+    <member name="M:System.Net.CookieException.#ctor">
+      <summary>
+        <see cref="T:System.Net.CookieException" /> 클래스의 새 인스턴스를 초기화합니다. </summary>
+    </member>
+    <member name="T:System.Net.DnsEndPoint">
+      <summary>네트워크 끝점을 호스트 이름이나 IP 주소의 문자열 표현 및 포트 번호로 나타냅니다.</summary>
+    </member>
+    <member name="M:System.Net.DnsEndPoint.#ctor(System.String,System.Int32)">
+      <summary>호스트 이름이나 IP 주소의 문자열 표현 및 포트 번호를 사용하여 <see cref="T:System.Net.DnsEndPoint" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+      <param name="host">호스트 이름이나 IP 주소의 문자열 표현입니다.</param>
+      <param name="port">
+        <paramref name="address" />와 연결된 포트 번호이거나, 사용할 수 있는 포트를 지정할 경우 0입니다. <paramref name="port" />는 호스트 순서로 지정됩니다.</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="host" /> 매개 변수에 빈 문자열이 들어 있는 경우</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="host" /> 매개 변수가 null인 경우</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="port" />가 0보다 작은 경우 -또는- <paramref name="port" />가 0xffff보다 큰 경우 </exception>
+    </member>
+    <member name="M:System.Net.DnsEndPoint.#ctor(System.String,System.Int32,System.Net.Sockets.AddressFamily)">
+      <summary>호스트 이름이나 IP 주소의 문자열 표현, 포트 번호 및 주소 패밀리를 사용하여 <see cref="T:System.Net.DnsEndPoint" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+      <param name="host">호스트 이름이나 IP 주소의 문자열 표현입니다.</param>
+      <param name="port">
+        <paramref name="address" />와 연결된 포트 번호이거나, 사용할 수 있는 포트를 지정할 경우 0입니다. <paramref name="port" />는 호스트 순서로 지정됩니다.</param>
+      <param name="addressFamily">
+        <see cref="T:System.Net.Sockets.AddressFamily" /> 값 중 하나입니다.</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="host" /> 매개 변수에 빈 문자열이 들어 있는 경우 -또는- <paramref name="addressFamily" /> 매개 변수가 <see cref="F:System.Net.Sockets.AddressFamily.Unknown" />으로 지정된 경우</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="host" /> 매개 변수가 null인 경우</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="port" />가 0보다 작은 경우 -또는- <paramref name="port" />가 0xffff보다 큰 경우 </exception>
+    </member>
+    <member name="P:System.Net.DnsEndPoint.AddressFamily">
+      <summary>IP(인터넷 프로토콜) 주소 패밀리를 가져옵니다.</summary>
+      <returns>
+        <see cref="T:System.Net.Sockets.AddressFamily" /> 값 중 하나입니다.</returns>
+    </member>
+    <member name="M:System.Net.DnsEndPoint.Equals(System.Object)">
+      <summary>두 <see cref="T:System.Net.DnsEndPoint" /> 개체를 비교합니다.</summary>
+      <returns>두 <see cref="T:System.Net.DnsEndPoint" /> 인스턴스가 같으면 true이고, 그렇지 않으면 false입니다.</returns>
+      <param name="comparand">현재 인스턴스와 비교할 <see cref="T:System.Net.DnsEndPoint" /> 인스턴스입니다.</param>
+    </member>
+    <member name="M:System.Net.DnsEndPoint.GetHashCode">
+      <summary>
+        <see cref="T:System.Net.DnsEndPoint" />의 해시 값을 반환합니다.</summary>
+      <returns>
+        <see cref="T:System.Net.DnsEndPoint" />의 정수 해시 값입니다.</returns>
+    </member>
+    <member name="P:System.Net.DnsEndPoint.Host">
+      <summary>호스트 이름 또는 호스트 IP(인터넷 프로토콜) 주소의 문자열 표현을 가져옵니다.</summary>
+      <returns>호스트 이름 또는 IP 주소의 문자열 표현입니다.</returns>
+    </member>
+    <member name="P:System.Net.DnsEndPoint.Port">
+      <summary>
+        <see cref="T:System.Net.DnsEndPoint" />의 포트 번호를 가져옵니다.</summary>
+      <returns>
+        <see cref="T:System.Net.DnsEndPoint" />의 포트 번호를 나타내는 0에서 0xffff 범위의 정수 값입니다.</returns>
+    </member>
+    <member name="M:System.Net.DnsEndPoint.ToString">
+      <summary>
+        <see cref="T:System.Net.DnsEndPoint" />의 호스트 이름이나 IP 주소의 문자열 표현 및 포트 번호를 반환합니다.</summary>
+      <returns>주소 패밀리, 호스트 이름이나 IP 주소 문자열 및 지정된 <see cref="T:System.Net.DnsEndPoint" />의 포트 번호가 포함된 문자열입니다.</returns>
+    </member>
+    <member name="T:System.Net.DownloadProgressChangedEventArgs">
+      <summary>
+        <see cref="T:System.Net.WebClient" />의 <see cref="E:System.Net.WebClient.DownloadProgressChanged" /> 이벤트에 데이터를 제공합니다.</summary>
+    </member>
+    <member name="P:System.Net.DownloadProgressChangedEventArgs.BytesReceived">
+      <summary>받은 바이트 수를 가져옵니다.</summary>
+      <returns>받은 바이트 수를 나타내는 <see cref="T:System.Int64" /> 값입니다.</returns>
+    </member>
+    <member name="P:System.Net.DownloadProgressChangedEventArgs.TotalBytesToReceive">
+      <summary>
+        <see cref="T:System.Net.WebClient" /> 데이터 다운로드 작업의 총 바이트 수를 가져옵니다.</summary>
+      <returns>받을 바이트 수를 나타내는 <see cref="T:System.Int64" /> 값입니다.</returns>
+    </member>
+    <member name="T:System.Net.DownloadProgressChangedEventHandler">
+      <summary>
+        <see cref="T:System.Net.WebClient" />의 <see cref="E:System.Net.WebClient.DownloadProgressChanged" /> 이벤트를 처리할 메서드를 나타냅니다.</summary>
+      <param name="sender">이벤트 소스입니다.</param>
+      <param name="e">이벤트 데이터가 포함된 <see cref="T:System.Net.DownloadProgressChangedEventArgs" />입니다.</param>
+    </member>
+    <member name="T:System.Net.DownloadStringCompletedEventArgs">
+      <summary>
+        <see cref="E:System.Net.WebClient.DownloadStringCompleted" /> 이벤트에 대한 데이터를 제공합니다. </summary>
+    </member>
+    <member name="P:System.Net.DownloadStringCompletedEventArgs.Result">
+      <summary>
+        <see cref="Overload:System.Net.WebClient.DownloadStringAsync" /> 메서드로 다운로드한 데이터를 가져옵니다.</summary>
+      <returns>다운로드한 데이터가 들어 있는 <see cref="T:System.String" />입니다.</returns>
+      <exception cref="T:System.InvalidOperationException">비동기 요청이 취소된 경우 </exception>
+    </member>
+    <member name="T:System.Net.DownloadStringCompletedEventHandler">
+      <summary>
+        <see cref="T:System.Net.WebClient" />의 <see cref="E:System.Net.WebClient.DownloadStringCompleted" /> 이벤트를 처리할 메서드를 나타냅니다. </summary>
+      <param name="sender">이벤트 소스입니다.</param>
+      <param name="e">이벤트 데이터가 들어 있는 <see cref="T:System.Net.DownloadStringCompletedEventArgs" />입니다.</param>
+    </member>
+    <member name="T:System.Net.EndPoint">
+      <summary>네트워크 주소를 식별합니다. 이것은 abstract 클래스입니다.</summary>
+    </member>
+    <member name="M:System.Net.EndPoint.#ctor">
+      <summary>
+        <see cref="T:System.Net.EndPoint" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+    </member>
+    <member name="P:System.Net.EndPoint.AddressFamily">
+      <summary>끝점이 속하는 주소 패밀리를 가져옵니다.</summary>
+      <returns>
+        <see cref="T:System.Net.Sockets.AddressFamily" /> 값 중 하나입니다.</returns>
+      <exception cref="T:System.NotImplementedException">서브클래스에서 재정의되지 않은 속성을 가져오거나 설정하려는 경우 </exception>
+    </member>
+    <member name="M:System.Net.EndPoint.Create(System.Net.SocketAddress)">
+      <summary>
+        <see cref="T:System.Net.SocketAddress" /> 인스턴스에서 <see cref="T:System.Net.EndPoint" /> 인스턴스를 만듭니다.</summary>
+      <returns>지정한 <see cref="T:System.Net.SocketAddress" /> 인스턴스에서 초기화된 새 <see cref="T:System.Net.EndPoint" /> 인스턴스입니다.</returns>
+      <param name="socketAddress">연결에 대한 끝점 역할을 하는 소켓 주소입니다.</param>
+      <exception cref="T:System.NotImplementedException">서브클래스에서 재정의되지 않은 메서드에 액세스하려는 경우 </exception>
+    </member>
+    <member name="M:System.Net.EndPoint.Serialize">
+      <summary>끝점 정보를 <see cref="T:System.Net.SocketAddress" /> 인스턴스로 직렬화합니다.</summary>
+      <returns>끝점 정보를 포함하는 <see cref="T:System.Net.SocketAddress" /> 인스턴스입니다.</returns>
+      <exception cref="T:System.NotImplementedException">서브클래스에서 재정의되지 않은 메서드에 액세스하려는 경우 </exception>
+    </member>
+    <member name="T:System.Net.HttpRequestHeader">
+      <summary>클라이언트 요청에 지정할 수 있는 HTTP 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.CacheControl">
+      <summary>요청/응답 체인에서 모든 캐시 제어 메커니즘이 따라야 하는 지시문을 지정하는 Cache-Control 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Connection">
+      <summary>특정 연결에 필요한 옵션을 지정하는 Connection 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Date">
+      <summary>요청이 시작된 날짜와 시간을 지정하는 Date 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.KeepAlive">
+      <summary>영구 연결을 유지하기 위해 사용되는 매개 변수를 지정하는 Keep-Alive 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Pragma">
+      <summary>요청/응답 체인에서 에이전트에 적용될 수 있는 구현 관련 지시문을 지정하는 Pragma 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Trailer">
+      <summary>청크 분할 전송 코딩으로 인코딩된 메시지의 트레일러에 나타나는 헤더 필드를 지정하는 Trailer 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.TransferEncoding">
+      <summary>메시지 본문에 적용된 변환 형식(있는 경우)을 지정하는 Transfer-Encoding 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Upgrade">
+      <summary>클라이언트가 지원하는 추가 통신 프로토콜을 지정하는 Upgrade 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Via">
+      <summary>게이트웨이 및 프록시 에이전트에서 사용할 중간 프로토콜을 지정하는 Via 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Warning">
+      <summary>메시지에 반영되지 않을 수 있는 메시지 상태 또는 변환에 대한 추가 정보를 지정하는 Warning 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Allow">
+      <summary>지원되는 HTTP 메서드 집합을 지정하는 Allow 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.ContentLength">
+      <summary>해당 본문 데이터의 길이를 바이트 단위로 지정하는 Content-Length 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.ContentType">
+      <summary>해당 본문 데이터의 MIME 형식을 지정하는 Content-Type 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.ContentEncoding">
+      <summary>해당 본문 데이터에 적용된 인코딩을 지정하는 Content-Encoding 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.ContentLanguage">
+      <summary>해당 본문 데이터의 자연어를 지정하는 Content-Language 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.ContentLocation">
+      <summary>해당 본문을 가져올 수 있는 URI를 지정하는 Content-Location 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.ContentMd5">
+      <summary>종단 간 메시지 무결성 검사를 제공하기 위해 해당 본문 데이터의 MD5 다이제스트를 지정하는 Content-MD5 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.ContentRange">
+      <summary>전체 본문 중에 일부 해당 본문 데이터를 적용해야 할 범위를 지정하는 Content-Range 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Expires">
+      <summary>해당 본문 데이터가 만료된 것으로 간주되는 날짜와 시간을 지정하는 Expires 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.LastModified">
+      <summary>해당 본문 데이터가 마지막으로 수정된 날짜와 시간을 지정하는 Last-Modified 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Accept">
+      <summary>응답에 허용되는 MIME 형식을 지정하는 Accept 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.AcceptCharset">
+      <summary>응답에 허용되는 문자 집합을 지정하는 Accept-Charset 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.AcceptEncoding">
+      <summary>응답에 허용되는 콘텐츠 인코딩을 지정하는 Accept-Encoding 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.AcceptLanguage">
+      <summary>응답에 기본적으로 사용되는 자연어를 지정하는 Accept-Language 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Authorization">
+      <summary>클라이언트에서 인증을 위해 서버에 제공하는 자격 증명을 지정하는 Authorization 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Cookie">
+      <summary>서버에 제공되는 쿠키 데이터를 지정하는 Cookie 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Expect">
+      <summary>클라이언트가 필요로 하는 특정 서버 동작을 지정하는 Expect 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.From">
+      <summary>요청하는 사용자 에이전트를 제어하는 사용자의 인터넷 전자 메일 주소를 지정하는 From 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Host">
+      <summary>요청 중인 리소스의 호스트 이름 및 포트 번호를 지정하는 Host 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.IfMatch">
+      <summary>지정된 리소스에 대한 클라이언트의 캐시된 복사본이 최신인 경우에만 요청된 작업을 수행하도록 지정하는 If-Match 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.IfModifiedSince">
+      <summary>요청된 리소스가 지정된 날짜 및 시간 이후에 수정된 경우에만 요청된 작업을 수행하도록 지정하는 If-Modified-Since 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.IfNoneMatch">
+      <summary>지정된 리소스에 대한 클라이언트의 캐시된 복사본이 모두 최신이 아닌 경우에만 요청된 작업을 수행하도록 지정하는 If-None-Match 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.IfRange">
+      <summary>클라이언트의 캐시된 복사본이 최신인 경우 요청된 리소스의 지정된 범위만 보내도록 지정하는 If-Range 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.IfUnmodifiedSince">
+      <summary>요청된 리소스가 지정된 날짜 및 시간 이후에 수정되지 않은 경우에만 요청된 작업을 수행하도록 지정하는 If-Unmodified-Since 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.MaxForwards">
+      <summary>이 요청을 전달할 수 있는 남은 횟수를 나타내는 정수를 지정하는 Max-Forwards 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.ProxyAuthorization">
+      <summary>클라이언트에서 인증을 위해 프록시에 제공하는 자격 증명을 지정하는 Proxy-Authorization 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Referer">
+      <summary>요청 URI를 가져온 리소스의 URI를 지정하는 Referer 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Range">
+      <summary>전체 응답 대신 클라이언트가 요청하는 응답의 일부 범위가 반환되도록 지정하는 Range 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Te">
+      <summary>응답에 허용되는 전송 인코딩을 지정하는 TE 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Translate">
+      <summary>WebDAV 기능과 함께 사용되는 HTTP 사양에 대한 Microsoft 확장을 지정하는 Translate 헤더입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.UserAgent">
+      <summary>클라이언트 에이전트에 대한 정보를 지정하는 User-Agent 헤더입니다.</summary>
+    </member>
+    <member name="T:System.Net.HttpStatusCode">
+      <summary>HTTP에 대해 정의된 상태 코드 값이 포함됩니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Continue">
+      <summary>HTTP 상태 100에 해당합니다. <see cref="F:System.Net.HttpStatusCode.Continue" />는 클라이언트에서 요청을 계속 수행할 수 있는 경우에 표시됩니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.SwitchingProtocols">
+      <summary>HTTP 상태 101에 해당합니다. <see cref="F:System.Net.HttpStatusCode.SwitchingProtocols" />는 프로토콜 버전 또는 프로토콜을 변경 중인 경우에 표시됩니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.OK">
+      <summary>HTTP 상태 200에 해당합니다. <see cref="F:System.Net.HttpStatusCode.OK" />는 요청이 성공하여 요청된 정보가 응답 중인 경우에 표시됩니다. 이 코드는 일반적으로 수신되는 상태 코드입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Created">
+      <summary>HTTP 상태 201에 해당합니다. <see cref="F:System.Net.HttpStatusCode.Created" />는 요청에 대한 결과로 응답이 보내지기 전에 새 리소스가 만들어졌음을 나타냅니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Accepted">
+      <summary>HTTP 상태 202에 해당됩니다. <see cref="F:System.Net.HttpStatusCode.Accepted" />는 요청에 대한 추가 프로세스가 허용되는 경우에 표시됩니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.NonAuthoritativeInformation">
+      <summary>HTTP 상태 203에 해당합니다. <see cref="F:System.Net.HttpStatusCode.NonAuthoritativeInformation" />은 메타데이터 정보를 원본 서버 대신 캐시된 복사본에서 가져왔으므로 잘못될 수 있는 경우에 표시됩니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.NoContent">
+      <summary>HTTP 상태 204에 해당합니다. <see cref="F:System.Net.HttpStatusCode.NoContent" />는 요청이 처리된 다음 응답이 빈 경우에 표시됩니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.ResetContent">
+      <summary>HTTP 상태 205에 해당합니다. <see cref="F:System.Net.HttpStatusCode.ResetContent" />는 클라이언트에서 현재 리소스를 다시 로드하는 것이 아니라 다시 설정해야 하는 경우에 표시됩니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.PartialContent">
+      <summary>HTTP 상태 206에 해당합니다. <see cref="F:System.Net.HttpStatusCode.PartialContent" />는 해당 응답이 바이트 범위가 포함된 GET 요청에서 요청한 부분 응답인 경우에 표시됩니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.MultipleChoices">
+      <summary>HTTP 상태 300에 해당합니다. <see cref="F:System.Net.HttpStatusCode.MultipleChoices" />는 요청된 정보에 여러 가지 표현이 포함되어 있는 경우에 표시됩니다. 기본적으로 이 상태는 리디렉션으로 처리되며 그다음에 이 응답과 연결된 Location 헤더의 내용이 나옵니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Ambiguous">
+      <summary>HTTP 상태 300에 해당합니다. <see cref="F:System.Net.HttpStatusCode.Ambiguous" />는 요청된 정보에 여러 가지 표현이 포함되어 있는 경우에 표시됩니다. 기본적으로 이 상태는 리디렉션으로 처리되며 그다음에 이 응답과 연결된 Location 헤더의 내용이 나옵니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.MovedPermanently">
+      <summary>HTTP 상태 301에 해당합니다. <see cref="F:System.Net.HttpStatusCode.MovedPermanently" />는 요청된 정보가 Location 헤더에 지정한 URI로 이동된 경우에 표시됩니다. 이 상태가 반환되면 기본적으로 응답과 관련된 Location 헤더를 따릅니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Moved">
+      <summary>HTTP 상태 301에 해당합니다. <see cref="F:System.Net.HttpStatusCode.Moved" />는 요청된 정보가 Location 헤더에 지정한 URI로 이동된 경우에 표시됩니다. 이 상태가 반환되면 기본적으로 응답과 관련된 Location 헤더를 따릅니다. 원래의 요청 메서드가 POST이면 리디렉션된 요청은 GET 메서드를 사용합니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Found">
+      <summary>HTTP 상태 302에 해당합니다. <see cref="F:System.Net.HttpStatusCode.Found" />는 요청된 정보가 Location 헤더에 지정된 URI에 있는 경우에 표시됩니다. 이 상태가 반환되면 기본적으로 응답과 관련된 Location 헤더를 따릅니다. 원래의 요청 메서드가 POST이면 리디렉션된 요청은 GET 메서드를 사용합니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Redirect">
+      <summary>HTTP 상태 302에 해당합니다. <see cref="F:System.Net.HttpStatusCode.Redirect" />는 요청된 정보가 Location 헤더에 지정된 URI에 있는 경우에 표시됩니다. 이 상태가 반환되면 기본적으로 응답과 관련된 Location 헤더를 따릅니다. 원래의 요청 메서드가 POST이면 리디렉션된 요청은 GET 메서드를 사용합니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.SeeOther">
+      <summary>HTTP 상태 303에 해당합니다. <see cref="F:System.Net.HttpStatusCode.SeeOther" />는 POST를 수행하여 클라이언트를 Location 헤더에 지정된 URI로 자동으로 리디렉션합니다. Location 헤더에서 지정한 리소스에 대한 요청은 GET을 사용하여 수행됩니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.RedirectMethod">
+      <summary>HTTP 상태 303에 해당합니다. <see cref="F:System.Net.HttpStatusCode.RedirectMethod" />는 POST를 수행하여 클라이언트를 Location 헤더에 지정된 URI로 자동으로 리디렉션합니다. Location 헤더에서 지정한 리소스에 대한 요청은 GET을 사용하여 수행됩니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.NotModified">
+      <summary>HTTP 상태 304에 해당합니다. <see cref="F:System.Net.HttpStatusCode.NotModified" />는 클라이언트의 캐시된 복사본이 최신인 경우에 표시됩니다. 리소스의 내용이 전송되지 않습니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.UseProxy">
+      <summary>HTTP 상태 305에 해당합니다. <see cref="F:System.Net.HttpStatusCode.UseProxy" />는 요청이 Location 헤더에 지정된 URI에 있는 프록시 서버를 사용해야 하는 경우에 표시됩니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Unused">
+      <summary>HTTP 상태 306에 해당합니다. <see cref="F:System.Net.HttpStatusCode.Unused" />는 전체가 지정되지 않은 HTTP/1.1 사양에 대한 제안된 확장명입니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.TemporaryRedirect">
+      <summary>HTTP 상태 307에 해당합니다. <see cref="F:System.Net.HttpStatusCode.TemporaryRedirect" />는 요청 정보가 Location 헤더에 지정된 URI에 있는 경우에 표시됩니다. 이 상태가 반환되면 기본적으로 응답과 관련된 Location 헤더를 따릅니다. 원래의 요청 메서드가 POST이면 리디렉션된 요청도 POST 메서드를 사용합니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.RedirectKeepVerb">
+      <summary>HTTP 상태 307에 해당합니다. <see cref="F:System.Net.HttpStatusCode.RedirectKeepVerb" />는 요청 정보가 Location 헤더에 지정된 URI에 있는 경우에 표시됩니다. 이 상태가 반환되면 기본적으로 응답과 관련된 Location 헤더를 따릅니다. 원래의 요청 메서드가 POST이면 리디렉션된 요청도 POST 메서드를 사용합니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.BadRequest">
+      <summary>HTTP 상태 400에 해당합니다. <see cref="F:System.Net.HttpStatusCode.BadRequest" />는 서버에서 요청을 인식할 수 없는 경우에 표시됩니다. 해당되는 오류가 없거나, 정확한 오류를 모르거나, 고유한 오류 코드가 없는 경우 <see cref="F:System.Net.HttpStatusCode.BadRequest" />를 보냅니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Unauthorized">
+      <summary>HTTP 상태 401에 해당합니다. <see cref="F:System.Net.HttpStatusCode.Unauthorized" />는 요청된 리소스에 인증이 필요한 경우에 표시됩니다. WWW-Authenticate 헤더에 자세한 인증 수행 방법이 포함되어 있습니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.PaymentRequired">
+      <summary>HTTP 상태 402에 해당합니다. <see cref="F:System.Net.HttpStatusCode.PaymentRequired" />는 나중에 사용하도록 예약됩니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Forbidden">
+      <summary>HTTP 상태 403에 해당합니다. <see cref="F:System.Net.HttpStatusCode.Forbidden" />은 서버에서 요청을 수행하지 않는 경우에 표시됩니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.NotFound">
+      <summary>HTTP 상태 404에 해당합니다. <see cref="F:System.Net.HttpStatusCode.NotFound" />는 요청된 리소스가 서버에 없는 경우에 표시됩니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.MethodNotAllowed">
+      <summary>HTTP 상태 405에 해당합니다. <see cref="F:System.Net.HttpStatusCode.MethodNotAllowed" />는 요청된 리소스에서 요청 메서드(POST 또는 GET)를 사용할 수 없는 경우에 표시됩니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.NotAcceptable">
+      <summary>HTTP 상태 406에 해당합니다. <see cref="F:System.Net.HttpStatusCode.NotAcceptable" />은 클라이언트가 Accept 헤더를 사용하여 리소스의 사용 가능한 표현을 허용하지 않도록 지정한 경우에 표시됩니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.ProxyAuthenticationRequired">
+      <summary>HTTP 상태 407에 해당합니다. <see cref="F:System.Net.HttpStatusCode.ProxyAuthenticationRequired" />는 요청된 프록시에 인증이 필요함을 나타냅니다. Proxy-authenticate 헤더에 자세한 인증 수행 방법이 포함되어 있습니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.RequestTimeout">
+      <summary>HTTP 상태 408에 해당합니다. <see cref="F:System.Net.HttpStatusCode.RequestTimeout" />은 서버에서 예상한 시간 안에 클라이언트에서 요청을 보내지 않은 경우에 표시됩니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Conflict">
+      <summary>HTTP 상태 409에 해당합니다. <see cref="F:System.Net.HttpStatusCode.Conflict" />는 서버에 충돌이 발생하여 요청을 수행할 수 없는 경우에 표시됩니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.Gone">
+      <summary>HTTP 상태 410에 해당합니다. <see cref="F:System.Net.HttpStatusCode.Gone" />은 요청된 리소스를 더 이상 사용할 수 없는 경우에 표시됩니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.LengthRequired">
+      <summary>HTTP 상태 411에 해당합니다. <see cref="F:System.Net.HttpStatusCode.LengthRequired" />는 필요한 Content-length 헤더가 없는경우에 표시됩니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.PreconditionFailed">
+      <summary>HTTP 상태 412에 해당합니다. <see cref="F:System.Net.HttpStatusCode.PreconditionFailed" />는 이 요청에 대해 설정된 조건이 잘못되어 요청을 수행할 수 없는 경우에 표시됩니다. 조건은 If-Match, If-None-Match 또는 If-Unmodified-Since 등의 조건 요청 헤더를 사용하여 설정됩니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.RequestEntityTooLarge">
+      <summary>HTTP 상태 413에 해당합니다. <see cref="F:System.Net.HttpStatusCode.RequestEntityTooLarge" />는 요청이 너무 많아 서버에서 처리할 수 없는 경우에 표시됩니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.RequestUriTooLong">
+      <summary>HTTP 상태 414에 해당합니다. <see cref="F:System.Net.HttpStatusCode.RequestUriTooLong" />은 URI가 너무 긴 경우에 표시됩니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.UnsupportedMediaType">
+      <summary>HTTP 상태 415에 해당합니다. <see cref="F:System.Net.HttpStatusCode.UnsupportedMediaType" />은 요청이 지원되지 않는 형식인 경우에 표시됩니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.RequestedRangeNotSatisfiable">
+      <summary>HTTP 상태 416에 해당합니다. <see cref="F:System.Net.HttpStatusCode.RequestedRangeNotSatisfiable" />은 범위의 시작이 리소스의 시작 이전이거나 범위의 끝이 리소스의 끝 이후이므로 리소스에서 요청한 데이터 범위를 반환할 수 없는 경우에 표시됩니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.ExpectationFailed">
+      <summary>HTTP 상태 417에 해당합니다. <see cref="F:System.Net.HttpStatusCode.ExpectationFailed" />는 서버에서 Expect 헤더에 예상되는 작업을 수행할 수 없는 경우에 표시됩니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.InternalServerError">
+      <summary>HTTP 상태 500에 해당합니다. <see cref="F:System.Net.HttpStatusCode.InternalServerError" />는 서버에 일반 오류가 발생한 경우에 표시됩니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.NotImplemented">
+      <summary>HTTP 상태 501에 해당합니다. <see cref="F:System.Net.HttpStatusCode.NotImplemented" />는 서버에서 요청된 기능을 지원하지 않는 경우에 표시됩니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.BadGateway">
+      <summary>HTTP 상태 502에 해당합니다. <see cref="F:System.Net.HttpStatusCode.BadGateway" />는 중간 프록시 서버가 다른 프록시 서버 또는 원본 서버로부터 잘못된 응답을 받은 경우에 표시됩니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.ServiceUnavailable">
+      <summary>HTTP 상태 503에 해당합니다. <see cref="F:System.Net.HttpStatusCode.ServiceUnavailable" />은 일반적으로 로드가 많거나 유지 관리 문제 때문에 일시적으로 서버를 사용할 수 없는 경우에 표시됩니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.GatewayTimeout">
+      <summary>HTTP 상태 504에 해당합니다. <see cref="F:System.Net.HttpStatusCode.GatewayTimeout" />은 다른 프록시 서버 또는 원본 서버의 응답을 기다리는 동안 중간 프록시 서버의 시간이 초과된 경우에 표시됩니다.</summary>
+    </member>
+    <member name="F:System.Net.HttpStatusCode.HttpVersionNotSupported">
+      <summary>HTTP 상태 505에 해당합니다. <see cref="F:System.Net.HttpStatusCode.HttpVersionNotSupported" />는 서버에서 요청된 HTTP 버전을 지원하지 않는 경우에 표시됩니다.</summary>
+    </member>
+    <member name="T:System.Net.HttpWebRequest">
+      <summary>
+        <see cref="T:System.Net.WebRequest" /> 클래스의 HTTP 관련 구현을 제공합니다.</summary>
+    </member>
+    <member name="M:System.Net.HttpWebRequest.#ctor">
+      <summary>
+        <see cref="T:System.Net.HttpWebRequest" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+    </member>
+    <member name="M:System.Net.HttpWebRequest.Abort">
+      <summary>인터넷 리소스에 대한 요청을 취소합니다.</summary>
+      <exception cref="T:System.NotImplementedException">이 메서드가 구현되지 않은 경우 </exception>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.Accept">
+      <summary>Accept HTTP 헤더의 값을 가져오거나 설정합니다.</summary>
+      <returns>Accept HTTP 헤더의 값입니다. 기본값은 null입니다.</returns>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.AllowAutoRedirect">
+      <summary>요청이 리디렉션 응답을 따라야 하는지 여부를 나타내는 값을 가져오거나 설정합니다.</summary>
+      <returns>요청이 인터넷 리소스의 리디렉션 응답을 자동으로 따라야 하면 true이고, 그렇지 않으면 false입니다. 기본값은 true입니다.</returns>
+      <exception cref="T:System.NotImplementedException">이 속성이 구현되지 않습니다. </exception>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.AllowReadStreamBuffering">
+      <summary>서브클래스에서 재정의된 경우 인터넷 리소스에서 읽은 데이터를 버퍼링할지 여부를 나타내는 값을 가져오거나 설정합니다.</summary>
+      <returns>인터넷 리소스에서 받은 데이터를 버퍼링할 수 있도록 하려면 true이고, 버퍼링을 사용할 수 없게 하려면 false입니다. 기본값은 true입니다.</returns>
+      <exception cref="T:System.NotImplementedException">이 속성이 구현되지 않습니다. </exception>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.AllowWriteStreamBuffering"></member>
+    <member name="M:System.Net.HttpWebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)">
+      <summary>데이터를 쓰는 데 사용할 <see cref="T:System.IO.Stream" /> 개체에 대한 비동기 요청을 시작합니다.</summary>
+      <returns>비동기 요청을 참조하는 <see cref="T:System.IAsyncResult" />입니다.</returns>
+      <param name="callback">
+        <see cref="T:System.AsyncCallback" /> 대리자입니다. </param>
+      <param name="state">이 요청에 대한 상태 개체입니다. </param>
+      <exception cref="T:System.Net.ProtocolViolationException">
+        <see cref="P:System.Net.HttpWebRequest.Method" /> 속성이 GET인 경우-또는- <see cref="P:System.Net.WebRequest.ContentLength" /> 속성이 제공된 요청 본문의 크기와 일치하지 않는 값으로 설정된 경우</exception>
+      <exception cref="T:System.InvalidOperationException">스트림이 <see cref="M:System.Net.HttpWebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)" />에 대한 이전 호출에서 사용되고 있는 경우-또는- 스레드 풀의 스레드를 모두 사용한 경우 </exception>
+      <exception cref="T:System.NotImplementedException">이 메서드가 구현되지 않은 경우 </exception>
+      <exception cref="T:System.NotSupportedException">요청 캐시 유효성 검사기에서 이 요청에 대한 응답이 캐시에서 제공될 수 있지만 데이터를 쓰는 요청의 경우 캐시를 사용하지 않아야 함을 나타내는 경우. 이 예외는 제대로 구현되지 않은 사용자 지정 캐시 유효성 검사기를 사용하려는 경우에 발생할 수 있습니다. </exception>
+      <exception cref="T:System.Net.WebException">
+        <see cref="M:System.Net.HttpWebRequest.Abort" />를 이미 호출한 경우 </exception>
+      <exception cref="T:System.ObjectDisposedException">.NET Framework 응용프로그램에서 콘텐츠 길이가 0인 요청 스트림을 올바르게 가져오고 닫지 않은 경우</exception>
+    </member>
+    <member name="M:System.Net.HttpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)">
+      <summary>인터넷 리소스에 하는 비동기 요청을 시작합니다.</summary>
+      <returns>응답에 대한 비동기 요청을 참조하는 <see cref="T:System.IAsyncResult" />입니다.</returns>
+      <param name="callback">
+        <see cref="T:System.AsyncCallback" /> 대리자입니다. </param>
+      <param name="state">이 요청에 대한 상태 개체입니다. </param>
+      <exception cref="T:System.InvalidOperationException">스트림이 <see cref="M:System.Net.HttpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" />에 대한 이전 호출에서 사용되고 있는 경우-또는- 스레드 풀의 스레드를 모두 사용한 경우 </exception>
+      <exception cref="T:System.NotImplementedException">이 메서드가 구현되지 않은 경우 </exception>
+      <exception cref="T:System.NotSupportedException">
+        <paramref name="callback" /> 매개 변수가 null인 경우 </exception>
+      <exception cref="T:System.Net.ProtocolViolationException">
+        <see cref="P:System.Net.HttpWebRequest.Method" />가 GET인 경우 </exception>
+      <exception cref="T:System.Net.WebException">
+        <see cref="M:System.Net.HttpWebRequest.Abort" />를 이미 호출한 경우 </exception>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.ContentLength"></member>
+    <member name="P:System.Net.HttpWebRequest.ContentType">
+      <summary>Content-type HTTP 헤더의 값을 가져오거나 설정합니다.</summary>
+      <returns>Content-type HTTP 헤더의 값입니다. 기본값은 null입니다.</returns>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.CookieContainer">
+      <summary>HTTP 요청과 연결된 <see cref="T:System.Net.CookieCollection" /> 개체의 컬렉션을 지정합니다.</summary>
+      <returns>HTTP 요청과 연결된 <see cref="T:System.Net.CookieCollection" /> 개체의 컬렉션이 들어 있는 <see cref="T:System.Net.CookieContainer" />입니다.</returns>
+      <exception cref="T:System.NotImplementedException">이 속성이 구현되지 않습니다. </exception>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.Credentials">
+      <summary>요청에 대한 인증 정보를 가져오거나 설정합니다.</summary>
+      <returns>요청과 관련된 인증 자격 증명이 들어 있는 <see cref="T:System.Net.ICredentials" />입니다. 기본값은 null입니다.</returns>
+    </member>
+    <member name="M:System.Net.HttpWebRequest.EndGetRequestStream(System.IAsyncResult)">
+      <summary>데이터를 쓰는 데 사용할 <see cref="T:System.IO.Stream" /> 개체에 대한 비동기 요청을 끝냅니다.</summary>
+      <returns>요청 데이터를 쓰는 데 사용할 <see cref="T:System.IO.Stream" />입니다.</returns>
+      <param name="asyncResult">스트림에 대해 보류된 요청입니다. </param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="asyncResult" />가 null인 경우 </exception>
+      <exception cref="T:System.IO.IOException">요청이 완료되지 않아서 스트림을 사용할 수 없는 경우 </exception>
+      <exception cref="T:System.ArgumentException">현재 인스턴스에서 <see cref="M:System.Net.HttpWebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)" />을 호출한 결과 <paramref name="asyncResult" />가 반환되지 않은 경우 </exception>
+      <exception cref="T:System.InvalidOperationException">이 메서드가 <paramref name="asyncResult" />를 사용하여 이미 호출된 경우 </exception>
+      <exception cref="T:System.NotImplementedException">이 메서드가 구현되지 않은 경우 </exception>
+      <exception cref="T:System.Net.WebException">
+        <see cref="M:System.Net.HttpWebRequest.Abort" />를 이미 호출한 경우-또는- 요청을 처리하는 동안 오류가 발생한 경우 </exception>
+    </member>
+    <member name="M:System.Net.HttpWebRequest.EndGetResponse(System.IAsyncResult)">
+      <summary>인터넷 리소스에 대한 비동기 요청을 종료합니다.</summary>
+      <returns>인터넷 리소스로부터의 응답이 들어 있는 <see cref="T:System.Net.WebResponse" />입니다.</returns>
+      <param name="asyncResult">응답에 대해 보류된 요청입니다. </param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="asyncResult" />가 null인 경우 </exception>
+      <exception cref="T:System.InvalidOperationException">이 메서드가 <paramref name="asyncResult" />를 사용하여 이미 호출된 경우</exception>
+      <exception cref="T:System.NotImplementedException">이 메서드가 구현되지 않은 경우 </exception>
+      <exception cref="T:System.Net.WebException">
+        <see cref="M:System.Net.HttpWebRequest.Abort" />를 이미 호출한 경우-또는- 요청을 처리하는 동안 오류가 발생한 경우 </exception>
+      <exception cref="T:System.ArgumentException">현재 인스턴스에서 <see cref="M:System.Net.HttpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" />를 호출한 결과 <paramref name="asyncResult" />가 반환되지 않은 경우 </exception>
+    </member>
+    <member name="M:System.Net.HttpWebRequest.Finalize">
+      <summary>현재 <see cref="T:System.Net.HttpWebRequest" /> 인스턴스에서 보유한 리소스를 해제합니다.</summary>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.HaveResponse">
+      <summary>인터넷 리소스로부터 응답을 받았는지 여부를 나타내는 값을 가져옵니다.</summary>
+      <returns>응답을 받았으면 true이고, 그렇지 않으면 false입니다.</returns>
+      <exception cref="T:System.NotImplementedException">이 속성이 구현되지 않습니다. </exception>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.Headers">
+      <summary>HTTP 헤더를 구성하는 이름/값 쌍의 컬렉션을 지정합니다.</summary>
+      <returns>HTTP 요청의 헤더를 구성하는 이름/값 쌍이 들어 있는 <see cref="T:System.Net.WebHeaderCollection" />입니다.</returns>
+      <exception cref="T:System.InvalidOperationException">
+        <see cref="M:System.Net.HttpWebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)" /> 또는 <see cref="M:System.Net.HttpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" /> 메서드를 호출하여 요청이 시작된 경우 </exception>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.Method">
+      <summary>요청에 대한 메서드를 가져오거나 설정합니다.</summary>
+      <returns>인터넷 리소스에 접속하는 데 사용할 요청 메서드입니다. 기본값은 GET입니다.</returns>
+      <exception cref="T:System.ArgumentException">메서드를 지정하지 않은 경우-또는- 메서드 문자열에 잘못된 문자가 들어 있는 경우 </exception>
+      <exception cref="T:System.NotImplementedException">이 속성이 구현되지 않습니다. </exception>
+      <exception cref="T:System.NotSupportedException">
+        <see cref="P:System.Net.HttpWebRequest.Method" /> 속성이 GET 또는 POST가 아닌 경우 </exception>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.RequestUri">
+      <summary>요청의 원래 URI(Uniform Resource Identifier)를 가져옵니다.</summary>
+      <returns>
+        <see cref="M:System.Net.WebRequest.Create(System.Uri)" /> 메서드에 전달된 인터넷 리소스의 URI가 들어 있는 <see cref="T:System.Uri" />입니다.</returns>
+      <exception cref="T:System.NotImplementedException">이 속성이 구현되지 않습니다. </exception>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.SupportsCookieContainer">
+      <summary>
+        <see cref="P:System.Net.HttpWebRequest.CookieContainer" /> 속성이 <see cref="T:System.Net.HttpWebRequest" /> 인스턴스에 의해 지원되는지 여부를 나타내는 값을 가져옵니다.</summary>
+      <returns>
+        <see cref="P:System.Net.HttpWebRequest.CookieContainer" /> 속성이 <see cref="T:System.Net.HttpWebRequest" /> 인스턴스에서 지원되면 true이고, 그렇지 않으면 false입니다.</returns>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.UserAgent">
+      <summary>User-agent HTTP 헤더의 값을 가져오거나 설정합니다.</summary>
+      <returns>User-agent HTTP 헤더의 값입니다. 기본값은 null입니다.Note:이 속성의 값은 <see cref="T:System.Net.WebHeaderCollection" />에 저장됩니다. WebHeaderCollection이 설정되면 속성 값이 손실됩니다.</returns>
+    </member>
+    <member name="T:System.Net.HttpWebResponse">
+      <summary>
+        <see cref="T:System.Net.WebResponse" /> 클래스의 HTTP 관련 구현을 제공합니다.</summary>
+    </member>
+    <member name="M:System.Net.HttpWebResponse.#ctor">
+      <summary>
+        <see cref="T:System.Net.WebResponse" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+    </member>
+    <member name="M:System.Net.HttpWebResponse.Close">
+      <summary>응답 스트림을 닫습니다.</summary>
+    </member>
+    <member name="P:System.Net.HttpWebResponse.ContentLength">
+      <summary>요청이 반환하는 콘텐츠의 길이를 가져옵니다.</summary>
+      <returns>요청이 반환한 바이트 수입니다. 콘텐츠 길이에는 헤더 정보가 포함되지 않습니다.</returns>
+    </member>
+    <member name="P:System.Net.HttpWebResponse.ContentType">
+      <summary>응답의 콘텐츠 형식을 가져옵니다.</summary>
+      <returns>응답의 콘텐츠 형식이 들어 있는 문자열입니다.</returns>
+    </member>
+    <member name="P:System.Net.HttpWebResponse.Cookies">
+      <summary>HTTP 응답에 대한 상태 정보를 지속하는 데 사용되는 쿠키를 가져옵니다.</summary>
+      <returns>HTTP 응답과 연결된 <see cref="T:System.Net.CookieCollection" /> 개체입니다.</returns>
+      <exception cref="T:System.NotImplementedException">이 속성이 구현되지 않습니다. </exception>
+    </member>
+    <member name="M:System.Net.HttpWebResponse.Dispose(System.Boolean)">
+      <summary>
+        <see cref="T:System.Net.HttpWebResponse" />에서 사용하는 관리되지 않는 리소스를 해제하고, 관리되는 리소스를 선택적으로 해제할 수 있습니다.</summary>
+      <param name="disposing">관리되는 리소스도 해제되어야 하는지 여부를 나타내는 부울 값입니다.</param>
+    </member>
+    <member name="M:System.Net.HttpWebResponse.GetResponseStream">
+      <summary>서버에서 응답의 본문을 읽어오는 데 사용되는 스트림을 가져옵니다.</summary>
+      <returns>응답의 본문을 포함하는 <see cref="T:System.IO.Stream" />입니다.</returns>
+    </member>
+    <member name="P:System.Net.HttpWebResponse.Headers">
+      <summary>서버에서 이 응답과 관련된 헤더를 가져옵니다.</summary>
+      <returns>응답과 함께 반환되는 헤더 정보를 포함하는 <see cref="T:System.Net.WebHeaderCollection" />입니다.</returns>
+    </member>
+    <member name="P:System.Net.HttpWebResponse.Method">
+      <summary>응답을 반환하는 데 사용되는 메서드를 가져옵니다.</summary>
+      <returns>응답을 반환하는 데 사용되는 HTTP 메서드를 포함하는 문자열입니다.</returns>
+      <exception cref="T:System.ObjectDisposedException">현재 인스턴스가 삭제된 경우 </exception>
+    </member>
+    <member name="P:System.Net.HttpWebResponse.ResponseUri">
+      <summary>요청에 응답한 인터넷 리소스의 URI를 가져옵니다.</summary>
+      <returns>요청에 응답한 인터넷 리소스의 URI를 포함하는 <see cref="T:System.Uri" />입니다.</returns>
+    </member>
+    <member name="P:System.Net.HttpWebResponse.StatusCode">
+      <summary>응답 상태를 가져옵니다.</summary>
+      <returns>
+        <see cref="T:System.Net.HttpStatusCode" /> 값 중 하나입니다.</returns>
+      <exception cref="T:System.ObjectDisposedException">현재 인스턴스가 삭제된 경우 </exception>
+    </member>
+    <member name="P:System.Net.HttpWebResponse.StatusDescription">
+      <summary>응답과 함께 반환되는 상태 설명을 가져옵니다.</summary>
+      <returns>응답의 상태를 설명하는 문자열입니다.</returns>
+      <exception cref="T:System.ObjectDisposedException">현재 인스턴스가 삭제된 경우 </exception>
+    </member>
+    <member name="M:System.Net.HttpWebResponse.System#IDisposable#Dispose">
+      <summary>
+        <see cref="T:System.Net.HttpWebResponse" />에서 사용하는 모든 리소스를 해제합니다.</summary>
+    </member>
+    <member name="T:System.Net.ICredentials">
+      <summary>웹 클라이언트 인증을 위한 자격 증명을 검색할 수 있는 기본 인증 인터페이스를 제공합니다.</summary>
+    </member>
+    <member name="M:System.Net.ICredentials.GetCredential(System.Uri,System.String)">
+      <summary>지정된 URI 및 인증 형식과 관련된 <see cref="T:System.Net.NetworkCredential" /> 개체를 반환합니다.</summary>
+      <returns>지정된 URI 및 인증 형식과 관련된 <see cref="T:System.Net.NetworkCredential" />입니다. 사용할 수 있는 자격 증명이 없으면 null입니다.</returns>
+      <param name="uri">클라이언트에서 인증을 제공하는 <see cref="T:System.Uri" />입니다.</param>
+      <param name="authType">인증 형식을 지정하는 문자열입니다.</param>
+    </member>
+    <member name="T:System.Net.IPAddress">
+      <summary>IP(인터넷 프로토콜) 주소를 제공합니다.</summary>
+    </member>
+    <member name="M:System.Net.IPAddress.#ctor(System.Byte[])">
+      <summary>
+        <see cref="T:System.Byte" /> 배열로 지정된 주소를 사용하여 <see cref="T:System.Net.IPAddress" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+      <param name="address">IP 주소가 들어 있는 바이트 배열입니다.</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="address" /> 매개 변수의 길이가 IPv4 주소에 필요한 4바이트 또는 IPv6 주소에 필요한 16바이트가 아닙니다.</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> 매개 변수가 null인 경우 </exception>
+    </member>
+    <member name="M:System.Net.IPAddress.#ctor(System.Byte[],System.Int64)">
+      <summary>
+        <see cref="T:System.Byte" /> 배열로 지정된 IPv6 주소 및 지정된 범위 식별자를 사용하여 <see cref="T:System.Net.IPAddress" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+      <param name="address">IPv6 주소의 바이트 배열 값입니다.</param>
+      <param name="scopeid">범위 식별자의 long 값입니다.</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="address" /> 매개 변수의 길이가 IPv6 주소에 필요한 16바이트가 아닙니다.</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> 매개 변수가 null인 경우 </exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="scopeid" /> 매개 변수가 0보다 작거나 <paramref name="scopeid" />가 0x00000000FFFFFFFF보다 큰 경우</exception>
+    </member>
+    <member name="M:System.Net.IPAddress.#ctor(System.Int64)">
+      <summary>
+        <see cref="T:System.Int64" />로 지정된 주소를 사용하여 <see cref="T:System.Net.IPAddress" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+      <param name="newAddress">IP 주소의 long 값입니다. 예를 들어, big-endian 형식의 0x2414188f 값은 IP 주소가 "143.24.20.36"입니다.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="newAddress" /> 매개 변수가 IPv4 주소의 범위를 벗어난 경우 </exception>
+    </member>
+    <member name="P:System.Net.IPAddress.Address">
+      <summary>IPv4의 IP(인터넷 프로토콜) 주소를 가져오거나 설정합니다.</summary>
+      <returns>정수로 나타낸 IPv4 주소입니다.</returns>
+      <exception cref="T:System.Net.Sockets.SocketException">
+        <see cref="P:System.Net.IPAddress.AddressFamily" /> 속성이 <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6" />인 경우</exception>
+    </member>
+    <member name="P:System.Net.IPAddress.AddressFamily">
+      <summary>IP 주소의 주소 패밀리를 가져옵니다.</summary>
+      <returns>IPv4에 대한 <see cref="F:System.Net.Sockets.AddressFamily.InterNetwork" /> 또는 IPv6에 대한 <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6" />을 반환합니다.</returns>
+    </member>
+    <member name="F:System.Net.IPAddress.Any">
+      <summary>서버에서 IPv4에 대해 모든 네트워크 인터페이스의 클라이언트 동작을 수신 대기해야 함을 나타내는 IPv4 주소를 제공합니다. 이 필드는 읽기 전용입니다.</summary>
+    </member>
+    <member name="F:System.Net.IPAddress.Broadcast">
+      <summary>IPv4 브로드캐스트 주소를 제공합니다. 이 필드는 읽기 전용입니다.</summary>
+    </member>
+    <member name="M:System.Net.IPAddress.Equals(System.Object)">
+      <summary>두 개의 IP 주소를 비교합니다.</summary>
+      <returns>두 주소가 같으면 true이고, 그렇지 않으면 false입니다.</returns>
+      <param name="comparand">현재 인스턴스와 비교할 <see cref="T:System.Net.IPAddress" /> 인스턴스입니다.</param>
+    </member>
+    <member name="M:System.Net.IPAddress.GetAddressBytes">
+      <summary>
+        <see cref="T:System.Net.IPAddress" />의 복사본을 바이트 배열로 제공합니다.</summary>
+      <returns>
+        <see cref="T:System.Net.IPAddress" /> 인스턴스를 나타내는 바이트 배열입니다.</returns>
+    </member>
+    <member name="M:System.Net.IPAddress.GetHashCode">
+      <summary>IP 주소에 대한 해시 값을 반환합니다.</summary>
+      <returns>IP 주소의 정수 해시 값입니다.</returns>
+    </member>
+    <member name="M:System.Net.IPAddress.HostToNetworkOrder(System.Int16)">
+      <summary>short 값을 호스트 바이트 순서에서 네트워크 바이트 순서로 변환합니다.</summary>
+      <returns>네트워크 바이트 순서로 표현된 short 값입니다.</returns>
+      <param name="host">호스트 바이트 순서로 변환할 숫자입니다.</param>
+    </member>
+    <member name="M:System.Net.IPAddress.HostToNetworkOrder(System.Int32)">
+      <summary>정수 값을 호스트 바이트 순서에서 네트워크 바이트 순서로 변환합니다.</summary>
+      <returns>네트워크 바이트 순서로 표현된 정수 값입니다.</returns>
+      <param name="host">호스트 바이트 순서로 변환할 숫자입니다.</param>
+    </member>
+    <member name="M:System.Net.IPAddress.HostToNetworkOrder(System.Int64)">
+      <summary>호스트 바이트 순서에서 네트워크 바이트 순서로 long 값을 변환합니다.</summary>
+      <returns>네트워크 바이트 순서로 표현된 long 값입니다.</returns>
+      <param name="host">호스트 바이트 순서로 변환할 숫자입니다.</param>
+    </member>
+    <member name="F:System.Net.IPAddress.IPv6Any">
+      <summary>서버에서 IPv6에 대해 모든 네트워크 인터페이스의 클라이언트 동작을 수신 대기해야 함을 나타내는 IPv6 주소를 제공합니다. 이 필드는 읽기 전용입니다.</summary>
+    </member>
+    <member name="F:System.Net.IPAddress.IPv6Loopback">
+      <summary>IP 루프백 주소를 제공합니다. 이 속성은 읽기 전용입니다.</summary>
+    </member>
+    <member name="F:System.Net.IPAddress.IPv6None">
+      <summary>네트워크 인터페이스를 사용하지 않아야 함을 나타내는 IPv6 주소를 제공합니다. 이 속성은 읽기 전용입니다.</summary>
+    </member>
+    <member name="P:System.Net.IPAddress.IsIPv6LinkLocal">
+      <summary>주소가 IPv6 링크 로컬 주소인지 여부를 가져옵니다.</summary>
+      <returns>IP 주소가 IPv6 링크 로컬 주소이면 true이고, 그렇지 않으면 false입니다.</returns>
+    </member>
+    <member name="P:System.Net.IPAddress.IsIPv6Multicast">
+      <summary>주소가 IPv6 멀티캐스트 전역 주소인지 여부를 가져옵니다.</summary>
+      <returns>IP 주소가 IPv6 멀티캐스트 전역 주소이면 true이고, 그렇지 않으면 false입니다.</returns>
+    </member>
+    <member name="P:System.Net.IPAddress.IsIPv6SiteLocal">
+      <summary>주소가 IPv6 사이트 로컬 주소인지 여부를 가져옵니다.</summary>
+      <returns>IP 주소가 IPv6 사이트 로컬 주소이면 true이고, 그렇지 않으면 false입니다.</returns>
+    </member>
+    <member name="M:System.Net.IPAddress.IsLoopback(System.Net.IPAddress)">
+      <summary>지정된 IP 주소가 루프백 주소인지 여부를 나타냅니다.</summary>
+      <returns>
+        <paramref name="address" />가 루프백 주소이면 true이고, 그렇지 않으면 false입니다.</returns>
+      <param name="address">IP 주소입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> 매개 변수가 null인 경우 </exception>
+    </member>
+    <member name="F:System.Net.IPAddress.Loopback">
+      <summary>IPv4 루프백 주소를 제공합니다. 이 필드는 읽기 전용입니다.</summary>
+    </member>
+    <member name="M:System.Net.IPAddress.NetworkToHostOrder(System.Int16)">
+      <summary>short 값을 네트워크 바이트 순서에서 호스트 바이트 순서로 변환합니다.</summary>
+      <returns>호스트 바이트 순서로 표현된 short 값입니다.</returns>
+      <param name="network">네트워크 바이트 순서로 변환할 숫자입니다.</param>
+    </member>
+    <member name="M:System.Net.IPAddress.NetworkToHostOrder(System.Int32)">
+      <summary>정수 값을 네트워크 바이트 순서에서 호스트 바이트 순서로 변환합니다.</summary>
+      <returns>호스트 바이트 순서로 표현된 정수 값입니다.</returns>
+      <param name="network">네트워크 바이트 순서로 변환할 숫자입니다.</param>
+    </member>
+    <member name="M:System.Net.IPAddress.NetworkToHostOrder(System.Int64)">
+      <summary>long 값을 네트워크 바이트 순서에서 호스트 바이트 순서로 변환합니다.</summary>
+      <returns>호스트 바이트 순서로 표현된 long 값입니다.</returns>
+      <param name="network">네트워크 바이트 순서로 변환할 숫자입니다.</param>
+    </member>
+    <member name="F:System.Net.IPAddress.None">
+      <summary>네크워크 인터페이스를 사용하지 않아야 함을 나타내는 IP 주소를 제공합니다. 이 필드는 읽기 전용입니다.</summary>
+    </member>
+    <member name="M:System.Net.IPAddress.Parse(System.String)">
+      <summary>IP 주소 문자열을 <see cref="T:System.Net.IPAddress" /> 인스턴스로 변환합니다.</summary>
+      <returns>
+        <see cref="T:System.Net.IPAddress" /> 인스턴스입니다.</returns>
+      <param name="ipString">IPv4의 경우 점 구분 네 자리 표기법으로 표현된 IP 주소를 포함하는 문자열이고, IPv6의 경우 콜론과 16진수 표기법으로 표현된 IP 주소를 포함하는 문자열입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="ipString" /> 매개 변수가 null인 경우 </exception>
+      <exception cref="T:System.FormatException">
+        <paramref name="ipString" /> 매개 변수가 유효한 IP 주소가 아닙니다. </exception>
+    </member>
+    <member name="P:System.Net.IPAddress.ScopeId">
+      <summary>IPv6 주소 범위 식별자를 가져오거나 설정합니다.</summary>
+      <returns>주소의 범위를 지정하는 정수(Long)입니다.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">ScopeId를 설정할 때 값이 0보다 작거나 값이 0x00000000FFFFFFFF보다 큰 경우</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">
+        <see cref="P:System.Net.IPAddress.AddressFamily" /> 속성이 <see cref="F:System.Net.Sockets.AddressFamily.InterNetwork" />로 지정된 경우 </exception>
+    </member>
+    <member name="M:System.Net.IPAddress.ToString">
+      <summary>인터넷 주소를 표준 표기법으로 변환합니다.</summary>
+      <returns>IPv4의 경우 점 구분 네 자리 표기법으로 표현된 IP 주소를 포함하는 문자열이고, IPv6의 경우 콜론과 16진수 표기법으로 표현된 IP 주소를 포함하는 문자열입니다.</returns>
+      <exception cref="T:System.Net.Sockets.SocketException">오류가 발생하여 IPv6 주소를 문자열로 변환하지 못한 경우 </exception>
+    </member>
+    <member name="M:System.Net.IPAddress.TryParse(System.String,System.Net.IPAddress@)">
+      <summary>문자열이 유효한 IP 주소인지 여부를 확인합니다.</summary>
+      <returns>
+        <paramref name="ipString" />이 유효한 IP 주소이면 true이고, 그렇지 않으면 false입니다.</returns>
+      <param name="ipString">유효성을 확인할 문자열입니다.</param>
+      <param name="address">문자열의 <see cref="T:System.Net.IPAddress" /> 버전입니다.</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="ipString" />을 IP 주소로 구문 분석할 수 없는 경우</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="ipString" />가 null인 경우 </exception>
+      <exception cref="T:System.FormatException">
+        <paramref name="ipString" />이 유효한 IP 주소가 아닌 경우 </exception>
+    </member>
+    <member name="T:System.Net.IPEndPoint">
+      <summary>네트워크 끝점을 IP 주소와 포트 번호로 나타냅니다.</summary>
+    </member>
+    <member name="M:System.Net.IPEndPoint.#ctor(System.Int64,System.Int32)">
+      <summary>지정된 IP 주소와 포트 번호를 사용하여 <see cref="T:System.Net.IPEndPoint" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+      <param name="address">인터넷 호스트의 IP 주소에 해당하는 long 값입니다. 예를 들어, big-endian 형식의 0x2414188f 값은 IP 주소가 "143.24.20.36"입니다.</param>
+      <param name="port">
+        <paramref name="address" />와 연결된 포트 번호이거나, 사용할 수 있는 포트를 지정할 경우 0입니다. <paramref name="port" />는 호스트 순서로 지정됩니다.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="port" />가 <see cref="F:System.Net.IPEndPoint.MinPort" />보다 작은 경우-또는- <paramref name="port" />가 <see cref="F:System.Net.IPEndPoint.MaxPort" />보다 큰 경우-또는- <paramref name="address" />가 IPv4 주소 범위를 벗어난 경우</exception>
+    </member>
+    <member name="M:System.Net.IPEndPoint.#ctor(System.Net.IPAddress,System.Int32)">
+      <summary>지정된 주소와 포트 번호를 사용하여 <see cref="T:System.Net.IPEndPoint" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+      <param name="address">인터넷 호스트 IP 주소의 <see cref="T:System.Net.IPAddress" /> 표현입니다.</param>
+      <param name="port">
+        <paramref name="address" />와 연결된 포트 번호이거나, 사용할 수 있는 포트를 지정할 경우 0입니다. <paramref name="port" />는 호스트 순서로 지정됩니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> 매개 변수가 null인 경우</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="port" />가 <see cref="F:System.Net.IPEndPoint.MinPort" />보다 작은 경우-또는- <paramref name="port" />가 <see cref="F:System.Net.IPEndPoint.MaxPort" />보다 큰 경우 </exception>
+    </member>
+    <member name="P:System.Net.IPEndPoint.Address">
+      <summary>끝점의 IP 주소를 가져오거나 설정합니다.</summary>
+      <returns>끝점의 IP 주소입니다.</returns>
+    </member>
+    <member name="P:System.Net.IPEndPoint.AddressFamily">
+      <summary>IP(인터넷 프로토콜) 주소 패밀리를 가져옵니다.</summary>
+      <returns>
+        <see cref="T:System.Net.Sockets.AddressFamily" /> 값 중 하나입니다.</returns>
+    </member>
+    <member name="M:System.Net.IPEndPoint.Create(System.Net.SocketAddress)">
+      <summary>소켓 주소를 사용하여 끝점을 만듭니다.</summary>
+      <returns>지정된 소켓 주소를 사용하는 <see cref="T:System.Net.EndPoint" /> 인스턴스입니다.</returns>
+      <param name="socketAddress">끝점에 사용할 <see cref="T:System.Net.SocketAddress" />입니다.</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="socketAddress" />의 AddressFamily가 현재 인스턴스의 AddressFamily와 같지 않은 경우-또는- <paramref name="socketAddress" /> 크기가 8보다 작은 경우 </exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="socketAddress" /> 매개 변수가 null인 경우</exception>
+    </member>
+    <member name="M:System.Net.IPEndPoint.Equals(System.Object)">
+      <summary>지정한 <see cref="T:System.Object" />가 현재 <see cref="T:System.Net.IPEndPoint" /> 인스턴스와 같은지 여부를 확인합니다.</summary>
+      <returns>두 IP 끝점이 같으면 true이고, 그렇지 않으면 false입니다.</returns>
+      <param name="comparand">현재 <see cref="T:System.Net.IPEndPoint" /> 인스턴스와 같은지 여부를 테스트할 지정된 <see cref="T:System.Object" />입니다.</param>
+    </member>
+    <member name="M:System.Net.IPEndPoint.GetHashCode">
+      <summary>IP 끝점의 해시 값을 반환합니다.</summary>
+      <returns>IP 끝점의 정수 해시 값입니다.</returns>
+    </member>
+    <member name="F:System.Net.IPEndPoint.MaxPort">
+      <summary>
+        <see cref="P:System.Net.IPEndPoint.Port" /> 속성에 할당할 수 있는 최대값을 지정합니다. MaxPort 값은 0x0000FFFF로 설정됩니다. 이 필드는 읽기 전용입니다.</summary>
+    </member>
+    <member name="F:System.Net.IPEndPoint.MinPort">
+      <summary>
+        <see cref="P:System.Net.IPEndPoint.Port" /> 속성에 할당할 수 있는 최소값을 지정합니다. 이 필드는 읽기 전용입니다.</summary>
+    </member>
+    <member name="P:System.Net.IPEndPoint.Port">
+      <summary>끝점의 포트 번호를 가져오거나 설정합니다.</summary>
+      <returns>끝점의 포트 번호를 나타내는 <see cref="F:System.Net.IPEndPoint.MinPort" />에서 <see cref="F:System.Net.IPEndPoint.MaxPort" /> 범위의 정수 값입니다.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">set 작업에 대해 지정된 값이 <see cref="F:System.Net.IPEndPoint.MinPort" />보다 작거나 <see cref="F:System.Net.IPEndPoint.MaxPort" />보다 큰 경우 </exception>
+    </member>
+    <member name="M:System.Net.IPEndPoint.Serialize">
+      <summary>끝점 정보를 <see cref="T:System.Net.SocketAddress" /> 인스턴스로 직렬화합니다.</summary>
+      <returns>끝점의 소켓 주소가 포함된 <see cref="T:System.Net.SocketAddress" /> 인스턴스입니다.</returns>
+    </member>
+    <member name="M:System.Net.IPEndPoint.ToString">
+      <summary>지정된 끝점의 IP 주소와 포트 번호를 반환합니다.</summary>
+      <returns>지정된 끝점의 IP 주소와 포트 번호가 포함된 문자열입니다.</returns>
+    </member>
+    <member name="T:System.Net.IWebRequestCreate">
+      <summary>
+        <see cref="T:System.Net.WebRequest" /> 인스턴스를 만들기 위해 기본 인터페이스를 제공합니다.</summary>
+    </member>
+    <member name="M:System.Net.IWebRequestCreate.Create(System.Uri)">
+      <summary>
+        <see cref="T:System.Net.WebRequest" /> 인스턴스를 만듭니다.</summary>
+      <returns>
+        <see cref="T:System.Net.WebRequest" /> 인스턴스입니다.</returns>
+      <param name="uri">웹 리소스의 URI(Uniform Resource Identifier)입니다.</param>
+      <exception cref="T:System.NotSupportedException">
+        <paramref name="uri" />에 지정된 요청 체계가 이 <see cref="T:System.Net.IWebRequestCreate" /> 인스턴스에서 지원되지 않습니다. </exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="uri" />가 null인 경우 </exception>
+      <exception cref="T:System.Security.SecurityException">호출자에게 요청된 URI 또는 요청이 리디렉션되는 대상 URI에 연결할 권한이 없는 경우 </exception>
+      <exception cref="T:System.UriFormatException">
+        <paramref name="uri" />에 지정된 URI가 유효하지 않은 경우 </exception>
+    </member>
+    <member name="T:System.Net.NetworkCredential">
+      <summary>기본, 다이제스트, NTLM 및 Kerberos 인증과 같은 패스워드 기반의 인증 체계에 자격 증명을 제공합니다.</summary>
+    </member>
+    <member name="M:System.Net.NetworkCredential.#ctor">
+      <summary>
+        <see cref="T:System.Net.NetworkCredential" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+    </member>
+    <member name="M:System.Net.NetworkCredential.#ctor(System.String,System.String)">
+      <summary>지정된 사용자 이름과 비밀번호를 사용하여 <see cref="T:System.Net.NetworkCredential" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+      <param name="userName">자격 증명과 관련된 사용자 이름입니다.</param>
+      <param name="password">자격 증명과 관련된 사용자 이름에 대한 비밀번호입니다.</param>
+    </member>
+    <member name="M:System.Net.NetworkCredential.#ctor(System.String,System.String,System.String)">
+      <summary>지정된 사용자 이름, 패스워드 및 도메인을 사용하여 <see cref="T:System.Net.NetworkCredential" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+      <param name="userName">자격 증명과 관련된 사용자 이름입니다.</param>
+      <param name="password">자격 증명과 관련된 사용자 이름에 대한 비밀번호입니다.</param>
+      <param name="domain">이러한 자격 증명과 관련된 도메인입니다.</param>
+    </member>
+    <member name="P:System.Net.NetworkCredential.Domain">
+      <summary>자격 증명을 확인하는 도메인 또는 컴퓨터 이름을 가져오거나 설정합니다.</summary>
+      <returns>자격 증명과 관련된 도메인 이름입니다.</returns>
+    </member>
+    <member name="M:System.Net.NetworkCredential.GetCredential(System.Uri,System.String)">
+      <summary>지정된 URI(Uniform Resource Identifier) 및 인증 형식에 대한 <see cref="T:System.Net.NetworkCredential" /> 클래스의 인스턴스를 반환합니다.</summary>
+      <returns>
+        <see cref="T:System.Net.NetworkCredential" /> 개체</returns>
+      <param name="uri">클라이언트에서 인증을 제공하는 URI입니다.</param>
+      <param name="authType">요청된 인증 형식을 지정하는 문자열입니다.</param>
+    </member>
+    <member name="P:System.Net.NetworkCredential.Password">
+      <summary>자격 증명과 관련된 사용자 이름에 대한 비밀번호를 가져오거나 설정합니다.</summary>
+      <returns>자격 증명과 관련된 비밀번호입니다.</returns>
+    </member>
+    <member name="P:System.Net.NetworkCredential.UserName">
+      <summary>자격 증명과 관련된 사용자 이름을 가져오거나 설정합니다.</summary>
+      <returns>자격 증명과 관련된 사용자 이름입니다.</returns>
+    </member>
+    <member name="T:System.Net.OpenReadCompletedEventArgs">
+      <summary>
+        <see cref="E:System.Net.WebClient.OpenReadCompleted" /> 이벤트에 대한 데이터를 제공합니다. </summary>
+    </member>
+    <member name="P:System.Net.OpenReadCompletedEventArgs.Result">
+      <summary>
+        <see cref="M:System.Net.WebClient.OpenReadAsync(System.Uri,System.Object)" /> 메서드의 결과가 들어 있는 읽기 가능한 스트림을 가져옵니다.</summary>
+      <returns>
+        <see cref="M:System.Net.WebClient.OpenReadAsync(System.Uri,System.Object)" /> 메서드의 결과가 들어 있는 <see cref="T:System.IO.Stream" />입니다.</returns>
+      <exception cref="T:System.InvalidOperationException">비동기 요청이 취소된 경우 </exception>
+    </member>
+    <member name="T:System.Net.OpenReadCompletedEventHandler">
+      <summary>
+        <see cref="T:System.Net.WebClient" />의 <see cref="M:System.Net.WebClient.OpenReadAsync(System.Uri)" /> 이벤트를 처리할 메서드를 나타냅니다. </summary>
+      <param name="sender">이벤트 소스입니다. </param>
+      <param name="e">이벤트 데이터를 포함하는 <see cref="T:System.Net.OpenReadCompletedEventArgs" />입니다. </param>
+    </member>
+    <member name="T:System.Net.OpenWriteCompletedEventArgs">
+      <summary>
+        <see cref="E:System.Net.WebClient.OpenWriteCompleted" /> 이벤트에 대한 데이터를 제공합니다.</summary>
+    </member>
+    <member name="P:System.Net.OpenWriteCompletedEventArgs.Result">
+      <summary>서버에 데이터를 보내는 데 사용되는 쓰기 가능한 스트림을 가져옵니다.</summary>
+      <returns>업로드할 데이터를 쓸 수 있는 <see cref="T:System.IO.Stream" />입니다.</returns>
+      <exception cref="T:System.InvalidOperationException">비동기 요청이 취소된 경우 </exception>
+    </member>
+    <member name="T:System.Net.OpenWriteCompletedEventHandler">
+      <summary>
+        <see cref="T:System.Net.WebClient" />의 <see cref="E:System.Net.WebClient.OpenWriteCompleted" /> 이벤트를 처리할 메서드를 나타냅니다.</summary>
+      <param name="sender">이벤트 소스입니다.</param>
+      <param name="e">이벤트 데이터가 포함된 <see cref="T:System.Net.OpenWriteCompletedEventArgs" />입니다.</param>
+    </member>
+    <member name="T:System.Net.ProtocolViolationException">
+      <summary>네트워크 프로토콜을 사용하는 동안 오류가 발생하면 발생되는 예외입니다.</summary>
+    </member>
+    <member name="M:System.Net.ProtocolViolationException.#ctor">
+      <summary>
+        <see cref="T:System.Net.ProtocolViolationException" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+    </member>
+    <member name="M:System.Net.ProtocolViolationException.#ctor(System.String)">
+      <summary>지정된 메시지를 사용하여 <see cref="T:System.Net.ProtocolViolationException" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+      <param name="message">오류 메시지 문자열입니다.</param>
+    </member>
+    <member name="T:System.Net.SocketAddress">
+      <summary>
+        <see cref="T:System.Net.EndPoint" /> 파생 클래스의 직렬화된 정보를 저장합니다.</summary>
+    </member>
+    <member name="M:System.Net.SocketAddress.#ctor(System.Net.Sockets.AddressFamily)">
+      <summary>지정된 주소 패밀리에 대한 <see cref="T:System.Net.SocketAddress" /> 클래스의 새 인스턴스를 만듭니다.</summary>
+      <param name="family">
+        <see cref="T:System.Net.Sockets.AddressFamily" /> 열거형 값입니다.</param>
+    </member>
+    <member name="M:System.Net.SocketAddress.#ctor(System.Net.Sockets.AddressFamily,System.Int32)">
+      <summary>지정된 주소 패밀리와 버퍼 크기를 사용하여 <see cref="T:System.Net.SocketAddress" /> 클래스의 새 인스턴스를 만듭니다.</summary>
+      <param name="family">
+        <see cref="T:System.Net.Sockets.AddressFamily" /> 열거형 값입니다.</param>
+      <param name="size">내부 버퍼에 할당할 바이트 수에 영향을 주는 <see cref="P:System.Net.SocketAddress.Size" /> 속성에 설정할 값입니다.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="size" />가 2바이트보다 작은 경우. 이 2바이트는 <paramref name="family" />를 저장하는 데 필요합니다. </exception>
+    </member>
+    <member name="M:System.Net.SocketAddress.Equals(System.Object)">
+      <summary>지정한 <see cref="T:System.Object" />가 현재 <see cref="T:System.Net.SocketAddress" /> 인스턴스와 같은지 여부를 확인합니다. </summary>
+      <returns>두 <see cref="T:System.Net.SocketAddress" /> 인스턴스가 같으면 true이고, 그렇지 않으면 false입니다.</returns>
+      <param name="comparand">현재 <see cref="T:System.Net.SocketAddress" /> 인스턴스와 비교할 지정된 <see cref="T:System.Object" />입니다.</param>
+    </member>
+    <member name="P:System.Net.SocketAddress.Family">
+      <summary>현재 <see cref="T:System.Net.SocketAddress" />의 <see cref="T:System.Net.Sockets.AddressFamily" /> 열거형 값을 가져옵니다.</summary>
+      <returns>
+        <see cref="T:System.Net.Sockets.AddressFamily" /> 열거형 값 중 하나입니다.</returns>
+    </member>
+    <member name="M:System.Net.SocketAddress.GetHashCode">
+      <summary>
+        <see cref="T:System.Net.SocketAddress" />의 해시 값을 반환합니다. </summary>
+      <returns>소켓 주소의 정수 해시 값입니다.</returns>
+    </member>
+    <member name="P:System.Net.SocketAddress.Item(System.Int32)">
+      <summary>내부 버퍼의 지정된 인덱스 요소를 가져오거나 설정합니다.</summary>
+      <returns>내부 버퍼의 지정된 인덱스 요소 값입니다.</returns>
+      <param name="offset">필요한 정보의 배열 인덱스 요소입니다.</param>
+      <exception cref="T:System.IndexOutOfRangeException">지정한 인덱스가 버퍼에 없는 경우(<paramref name="offset" />이 0보다 작거나, <see cref="P:System.Net.SocketAddress.Size" /> 속성보다 크거나 같은 경우)</exception>
+    </member>
+    <member name="P:System.Net.SocketAddress.Size">
+      <summary>
+        <see cref="T:System.Net.SocketAddress" />에 사용할 수 있는 버퍼 크기를 가져옵니다.</summary>
+      <returns>
+        <see cref="T:System.Net.SocketAddress" />에 사용할 수 있는 버퍼 크기(바이트)입니다.</returns>
+    </member>
+    <member name="M:System.Net.SocketAddress.ToString">
+      <summary>소켓 주소에 대한 정보를 나타내는 문자열을 반환합니다.</summary>
+      <returns>
+        <see cref="T:System.Net.SocketAddress" />에 대한 정보가 포함된 문자열입니다.</returns>
+    </member>
+    <member name="T:System.Net.UploadProgressChangedEventArgs">
+      <summary>
+        <see cref="T:System.Net.WebClient" />의 <see cref="E:System.Net.WebClient.UploadProgressChanged" /> 이벤트에 데이터를 제공합니다.</summary>
+    </member>
+    <member name="P:System.Net.UploadProgressChangedEventArgs.BytesReceived">
+      <summary>받은 바이트 수를 가져옵니다.</summary>
+      <returns>받은 바이트 수를 나타내는 <see cref="T:System.Int64" /> 값입니다.</returns>
+    </member>
+    <member name="P:System.Net.UploadProgressChangedEventArgs.BytesSent">
+      <summary>보낸 바이트 수를 가져옵니다.</summary>
+      <returns>보낸 바이트 수를 나타내는 <see cref="T:System.Int64" /> 값입니다.</returns>
+    </member>
+    <member name="P:System.Net.UploadProgressChangedEventArgs.TotalBytesToReceive">
+      <summary>
+        <see cref="T:System.Net.WebClient" /> 데이터 업로드 작업의 총 바이트 수를 가져옵니다.</summary>
+      <returns>받을 바이트 수를 나타내는 <see cref="T:System.Int64" /> 값입니다.</returns>
+    </member>
+    <member name="P:System.Net.UploadProgressChangedEventArgs.TotalBytesToSend">
+      <summary>보낼 총 바이트 수를 가져옵니다.</summary>
+      <returns>보낼 바이트 수를 나타내는 <see cref="T:System.Int64" /> 값입니다.</returns>
+    </member>
+    <member name="T:System.Net.UploadProgressChangedEventHandler">
+      <summary>
+        <see cref="T:System.Net.WebClient" />의 <see cref="E:System.Net.WebClient.UploadProgressChanged" /> 이벤트를 처리할 메서드를 나타냅니다.</summary>
+      <param name="sender">이벤트 소스입니다.</param>
+      <param name="e">이벤트 데이터가 포함된 <see cref="T:System.Net.UploadProgressChangedEventArgs" />입니다.</param>
+    </member>
+    <member name="T:System.Net.UploadStringCompletedEventArgs">
+      <summary>
+        <see cref="E:System.Net.WebClient.UploadStringCompleted" /> 이벤트에 대한 데이터를 제공합니다.</summary>
+    </member>
+    <member name="P:System.Net.UploadStringCompletedEventArgs.Result">
+      <summary>
+        <see cref="Overload:System.Net.WebClient.UploadStringAsync" /> 메서드를 호출하여 시작된 문자열 업로드 작업에 대한 서버 회신을 가져옵니다.</summary>
+      <returns>서버 회신이 들어 있는 <see cref="T:System.Byte" /> 배열입니다.</returns>
+      <exception cref="T:System.InvalidOperationException">비동기 요청이 취소된 경우 </exception>
+    </member>
+    <member name="T:System.Net.UploadStringCompletedEventHandler">
+      <summary>
+        <see cref="T:System.Net.WebClient" />의 <see cref="E:System.Net.WebClient.UploadStringCompleted" /> 이벤트를 처리할 메서드를 나타냅니다.</summary>
+      <param name="sender">이벤트 소스입니다.</param>
+      <param name="e">이벤트 데이터가 포함된 <see cref="T:System.Net.UploadStringCompletedEventArgs" />입니다.</param>
+    </member>
+    <member name="T:System.Net.WebClient">
+      <summary>URI로 식별되는 리소스와 데이터를 주고 받기 위한 일반적인 메서드를 제공합니다.</summary>
+    </member>
+    <member name="M:System.Net.WebClient.#ctor">
+      <summary>
+        <see cref="T:System.Net.WebClient" /> 클래스의 새 인스턴스를 초기화합니다. </summary>
+    </member>
+    <member name="P:System.Net.WebClient.AllowReadStreamBuffering">
+      <summary>
+        <see cref="T:System.Net.WebClient" /> 인스턴스에 대해 인터넷 리소스에서 읽은 데이터를 버퍼링할지 여부를 나타내는 값을 가져오거나 설정합니다.</summary>
+      <returns>인터넷 리소스에서 받은 데이터를 버퍼링할 수 있도록 하려면 true이고, 버퍼링을 사용할 수 없게 하려면 false입니다. 기본값은 true입니다.</returns>
+    </member>
+    <member name="P:System.Net.WebClient.AllowWriteStreamBuffering">
+      <summary>
+        <see cref="T:System.Net.WebClient" /> 인스턴스에 대해 인터넷 리소스에 쓴 데이터를 버퍼링할지 여부를 나타내는 값을 가져오거나 설정합니다.</summary>
+      <returns>인터넷 리소스에 쓴 데이터를 버퍼링할 수 있도록 하려면 true이고, 버퍼링을 사용할 수 없게 하려면 false입니다. 기본값은 true입니다.</returns>
+    </member>
+    <member name="P:System.Net.WebClient.BaseAddress">
+      <summary>
+        <see cref="T:System.Net.WebClient" />의 요청에 대한 기본 URI를 가져오거나 설정합니다.</summary>
+      <returns>
+        <see cref="T:System.Net.WebClient" />에서 보낸 요청의 기본 URI입니다. 기본 주소가 지정되어 있지 않으면 <see cref="P:System.Net.WebClient.BaseAddress" /> 속성은 응용프로그램 원본(Windows Phone XAP의 절대 URI)으로 초기화됩니다...</returns>
+      <exception cref="T:System.ArgumentException">
+        <see cref="P:System.Net.WebClient.BaseAddress" />가 잘못된 URI로 설정된 경우. 내부 예외에는 오류 위치를 찾는 데 도움이 되는 정보가 포함될 수 있습니다.</exception>
+    </member>
+    <member name="M:System.Net.WebClient.CancelAsync">
+      <summary>보류 중인 비동기 작업을 취소합니다. </summary>
+      <exception cref="T:System.OutOfMemoryException">프로그램을 계속 실행하기에는 메모리가 부족합니다.</exception>
+      <exception cref="T:System.StackOverflowException">실행 스택에 중첩 메서드 호출이 너무 많아서 오버플로됩니다.</exception>
+      <exception cref="T:System.Threading.ThreadAbortException">스레드를 소멸하기 위해 <see cref="M:System.Threading.Thread.Abort" /> 메서드를 호출했습니다.</exception>
+    </member>
+    <member name="P:System.Net.WebClient.Credentials">
+      <summary>호스트에 전송되어 요청을 인증하는 데 사용되는 네트워크 자격 증명을 가져오거나 설정합니다.</summary>
+      <returns>요청에 대한 인증 자격 증명이 들어 있는 <see cref="T:System.Net.ICredentials" />입니다. 기본값은 null입니다.</returns>
+    </member>
+    <member name="E:System.Net.WebClient.DownloadProgressChanged">
+      <summary>비동기 다운로드 작업을 통해 데이터 전체 또는 일부를 성공적으로 전송하면 발생합니다.</summary>
+    </member>
+    <member name="M:System.Net.WebClient.DownloadStringAsync(System.Uri)">
+      <summary>리소스를 지정된 <see cref="T:System.Uri" />에서 문자열로 다운로드합니다.</summary>
+      <param name="address">다운로드할 리소스의 위치입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> 매개 변수가 null인 경우</exception>
+      <exception cref="T:System.OutOfMemoryException">프로그램을 계속 실행하기에는 메모리가 부족합니다.</exception>
+      <exception cref="T:System.StackOverflowException">실행 스택에 중첩 메서드 호출이 너무 많아서 오버플로됩니다.</exception>
+      <exception cref="T:System.Threading.ThreadAbortException">스레드를 소멸하기 위해 <see cref="M:System.Threading.Thread.Abort" /> 메서드를 호출했습니다.</exception>
+    </member>
+    <member name="M:System.Net.WebClient.DownloadStringAsync(System.Uri,System.Object)">
+      <summary>리소스를 지정된 <see cref="T:System.Uri" />에서 문자열로 다운로드합니다.</summary>
+      <param name="address">다운로드할 리소스의 위치입니다.</param>
+      <param name="userToken">비동기 작업에 대해 사용자가 지정한 식별자를 제공합니다. </param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> 매개 변수가 null인 경우</exception>
+      <exception cref="T:System.OutOfMemoryException">프로그램을 계속 실행하기에는 메모리가 부족합니다.</exception>
+      <exception cref="T:System.StackOverflowException">실행 스택에 중첩 메서드 호출이 너무 많아서 오버플로됩니다.</exception>
+      <exception cref="T:System.Threading.ThreadAbortException">스레드를 소멸하기 위해 <see cref="M:System.Threading.Thread.Abort" /> 메서드를 호출했습니다.</exception>
+    </member>
+    <member name="E:System.Net.WebClient.DownloadStringCompleted">
+      <summary>비동기 리소스 다운로드 작업이 완료되면 발생합니다. </summary>
+    </member>
+    <member name="P:System.Net.WebClient.Encoding">
+      <summary>문자열을 업로드하고 다운로드하는 데 사용되는 <see cref="T:System.Text.Encoding" />을 가져오거나 설정합니다.</summary>
+      <returns>문자열을 인코딩하는 데 사용되는 <see cref="T:System.Text.Encoding" />입니다. 이 속성의 기본값은 <see cref="P:System.Text.Encoding.UTF8" />입니다.</returns>
+      <exception cref="T:System.ArgumentNullException">이 속성을 설정하기 위해 null 값을 전달한 경우</exception>
+    </member>
+    <member name="M:System.Net.WebClient.GetWebRequest(System.Uri)">
+      <summary>지정된 리소스에 대한 <see cref="T:System.Net.WebRequest" /> 개체를 반환합니다.</summary>
+      <returns>지정된 리소스에 대한 새 <see cref="T:System.Net.WebRequest" /> 개체입니다.</returns>
+      <param name="address">요청할 리소스를 식별하는 <see cref="T:System.Uri" />입니다.</param>
+    </member>
+    <member name="M:System.Net.WebClient.GetWebResponse(System.Net.WebRequest,System.IAsyncResult)">
+      <summary>지정된 <see cref="T:System.IAsyncResult" />를 사용하여 지정된 <see cref="T:System.Net.WebRequest" />의 <see cref="T:System.Net.WebResponse" />를 반환합니다.</summary>
+      <returns>지정된 <see cref="T:System.Net.WebRequest" />에 대한 응답을 포함하는 <see cref="T:System.Net.WebResponse" />입니다.</returns>
+      <param name="request">응답을 가져오는 데 사용되는 <see cref="T:System.Net.WebRequest" />입니다.</param>
+      <param name="result">
+        <see cref="M:System.Net.WebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" />에 대한 이전 호출에서 가져온 <see cref="T:System.IAsyncResult" /> 개체입니다.</param>
+    </member>
+    <member name="P:System.Net.WebClient.Headers">
+      <summary>요청과 관련된 헤더 이름/값 쌍의 컬렉션을 가져오거나 설정합니다.</summary>
+      <returns>이 요청과 관련된 헤더 이름/값 쌍이 들어 있는 <see cref="T:System.Net.WebHeaderCollection" />입니다.</returns>
+    </member>
+    <member name="P:System.Net.WebClient.IsBusy">
+      <summary>웹 요청이 진행 중인지 여부를 나타내는 값을 가져옵니다.</summary>
+      <returns>웹 요청이 진행 중이면 true이고, 그렇지 않으면 false입니다.</returns>
+    </member>
+    <member name="M:System.Net.WebClient.OnDownloadProgressChanged(System.Net.DownloadProgressChangedEventArgs)">
+      <summary>
+        <see cref="E:System.Net.WebClient.DownloadProgressChanged" /> 이벤트를 발생시킵니다.</summary>
+      <param name="e">이벤트 데이터가 포함된 <see cref="T:System.Net.DownloadProgressChangedEventArgs" /> 개체입니다.</param>
+    </member>
+    <member name="M:System.Net.WebClient.OnDownloadStringCompleted(System.Net.DownloadStringCompletedEventArgs)">
+      <summary>
+        <see cref="E:System.Net.WebClient.DownloadStringCompleted" /> 이벤트를 발생시킵니다.</summary>
+      <param name="e">이벤트 데이터가 포함된 <see cref="T:System.Net.DownloadStringCompletedEventArgs" /> 개체입니다.</param>
+    </member>
+    <member name="M:System.Net.WebClient.OnOpenReadCompleted(System.Net.OpenReadCompletedEventArgs)">
+      <summary>
+        <see cref="E:System.Net.WebClient.OpenReadCompleted" /> 이벤트를 발생시킵니다.</summary>
+      <param name="e">이벤트 데이터가 포함된 <see cref="T:System.Net.OpenReadCompletedEventArgs" /> 개체입니다.</param>
+    </member>
+    <member name="M:System.Net.WebClient.OnOpenWriteCompleted(System.Net.OpenWriteCompletedEventArgs)">
+      <summary>
+        <see cref="E:System.Net.WebClient.OpenWriteCompleted" /> 이벤트를 발생시킵니다.</summary>
+      <param name="e">이벤트 데이터가 포함된 <see cref="T:System.Net.OpenWriteCompletedEventArgs" /> 개체입니다.</param>
+    </member>
+    <member name="M:System.Net.WebClient.OnUploadProgressChanged(System.Net.UploadProgressChangedEventArgs)">
+      <summary>
+        <see cref="E:System.Net.WebClient.UploadProgressChanged" /> 이벤트를 발생시킵니다.</summary>
+      <param name="e">이벤트 데이터를 포함하는 <see cref="T:System.Net.UploadProgressChangedEventArgs" /> 개체입니다.</param>
+    </member>
+    <member name="M:System.Net.WebClient.OnUploadStringCompleted(System.Net.UploadStringCompletedEventArgs)">
+      <summary>
+        <see cref="E:System.Net.WebClient.UploadStringCompleted" /> 이벤트를 발생시킵니다.</summary>
+      <param name="e">이벤트 데이터를 포함하는 <see cref="T:System.Net.UploadStringCompletedEventArgs" /> 개체입니다.</param>
+    </member>
+    <member name="M:System.Net.WebClient.OnWriteStreamClosed(System.Net.WriteStreamClosedEventArgs)">
+      <summary>
+        <see cref="E:System.Net.WebClient.WriteStreamClosed" /> 이벤트를 발생시킵니다.</summary>
+      <param name="e">이벤트 데이터를 포함하는 <see cref="T:System.Net.WriteStreamClosedEventArgs" /> 개체입니다.</param>
+    </member>
+    <member name="M:System.Net.WebClient.OpenReadAsync(System.Uri)">
+      <summary>지정된 리소스에 대해 읽을 수 있는 스트림을 엽니다.</summary>
+      <param name="address">다운로드할 리소스의 위치입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> 매개 변수가 null인 경우</exception>
+      <exception cref="T:System.OutOfMemoryException">프로그램을 계속 실행하기에는 메모리가 부족합니다.</exception>
+      <exception cref="T:System.StackOverflowException">실행 스택에 중첩 메서드 호출이 너무 많아서 오버플로됩니다.</exception>
+      <exception cref="T:System.Threading.ThreadAbortException">스레드를 소멸하기 위해 <see cref="M:System.Threading.Thread.Abort" /> 메서드를 호출했습니다.</exception>
+    </member>
+    <member name="M:System.Net.WebClient.OpenReadAsync(System.Uri,System.Object)">
+      <summary>지정된 리소스에 대해 읽을 수 있는 스트림을 엽니다.</summary>
+      <param name="address">다운로드할 리소스의 위치입니다.</param>
+      <param name="userToken">비동기 작업에 대해 사용자가 지정한 식별자를 제공합니다. </param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> 매개 변수가 null인 경우</exception>
+      <exception cref="T:System.OutOfMemoryException">프로그램을 계속 실행하기에는 메모리가 부족합니다.</exception>
+      <exception cref="T:System.StackOverflowException">실행 스택에 중첩 메서드 호출이 너무 많아서 오버플로됩니다.</exception>
+      <exception cref="T:System.Threading.ThreadAbortException">스레드를 소멸하기 위해 <see cref="M:System.Threading.Thread.Abort" /> 메서드를 호출했습니다.</exception>
+    </member>
+    <member name="E:System.Net.WebClient.OpenReadCompleted">
+      <summary>비동기 리소스 읽기 작업이 완료되면 발생합니다.</summary>
+    </member>
+    <member name="M:System.Net.WebClient.OpenWriteAsync(System.Uri)">
+      <summary>지정된 리소스에 데이터를 쓰는 데 사용되는 스트림을 엽니다. 이 메서드는 호출 스레드를 차단하지 않습니다.</summary>
+      <param name="address">데이터를 받을 리소스의 URI입니다. </param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> 매개 변수가 null인 경우</exception>
+      <exception cref="T:System.OutOfMemoryException">프로그램을 계속 실행하기에는 메모리가 부족합니다.</exception>
+      <exception cref="T:System.StackOverflowException">실행 스택에 중첩 메서드 호출이 너무 많아서 오버플로됩니다.</exception>
+      <exception cref="T:System.Threading.ThreadAbortException">스레드를 소멸하기 위해 <see cref="M:System.Threading.Thread.Abort" /> 메서드를 호출했습니다.</exception>
+    </member>
+    <member name="M:System.Net.WebClient.OpenWriteAsync(System.Uri,System.String)">
+      <summary>지정된 리소스에 데이터를 쓰는 데 사용되는 스트림을 엽니다. 이 메서드는 호출 스레드를 차단하지 않습니다.</summary>
+      <param name="address">데이터를 받을 리소스의 URI입니다. </param>
+      <param name="method">리소스에 데이터를 보내는 데 사용되는 메서드입니다. null인 경우 HTTP의 기본값은 POST입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> 매개 변수가 null인 경우</exception>
+      <exception cref="T:System.OutOfMemoryException">프로그램을 계속 실행하기에는 메모리가 부족합니다.</exception>
+      <exception cref="T:System.StackOverflowException">실행 스택에 중첩 메서드 호출이 너무 많아서 오버플로됩니다.</exception>
+      <exception cref="T:System.Threading.ThreadAbortException">스레드를 소멸하기 위해 <see cref="M:System.Threading.Thread.Abort" /> 메서드를 호출했습니다.</exception>
+    </member>
+    <member name="M:System.Net.WebClient.OpenWriteAsync(System.Uri,System.String,System.Object)">
+      <summary>지정된 메서드를 사용하여 지정된 리소스에 데이터를 쓰는 데 사용되는 스트림을 엽니다. 이 메서드는 호출 스레드를 차단하지 않습니다.</summary>
+      <param name="address">데이터를 받을 리소스의 URI입니다.</param>
+      <param name="method">리소스에 데이터를 보내는 데 사용되는 메서드입니다. null인 경우 HTTP의 기본값은 POST입니다.</param>
+      <param name="userToken">비동기 작업이 완료될 때 호출되는 메서드로 전달되는 사용자 정의 개체입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> 매개 변수가 null인 경우</exception>
+      <exception cref="T:System.OutOfMemoryException">프로그램을 계속 실행하기에는 메모리가 부족합니다.</exception>
+      <exception cref="T:System.StackOverflowException">실행 스택에 중첩 메서드 호출이 너무 많아서 오버플로됩니다.</exception>
+      <exception cref="T:System.Threading.ThreadAbortException">스레드를 소멸하기 위해 <see cref="M:System.Threading.Thread.Abort" /> 메서드를 호출했습니다.</exception>
+      <exception cref="T:System.Net.WebException">
+        <see cref="P:System.Net.WebClient.BaseAddress" /> 및 <paramref name="address" />를 조합하여 만든 URI가 잘못된 경우-또는- 스트림을 여는 동안 오류가 발생한 경우 </exception>
+    </member>
+    <member name="E:System.Net.WebClient.OpenWriteCompleted">
+      <summary>리소스에 데이터를 쓸 스트림을 여는 비동기 작업이 완료되면 발생합니다.</summary>
+    </member>
+    <member name="P:System.Net.WebClient.ResponseHeaders">
+      <summary>응답과 관련된 헤더 이름/값 쌍의 컬렉션을 가져옵니다.</summary>
+      <returns>응답과 관련된 헤더 이름/값 쌍을 포함하는 <see cref="T:System.Net.WebHeaderCollection" />이거나, 응답을 받지 못한 경우 null입니다.</returns>
+    </member>
+    <member name="E:System.Net.WebClient.UploadProgressChanged">
+      <summary>비동기 업로드 작업을 통해 데이터 전체 또는 일부를 성공적으로 전송하면 발생합니다.</summary>
+    </member>
+    <member name="M:System.Net.WebClient.UploadStringAsync(System.Uri,System.String)">
+      <summary>지정한 문자열을 지정한 리소스로 업로드합니다. 이 메서드는 호출 스레드를 차단하지 않습니다.</summary>
+      <param name="address">파일을 받을 리소스의 URI입니다. HTTP 리소스의 경우 이 URI는 POST 메서드로 전송되는 요청을 받아들일 수 있는 스크립트, ASP 페이지 등의 리소스를 식별해야 합니다. </param>
+      <param name="data">업로드할 문자열입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> 매개 변수가 null인 경우-또는- <paramref name="data" />가 null인 경우</exception>
+      <exception cref="T:System.OutOfMemoryException">프로그램을 계속 실행하기에는 메모리가 부족합니다.</exception>
+      <exception cref="T:System.StackOverflowException">실행 스택에 중첩 메서드 호출이 너무 많아서 오버플로됩니다.</exception>
+      <exception cref="T:System.Threading.ThreadAbortException">스레드를 소멸하기 위해 <see cref="M:System.Threading.Thread.Abort" /> 메서드를 호출했습니다.</exception>
+      <exception cref="T:System.Net.WebException">
+        <see cref="P:System.Net.WebClient.BaseAddress" /> 및 <paramref name="address" />를 조합하여 만든 URI가 잘못된 경우-또는- 리소스를 호스팅하는 서버에서 응답이 없는 경우</exception>
+    </member>
+    <member name="M:System.Net.WebClient.UploadStringAsync(System.Uri,System.String,System.String)">
+      <summary>지정한 문자열을 지정한 리소스로 업로드합니다. 이 메서드는 호출 스레드를 차단하지 않습니다.</summary>
+      <param name="address">파일을 받을 리소스의 URI입니다. HTTP 리소스의 경우 이 URI는 POST 메서드로 전송되는 요청을 받아들일 수 있는 스크립트, ASP 페이지 등의 리소스를 식별해야 합니다.</param>
+      <param name="method">리소스에 파일을 보내는 데 사용되는 HTTP 메서드입니다. null인 경우 HTTP의 기본값은 POST입니다.</param>
+      <param name="data">업로드할 문자열입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> 매개 변수가 null인 경우-또는- <paramref name="data" />가 null인 경우</exception>
+      <exception cref="T:System.OutOfMemoryException">프로그램을 계속 실행하기에는 메모리가 부족합니다.</exception>
+      <exception cref="T:System.StackOverflowException">실행 스택에 중첩 메서드 호출이 너무 많아서 오버플로됩니다.</exception>
+      <exception cref="T:System.Threading.ThreadAbortException">스레드를 소멸하기 위해 <see cref="M:System.Threading.Thread.Abort" /> 메서드를 호출했습니다.</exception>
+      <exception cref="T:System.Net.WebException">
+        <see cref="P:System.Net.WebClient.BaseAddress" /> 및 <paramref name="address" />를 조합하여 만든 URI가 잘못된 경우-또는- 리소스를 호스팅하는 서버에서 응답이 없는 경우</exception>
+    </member>
+    <member name="M:System.Net.WebClient.UploadStringAsync(System.Uri,System.String,System.String,System.Object)">
+      <summary>지정한 문자열을 지정한 리소스로 업로드합니다. 이 메서드는 호출 스레드를 차단하지 않습니다.</summary>
+      <param name="address">파일을 받을 리소스의 URI입니다. HTTP 리소스의 경우 이 URI는 POST 메서드로 전송되는 요청을 받아들일 수 있는 스크립트, ASP 페이지 등의 리소스를 식별해야 합니다.</param>
+      <param name="method">리소스에 파일을 보내는 데 사용되는 HTTP 메서드입니다. null인 경우 HTTP의 기본값은 POST입니다.</param>
+      <param name="data">업로드할 문자열입니다.</param>
+      <param name="userToken">비동기 작업이 완료될 때 호출되는 메서드로 전달되는 사용자 정의 개체입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> 매개 변수가 null인 경우-또는- <paramref name="data" />가 null인 경우</exception>
+      <exception cref="T:System.OutOfMemoryException">프로그램을 계속 실행하기에는 메모리가 부족합니다.</exception>
+      <exception cref="T:System.StackOverflowException">실행 스택에 중첩 메서드 호출이 너무 많아서 오버플로됩니다.</exception>
+      <exception cref="T:System.Threading.ThreadAbortException">스레드를 소멸하기 위해 <see cref="M:System.Threading.Thread.Abort" /> 메서드를 호출했습니다.</exception>
+      <exception cref="T:System.Net.WebException">
+        <see cref="P:System.Net.WebClient.BaseAddress" /> 및 <paramref name="address" />를 조합하여 만든 URI가 잘못된 경우-또는- 리소스를 호스팅하는 서버에서 응답이 없는 경우</exception>
+    </member>
+    <member name="E:System.Net.WebClient.UploadStringCompleted">
+      <summary>비동기 문자열 업로드 작업이 완료되면 발생합니다.</summary>
+    </member>
+    <member name="P:System.Net.WebClient.UseDefaultCredentials">
+      <summary>기본 자격 증명을 요청과 함께 보내는지 여부를 제어하는 <see cref="T:System.Boolean" /> 값을 가져오거나 설정합니다.</summary>
+      <returns>기본 자격 증명이 사용되면 true이고, 그렇지 않으면 false입니다. 기본값은 true입니다.</returns>
+    </member>
+    <member name="E:System.Net.WebClient.WriteStreamClosed">
+      <summary>비동기 스트림 쓰기 작업이 완료되면 발생합니다.</summary>
+    </member>
+    <member name="T:System.Net.WebException">
+      <summary>플러그형 프로토콜로 네트워크에 액세스하는 동안 오류가 발생하면 발생되는 예외입니다.</summary>
+    </member>
+    <member name="M:System.Net.WebException.#ctor">
+      <summary>
+        <see cref="T:System.Net.WebException" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+    </member>
+    <member name="M:System.Net.WebException.#ctor(System.String)">
+      <summary>지정된 오류 메시지를 사용하여 <see cref="T:System.Net.WebException" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+      <param name="message">오류 메시지의 텍스트입니다. </param>
+    </member>
+    <member name="M:System.Net.WebException.#ctor(System.String,System.Exception)">
+      <summary>지정된 오류 메시지와 중첩된 예외를 사용하여 <see cref="T:System.Net.WebException" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+      <param name="message">오류 메시지의 텍스트입니다. </param>
+      <param name="innerException">중첩된 예외입니다. </param>
+    </member>
+    <member name="M:System.Net.WebException.#ctor(System.String,System.Exception,System.Net.WebExceptionStatus,System.Net.WebResponse)">
+      <summary>지정된 오류 메시지, 중첩된 예외, 상태 및 응답을 사용하여 <see cref="T:System.Net.WebException" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+      <param name="message">오류 메시지의 텍스트입니다.</param>
+      <param name="status">
+        <see cref="T:System.Net.WebExceptionStatus" /> 값 중 하나입니다.</param>
+      <param name="response">원격 호스트에서 보낸 응답이 들어 있는 <see cref="T:System.Net.WebResponse" /> 인스턴스입니다.</param>
+    </member>
+    <member name="M:System.Net.WebException.#ctor(System.String,System.Net.WebExceptionStatus)">
+      <summary>지정된 오류 메시지와 상태를 사용하여 <see cref="T:System.Net.WebException" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+      <param name="message">오류 메시지의 텍스트입니다. </param>
+      <param name="status">
+        <see cref="T:System.Net.WebExceptionStatus" /> 값 중 하나입니다. </param>
+    </member>
+    <member name="P:System.Net.WebException.Response">
+      <summary>원격 호스트에서 반환된 응답을 가져옵니다.</summary>
+      <returns>인터넷 리소스에서 응답을 가져올 수 있으면 인터넷 리소스의 오류 응답이 포함된 <see cref="T:System.Net.WebResponse" /> 인스턴스이고, 그렇지 않으면 null입니다.</returns>
+    </member>
+    <member name="P:System.Net.WebException.Status">
+      <summary>응답 상태를 가져옵니다.</summary>
+      <returns>
+        <see cref="T:System.Net.WebExceptionStatus" /> 값 중 하나입니다.</returns>
+    </member>
+    <member name="T:System.Net.WebExceptionStatus">
+      <summary>
+        <see cref="T:System.Net.WebException" /> 클래스에 대한 상태 코드를 정의합니다.</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.Success">
+      <summary>오류가 발생하지 않았습니다.</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.NameResolutionFailure">
+      <summary>이름 확인자 서비스가 해당 호스트 이름을 확인하지 못했습니다. 이 값은 지원되지 않습니다. Windows Phone에 있습니다.</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.ConnectFailure">
+      <summary>전송 수준에서 원격 서비스 지점에 접속할 수 없습니다.</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.ReceiveFailure">
+      <summary>원격 서버에서 전체 응답을 받지 못했습니다. 이 값은 지원되지 않습니다. Windows Phone에 있습니다.</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.SendFailure">
+      <summary>원격 서버에 전체 요청을 보낼 수 없습니다.</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.PipelineFailure">
+      <summary>요청이 파이프라인 요청이고 응답을 받기 전에 연결이 닫혔습니다. 이 값은 지원되지 않습니다. Windows Phone에 있습니다.</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.RequestCanceled">
+      <summary>요청이 취소되었거나, <see cref="M:System.Net.WebRequest.Abort" /> 메서드가 호출되었거나, 알 수 없는 오류가 발생했습니다. 이것은 <see cref="P:System.Net.WebException.Status" />에 대한 기본값입니다.</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.ProtocolError">
+      <summary>서버에서 응답을 모두 수신했지만 프로토콜 수준의 오류가 표시되었습니다. 예를 들어, 401 액세스 거부와 같은 HTTP 프로토콜 오류가 이러한 상태를 나타냅니다. 이 값은 지원되지 않습니다. Windows Phone에 있습니다.</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.ConnectionClosed">
+      <summary>연결이 중간에 끊어졌습니다. 이 값은 지원되지 않습니다. Windows Phone에 있습니다.</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.TrustFailure">
+      <summary>서버 인증의 유효성을 검사할 수 없습니다. 이 값은 지원되지 않습니다. Windows Phone에 있습니다.</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.SecureChannelFailure">
+      <summary>SSL을 사용하여 연결을 설정하는 동안 오류가 발생했습니다. 이 값은 지원되지 않습니다. Windows Phone에 있습니다.</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.ServerProtocolViolation">
+      <summary>서버 응답이 유효한 HTTP 응답이 아닙니다. 이 값은 지원되지 않습니다. Windows Phone에 있습니다.</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.KeepAliveFailure">
+      <summary>Keep-alive 머리글을 지정하는 요청에 대한 연결이 예기치 않게 끊어졌습니다. 이 값은 지원되지 않습니다. Windows Phone에 있습니다.</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.Pending">
+      <summary>내부 비동기 요청이 보류 중입니다.</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.Timeout">
+      <summary>시간 초과로 요청에 대해 아무런 응답도 받지 못했습니다. 이 값은 지원되지 않습니다. Windows Phone에 있습니다.</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.ProxyNameResolutionFailure">
+      <summary>이름 확인자 서비스가 해당 프록시 호스트 이름을 확인하지 못했습니다. 이 값은 지원되지 않습니다. Windows Phone에 있습니다.</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.UnknownError">
+      <summary>알 수 없는 유형의 예외가 발생했습니다.</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.MessageLengthLimitExceeded">
+      <summary>서버에 요청을 보내거나 서버에서 응답을 받을 때 지정된 제한 시간을 초과했다는 메시지를 받았습니다.</summary>
+    </member>
+    <member name="T:System.Net.WebHeaderCollection">
+      <summary>요청이나 응답과 관련된 프로토콜 헤더가 들어 있습니다.</summary>
+    </member>
+    <member name="M:System.Net.WebHeaderCollection.#ctor">
+      <summary>
+        <see cref="T:System.Net.WebHeaderCollection" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+    </member>
+    <member name="P:System.Net.WebHeaderCollection.AllKeys">
+      <summary>요청과 연결된 헤더 이름/값 쌍의 컬렉션을 가져옵니다.</summary>
+      <returns>요청과 연결된 헤더 이름/값 쌍이 들어 있는 <see cref="T:System.Net.WebHeaderCollection" />입니다.</returns>
+    </member>
+    <member name="P:System.Net.WebHeaderCollection.Count">
+      <summary>컬렉션에 포함된 헤더의 수를 가져옵니다.</summary>
+      <returns>요청과 연결된 <see cref="T:System.Net.WebHeaderCollection" />에 포함되어 있는 헤더의 수를 나타내는 <see cref="T:System.Int32" />입니다.</returns>
+    </member>
+    <member name="P:System.Net.WebHeaderCollection.Item(System.Net.HttpRequestHeader)">
+      <summary>지정된 요청 헤더를 가져오거나 설정합니다.</summary>
+      <returns>지정된 헤더 값을 포함하는 <see cref="T:System.String" /> 인스턴스입니다.</returns>
+      <param name="header">요청 헤더 값입니다.</param>
+      <exception cref="T:System.InvalidOperationException">get 또는 set 작업에서 <paramref name="header" /> 매개 변수에 지정한 요청 헤더가 제한된 헤더인 경우. <see cref="T:System.Net.WebHeaderCollection" /> 클래스에서는 사용자가 이 <see cref="T:System.Net.WebHeaderCollection" /> 인스턴스에서 이 제한된 헤더의 인스턴스를 가져오거나 설정할 수 없습니다. </exception>
+    </member>
+    <member name="P:System.Net.WebHeaderCollection.Item(System.String)">
+      <summary>지정된 요청 헤더를 가져오거나 설정합니다.</summary>
+      <returns>지정된 헤더 값을 포함하는 <see cref="T:System.String" /> 인스턴스입니다.</returns>
+      <param name="name">요청된 헤더의 이름입니다.</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="name" /> 매개 변수에 잘못된 문자가 포함되었거나,<see cref="T:System.Net.HttpWebRequest" /> 개체와 연결된 <see cref="T:System.Net.WebHeaderCollection" /> 개체에 제한된 헤더를 설정하려고 한 경우</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="name" /> 매개 변수가 null인 경우</exception>
+      <exception cref="T:System.InvalidOperationException">get 또는 set 작업에서 <paramref name="name" /> 매개 변수에 지정한 요청 헤더가 제한된 헤더인 경우. <see cref="T:System.Net.WebHeaderCollection" /> 클래스에서는 사용자가 이 <see cref="T:System.Net.WebHeaderCollection" /> 인스턴스에서 이 제한된 헤더의 인스턴스를 가져오거나 설정할 수 없습니다. </exception>
+    </member>
+    <member name="M:System.Net.WebHeaderCollection.System#Collections#IEnumerable#GetEnumerator">
+      <summary>
+        <see cref="T:System.Net.WebHeaderCollection" /> 인스턴스에서 반복할 수 있는 열거자를 반환합니다. </summary>
+      <returns>
+        <see cref="T:System.Net.WebHeaderCollection" />에 대한 <see cref="T:System.Collections.IEnumerator" />입니다.</returns>
+    </member>
+    <member name="M:System.Net.WebHeaderCollection.ToString">
+      <summary>현재 <see cref="T:System.Net.WebHeaderCollection" />를 나타내는 <see cref="T:System.String" />을 반환합니다.</summary>
+      <returns>현재 <see cref="T:System.Net.WebHeaderCollection" />를 나타내는 <see cref="T:System.String" />입니다.</returns>
+    </member>
+    <member name="T:System.Net.WebRequest">
+      <summary>URI(Uniform Resource Identifier)에 대한 요청을 만듭니다. 이것은 abstract 클래스입니다.</summary>
+    </member>
+    <member name="M:System.Net.WebRequest.#ctor">
+      <summary>
+        <see cref="T:System.Net.WebRequest" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+    </member>
+    <member name="M:System.Net.WebRequest.Abort">
+      <summary>요청을 중단합니다.</summary>
+      <exception cref="T:System.NotImplementedException">메서드가 서브클래스에서 재정의되지 않았는데 메서드에 액세스하려 할 경우 </exception>
+    </member>
+    <member name="M:System.Net.WebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)">
+      <summary>서브클래스에서 재정의된 경우 스트림을 요청하는 비동기 메서드를 제공합니다.</summary>
+      <returns>비동기 요청을 참조하는 <see cref="T:System.IAsyncResult" />입니다.</returns>
+      <param name="callback">
+        <see cref="T:System.AsyncCallback" /> 대리자입니다.</param>
+      <param name="state">이 비동기 요청에 대한 상태 정보가 들어 있는 개체입니다.</param>
+      <exception cref="T:System.NotImplementedException">메서드가 서브클래스에서 재정의되지 않았는데 메서드에 액세스하려 할 경우 </exception>
+    </member>
+    <member name="M:System.Net.WebRequest.BeginGetResponse(System.AsyncCallback,System.Object)">
+      <summary>서브클래스에서 재정의된 경우 인터넷 리소스에 대한 비동기 요청을 시작합니다.</summary>
+      <returns>비동기 요청을 참조하는 <see cref="T:System.IAsyncResult" />입니다.</returns>
+      <param name="callback">
+        <see cref="T:System.AsyncCallback" /> 대리자입니다.</param>
+      <param name="state">이 비동기 요청에 대한 상태 정보가 들어 있는 개체입니다.</param>
+      <exception cref="T:System.NotImplementedException">메서드가 서브클래스에서 재정의되지 않았는데 메서드에 액세스하려 할 경우 </exception>
+    </member>
+    <member name="P:System.Net.WebRequest.ContentLength">
+      <summary>서브클래스에서 재정의된 경우 전송 중인 요청 데이터의 콘텐츠 길이를 가져오거나 설정합니다.</summary>
+      <returns>전송 중인 요청 데이터의 바이트 수입니다.</returns>
+    </member>
+    <member name="P:System.Net.WebRequest.ContentType">
+      <summary>서브클래스에서 재정의된 경우 전송 중인 요청 데이터의 콘텐츠 형식을 가져오거나 설정합니다.</summary>
+      <returns>요청 데이터의 콘텐츠 형식입니다.</returns>
+      <exception cref="T:System.NotImplementedException">속성이 서브클래스에서 재정의되지 않았는데 속성을 가져오거나 설정하려 할 경우 </exception>
+    </member>
+    <member name="M:System.Net.WebRequest.Create(System.String)">
+      <summary>지정된 URI 체계에 대한 새 <see cref="T:System.Net.WebRequest" /> 인스턴스를 초기화합니다.</summary>
+      <returns>특정 URI 체계에 대한 <see cref="T:System.Net.WebRequest" /> 하위 항목입니다.</returns>
+      <param name="requestUriString">인터넷 리소스를 식별하는 URI 문자열입니다.</param>
+      <exception cref="T:System.NotSupportedException">
+        <paramref name="requestUriString" />에서 지정된 요청 체계가 등록되어 있지 않은 경우 </exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="requestUriString" />가 null인 경우 </exception>
+      <exception cref="T:System.Security.SecurityException">호출자에게 요청된 URI 또는 요청이 리디렉션되는 대상 URI에 연결할 권한이 없는 경우 </exception>
+      <exception cref="T:System.UriFormatException">
+        <paramref name="requestUriString" />에 지정된 URI가 유효하지 않은 경우 </exception>
+    </member>
+    <member name="M:System.Net.WebRequest.Create(System.Uri)">
+      <summary>지정된 URI 체계에 대한 새 <see cref="T:System.Net.WebRequest" /> 인스턴스를 초기화합니다.</summary>
+      <returns>특정 URI 체계에 대한 <see cref="T:System.Net.WebRequest" /> 하위 항목입니다.</returns>
+      <param name="requestUri">요청된 리소스의 URI를 포함하는 <see cref="T:System.Uri" />입니다.</param>
+      <exception cref="T:System.NotSupportedException">
+        <paramref name="requestUri" />에서 지정된 요청 체계가 등록되어 있지 않은 경우 </exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="requestUri" />가 null인 경우 </exception>
+      <exception cref="T:System.Security.SecurityException">호출자에게 요청된 URI 또는 요청이 리디렉션되는 대상 URI에 연결할 권한이 없는 경우 </exception>
+    </member>
+    <member name="M:System.Net.WebRequest.CreateHttp(System.String)">
+      <summary>지정된 URI 문자열에 대한 새 <see cref="T:System.Net.HttpWebRequest" /> 인스턴스를 초기화합니다.</summary>
+      <returns>지정된 URI 문자열에 대한 <see cref="T:System.Net.HttpWebRequest" /> 인스턴스입니다.</returns>
+      <param name="requestUriString">인터넷 리소스를 식별하는 URI 문자열입니다. </param>
+      <exception cref="T:System.NotSupportedException">
+        <paramref name="requestUriString" />에 지정된 요청 체계가 http 또는 https 체계인 경우 </exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="requestUriString" />가 null인 경우 </exception>
+      <exception cref="T:System.Security.SecurityException">호출자에게 요청된 URI 또는 요청이 리디렉션되는 대상 URI에 연결할 권한이 없는 경우 </exception>
+      <exception cref="T:System.UriFormatException">
+        <paramref name="requestUriString" />에 지정된 URI가 유효하지 않은 경우 </exception>
+    </member>
+    <member name="M:System.Net.WebRequest.CreateHttp(System.Uri)">
+      <summary>지정된 URI에 대한 새 <see cref="T:System.Net.HttpWebRequest" /> 인스턴스를 초기화합니다.</summary>
+      <returns>지정된 URI 문자열에 대한 <see cref="T:System.Net.HttpWebRequest" /> 인스턴스입니다.</returns>
+      <param name="requestUri">인터넷 리소스를 식별하는 URI입니다.</param>
+      <exception cref="T:System.NotSupportedException">
+        <paramref name="requestUri" />에 지정된 요청 체계가 http 또는 https 체계인 경우 </exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="requestUri" />가 null인 경우 </exception>
+      <exception cref="T:System.Security.SecurityException">호출자에게 요청된 URI 또는 요청이 리디렉션되는 대상 URI에 연결할 권한이 없는 경우 </exception>
+      <exception cref="T:System.UriFormatException">
+        <paramref name="requestUri" />에 지정된 URI가 유효하지 않은 경우 </exception>
+    </member>
+    <member name="P:System.Net.WebRequest.CreatorInstance">
+      <summary>하위 클래스에서 재정의될 때, 지정된 URI 에 요청하기 위해 인스턴스화된 <see cref="T:System.Net.WebRequest" />를 만드는 데 사용되는 <see cref="T:System.Net.IWebRequestCreate" /> 클래스에서 파생된 팩터리 개체를 가져옵니다.</summary>
+      <returns>
+        <see cref="M:System.Net.IWebRequestCreate.Create(System.Uri)" /> 메서드에 의해 반환되는 파생된 <see cref="T:System.Net.WebRequest" /> 형식입니다.</returns>
+    </member>
+    <member name="P:System.Net.WebRequest.Credentials">
+      <summary>서브클래스에서 재정의된 경우 인터넷 리소스를 사용하여 요청을 인증하는 데 사용되는 네트워크 자격 증명을 가져오거나 설정합니다.</summary>
+      <returns>요청과 연결된 인증 자격 증명이 들어 있는 <see cref="T:System.Net.ICredentials" />입니다. 기본값은 null입니다.</returns>
+      <exception cref="T:System.NotImplementedException">속성이 서브클래스에서 재정의되지 않았는데 속성을 가져오거나 설정하려 할 경우 </exception>
+    </member>
+    <member name="M:System.Net.WebRequest.EndGetRequestStream(System.IAsyncResult)">
+      <summary>서브클래스에서 재정의될 때, 인터넷 리소스에 데이터를 쓰기 위해 <see cref="T:System.IO.Stream" />을 반환합니다.</summary>
+      <returns>데이터를 쓸 <see cref="T:System.IO.Stream" />입니다.</returns>
+      <param name="asyncResult">스트림에 대한 보류 요청을 참조하는 <see cref="T:System.IAsyncResult" />입니다.</param>
+      <exception cref="T:System.NotImplementedException">메서드가 서브클래스에서 재정의되지 않았는데 메서드에 액세스하려 할 경우 </exception>
+    </member>
+    <member name="M:System.Net.WebRequest.EndGetResponse(System.IAsyncResult)">
+      <summary>파생 클래스에서 재정의될 때, <see cref="T:System.Net.WebResponse" />를 반환합니다.</summary>
+      <returns>인터넷 요청에 대한 응답을 포함하는 <see cref="T:System.Net.WebResponse" />입니다.</returns>
+      <param name="asyncResult">응답에 대한 보류 요청을 참조하는 <see cref="T:System.IAsyncResult" />입니다.</param>
+      <exception cref="T:System.NotImplementedException">메서드가 서브클래스에서 재정의되지 않았는데 메서드에 액세스하려 할 경우 </exception>
+    </member>
+    <member name="P:System.Net.WebRequest.Headers">
+      <summary>서브클래스에서 재정의된 경우 요청과 연결된 헤더 이름/값 쌍의 컬렉션을 가져오거나 설정합니다.</summary>
+      <returns>요청과 연결된 헤더 이름/값 쌍이 들어 있는 <see cref="T:System.Net.WebHeaderCollection" />입니다.</returns>
+      <exception cref="T:System.NotImplementedException">속성이 서브클래스에서 재정의되지 않았는데 속성을 가져오거나 설정하려 할 경우 </exception>
+    </member>
+    <member name="P:System.Net.WebRequest.Method">
+      <summary>서브클래스에서 재정의된 경우 이 요청에서 사용할 프로토콜 메서드를 가져오거나 설정합니다.</summary>
+      <returns>이 요청에서 사용할 프로토콜 메서드입니다.</returns>
+      <exception cref="T:System.NotImplementedException">서브클래스에서 재정의되지 않은 속성을 가져오거나 설정하려는 경우 </exception>
+    </member>
+    <member name="M:System.Net.WebRequest.RegisterPrefix(System.String,System.Net.IWebRequestCreate)">
+      <summary>지정된 URI에 대한 <see cref="T:System.Net.WebRequest" /> 하위 항목을 등록합니다.</summary>
+      <returns>등록에 성공하면 true이고 그렇지 않으면 false입니다.</returns>
+      <param name="prefix">
+        <see cref="T:System.Net.WebRequest" /> 하위 항목이 서비스하는 완전한 URI나 URI 접두사입니다.</param>
+      <param name="creator">
+        <see cref="T:System.Net.WebRequest" /> 하위 항목을 만들기 위해<see cref="T:System.Net.WebRequest" />가 호출하는 생성 메서드입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="prefix" />가 null입니다.-또는- <paramref name="creator" />가 null인 경우 </exception>
+      <exception cref="T:System.NotSupportedException">
+        <paramref name="prefix" />가 지원되지 않거나 확인할 수 없는 경우</exception>
+    </member>
+    <member name="P:System.Net.WebRequest.RequestUri">
+      <summary>서브클래스에서 재정의된 경우 요청과 연결된 인터넷 리소스의 URI를 가져옵니다.</summary>
+      <returns>요청과 연결된 리소스를 나타내는 <see cref="T:System.Uri" />입니다.</returns>
+      <exception cref="T:System.NotImplementedException">속성이 서브클래스에서 재정의되지 않았는데 속성을 가져오거나 설정하려 할 경우 </exception>
+    </member>
+    <member name="P:System.Net.WebRequest.UseDefaultCredentials">
+      <summary>서브클래스에서 재정의되는 경우 기본 자격 증명을 요청과 함께 보낼지 여부를 제어하는 <see cref="T:System.Boolean" /> 값을 가져오거나 설정합니다.</summary>
+      <returns>기본 자격 증명이 사용되면 true이고, 그렇지 않으면 false입니다. <see cref="P:System.Net.Browser.WebRequestCreator.ClientHttp" /> 스택을 사용하여 생성된 요청의 경우 기본값이 false입니다.</returns>
+      <exception cref="T:System.NotImplementedException">이 속성이 구현되지 않습니다.</exception>
+    </member>
+    <member name="T:System.Net.WebResponse">
+      <summary>URI(Uniform Resource Identifier)에서 응답을 제공합니다. 이것은 abstract 클래스입니다.</summary>
+    </member>
+    <member name="M:System.Net.WebResponse.#ctor">
+      <summary>
+        <see cref="T:System.Net.WebResponse" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+    </member>
+    <member name="M:System.Net.WebResponse.Close">
+      <summary>서브클래스에서 재정의된 경우 응답 스트림을 닫습니다.</summary>
+      <exception cref="T:System.NotSupportedException">메서드가 서브클래스에서 재정의되지 않았는데 메서드에 액세스하려 할 경우 </exception>
+    </member>
+    <member name="P:System.Net.WebResponse.ContentLength">
+      <summary>서브클래스에서 재정의된 경우 수신 중인 데이터의 콘텐츠 길이를 가져오거나 설정합니다.</summary>
+      <returns>인터넷 리소스에서 반환된 바이트 수입니다.</returns>
+      <exception cref="T:System.NotSupportedException">속성이 서브클래스에서 재정의되지 않았는데 속성을 가져오거나 설정하려 할 경우 </exception>
+    </member>
+    <member name="P:System.Net.WebResponse.ContentType">
+      <summary>파생 클래스에서 재정의된 경우 수신 중인 데이터의 콘텐츠 형식을 가져오거나 설정합니다.</summary>
+      <returns>응답의 콘텐츠 형식이 들어 있는 문자열입니다.</returns>
+      <exception cref="T:System.NotSupportedException">속성이 서브클래스에서 재정의되지 않았는데 속성을 가져오거나 설정하려 할 경우 </exception>
+    </member>
+    <member name="M:System.Net.WebResponse.Dispose">
+      <summary>
+        <see cref="T:System.Net.WebResponse" /> 클래스의 현재 인스턴스에서 사용하는 리소스를 해제합니다.</summary>
+    </member>
+    <member name="M:System.Net.WebResponse.GetResponseStream">
+      <summary>서브클래스에서 재정의된 경우 인터넷 리소스에서 데이터 스트림을 반환합니다.</summary>
+      <returns>인터넷 리소스에서 데이터를 읽기 위한 <see cref="T:System.IO.Stream" /> 클래스의 인스턴스입니다.</returns>
+      <exception cref="T:System.NotSupportedException">메서드가 서브클래스에서 재정의되지 않았는데 메서드에 액세스하려 할 경우 </exception>
+    </member>
+    <member name="P:System.Net.WebResponse.Headers">
+      <summary>파생 클래스에서 재정의된 경우 요청과 연결된 헤더 이름 값 쌍의 컬렉션을 가져옵니다.</summary>
+      <returns>이 응답과 관련된 헤더 값을 포함하는 <see cref="T:System.Net.WebHeaderCollection" /> 클래스의 인스턴스입니다.</returns>
+      <exception cref="T:System.NotImplementedException">속성이 서브클래스에서 재정의되지 않았는데 속성을 가져오거나 설정하려 할 경우 </exception>
+    </member>
+    <member name="P:System.Net.WebResponse.ResponseUri">
+      <summary>파생 클래스에서 재정의된 경우 요청에 실제로 응답하는 인터넷 리소스의 URI를 가져옵니다.</summary>
+      <returns>요청에 실제로 응답하는 인터넷 리소스의 URI가 들어 있는 <see cref="T:System.Uri" /> 클래스의 인스턴스입니다.</returns>
+      <exception cref="T:System.NotSupportedException">속성이 서브클래스에서 재정의되지 않았는데 속성을 가져오거나 설정하려 할 경우 </exception>
+    </member>
+    <member name="P:System.Net.WebResponse.SupportsHeaders">
+      <summary>
+        <see cref="P:System.Net.WebResponse.Headers" /> 속성이 <see cref="T:System.Net.WebResponse" /> 인스턴스에 대한 서브클래스에서 지원되는지 여부를 나타내는 값을 가져옵니다.</summary>
+      <returns>
+        <see cref="P:System.Net.WebResponse.Headers" /> 속성이 서브클래스의 <see cref="T:System.Net.HttpWebRequest" /> 인스턴스에서 지원되면 true이고, 그렇지 않으면 false입니다.</returns>
+    </member>
+    <member name="T:System.Net.WriteStreamClosedEventArgs">
+      <summary>
+        <see cref="E:System.Net.WebClient.WriteStreamClosed" /> 이벤트에 대한 데이터를 제공합니다.</summary>
+    </member>
+    <member name="P:System.Net.WriteStreamClosedEventArgs.Error">
+      <summary>
+        <see cref="E:System.Net.WebClient.WriteStreamClosed" /> 이벤트와 관련된 오류를 가져옵니다.</summary>
+      <returns>오류가 발생했을 때 <see cref="E:System.Net.WebClient.WriteStreamClosed" /> 이벤트와 관련된 예외입니다.</returns>
+    </member>
+    <member name="T:System.Net.WriteStreamClosedEventHandler">
+      <summary>
+        <see cref="T:System.Net.WebClient" />의 <see cref="E:System.Net.WebClient.WriteStreamClosed" /> 이벤트를 처리할 메서드를 나타냅니다.</summary>
+      <param name="sender">이벤트 소스입니다.</param>
+      <param name="e">이벤트 데이터가 포함된 <see cref="T:System.Net.WriteStreamClosedEventArgs" />입니다.</param>
+    </member>
+    <member name="T:System.Net.NetworkInformation.NetworkAddressChangedEventHandler">
+      <summary>네트워크 인터페이스의 주소가 변경될 때 호출될 하나 이상의 메서드를 참조합니다.</summary>
+      <param name="sender">이벤트 소스입니다. </param>
+      <param name="e">이벤트에 대한 데이터가 들어 있는 <see cref="T:System.EventArgs" /> 개체입니다. </param>
+    </member>
+    <member name="T:System.Net.NetworkInformation.NetworkChange">
+      <summary>네트워크 카드 또는 어댑터라고도 하는 네트워크 인터페이스의 IP(인터넷 프로토콜) 주소가 변경될 때 응용프로그램에서 알림을 받을 수 있도록 합니다.</summary>
+    </member>
+    <member name="M:System.Net.NetworkInformation.NetworkChange.#ctor">
+      <summary>
+        <see cref="T:System.Net.NetworkInformation.NetworkChange" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+    </member>
+    <member name="E:System.Net.NetworkInformation.NetworkChange.NetworkAddressChanged">
+      <summary>네트워크 인터페이스의 IP 주소가 변경되면 발생합니다.</summary>
+    </member>
+    <member name="T:System.Net.NetworkInformation.NetworkInterface">
+      <summary>네트워크 인터페이스에 대한 가용성 정보를 제공합니다.</summary>
+    </member>
+    <member name="M:System.Net.NetworkInformation.NetworkInterface.#ctor">
+      <summary>
+        <see cref="T:System.Net.NetworkInformation.NetworkInterface" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+    </member>
+    <member name="M:System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable">
+      <summary>네트워크 연결이 사용 가능한지 여부를 나타냅니다.</summary>
+      <returns>네트워크 연결이 사용 가능하면 true이고, 그렇지 않으면 false입니다.</returns>
+    </member>
+    <member name="T:System.Net.Sockets.AddressFamily">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> 클래스의 인스턴스를 사용할 수 있는 주소 지정 체계를 지정합니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.AddressFamily.Unknown">
+      <summary>알 수 없는 주소 패밀리입니다.Windows Phone 응용프로그램에서 사용할 수 없습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.AddressFamily.Unspecified">
+      <summary>주소 패밀리가 지정되지 않았습니다. Windows Phone 응용프로그램에서 사용할 수 없습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.AddressFamily.InterNetwork">
+      <summary>IP 버전 4 주소입니다. </summary>
+    </member>
+    <member name="F:System.Net.Sockets.AddressFamily.InterNetworkV6">
+      <summary>IP 버전 6 주소입니다.Windows Phone 응용프로그램에서 사용할 수 없습니다.</summary>
+    </member>
+    <member name="T:System.Net.Sockets.ProtocolType">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> 클래스에서 지원하는 프로토콜을 지정합니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.ProtocolType.Tcp">
+      <summary>TCP(Transmission Control Protocol)입니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.ProtocolType.Udp">
+      <summary>UDP(User Datagram Protocol)입니다. 이 프로토콜 유형은 Windows Phone에서 지원되지 않습니다. </summary>
+    </member>
+    <member name="F:System.Net.Sockets.ProtocolType.Unspecified">
+      <summary>프로토콜 종류가 지정되지 않습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.ProtocolType.Unknown">
+      <summary>알 수 없는 프로토콜 종류입니다. </summary>
+    </member>
+    <member name="T:System.Net.Sockets.Socket">
+      <summary>Berkeley 소켓 인터페이스를 구현합니다.</summary>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.#ctor(System.Net.Sockets.AddressFamily,System.Net.Sockets.SocketType,System.Net.Sockets.ProtocolType)">
+      <summary>지정된 주소 패밀리, 소켓 종류 및 프로토콜을 사용하여 <see cref="T:System.Net.Sockets.Socket" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+      <param name="addressFamily">
+        <see cref="T:System.Net.Sockets.AddressFamily" /> 값 중 하나입니다.</param>
+      <param name="socketType">
+        <see cref="T:System.Net.Sockets.SocketType" /> 값 중 하나입니다.</param>
+      <param name="protocolType">
+        <see cref="T:System.Net.Sockets.ProtocolType" /> 값 중 하나입니다.</param>
+      <exception cref="T:System.ArgumentException">매개 변수가 잘못된 경우 </exception>
+      <exception cref="T:System.Net.Sockets.SocketException">
+        <paramref name="addressFamily" />, <paramref name="socketType" /> 및 <paramref name="protocolType" />을 조합했을 때 소켓이 잘못된 경우 </exception>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.AcceptAsync(System.Net.Sockets.SocketAsyncEventArgs)">
+      <summary>들어오는 연결 시도를 받아들이는 비동기 작업을 시작합니다.</summary>
+      <returns>작업이 보류 중인 경우 true를 반환합니다. 작업이 완료되 면 e 매개 변수에 대해 SocketAsyncEventArgs.Completed 이벤트가 발생합니다. 작업이 동기적으로 완료된 경우 false를 반환합니다. 이 경우에는 e 매개 변수에서 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 이벤트가 발생하지 않으며, 메서드 호출이 반환된 직후 매개 변수로 전달된 e 개체를 검사하여 작업 결과를 검색할 수 있습니다.</returns>
+      <param name="e">이 비동기 소켓 작업에 사용할 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 개체입니다.</param>
+    </member>
+    <member name="P:System.Net.Sockets.Socket.AddressFamily">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" />의 주소 패밀리를 가져옵니다.</summary>
+      <returns>
+        <see cref="T:System.Net.Sockets.AddressFamily" /> 값 중 하나입니다.</returns>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.Bind(System.Net.EndPoint)">
+      <summary>소켓을 특정 로컬 끝점과 연결합니다. 특정 로컬 끝점을 사용해야 하는 경우가 아니면 <see cref="M:System.Net.Sockets.Socket.ConnectAsync(System.Net.Sockets.SocketAsyncEventArgs)" /> 메서드를 사용하기 전에 Bind를 호출할 필요가 없습니다.</summary>
+      <param name="localEP">
+        <see cref="T:System.Net.Sockets.Socket" />과 연결된 로컬 <see cref="T:System.Net.EndPoint" />입니다.</param>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.CancelConnectAsync(System.Net.Sockets.SocketAsyncEventArgs)">
+      <summary>원격 호스트 연결에 대한 처리 중인 비동기 소켓 작업을 취소합니다.</summary>
+      <param name="e">취소할 비동기 소켓 작업의 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 개체입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="e" /> 매개 변수가 null인 경우 </exception>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.Close">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> 연결을 닫고 연결된 리소스를 모두 해제합니다.</summary>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.Close(System.Int32)">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> 연결을 닫고, 대기된 데이터를 보낼 수 있게 제한 시간이 지정된 관련 리소스를 모두 해제합니다.</summary>
+      <param name="timeout">남아 있는 데이터를 보내기 위해 기다렸다가 <see cref="T:System.Net.Sockets.Socket" />을 닫을 때까지의 최대 시간(초)입니다.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="timeout" />가 0보다 작은 경우 </exception>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.ConnectAsync(System.Net.Sockets.SocketAsyncEventArgs)">
+      <summary>원격 호스트 연결에 대한 비동기 요청을 시작합니다.</summary>
+      <returns>I/O 작업이 보류 중인 경우 true를 반환합니다. 작업이 완료되면 <paramref name="e" /> 매개 변수에 전달된 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 개체에 대한 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 이벤트가 발생합니다. I/O 작업이 동기적으로 완료된 경우 false를 반환합니다. 이 경우에는 <paramref name="e" /> 매개 변수에 전달된 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 개체에 대한 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 이벤트가 발생하지 않습니다. <paramref name="e" /> 매개 변수에 전달된 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 개체는 작업의 결과를 검색하기 위해 메서드 호출이 반환된 후 즉시 검사될 수 있습니다.</returns>
+      <param name="e">이 비동기 소켓 작업에 사용할 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 개체입니다.</param>
+      <exception cref="T:System.ArgumentException">인수가 잘못된 경우. 버퍼를 여러 개 지정하고 <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.BufferList" /> 속성이 null이 아니면 이 예외가 발생합니다. </exception>
+      <exception cref="T:System.ArgumentNullException">
+        <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint" />가 null인 경우</exception>
+      <exception cref="T:System.InvalidOperationException">
+        <see cref="T:System.Net.Sockets.Socket" />이 수신 대기 중이거나 <paramref name="e" /> 매개 변수에 전달된 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 개체를 사용하여 소켓 작업이 이미 진행 중인 경우</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">소켓에 액세스하려고 시도하는 동안 오류가 발생한 경우. 자세한 내용은 설명 부분을 참조하세요.</exception>
+      <exception cref="T:System.NotSupportedException">이 메서드에 Windows XP 이상이 필요한 경우 <see cref="T:System.Net.Sockets.Socket" /> 및 <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint" />의 주소 패밀리가 서로 다른 경우에도 이 예외가 발생합니다.</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" />이 닫힌 경우 </exception>
+      <exception cref="T:System.Security.SecurityException">호출 스택에 있는 상위 호출자에게 요청된 작업에 대한 권한이 없는 경우</exception>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.ConnectAsync(System.Net.Sockets.SocketType,System.Net.Sockets.ProtocolType,System.Net.Sockets.SocketAsyncEventArgs)">
+      <summary>원격 호스트 연결에 대한 비동기 요청을 시작합니다.</summary>
+      <returns>I/O 작업이 보류 중인 경우 true를 반환합니다. 작업이 완료되면 <paramref name="e" /> 매개 변수에 전달된 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 개체에 대한 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 이벤트가 발생합니다. I/O 작업이 동기적으로 완료된 경우 false를 반환합니다. 이 경우에는 <paramref name="e" /> 매개 변수에 전달된 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 개체에 대한 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 이벤트가 발생하지 않습니다. <paramref name="e" /> 매개 변수에 전달된 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 개체는 작업의 결과를 검색하기 위해 메서드 호출이 반환된 후 즉시 검사될 수 있습니다.</returns>
+      <param name="socketType">연결을 설정할 때 사용할 소켓 종류입니다.</param>
+      <param name="protocolType">연결을 설정할 때 사용할 프로토콜 종류입니다.</param>
+      <param name="e">이 비동기 소켓 작업에 사용할 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 개체입니다.</param>
+      <exception cref="T:System.ArgumentException">인수가 잘못된 경우. 버퍼를 여러 개 지정하고 <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.BufferList" /> 속성이 null이 아니면 이 예외가 발생합니다. </exception>
+      <exception cref="T:System.ArgumentNullException">
+        <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint" />가 null인 경우</exception>
+      <exception cref="T:System.InvalidOperationException">
+        <see cref="T:System.Net.Sockets.Socket" />이 수신 대기 중이거나 <paramref name="e" /> 매개 변수에 전달된 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 개체를 사용하여 소켓 작업이 이미 진행 중인 경우</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">소켓에 액세스하려고 시도하는 동안 오류가 발생한 경우. 자세한 내용은 설명 부분을 참조하세요.</exception>
+      <exception cref="T:System.NotSupportedException">이 메서드에 Windows XP 이상이 필요한 경우 <see cref="T:System.Net.Sockets.Socket" /> 및 <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint" />의 주소 패밀리가 서로 다른 경우에도 이 예외가 발생합니다.</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" />이 닫힌 경우 </exception>
+      <exception cref="T:System.Security.SecurityException">호출 스택에 있는 상위 호출자에게 요청된 작업에 대한 권한이 없는 경우</exception>
+    </member>
+    <member name="P:System.Net.Sockets.Socket.Connected">
+      <summary>마지막 작업에서 <see cref="T:System.Net.Sockets.Socket" />이 원격 호스트에 연결되었는지 여부를 나타내는 값을 가져옵니다.</summary>
+      <returns>가장 최근 작업에서 <see cref="T:System.Net.Sockets.Socket" />이 원격 리소스에 연결되었으면 true이고, 그렇지 않으면 false입니다.</returns>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.Dispose">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" />에서 사용하는 관리되지 않는 리소스를 해제하고, 필요에 따라 관리되는 리소스를 삭제합니다.</summary>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.Dispose(System.Boolean)">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" />에서 사용하는 관리되지 않는 리소스를 해제하고, 필요에 따라 관리되는 리소스를 삭제합니다.</summary>
+      <param name="disposing">관리되는 리소스와 관리되지 않는 리소스를 모두 해제하려면 true이고, 관리되지 않는 리소스만 해제하려면 false입니다.</param>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.Finalize">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> 클래스에서 사용한 리소스를 해제합니다.</summary>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.Listen(System.Int32)">
+      <summary>들어오는 연결 시도를 수신합니다.</summary>
+      <param name="backlog">보류 중인 연결 큐의 최대 길이입니다.</param>
+    </member>
+    <member name="P:System.Net.Sockets.Socket.LocalEndPoint">
+      <summary>소켓이 바인딩된 로컬 IP 주소와 포트 번호를 포함하는 로컬 끝점을 가져옵니다. 소켓이 통신에 사용하는 끝점입니다.</summary>
+      <returns>
+        <see cref="T:System.Net.Sockets.Socket" />이 통신하는 데 사용하는 <see cref="T:System.Net.EndPoint" />입니다.</returns>
+    </member>
+    <member name="P:System.Net.Sockets.Socket.NoDelay">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" />에서 Nagle 알고리즘을 사용하는지 여부를 나타내는 <see cref="T:System.Boolean" /> 값을 가져오거나 설정합니다.</summary>
+      <returns>
+        <see cref="T:System.Net.Sockets.Socket" />에서 Nagle 알고리즘을 사용하면 false이고, 그렇지 않으면 true입니다. 기본값은 false입니다.</returns>
+      <exception cref="T:System.Net.Sockets.SocketException">
+        <see cref="T:System.Net.Sockets.Socket" />에 액세스하려고 시도하는 동안 오류가 발생한 경우. 자세한 내용은 설명 부분을 참조하세요. </exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" />이 닫힌 경우 </exception>
+    </member>
+    <member name="P:System.Net.Sockets.Socket.OSSupportsIPv4">
+      <summary>IPv4 지원이 사용 가능하며 현재 호스트에서 사용하도록 설정되어 있는지 여부를 나타내는 값을 가져옵니다.</summary>
+      <returns>현재 호스트에서 IPv4 프로토콜을 지원하면 true이고, 그렇지 않으면 false입니다.</returns>
+    </member>
+    <member name="P:System.Net.Sockets.Socket.OSSupportsIPv6">
+      <summary>IPv6이 지원되고 현재 호스트에서 사용하도록 설정되어 있는지 여부를 나타내는 값을 가져옵니다.</summary>
+      <returns>현재 호스트에서 IPv4 프로토콜을 지원하면 true이고, 그렇지 않으면 false입니다.</returns>
+    </member>
+    <member name="P:System.Net.Sockets.Socket.ProtocolType">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" />의 프로토콜 종류를 가져옵니다.</summary>
+      <returns>
+        <see cref="T:System.Net.Sockets.ProtocolType" /> 값 중 하나입니다.</returns>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.ReceiveAsync(System.Net.Sockets.SocketAsyncEventArgs)">
+      <summary>연결된 <see cref="T:System.Net.Sockets.Socket" /> 개체에서 데이터를 받기 위해 비동기 요청을 시작합니다.</summary>
+      <returns>I/O 작업이 보류 중인 경우 true를 반환합니다. 작업이 완료되면 <paramref name="e" /> 매개 변수에 전달된 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 개체에 대한 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 이벤트가 발생합니다. I/O 작업이 동기적으로 완료된 경우 false를 반환합니다. 이 경우에는 <paramref name="e" /> 매개 변수에 전달된 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 개체에 대한 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 이벤트가 발생하지 않습니다. <paramref name="e" /> 매개 변수에 포함된 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 개체는 작업의 결과를 검색하기 위해 메서드 호출이 반환된 후 즉시 검사될 수 있습니다.</returns>
+      <param name="e">이 비동기 소켓 작업에 사용할 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 개체입니다.</param>
+      <exception cref="T:System.ArgumentException">인수가 잘못된 경우. <paramref name="e" /> 매개 변수에 전달된 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 개체의 <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> 또는 <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.BufferList" /> 속성은 유효한 버퍼를 참조해야 합니다. 이러한 속성 중 하나를 설정할 수 있지만 두 속성을 동시에 설정할 수는 없습니다.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <see cref="T:System.Net.Sockets.Socket" />과 연결된 내부 소켓 옵션 값이 올바르지 않습니다.</exception>
+      <exception cref="T:System.InvalidOperationException">
+        <paramref name="e" /> 매개 변수에 전달된 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 개체를 사용하여 소켓 작업이 이미 진행 중인 경우</exception>
+      <exception cref="T:System.NotSupportedException">이 메서드에 Windows XP 이상이 필요한 경우</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" />이 닫힌 경우 </exception>
+      <exception cref="T:System.Net.Sockets.SocketException">소켓에 액세스하려고 시도하는 동안 오류가 발생한 경우. 자세한 내용은 설명 부분을 참조하세요. </exception>
+    </member>
+    <member name="P:System.Net.Sockets.Socket.ReceiveBufferSize">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" />의 수신 버퍼 크기를 지정하는 값을 가져오거나 설정합니다.</summary>
+      <returns>수신 버퍼의 크기(바이트)가 들어 있는 <see cref="T:System.Int32" />입니다. 기본값은 8192입니다.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">set 작업에 지정된 값이 0보다 작은 경우</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">소켓에 액세스하려고 시도하는 동안 오류가 발생한 경우.</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" />이 닫힌 경우 </exception>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.ReceiveFromAsync(System.Net.Sockets.SocketAsyncEventArgs)">
+      <summary>연결된 개체에서 데이터를 받기 위해 비동기 요청을 시작합니다.</summary>
+      <returns>I/O 작업이 보류 중인 경우 true를 반환합니다. 작업이 완료되면 <paramref name="e" /> 매개 변수에 대한 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 이벤트가 발생합니다.I/O 작업이 동기적으로 완료된 경우 false를 반환합니다. 이 경우에는 <paramref name="e" /> 매개 변수에서 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 이벤트가 발생하지 않으며, 메서드 호출이 반환된 직후 매개 변수로 전달된 <paramref name="e" /> 개체를 검사하여 작업 결과를 검색할 수 있습니다.</returns>
+      <param name="e">이 비동기 소켓 작업에 사용할 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 개체입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint" />가 null일 수 없는 경우</exception>
+      <exception cref="T:System.InvalidOperationException">
+        <paramref name="e" /> 매개 변수에 지정된 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 개체를 사용하여 소켓 작업이 이미 진행 중인 경우</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" />이 닫힌 경우 </exception>
+      <exception cref="T:System.Net.Sockets.SocketException">소켓에 액세스하려고 시도하는 동안 오류가 발생한 경우. </exception>
+    </member>
+    <member name="P:System.Net.Sockets.Socket.RemoteEndPoint">
+      <summary>원격 끝점을 가져옵니다.</summary>
+      <returns>
+        <see cref="T:System.Net.Sockets.Socket" />이 통신에 사용하는 <see cref="T:System.Net.EndPoint" />입니다.</returns>
+      <exception cref="T:System.Net.Sockets.SocketException">소켓에 액세스하려고 시도하는 동안 오류가 발생한 경우. 자세한 내용은 설명 부분을 참조하세요. </exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" />이 닫힌 경우 </exception>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.SendAsync(System.Net.Sockets.SocketAsyncEventArgs)">
+      <summary>데이터를 연결된 <see cref="T:System.Net.Sockets.Socket" /> 개체에 비동기적으로 보냅니다.</summary>
+      <returns>I/O 작업이 보류 중인 경우 true를 반환합니다. 작업이 완료되면 <paramref name="e" /> 매개 변수에 전달된 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 개체에 대한 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 이벤트가 발생합니다. I/O 작업이 동기적으로 완료된 경우 false를 반환합니다. 이 경우에는 <paramref name="e" /> 매개 변수에 전달된 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 개체에 대한 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 이벤트가 발생하지 않습니다. <paramref name="e" /> 매개 변수에 전달된 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 개체는 작업의 결과를 검색하기 위해 메서드 호출이 반환된 후 즉시 검사될 수 있습니다.</returns>
+      <param name="e">이 비동기 소켓 작업에 사용할 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 개체입니다.</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="e" /> 매개 변수에 전달된 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 개체의 <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> 또는 <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.BufferList" /> 속성은 유효한 버퍼를 참조해야 합니다. 이러한 속성 중 하나를 설정할 수 있지만 두 속성을 동시에 설정할 수는 없습니다.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <see cref="T:System.Net.Sockets.Socket" />과 연결된 내부 소켓 옵션 값이 올바르지 않습니다.</exception>
+      <exception cref="T:System.InvalidOperationException">
+        <paramref name="e" /> 매개 변수에 전달된 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 개체를 사용하여 소켓 작업이 이미 진행 중인 경우</exception>
+      <exception cref="T:System.NotSupportedException">이 메서드에 Windows XP 이상이 필요한 경우</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" />이 닫힌 경우 </exception>
+      <exception cref="T:System.Net.Sockets.SocketException">
+        <see cref="T:System.Net.Sockets.Socket" />이 아직 연결되지 않은 경우</exception>
+    </member>
+    <member name="P:System.Net.Sockets.Socket.SendBufferSize">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" />의 송신 버퍼 크기를 지정하는 값을 가져오거나 설정합니다.</summary>
+      <returns>송신 버퍼의 크기(바이트)가 들어 있는 <see cref="T:System.Int32" />입니다. 기본값은 8192입니다.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">set 작업에 지정된 값이 0보다 작은 경우</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">소켓에 액세스하려고 시도하는 동안 오류가 발생한 경우.</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" />이 닫힌 경우 </exception>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.SendToAsync(System.Net.Sockets.SocketAsyncEventArgs)">
+      <summary>특정 원격 호스트에 데이터를 비동기적으로 보냅니다.</summary>
+      <returns>I/O 작업이 보류 중인 경우 true를 반환합니다. 작업이 완료되면 <paramref name="e" /> 매개 변수에 대한 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 이벤트가 발생합니다.I/O 작업이 동기적으로 완료된 경우 false를 반환합니다. 이 경우에는 <paramref name="e" /> 매개 변수에서 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 이벤트가 발생하지 않으며, 메서드 호출이 반환된 직후 매개 변수로 전달된 <paramref name="e" /> 개체를 검사하여 작업 결과를 검색할 수 있습니다.</returns>
+      <param name="e">이 비동기 소켓 작업에 사용할 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 개체입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint" />가 null일 수 없는 경우</exception>
+      <exception cref="T:System.InvalidOperationException">
+        <paramref name="e" /> 매개 변수에 지정된 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 개체를 사용하여 소켓 작업이 이미 진행 중인 경우</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" />이 닫힌 경우 </exception>
+      <exception cref="T:System.Net.Sockets.SocketException">소켓에 액세스하려고 시도하는 동안 오류가 발생한 경우. 이 오류는 지정된 소켓이 <see cref="F:System.Net.Sockets.SocketType.Stream" /> 형식의 연결 지향이지만 <see cref="T:System.Net.Sockets.Socket" />이 아직 연결되지 않은 경우에 발생합니다.</exception>
+    </member>
+    <member name="M:System.Net.Sockets.Socket.Shutdown(System.Net.Sockets.SocketShutdown)">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" />의 보내기 또는 받기를 사용할 수 없도록 합니다.</summary>
+      <param name="how">더 이상 허용되지 않는 작업을 지정하는 <see cref="T:System.Net.Sockets.SocketShutdown" /> 값 중 하나입니다.</param>
+      <exception cref="T:System.Net.Sockets.SocketException">소켓에 액세스하려고 시도하는 동안 오류가 발생한 경우. 자세한 내용은 설명 부분을 참조하세요. </exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" />이 닫힌 경우 </exception>
+    </member>
+    <member name="P:System.Net.Sockets.Socket.Ttl">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" />에서 보낸 IP(인터넷 프로토콜) 패킷의 TTL(Time-To-Live) 값을 지정하는 값을 가져오거나 설정합니다.</summary>
+      <returns>TTL 값입니다.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">TTL 값은 0보다 작은 값으로 설정할 수 없습니다.</exception>
+      <exception cref="T:System.NotSupportedException">
+        <see cref="F:System.Net.Sockets.AddressFamily.InterNetwork" /> 또는 <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6" /> 패밀리의 소켓이 아닌 소켓에 대해 이 속성을 설정한 경우</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">소켓에 액세스하려고 시도하는 동안 오류가 발생한 경우.</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.Socket" />이 닫힌 경우 </exception>
+    </member>
+    <member name="T:System.Net.Sockets.SocketAsyncEventArgs">
+      <summary>비동기 소켓 작업을 나타냅니다.</summary>
+    </member>
+    <member name="M:System.Net.Sockets.SocketAsyncEventArgs.#ctor">
+      <summary>빈 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 인스턴스를 만듭니다.</summary>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.AcceptSocket">
+      <summary>비동기 소켓 메서드를 통해 연결을 허용하기 위해 만들었거나 사용할 소켓을 가져오거나 설정합니다.</summary>
+      <returns>비동기 소켓 메서드를 통해 연결을 허용하기 위해 만들었거나 사용할 <see cref="T:System.Net.Sockets.Socket" />입니다.</returns>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer">
+      <summary>비동기 소켓 메서드에 사용할 데이터 버퍼를 가져옵니다.</summary>
+      <returns>비동기 소켓 메서드에 사용할 데이터 버퍼를 나타내는 <see cref="T:System.Byte" /> 배열입니다.</returns>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.BufferList">
+      <summary>비동기 소켓 메서드에 사용할 데이터 버퍼의 배열을 가져오거나 설정합니다.</summary>
+      <returns>비동기 소켓 메서드에 사용할 데이터 버퍼의 배열입니다.</returns>
+      <exception cref="T:System.ArgumentException">설정 작업에 지정된 버퍼가 명확하지 않은 경우. null 이외의 값이 전달되고 <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> 속성도 null이 아니면 이 예외가 발생합니다.</exception>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.BytesTransferred">
+      <summary>소켓 작업에서 전송된 바이트 수를 가져옵니다.</summary>
+      <returns>소켓 작업에서 전송된 바이트 수입니다.</returns>
+    </member>
+    <member name="E:System.Net.Sockets.SocketAsyncEventArgs.Completed">
+      <summary>비동기 작업이 완료되었음을 나타내는 이벤트입니다.</summary>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.ConnectByNameError">
+      <summary>
+        <see cref="T:System.Net.DnsEndPoint" />를 사용했을 때 연결 오류가 발생하는 경우 예외를 가져옵니다.</summary>
+      <returns>
+        <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint" /> 속성에 대해 <see cref="T:System.Net.DnsEndPoint" />가 지정된 경우 연결 오류의 원인을 나타내는 <see cref="T:System.Exception" />입니다.</returns>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.ConnectSocket">
+      <summary>
+        <see cref="Overload:System.Net.Sockets.Socket.ConnectAsync" /> 메서드가 성공적으로 완료된 후 만들어지고 연결되는 <see cref="T:System.Net.Sockets.Socket" /> 개체입니다.</summary>
+      <returns>연결된 <see cref="T:System.Net.Sockets.Socket" /> 개체입니다. </returns>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.Count">
+      <summary>비동기 작업을 통해 보내거나 받을 최대 데이터 양(바이트)을 가져옵니다.</summary>
+      <returns>보내거나 받을 최대 데이터 양(바이트)입니다.</returns>
+    </member>
+    <member name="M:System.Net.Sockets.SocketAsyncEventArgs.Dispose">
+      <summary>
+        <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 인스턴스에서 사용하는 관리되지 않는 리소스를 해제하고, 관리되는 리소스를 선택적으로 삭제합니다.</summary>
+    </member>
+    <member name="M:System.Net.Sockets.SocketAsyncEventArgs.Finalize">
+      <summary>
+        <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 클래스에서 사용한 리소스를 해제합니다.</summary>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.LastOperation">
+      <summary>이 개체를 사용하여 가장 최근에 수행한 소켓 작업의 유형을 가져옵니다.</summary>
+      <returns>이 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 개체를 사용하여 가장 최근에 수행한 소켓 작업의 유형입니다.</returns>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.Offset">
+      <summary>
+        <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> 속성에서 참조하는 데이터 버퍼의 오프셋(바이트)을 가져옵니다.</summary>
+      <returns>
+        <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> 속성에서 참조하는 데이터 버퍼의 오프셋(바이트)입니다.</returns>
+    </member>
+    <member name="M:System.Net.Sockets.SocketAsyncEventArgs.OnCompleted(System.Net.Sockets.SocketAsyncEventArgs)">
+      <summary>비동기 작업이 완료되면 호출할 메서드를 나타냅니다.</summary>
+      <param name="e">신호를 받는 이벤트입니다.</param>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint">
+      <summary>비동기 작업의 원격 IP 또는 DNS 끝점을 가져오거나 설정합니다.</summary>
+      <returns>비동기 작업의 원격 IP 끝점입니다.</returns>
+    </member>
+    <member name="M:System.Net.Sockets.SocketAsyncEventArgs.SetBuffer(System.Byte[],System.Int32,System.Int32)">
+      <summary>비동기 소켓 메서드에 사용할 데이터 버퍼를 설정합니다.</summary>
+      <param name="buffer">비동기 소켓 메서드에 사용할 데이터 버퍼입니다.</param>
+      <param name="offset">데이터 버퍼에서 작업이 시작되는 오프셋(바이트)입니다.</param>
+      <param name="count">버퍼에서 보내거나 받을 최대 데이터 양(바이트)입니다.</param>
+      <exception cref="T:System.ArgumentException">지정된 버퍼가 명확하지 않은 경우. <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> 속성도 null이 아니고 <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.BufferList" /> 속성도 null이 아니면 이 예외가 발생합니다.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">인수가 범위를 벗어난 경우. <paramref name="offset" /> 매개 변수가 0보다 작거나 <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> 속성에 지정된 배열 길이보다 크면 이 예외가 발생합니다. 또한 <paramref name="count" /> 매개 변수가 0보다 작거나, <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> 속성에 지정된 배열 길이에서 <paramref name="offset" /> 매개 변수를 뺀 값보다 큰 경우에도 이 예외가 발생합니다.</exception>
+    </member>
+    <member name="M:System.Net.Sockets.SocketAsyncEventArgs.SetBuffer(System.Int32,System.Int32)">
+      <summary>비동기 소켓 메서드에 사용할 데이터 버퍼를 설정합니다.</summary>
+      <param name="offset">데이터 버퍼에서 작업이 시작되는 오프셋(바이트)입니다.</param>
+      <param name="count">버퍼에서 보내거나 받을 최대 데이터 양(바이트)입니다.</param>
+      <exception cref="T:System.ArgumentException">지정된 버퍼가 명확하지 않은 경우. <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> 속성도 null이 아니고 <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.BufferList" /> 속성도 null이 아니면 이 예외가 발생합니다.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">인수가 범위를 벗어난 경우. <paramref name="offset" /> 매개 변수가 0보다 작거나 <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> 속성에 지정된 배열 길이보다 크면 이 예외가 발생합니다. 또한 <paramref name="count" /> 매개 변수가 0보다 작거나, <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> 속성에 지정된 배열 길이에서 <paramref name="offset" /> 매개 변수를 뺀 값보다 큰 경우에도 이 예외가 발생합니다.</exception>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.SocketError">
+      <summary>비동기 소켓 작업의 결과를 가져오거나 설정합니다.</summary>
+      <returns>비동기 소켓 작업의 결과입니다.</returns>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.UserToken">
+      <summary>이 비동기 소켓 작업과 연결된 사용자 또는 응용프로그램 개체를 가져오거나 설정합니다.</summary>
+      <returns>이 비동기 소켓 작업과 연결된 사용자 또는 응용프로그램 개체를 나타내는 개체입니다.</returns>
+    </member>
+    <member name="T:System.Net.Sockets.SocketAsyncOperation">
+      <summary>이 개체를 사용하여 가장 최근에 수행한 비동기 소켓 작업의 유형입니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketAsyncOperation.None">
+      <summary>소켓 작업이 없습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketAsyncOperation.Accept">
+      <summary>소켓 Accept 작업입니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketAsyncOperation.Connect">
+      <summary>소켓 Connect 작업입니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketAsyncOperation.Receive">
+      <summary>소켓 Receive 작업입니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketAsyncOperation.ReceiveFrom">
+      <summary>소켓 ReceiveFrom 작업입니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketAsyncOperation.Send">
+      <summary>소켓 Send 작업입니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketAsyncOperation.SendTo">
+      <summary>소켓 SendTo 작업입니다.</summary>
+    </member>
+    <member name="T:System.Net.Sockets.SocketError">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> 클래스에 대한 오류 코드를 정의합니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.Success">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> 작업을 성공적으로 완료했습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.SocketError">
+      <summary>지정되지 않은 <see cref="T:System.Net.Sockets.Socket" /> 오류가 발생했습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.Interrupted">
+      <summary>블로킹 <see cref="T:System.Net.Sockets.Socket" /> 호출이 취소되었습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.AccessDenied">
+      <summary>지정된 액세스 권한에서 허용하지 않는 방식으로 <see cref="T:System.Net.Sockets.Socket" />에 액세스하려고 시도했습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.Fault">
+      <summary>내부 소켓 공급자에서 잘못된 포인터 주소를 발견했습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.InvalidArgument">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> 멤버에 잘못된 인수를 지정했습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.TooManyOpenSockets">
+      <summary>내부 소켓 공급자에 열려 있는 소켓이 너무 많습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.WouldBlock">
+      <summary>비블로킹 소켓에 대한 작업을 즉시 완료할 수 없습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.InProgress">
+      <summary>블로킹 작업이 진행 중입니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.AlreadyInProgress">
+      <summary>비블로킹 <see cref="T:System.Net.Sockets.Socket" /> 작업이 이미 진행 중입니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.NotSocket">
+      <summary>소켓이 아닌 위치에서 <see cref="T:System.Net.Sockets.Socket" /> 작업을 시도했습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.DestinationAddressRequired">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> 작업에 필수 주소가 누락되었습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.MessageSize">
+      <summary>데이터그램이 너무 깁니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.ProtocolType">
+      <summary>이 <see cref="T:System.Net.Sockets.Socket" />의 프로토콜 형식이 잘못되었습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.ProtocolOption">
+      <summary>알 수 없거나, 잘못되거나, 지원되지 않는 옵션 또는 수준을 <see cref="T:System.Net.Sockets.Socket" />에 사용했습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.ProtocolNotSupported">
+      <summary>프로토콜이 구현되지 않거나 구성되지 않았습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.SocketNotSupported">
+      <summary>이 주소 패밀리에서는 지정된 소켓 형식이 지원되지 않습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.OperationNotSupported">
+      <summary>주소 패밀리가 프로토콜 패밀리에서 지원되지 않습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.ProtocolFamilyNotSupported">
+      <summary>프로토콜 패밀리가 구현되지 않거나 구성되지 않았습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.AddressFamilyNotSupported">
+      <summary>지정된 주소 패밀리가 지원되지 않습니다. IPv6 주소 패밀리가 지정되었는데 IPv6 스택이 로컬 컴퓨터에 설치되어 있지 않은 경우 이 오류가 반환됩니다. 또한 IPv4 주소 패밀리가 지정되었는데 IPv4 스택이 로컬 컴퓨터에 설치되어 있지 않은 경우에도 이 오류가 반환됩니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.AddressAlreadyInUse">
+      <summary>일반적으로 같은 주소는 한 번만 사용할 수 있습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.AddressNotAvailable">
+      <summary>선택한 IP 주소가 이 컨텍스트에서 유효하지 않습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.NetworkDown">
+      <summary>네트워크를 사용할 수 없는 경우</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.NetworkUnreachable">
+      <summary>원격 호스트의 경로가 존재하지 않습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.NetworkReset">
+      <summary>응용프로그램에서 시간이 이미 초과된 연결에 옵션을 설정하려고 했습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.ConnectionAborted">
+      <summary>.NET Framework 또는 내부 소켓 공급자에 의해 연결이 끊어졌습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.ConnectionReset">
+      <summary>원격 피어가 연결을 다시 설정했습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.NoBufferSpaceAvailable">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> 작업에 사용할 수 있는 여유 버퍼 공간이 없습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.IsConnected">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" />이 이미 연결되어 있습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.NotConnected">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" />이 연결되지 않은 상태로 응용프로그램에서 데이터를 보내고 받으려고 했습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.Shutdown">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" />이 이미 닫혔기 때문에 데이터를 보내거나 받기 위한 요청이 거부되었습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.TimedOut">
+      <summary>연결 시도 제한 시간이 초과되었거나 연결된 호스트에서 응답하지 않습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.ConnectionRefused">
+      <summary>원격 호스트가 연결을 거부했습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.HostDown">
+      <summary>원격 호스트가 다운되어 작업이 실패했습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.HostUnreachable">
+      <summary>지정된 호스트에 대한 네트워크 경로가 존재하지 않습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.ProcessLimit">
+      <summary>내부 소켓 공급자를 사용하는 프로세스가 너무 많습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.SystemNotReady">
+      <summary>네트워크 하위 시스템을 사용할 수 없습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.VersionNotSupported">
+      <summary>내부 소켓 공급자의 버전이 범위를 벗어났습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.NotInitialized">
+      <summary>내부 소켓 공급자가 초기화되지 않았습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.Disconnecting">
+      <summary>정상적으로 종료하는 중입니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.TypeNotFound">
+      <summary>지정된 클래스를 찾을 수 없습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.HostNotFound">
+      <summary>호스트를 확인할 수 없습니다. 이름이 공식 호스트 이름 또는 별칭이 아닙니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.TryAgain">
+      <summary>호스트 이름을 확인할 수 없습니다. 나중에 다시 시도하세요.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.NoRecovery">
+      <summary>오류를 복구할 수 없거나 요청된 데이터베이스를 찾을 수 없습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.NoData">
+      <summary>요청된 이름 또는 IP 주소를 이름 서버에서 찾을 수 없습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.IOPending">
+      <summary>응용프로그램에서 즉시 완료할 수 없는 겹쳐진 작업을 시작했습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketError.OperationAborted">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" />을 닫아서 겹쳐진 작업이 중단되었습니다.</summary>
+    </member>
+    <member name="T:System.Net.Sockets.SocketException">
+      <summary>소켓 오류가 발생하는 경우에 발생되는 예외입니다.</summary>
+    </member>
+    <member name="M:System.Net.Sockets.SocketException.#ctor">
+      <summary>마지막으로 발생한 운영 체제 오류 코드를 사용하여 <see cref="T:System.Net.Sockets.SocketException" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+    </member>
+    <member name="M:System.Net.Sockets.SocketException.#ctor(System.Int32)">
+      <summary>지정된 오류 코드를 사용하여 <see cref="T:System.Net.Sockets.SocketException" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+      <param name="errorCode">발생한 오류를 나타내는 오류 코드입니다.</param>
+    </member>
+    <member name="P:System.Net.Sockets.SocketException.ErrorCode">
+      <summary>이 예외와 관련된 오류 코드를 가져옵니다.</summary>
+      <returns>이 예외와 관련된 정수 오류 코드입니다.</returns>
+    </member>
+    <member name="P:System.Net.Sockets.SocketException.SocketErrorCode">
+      <summary>이 예외와 관련된 오류 코드를 가져옵니다.</summary>
+      <returns>이 예외와 연결된 <see cref="T:System.Net.Sockets.SocketError" />입니다.</returns>
+    </member>
+    <member name="T:System.Net.Sockets.SocketShutdown">
+      <summary>
+        <see cref="M:System.Net.Sockets.Socket.Shutdown(System.Net.Sockets.SocketShutdown)" /> 메서드에서 사용하는 상수를 정의합니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketShutdown.Receive">
+      <summary>받기에 대한 <see cref="T:System.Net.Sockets.Socket" />을 비활성화합니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketShutdown.Send">
+      <summary>보내기에 대한 <see cref="T:System.Net.Sockets.Socket" />을 비활성화합니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketShutdown.Both">
+      <summary>보내기와 받기 모두에 대한 <see cref="T:System.Net.Sockets.Socket" />을 비활성화합니다.</summary>
+    </member>
+    <member name="T:System.Net.Sockets.SocketType">
+      <summary>
+        <see cref="T:System.Net.Sockets.Socket" /> 클래스의 인스턴스가 나타내는 소켓의 종류를 지정합니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketType.Stream">
+      <summary>데이터 중복이나 경계 유지 없이 신뢰성 있는 양방향 연결 기반의 바이트 스트림을 지원하는 소켓 종류입니다. 이 종류의 <see cref="T:System.Net.Sockets.Socket" />은 단일 피어와 통신하며 이 소켓을 사용할 경우 통신을 시작하기 전에 원격 호스트에 연결해야 합니다. 이 종류의 소켓은 <see cref="F:System.Net.Sockets.ProtocolType.Tcp" />(Transmission Control Protocol)를 사용하며 <see cref="T:System.Net.Sockets.AddressFamily" />는 <see cref="F:System.Net.Sockets.AddressFamily.InterNetwork" /> 또는 <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6" />일 수 있습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketType.Dgram">
+      <summary>고정된 최대 길이(대개 작음)의 신뢰할 수 없고 연결 없는 메시지인 데이터그램을 지원합니다. 메시지가 손실되거나 중복될 수 있으며 메시지 순서가 잘못될 수도 있습니다. <see cref="F:System.Net.Sockets.SocketType.Dgram" /> 종류의 소켓에서는 데이터를 보내고 받기 전에 먼저 연결을 설정할 필요가 없으며 여러 피어와 통신할 수 있습니다. <see cref="F:System.Net.Sockets.SocketType.Dgram" />에서는 Datagram Protocol(<see cref="F:System.Net.Sockets.ProtocolType.Udp" />) 및 <see cref="F:System.Net.Sockets.AddressFamily.InterNetwork" /> 또는 <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6" /><see cref="T:System.Net.Sockets.AddressFamily" />를 사용합니다. Windows Phone에 대해 지원되는 값은 없습니다.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketType.Unknown">
+      <summary>알 수 없는 소켓 종류입니다.</summary>
+    </member>
+    <member name="T:System.Net.Sockets.UdpAnySourceMulticastClient">
+      <summary>모든 소스의 멀티캐스트 트래픽을 받는 클라이언트 수신자로서, ASM(Any Source Multicast) 또는 ISM(Internet Standard Multicast)이라고도 합니다.</summary>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.#ctor(System.Net.IPAddress,System.Int32)">
+      <summary>그룹 주소를 구독하고 모든 소스의 데이터그램을 받을 수 있는 새 <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> UDP 클라이언트를 만듭니다.</summary>
+      <param name="groupAddress">이 수신자에서 구독할 멀티캐스트 그룹 주소입니다.</param>
+      <param name="localPort">이 수신자가 바인딩될 로컬 포트입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="groupAddress" />가 null인 경우</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="localPort" />가 0보다 작은 경우-또는-<paramref name="localPort" />이 65,535보다 큰 경우</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">
+        <paramref name="localPort" />가 1,024보다 작은 경우</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.BeginJoinGroup(System.AsyncCallback,System.Object)">
+      <summary>모든 그룹 참가자의 데이터그램을 받을 수 있도록 멀티캐스트 그룹에 대해 소켓을 바인딩하고 조인 작업을 시작합니다.</summary>
+      <returns>이 작업을 참조하는 <see cref="T:System.IAsyncResult" />입니다.</returns>
+      <param name="callback">작업이 완료될 때 호출할 콜백 메서드입니다.</param>
+      <param name="state">이 작업의 <paramref name="callback" /> 메서드로 전달할 선택적 상태 정보입니다.</param>
+      <exception cref="T:System.InvalidOperationException">멀티캐스트 그룹이 이미 가입했거나 가입 작업이 현재 진행 중인 경우</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" />가 삭제된 경우 </exception>
+      <exception cref="T:System.Net.Sockets.SocketException">소켓에 액세스하려고 시도하는 동안 오류가 발생한 경우. 자세한 내용은 설명 부분을 참조하세요.</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.BeginReceiveFromGroup(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+      <summary>조인된 멀티캐스트 그룹의 패킷을 받는 작업을 시작하고 모든 발신자의 패킷이 그룹에 도착하면 지정된 콜백을 호출합니다.</summary>
+      <returns>이 작업을 참조하는 <see cref="T:System.IAsyncResult" />입니다.</returns>
+      <param name="buffer">받은 데이터를 저장할 버퍼입니다.</param>
+      <param name="offset">데이터가 저장될 <paramref name="buffer" /> 시작 부분의 오프셋(바이트)입니다.</param>
+      <param name="count">
+        <paramref name="buffer" />에서 받고 저장할 최대 바이트 수입니다. </param>
+      <param name="callback">작업이 완료될 때 호출할 콜백 메서드입니다.</param>
+      <param name="state">이 작업의 <paramref name="callback" /> 메서드로 전달할 선택적 상태 정보입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="buffer" />가 null인 경우</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" />가 0보다 작은 경우-또는-<paramref name="offset" />이 <paramref name="buffer" />의 길이보다 큰 경우-또는-<paramref name="count" />가 0보다 작은 경우-또는- <paramref name="offset" />과 <paramref name="count" />의 합이 <paramref name="buffer" />의 길이보다 큰 경우</exception>
+      <exception cref="T:System.InvalidOperationException">멀티캐스트 그룹이 아직 가입하지 않은 경우</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" />가 삭제된 경우 </exception>
+      <exception cref="T:System.Net.Sockets.SocketException">전송을 위해 소켓에 액세스하려고 시도하는 동안 오류가 발생한 경우. 자세한 내용은 설명 부분을 참조하세요.</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.BeginSendTo(System.Byte[],System.Int32,System.Int32,System.Net.IPEndPoint,System.AsyncCallback,System.Object)">
+      <summary>지정한 대상으로 유니캐스트 패킷을 보내는 작업을 시작합니다.</summary>
+      <returns>이 작업을 참조하는 <see cref="T:System.IAsyncResult" />입니다.</returns>
+      <param name="buffer">보낼 데이터가 들어 있는 버퍼입니다.</param>
+      <param name="offset">보낼 데이터를 읽을 <paramref name="buffer" /> 시작 부분의 오프셋(바이트)입니다.</param>
+      <param name="count">
+        <paramref name="buffer" />에서 보낼 바이트 수입니다.</param>
+      <param name="remoteEndPoint">패킷을 보낼 원격 끝점입니다.</param>
+      <param name="callback">작업이 완료될 때 호출할 콜백 메서드입니다.</param>
+      <param name="state">이 작업의 <paramref name="callback" /> 메서드로 전달할 선택적 상태 정보입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="buffer" />가 null인 경우</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" />가 0보다 작은 경우-또는-<paramref name="offset" />이 <paramref name="buffer" />의 길이보다 큰 경우-또는-<paramref name="count" />가 0보다 작은 경우-또는- <paramref name="offset" />과 <paramref name="count" />의 합이 <paramref name="buffer" />의 길이보다 큰 경우</exception>
+      <exception cref="T:System.InvalidOperationException">멀티캐스트 그룹이 아직 가입하지 않은 경우</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" />가 삭제된 경우 </exception>
+      <exception cref="T:System.Net.Sockets.SocketException">전송을 위해 소켓에 액세스하려고 시도하는 동안 오류가 발생한 경우. 자세한 내용은 설명 부분을 참조하세요.</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.BeginSendToGroup(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+      <summary>조인된 멀티캐스트 그룹에 패킷을 보내는 작업을 시작하고 패킷이 그룹에 전송되면 지정된 콜백을 호출합니다.</summary>
+      <returns>이 작업을 참조하는 <see cref="T:System.IAsyncResult" />입니다.</returns>
+      <param name="buffer">보낼 데이터가 들어 있는 버퍼입니다.</param>
+      <param name="offset">보낼 데이터를 읽을 <paramref name="buffer" /> 시작 부분의 오프셋(바이트)입니다.</param>
+      <param name="count">
+        <paramref name="buffer" />에서 보낼 바이트 수입니다.</param>
+      <param name="callback">작업이 완료될 때 호출할 콜백 메서드입니다.</param>
+      <param name="state">이 작업의 <paramref name="callback" /> 메서드로 전달할 선택적 상태 정보입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="buffer" />가 null인 경우</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" />가 0보다 작은 경우-또는-<paramref name="offset" />이 <paramref name="buffer" />의 길이보다 큰 경우-또는-<paramref name="count" />가 0보다 작은 경우-또는- <paramref name="offset" />과 <paramref name="count" />의 합이 <paramref name="buffer" />의 길이보다 큰 경우</exception>
+      <exception cref="T:System.InvalidOperationException">멀티캐스트 그룹이 아직 가입하지 않은 경우</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" />가 삭제된 경우 </exception>
+      <exception cref="T:System.Net.Sockets.SocketException">전송을 위해 소켓에 액세스하려고 시도하는 동안 오류가 발생한 경우. 자세한 내용은 설명 부분을 참조하세요.</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.BlockSource(System.Net.IPAddress)">
+      <summary>소스를 차단하여 해당 소스에서 보내는 멀티캐스트 패킷을 더 이상 받지 않도록 합니다.</summary>
+      <param name="sourceAddress">차단할 소스의 주소입니다.</param>
+      <exception cref="T:System.InvalidOperationException">멀티캐스트 그룹이 아직 가입하지 않은 경우</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" />가 삭제된 경우 </exception>
+      <exception cref="T:System.Net.Sockets.SocketException">소켓에 액세스하려고 시도하는 동안 오류가 발생한 경우. 자세한 내용은 설명 부분을 참조하세요.</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.Dispose">
+      <summary>멀티캐스트 그룹을 나가고 <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> 클래스의 현재 인스턴스와 기본 <see cref="T:System.Net.Sockets.Socket" />에서 사용하는 모든 리소스를 해제합니다.</summary>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.EndJoinGroup(System.IAsyncResult)">
+      <summary>멀티캐스트 그룹에 대한 비동기 조인 그룹 작업을 완료합니다.</summary>
+      <param name="result">비동기 조인 작업의 결과입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="result" />가 null인 경우</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" />가 삭제된 경우 </exception>
+      <exception cref="T:System.Net.Sockets.SocketException">소켓에 액세스하려고 시도하는 동안 오류가 발생한 경우. 자세한 내용은 설명 부분을 참조하세요.</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.EndReceiveFromGroup(System.IAsyncResult,System.Net.IPEndPoint@)">
+      <summary>조인된 멀티캐스트 그룹의 패킷을 받는 비동기 작업을 완료하고 받은 정보를 제공합니다.</summary>
+      <returns>
+        <see cref="M:System.Net.Sockets.UdpAnySourceMulticastClient.BeginReceiveFromGroup(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" /> 메서드로 전달된 <paramref name="buffer" /> 매개 변수에 저장된 메시지의 길이(바이트)입니다.</returns>
+      <param name="result">비동기 받기 작업의 결과입니다.</param>
+      <param name="source">패킷을 받은 소스 끝점입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="result" />가 null인 경우</exception>
+      <exception cref="T:System.InvalidOperationException">멀티캐스트 그룹이 아직 가입하지 않은 경우</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" />가 삭제된 경우 </exception>
+      <exception cref="T:System.Net.Sockets.SocketException">소켓에 액세스하려고 시도하는 동안 오류가 발생한 경우. 자세한 내용은 설명 부분을 참조하세요.</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.EndSendTo(System.IAsyncResult)">
+      <summary>지정한 대상으로 유니캐스트 패킷을 보내는 작업을 완료합니다.</summary>
+      <param name="result">비동기 보내기 작업의 결과입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="result" />가 null인 경우</exception>
+      <exception cref="T:System.InvalidOperationException">멀티캐스트 그룹이 아직 가입하지 않은 경우</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" />가 삭제된 경우 </exception>
+      <exception cref="T:System.Net.Sockets.SocketException">소켓에 액세스하려고 시도하는 동안 오류가 발생한 경우. 자세한 내용은 설명 부분을 참조하세요.</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.EndSendToGroup(System.IAsyncResult)">
+      <summary>멀티캐스트 그룹으로 패킷을 보내는 작업을 완료합니다.</summary>
+      <param name="result">비동기 보내기 작업의 결과입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="result" />가 null인 경우</exception>
+      <exception cref="T:System.InvalidOperationException">멀티캐스트 그룹이 아직 가입하지 않은 경우</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" />가 삭제된 경우 </exception>
+      <exception cref="T:System.Net.Sockets.SocketException">소켓에 액세스하려고 시도하는 동안 오류가 발생한 경우. 자세한 내용은 설명 부분을 참조하세요.</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.Finalize">
+      <summary>현재 <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> 클래스에서 보유한 리소스를 해제합니다.</summary>
+    </member>
+    <member name="P:System.Net.Sockets.UdpAnySourceMulticastClient.MulticastLoopback">
+      <summary>나가는 멀티캐스트 패킷을 보내는 응용프로그램에 전달할지 여부를 지정하는 값을 가져오거나 설정합니다.</summary>
+      <returns>멀티캐스트 그룹으로 나가는 패킷을 보내는 응용프로그램에 전달할지 여부를 나타내는 값입니다.</returns>
+      <exception cref="T:System.InvalidOperationException">멀티캐스트 그룹이 아직 가입하지 않은 경우</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" />가 삭제된 경우 </exception>
+    </member>
+    <member name="P:System.Net.Sockets.UdpAnySourceMulticastClient.ReceiveBufferSize">
+      <summary>이 <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> 인스턴스에 대한 멀티캐스트 받기 작업에 사용된 <see cref="T:System.Net.Sockets.Socket" />의 수신 버퍼 크기(바이트)를 가져오거나 설정합니다. </summary>
+      <returns>수신 버퍼의 크기(바이트)입니다.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">지정된 버퍼 크기가 0보다 작은 경우</exception>
+      <exception cref="T:System.InvalidOperationException">멀티캐스트 그룹이 아직 가입하지 않은 경우</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" />가 삭제된 경우 </exception>
+    </member>
+    <member name="P:System.Net.Sockets.UdpAnySourceMulticastClient.SendBufferSize">
+      <summary>이 <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> 인스턴스에 대한 멀티캐스트 보내기 작업에 사용된 <see cref="T:System.Net.Sockets.Socket" />의 송신 버퍼 크기(바이트)를 가져오거나 설정합니다.</summary>
+      <returns>송신 버퍼의 크기(바이트)입니다.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">지정된 버퍼 크기가 0보다 작은 경우</exception>
+      <exception cref="T:System.InvalidOperationException">멀티캐스트 그룹이 아직 가입하지 않은 경우</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" />가 삭제된 경우 </exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpAnySourceMulticastClient.UnblockSource(System.Net.IPAddress)">
+      <summary>이전에 <see cref="M:System.Net.Sockets.UdpAnySourceMulticastClient.BlockSource(System.Net.IPAddress)" /> 메서드를 호출하여 차단된 소스의 차단을 해제하여 해당 소스에서 보내는 멀티캐스트 패킷을 받을 수 있도록 합니다.</summary>
+      <param name="sourceAddress">차단을 해제할 소스의 주소입니다.</param>
+      <exception cref="T:System.InvalidOperationException">멀티캐스트 그룹이 아직 가입하지 않은 경우</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" />가 삭제된 경우 </exception>
+      <exception cref="T:System.Net.Sockets.SocketException">소켓에 액세스하려고 시도하는 동안 오류가 발생한 경우. 자세한 내용은 설명 부분을 참조하세요.</exception>
+    </member>
+    <member name="T:System.Net.Sockets.UdpSingleSourceMulticastClient">
+      <summary>단일 소스의 멀티캐스트 트래픽을 받는 클라이언트 수신자로서, SSM(Source Specific Multicast)이라고도 합니다.</summary>
+    </member>
+    <member name="M:System.Net.Sockets.UdpSingleSourceMulticastClient.#ctor(System.Net.IPAddress,System.Net.IPAddress,System.Int32)">
+      <summary>그룹 주소를 구독하고 단일 소스의 데이터그램을 받을 수 있는 새 <see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> UDP 클라이언트를 만듭니다.</summary>
+      <param name="sourceAddress">이 수신자에서 구독할 발신자 소스 주소입니다.</param>
+      <param name="groupAddress">이 수신자에서 구독할 멀티캐스트 그룹 주소입니다.</param>
+      <param name="localPort">이 수신자가 바인딩될 로컬 포트입니다.</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="sourceAddress" /> 및 <paramref name="groupAddress" />가 동일한 주소 패밀리여야 하는 경우</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="sourceAddress" />가 null인 경우-또는-<paramref name="groupAddress" />가 null인 경우</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="localPort" />가 0보다 작은 경우-또는-<paramref name="localPort" />이 65,535보다 큰 경우</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">
+        <paramref name="localPort" />가 1,024보다 작은 경우</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpSingleSourceMulticastClient.BeginJoinGroup(System.AsyncCallback,System.Object)">
+      <summary>단일 소스 주소의 데이터그램을 받을 수 있도록 소켓을 바인딩하고 멀티캐스트 그룹에 대해 조인 작업을 시작합니다.</summary>
+      <returns>이 작업을 참조하는 <see cref="T:System.IAsyncResult" />입니다.</returns>
+      <param name="callback">작업이 완료될 때 호출할 콜백 메서드입니다.</param>
+      <param name="state">이 작업의 <paramref name="callback" /> 메서드로 전달할 선택적 상태 정보입니다.</param>
+      <exception cref="T:System.InvalidOperationException">멀티캐스트 그룹이 이미 가입했거나 가입 작업이 현재 진행 중인 경우</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" />가 삭제된 경우 </exception>
+      <exception cref="T:System.Net.Sockets.SocketException">소켓에 액세스하려고 시도하는 동안 오류가 발생한 경우. 자세한 내용은 설명 부분을 참조하세요.</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpSingleSourceMulticastClient.BeginReceiveFromSource(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+      <summary>조인된 멀티캐스트 그룹의 패킷을 받는 작업을 시작하고 지정된 발신자의 패킷이 그룹에 도착하면 지정된 콜백을 호출합니다.</summary>
+      <returns>이 작업을 참조하는 <see cref="T:System.IAsyncResult" />입니다.</returns>
+      <param name="buffer">받은 데이터를 저장할 버퍼입니다.</param>
+      <param name="offset">데이터가 저장될 <paramref name="buffer" /> 시작 부분의 오프셋(바이트)입니다.</param>
+      <param name="count">
+        <paramref name="buffer" />에서 받고 저장할 최대 바이트 수입니다. </param>
+      <param name="callback">작업이 완료될 때 호출할 콜백 메서드입니다.</param>
+      <param name="state">이 작업의 <paramref name="callback" /> 메서드로 전달할 선택적 상태 정보입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="buffer" />가 null인 경우</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" />가 0보다 작은 경우-또는-<paramref name="offset" />이 <paramref name="buffer" />의 길이보다 큰 경우-또는-<paramref name="count" />가 0보다 작은 경우-또는- <paramref name="offset" />과 <paramref name="count" />의 합이 <paramref name="buffer" />의 길이보다 큰 경우</exception>
+      <exception cref="T:System.InvalidOperationException">멀티캐스트 그룹이 아직 가입하지 않은 경우</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" />가 삭제된 경우 </exception>
+      <exception cref="T:System.Net.Sockets.SocketException">수신을 위해 소켓에 액세스하려고 시도하는 동안 오류가 발생한 경우. 자세한 내용은 설명 부분을 참조하세요.</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpSingleSourceMulticastClient.BeginSendToSource(System.Byte[],System.Int32,System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+      <summary>이전에 지정한 소스로 유니캐스트 패킷을 보내는 작업을 시작합니다.</summary>
+      <returns>이 작업을 참조하는 <see cref="T:System.IAsyncResult" />입니다.</returns>
+      <param name="buffer">보낼 데이터가 들어 있는 버퍼입니다.</param>
+      <param name="offset">보낼 데이터를 읽을 <paramref name="buffer" /> 시작 부분의 오프셋(바이트)입니다.</param>
+      <param name="count">
+        <paramref name="buffer" />에서 보낼 바이트 수입니다.</param>
+      <param name="remotePort">패킷을 보낼 원격 포트입니다. 원격 주소는 <see cref="M:System.Net.Sockets.UdpSingleSourceMulticastClient.#ctor(System.Net.IPAddress,System.Net.IPAddress,System.Int32)" /> 생성자에서 지정합니다.</param>
+      <param name="callback">작업이 완료될 때 호출할 콜백 메서드입니다.</param>
+      <param name="state">이 작업의 <paramref name="callback" /> 메서드로 전달할 선택적 상태 정보입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="buffer" />가 null인 경우</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" />가 0보다 작은 경우-또는-<paramref name="offset" />이 <paramref name="buffer" />의 길이보다 큰 경우-또는-<paramref name="count" />가 0보다 작은 경우-또는- <paramref name="offset" />과 <paramref name="count" />의 합이 <paramref name="buffer" />의 길이보다 큰 경우<paramref name="remotePort" />가 0보다 작은 경우-또는-<paramref name="remotePort" />이 65,535보다 큰 경우</exception>
+      <exception cref="T:System.InvalidOperationException">멀티캐스트 그룹이 아직 가입하지 않은 경우</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" />가 삭제된 경우</exception>
+      <exception cref="T:System.Net.Sockets.SocketException">전송을 위해 소켓에 액세스하려고 시도하는 동안 오류가 발생한 경우. 자세한 내용은 설명 부분을 참조하세요.</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpSingleSourceMulticastClient.Dispose">
+      <summary>멀티캐스트 그룹을 나가고 <see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> 클래스의 현재 인스턴스와 기본 <see cref="T:System.Net.Sockets.Socket" />에서 사용하는 모든 리소스를 해제합니다.</summary>
+    </member>
+    <member name="M:System.Net.Sockets.UdpSingleSourceMulticastClient.EndJoinGroup(System.IAsyncResult)">
+      <summary>멀티캐스트 그룹에 대한 비동기 조인 그룹 작업을 완료합니다.</summary>
+      <param name="result">비동기 조인 작업의 결과입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="result" />가 null인 경우</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" />가 삭제된 경우 </exception>
+      <exception cref="T:System.Net.Sockets.SocketException">소켓에 액세스하려고 시도하는 동안 오류가 발생한 경우. 자세한 내용은 설명 부분을 참조하세요.</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpSingleSourceMulticastClient.EndReceiveFromSource(System.IAsyncResult,System.Int32@)">
+      <summary>조인된 멀티캐스트 그룹의 패킷을 받는 비동기 작업을 완료하고 지정된 발신자로부터 받은 정보를 제공합니다.</summary>
+      <returns>
+        <see cref="M:System.Net.Sockets.UdpSingleSourceMulticastClient.BeginReceiveFromSource(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" /> 메서드로 전달된 <paramref name="buffer" /> 매개 변수에 저장된 메시지의 길이(바이트)입니다.</returns>
+      <param name="result">비동기 받기 작업의 결과입니다.</param>
+      <param name="sourcePort">패킷을 받은 소스 포트입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="result" />가 null인 경우</exception>
+      <exception cref="T:System.InvalidOperationException">멀티캐스트 그룹이 아직 가입하지 않은 경우</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" />가 삭제된 경우 </exception>
+      <exception cref="T:System.Net.Sockets.SocketException">소켓에 액세스하려고 시도하는 동안 오류가 발생한 경우. 자세한 내용은 설명 부분을 참조하세요.</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpSingleSourceMulticastClient.EndSendToSource(System.IAsyncResult)">
+      <summary>단일 소스로 유니캐스트 패킷을 보내는 작업을 완료합니다.</summary>
+      <param name="result">비동기 보내기 작업의 결과입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="result" />가 null인 경우</exception>
+      <exception cref="T:System.InvalidOperationException">멀티캐스트 그룹이 아직 가입하지 않은 경우</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" />가 삭제된 경우 </exception>
+      <exception cref="T:System.Net.Sockets.SocketException">소켓에 액세스하려고 시도하는 동안 오류가 발생한 경우. 자세한 내용은 설명 부분을 참조하세요.</exception>
+    </member>
+    <member name="M:System.Net.Sockets.UdpSingleSourceMulticastClient.Finalize">
+      <summary>현재 <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> 클래스에서 보유한 리소스를 해제합니다.</summary>
+    </member>
+    <member name="P:System.Net.Sockets.UdpSingleSourceMulticastClient.ReceiveBufferSize">
+      <summary>이 <see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> 인스턴스에 대한 멀티캐스트 받기 작업에 사용된 <see cref="T:System.Net.Sockets.Socket" />의 수신 버퍼 크기(바이트)를 가져오거나 설정합니다.</summary>
+      <returns>수신 버퍼의 크기(바이트)입니다.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">지정된 버퍼 크기가 0보다 작은 경우</exception>
+      <exception cref="T:System.InvalidOperationException">멀티캐스트 그룹이 아직 가입하지 않은 경우</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" />가 삭제된 경우 </exception>
+    </member>
+    <member name="P:System.Net.Sockets.UdpSingleSourceMulticastClient.SendBufferSize">
+      <summary>이 <see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> 인스턴스에 대한 멀티캐스트 보내기 작업에 사용된 <see cref="T:System.Net.Sockets.Socket" />의 송신 버퍼 크기(바이트)를 가져오거나 설정합니다.</summary>
+      <returns>송신 버퍼의 크기(바이트)입니다.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">지정된 버퍼 크기가 0보다 작은 경우</exception>
+      <exception cref="T:System.InvalidOperationException">멀티캐스트 그룹이 아직 가입하지 않은 경우</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" />가 삭제된 경우 </exception>
+    </member>
+  </members>
+</doc>

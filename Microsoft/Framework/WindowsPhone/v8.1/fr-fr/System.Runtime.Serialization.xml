@@ -1,0 +1,2170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.Runtime.Serialization</name>
+  </assembly>
+  <members>
+    <member name="T:System.Runtime.Serialization.CollectionDataContractAttribute">
+      <summary>Lorsqu'il est appliqué à un type de collection, permet la spécification personnalisée des éléments de collection.Cet attribut ne peut être appliqué qu'aux types reconnus par le <see cref="T:System.Runtime.Serialization.DataContractSerializer" /> comme des collections sérialisables valides.</summary>
+    </member>
+    <member name="M:System.Runtime.Serialization.CollectionDataContractAttribute.#ctor">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Runtime.Serialization.CollectionDataContractAttribute" />. </summary>
+    </member>
+    <member name="P:System.Runtime.Serialization.CollectionDataContractAttribute.IsReference">
+      <summary>Obtient ou définit une valeur indiquant si les données de référence des objets doivent être conservées.</summary>
+      <returns>La valeur est true pour conserver les données de référence des objets en XML standard, sinon false.La valeur par défaut est false.</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.CollectionDataContractAttribute.ItemName">
+      <summary>Obtient ou définit le nom personnalisé d'un élément de collection.</summary>
+      <returns>Nom applicable aux éléments de collection.</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.CollectionDataContractAttribute.KeyName">
+      <summary>Obtient ou définit le nom personnalisé d'un nom de clé de dictionnaire.</summary>
+      <returns>Nom à utiliser à la place du nom de la clé de dictionnaire par défaut.</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.CollectionDataContractAttribute.Name">
+      <summary>Obtient ou définit le nom de contrat de données du type de collection.</summary>
+      <returns>Nom de contrat de données du type de collection.</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.CollectionDataContractAttribute.Namespace">
+      <summary>Obtient ou définit l'espace de noms du contrat de données.</summary>
+      <returns>Espace de noms du contrat de données.</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.CollectionDataContractAttribute.ValueName">
+      <summary>Obtient ou définit le nom personnalisé d'un nom de valeur de dictionnaire.</summary>
+      <returns>Nom à utiliser à la place du nom de valeur de dictionnaire par défaut.</returns>
+    </member>
+    <member name="T:System.Runtime.Serialization.ContractNamespaceAttribute">
+      <summary>Spécifie l'espace de noms CLR et l'espace de noms XML du contrat de données. </summary>
+    </member>
+    <member name="M:System.Runtime.Serialization.ContractNamespaceAttribute.#ctor(System.String)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Runtime.Serialization.ContractNamespaceAttribute" /> à l'aide d'un espace de noms spécifié. </summary>
+      <param name="contractNamespace">Espace de noms du contrat.</param>
+    </member>
+    <member name="P:System.Runtime.Serialization.ContractNamespaceAttribute.ClrNamespace">
+      <summary>Obtient ou définit l'espace de noms CLR du type de contrat de données. </summary>
+      <returns>Espace de noms légal CLR d'un type. </returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.ContractNamespaceAttribute.ContractNamespace">
+      <summary>Obtient l'espace de noms des membres du contrat de données.</summary>
+      <returns>Espace de noms des membres du contrat de données.</returns>
+    </member>
+    <member name="T:System.Runtime.Serialization.DataContractAttribute">
+      <summary>Spécifie que le type définit ou implémente un contrat de données et peut être sérialisé par un sérialiseur, tel que la classe <see cref="T:System.Runtime.Serialization.DataContractSerializer" />. </summary>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractAttribute.#ctor">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Runtime.Serialization.DataContractAttribute" />. </summary>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataContractAttribute.IsReference">
+      <summary>Obtient ou définit une valeur indiquant si les données de référence des objets doivent être conservées.</summary>
+      <returns>La valeur est true pour conserver les données de référence des objets en XML standard, sinon false.La valeur par défaut est false.</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataContractAttribute.Name">
+      <summary>Obtient ou définit le nom du contrat de données pour le type.</summary>
+      <returns>Nom local du contrat de données.La valeur par défaut est le nom de la classe à laquelle l'attribut est appliqué.</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataContractAttribute.Namespace">
+      <summary>Obtient ou définit l'espace de noms du contrat de données pour le type.</summary>
+      <returns>Espace de noms du contrat de données.</returns>
+    </member>
+    <member name="T:System.Runtime.Serialization.DataContractResolver">
+      <summary>Fournit un mécanisme pour mapper les types de manière dynamique vers et depuis les représentations xsi:type pendant la sérialisation et la désérialisation.</summary>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractResolver.#ctor">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Runtime.Serialization.DataContractResolver" />. </summary>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractResolver.ResolveName(System.String,System.String,System.Type,System.Runtime.Serialization.DataContractResolver)">
+      <summary>Remplacez cette méthode pour mapper le nom et l'espace de nom xsi:type spécifiés vers un type de contrat de données durant la désérialisation.</summary>
+      <returns>Type auxquels le nom et l'espace de noms xsi:type sont mappés. </returns>
+      <param name="typeName">Nom xsi:type à mapper.</param>
+      <param name="typeNamespace">Espace de noms xsi:type à mapper.</param>
+      <param name="declaredType">Type déclaré dans le contrat de données.</param>
+      <param name="knownTypeResolver">Programme de résolution de type connu.</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractResolver.TryResolveType(System.Type,System.Type,System.Runtime.Serialization.DataContractResolver,System.Xml.XmlDictionaryString@,System.Xml.XmlDictionaryString@)">
+      <summary>Remplacez cette méthode pour mapper un type de contrat de données vers un nom et un espace de noms xsi:type durant la sérialisation.</summary>
+      <returns>La valeur est true si le mappage est réussi, sinon false.</returns>
+      <param name="type">Type à mapper.</param>
+      <param name="declaredType">Type déclaré dans le contrat de données.</param>
+      <param name="knownTypeResolver">Programme de résolution de type connu.</param>
+      <param name="typeName">Nom xsi:type.</param>
+      <param name="typeNamespace">Espace de noms xsi:type.</param>
+    </member>
+    <member name="T:System.Runtime.Serialization.DataContractSerializer">
+      <summary>Sérialise et désérialise une instance d'un type en flux de données ou document XML à l'aide d'un contrat de données fourni.Cette classe ne peut pas être héritée.</summary>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.#ctor(System.Type)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Runtime.Serialization.DataContractSerializer" /> pour sérialiser ou désérialiser un objet du type spécifié.</summary>
+      <param name="type">Type des instances sérialisées ou désérialisées.</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.#ctor(System.Type,System.Collections.Generic.IEnumerable{System.Type})">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Runtime.Serialization.DataContractSerializer" /> pour sérialiser ou désérialiser un objet du type spécifié ainsi qu'une collection de types connus pouvant être présents dans le graphique d'objets.</summary>
+      <param name="type">Type des instances sérialisées ou désérialisées.</param>
+      <param name="knownTypes">
+        <see cref="T:System.Collections.Generic.IEnumerable`1" /> de <see cref="T:System.Type" /> contenant les types pouvant être présents dans le graphique d'objets.</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.#ctor(System.Type,System.Runtime.Serialization.DataContractSerializerSettings)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Runtime.Serialization.DataContractSerializer" /> pour sérialiser ou désérialiser un objet ayant le type et les paramètres spécifiés.</summary>
+      <param name="type">Type de l'instance sérialisée ou désérialisée.</param>
+      <param name="settings">Paramètres du sérialiseur.</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.#ctor(System.Type,System.String,System.String)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Runtime.Serialization.DataContractSerializer" /> pour sérialiser ou désérialiser un objet du type spécifié à l'aide de l'élément et de l'espace de noms racines XML fournis.</summary>
+      <param name="type">Type des instances sérialisées ou désérialisées.</param>
+      <param name="rootName">Nom de l'élément XML qui englobe le contenu à sérialiser ou désérialiser.</param>
+      <param name="rootNamespace">Espace de noms de l'élément XML qui englobe le contenu à sérialiser ou désérialiser.</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.#ctor(System.Type,System.String,System.String,System.Collections.Generic.IEnumerable{System.Type})">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Runtime.Serialization.DataContractSerializer" /> pour sérialiser ou désérialiser un objet du type spécifié.Cette méthode spécifie également l'élément et l'espace de noms XML racines dans deux paramètres de chaîne, ainsi que la liste des types connus pouvant être présents dans le graphique d'objets.</summary>
+      <param name="type">Type des instances sérialisées ou désérialisées.</param>
+      <param name="rootName">Nom de l'élément racine du contenu.</param>
+      <param name="rootNamespace">Espace de noms de l'élément racine.</param>
+      <param name="knownTypes">
+        <see cref="T:System.Collections.Generic.IEnumerable`1" /> de <see cref="T:System.Type" /> contenant les types pouvant être présents dans le graphique d'objets.</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.#ctor(System.Type,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Runtime.Serialization.DataContractSerializer" /> pour sérialiser ou désérialiser un objet du type spécifié à l'aide de l'élément et de l'espace de noms racines XML spécifiés via les paramètres de type <see cref="T:System.Xml.XmlDictionaryString" />.</summary>
+      <param name="type">Type des instances sérialisées ou désérialisées.</param>
+      <param name="rootName">
+        <see cref="T:System.Xml.XmlDictionaryString" /> contenant le nom de l'élément racine du contenu.</param>
+      <param name="rootNamespace">
+        <see cref="T:System.Xml.XmlDictionaryString" /> contenant l'espace de noms de l'élément racine.</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.#ctor(System.Type,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Collections.Generic.IEnumerable{System.Type})">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Runtime.Serialization.DataContractSerializer" /> pour sérialiser ou désérialiser un objet du type spécifié.Cette méthode spécifie également l'élément et l'espace de noms XML racines dans deux paramètres <see cref="T:System.Xml.XmlDictionaryString" />, ainsi que la liste des types connus pouvant être présents dans le graphique d'objets.</summary>
+      <param name="type">Type des instances sérialisées ou désérialisées.</param>
+      <param name="rootName">
+        <see cref="T:System.Xml.XmlDictionaryString" /> contenant le nom de l'élément racine du contenu.</param>
+      <param name="rootNamespace">
+        <see cref="T:System.Xml.XmlDictionaryString" /> contenant l'espace de noms de l'élément racine.</param>
+      <param name="knownTypes">
+        <see cref="T:System.Collections.Generic.IEnumerable`1" /> de <see cref="T:System.Type" /> contenant les types connus pouvant être présents dans le graphique d'objets.</param>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataContractSerializer.IgnoreExtensionDataObject">
+      <summary>Obtient une valeur spécifiant s'il faut ignorer les données fournies par une extension de la classe lors de la sérialisation ou la désérialisation de la classe.</summary>
+      <returns>La valeur est true pour omettre les données de l'extension, sinon false.La valeur par défaut est true.</returns>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.IsStartObject(System.Xml.XmlDictionaryReader)">
+      <summary>Détermine si le <see cref="T:System.Xml.XmlDictionaryReader" /> est positionné sur un objet pouvant être désérialisé.</summary>
+      <returns>La valeur est true si le lecteur est positionné au niveau de l'élément de début du flux à lire, sinon false.</returns>
+      <param name="reader">
+        <see cref="T:System.Xml.XmlDictionaryReader" /> permettant de lire le flux XML.</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.IsStartObject(System.Xml.XmlReader)">
+      <summary>Détermine si le <see cref="T:System.Xml.XmlReader" /> est positionné sur un objet pouvant être désérialisé.</summary>
+      <returns>La valeur est true si le lecteur est positionné au niveau de l'élément de début du flux à lire, sinon false.</returns>
+      <param name="reader">
+        <see cref="T:System.Xml.XmlReader" /> permettant de lire le flux XML.</param>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataContractSerializer.KnownTypes">
+      <summary>Obtient une collection de types pouvant être présents dans le graphique d'objets sérialisé à l'aide de cette instance du <see cref="T:System.Runtime.Serialization.DataContractSerializer" />.</summary>
+      <returns>
+        <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> contenant les types attendus passés comme types connus au constructeur <see cref="T:System.Runtime.Serialization.DataContractSerializer" />.</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph">
+      <summary>Obtient le nombre maximal d'éléments dans un graphique d'objets à sérialiser ou désérialiser.</summary>
+      <returns>Nombre maximal d'éléments à sérialiser ou désérialiser.La valeur par défaut est <see cref="F:System.Int32.MaxValue" />.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">Le nombre d'éléments est supérieur à la valeur maximale.</exception>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataContractSerializer.PreserveObjectReferences">
+      <summary>Obtient une valeur spécifiant si des constructions XML non standard doivent êtres utilisées pour conserver les données de référence des objets.</summary>
+      <returns>La valeur est true pour conserver les références, sinon false.La valeur par défaut est false.</returns>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.ReadObject(System.Xml.XmlDictionaryReader,System.Boolean)">
+      <summary>Lit le flux XML à l'aide d'un <see cref="T:System.Xml.XmlDictionaryReader" />, renvoie l'objet désérialisé et spécifie si une vérification du nom de l'objet est effectuée avant la lecture de sa valeur. </summary>
+      <returns>Objet désérialisé.</returns>
+      <param name="reader">
+        <see cref="T:System.Xml.XmlDictionaryReader" /> permettant de lire le flux XML.</param>
+      <param name="verifyObjectName">La valeur est true pour vérifier si le nom de l'objet correspond à la valeur du nom racine fournie dans le constructeur, sinon false. </param>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">Le paramètre <paramref name="verifyObjectName" /> est défini sur true, et les nom d’élément et espace de noms ne correspondent pas aux valeurs définies dans le constructeur. </exception>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.ReadObject(System.Xml.XmlReader)">
+      <summary>Lit le flux XML à l'aide d'un <see cref="T:System.Xml.XmlReader" /> et renvoie l'objet désérialisé.</summary>
+      <returns>Objet désérialisé.</returns>
+      <param name="reader">
+        <see cref="T:System.Xml.XmlReader" /> permettant de lire le flux XML.</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.ReadObject(System.Xml.XmlReader,System.Boolean)">
+      <summary>Lit le flux XML à l'aide d'un <see cref="T:System.Xml.XmlReader" />, renvoie l'objet désérialisé et spécifie si une vérification du nom de l'objet est effectuée avant la lecture de sa valeur.</summary>
+      <returns>Objet désérialisé.</returns>
+      <param name="reader">
+        <see cref="T:System.Xml.XmlReader" /> permettant de lire le flux XML.</param>
+      <param name="verifyObjectName">La valeur est true pour vérifier si le nom de l'objet correspond à la valeur du nom racine fournie dans le constructeur, sinon false.</param>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">Le paramètre <paramref name="verifyObjectName" /> est défini sur true, et les nom d’élément et espace de noms ne correspondent pas aux valeurs définies dans le constructeur. </exception>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataContractSerializer.SerializeReadOnlyTypes">
+      <summary>Obtient une valeur spécifiant si les types en lecture seule sont sérialisés.</summary>
+      <returns>La valeur est true si les types en lecture seule sont sérialisés, false si tous les types sont sérialisés.</returns>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.WriteEndObject(System.Xml.XmlDictionaryWriter)">
+      <summary>Écrit l'élément XML de fin à l'aide d'un <see cref="T:System.Xml.XmlDictionaryWriter" />..</summary>
+      <param name="writer">
+        <see cref="T:System.Xml.XmlDictionaryWriter" /> permettant d'écrire sur le flux.</param>
+      <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">Le type en cours de sérialisation n'est pas conforme aux règles du contrat de données.Par exemple, l’attribut <see cref="T:System.Runtime.Serialization.DataContractAttribute" /> n’a pas été appliqué au type.</exception>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">Un problème existe avec l'instance en cours d'écriture.</exception>
+      <exception cref="T:System.ServiceModel.QuotaExceededException">Le nombre maximal d'objets à sérialiser est dépassé.Examinez la propriété <see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" />.</exception>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.WriteEndObject(System.Xml.XmlWriter)">
+      <summary>Écrit l'élément XML de fin à l'aide d'un <see cref="T:System.Xml.XmlWriter" />..</summary>
+      <param name="writer">
+        <see cref="T:System.Xml.XmlWriter" /> permettant d'écrire sur le flux.</param>
+      <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">Le type en cours de sérialisation n'est pas conforme aux règles du contrat de données.Par exemple, l’attribut <see cref="T:System.Runtime.Serialization.DataContractAttribute" /> n’a pas été appliqué au type.</exception>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">Un problème existe avec l'instance en cours d'écriture.</exception>
+      <exception cref="T:System.ServiceModel.QuotaExceededException">Le nombre maximal d'objets à sérialiser est dépassé.Examinez la propriété <see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" />.</exception>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.WriteObject(System.Xml.XmlWriter,System.Object)">
+      <summary>Écrit toutes les données d'objet (élément XML de début, contenu et élément de fin) dans un document ou flux XML à l'aide d'un <see cref="T:System.Xml.XmlWriter" />..</summary>
+      <param name="writer">
+        <see cref="T:System.Xml.XmlWriter" /> permettant d'écrire le flux ou document XML.</param>
+      <param name="graph">Objet contenant les données à écrire dans le flux.</param>
+      <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">Le type en cours de sérialisation n'est pas conforme aux règles du contrat de données.Par exemple, l’attribut <see cref="T:System.Runtime.Serialization.DataContractAttribute" /> n’a pas été appliqué au type.</exception>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">Un problème existe avec l'instance en cours d'écriture.</exception>
+      <exception cref="T:System.ServiceModel.QuotaExceededException">Le nombre maximal d'objets à sérialiser est dépassé.Examinez la propriété <see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" />.</exception>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.WriteObjectContent(System.Xml.XmlDictionaryWriter,System.Object)">
+      <summary>Écrit le contenu XML à l'aide d'un <see cref="T:System.Xml.XmlDictionaryWriter" />..</summary>
+      <param name="writer">
+        <see cref="T:System.Xml.XmlDictionaryWriter" /> permettant d'écrire sur le flux.</param>
+      <param name="graph">Objet à écrire dans le flux.</param>
+      <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">Le type en cours de sérialisation n'est pas conforme aux règles du contrat de données.Par exemple, l’attribut <see cref="T:System.Runtime.Serialization.DataContractAttribute" /> n’a pas été appliqué au type.</exception>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">Un problème existe avec l'instance en cours d'écriture.</exception>
+      <exception cref="T:System.ServiceModel.QuotaExceededException">Le nombre maximal d'objets à sérialiser est dépassé.Examinez la propriété <see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" />.</exception>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.WriteObjectContent(System.Xml.XmlWriter,System.Object)">
+      <summary>Écrit le contenu XML à l'aide d'un <see cref="T:System.Xml.XmlWriter" />..</summary>
+      <param name="writer">
+        <see cref="T:System.Xml.XmlWriter" /> permettant d'écrire sur le flux.</param>
+      <param name="graph">Objet à écrire dans le flux.</param>
+      <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">Le type en cours de sérialisation n'est pas conforme aux règles du contrat de données.Par exemple, l’attribut <see cref="T:System.Runtime.Serialization.DataContractAttribute" /> n’a pas été appliqué au type.</exception>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">Un problème existe avec l'instance en cours d'écriture.</exception>
+      <exception cref="T:System.ServiceModel.QuotaExceededException">Le nombre maximal d'objets à sérialiser est dépassé.Examinez la propriété <see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" />.</exception>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.WriteStartObject(System.Xml.XmlDictionaryWriter,System.Object)">
+      <summary>Écrit l'élément XML de début à l'aide d'un <see cref="T:System.Xml.XmlDictionaryWriter" />..</summary>
+      <param name="writer">
+        <see cref="T:System.Xml.XmlDictionaryWriter" /> permettant d'écrire l'élément XML de début.</param>
+      <param name="graph">Objet à écrire.</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.WriteStartObject(System.Xml.XmlWriter,System.Object)">
+      <summary>Écrit l'élément XML de début à l'aide d'un <see cref="T:System.Xml.XmlWriter" />..</summary>
+      <param name="writer">
+        <see cref="T:System.Xml.XmlWriter" /> permettant d'écrire l'élément XML de début.</param>
+      <param name="graph">Objet à écrire.</param>
+    </member>
+    <member name="T:System.Runtime.Serialization.DataContractSerializerSettings">
+      <summary>Spécifie les paramètres de sérialiseur de contrat de données.</summary>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializerSettings.#ctor">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Runtime.Serialization.DataContractSerializerSettings" />.</summary>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataContractSerializerSettings.DataContractResolver">
+      <summary>Obtient ou définit le composant utilisé pour mapper dynamiquement les déclarations xsi:type aux types de contrats connus.</summary>
+      <returns>Composant utilisé pour mapper dynamiquement les déclarations xsi:type aux types de contrats connus.</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataContractSerializerSettings.KnownTypes">
+      <summary>Obtient ou définit une collection de types pouvant être présents dans le graphique d'objets sérialisé à l'aide de cette instance de DataContractSerializerSettings.</summary>
+      <returns>Collection de types pouvant être présents dans le graphique d'objets sérialisé à l'aide de cette instance de DataContractSerializerSettings.</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataContractSerializerSettings.MaxItemsInObjectGraph">
+      <summary>Obtient ou définit le nombre maximal d'éléments dans un graphique d'objets à sérialiser ou désérialiser.</summary>
+      <returns>Nombre maximal d'éléments dans un graphique d'objets à sérialiser ou désérialiser.</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataContractSerializerSettings.PreserveObjectReferences">
+      <summary>Obtient ou définit une valeur spécifiant si des constructions XML non standard doivent êtres utilisées pour conserver les données de référence des objets.</summary>
+      <returns>La valeur est true pour utiliser des constructions XML non standard pour conserver les données de référence d'objet, sinon false.</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataContractSerializerSettings.RootName">
+      <summary>Obtient ou définit le nom racine de l'objet sélectionné.</summary>
+      <returns>Nom racine de l'objet sélectionné.</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataContractSerializerSettings.RootNamespace">
+      <summary>Obtient ou définit l'espace de noms racine de l'objet spécifié.</summary>
+      <returns>Espace de noms racine de l'objet spécifié.</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataContractSerializerSettings.SerializeReadOnlyTypes">
+      <summary>Obtient ou définit une valeur spécifiant si les types en lecture seule doivent être sérialisés.</summary>
+      <returns>La valeur est true pour sérialiser les types en lecture seule, sinon false.</returns>
+    </member>
+    <member name="T:System.Runtime.Serialization.DataMemberAttribute">
+      <summary>Lors de l'application au membre d'un type, spécifie que le membre fait partie d'un contrat de données et qu'il est sérialisable par le <see cref="T:System.Runtime.Serialization.DataContractSerializer" />. </summary>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataMemberAttribute.#ctor">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Runtime.Serialization.DataMemberAttribute" />. </summary>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue">
+      <summary>Obtient ou définit une valeur qui spécifie si la valeur par défaut d'un champ ou d'une propriété en cours de sérialisation doit être sérialisée. </summary>
+      <returns>La valeur est true si la valeur par défaut d'un membre doit être générée dans le flux de sérialisation, sinon false.La valeur par défaut est true.</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataMemberAttribute.IsRequired">
+      <summary>Obtient ou définit une valeur indiquant au moteur de sérialisation si le membre doit figurer dans les données sérialisées pendant sa désérialisation.</summary>
+      <returns>La valeur est true si le membre est obligatoire, sinon false.La valeur par défaut est false.</returns>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">Le membre n’est pas présent, ou il est présent mais sa valeur par défaut inclut la valeur <see cref="P:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue" /> définie sur true.</exception>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataMemberAttribute.Name">
+      <summary>Obtient ou définit le nom des données membres. </summary>
+      <returns>Nom des données membres.Le nom par défaut d'un contrat de données pour un type de données membres spécifique correspond au nom de membre CLR de ce type.</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataMemberAttribute.Order">
+      <summary>Obtient ou définit l'ordre de sérialisation et de désérialisation d'un membre.</summary>
+      <returns>Ordre numérique de la sérialisation ou la désérialisation.</returns>
+    </member>
+    <member name="T:System.Runtime.Serialization.EnumMemberAttribute">
+      <summary>Spécifie que le champ est un membre d'énumération et doit être sérialisé.</summary>
+    </member>
+    <member name="M:System.Runtime.Serialization.EnumMemberAttribute.#ctor">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Runtime.Serialization.EnumMemberAttribute" />. </summary>
+    </member>
+    <member name="P:System.Runtime.Serialization.EnumMemberAttribute.Value">
+      <summary>Obtient ou définit la valeur associée au membre d'énumération auquel l'attribut est appliqué.</summary>
+      <returns>Valeur associée au membre d'énumération.</returns>
+    </member>
+    <member name="T:System.Runtime.Serialization.IgnoreDataMemberAttribute">
+      <summary>Lors de l'application au membre d'un type, spécifie que le membre ne fait pas partie d'un contrat de données et qu'il n'est pas sérialisé.</summary>
+    </member>
+    <member name="M:System.Runtime.Serialization.IgnoreDataMemberAttribute.#ctor">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Runtime.Serialization.IgnoreDataMemberAttribute" />. </summary>
+    </member>
+    <member name="T:System.Runtime.Serialization.InvalidDataContractException">
+      <summary>Exception levée lorsque le <see cref="T:System.Runtime.Serialization.DataContractSerializer" /> rencontre un contrat de données non valide lors de la sérialisation et de la désérialisation. </summary>
+    </member>
+    <member name="M:System.Runtime.Serialization.InvalidDataContractException.#ctor">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Runtime.Serialization.InvalidDataContractException" />. </summary>
+    </member>
+    <member name="M:System.Runtime.Serialization.InvalidDataContractException.#ctor(System.String)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Runtime.Serialization.InvalidDataContractException" /> avec le message d'erreur spécifié. </summary>
+      <param name="message">Description de l'erreur. </param>
+    </member>
+    <member name="M:System.Runtime.Serialization.InvalidDataContractException.#ctor(System.String,System.Exception)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Runtime.Serialization.InvalidDataContractException" /> avec le message d'erreur et l'exception interne spécifiés. </summary>
+      <param name="message">Description de l'erreur. </param>
+      <param name="innerException">
+        <see cref="T:System.Exception" /> d'origine. </param>
+    </member>
+    <member name="T:System.Runtime.Serialization.KnownTypeAttribute">
+      <summary>Spécifie les types qui doivent être reconnus par le <see cref="T:System.Runtime.Serialization.DataContractSerializer" /> lors de la sérialisation ou la désérialisation d'un type donné. </summary>
+    </member>
+    <member name="M:System.Runtime.Serialization.KnownTypeAttribute.#ctor(System.String)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Runtime.Serialization.KnownTypeAttribute" /> avec le nom d'une méthode qui renvoie un <see cref="T:System.Collections.IEnumerable" /> des types connus.</summary>
+      <param name="methodName">Nom de la méthode qui renvoie un <see cref="T:System.Collections.IEnumerable" /> des types utilisés lors de la sérialisation ou la désérialisation de données.</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.KnownTypeAttribute.#ctor(System.Type)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Runtime.Serialization.KnownTypeAttribute" /> à l'aide du type spécifié. </summary>
+      <param name="type">
+        <see cref="T:System.Type" /> inclus comme type connu lors de la sérialisation ou désérialisation de données.</param>
+    </member>
+    <member name="P:System.Runtime.Serialization.KnownTypeAttribute.MethodName">
+      <summary>Obtient le nom d'une méthode qui renvoie la liste des types qui doivent être reconnus lors de la sérialisation ou la désérialisation. </summary>
+      <returns>Nom de la méthode sur le type défini par la classe <see cref="T:System.Runtime.Serialization.KnownTypeAttribute" />.</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.KnownTypeAttribute.Type">
+      <summary>Obtient le type qui doit être reconnu lors de la sérialisation ou désérialisation par le <see cref="T:System.Runtime.Serialization.DataContractSerializer" />. </summary>
+      <returns>
+        <see cref="T:System.Type" /> utilisé lors de la sérialisation ou la désérialisation. </returns>
+    </member>
+    <member name="T:System.Runtime.Serialization.XmlObjectSerializer">
+      <summary>Fournit la classe de base utilisée pour sérialiser les objets en flux ou documents XML.Cette classe est abstraite.</summary>
+      <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">Le type en cours de sérialisation n'est pas conforme aux règles du contrat de données.Par exemple, l’attribut <see cref="T:System.Runtime.Serialization.DataContractAttribute" /> n’a pas été appliqué au type.</exception>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">L’instance en cours de sérialisation a rencontré un problème. </exception>
+    </member>
+    <member name="M:System.Runtime.Serialization.XmlObjectSerializer.#ctor">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Runtime.Serialization.XmlObjectSerializer" />. </summary>
+    </member>
+    <member name="M:System.Runtime.Serialization.XmlObjectSerializer.IsStartObject(System.Xml.XmlDictionaryReader)">
+      <summary>Obtient une valeur spécifiant si le <see cref="T:System.Xml.XmlDictionaryReader" /> est positionné sur un élément XML pouvant être lu.</summary>
+      <returns>La valeur est true si le lecteur peut lire les données, sinon false.</returns>
+      <param name="reader">
+        <see cref="T:System.Xml.XmlDictionaryReader" /> permettant de lire le flux ou document XML.</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.XmlObjectSerializer.IsStartObject(System.Xml.XmlReader)">
+      <summary>Obtient une valeur spécifiant si le <see cref="T:System.Xml.XmlReader" /> est positionné sur un élément XML pouvant être lu.</summary>
+      <returns>La valeur est true si le lecteur est positionné sur l'élément de début, sinon false.</returns>
+      <param name="reader">
+        <see cref="T:System.Xml.XmlReader" /> permettant de lire le flux ou document XML.</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.XmlObjectSerializer.ReadObject(System.IO.Stream)">
+      <summary>Lit le flux ou document XML à l'aide d'un <see cref="T:System.IO.Stream" /> et renvoie l'objet désérialisé.</summary>
+      <returns>Objet désérialisé.</returns>
+      <param name="stream">
+        <see cref="T:System.IO.Stream" /> permettant de lire le flux ou document XML.</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.XmlObjectSerializer.ReadObject(System.Xml.XmlDictionaryReader)">
+      <summary>Lit le flux ou document XML à l'aide d'un <see cref="T:System.Xml.XmlDictionaryReader" /> et renvoie l'objet désérialisé.</summary>
+      <returns>Objet désérialisé.</returns>
+      <param name="reader">
+        <see cref="T:System.Xml.XmlDictionaryReader" /> permettant de lire le document XML.</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.XmlObjectSerializer.ReadObject(System.Xml.XmlDictionaryReader,System.Boolean)">
+      <summary>Lorsqu'elle est implémentée dans une classe dérivée, lit le flux ou document XML à l'aide d'un <see cref="T:System.Xml.XmlDictionaryReader" /> et renvoie l'objet désérialisé.</summary>
+      <returns>Objet désérialisé.</returns>
+      <param name="reader">
+        <see cref="T:System.Xml.XmlDictionaryReader" /> permettant de lire le document XML.</param>
+      <param name="verifyObjectName">La valeur est true pour vérifier si le nom d'élément et l'espace de noms XML englobants correspondent aux nom et espace de noms racines, sinon false pour ignorer la vérification.</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.XmlObjectSerializer.ReadObject(System.Xml.XmlReader)">
+      <summary>Lit le flux ou document XML à l'aide d'un <see cref="T:System.Xml.XmlReader" /> et renvoie l'objet désérialisé.</summary>
+      <returns>Objet désérialisé.</returns>
+      <param name="reader">
+        <see cref="T:System.Xml.XmlReader" /> permettant de lire le flux ou document XML.</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.XmlObjectSerializer.ReadObject(System.Xml.XmlReader,System.Boolean)">
+      <summary>Lit le flux ou document XML à l'aide d'un <see cref="T:System.Xml.XmlReader" /> et renvoie l'objet désérialisé.Permet également de spécifier si le sérialiseur peut lire les données avant la lecture du flux ou document XML.</summary>
+      <returns>Objet désérialisé.</returns>
+      <param name="reader">
+        <see cref="T:System.Xml.XmlReader" /> permettant de lire le flux ou document XML.</param>
+      <param name="verifyObjectName">La valeur est true pour vérifier si le nom d'élément et l'espace de noms XML englobants correspondent aux nom et espace de noms racines, sinon false pour ignorer la vérification.</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.XmlObjectSerializer.WriteEndObject(System.Xml.XmlDictionaryWriter)">
+      <summary>Écrit la fin des données de l'objet comme élément XML de fin du document ou flux XML à l'aide d'un <see cref="T:System.Xml.XmlDictionaryWriter" />.</summary>
+      <param name="writer">
+        <see cref="T:System.Xml.XmlDictionaryWriter" /> permettant de lire le flux ou document XML.</param>
+      <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">Le type en cours de sérialisation n'est pas conforme aux règles du contrat de données.Par exemple, l’attribut <see cref="T:System.Runtime.Serialization.DataContractAttribute" /> n’a pas été appliqué au type.</exception>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">L'instance en cours de sérialisation a rencontré un problème.</exception>
+      <exception cref="T:System.ServiceModel.QuotaExceededException">Le nombre maximal d'objets à sérialiser est dépassé.Examinez la propriété <see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" />.</exception>
+    </member>
+    <member name="M:System.Runtime.Serialization.XmlObjectSerializer.WriteEndObject(System.Xml.XmlWriter)">
+      <summary>Écrit la fin des données de l'objet comme élément XML de fin du document ou flux XML à l'aide d'un <see cref="T:System.Xml.XmlWriter" />.</summary>
+      <param name="writer">
+        <see cref="T:System.Xml.XmlWriter" /> permettant de lire le flux ou document XML.</param>
+      <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">Le type en cours de sérialisation n'est pas conforme aux règles du contrat de données.Par exemple, l’attribut <see cref="T:System.Runtime.Serialization.DataContractAttribute" /> n’a pas été appliqué au type.</exception>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">L'instance en cours de sérialisation a rencontré un problème.</exception>
+      <exception cref="T:System.ServiceModel.QuotaExceededException">Le nombre maximal d'objets à sérialiser est dépassé.Examinez la propriété <see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" />.</exception>
+    </member>
+    <member name="M:System.Runtime.Serialization.XmlObjectSerializer.WriteObject(System.IO.Stream,System.Object)">
+      <summary>Écrit le contenu complet (début, contenu et fin) de l'objet dans le document ou flux XML à l'aide du <see cref="T:System.IO.Stream" /> spécifié.</summary>
+      <param name="stream">
+        <see cref="T:System.IO.Stream" /> permettant de lire le flux ou document XML.</param>
+      <param name="graph">Objet contenant les données à écrire dans le flux.</param>
+      <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">Le type en cours de sérialisation n'est pas conforme aux règles du contrat de données.Par exemple, l’attribut <see cref="T:System.Runtime.Serialization.DataContractAttribute" /> n’a pas été appliqué au type.</exception>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">L'instance en cours de sérialisation a rencontré un problème.</exception>
+      <exception cref="T:System.ServiceModel.QuotaExceededException">Le nombre maximal d'objets à sérialiser est dépassé.Examinez la propriété <see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" />.</exception>
+    </member>
+    <member name="M:System.Runtime.Serialization.XmlObjectSerializer.WriteObject(System.Xml.XmlDictionaryWriter,System.Object)">
+      <summary>Écrit le contenu complet (début, contenu et fin) de l'objet dans le document ou flux XML à l'aide du <see cref="T:System.Xml.XmlDictionaryWriter" /> spécifié.</summary>
+      <param name="writer">
+        <see cref="T:System.Xml.XmlDictionaryWriter" /> permettant d'écrire le contenu du document ou flux XML.</param>
+      <param name="graph">Objet contenant le contenu à écrire.</param>
+      <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">Le type en cours de sérialisation n'est pas conforme aux règles du contrat de données.Par exemple, l’attribut <see cref="T:System.Runtime.Serialization.DataContractAttribute" /> n’a pas été appliqué au type.</exception>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">L'instance en cours de sérialisation a rencontré un problème.</exception>
+      <exception cref="T:System.ServiceModel.QuotaExceededException">Le nombre maximal d'objets à sérialiser est dépassé.Examinez la propriété <see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" />.</exception>
+    </member>
+    <member name="M:System.Runtime.Serialization.XmlObjectSerializer.WriteObject(System.Xml.XmlWriter,System.Object)">
+      <summary>Écrit le contenu complet (début, contenu et fin) de l'objet dans le document ou flux XML à l'aide du <see cref="T:System.Xml.XmlWriter" /> spécifié.</summary>
+      <param name="writer">
+        <see cref="T:System.Xml.XmlWriter" /> permettant de lire le flux ou document XML.</param>
+      <param name="graph">Objet contenant le contenu à écrire.</param>
+      <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">Le type en cours de sérialisation n'est pas conforme aux règles du contrat de données.Par exemple, l’attribut <see cref="T:System.Runtime.Serialization.DataContractAttribute" /> n’a pas été appliqué au type.</exception>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">L'instance en cours de sérialisation a rencontré un problème.</exception>
+      <exception cref="T:System.ServiceModel.QuotaExceededException">Le nombre maximal d'objets à sérialiser est dépassé.Examinez la propriété <see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" />.</exception>
+    </member>
+    <member name="M:System.Runtime.Serialization.XmlObjectSerializer.WriteObjectContent(System.Xml.XmlDictionaryWriter,System.Object)">
+      <summary>Écrit uniquement le contenu de l'objet dans le document ou flux XML à l'aide du <see cref="T:System.Xml.XmlDictionaryWriter" /> spécifié.</summary>
+      <param name="writer">
+        <see cref="T:System.Xml.XmlDictionaryWriter" /> permettant de lire le flux ou document XML.</param>
+      <param name="graph">Objet contenant le contenu à écrire.</param>
+      <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">Le type en cours de sérialisation n'est pas conforme aux règles du contrat de données.Par exemple, l’attribut <see cref="T:System.Runtime.Serialization.DataContractAttribute" /> n’a pas été appliqué au type.</exception>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">L'instance en cours de sérialisation a rencontré un problème.</exception>
+      <exception cref="T:System.ServiceModel.QuotaExceededException">Le nombre maximal d'objets à sérialiser est dépassé.Examinez la propriété <see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" />.</exception>
+    </member>
+    <member name="M:System.Runtime.Serialization.XmlObjectSerializer.WriteObjectContent(System.Xml.XmlWriter,System.Object)">
+      <summary>Écrit uniquement le contenu de l'objet dans le document ou flux XML à l'aide du <see cref="T:System.Xml.XmlWriter" /> spécifié.</summary>
+      <param name="writer">
+        <see cref="T:System.Xml.XmlWriter" /> permettant de lire le flux ou document XML.</param>
+      <param name="graph">Objet contenant le contenu à écrire.</param>
+      <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">Le type en cours de sérialisation n'est pas conforme aux règles du contrat de données.Par exemple, l’attribut <see cref="T:System.Runtime.Serialization.DataContractAttribute" /> n’a pas été appliqué au type.</exception>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">L'instance en cours de sérialisation a rencontré un problème.</exception>
+      <exception cref="T:System.ServiceModel.QuotaExceededException">Le nombre maximal d'objets à sérialiser est dépassé.Examinez la propriété <see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" />.</exception>
+    </member>
+    <member name="M:System.Runtime.Serialization.XmlObjectSerializer.WriteStartObject(System.Xml.XmlDictionaryWriter,System.Object)">
+      <summary>Écrit le début des données de l'objet comme élément XML de début à l'aide du <see cref="T:System.Xml.XmlDictionaryWriter" /> spécifié.</summary>
+      <param name="writer">
+        <see cref="T:System.Xml.XmlDictionaryWriter" /> permettant d'écrire le document XML.</param>
+      <param name="graph">Objet à sérialiser.</param>
+      <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">Le type en cours de sérialisation n'est pas conforme aux règles du contrat de données.Par exemple, l’attribut <see cref="T:System.Runtime.Serialization.DataContractAttribute" /> n’a pas été appliqué au type.</exception>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">L'instance en cours de sérialisation a rencontré un problème.</exception>
+      <exception cref="T:System.ServiceModel.QuotaExceededException">Le nombre maximal d'objets à sérialiser est dépassé.Examinez la propriété <see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" />.</exception>
+    </member>
+    <member name="M:System.Runtime.Serialization.XmlObjectSerializer.WriteStartObject(System.Xml.XmlWriter,System.Object)">
+      <summary>Écrit le début des données de l'objet comme élément XML de début à l'aide du <see cref="T:System.Xml.XmlWriter" /> spécifié.</summary>
+      <param name="writer">
+        <see cref="T:System.Xml.XmlWriter" /> permettant d'écrire le document XML.</param>
+      <param name="graph">Objet à sérialiser.</param>
+      <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">Le type en cours de sérialisation n'est pas conforme aux règles du contrat de données.Par exemple, l’attribut <see cref="T:System.Runtime.Serialization.DataContractAttribute" /> n’a pas été appliqué au type.</exception>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">L'instance en cours de sérialisation a rencontré un problème.</exception>
+      <exception cref="T:System.ServiceModel.QuotaExceededException">Le nombre maximal d'objets à sérialiser est dépassé.Examinez la propriété <see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" />.</exception>
+    </member>
+    <member name="T:System.Xml.IXmlDictionary">
+      <summary>Interface définissant le contrat qu'un dictionnaire XML doit implémenter pour être utilisé par les implémentations <see cref="T:System.Xml.XmlDictionaryReader" /> et <see cref="T:System.Xml.XmlDictionaryWriter" />.</summary>
+    </member>
+    <member name="M:System.Xml.IXmlDictionary.TryLookup(System.Int32,System.Xml.XmlDictionaryString@)">
+      <summary>Tente de rechercher une entrée dans le dictionnaire.</summary>
+      <returns>La valeur est true si <paramref name="key" /> se trouve dans le dictionnaire, sinon false.</returns>
+      <param name="key">Clé à rechercher.</param>
+      <param name="result">Si <paramref name="key" /> se trouve dans le <see cref="T:System.Xml.IXmlDictionary" />, la <see cref="T:System.Xml.XmlDictionaryString" /> mappée à la clé, sinon null.</param>
+    </member>
+    <member name="M:System.Xml.IXmlDictionary.TryLookup(System.String,System.Xml.XmlDictionaryString@)">
+      <summary>Recherche une valeur de chaîne spécifiée dans le dictionnaire.</summary>
+      <returns>La valeur est true si <paramref name="value" /> se trouve dans le dictionnaire, sinon false.</returns>
+      <param name="value">Chaîne à rechercher.</param>
+      <param name="result">Si <paramref name="value" /> se trouve dans le <see cref="T:System.Xml.IXmlDictionary" />, la <see cref="T:System.Xml.XmlDictionaryString" /> mappée à la clé, sinon null.</param>
+    </member>
+    <member name="M:System.Xml.IXmlDictionary.TryLookup(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString@)">
+      <summary>Recherche une <see cref="T:System.Xml.XmlDictionaryString" /> spécifiée dans le dictionnaire.</summary>
+      <returns>La valeur est true si <see cref="T:System.Xml.XmlDictionaryString" /> se trouve dans le dictionnaire, sinon false.</returns>
+      <param name="value">
+        <see cref="T:System.Xml.XmlDictionaryString" /> recherchée.</param>
+      <param name="result">Si <paramref name="value" /> se trouve dans le <see cref="T:System.Xml.IXmlDictionary" />, la <see cref="T:System.Xml.XmlDictionaryString" /> mappée à la clé, sinon null.</param>
+    </member>
+    <member name="T:System.Xml.UniqueId">
+      <summary>Représente un identificateur unique optimisé pour les GUID.</summary>
+    </member>
+    <member name="M:System.Xml.UniqueId.#ctor">
+      <summary>Crée une instance de la classe <see cref="T:System.Xml.UniqueId" /> avec un nouveau GUID unique.</summary>
+    </member>
+    <member name="M:System.Xml.UniqueId.#ctor(System.Byte[])">
+      <summary>Crée une instance de la classe <see cref="T:System.Xml.UniqueId" /> à l'aide d'un tableau d'octets représentant un <see cref="T:System.Guid" />.</summary>
+      <param name="guid">Tableau d'octets représentant un <see cref="T:System.Guid" />.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="guid" /> a la valeur null.</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="guid" /> fournit moins de 16 octets valides.</exception>
+    </member>
+    <member name="M:System.Xml.UniqueId.#ctor(System.Byte[],System.Int32)">
+      <summary>Crée une instance de la classe <see cref="T:System.Xml.UniqueId" /> débutant à partir d'un offset dans un tableau byte représentant un <see cref="T:System.Guid" />.</summary>
+      <param name="guid">Tableau byte représentant un <see cref="T:System.Guid" />.</param>
+      <param name="offset">Position de l'offset dans le tableau byte représentant un <see cref="T:System.Guid" />.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="guid" /> a la valeur null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur du tableau.</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="guid" /> et <paramref name="offset" /> fournissent moins de 16 octets valides.</exception>
+    </member>
+    <member name="M:System.Xml.UniqueId.#ctor(System.Char[],System.Int32,System.Int32)">
+      <summary>Crée une instance de cette classe débutant à partir d'un offset dans un char à l'aide d'un nombre spécifié d'entrées.</summary>
+      <param name="chars">Tableau char représentant un <see cref="T:System.Guid" />.</param>
+      <param name="offset">Position de l'offset dans le tableau char représentant un <see cref="T:System.Guid" />.</param>
+      <param name="count">Nombre d'entrées de tableau à utiliser à partir de l'<paramref name="offset" />.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="chars" /> a la valeur null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur du tableau.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur du tableau moins <paramref name="offset" />.</exception>
+      <exception cref="T:System.FormatException">
+        <paramref name="count" /> est égal à zéro.</exception>
+    </member>
+    <member name="M:System.Xml.UniqueId.#ctor(System.Guid)">
+      <summary>Crée une instance de la classe <see cref="T:System.Xml.UniqueId" /> à l'aide d'un <see cref="T:System.Guid" />.</summary>
+      <param name="guid">
+        <see cref="T:System.Guid" />.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="guid" /> a la valeur null.</exception>
+    </member>
+    <member name="M:System.Xml.UniqueId.#ctor(System.String)">
+      <summary>Crée une instance de la classe <see cref="T:System.Xml.UniqueId" /> à l'aide d'une chaîne.</summary>
+      <param name="value">Chaîne utilisée pour générer l'objet <see cref="T:System.Xml.UniqueId" />.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="value" /> a la valeur null.</exception>
+      <exception cref="T:System.FormatException">La longueur de <paramref name="value" /> est égale à zéro.</exception>
+    </member>
+    <member name="P:System.Xml.UniqueId.CharArrayLength">
+      <summary>Obtient une valeur indiquant la longueur de la représentation sous forme de chaîne de l'objet <see cref="T:System.Xml.UniqueId" />.</summary>
+      <returns>Longueur de la représentation sous forme de chaîne de l'objet <see cref="T:System.Xml.UniqueId" />.</returns>
+    </member>
+    <member name="M:System.Xml.UniqueId.Equals(System.Object)">
+      <summary>Vérifie si un objet est égal à cet objet <see cref="T:System.Xml.UniqueId" />.</summary>
+      <returns>La valeur est true si l'objet est égal à <see cref="T:System.Xml.UniqueId" />, sinon false.</returns>
+      <param name="obj">Objet à comparer.</param>
+    </member>
+    <member name="M:System.Xml.UniqueId.GetHashCode">
+      <summary>Crée une représentation sous forme de code de hachage de cet objet <see cref="T:System.Xml.UniqueId" />.</summary>
+      <returns>Représentation sous forme de code de hachage entier de cet objet <see cref="T:System.Xml.UniqueId" />.</returns>
+    </member>
+    <member name="P:System.Xml.UniqueId.IsGuid">
+      <summary>Obtient une valeur indiquant si l'objet <see cref="T:System.Xml.UniqueId" /> est un <see cref="T:System.Guid" />.</summary>
+      <returns>La valeur est true si <see cref="T:System.Xml.UniqueId" /> est un <see cref="T:System.Guid" />, sinon false.</returns>
+    </member>
+    <member name="M:System.Xml.UniqueId.op_Equality(System.Xml.UniqueId,System.Xml.UniqueId)">
+      <summary>Remplace l'opérateur d'égalité pour vérifier l'égalité de deux objets <see cref="T:System.Xml.UniqueId" />.</summary>
+      <returns>La valeur est true si les deux <see cref="T:System.Xml.UniqueId" /> sont égaux ou ont tous les deux la valeur null, sinon false.</returns>
+      <param name="id1">Premier <see cref="T:System.Xml.UniqueId" />.</param>
+      <param name="id2">Second <see cref="T:System.Xml.UniqueId" />.</param>
+    </member>
+    <member name="M:System.Xml.UniqueId.op_Inequality(System.Xml.UniqueId,System.Xml.UniqueId)">
+      <summary>Remplace l'opérateur d'égalité pour vérifier l'inégalité de deux <see cref="T:System.Xml.UniqueId" />.</summary>
+      <returns>La valeur est true si l'opérateur d'égalité substitué renvoie la valeur false, sinon false.</returns>
+      <param name="id1">Premier <see cref="T:System.Xml.UniqueId" />.</param>
+      <param name="id2">Second <see cref="T:System.Xml.UniqueId" />.</param>
+    </member>
+    <member name="M:System.Xml.UniqueId.ToCharArray(System.Char[],System.Int32)">
+      <summary>Place la valeur de l'objet <see cref="T:System.Xml.UniqueId" /> dans un tableau char.</summary>
+      <returns>Nombre d'entrées dans le tableau char renseigné par la valeur <see cref="T:System.Xml.UniqueId" />.</returns>
+      <param name="chars">Tableau char.</param>
+      <param name="offset">Position dans le tableau char depuis laquelle débuter l'insertion de la valeur de <see cref="T:System.Xml.UniqueId" />.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="chars" /> a la valeur null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur du tableau.</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="guid " /> et <paramref name=" offset" /> fournissent moins de 16 octets valides.</exception>
+    </member>
+    <member name="M:System.Xml.UniqueId.ToString">
+      <summary>Affiche la valeur de <see cref="T:System.Xml.UniqueId" /> dans un format de chaîne.</summary>
+      <returns>Valeur <see cref="T:System.Xml.UniqueId" />.</returns>
+    </member>
+    <member name="M:System.Xml.UniqueId.TryGetGuid(System.Byte[],System.Int32)">
+      <summary>Tente d'obtenir la valeur de <see cref="T:System.Xml.UniqueId" /> en tant que <see cref="T:System.Guid" /> et la stocke dans le tableau d'octets au décalage spécifié.</summary>
+      <returns>La valeur est true si la valeur stockée dans cette instance de <see cref="T:System.Xml.UniqueId" /> est un <see cref="T:System.Guid" />, sinon false.</returns>
+      <param name="buffer">Tableau byte contenant le <see cref="T:System.Guid" />.</param>
+      <param name="offset">Position dans le tableau byte depuis laquelle débuter l'insertion de la valeur de <see cref="T:System.Guid" />.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="buffer" /> a la valeur null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur du tableau.</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="buffer" /> et <paramref name="offset" /> fournissent moins de 16 octets valides.</exception>
+    </member>
+    <member name="M:System.Xml.UniqueId.TryGetGuid(System.Guid@)">
+      <summary>Tente d'obtenir la valeur de <see cref="T:System.Xml.UniqueId" /> en tant que <see cref="T:System.Guid" />.</summary>
+      <returns>La valeur est true si <see cref="T:System.Xml.UniqueId" /> représente un <see cref="T:System.Guid" />, sinon false.</returns>
+      <param name="guid">
+        <see cref="T:System.Guid" /> en cas de succès, sinon <see cref="F:System.Guid.Empty" />.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="buffer" /> a la valeur null.</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="buffer" /> et <paramref name="offset" /> fournissent moins de 16 octets valides.</exception>
+    </member>
+    <member name="T:System.Xml.XmlBinaryReaderSession">
+      <summary>Permet la gestion des chaînes optimisées de façon dynamique.</summary>
+    </member>
+    <member name="M:System.Xml.XmlBinaryReaderSession.#ctor">
+      <summary>Crée une instance de la classe <see cref="T:System.Xml.XmlBinaryReaderSession" />.</summary>
+    </member>
+    <member name="M:System.Xml.XmlBinaryReaderSession.Add(System.Int32,System.String)">
+      <summary>Crée une <see cref="T:System.Xml.XmlDictionaryString" /> à partir des paramètres d'entrée et l'ajoute à une collection interne.</summary>
+      <returns>
+        <see cref="T:System.Xml.XmlDictionaryString" />.</returns>
+      <param name="id">Valeur de la clé.</param>
+      <param name="value">Valeur.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="id" /> est inférieur à zéro.</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="value" /> est null.</exception>
+      <exception cref="T:System.InvalidOperationException">Une entrée associée à la clé <paramref name="id" /> existe déjà.</exception>
+    </member>
+    <member name="M:System.Xml.XmlBinaryReaderSession.Clear">
+      <summary>Efface la collection interne des contenus.</summary>
+    </member>
+    <member name="M:System.Xml.XmlBinaryReaderSession.TryLookup(System.Int32,System.Xml.XmlDictionaryString@)">
+      <summary>Vérifie si la collection interne contient une entrée avec une clé spécifiée.</summary>
+      <returns>La valeur est true si une entrée correspondant à <paramref name="key" /> est trouvée, sinon false.</returns>
+      <param name="key">Touche à mettre en correspondance.</param>
+      <param name="result">
+        <see cref="T:System.Xml.XmlDictionaryString" /> si elle existe, sinon null.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="key" /> est null.</exception>
+    </member>
+    <member name="M:System.Xml.XmlBinaryReaderSession.TryLookup(System.String,System.Xml.XmlDictionaryString@)">
+      <summary>Vérifie si la collection interne contient une entrée avec une valeur de chaîne spécifiée.</summary>
+      <returns>La valeur est true si une entrée correspondant à <paramref name="value" /> est trouvée, sinon false.</returns>
+      <param name="value">Valeur de chaîne à trouver.</param>
+      <param name="result">
+        <see cref="T:System.Xml.XmlDictionaryString" /> si elle existe, sinon null.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="value" /> est null.</exception>
+    </member>
+    <member name="M:System.Xml.XmlBinaryReaderSession.TryLookup(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString@)">
+      <summary>Vérifie si la collection interne contient une entrée spécifiée.</summary>
+      <returns>La valeur est true si une entrée correspondant à <paramref name="value" /> est trouvée, sinon false.</returns>
+      <param name="value">Valeur à trouver.</param>
+      <param name="result">
+        <see cref="T:System.Xml.XmlDictionaryString" /> si elle existe, sinon null.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="value" /> est null.</exception>
+    </member>
+    <member name="T:System.Xml.XmlBinaryWriterSession">
+      <summary>Permet l'utilisation d'un dictionnaire dynamique pour compresser les chaînes courantes qui apparaissent dans un message et conservent l'état.</summary>
+    </member>
+    <member name="M:System.Xml.XmlBinaryWriterSession.#ctor">
+      <summary>Crée une instance de la classe <see cref="T:System.Xml.XmlBinaryWriterSession" />.</summary>
+    </member>
+    <member name="M:System.Xml.XmlBinaryWriterSession.Reset">
+      <summary>Efface les collections internes.</summary>
+    </member>
+    <member name="M:System.Xml.XmlBinaryWriterSession.TryAdd(System.Xml.XmlDictionaryString,System.Int32@)">
+      <summary>Tente d'ajouter une <see cref="T:Sytem.Xml.XmlDictionaryString" /> à la collection interne.</summary>
+      <returns>La valeur est true, sauf si une exception est levée.</returns>
+      <param name="value">
+        <see cref="T:Sytem.Xml.XmlDictionaryString" /> à ajouter.</param>
+      <param name="key">Clé de la <see cref="T:Sytem.Xml.XmlDictionaryString" /> qui a été correctement ajoutée.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="value" /> est null.</exception>
+      <exception cref="T:System.InvalidOperationException">Une entrée associée à la clé <paramref name="key" /> existe déjà.</exception>
+    </member>
+    <member name="T:System.Xml.XmlDictionary">
+      <summary>Implémente un dictionnaire permettant d'optimiser les implémentations de lecteur/writer XML de Windows Phone.</summary>
+    </member>
+    <member name="M:System.Xml.XmlDictionary.#ctor">
+      <summary>Crée un <see cref="T:System.Xml.XmlDictionary" /> vide.</summary>
+    </member>
+    <member name="M:System.Xml.XmlDictionary.#ctor(System.Int32)">
+      <summary>Crée un <see cref="T:System.Xml.XmlDictionary" /> avec une capacité initiale.</summary>
+      <param name="capacity">Taille initiale du dictionnaire.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionary.Add(System.String)">
+      <summary>Ajoute une chaîne au <see cref="T:System.Xml.XmlDictionary" />.</summary>
+      <returns>
+        <see cref="T:System.Xml.XmlDictionaryString" /> ajoutée.</returns>
+      <param name="value">Chaîne à ajouter au dictionnaire.</param>
+    </member>
+    <member name="P:System.Xml.XmlDictionary.Empty">
+      <summary>Obtient un <see cref="T:System.Xml.IXmlDictionary" />static vide.</summary>
+      <returns>Obtient un <see cref="T:System.Xml.IXmlDictionary" />static vide.</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionary.TryLookup(System.Int32,System.Xml.XmlDictionaryString@)">
+      <summary>Tente de rechercher une entrée dans le dictionnaire.</summary>
+      <returns>La valeur est true si la clé se trouve dans le dictionnaire XML, sinon false.</returns>
+      <param name="key">Clé à rechercher.</param>
+      <param name="result">Si le paramètre <paramref name="key" /> se trouve dans le <see cref="T:System.Xml.XmlDictionary" />, <see cref="T:System.Xml.XmlDictionaryString" /> mappée à la clé, sinon null.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionary.TryLookup(System.String,System.Xml.XmlDictionaryString@)">
+      <summary>Recherche une valeur de chaîne spécifiée dans le dictionnaire.</summary>
+      <returns>La valeur est true si la valeur se trouve dans le <see cref="T:System.Xml.XmlDictionary" />, sinon false.</returns>
+      <param name="value">Valeur de chaîne recherchée.</param>
+      <param name="result">Si le paramètre <paramref name="value" /> se trouve dans le <see cref="T:System.Xml.XmlDictionary" />, <see cref="T:System.Xml.XmlDictionaryString" /> mappée à la clé, sinon null.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="value" /> a la valeur null.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionary.TryLookup(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString@)">
+      <summary>Recherche une <see cref="T:System.Xml.XmlDictionaryString" /> spécifiée dans le dictionnaire.</summary>
+      <returns>La valeur est true si <see cref="T:System.Xml.XmlDictionaryString" /> se trouve dans le dictionnaire, sinon false.</returns>
+      <param name="value">
+        <see cref="T:System.Xml.XmlDictionaryString" /> recherchée.</param>
+      <param name="result">Si le paramètre <paramref name="value" /> se trouve dans le <see cref="T:System.Xml.XmlDictionary" />, <see cref="T:System.Xml.XmlDictionaryString" /> mappée à la clé, sinon null.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="value" /> a la valeur null.</exception>
+    </member>
+    <member name="T:System.Xml.XmlDictionaryReader">
+      <summary>Classe abstractWindows Phone qui fournit certaines fonctionnalités de sérialisation et désérialisation supplémentaires à <see cref="T:System.Xml.XmlReader" />.</summary>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.#ctor">
+      <summary>Lorsqu'elle est implémentée par une classe non abstraite dérivée de cette classe de base, crée une instance de cette classe dérivée.</summary>
+    </member>
+    <member name="P:System.Xml.XmlDictionaryReader.CanCanonicalize">
+      <summary>Cette propriété retourne toujours false. Ses classes dérivées peuvent être substituées pour renvoyer la valeur true si elles prennent en charge la canonisation.</summary>
+      <returns>Renvoie la valeur false.</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.CreateBinaryReader(System.Byte[],System.Int32,System.Int32,System.Xml.IXmlDictionary,System.Xml.XmlDictionaryReaderQuotas)">
+      <summary>Crée une instance de <see cref="T:System.Xml.XmlDictionaryReader" /> qui peut lire le format XML binaire .NET.</summary>
+      <returns>Instance de <see cref="T:System.Xml.XmlDictionaryReader" />.</returns>
+      <param name="buffer">Mémoire tampon à partir de laquelle lire.</param>
+      <param name="offset">Position de début à partir de laquelle lire dans <paramref name="buffer" />.</param>
+      <param name="count">Nombre d'octets qui peuvent être lus à partir de <paramref name="buffer" />.</param>
+      <param name="dictionary">
+        <see cref="T:System.Xml.XmlDictionary" /> à utiliser.</param>
+      <param name="quotas">Quotas applicables à cette opération.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="buffer" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de la mémoire tampon.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de la mémoire tampon moins le décalage.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.CreateBinaryReader(System.Byte[],System.Int32,System.Int32,System.Xml.IXmlDictionary,System.Xml.XmlDictionaryReaderQuotas,System.Xml.XmlBinaryReaderSession)">
+      <summary>Crée une instance de <see cref="T:System.Xml.XmlDictionaryReader" /> qui peut lire le format XML binaire .NET.</summary>
+      <returns>Instance de la classe <see cref="T:System.Xml.XmlDictionaryReader" />.</returns>
+      <param name="buffer">Mémoire tampon à partir de laquelle lire.</param>
+      <param name="offset">Position de début à partir de laquelle lire dans <paramref name="buffer" />.</param>
+      <param name="count">Nombre d'octets qui peuvent être lus à partir de <paramref name="buffer" />.</param>
+      <param name="dictionary">
+        <see cref="T:System.Xml.XmlDictionary" /> à utiliser.</param>
+      <param name="quotas">Quotas applicables à cette opération.</param>
+      <param name="session">Instance de <see cref="T:System.Xml.XmlBinaryReaderSession" /> utilisée par le lecteur.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="buffer" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de la mémoire tampon.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de la mémoire tampon moins le décalage.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.CreateBinaryReader(System.Byte[],System.Int32,System.Int32,System.Xml.XmlDictionaryReaderQuotas)">
+      <summary>Crée une instance de <see cref="T:System.Xml.XmlDictionaryReader" /> qui peut lire le format XML binaire .NET.</summary>
+      <returns>Instance de <see cref="T:System.Xml.XmlDictionaryReader" />.</returns>
+      <param name="buffer">Mémoire tampon à partir de laquelle lire.</param>
+      <param name="offset">Position de début à partir de laquelle lire dans <paramref name="buffer" />.</param>
+      <param name="count">Nombre d'octets qui peuvent être lus à partir de <paramref name="buffer" />.</param>
+      <param name="quotas">Quotas applicables à cette opération.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="buffer" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de la mémoire tampon.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de la mémoire tampon moins le décalage.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.CreateBinaryReader(System.Byte[],System.Xml.XmlDictionaryReaderQuotas)">
+      <summary>Crée une instance de <see cref="T:System.Xml.XmlDictionaryReader" /> qui peut lire le format XML binaire .NET.</summary>
+      <returns>Instance de <see cref="T:System.Xml.XmlDictionaryReader" />.</returns>
+      <param name="buffer">Mémoire tampon à partir de laquelle lire.</param>
+      <param name="quotas">Quotas applicables à cette opération.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="buffer" /> est null.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.CreateBinaryReader(System.IO.Stream,System.Xml.IXmlDictionary,System.Xml.XmlDictionaryReaderQuotas)">
+      <summary>Crée une instance de <see cref="T:System.Xml.XmlDictionaryReader" /> qui peut lire le format XML binaire .NET.</summary>
+      <returns>Instance de <see cref="T:System.Xml.XmlDictionaryReader" />.</returns>
+      <param name="stream">Flux à partir duquel lire.</param>
+      <param name="dictionary">
+        <see cref="T:System.Xml.XmlDictionary" /> à utiliser.</param>
+      <param name="quotas">Quotas applicables à cette opération.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="stream" /> ou <paramref name="quotas" /> est null.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.CreateBinaryReader(System.IO.Stream,System.Xml.IXmlDictionary,System.Xml.XmlDictionaryReaderQuotas,System.Xml.XmlBinaryReaderSession)">
+      <summary>Crée une instance de <see cref="T:System.Xml.XmlDictionaryReader" /> qui peut lire le format XML binaire .NET.</summary>
+      <returns>Instance de <see cref="T:System.Xml.XmlDictionaryReader" />.</returns>
+      <param name="stream">Flux à partir duquel lire.</param>
+      <param name="dictionary">
+        <see cref="T:System.Xml.XmlDictionary" /> à utiliser.</param>
+      <param name="quotas">Quotas applicables à cette opération.</param>
+      <param name="session">Instance de <see cref="T:System.Xml.XmlBinaryReaderSession" /> utilisée par le lecteur.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="stream" /> est null.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.CreateBinaryReader(System.IO.Stream,System.Xml.XmlDictionaryReaderQuotas)">
+      <summary>Crée une instance de <see cref="T:System.Xml.XmlDictionaryReader" /> qui peut lire le format XML binaire .NET.</summary>
+      <returns>Instance de <see cref="T:System.Xml.XmlDictionaryReader" />.</returns>
+      <param name="stream">Flux à partir duquel lire.</param>
+      <param name="quotas">Quotas applicables à cette opération.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="stream" /> est null.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.CreateDictionaryReader(System.Xml.XmlReader)">
+      <summary>Crée une instance de <see cref="T:System.Xml.XmlDictionaryReader" /> à partir d'un <see cref="T:System.Xml.XmlReader" /> existant.</summary>
+      <returns>Instance de <see cref="T:System.Xml.XmlDictionaryReader" />.</returns>
+      <param name="reader">Instance de <see cref="T:System.Xml.XmlReader" />.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="reader" /> est null.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.CreateTextReader(System.Byte[],System.Int32,System.Int32,System.Xml.XmlDictionaryReaderQuotas)">
+      <summary>Crée une instance de <see cref="T:System.Xml.XmlDictionaryReader" />.</summary>
+      <returns>Instance de <see cref="T:System.Xml.XmlDictionaryReader" />.</returns>
+      <param name="buffer">Mémoire tampon à partir de laquelle lire.</param>
+      <param name="offset">Position de début à partir de laquelle lire dans <paramref name="buffer" />.</param>
+      <param name="count">Nombre d'octets qui peuvent être lus à partir de <paramref name="buffer" />.</param>
+      <param name="quotas">Quotas appliqués au lecteur.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.CreateTextReader(System.Byte[],System.Xml.XmlDictionaryReaderQuotas)">
+      <summary>Crée une instance de <see cref="T:System.Xml.XmlDictionaryReader" />.</summary>
+      <returns>Instance de <see cref="T:System.Xml.XmlDictionaryReader" />.</returns>
+      <param name="buffer">Mémoire tampon à partir de laquelle lire.</param>
+      <param name="quotas">Quotas appliqués au lecteur.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="buffer" /> est null.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.CreateTextReader(System.IO.Stream,System.Xml.XmlDictionaryReaderQuotas)">
+      <summary>Crée une instance de <see cref="T:System.Xml.XmlDictionaryReader" />.</summary>
+      <returns>Instance de <see cref="T:System.Xml.XmlDictionaryReader" />.</returns>
+      <param name="stream">Flux à partir duquel lire.</param>
+      <param name="quotas">Quotas appliqués au lecteur.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.EndCanonicalization">
+      <summary>Cette méthode n'est pas prise en charge sur cette classe de base et peut être implémentée sur une classe dérivée.</summary>
+      <exception cref="T:System.NotSupportedException">Cette méthode n'est pas prise en charge sur cette classe de base.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.GetAttribute(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>En cas de substitution dans une classe dérivée, obtient la valeur d'un attribut.</summary>
+      <returns>Valeur de l'attribut.</returns>
+      <param name="localName">
+        <see cref="T:System.Xml.XmlDictionaryString" /> qui représente le nom local de l'attribut.</param>
+      <param name="namespaceUri">
+        <see cref="T:System.Xml.XmlDictionaryString" /> qui représente l'espace de noms de l'attribut.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.IndexOfLocalName(System.String[],System.String)">
+      <summary>Obtient l'index du nom local du nœud actuel dans un tableau de noms.</summary>
+      <returns>Index du nom local du nœud actuel dans un tableau de noms.</returns>
+      <param name="localNames">Tableau de chaînes des noms locaux dans lequel rechercher.</param>
+      <param name="namespaceUri">Espace de noms du nœud actuel.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="localNames" /> ou l’un des noms dans le tableau a la valeur null.</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="namespaceUri" /> est null.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.IndexOfLocalName(System.Xml.XmlDictionaryString[],System.Xml.XmlDictionaryString)">
+      <summary>Obtient l'index du nom local du nœud actuel dans un tableau de noms.</summary>
+      <returns>Index du nom local du nœud actuel dans un tableau de noms.</returns>
+      <param name="localNames">Tableau <see cref="T:System.Xml.XmlDictionaryString" /> des noms locaux dans lequel rechercher.</param>
+      <param name="namespaceUri">Espace de noms du nœud actuel.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="localNames" /> ou l’un des noms dans le tableau a la valeur null.</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="namespaceUri" /> est null.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.IsLocalName(System.String)">
+      <summary>Vérifie si le paramètre <paramref name="localName" /> correspond au nom local du nœud actuel.</summary>
+      <returns>La valeur est true si <paramref name="localName" /> correspond au nom local du nœud actuel, sinon false.</returns>
+      <param name="localName">Nom local du nœud actuel.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.IsLocalName(System.Xml.XmlDictionaryString)">
+      <summary>Vérifie si le paramètre <paramref name="localName" /> correspond au nom local du nœud actuel.</summary>
+      <returns>La valeur est true si <paramref name="localName" /> correspond au nom local du nœud actuel, sinon false.</returns>
+      <param name="localName">
+        <see cref="T:System.Xml.XmlDictionaryString" /> qui représente le nom local du nœud actuel.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="localName" /> est null.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.IsNamespaceUri(System.String)">
+      <summary>Vérifie si le paramètre <paramref name="namespaceUri" /> correspond à l'espace de noms du nœud actuel.</summary>
+      <returns>La valeur est true si <paramref name="namespaceUri" /> correspond à l'espace de noms du nœud actuel, sinon false.</returns>
+      <param name="namespaceUri">Espace de noms du nœud actuel.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="namespaceUri" /> est null.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.IsNamespaceUri(System.Xml.XmlDictionaryString)">
+      <summary>Vérifie si le paramètre <paramref name="namespaceUri" /> correspond à l'espace de noms du nœud actuel.</summary>
+      <returns>La valeur est true si <paramref name="namespaceUri" /> correspond à l'espace de noms du nœud actuel, sinon false.</returns>
+      <param name="namespaceUri">Espace de noms du nœud actuel.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="namespaceUri" /> est null.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.IsStartArray(System.Type@)">
+      <summary>Vérifie si le lecteur est positionné au début d'un tableau. Cette classe renvoie la valeur false, mais les classes dérivées qui prennent en charge le concept des tableaux peuvent renvoyer la valeur true.</summary>
+      <returns>La valeur est true si le lecteur est positionné au début d'un nœud de tableau, sinon false.</returns>
+      <param name="type">Type du nœud, si celui-ci est valide, sinon null.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.IsStartElement(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>Vérifie si le premier élément est un élément de début ou un élément vide et si les nom et URI d'espace de noms locaux correspondent à ceux du nœud actuel.</summary>
+      <returns>La valeur est true si le premier élément dans le tableau est un élément de début ou un élément vide et correspond à <paramref name="localName" /> et <paramref name="namespaceUri" />, sinon false.</returns>
+      <param name="localName">
+        <see cref="T:System.Xml.XmlDictionaryString" /> qui représente le nom local de l'attribut.</param>
+      <param name="namespaceUri">
+        <see cref="T:System.Xml.XmlDictionaryString" /> qui représente l'espace de noms de l'attribut.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.IsTextNode(System.Xml.XmlNodeType)">
+      <summary>Vérifie si le nœud actuel est un nœud de texte.</summary>
+      <returns>La valeur est true si le type du nœud est <see cref="F:System.Xml.XmlNodetype.Text" />, <see cref="F:System.Xml.XmlNodetype.Whitespace" />, <see cref="F:System.Xml.XmlNodetype.SignificantWhitespace" />, <see cref="F:System.Xml.XmlNodetype.CDATA" /> ou <see cref="F:System.Xml.XmlNodetype.Attribute" />, sinon false.</returns>
+      <param name="nodeType">Type du nœud vérifié.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.MoveToStartElement">
+      <summary>Vérifie si le nœud de contenu actuel est un élément de début.</summary>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.MoveToStartElement(System.String)">
+      <summary>Vérifie si le nœud de contenu actuel est un élément de début et si la propriété <see cref="P:System.Xml.XmlReader.Name" /> de l'élément correspond à l'argument donné.</summary>
+      <param name="name">Propriété <see cref="P:System.Xml.XmlReader.Name" /> de l'élément.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.MoveToStartElement(System.String,System.String)">
+      <summary>Vérifie si le nœud de contenu actuel est un élément de début et si les propriétés <see cref="P:System.Xml.XmlReader.LocalName" /> et <see cref="P:System.Xml.XmlReader.NamespaceURI" /> de l'élément correspondent aux arguments donnés.</summary>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.MoveToStartElement(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>Vérifie si le nœud de contenu actuel est un élément de début et si les propriétés <see cref="P:System.Xml.XmlReader.LocalName" /> et <see cref="P:System.Xml.XmlReader.NamespaceURI" /> de l'élément correspondent à l'argument donné.</summary>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+    </member>
+    <member name="P:System.Xml.XmlDictionaryReader.Quotas">
+      <summary>Obtient les valeurs de quota applicables à l'instance actuelle de cette classe de lecteur.</summary>
+      <returns>Renvoie <see cref="T:System.Xml.XmlDictionaryReaderQuotas" />.</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.String,System.String,System.Boolean[],System.Int32,System.Int32)">
+      <summary>Lit les occurrences répétées des nœuds <see cref="T:System.Boolean" /> dans un tableau typé.</summary>
+      <returns>Nombre de nœuds placés dans le tableau.</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">Nom local de l'élément.</param>
+      <param name="array">Tableau dans lequel les nœuds sont placés.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre de nœuds à placer dans le tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.String,System.String,System.DateTime[],System.Int32,System.Int32)">
+      <summary>Lit les occurrences répétées des nœuds <see cref="T:System.DateTime" /> dans un tableau typé.</summary>
+      <returns>Nombre de nœuds placés dans le tableau.</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau dans lequel les nœuds sont placés.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre de nœuds à placer dans le tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.String,System.String,System.Decimal[],System.Int32,System.Int32)">
+      <summary>Lit les occurrences répétées des nœuds <see cref="T:System.Decimal" /> dans un tableau typé.</summary>
+      <returns>Nombre de nœuds placés dans le tableau.</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau dans lequel les nœuds sont placés.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre de nœuds à placer dans le tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.String,System.String,System.Double[],System.Int32,System.Int32)">
+      <summary>Lit les occurrences répétées des nœuds <see cref="T:System.Double" /> dans un tableau typé.</summary>
+      <returns>Nombre de nœuds placés dans le tableau.</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau dans lequel les nœuds sont placés.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre de nœuds à placer dans le tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.String,System.String,System.Guid[],System.Int32,System.Int32)">
+      <summary>Lit les occurrences répétées des nœuds <see cref="T:System.Guid" /> dans un tableau typé.</summary>
+      <returns>Nombre de nœuds placés dans le tableau.</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau dans lequel les nœuds sont placés.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre de nœuds à placer dans le tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.String,System.String,System.Int16[],System.Int32,System.Int32)">
+      <summary>Lit les occurrences répétées des entiers courts dans un tableau typé.</summary>
+      <returns>Nombre d'entiers placés dans le tableau.</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau dans lequel les entiers sont placés.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre d'entiers à placer dans le tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.String,System.String,System.Int32[],System.Int32,System.Int32)">
+      <summary>Lit les occurrences répétées des entiers dans un tableau typé.</summary>
+      <returns>Nombre d'entiers placés dans le tableau.</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau dans lequel les entiers sont placés.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre d'entiers à placer dans le tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.String,System.String,System.Int64[],System.Int32,System.Int32)">
+      <summary>Lit les occurrences répétées des entiers longs dans un tableau typé.</summary>
+      <returns>Nombre d'entiers placés dans le tableau.</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau dans lequel les entiers sont placés.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre d'entiers à placer dans le tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.String,System.String,System.Single[],System.Int32,System.Int32)">
+      <summary>Lit les occurrences répétées des nombres flottants dans un tableau typé.</summary>
+      <returns>Total de nombres flottants placés dans le tableau.</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau dans lequel les nombres flottants sont placés.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Total de nombres flottants à placer dans le tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.String,System.String,System.TimeSpan[],System.Int32,System.Int32)">
+      <summary>Lit les occurrences répétées des nœuds <see cref="T:System.TimeSpan" /> dans un tableau typé.</summary>
+      <returns>Nombre de nœuds placés dans le tableau.</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau dans lequel les nœuds sont placés.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre de nœuds à placer dans le tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Boolean[],System.Int32,System.Int32)">
+      <summary>Lit les occurrences répétées des nœuds <see cref="T:System.Boolean" /> dans un tableau typé.</summary>
+      <returns>Nombre de nœuds placés dans le tableau.</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau dans lequel les nœuds sont placés.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre de nœuds à placer dans le tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.DateTime[],System.Int32,System.Int32)">
+      <summary>Lit les occurrences répétées des nœuds <see cref="T:System.DateTime" /> dans un tableau typé.</summary>
+      <returns>Nombre de nœuds placés dans le tableau.</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau dans lequel les nœuds sont placés.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre de nœuds à placer dans le tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Decimal[],System.Int32,System.Int32)">
+      <summary>Lit les occurrences répétées des nœuds <see cref="T:System.Decimal" /> dans un tableau typé.</summary>
+      <returns>Nombre de nœuds placés dans le tableau.</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau dans lequel les nœuds sont placés.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre de nœuds à placer dans le tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Double[],System.Int32,System.Int32)">
+      <summary>Lit les occurrences répétées du type de nœud <see cref="T:System.Double" /> dans un tableau typé.</summary>
+      <returns>Nombre de nœuds placés dans le tableau.</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau dans lequel les nœuds sont placés.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre de nœuds à placer dans le tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Guid[],System.Int32,System.Int32)">
+      <summary>Lit les occurrences répétées des nœuds <see cref="T:System.Guid" /> dans un tableau typé.</summary>
+      <returns>Nombre de nœuds placés dans le tableau.</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau dans lequel les nœuds sont placés.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre de nœuds à placer dans le tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Int16[],System.Int32,System.Int32)">
+      <summary>Lit les occurrences répétées des entiers courts dans un tableau typé.</summary>
+      <returns>Nombre d'entiers placés dans le tableau.</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau dans lequel les entiers sont placés.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre d'entiers à placer dans le tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Int32[],System.Int32,System.Int32)">
+      <summary>Lit les occurrences répétées des entiers dans un tableau typé.</summary>
+      <returns>Nombre d'entiers placés dans le tableau.</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau dans lequel les entiers sont placés.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre d'entiers à placer dans le tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Int64[],System.Int32,System.Int32)">
+      <summary>Lit les occurrences répétées des entiers longs dans un tableau typé.</summary>
+      <returns>Nombre d'entiers placés dans le tableau.</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau dans lequel les entiers sont placés.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre d'entiers à placer dans le tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Single[],System.Int32,System.Int32)">
+      <summary>Lit les occurrences répétées des nombres flottants dans un tableau typé.</summary>
+      <returns>Total de nombres flottants placés dans le tableau.</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau dans lequel les nombres flottants sont placés.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Total de nombres flottants à placer dans le tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.TimeSpan[],System.Int32,System.Int32)">
+      <summary>Lit les occurrences répétées des nœuds <see cref="T:System.TimeSpan" /> dans un tableau typé.</summary>
+      <returns>Nombre de nœuds placés dans le tableau.</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau dans lequel les nœuds sont placés.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre de nœuds à placer dans le tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadBooleanArray(System.String,System.String)">
+      <summary>Lit les occurrences répétées des nœuds <see cref="T:System.Boolean" /> dans un tableau typé.</summary>
+      <returns>Tableau <see cref="T:System.Boolean" /> des nœuds <see cref="T:System.Boolean" />.</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadBooleanArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>Lit les occurrences répétées des nœuds <see cref="T:System.Boolean" /> dans un tableau typé.</summary>
+      <returns>Tableau <see cref="T:System.Boolean" /> des nœuds <see cref="T:System.Boolean" />.</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadContentAs(System.Type,System.Xml.IXmlNamespaceResolver)">
+      <summary>Convertit le contenu d'un nœud en un type spécifié.</summary>
+      <returns>Contenu de texte concaténé ou valeur d'attribut converti(e) en type demandé.</returns>
+      <param name="type">
+        <see cref="T:System.Type" /> de la valeur à retourner.</param>
+      <param name="namespaceResolver">Objet <see cref="T:System.Xml.IXmlNamespaceResolver" /> permettant de résoudre tous les préfixes d'espaces de noms liés à la conversion de type. Par exemple, il peut être utilisé lors de la conversion d'un objet <see cref="T:System.Xml.XmlQualifiedName" /> en xs:string. Cette valeur peut être une référence null.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadContentAsBase64">
+      <summary>Lit le contenu et renvoie les octets binaires décodés au format Base64.</summary>
+      <returns>Tableau <see cref="T:System.Byte" /> qui contient les octets binaires décodés au format Base64.</returns>
+      <exception cref="T:System.Xml.XmlException">La taille du tableau est supérieure au quota MaxArrayLength pour ce lecteur.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadContentAsBinHex">
+      <summary>Lit le contenu et renvoie les octets binaires décodés au format BinHex.</summary>
+      <returns>Tableau d'octets contenant les octets binaires décodés au format BinHex.</returns>
+      <exception cref="T:System.Xml.XmlException">La taille du tableau est supérieure à <see cref="F:System.Int32.MaxValue" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadContentAsBinHex(System.Int32)">
+      <summary>Lit le contenu et renvoie les octets binaires décodés au format BinHex.</summary>
+      <returns>Tableau d'octets contenant les octets binaires décodés au format BinHex.</returns>
+      <param name="maxByteArrayContentLength">Longueur de tableau maximale.</param>
+      <exception cref="T:System.Xml.XmlException">La taille du tableau est supérieure à <paramref name="maxByteArrayContentLength" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadContentAsChars(System.Char[],System.Int32,System.Int32)">
+      <summary>Lit le contenu dans un tableau char.</summary>
+      <returns>Nombre de caractères lus.</returns>
+      <param name="chars">Tableau dans lequel les caractères sont placés.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre de caractères à placer dans le tableau.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadContentAsDecimal">
+      <summary>Convertit le contenu d'un nœud sous forme décimale.</summary>
+      <returns>Représentation décimale du contenu du nœud.</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadContentAsFloat">
+      <summary>Convertit le contenu d'un nœud sous forme flottante.</summary>
+      <returns>Représentation flottante du contenu du nœud.</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadContentAsGuid">
+      <summary>Convertit le contenu d'un nœud sous forme de GUID.</summary>
+      <returns>Représentation sous forme de GUID du contenu du nœud.</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadContentAsQualifiedName(System.String@,System.String@)">
+      <summary>Convertit le contenu d'un nœud en une représentation de nom qualifié.</summary>
+      <param name="localName">Partie <see cref="P:System.Xml.XmlReader.LocalName" /> du nom qualifié (paramètre de sortie).</param>
+      <param name="namespaceUri">Partie <see cref="P:System.Xml.XmlReader.NamespaceURI" /> du nom qualifié (paramètre de sortie).</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadContentAsString">
+      <summary>Convertit le contenu d'un nœud en une chaîne.</summary>
+      <returns>Contenu du nœud en une représentation sous forme de chaîne.</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadContentAsString(System.Int32)">
+      <summary>Convertit le contenu d'un nœud en une chaîne.</summary>
+      <returns>Contenu du nœud en une représentation sous forme de chaîne.</returns>
+      <param name="maxStringContentLength">Longueur de chaîne maximale.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadContentAsString(System.String[],System.Int32@)">
+      <summary>Convertit le contenu d'un nœud en une chaîne.</summary>
+      <returns>Contenu du nœud en une représentation sous forme de chaîne.</returns>
+      <param name="strings">Tableau de chaînes dans lequel rechercher le contenu.</param>
+      <param name="index">Index de l'entrée dans <paramref name="strings" /> qui correspond au contenu.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="strings" /> est null.</exception>
+      <exception cref="T:System.ArgumentNullException">Une entrée dans <paramref name="strings" /> a la valeur null.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadContentAsString(System.Xml.XmlDictionaryString[],System.Int32@)">
+      <summary>Convertit le contenu d'un nœud en une chaîne.</summary>
+      <returns>Contenu du nœud en une représentation sous forme de chaîne.</returns>
+      <param name="strings">Tableau d'objets <see cref="T:System.Xml.XmlDictionaryString" /> dans lequel rechercher le contenu.</param>
+      <param name="index">Index de l'entrée dans <paramref name="strings" /> qui correspond au contenu.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="strings" /> est null.</exception>
+      <exception cref="T:System.ArgumentNullException">Une entrée dans <paramref name="strings" /> a la valeur null.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadContentAsTimeSpan">
+      <summary>Convertit le contenu d'un nœud en <see cref="T:System.TimeSpan" />.</summary>
+      <returns>Représentation <see cref="T:System.TimeSpan" /> du contenu du nœud.</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadContentAsUniqueId">
+      <summary>Convertit le contenu d'un nœud en un identificateur unique.</summary>
+      <returns>Contenu du nœud représenté comme identificateur unique.</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadDateTimeArray(System.String,System.String)">
+      <summary>Convertit le contenu d'un nœud en un tableau <see cref="T:System.DateTime" />.</summary>
+      <returns>Contenu du nœud représenté sous la forme d'un tableau <see cref="T:System.DateTime" />.</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadDateTimeArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>Convertit le contenu d'un nœud en un tableau <see cref="T:System.DateTime" />.</summary>
+      <returns>Contenu du nœud représenté sous la forme d'un tableau <see cref="T:System.DateTime" />.</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadDecimalArray(System.String,System.String)">
+      <summary>Convertit le contenu d'un nœud en un tableau <see cref="T:System.DateTime" />.</summary>
+      <returns>Contenu du nœud représenté sous la forme d'un tableau <see cref="T:System.Decimal" />.</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadDecimalArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>Convertit le contenu d'un nœud en un tableau <see cref="T:System.DateTime" />.</summary>
+      <returns>Contenu du nœud représenté sous la forme d'un tableau <see cref="T:System.Decimal" />.</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadDoubleArray(System.String,System.String)">
+      <summary>Convertit le contenu d'un nœud en un tableau <see cref="T:System.DateTime" />.</summary>
+      <returns>Contenu du nœud représenté sous la forme d'un tableau <see cref="T:System.Double" />.</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadDoubleArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>Convertit le contenu d'un nœud en un tableau <see cref="T:System.DateTime" />.</summary>
+      <returns>Contenu du nœud représenté sous la forme d'un tableau <see cref="T:System.Double" />.</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadElementContentAsBase64">
+      <summary>Convertit le contenu d'un nœud en un tableau d'octets au format Base64.</summary>
+      <returns>Renvoie <see cref="T:System.Byte" />.</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadElementContentAsBinHex">
+      <summary>Convertit le contenu d'un nœud en un tableau d'octets au format BinHex.</summary>
+      <returns>Renvoie <see cref="T:System.Byte" />.</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadElementContentAsBoolean">
+      <summary>Convertit le contenu d'un élément en un <see cref="T:System.Boolean" />.</summary>
+      <returns>Contenu du nœud représenté sous la forme d'un <see cref="T:System.Boolean" />.</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadElementContentAsDateTime">
+      <summary>Convertit le contenu d'un élément en un <see cref="T:System.DateTime" />.</summary>
+      <returns>Contenu du nœud représenté sous la forme d'un <see cref="T:System.DateTime" />.</returns>
+      <exception cref="T:System.ArgumentException">L'élément n'est pas dans un format valide.</exception>
+      <exception cref="T:System.FormatException">L'élément n'est pas dans un format valide.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadElementContentAsDecimal">
+      <summary>Convertit le contenu d'un élément en un <see cref="T:System.Decimal" />.</summary>
+      <returns>Contenu du nœud représenté sous la forme d'un <see cref="T:System.Decimal" />.</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadElementContentAsDouble">
+      <summary>Convertit le contenu d'un élément en un <see cref="T:System.Double" />.</summary>
+      <returns>Contenu du nœud représenté sous la forme d'un <see cref="T:System.Double" />.</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadElementContentAsFloat">
+      <summary>Convertit le contenu d'un élément en un nombre à virgule flottante (<see cref="T:System.Single" />).</summary>
+      <returns>Contenu du nœud représenté sous la forme d'un nombre à virgule flottante (<see cref="T:System.Single" />).</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadElementContentAsGuid">
+      <summary>Convertit le contenu d'un élément en un <see cref="T:System.Guid" />.</summary>
+      <returns>Contenu du nœud représenté sous la forme d'un <see cref="T:System.Guid" />.</returns>
+      <exception cref="T:System.ArgumentException">L'élément n'est pas dans un format valide.</exception>
+      <exception cref="T:System.FormatException">L'élément n'est pas dans un format valide.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadElementContentAsInt">
+      <summary>Convertit le contenu d'un élément en un entier (<see cref="T:System.Int32" />).</summary>
+      <returns>Contenu du nœud représenté sous la forme d'un entier (<see cref="T:System.Int32" />).</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadElementContentAsLong">
+      <summary>Convertit le contenu d'un élément en un entier long (<see cref="T:System.Int64" />).</summary>
+      <returns>Contenu du nœud représenté sous la forme d'un entier long (<see cref="T:System.Int64" />).</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadElementContentAsString">
+      <summary>Convertit le contenu d'un élément en un <see cref="T:System.String" />.</summary>
+      <returns>Contenu du nœud représenté sous la forme d'un <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadElementContentAsTimeSpan">
+      <summary>Convertit le contenu d'un élément en un <see cref="T:System.TimeSpan" />.</summary>
+      <returns>Contenu du nœud représenté sous la forme d'un <see cref="T:System.TimeSpan" />.</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadElementContentAsUniqueId">
+      <summary>Convertit le contenu d'un élément en un identificateur unique.</summary>
+      <returns>Contenu du nœud représenté comme identificateur unique.</returns>
+      <exception cref="T:System.ArgumentException">L'élément n'est pas dans un format valide.</exception>
+      <exception cref="T:System.FormatException">L'élément n'est pas dans un format valide.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadFullStartElement">
+      <summary>Vérifie si le nœud actuel est un élément de début et s'il s'agit d'un élément non vide, le lit si ces conditions sont remplies et avance le lecteur jusqu'au nœud suivant. Lève une exception s'il ne s'agit pas d'un élément de début ou s'il s'agit d'un élément vide.</summary>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadFullStartElement(System.String)">
+      <summary>Vérifie si le nœud nommé est un élément de début et s'il s'agit d'un élément non vide, le lit si ces conditions sont remplies et avance le lecteur jusqu'au nœud suivant. Lève une exception s'il ne s'agit pas d'un élément de début ou s'il s'agit d'un élément vide.</summary>
+      <param name="name">Nom qualifié de l'élément.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadFullStartElement(System.String,System.String)">
+      <summary>Vérifie si le nœud avec les paramètres <paramref name="localName" /> et <paramref name="namespaceUri" /> est un élément de début et s'il s'agit d'un élément non vide, le lit si ces conditions sont remplies et avance le lecteur jusqu'au nœud suivant. Lève une exception s'il ne s'agit pas d'un élément de début ou s'il s'agit d'un élément vide.</summary>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadFullStartElement(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>Vérifie si le nœud avec les paramètres <paramref name="localName" /> et <paramref name="namespaceUri" /> est un élément de début et s'il s'agit d'un élément non vide, le lit si ces conditions sont remplies et avance le lecteur jusqu'au nœud suivant. Lève une exception s'il ne s'agit pas d'un élément de début ou s'il s'agit d'un élément vide.</summary>
+      <param name="localName">Nom <see cref="T:System.Xml.XmlDictionaryString" /> local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms <see cref="T:System.Xml.XmlDictionaryString" /> de l'élément.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadGuidArray(System.String,System.String)">
+      <summary>Lit le contenu d'une série de nœuds avec les paramètres <paramref name="localName" /> et <paramref name="namespaceUri" /> donnés dans un tableau de <see cref="T:System.Guid" />.</summary>
+      <returns>Tableau de <see cref="T:System.Guid" />.</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadGuidArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>Lit le contenu d'une série de nœuds avec les paramètres <paramref name="localName" /> et <paramref name="namespaceUri" /> donnés dans un tableau de <see cref="T:System.Guid" />.</summary>
+      <returns>Tableau de <see cref="T:System.Guid" />.</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadInt16Array(System.String,System.String)">
+      <summary>Lit le contenu d'une série de nœuds avec les paramètres <paramref name="localName" /> et <paramref name="namespaceUri" /> donnés dans un tableau d'entiers courts (<see cref="T:System.Int16" />).</summary>
+      <returns>Tableau d'entiers courts (<see cref="T:System.Int16" />).</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadInt16Array(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>Lit le contenu d'une série de nœuds avec les paramètres <paramref name="localName" /> et <paramref name="namespaceUri" /> donnés dans un tableau d'entiers courts (<see cref="T:System.Int16" />).</summary>
+      <returns>Tableau d'entiers courts (<see cref="T:System.Int16" />).</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadInt32Array(System.String,System.String)">
+      <summary>Lit le contenu d'une série de nœuds avec les paramètres <paramref name="localName" /> et <paramref name="namespaceUri" /> donnés dans un tableau d'entiers (<see cref="T:System.Int32" />).</summary>
+      <returns>Tableau d'entiers (<see cref="T:System.Int32" />).</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadInt32Array(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>Lit le contenu d'une série de nœuds avec les paramètres <paramref name="localName" /> et <paramref name="namespaceUri" /> donnés dans un tableau d'entiers (<see cref="T:System.Int32" />).</summary>
+      <returns>Tableau d'entiers (<see cref="T:System.Int32" />).</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadInt64Array(System.String,System.String)">
+      <summary>Lit le contenu d'une série de nœuds avec les paramètres <paramref name="localName" /> et <paramref name="namespaceUri" /> donnés dans un tableau d'entiers longs (<see cref="T:System.Int64" />).</summary>
+      <returns>Tableau d'entiers longs (<see cref="T:System.Int64" />).</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadInt64Array(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>Lit le contenu d'une série de nœuds avec les paramètres <paramref name="localName" /> et <paramref name="namespaceUri" /> donnés dans un tableau d'entiers longs (<see cref="T:System.Int64" />).</summary>
+      <returns>Tableau d'entiers longs (<see cref="T:System.Int64" />).</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadSingleArray(System.String,System.String)">
+      <summary>Lit le contenu d'une série de nœuds avec les paramètres <paramref name="localName" /> et <paramref name="namespaceUri" /> donnés dans un tableau de nombres flottants (<see cref="T:System.Single" />).</summary>
+      <returns>Tableau de nombres flottants (<see cref="T:System.Single" />).</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadSingleArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>Lit le contenu d'une série de nœuds avec les paramètres <paramref name="localName" /> et <paramref name="namespaceUri" /> donnés dans un tableau de nombres flottants (<see cref="T:System.Single" />).</summary>
+      <returns>Tableau de nombres flottants (<see cref="T:System.Single" />).</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadStartElement(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>Vérifie si le nœud avec les paramètres <paramref name="localName" /> et <paramref name="namespaceUri" /> est un élément de début et avance le lecteur jusqu'au nœud suivant. Lève une exception si le nœud n'est pas un élément de début.</summary>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadTimeSpanArray(System.String,System.String)">
+      <summary>Lit le contenu d'une série de nœuds avec les paramètres <paramref name="localName" /> et <paramref name="namespaceUri" /> donnés dans un tableau <see cref="T:System.TimeSpan" />.</summary>
+      <returns>Tableau <see cref="T:System.TimeSpan" />.</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadTimeSpanArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>Lit le contenu d'une série de nœuds avec les paramètres <paramref name="localName" /> et <paramref name="namespaceUri" /> donnés dans un tableau <see cref="T:System.TimeSpan" />.</summary>
+      <returns>Tableau <see cref="T:System.TimeSpan" />.</returns>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadValueAsBase64(System.Byte[],System.Int32,System.Int32)">
+      <summary>Cette méthode n'est pas prise en charge par cette classe.</summary>
+      <returns>
+        <see cref="T:System.Int32" />. </returns>
+      <param name="buffer">Mémoire tampon à partir de laquelle lire.</param>
+      <param name="offset">Position de début à partir de laquelle lire dans <paramref name="buffer" />.</param>
+      <param name="count">Nombre d'octets qui peuvent être lus à partir de <paramref name="buffer" />.</param>
+      <exception cref="T:System.NotSupportedException">Toujours.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.StartCanonicalization(System.IO.Stream,System.Boolean,System.String[])">
+      <summary>Cette méthode n'est pas prise en charge dans cette classe. Elle peut être implémentée dans une classe dérivée.</summary>
+      <param name="stream">Flux à lire.</param>
+      <param name="includeComments">Détermine si des commentaires sont inclus.</param>
+      <param name="inclusivePrefixes">Préfixes à inclure.</param>
+      <exception cref="T:System.NotSupportedException">Toujours.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.TryGetArrayLength(System.Int32@)">
+      <summary>Méthode non implémentée dans cette classe (renvoie toujours la valeur false). Peut être substituée dans les classes dérivées.</summary>
+      <returns>La valeur est false, sauf si la méthode est substituée dans une classe dérivée.</returns>
+      <param name="count">Renvoie 0, sauf si la méthode est substituée dans une classe dérivée.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.TryGetBase64ContentLength(System.Int32@)">
+      <summary>Méthode non implémentée dans cette classe (renvoie toujours la valeur false). Peut être substituée dans les classes dérivées.</summary>
+      <returns>La valeur est false, sauf si la méthode est substituée dans une classe dérivée.</returns>
+      <param name="length">Renvoie 0, sauf si la méthode est substituée dans une classe dérivée.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.TryGetLocalNameAsDictionaryString(System.Xml.XmlDictionaryString@)">
+      <summary>Méthode non implémentée dans cette classe (renvoie toujours la valeur false). Peut être substituée dans les classes dérivées.</summary>
+      <returns>La valeur est false, sauf si la méthode est substituée dans une classe dérivée.</returns>
+      <param name="localName">Renvoie la valeur null, sauf si la méthode est substituée dans une classe dérivée.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.TryGetNamespaceUriAsDictionaryString(System.Xml.XmlDictionaryString@)">
+      <summary>Méthode non implémentée dans cette classe (renvoie toujours la valeur false). Peut être substituée dans les classes dérivées.</summary>
+      <returns>La valeur est false, sauf si la méthode est substituée dans une classe dérivée.</returns>
+      <param name="namespaceUri">Renvoie la valeur null, sauf si la méthode est substituée dans une classe dérivée.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.TryGetValueAsDictionaryString(System.Xml.XmlDictionaryString@)">
+      <summary>Méthode non implémentée dans cette classe (renvoie toujours la valeur false). Peut être substituée dans les classes dérivées.</summary>
+      <returns>La valeur est false, sauf si la méthode est substituée dans une classe dérivée.</returns>
+      <param name="value">Renvoie la valeur null, sauf si la méthode est substituée dans une classe dérivée.</param>
+    </member>
+    <member name="T:System.Xml.XmlDictionaryReaderQuotas">
+      <summary>Contient les valeurs de quota pour <see cref="T:System.Xml.XmlDictionaryReader" />.</summary>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReaderQuotas.#ctor">
+      <summary>Crée une instance de la classe <see cref="T:System.Xml.XmlDictionaryReaderQuotas" />.</summary>
+    </member>
+    <member name="P:System.Xml.XmlDictionaryReaderQuotas.Max">
+      <summary>Obtient une instance de cette classe avec toutes les propriétés définies sur les valeurs maximales.</summary>
+      <returns>Instance de <see cref="T:System.Xml.XmlDictionaryReaderQuotas" /> avec les propriétés définies sur <see cref="F:System.Int32.MaxValue" />.</returns>
+    </member>
+    <member name="P:System.Xml.XmlDictionaryReaderQuotas.MaxArrayLength">
+      <summary>Obtient la longueur de tableau maximale autorisée.</summary>
+      <returns>Longueur de tableau maximale autorisée.La valeur par défaut est <see cref="F:System.Int32.MaxValue" />.</returns>
+      <exception cref="T:System.InvalidOperationException">Tentative de définition de la valeur mais les valeurs de quota sont en lecture seule pour cette instance.</exception>
+      <exception cref="T:System.ArgumentException">Tentative de définition de la valeur sur une valeur inférieure à zéro.</exception>
+    </member>
+    <member name="P:System.Xml.XmlDictionaryReaderQuotas.MaxBytesPerRead">
+      <summary>Obtient le nombre maximal d'octets autorisés renvoyés pour chaque lecture.</summary>
+      <returns>Nombre maximal d'octets autorisés renvoyés pour chaque lecture.La valeur par défaut est 4096.</returns>
+      <exception cref="T:System.InvalidOperationException">Tentative de définition de la valeur mais les valeurs de quota sont en lecture seule pour cette instance.</exception>
+      <exception cref="T:System.ArgumentException">Tentative de définition de la valeur sur une valeur inférieure à zéro.</exception>
+    </member>
+    <member name="P:System.Xml.XmlDictionaryReaderQuotas.MaxDepth">
+      <summary>Obtient la profondeur de nœud imbriqué maximale.</summary>
+      <returns>Profondeur de nœud imbriqué maximale.La valeur par défaut est 32.</returns>
+      <exception cref="T:System.InvalidOperationException">Tentative de définition de la valeur mais les valeurs de quota sont en lecture seule pour cette instance.</exception>
+      <exception cref="T:System.ArgumentException">Tentative de définition de la valeur sur une valeur inférieure à zéro.</exception>
+    </member>
+    <member name="P:System.Xml.XmlDictionaryReaderQuotas.MaxNameTableCharCount">
+      <summary>Obtient le nombre maximal de caractères autorisés dans le nom d'une table.</summary>
+      <returns>Nombre maximal de caractères autorisés dans le nom d'une table.La valeur par défaut est 16384.</returns>
+      <exception cref="T:System.InvalidOperationException">Tentative de définition de la valeur mais les valeurs de quota sont en lecture seule pour cette instance.</exception>
+      <exception cref="T:System.ArgumentException">Tentative de définition de la valeur sur une valeur inférieure à zéro.</exception>
+    </member>
+    <member name="P:System.Xml.XmlDictionaryReaderQuotas.MaxStringContentLength">
+      <summary>Obtient la longueur de chaîne maximale renvoyée par le lecteur.</summary>
+      <returns>Longueur de chaîne maximale renvoyée par le lecteur.La valeur par défaut est 8192.</returns>
+      <exception cref="T:System.InvalidOperationException">Tentative de définition de la valeur mais les valeurs de quota sont en lecture seule pour cette instance.</exception>
+      <exception cref="T:System.ArgumentException">Tentative de définition de la valeur sur une valeur inférieure à zéro.</exception>
+    </member>
+    <member name="T:System.Xml.XmlDictionaryString">
+      <summary>Représente une entrée stockée dans un <see cref="T:System.Xml.XmlDictionary" />.</summary>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryString.#ctor(System.Xml.IXmlDictionary,System.String,System.Int32)">
+      <summary>Crée une instance de la classe <see cref="T:System.Xml.XmlDictionaryString" />.</summary>
+      <param name="dictionary">
+        <see cref="T:System.Xml.IXmlDictionary" /> qui contient cette instance.</param>
+      <param name="value">Chaîne qui est la valeur de l'entrée de dictionnaire.</param>
+      <param name="key">Entier qui est la clé de l'entrée de dictionnaire.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="value" /> a la valeur null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="key" /> est inférieur à 0 ou supérieur à <see cref="F:System.Int32.MaxValue" />/4.</exception>
+    </member>
+    <member name="P:System.Xml.XmlDictionaryString.Dictionary">
+      <summary>Représente le <see cref="T:System.Xml.IXmlDictionary" /> passé au constructeur de cette instance de <see cref="T:System.Xml.XmlDictionaryString" />.</summary>
+      <returns>
+        <see cref="T:System.Xml.IXmlDictionary" /> pour cette entrée de dictionnaire.</returns>
+    </member>
+    <member name="P:System.Xml.XmlDictionaryString.Empty">
+      <summary>Obtient une <see cref="T:System.Xml.XmlDictionaryString" /> qui représente la chaîne vide.</summary>
+      <returns>
+        <see cref="T:System.Xml.XmlDictionaryString" /> qui représente la chaîne vide.</returns>
+    </member>
+    <member name="P:System.Xml.XmlDictionaryString.Key">
+      <summary>Obtient la clé entière pour cette entrée de dictionnaire <see cref="T:System.Xml.XmlDictionaryString" />.</summary>
+      <returns>Clé entière pour cette entrée de dictionnaire.</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryString.ToString">
+      <summary>Renvoie une représentation textuelle de cette instance de <see cref="T:System.Xml.XmlDictionaryString" />.</summary>
+      <returns>Valeur de chaîne pour cette instance de la classe.</returns>
+    </member>
+    <member name="P:System.Xml.XmlDictionaryString.Value">
+      <summary>Obtient la valeur de chaîne pour cette entrée de dictionnaire <see cref="T:System.Xml.XmlDictionaryString" />.</summary>
+      <returns>Valeur de chaîne pour cette entrée de dictionnaire.</returns>
+    </member>
+    <member name="T:System.Xml.XmlDictionaryWriter">
+      <summary>Classe abstraite devant effectuer la sérialisation et la désérialisation.</summary>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.#ctor">
+      <summary>Crée une instance de cette classe. Classe appelée uniquement par ses classes dérivées car elle est abstraite.</summary>
+    </member>
+    <member name="P:System.Xml.XmlDictionaryWriter.CanCanonicalize">
+      <summary>Cette propriété retourne toujours false. Ses classes dérivées peuvent être substituées pour renvoyer la valeur true si elles prennent en charge la canonisation.</summary>
+      <returns>La valeur est false.</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.CreateBinaryWriter(System.IO.Stream)">
+      <summary>Crée une instance de <see cref="T:System.Xml.XmlDictionaryWriter" /> qui écrit au format XML binaire Windows Phone.</summary>
+      <returns>Instance de <see cref="T:System.Xml.XmlDictionaryWriter" />.</returns>
+      <param name="stream">Flux dans lequel écrire.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.CreateBinaryWriter(System.IO.Stream,System.Xml.IXmlDictionary)">
+      <summary>Crée une instance de <see cref="T:System.Xml.XmlDictionaryWriter" /> qui écrit au format XML binaire Windows Phone.</summary>
+      <returns>Instance de <see cref="T:System.Xml.XmlDictionaryWriter" />.</returns>
+      <param name="stream">Flux dans lequel écrire.</param>
+      <param name="dictionary">
+        <see cref="T:System.Xml.XmlDictionary" /> à utiliser comme dictionnaire partagé.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.CreateBinaryWriter(System.IO.Stream,System.Xml.IXmlDictionary,System.Xml.XmlBinaryWriterSession)">
+      <summary>Crée une instance de <see cref="T:System.Xml.XmlDictionaryWriter" /> qui écrit au format XML binaire Windows Phone.</summary>
+      <returns>Instance de <see cref="T:System.Xml.XmlDictionaryWriter" />.</returns>
+      <param name="stream">Flux dans lequel écrire.</param>
+      <param name="dictionary">
+        <see cref="T:System.Xml.XmlDictionary" /> à utiliser comme dictionnaire partagé.</param>
+      <param name="session">
+        <see cref="T:System.Xml.XmlBinaryWriterSession" /> à utiliser.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.CreateBinaryWriter(System.IO.Stream,System.Xml.IXmlDictionary,System.Xml.XmlBinaryWriterSession,System.Boolean)">
+      <summary>Crée une instance de <see cref="T:System.Xml.XmlDictionaryWriter" /> qui écrit au format XML binaire Windows Phone.</summary>
+      <returns>Instance de <see cref="T:System.Xml.XmlDictionaryWriter" />.</returns>
+      <param name="stream">Flux à partir duquel lire.</param>
+      <param name="dictionary">
+        <see cref="T:System.Xml.XmlDictionary" /> à utiliser comme dictionnaire partagé.</param>
+      <param name="session">
+        <see cref="T:System.Xml.XmlBinaryWriterSession" /> à utiliser.</param>
+      <param name="ownsStream">Si la valeur est true, le flux est fermé par le writer lorsqu'il a terminé, sinon false.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.CreateDictionaryWriter(System.Xml.XmlWriter)">
+      <summary>Crée une instance de <see cref="T:System.Xml.XmlDictionaryWriter" /> à partir d'un <see cref="T:System.Xml.XmlWriter" /> existant.</summary>
+      <returns>Instance de <see cref="T:System.Xml.XmlDictionaryWriter" />.</returns>
+      <param name="writer">Instance de <see cref="T:System.Xml.XmlWriter" />.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="writer" /> est null.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.CreateTextWriter(System.IO.Stream)">
+      <summary>Crée une instance de <see cref="T:System.Xml.XmlDictionaryWriter" /> qui écrit au format XML textuel. </summary>
+      <returns>Instance de <see cref="T:System.Xml.XmlDictionaryWriter" />.</returns>
+      <param name="stream">Flux dans lequel écrire.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.CreateTextWriter(System.IO.Stream,System.Text.Encoding)">
+      <summary>Crée une instance de <see cref="T:System.Xml.XmlDictionaryWriter" /> qui écrit au format XML textuel.</summary>
+      <returns>Instance de <see cref="T:System.Xml.XmlDictionaryWriter" />.</returns>
+      <param name="stream">Flux dans lequel écrire.</param>
+      <param name="encoding">Encodage de caractères de la sortie.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.CreateTextWriter(System.IO.Stream,System.Text.Encoding,System.Boolean)">
+      <summary>Crée une instance de <see cref="T:System.Xml.XmlDictionaryWriter" /> qui écrit au format XML textuel.</summary>
+      <returns>Instance de <see cref="T:System.Xml.XmlDictionaryWriter" />.</returns>
+      <param name="stream">Flux dans lequel écrire.</param>
+      <param name="encoding">Encodage de caractères du flux.</param>
+      <param name="ownsStream">Si la valeur est true, le flux est fermé par le writer lorsqu'il a terminé, sinon false.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.EndCanonicalization">
+      <summary>Cette méthode n'est pas encore implémentée. </summary>
+      <exception cref="T:System.NotSupportedException">Cette méthode n'est pas encore implémentée.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.StartCanonicalization(System.IO.Stream,System.Boolean,System.String[])">
+      <summary>Cette méthode n'est pas encore implémentée. L'appel de cette méthode lève une <see cref="T:System.NotSupportedException" />.</summary>
+      <param name="stream">Flux dans lequel écrire.</param>
+      <param name="includeComments">Détermine si des commentaires sont inclus.</param>
+      <param name="inclusivePrefixes">Préfixes à inclure.</param>
+      <exception cref="T:System.NotSupportedException">Cette méthode n'est pas encore implémentée.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.String,System.String,System.Boolean[],System.Int32,System.Int32)">
+      <summary>Écrit des valeurs à partir d'un tableau <see cref="T:System.Boolean" />.</summary>
+      <param name="prefix">Préfixe de l'espace de noms.</param>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau contenant les données.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre de valeurs à écrire à partir du tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.String,System.String,System.DateTime[],System.Int32,System.Int32)">
+      <summary>Écrit des nœuds à partir d'un tableau <see cref="T:System.DateTime" />.</summary>
+      <param name="prefix">Préfixe de l'espace de noms.</param>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau contenant les nœuds.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre de nœuds à obtenir à partir du tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.String,System.String,System.Decimal[],System.Int32,System.Int32)">
+      <summary>Écrit des nœuds à partir d'un tableau <see cref="T:System.Decimal" />.</summary>
+      <param name="prefix">Préfixe de l'espace de noms.</param>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau contenant les nœuds.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre de nœuds à obtenir à partir du tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.String,System.String,System.Double[],System.Int32,System.Int32)">
+      <summary>Écrit des nœuds à partir d'un tableau <see cref="T:System.Double" />.</summary>
+      <param name="prefix">Préfixe de l'espace de noms.</param>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau contenant les nœuds.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre de nœuds à obtenir à partir du tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.String,System.String,System.Guid[],System.Int32,System.Int32)">
+      <summary>Écrit des nœuds à partir d'un tableau <see cref="T:System.Guid" />.</summary>
+      <param name="prefix">Préfixe de l'espace de noms.</param>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau contenant les nœuds.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre de nœuds à obtenir à partir du tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.String,System.String,System.Int16[],System.Int32,System.Int32)">
+      <summary>Écrit des nœuds à partir d'un tableau <see cref="T:System.Int16" />.</summary>
+      <param name="prefix">Préfixe de l'espace de noms.</param>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau contenant les nœuds.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre de nœuds à obtenir à partir du tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.String,System.String,System.Int32[],System.Int32,System.Int32)">
+      <summary>Écrit des nœuds à partir d'un tableau <see cref="T:System.Int32" />.</summary>
+      <param name="prefix">Préfixe de l'espace de noms.</param>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau contenant les nœuds.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre de nœuds à obtenir à partir du tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.String,System.String,System.Int64[],System.Int32,System.Int32)">
+      <summary>Écrit des nœuds à partir d'un tableau <see cref="T:System.Int64" />.</summary>
+      <param name="prefix">Préfixe de l'espace de noms.</param>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau contenant les nœuds.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre de nœuds à obtenir à partir du tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.String,System.String,System.Single[],System.Int32,System.Int32)">
+      <summary>Écrit des nœuds à partir d'un tableau <see cref="T:System.Single" />.</summary>
+      <param name="prefix">Préfixe de l'espace de noms.</param>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau contenant les nœuds.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre de nœuds à obtenir à partir du tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.String,System.String,System.TimeSpan[],System.Int32,System.Int32)">
+      <summary>Écrit des nœuds à partir d'un tableau <see cref="T:System.TimeSpan" />.</summary>
+      <param name="prefix">Préfixe de l'espace de noms.</param>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau contenant les nœuds.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre de nœuds à obtenir à partir du tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Boolean[],System.Int32,System.Int32)">
+      <summary>Écrit des nœuds à partir d'un tableau <see cref="T:System.Boolean" />.</summary>
+      <param name="prefix">Préfixe de l'espace de noms.</param>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau contenant les nœuds.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre de nœuds à obtenir à partir du tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.DateTime[],System.Int32,System.Int32)">
+      <summary>Écrit des nœuds à partir d'un tableau <see cref="T:System.DateTime" />.</summary>
+      <param name="prefix">Préfixe de l'espace de noms.</param>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau contenant les nœuds.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre de nœuds à obtenir à partir du tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Decimal[],System.Int32,System.Int32)">
+      <summary>Écrit des nœuds à partir d'un tableau <see cref="T:System.Decimal" />.</summary>
+      <param name="prefix">Préfixe de l'espace de noms.</param>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau contenant les nœuds.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre de nœuds à obtenir à partir du tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Double[],System.Int32,System.Int32)">
+      <summary>Écrit des nœuds à partir d'un tableau <see cref="T:System.Double" />.</summary>
+      <param name="prefix">Préfixe de l'espace de noms.</param>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau contenant les nœuds.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre de nœuds à obtenir à partir du tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Guid[],System.Int32,System.Int32)">
+      <summary>Écrit des nœuds à partir d'un tableau <see cref="T:System.Guid" />.</summary>
+      <param name="prefix">Préfixe de l'espace de noms.</param>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau contenant les nœuds.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre de nœuds à obtenir à partir du tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Int16[],System.Int32,System.Int32)">
+      <summary>Écrit des nœuds à partir d'un tableau <see cref="T:System.Int16" />.</summary>
+      <param name="prefix">Préfixe de l'espace de noms.</param>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau contenant les nœuds.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre de nœuds à obtenir à partir du tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Int32[],System.Int32,System.Int32)">
+      <summary>Écrit des nœuds à partir d'un tableau <see cref="T:System.Int32" />.</summary>
+      <param name="prefix">Préfixe de l'espace de noms.</param>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau contenant les nœuds.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre de nœuds à obtenir à partir du tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Int64[],System.Int32,System.Int32)">
+      <summary>Écrit des nœuds à partir d'un tableau <see cref="T:System.Int64" />.</summary>
+      <param name="prefix">Préfixe de l'espace de noms.</param>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau contenant les nœuds.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre de nœuds à obtenir à partir du tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Single[],System.Int32,System.Int32)">
+      <summary>Écrit des nœuds à partir d'un tableau <see cref="T:System.Single" />.</summary>
+      <param name="prefix">Préfixe de l'espace de noms.</param>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau contenant les nœuds.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre de nœuds à obtenir à partir du tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.TimeSpan[],System.Int32,System.Int32)">
+      <summary>Écrit des nœuds à partir d'un tableau <see cref="T:System.TimeSpan" />.</summary>
+      <param name="prefix">Préfixe de l'espace de noms.</param>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="array">Tableau contenant les nœuds.</param>
+      <param name="offset">Index de début dans le tableau.</param>
+      <param name="count">Nombre de nœuds à obtenir à partir du tableau.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> est null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> est inférieur à zéro ou supérieur à la longueur de <paramref name="array" /> moins <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteAttributeString(System.String,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.String)">
+      <summary>Écrit le nom qualifié et la valeur d'un attribut.</summary>
+      <param name="prefix">Préfixe de l'attribut.</param>
+      <param name="localName">Nom local de l'attribut.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'attribut.</param>
+      <param name="value">Attribut.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteAttributeString(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.String)">
+      <summary>Écrit le nom qualifié et la valeur d'un attribut.</summary>
+      <param name="localName">Nom local de l'attribut.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'attribut.</param>
+      <param name="value">Attribut.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteElementString(System.String,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.String)">
+      <summary>Écrit un élément avec un contenu de texte.</summary>
+      <param name="prefix">Préfixe de l'élément.</param>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="value">Contenu de l'élément.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteElementString(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.String)">
+      <summary>Écrit un élément avec un contenu de texte.</summary>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <param name="value">Contenu de l'élément.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteNode(System.Xml.XmlDictionaryReader,System.Boolean)">
+      <summary>Écrit le nœud XML actuel à partir d'un <see cref="T:System.Xml.XmlDictionaryReader" />.</summary>
+      <param name="reader">
+        <see cref="T:System.Xml.XmlDictionaryReader" />.</param>
+      <param name="defattr">Si la valeur est true, copie les attributs par défaut à partir du XmlReader. Si la valeur est true, utilise les attributs par défaut, sinon false.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="reader" /> est null. </exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteNode(System.Xml.XmlReader,System.Boolean)">
+      <summary>Écrit le nœud XML actuel à partir d'un <see cref="T:System.Xml.XmlReader" />.</summary>
+      <param name="reader">
+        <see cref="T:System.Xml.XmlReader" />.</param>
+      <param name="defattr">Si la valeur est true, copie les attributs par défaut à partir du <see cref="T:System.Xml.XmlReader" />, sinon false. Si la valeur est true, utilise les attributs par défaut, sinon false.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="reader" /> est null. </exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteQualifiedName(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>Écrit le nom qualifié de l'espace de noms. Cette méthode recherche le préfixe situé dans la portée de l'espace de noms spécifié.</summary>
+      <param name="localName">Nom local du nom qualifié.</param>
+      <param name="namespaceUri">URI de l'espace de noms du nom qualifié.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="localName" /> est null. </exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteStartAttribute(System.String,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>Écrit le début d'un attribut avec le préfixe, le nom local et l'URI de l'espace de noms spécifiés.</summary>
+      <param name="prefix">Préfixe de l'espace de noms.</param>
+      <param name="localName">Nom local de l'attribut.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'attribut.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteStartAttribute(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>Écrit le début d'un attribut avec le nom local et l'URI de l'espace de noms spécifiés.</summary>
+      <param name="localName">Nom local de l'attribut.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'attribut.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteStartElement(System.String,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>Écrit l'élément de début spécifié et l'associe à l'espace de noms et au préfixe donnés.</summary>
+      <param name="prefix">Préfixe de l'élément.</param>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <exception cref="T:System.InvalidOperationException">Le writer est fermé. </exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteStartElement(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>Écrit l'élément de début spécifié et l'associe à l'espace de noms donné.</summary>
+      <param name="localName">Nom local de l'élément.</param>
+      <param name="namespaceUri">URI de l'espace de noms de l'élément.</param>
+      <exception cref="T:System.InvalidOperationException">Le writer est fermé. </exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteString(System.Xml.XmlDictionaryString)">
+      <summary>Écrit le contenu de texte spécifié.</summary>
+      <param name="value">Texte à écrire.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteTextNode(System.Xml.XmlDictionaryReader,System.Boolean)">
+      <summary>Écrit le nœud de texte sur lequel un <see cref="T:System.Xml.XmlDictionaryReader" /> est actuellement positionné.</summary>
+      <param name="reader">
+        <see cref="T:System.Xml.XmlDictionaryReader" /> à partir duquel obtenir la valeur de texte.</param>
+      <param name="isAttribute">Spécifie si le lecteur est positionné sur une valeur d'attribut ou un contenu d'élément.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteValue(System.Guid)">
+      <summary>Écrit une valeur <see cref="T:System.Guid" />.</summary>
+      <param name="value">Valeur <see cref="T:System.Guid" /> à écrire.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteValue(System.TimeSpan)">
+      <summary>Écrit une valeur <see cref="T:System.TimeSpan" />.</summary>
+      <param name="value">Valeur <see cref="T:System.TimeSpan" /> à écrire.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteValue(System.Xml.UniqueId)">
+      <summary>Écrit une valeur d'ID unique.</summary>
+      <param name="value">Valeur d'ID unique à écrire.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="value" /> est null. </exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteValue(System.Xml.XmlDictionaryString)">
+      <summary>Écrit une valeur <see cref="T:System.Xml.XmlDictionaryString" />.</summary>
+      <param name="value">Valeur <see cref="T:System.Xml.XmlDictionaryString" />.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteXmlAttribute(System.String,System.String)">
+      <summary>Écrit un attribut XML standard dans le nœud actuel.</summary>
+      <param name="localName">Nom local de l'attribut.</param>
+      <param name="value">Valeur de l'attribut.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteXmlAttribute(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>Écrit un attribut XML dans le nœud actuel.</summary>
+      <param name="localName">Nom local de l'attribut.</param>
+      <param name="value">Valeur de l'attribut.</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteXmlnsAttribute(System.String,System.String)">
+      <summary>Écrit un attribut de déclaration d'espace de noms.</summary>
+      <param name="prefix">Préfixe lié à l'espace de noms donné.</param>
+      <param name="namespaceUri">Espace de noms auquel le préfixe est lié.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="namespaceUri" /> est null.</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteXmlnsAttribute(System.String,System.Xml.XmlDictionaryString)">
+      <summary>Écrit un attribut de déclaration d'espace de noms.</summary>
+      <param name="prefix">Préfixe lié à l'espace de noms donné.</param>
+      <param name="namespaceUri">Espace de noms auquel le préfixe est lié.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="namespaceUri" /> est null.</exception>
+    </member>
+  </members>
+</doc>

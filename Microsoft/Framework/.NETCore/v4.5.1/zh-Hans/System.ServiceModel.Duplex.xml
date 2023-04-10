@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.ServiceModel.Duplex</name>
+  </assembly>
+  <members>
+    <member name="T:System.ServiceModel.CallbackBehaviorAttribute">
+      <summary>在客户端应用程序中配置回调服务实现。</summary>
+    </member>
+    <member name="M:System.ServiceModel.CallbackBehaviorAttribute.#ctor">
+      <summary>初始化 <see cref="T:System.ServiceModel.CallbackBehaviorAttribute" /> 类的新实例。</summary>
+    </member>
+    <member name="P:System.ServiceModel.CallbackBehaviorAttribute.AutomaticSessionShutdown">
+      <summary>指定是否在服务关闭双工会话时自动关闭会话。</summary>
+      <returns>如果双工回调对象在服务关闭双工会话时自动关闭会话，则为 true；否则为 false。 默认值为 true。</returns>
+    </member>
+    <member name="M:System.ServiceModel.CallbackBehaviorAttribute.System#ServiceModel#Description#IEndpointBehavior#AddBindingParameters(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Channels.BindingParameterCollection)">
+      <summary>将绑定元素配置为支持回调行为。</summary>
+      <param name="serviceEndpoint">回调对象的终结点。</param>
+      <param name="parameters">要配置的绑定参数的集合。</param>
+    </member>
+    <member name="M:System.ServiceModel.CallbackBehaviorAttribute.System#ServiceModel#Description#IEndpointBehavior#ApplyClientBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.ClientRuntime)">
+      <summary>将客户端运行库配置为支持回调对象。</summary>
+      <param name="serviceEndpoint">由属性配置的终结点。</param>
+      <param name="clientRuntime">属性所配置的客户端运行时对象。</param>
+    </member>
+    <member name="M:System.ServiceModel.CallbackBehaviorAttribute.System#ServiceModel#Description#IEndpointBehavior#ApplyDispatchBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.EndpointDispatcher)">
+      <summary>
+        <see cref="M:System.ServiceModel.Description.IEndpointBehavior.ApplyDispatchBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.EndpointDispatcher)" /> 方法的实现。 此实现无效。</summary>
+      <param name="serviceEndpoint">要修改的终结点。</param>
+      <param name="endpointDispatcher">方法修改的终结点调度程序。</param>
+    </member>
+    <member name="M:System.ServiceModel.CallbackBehaviorAttribute.System#ServiceModel#Description#IEndpointBehavior#Validate(System.ServiceModel.Description.ServiceEndpoint)">
+      <summary>在生成运行时之前验证终结点说明。</summary>
+      <param name="serviceEndpoint">要验证的终结点。</param>
+    </member>
+    <member name="P:System.ServiceModel.CallbackBehaviorAttribute.UseSynchronizationContext">
+      <summary>获取或设置一个值，该值指定是否使用当前同步上下文来选择执行的线程。</summary>
+      <returns>如果对服务的所有调用都必须在 <see cref="T:System.Threading.SynchronizationContext" /> 指定的线程上运行，则为 true；否则为 false。 默认值为 true。</returns>
+    </member>
+    <member name="T:System.ServiceModel.DuplexChannelFactory`1">
+      <summary>提供创建和管理不同类型的双工通道的方式，客户端使用这些通道在服务终结点发送和接收消息。</summary>
+      <typeparam name="TChannel">由通道工厂生成的通道类型。</typeparam>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.#ctor(System.ServiceModel.InstanceContext,System.ServiceModel.Channels.Binding)">
+      <summary>使用实现回调协定和指定绑定的上下文初始化 <see cref="T:System.ServiceModel.DuplexChannelFactory`1" /> 类的新实例。</summary>
+      <param name="callbackInstance">
+        <see cref="T:System.ServiceModel.InstanceContext" />，客户端用以侦听来自所连接服务的消息。</param>
+      <param name="binding">用于通过工厂生成的通道连接至服务的 <see cref="T:System.ServiceModel.Channels.Binding" />。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="callbackInstance" /> 或 <paramref name="binding" /> 为 null。</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.#ctor(System.ServiceModel.InstanceContext,System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress)">
+      <summary>使用实现回调协定和指定绑定和终结点地址的对象初始化 <see cref="T:System.ServiceModel.DuplexChannelFactory`1" /> 类的新实例。</summary>
+      <param name="callbackInstance">
+        <see cref="T:System.ServiceModel.InstanceContext" />，客户端用以侦听来自所连接服务的消息。</param>
+      <param name="binding">用于通过工厂生成的通道连接至服务的 <see cref="T:System.ServiceModel.Channels.Binding" />。</param>
+      <param name="remoteAddress">提供服务位置的 <see cref="T:System.ServiceModel.EndpointAddress" />。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="callbackInstance" /> 或 <paramref name="binding" /> 或 <paramref name="remoteAddress" /> 为 null。</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.#ctor(System.ServiceModel.InstanceContext,System.ServiceModel.Channels.Binding,System.String)">
+      <summary>使用指定的实例上下文、绑定和远程地址初始化 <see cref="T:System.ServiceModel.DuplexChannelFactory`1" /> 类的新实例。</summary>
+      <param name="callbackInstance">
+        <see cref="T:System.ServiceModel.InstanceContext" />，客户端用以侦听来自所连接服务的消息。</param>
+      <param name="binding">用于通过工厂生成的通道连接至服务的 <see cref="T:System.ServiceModel.Channels.Binding" />。</param>
+      <param name="remoteAddress">提供服务位置的远程地址。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="callbackInstance" /> 或 <paramref name="binding" /> 或 <paramref name="remoteAddress" /> 为 null。</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.#ctor(System.ServiceModel.InstanceContext,System.String)">
+      <summary>使用实现回调协定以及指定配置的对象初始化 <see cref="T:System.ServiceModel.DuplexChannelFactory`1" /> 类的新实例。</summary>
+      <param name="callbackInstance">
+        <see cref="T:System.ServiceModel.InstanceContext" />，客户端用以侦听来自所连接服务的消息。</param>
+      <param name="endpointConfigurationName">用于终结点配置的名称。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="callbackInstance" /> 或 <paramref name="endpointConfigurationName" /> 为 null。</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.#ctor(System.ServiceModel.InstanceContext,System.String,System.ServiceModel.EndpointAddress)">
+      <summary>使用实现回调协定和指定配置和终结点地址的对象初始化 <see cref="T:System.ServiceModel.DuplexChannelFactory`1" /> 类的新实例。</summary>
+      <param name="callbackInstance">
+        <see cref="T:System.ServiceModel.InstanceContext" />，客户端用以侦听来自所连接服务的消息。</param>
+      <param name="endpointConfigurationName">用于终结点配置的名称。</param>
+      <param name="remoteAddress">提供服务位置的 <see cref="T:System.ServiceModel.EndpointAddress" />。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="callbackInstance" /> 或 <paramref name="endpointConfigurationName" /> 或 <paramref name="remoteAddress" /> 为 null。</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.CreateChannel(System.ServiceModel.EndpointAddress,System.Uri)">
+      <summary>在服务和客户端上的回调实例之间创建双工通道。</summary>
+      <returns>位于客户端和服务之间类型为 <paramref name="TChannel" />（工厂的泛型参数）的双工通道。</returns>
+      <param name="address">提供服务位置的 <see cref="T:System.ServiceModel.EndpointAddress" />。</param>
+      <param name="via">
+        <see cref="T:System.Uri" />，包含要将消息发送至的传输地址。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> 为 null。</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.CreateChannel(System.ServiceModel.InstanceContext)">
+      <summary>在服务和客户端上的回调实例之间创建双工通道。</summary>
+      <returns>位于客户端和服务之间类型为 <paramref name="TChannel" />（工厂的泛型参数）的双工通道。</returns>
+      <param name="callbackInstance">
+        <see cref="T:System.ServiceModel.InstanceContext" />，客户端用以侦听来自所连接服务的消息。</param>
+      <exception cref="T:System.InvalidOperationException">
+        <paramref name="callbackInstance" /> 或 <paramref name="callbackInstance" />.UserObject 为 null。</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.CreateChannel(System.ServiceModel.InstanceContext,System.ServiceModel.EndpointAddress)">
+      <summary>在服务和客户端上的回调实例之间创建双工通道。</summary>
+      <returns>位于客户端和服务之间类型为 <paramref name="TChannel" />（工厂的泛型参数）的双工通道。</returns>
+      <param name="callbackInstance">
+        <see cref="T:System.ServiceModel.InstanceContext" />，客户端用以侦听来自所连接服务的消息。</param>
+      <param name="address">提供服务位置的 <see cref="T:System.ServiceModel.EndpointAddress" />。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> 为 null。</exception>
+      <exception cref="T:System.InvalidOperationException">
+        <paramref name="callbackInstance" /> 或 <paramref name="callbackInstance" />.UserObject 为 null。</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.CreateChannel(System.ServiceModel.InstanceContext,System.ServiceModel.EndpointAddress,System.Uri)">
+      <summary>在服务和客户端上的回调实例之间创建双工通道。</summary>
+      <returns>位于客户端和服务之间类型为 <paramref name="TChannel" />（工厂的泛型参数）的通道。</returns>
+      <param name="callbackInstance">
+        <see cref="T:System.ServiceModel.InstanceContext" />，客户端用以侦听来自所连接服务的消息。</param>
+      <param name="address">提供服务位置的 <see cref="T:System.ServiceModel.EndpointAddress" />。</param>
+      <param name="via">
+        <see cref="T:System.Uri" />，包含要将消息发送至的传输地址。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> 为 null。</exception>
+      <exception cref="T:System.InvalidOperationException">
+        <paramref name="callbackInstance" /> 或 <paramref name="callbackInstance" />.UserObject 为 null。</exception>
+    </member>
+    <member name="T:System.ServiceModel.DuplexClientBase`1">
+      <summary>用于创建双工服务的通道，并将该通道与回调对象相关联。</summary>
+      <typeparam name="TChannel">要创建的通道类型。</typeparam>
+    </member>
+    <member name="M:System.ServiceModel.DuplexClientBase`1.#ctor(System.ServiceModel.InstanceContext)">
+      <summary>使用指定的回调对象初始化 <see cref="T:System.ServiceModel.DuplexClientBase`1" /> 类的新实例。</summary>
+      <param name="callbackInstance">一个将回调对象与服务的通道相关联的 <see cref="T:System.ServiceModel.InstanceContext" /> 对象。</param>
+      <exception cref="T:System.ArgumentNullException">回调实例为 null。</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexClientBase`1.#ctor(System.ServiceModel.InstanceContext,System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress)">
+      <summary>使用指定的回调对象、绑定和服务终结点地址初始化 <see cref="T:System.ServiceModel.DuplexClientBase`1" /> 类的新实例。</summary>
+      <param name="callbackInstance">一个对象，用于创建将回调对象与服务的通道相关联的实例上下文。</param>
+      <param name="binding">用于调用服务的绑定。</param>
+      <param name="remoteAddress">要使用的服务终结点地址。</param>
+    </member>
+    <member name="M:System.ServiceModel.DuplexClientBase`1.#ctor(System.ServiceModel.InstanceContext,System.String)">
+      <summary>使用指定的回调对象和配置名称初始化 <see cref="T:System.ServiceModel.DuplexClientBase`1" /> 类的新实例。</summary>
+      <param name="callbackInstance">一个对象，用于创建将回调对象与服务的通道相关联的实例上下文。</param>
+      <param name="endpointConfigurationName">应用程序配置文件中的客户端终结点信息的名称。</param>
+      <exception cref="T:System.ArgumentNullException">回调实例为 null。</exception>
+      <exception cref="T:System.ArgumentNullException">配置名称为 Null。</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexClientBase`1.#ctor(System.ServiceModel.InstanceContext,System.String,System.ServiceModel.EndpointAddress)">
+      <summary>使用指定的回调对象、配置名称和服务终结点地址初始化 <see cref="T:System.ServiceModel.DuplexClientBase`1" /> 类的新实例。</summary>
+      <param name="callbackInstance">一个对象，用于创建将回调对象与服务的通道相关联的实例上下文。</param>
+      <param name="endpointConfigurationName">应用程序配置文件中的客户端终结点信息的名称。</param>
+      <param name="remoteAddress">要使用的服务终结点地址。</param>
+      <exception cref="T:System.ArgumentNullException">回调实例为 null。</exception>
+      <exception cref="T:System.ArgumentNullException">配置名称为 Null。</exception>
+      <exception cref="T:System.ArgumentNullException">地址为 Null。</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexClientBase`1.#ctor(System.ServiceModel.InstanceContext,System.String,System.String)">
+      <summary>使用指定的回调对象、配置名称和服务终结点地址初始化 <see cref="T:System.ServiceModel.DuplexClientBase`1" /> 类的新实例。</summary>
+      <param name="callbackInstance">一个对象，用于创建将回调对象与服务的通道相关联的实例上下文。</param>
+      <param name="endpointConfigurationName">应用程序配置文件中的客户端终结点信息的名称。</param>
+      <param name="remoteAddress">要使用的服务终结点地址。</param>
+      <exception cref="T:System.ArgumentNullException">回调实例为 null。</exception>
+      <exception cref="T:System.ArgumentNullException">配置名称为 Null。</exception>
+      <exception cref="T:System.ArgumentNullException">地址为 Null。</exception>
+    </member>
+    <member name="T:System.ServiceModel.InstanceContext">
+      <summary>表示服务实例的上下文信息。</summary>
+    </member>
+    <member name="M:System.ServiceModel.InstanceContext.#ctor(System.Object)">
+      <summary>为实现服务实例的指定对象初始化 <see cref="T:System.ServiceModel.InstanceContext" /> 类的新实例。</summary>
+      <param name="implementation">实现服务实例的对象。</param>
+    </member>
+    <member name="M:System.ServiceModel.InstanceContext.GetServiceInstance(System.ServiceModel.Channels.Message)">
+      <summary>为实例上下文返回服务的实例，以响应传入消息。</summary>
+      <returns>表示服务实例的对象。</returns>
+      <param name="message">触发服务对象的创建的传入消息。</param>
+      <exception cref="T:System.InvalidOperationException">该服务实例处于已创建或正在打开的状态，或没有初始化。</exception>
+      <exception cref="T:System.ServiceModel.CommunicationObjectAbortedException">该服务实例已中止。</exception>
+      <exception cref="T:System.ObjectDisposedException">该服务实例已关闭，并且在这些状态下无法修改。</exception>
+      <exception cref="T:System.ServiceModel.CommunicationObjectFaultedException">该服务实例处于错误状态，并且在这些状态下无法修改。</exception>
+    </member>
+    <member name="P:System.ServiceModel.InstanceContext.SynchronizationContext">
+      <summary>获取或设置与当前实例上下文一起用于线程同步的上下文。</summary>
+      <returns>与当前实例上下文一起用于线程同步的 <see cref="T:System.Threading.SynchronizationContext" />。</returns>
+      <exception cref="T:System.InvalidOperationException">该通信对象已打开或正在关闭，并且在这些状态下不能修改。</exception>
+      <exception cref="T:System.ServiceModel.CommunicationObjectAbortedException">该通信对象已中止，并且在这些状态下无法修改。</exception>
+      <exception cref="T:System.ObjectDisposedException">该通信对象已关闭，并且在这些状态下无法修改。</exception>
+      <exception cref="T:System.ServiceModel.CommunicationObjectFaultedException">该通信对象处于错误状态，并且在这些状态下无法修改。</exception>
+    </member>
+    <member name="P:System.ServiceModel.InstanceContext.System#ServiceModel#IExtensibleObject{T}#Extensions">
+      <summary>一个扩展对象的集合。</summary>
+      <returns>返回 <see cref="T:System.ServiceModel.IExtensionCollection`1" />。</returns>
+    </member>
+  </members>
+</doc>

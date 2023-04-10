@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.ComponentModel.EventBasedAsync</name>
+  </assembly>
+  <members>
+    <member name="T:System.ComponentModel.AsyncCompletedEventArgs">
+      <summary>提供 MethodNameCompleted 事件的資料。</summary>
+    </member>
+    <member name="M:System.ComponentModel.AsyncCompletedEventArgs.#ctor(System.Exception,System.Boolean,System.Object)">
+      <summary>初始化 <see cref="T:System.ComponentModel.AsyncCompletedEventArgs" /> 類別的新執行個體。</summary>
+      <param name="error">非同步作業期間發生的任何錯誤。</param>
+      <param name="cancelled">指出非同步作業是否取消的值。</param>
+      <param name="userState">傳遞至 <see cref="M:System.ComponentModel.BackgroundWorker.RunWorkerAsync(System.Object)" /> 方法的選擇性使用者提供的狀態物件。</param>
+    </member>
+    <member name="P:System.ComponentModel.AsyncCompletedEventArgs.Cancelled">
+      <summary>取得值，指出非同步作業是否已取消。</summary>
+      <returns>如果背景作業已取消，則為 true，否則為 false。 預設值為 false。</returns>
+    </member>
+    <member name="P:System.ComponentModel.AsyncCompletedEventArgs.Error">
+      <summary>取得值，指出非同步作業期間是否發生錯誤。</summary>
+      <returns>如果非同步作業期間發生錯誤，則為 <see cref="T:System.Exception" /> 執行個體，否則為 null。</returns>
+    </member>
+    <member name="M:System.ComponentModel.AsyncCompletedEventArgs.RaiseExceptionIfNecessary">
+      <summary>如果非同步作業失敗，引發使用者提供的例外狀況。</summary>
+      <exception cref="T:System.InvalidOperationException">
+        <see cref="P:System.ComponentModel.AsyncCompletedEventArgs.Cancelled" /> 屬性為 true。</exception>
+      <exception cref="T:System.Reflection.TargetInvocationException">非同步作業已設定 <see cref="P:System.ComponentModel.AsyncCompletedEventArgs.Error" /> 屬性。 <see cref="P:System.Exception.InnerException" /> 屬性會保持對 <see cref="P:System.ComponentModel.AsyncCompletedEventArgs.Error" /> 的參考。</exception>
+    </member>
+    <member name="P:System.ComponentModel.AsyncCompletedEventArgs.UserState">
+      <summary>取得非同步工作的唯一識別項。</summary>
+      <returns>唯一識別非同步工作的物件參考，如果未設定值，則為 null。</returns>
+    </member>
+    <member name="T:System.ComponentModel.AsyncCompletedEventHandler">
+      <summary>表示將處理非同步作業之 MethodNameCompleted 事件的方法。</summary>
+    </member>
+    <member name="M:System.ComponentModel.AsyncCompletedEventHandler.#ctor(System.Object,System.IntPtr)">
+    </member>
+    <member name="M:System.ComponentModel.AsyncCompletedEventHandler.BeginInvoke(System.Object,System.ComponentModel.AsyncCompletedEventArgs,System.AsyncCallback,System.Object)">
+    </member>
+    <member name="M:System.ComponentModel.AsyncCompletedEventHandler.EndInvoke(System.IAsyncResult)">
+    </member>
+    <member name="M:System.ComponentModel.AsyncCompletedEventHandler.Invoke(System.Object,System.ComponentModel.AsyncCompletedEventArgs)">
+    </member>
+    <member name="T:System.ComponentModel.ProgressChangedEventArgs">
+      <summary>提供 <see cref="E:System.ComponentModel.BackgroundWorker.ProgressChanged" /> 事件的資料。</summary>
+    </member>
+    <member name="M:System.ComponentModel.ProgressChangedEventArgs.#ctor(System.Int32,System.Object)">
+      <summary>初始化 <see cref="T:System.ComponentModel.ProgressChangedEventArgs" /> 類別的新執行個體。</summary>
+      <param name="progressPercentage">非同步工作的完成百分比。</param>
+      <param name="userState">唯一的使用者狀態。</param>
+    </member>
+    <member name="P:System.ComponentModel.ProgressChangedEventArgs.ProgressPercentage">
+      <summary>取得非同步工作的進度百分比。</summary>
+      <returns>指出非同步工作進度的百分比值。</returns>
+    </member>
+    <member name="P:System.ComponentModel.ProgressChangedEventArgs.UserState">
+      <summary>取得唯一的使用者狀態。</summary>
+      <returns>指出使用者狀態的唯一 <see cref="T:System.Object" />。</returns>
+    </member>
+    <member name="T:System.ComponentModel.ProgressChangedEventHandler">
+      <summary>表示處理 <see cref="T:System.ComponentModel.BackgroundWorker" /> 類別的 <see cref="E:System.ComponentModel.BackgroundWorker.ProgressChanged" /> 事件的方法。 此類別無法被繼承。</summary>
+    </member>
+    <member name="M:System.ComponentModel.ProgressChangedEventHandler.#ctor(System.Object,System.IntPtr)">
+    </member>
+    <member name="M:System.ComponentModel.ProgressChangedEventHandler.BeginInvoke(System.Object,System.ComponentModel.ProgressChangedEventArgs,System.AsyncCallback,System.Object)">
+    </member>
+    <member name="M:System.ComponentModel.ProgressChangedEventHandler.EndInvoke(System.IAsyncResult)">
+    </member>
+    <member name="M:System.ComponentModel.ProgressChangedEventHandler.Invoke(System.Object,System.ComponentModel.ProgressChangedEventArgs)">
+    </member>
+  </members>
+</doc>

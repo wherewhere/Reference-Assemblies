@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.ComponentModel.EventBasedAsync</name>
+  </assembly>
+  <members>
+    <member name="T:System.ComponentModel.AsyncCompletedEventArgs">
+      <summary>Stellt Daten für das MethodennameCompleted-Ereignis bereit.</summary>
+    </member>
+    <member name="M:System.ComponentModel.AsyncCompletedEventArgs.#ctor(System.Exception,System.Boolean,System.Object)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:System.ComponentModel.AsyncCompletedEventArgs" />-Klasse.</summary>
+      <param name="error">Ein während des asynchronen Vorgangs aufgetretener Fehler.</param>
+      <param name="cancelled">Ein Wert, der angibt, ob der asynchrone Vorgang abgebrochen wurde.</param>
+      <param name="userState">Das an die <see cref="M:System.ComponentModel.BackgroundWorker.RunWorkerAsync(System.Object)" />-Methode übergebene, optionale benutzerdefinierte Zustandsobjekt.</param>
+    </member>
+    <member name="P:System.ComponentModel.AsyncCompletedEventArgs.Cancelled">
+      <summary>Ruft einen Wert ab, der angibt, ob ein asynchroner Vorgang abgebrochen wurde.</summary>
+      <returns>true, wenn der Hintergrundvorgang abgebrochen wurde, andernfalls false. Die Standardeinstellung ist false.</returns>
+    </member>
+    <member name="P:System.ComponentModel.AsyncCompletedEventArgs.Error">
+      <summary>Ruft einen Wert ab, der angibt, welcher Fehler während eines asynchronen Vorgangs aufgetreten ist.</summary>
+      <returns>Eine <see cref="T:System.Exception" />-Instanz, wenn während eines asynchronen Vorgangs ein Fehler aufgetreten ist, andernfalls null.</returns>
+    </member>
+    <member name="M:System.ComponentModel.AsyncCompletedEventArgs.RaiseExceptionIfNecessary">
+      <summary>Löst eine benutzerdefinierte Ausnahme aus, wenn bei einem asynchronen Vorgang ein Fehler aufgetreten ist.</summary>
+      <exception cref="T:System.InvalidOperationException">Die <see cref="P:System.ComponentModel.AsyncCompletedEventArgs.Cancelled" />-Eigenschaft ist true.</exception>
+      <exception cref="T:System.Reflection.TargetInvocationException">Die <see cref="P:System.ComponentModel.AsyncCompletedEventArgs.Error" />-Eigenschaft wurde durch den asynchronen Vorgang festgelegt. Die <see cref="P:System.Exception.InnerException" />-Eigenschaft enthält einen Verweis auf <see cref="P:System.ComponentModel.AsyncCompletedEventArgs.Error" />.</exception>
+    </member>
+    <member name="P:System.ComponentModel.AsyncCompletedEventArgs.UserState">
+      <summary>Ruft den eindeutigen Bezeichner der asynchronen Aufgabe ab.</summary>
+      <returns>Ein Objektverweis, der die asynchrone Aufgabe eindeutig bezeichnet, andernfalls null, wenn kein Wert festgelegt wurde.</returns>
+    </member>
+    <member name="T:System.ComponentModel.AsyncCompletedEventHandler">
+      <summary>Stellt die Methode dar, die das MethodennameCompleted-Ereignis eines asynchronen Vorgangs behandelt.</summary>
+    </member>
+    <member name="M:System.ComponentModel.AsyncCompletedEventHandler.#ctor(System.Object,System.IntPtr)">
+    </member>
+    <member name="M:System.ComponentModel.AsyncCompletedEventHandler.BeginInvoke(System.Object,System.ComponentModel.AsyncCompletedEventArgs,System.AsyncCallback,System.Object)">
+    </member>
+    <member name="M:System.ComponentModel.AsyncCompletedEventHandler.EndInvoke(System.IAsyncResult)">
+    </member>
+    <member name="M:System.ComponentModel.AsyncCompletedEventHandler.Invoke(System.Object,System.ComponentModel.AsyncCompletedEventArgs)">
+    </member>
+    <member name="T:System.ComponentModel.ProgressChangedEventArgs">
+      <summary>Stellt Daten für das <see cref="E:System.ComponentModel.BackgroundWorker.ProgressChanged" />-Ereignis bereit.</summary>
+    </member>
+    <member name="M:System.ComponentModel.ProgressChangedEventArgs.#ctor(System.Int32,System.Object)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:System.ComponentModel.ProgressChangedEventArgs" />-Klasse.</summary>
+      <param name="progressPercentage">Gibt an, wieviel Prozent einer asynchronen Aufgabe ausgeführt wurden.</param>
+      <param name="userState">Ein eindeutiger Benutzerzustand.</param>
+    </member>
+    <member name="P:System.ComponentModel.ProgressChangedEventArgs.ProgressPercentage">
+      <summary>Ruft den Fortschrittsprozentsatz einer asynchronen Aufgabe ab.</summary>
+      <returns>Ein Prozentwert, der den Fortschritt der asynchronen Aufgabe angibt.</returns>
+    </member>
+    <member name="P:System.ComponentModel.ProgressChangedEventArgs.UserState">
+      <summary>Ruft einen eindeutigen Benutzerzustand ab.</summary>
+      <returns>Ein eindeutiges <see cref="T:System.Object" />, das den Benutzerzustand angibt.</returns>
+    </member>
+    <member name="T:System.ComponentModel.ProgressChangedEventHandler">
+      <summary>Stellt die Methode dar, die das <see cref="E:System.ComponentModel.BackgroundWorker.ProgressChanged" />-Ereignis der <see cref="T:System.ComponentModel.BackgroundWorker" />-Klasse behandelt. Diese Klasse kann nicht vererbt werden.</summary>
+    </member>
+    <member name="M:System.ComponentModel.ProgressChangedEventHandler.#ctor(System.Object,System.IntPtr)">
+    </member>
+    <member name="M:System.ComponentModel.ProgressChangedEventHandler.BeginInvoke(System.Object,System.ComponentModel.ProgressChangedEventArgs,System.AsyncCallback,System.Object)">
+    </member>
+    <member name="M:System.ComponentModel.ProgressChangedEventHandler.EndInvoke(System.IAsyncResult)">
+    </member>
+    <member name="M:System.ComponentModel.ProgressChangedEventHandler.Invoke(System.Object,System.ComponentModel.ProgressChangedEventArgs)">
+    </member>
+  </members>
+</doc>

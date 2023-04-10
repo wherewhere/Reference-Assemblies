@@ -1,0 +1,645 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.Runtime.WindowsRuntime</name>
+  </assembly>
+  <members>
+    <member name="T:System.WindowsRuntimeSystemExtensions">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Предоставляет методы расширения для преобразования между задачами и асинхронными действиями и операциями . </summary>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsAsyncAction(System.Threading.Tasks.Task)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает асинхронное действие , представляющее запущенную задачу. </summary>
+      <returns>Экземпляр Windows.Foundation.IAsyncAction, представляющий запущенную задачу. </returns>
+      <param name="source">Запущенная задача. </param>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsAsyncOperation``1(System.Threading.Tasks.Task{``0})">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает асинхронную операцию , которая представляет запущенную задачу, возвращающую результат. </summary>
+      <returns>Экземпляр Windows.Foundation.IAsyncOperation&lt;TResult&gt;, представляющий запущенную задачу. </returns>
+      <param name="source">Запущенная задача. </param>
+      <typeparam name="TResult">Тип, возвращающий результат. </typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask(Windows.Foundation.IAsyncAction)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает задачу, которая представляет асинхронное действие . </summary>
+      <returns>Задача, которая представляет асинхронное действие. </returns>
+      <param name="source">Асинхронное действие. </param>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask(Windows.Foundation.IAsyncAction,System.Threading.CancellationToken)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает задачу, которая представляет асинхронное действие , которое можно отменить. </summary>
+      <returns>Задача, которая представляет асинхронное действие. </returns>
+      <param name="source">Асинхронное действие. </param>
+      <param name="cancellationToken">Маркер, который может быть использован для запроса отмены асинхронного действия. </param>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask``1(Windows.Foundation.IAsyncActionWithProgress{``0})">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает задачу, которая представляет асинхронное действие . </summary>
+      <returns>Задача, которая представляет асинхронное действие. </returns>
+      <param name="source">Асинхронное действие. </param>
+      <typeparam name="TProgress">Тип объекта, содержащего данные о ходе выполнения. </typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask``1(Windows.Foundation.IAsyncActionWithProgress{``0},System.IProgress{``0})">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает задачу, которая представляет асинхронное действие , сообщающее о ходе выполнения. </summary>
+      <returns>Задача, которая представляет асинхронное действие. </returns>
+      <param name="source">Асинхронное действие. </param>
+      <param name="progress">Объект, получающий уведомления о ходе выполнения. </param>
+      <typeparam name="TProgress">Тип объекта, содержащего данные о ходе выполнения. </typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask``1(Windows.Foundation.IAsyncActionWithProgress{``0},System.Threading.CancellationToken)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает задачу, которая представляет асинхронное действие , которое можно отменить. </summary>
+      <returns>Задача, которая представляет асинхронное действие. </returns>
+      <param name="source">Асинхронное действие. </param>
+      <param name="cancellationToken">Маркер, который может быть использован для запроса отмены асинхронного действия. </param>
+      <typeparam name="TProgress">Тип объекта, содержащего данные о ходе выполнения. </typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask``1(Windows.Foundation.IAsyncActionWithProgress{``0},System.Threading.CancellationToken,System.IProgress{``0})">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает задачу, которая представляет асинхронное действие , которое можно отменить и которое сообщает о ходе выполнения.</summary>
+      <returns>Задача, которая представляет асинхронное действие. </returns>
+      <param name="source">Асинхронное действие. </param>
+      <param name="cancellationToken">Маркер, который может быть использован для запроса отмены асинхронного действия. </param>
+      <param name="progress">Объект, получающий уведомления о ходе выполнения. </param>
+      <typeparam name="TProgress">Тип объекта, содержащего данные о ходе выполнения. </typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask``1(Windows.Foundation.IAsyncOperation{``0})">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает задачу, которая представляет асинхронную операцию , возвращающую результат. </summary>
+      <returns>Задача, которая представляет асинхронную операцию. </returns>
+      <param name="source">Асинхронная операция. </param>
+      <typeparam name="TResult">Тип объекта, возвращающего результата асинхронной операции. </typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask``1(Windows.Foundation.IAsyncOperation{``0},System.Threading.CancellationToken)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает задачу, которая представляет асинхронную операцию , которую можно отменить и которая сообщает о ходе выполнения. </summary>
+      <returns>Задача, которая представляет асинхронную операцию. </returns>
+      <param name="source">Асинхронная операция. </param>
+      <param name="cancellationToken">Маркер, который может быть использован для запроса отмены асинхронной операции. </param>
+      <typeparam name="TResult">Тип объекта, возвращающего результата асинхронной операции. </typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask``2(Windows.Foundation.IAsyncOperationWithProgress{``0,``1})">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает задачу, которая представляет асинхронную операцию , возвращающую результат. </summary>
+      <returns>Задача, которая представляет асинхронную операцию. </returns>
+      <param name="source">Асинхронная операция. </param>
+      <typeparam name="TResult">Тип объекта, возвращающего результата асинхронной операции. </typeparam>
+      <typeparam name="TProgress">Тип объекта, содержащего данные о ходе выполнения. </typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask``2(Windows.Foundation.IAsyncOperationWithProgress{``0,``1},System.IProgress{``1})">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает задачу, которая представляет асинхронную операцию , которая сообщает о ходе выполнения и возвращает результат. </summary>
+      <returns>Задача, которая представляет асинхронную операцию. </returns>
+      <param name="source">Асинхронная операция. </param>
+      <param name="progress">Объект, получающий уведомления о ходе выполнения. </param>
+      <typeparam name="TResult">Тип объекта, возвращающего результата асинхронной операции. </typeparam>
+      <typeparam name="TProgress">Тип объекта, содержащего данные о ходе выполнения. </typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask``2(Windows.Foundation.IAsyncOperationWithProgress{``0,``1},System.Threading.CancellationToken)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает задачу, которая представляет асинхронную операцию , которую можно отменить и которая сообщает о ходе выполнения. </summary>
+      <returns>Задача, которая представляет асинхронную операцию. </returns>
+      <param name="source">Асинхронная операция. </param>
+      <param name="cancellationToken">Маркер, который может быть использован для запроса отмены асинхронной операции. </param>
+      <typeparam name="TResult">Тип объекта, возвращающего результата асинхронной операции. </typeparam>
+      <typeparam name="TProgress">Тип объекта, содержащего данные о ходе выполнения. </typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask``2(Windows.Foundation.IAsyncOperationWithProgress{``0,``1},System.Threading.CancellationToken,System.IProgress{``1})">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает задачу, которая представляет асинхронную операцию , которую можно отменить, которая сообщает о ходе выполнения и возвращает результат. </summary>
+      <returns>Задача, которая представляет асинхронную операцию. </returns>
+      <param name="source">Асинхронная операция. </param>
+      <param name="cancellationToken">Маркер, который может быть использован для запроса отмены асинхронной операции. </param>
+      <param name="progress">Объект, получающий уведомления о ходе выполнения. </param>
+      <typeparam name="TResult">Тип объекта, возвращающего результата асинхронной операции. </typeparam>
+      <typeparam name="TProgress">Тип объекта, содержащего данные о ходе выполнения. </typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.GetAwaiter(Windows.Foundation.IAsyncAction)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает объект, который ожидает асинхронное действие. </summary>
+      <returns>Объект, который ожидает заданное асинхронное действие. </returns>
+      <param name="source">Ожидаемое асинхронное действие. </param>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.GetAwaiter``1(Windows.Foundation.IAsyncActionWithProgress{``0})">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает объект, который ожидает асинхронное действие, сообщающее о ходе выполнения. </summary>
+      <returns>Объект, который ожидает заданное асинхронное действие. </returns>
+      <param name="source">Ожидаемое асинхронное действие. </param>
+      <typeparam name="TProgress">Тип объекта, содержащего данные о ходе выполнения. </typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.GetAwaiter``1(Windows.Foundation.IAsyncOperation{``0})">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает объект, который ожидает асинхронное действие, возвращающее результат.</summary>
+      <returns>Объект, который ожидает заданную асинхронную операцию. </returns>
+      <param name="source">Ожидаемая асинхронная операция. </param>
+      <typeparam name="TResult">Тип объекта, возвращающего результата асинхронной операции. </typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.GetAwaiter``2(Windows.Foundation.IAsyncOperationWithProgress{``0,``1})">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает объект, который ожидает асинхронную операцию, сообщающую о ходе выполнения и возвращающую результат. </summary>
+      <returns>Объект, который ожидает заданную асинхронную операцию. </returns>
+      <param name="source">Ожидаемая асинхронная операция. </param>
+      <typeparam name="TResult">Тип объекта, возвращающего результата асинхронной операции.</typeparam>
+      <typeparam name="TProgress">Тип объекта, содержащего данные о ходе выполнения. </typeparam>
+    </member>
+    <member name="T:System.IO.WindowsRuntimeStorageExtensions">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Содержит методы расширения интерфейсов IStorageFile и IStorageFolder в  при разработке приложений Windows .</summary>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStorageExtensions.OpenStreamForReadAsync(Windows.Storage.IStorageFile)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Получает поток для чтения из указанного файла.</summary>
+      <returns>Задача, которая представляет асинхронную операцию.</returns>
+      <param name="windowsRuntimeFile">IStorageFile, из которого выполняется чтение.</param>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStorageExtensions.OpenStreamForReadAsync(Windows.Storage.IStorageFolder,System.String)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Получает поток для чтения из файла в указанной родительской папки.</summary>
+      <returns>Задача, которая представляет асинхронную операцию.</returns>
+      <param name="rootDirectory">IStorageFolder  , содержащий файл для чтения.</param>
+      <param name="relativePath">Путь относительно корневой папки файл для чтения.</param>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStorageExtensions.OpenStreamForWriteAsync(Windows.Storage.IStorageFile)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает поток для записи в указанный файл.</summary>
+      <returns>Задача, которая представляет асинхронную операцию записи.</returns>
+      <param name="windowsRuntimeFile">IStorageFile, в который будет осуществлена запись.</param>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStorageExtensions.OpenStreamForWriteAsync(Windows.Storage.IStorageFolder,System.String,Windows.Storage.CreationCollisionOption)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает поток для записи в файл в указанной родительской папки.</summary>
+      <returns>Задача, которая представляет асинхронную операцию записи.</returns>
+      <param name="rootDirectory">IStorageFolder  , содержащий файл для записи.</param>
+      <param name="relativePath">Путь относительно корневой папки файл для записи.</param>
+      <param name="creationCollisionOption">Значение перечисления CreationCollisionOption, задающее поведение в случае, если имя создаваемого файла совпадает с именем существующего.</param>
+    </member>
+    <member name="T:System.IO.WindowsRuntimeStreamExtensions">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Содержит методы расширения для преобразования между потоками в  и управляемых потоков в   .</summary>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStreamExtensions.AsInputStream(System.IO.Stream)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Преобразует управляемый поток в  входной поток в   .</summary>
+      <returns>A  IInputStream  , представляющий преобразованный потока.</returns>
+      <param name="stream">Преобразуемый поток.</param>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStreamExtensions.AsOutputStream(System.IO.Stream)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Преобразует управляемый поток в  в выходной поток в   .</summary>
+      <returns>A  IOutputStream  , представляющий преобразованный потока.</returns>
+      <param name="stream">Преобразуемый поток.</param>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStreamExtensions.AsStream(Windows.Storage.Streams.IRandomAccessStream)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Преобразует поток произвольного доступа в  управляемый поток в   .</summary>
+      <returns>Преобразованный поток.</returns>
+      <param name="windowsRuntimeStream">Преобразуемый объект IRandomAccessStream.</param>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStreamExtensions.AsStream(Windows.Storage.Streams.IRandomAccessStream,System.Int32)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Преобразует поток произвольного доступа в  в управляемый поток в , используя заданный размер буфера.</summary>
+      <returns>Преобразованный поток.</returns>
+      <param name="windowsRuntimeStream">Преобразуемый объект IRandomAccessStream.</param>
+      <param name="bufferSize">Размер запрашиваемого буфера в байтах. Это значение не может быть отрицательным, а 0 (ноль) для выключения буферизации.</param>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStreamExtensions.AsStreamForRead(Windows.Storage.Streams.IInputStream)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Преобразует входной поток в  управляемый поток в   .</summary>
+      <returns>Преобразованный поток.</returns>
+      <param name="windowsRuntimeStream">Преобразуемый объект IInputStream.</param>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStreamExtensions.AsStreamForRead(Windows.Storage.Streams.IInputStream,System.Int32)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Преобразует входной поток в  в управляемый поток в , используя заданный размер буфера.</summary>
+      <returns>Преобразованный поток.</returns>
+      <param name="windowsRuntimeStream">Преобразуемый объект IInputStream.</param>
+      <param name="bufferSize">Размер запрашиваемого буфера в байтах. Это значение не может быть отрицательным, а 0 (ноль) для выключения буферизации.</param>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStreamExtensions.AsStreamForWrite(Windows.Storage.Streams.IOutputStream)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Преобразует выходной поток в  управляемый поток в   .</summary>
+      <returns>Преобразованный поток.</returns>
+      <param name="windowsRuntimeStream">Преобразуемый объект IOutputStream.</param>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStreamExtensions.AsStreamForWrite(Windows.Storage.Streams.IOutputStream,System.Int32)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Преобразует выходной поток в  в управляемый поток в , используя заданный размер буфера.</summary>
+      <returns>Преобразованный поток.</returns>
+      <param name="windowsRuntimeStream">Преобразуемый объект IOutputStream.</param>
+      <param name="bufferSize">Размер запрашиваемого буфера в байтах. Это значение не может быть отрицательным, а 0 (ноль) для выключения буферизации.</param>
+    </member>
+    <member name="T:System.Runtime.InteropServices.WindowsRuntime.AsyncInfo">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Предоставляет методы фабрику для создания представления управляемых задач, которые совместимы с  операций и асинхронных действий. </summary>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.AsyncInfo.Run``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}})">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Создает и запускает  , используя функцию, которая создает запущено задание, которое возвращает результаты асинхронной операции. Задача может поддерживать отмену. </summary>
+      <returns>Запущен  Windows.Foundation.IAsyncOperation &lt;TResult&gt;    экземпляр, представляющий задачи, созданной  <paramref name="taskProvider" />. </returns>
+      <param name="taskProvider">Делегат, представляющий функцию, которая создает и запускает задачу. Начата задача представляется  асинхронной операции, возвращаемый. Функция передается маркер отмены, задачи можно отслеживать уведомления об отмене запросов; Маркер можно игнорировать, если задача не поддерживает отмену. </param>
+      <typeparam name="TResult">Тип, возвращающий результат. </typeparam>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.AsyncInfo.Run(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task})">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Создает и запускает  асинхронных действий с помощью функции, которая создает запущена задача. Задача может поддерживать отмену. </summary>
+      <returns>Запущен  Windows.Foundation.IAsyncAction    экземпляр, представляющий задачи, созданной  <paramref name="taskProvider" />. </returns>
+      <param name="taskProvider">Делегат, представляющий функцию, которая создает и запускает задачу. Начата задача представляется  асинхронных действий, возвращаемый. Функция передается маркер отмены, задачи можно отслеживать уведомления об отмене запросов; Маркер можно игнорировать, если задача не поддерживает отмену. </param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.AsyncInfo.Run``2(System.Func{System.Threading.CancellationToken,System.IProgress{``1},System.Threading.Tasks.Task{``0}})">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Создает и запускает асинхронное действие  с уведомлениями о ходе выполнения с помощью функции, которая создает запущенную задачу, возвращающую результаты. Задача может поддерживать отмену и отчетности о ходе выполнения. </summary>
+      <returns>Запущенный экземпляр Windows.Foundation.IAsyncOperationWithProgress&lt;TResult,TProgress&gt;, представляющий задачу, созданную <paramref name="taskProvider" />. </returns>
+      <param name="taskProvider">Делегат, представляющий функцию, которая создает и запускает задачу. Начата задача представляется  асинхронных действий, возвращаемый. Функции передается маркер отмены, по которому задача может отслеживать уведомления о запросах отмены, и интерфейс для отчета о ходе выполнения; оба аргумента можно игнорировать, если задача не поддерживает отмену или уведомления. </param>
+      <typeparam name="TResult">Тип, возвращающий результат. </typeparam>
+      <typeparam name="TProgress">Тип, который используется для уведомления о ходе выполнения. </typeparam>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.AsyncInfo.Run``1(System.Func{System.Threading.CancellationToken,System.IProgress{``0},System.Threading.Tasks.Task})">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Создает и запускает асинхронное действие  с уведомлениями о ходе выполнения с помощью функции, которая создает запущенную задачу. Задача может поддерживать отмену и отчетности о ходе выполнения. </summary>
+      <returns>Запущен  Windows.Foundation.IAsyncActionWithProgress &lt;TProgress&gt;    экземпляр, представляющий задачи, созданной  <paramref name="taskProvider" />. </returns>
+      <param name="taskProvider">Делегат, представляющий функцию, которая создает и запускает задачу. Начата задача представляется  асинхронных действий, возвращаемый. Функции передается маркер отмены, по которому задача может отслеживать уведомления о запросах отмены, и интерфейс для отчета о ходе выполнения; оба аргумента можно игнорировать, если задача не поддерживает отмену или уведомления. </param>
+      <typeparam name="TProgress">Тип, который используется для уведомления о ходе выполнения. </typeparam>
+    </member>
+    <member name="T:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBuffer">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Предоставляет реализацию интерфейса IBuffer (Windows.Storage.Streams.IBuffer) и все необходимые дополнительные интерфейсы. </summary>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBuffer.Create(System.Byte[],System.Int32,System.Int32,System.Int32)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает  Windows.Storage.Streams.IBuffer  интерфейс, содержащий указанный диапазон байтов, копируемых из массива байтов. Если указанный емкость превышает количество скопированных байтов, остальная часть буфера заполняется нулями. </summary>
+      <returns>A  Windows.Storage.Streams.IBuffer  интерфейс, содержащий указанный диапазон байтов. Если  <paramref name="capacity" />больше, чем   <paramref name="length" />, остальная часть буфера заполняется нулями. </returns>
+      <param name="data">Копирование из массива байтов. </param>
+      <param name="offset">Смещение в массиве <paramref name="data" />, с которого начинается копирование. </param>
+      <param name="length">Число байтов, предназначенных для копирования. </param>
+      <param name="capacity">Максимальное число байтов, которое может содержать буфер; Если это больше, чем  <paramref name="length" />, остальные байтов в буфере инициализируются значением 0 (ноль).</param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBuffer.Create(System.Int32)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает пустой  Windows.Storage.Streams.IBuffer  интерфейс, который имеет указанный Максимальная емкость. </summary>
+      <returns>A  Windows.Storage.Streams.IBuffer    интерфейс с указанной емкости и  Длина  свойство равно 0 (ноль). </returns>
+      <param name="capacity">Максимальное число элементов, которое может содержать буфер. </param>
+    </member>
+    <member name="T:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Содержит методы расширения для работы над буферами  (Windows.Storage.Streams.IBuffer). </summary>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.AsBuffer(System.Byte[])">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает  Windows.Storage.Streams.IBuffer  интерфейс, представляющий указанный массив байтов. </summary>
+      <returns>A  Windows.Storage.Streams.IBuffer  интерфейс, представляющий указанный массив байтов. </returns>
+      <param name="source">Представляемый массив. </param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.AsBuffer(System.Byte[],System.Int32,System.Int32)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает  Windows.Storage.Streams.IBuffer  интерфейс, который представляет диапазон байтов в указанный массив байтов. </summary>
+      <returns>IBuffer    интерфейс, представляющий указанный диапазон байтов в  <paramref name="source" />.</returns>
+      <param name="source">Массив, содержащий диапазон байтов, представленный  IBuffer. </param>
+      <param name="offset">Смещение в  <paramref name="source" />которого начинается диапазон. </param>
+      <param name="length">Длина диапазона, представленного IBuffer. </param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.AsBuffer(System.Byte[],System.Int32,System.Int32,System.Int32)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает  Windows.Storage.Streams.IBuffer  интерфейс, который представляет диапазон байтов в указанный массив байтов. При необходимости устанавливает  Длина    свойства  IBuffer  значение, которое меньше, чем значение емкости. </summary>
+      <returns>Интерфейс IBuffer, представляющий указанный диапазон байтов в <paramref name="source" />, с указанным значением свойства Length. </returns>
+      <param name="source">Массив, содержащий диапазон байтов, представленный  IBuffer. </param>
+      <param name="offset">Смещение в  <paramref name="source" />которого начинается диапазон. </param>
+      <param name="length">Значение  Длина    свойства  IBuffer. </param>
+      <param name="capacity">Размер диапазона, представленного IBuffer.  Мощности    свойства  IBuffer  присвоено это значение. </param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.AsStream(Windows.Storage.Streams.IBuffer)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает поток, представляющий памяти, заданного  Windows.Storage.Streams.IBuffer  представляет интерфейс. </summary>
+      <returns>Поток, представляющий памяти, заданного  Windows.Storage.Streams.IBuffer  представляет интерфейс. </returns>
+      <param name="source">Объект IBuffer, представлющий поток. </param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.CopyTo(System.Byte[],System.Int32,Windows.Storage.Streams.IBuffer,System.UInt32,System.Int32)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Копирует байты из исходного массива в конечный буфер (Windows.Storage.Streams.IBuffer), задавая начальный индекс в исходном массиве и конечном буфере, а также число копируемых байтов. Этот метод не выполняет обновление  Длина  свойство буфера назначения. </summary>
+      <param name="source">Массив для копирования данных. </param>
+      <param name="sourceIndex">Индекс в  <paramref name="source" />начинается копирование данных с. </param>
+      <param name="destination">Буфер, куда копируются данные. </param>
+      <param name="destinationIndex">Индекс в <paramref name="destination" />, откуда начинается копирование данных. </param>
+      <param name="count">Число байтов, предназначенных для копирования. </param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.CopyTo(System.Byte[],Windows.Storage.Streams.IBuffer)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Копирует все байты из исходного массива буфера назначения (Windows.Storage.Streams.IBuffer), начиная со смещением 0 (ноль) в обоих. Метод не изменяет длину буфера назначения. </summary>
+      <param name="source">Массив для копирования данных. </param>
+      <param name="destination">Буфер, куда копируются данные. </param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.CopyTo(Windows.Storage.Streams.IBuffer,System.Byte[])">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Копирует все байты из буфера источника (Windows.Storage.Streams.IBuffer) в массиве назначения, начиная с смещение 0 (ноль) в обоих. </summary>
+      <param name="source">Буфер, из которого копируются данные. </param>
+      <param name="destination">Массив, в который выполняется копирование. </param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.CopyTo(Windows.Storage.Streams.IBuffer,System.UInt32,System.Byte[],System.Int32,System.Int32)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Копирует байты из исходного буфера (Windows.Storage.Streams.IBuffer) в конечный массив, задавая начальный индекс в исходном буфере и конечном массиве, а также число копируемых байтов. </summary>
+      <param name="source">Буфер, из которого копируются данные. </param>
+      <param name="sourceIndex">Индекс в  <paramref name="source" />начинается копирование данных с. </param>
+      <param name="destination">Массив, в который выполняется копирование. </param>
+      <param name="destinationIndex">Индекс в <paramref name="destination" />, откуда начинается копирование данных. </param>
+      <param name="count">Число байтов, предназначенных для копирования. </param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.CopyTo(Windows.Storage.Streams.IBuffer,System.UInt32,Windows.Storage.Streams.IBuffer,System.UInt32,System.UInt32)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Копирует байты из исходного буфера (Windows.Storage.Streams.IBuffer) в конечный буфер, задавая начальный индекс в исходном буфере и конечном буфере, а также число копируемых байтов.</summary>
+      <param name="source">Буфер, из которого копируются данные. </param>
+      <param name="sourceIndex">Индекс в  <paramref name="source" />начинается копирование данных с. </param>
+      <param name="destination">Буфер, куда копируются данные. </param>
+      <param name="destinationIndex">Индекс в <paramref name="destination" />, откуда начинается копирование данных. </param>
+      <param name="count">Число байтов, предназначенных для копирования. </param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.CopyTo(Windows.Storage.Streams.IBuffer,Windows.Storage.Streams.IBuffer)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Копирует все байты из буфера источника (Windows.Storage.Streams.IBuffer) в буфер назначения, начинающееся со смещением 0 (ноль) в обоих. </summary>
+      <param name="source">Исходный буфер. </param>
+      <param name="destination">Конечный буфер. </param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.GetByte(Windows.Storage.Streams.IBuffer,System.UInt32)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает байт с указанной позиции в указанном  Windows.Storage.Streams.IBuffer  интерфейса.</summary>
+      <returns>Байт с указанной позиции. </returns>
+      <param name="source">Буфер для получения байта. </param>
+      <param name="byteOffset">Смещение байта. </param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.GetWindowsRuntimeBuffer(System.IO.MemoryStream)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает  Windows.Storage.Streams.IBuffer  интерфейс, представляющий память потока заданной памяти. </summary>
+      <returns>A  Windows.Storage.Streams.IBuffer  по памяти, поддерживающего поток памяти, указанный интерфейс.</returns>
+      <param name="underlyingStream">Поток, который обеспечивает резервное копирование памяти для  IBuffer. </param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.GetWindowsRuntimeBuffer(System.IO.MemoryStream,System.Int32,System.Int32)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает  Windows.Storage.Streams.IBuffer  интерфейс, который представляет область в памяти, который представляет указанную память потока. </summary>
+      <returns>A  Windows.Storage.Streams.IBuffer  интерфейс, который реализуется область в памяти, который выполняет указанную память потока. </returns>
+      <param name="underlyingStream">Поток, который использует память с  IBuffer. </param>
+      <param name="positionInStream">Положение области общей памяти в  <paramref name="underlyingStream" />. </param>
+      <param name="length">Максимальный размер области общей памяти. Если число байтов в <paramref name="underlyingStream" />, начиная с <paramref name="positionInStream" />, меньше <paramref name="length" />, возвращаемый IBuffer представляет только доступные байты. </param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.IsSameData(Windows.Storage.Streams.IBuffer,Windows.Storage.Streams.IBuffer)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает значение, указывающее, будет ли два буферов (Windows.Storage.Streams.IBuffer  объекты) представляют собой той же основной области памяти. </summary>
+      <returns>значение true,  Если областей памяти, которые представлены в виде двух буферов той же начальной точке; в противном случае  значение false,. </returns>
+      <param name="buffer">Первый буфер. </param>
+      <param name="otherBuffer">Второй буфер. </param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.ToArray(Windows.Storage.Streams.IBuffer)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает новый массив, созданный из содержимого указанного буфера (Windows.Storage.Streams.IBuffer). Размер массива является значение  Длина    свойства  IBuffer. </summary>
+      <returns>Массив байтов из указанного IBuffer, начинающийся со смещения 0 и содержащий число байтов, равное свойству Length в IBuffer. </returns>
+      <param name="source">Буфер, содержимое которого заполнения нового массива. </param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.ToArray(Windows.Storage.Streams.IBuffer,System.UInt32,System.Int32)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает новый массив, созданный из содержимого указанного буфера (Windows.Storage.Streams.IBuffer), начиная с указанного смещения и содержащий указанное число байтов. </summary>
+      <returns>Массив байтов, содержащий указанный диапазон байтов. </returns>
+      <param name="source">Буфер, содержимое которого заполнения нового массива. </param>
+      <param name="sourceIndex">Индекс в  <paramref name="source" />начинается копирование данных с. </param>
+      <param name="count">Число байтов, предназначенных для копирования. </param>
+    </member>
+    <member name="T:Windows.Foundation.Point">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Представляет пару координат X и Y в двухмерном пространстве. Может также представлять логическую току для определенных использований свойствами.</summary>
+    </member>
+    <member name="M:Windows.Foundation.Point.#ctor(System.Double,System.Double)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Инициализирует структуру <see cref="T:Windows.Foundation.Point" />, содержащую заданные значения. </summary>
+      <param name="x">Значение по оси X структуры <see cref="T:Windows.Foundation.Point" />. </param>
+      <param name="y">Значение по оси Y структуры <see cref="T:Windows.Foundation.Point" />. </param>
+    </member>
+    <member name="M:Windows.Foundation.Point.Equals(System.Object)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Определяет, является ли указанный объект <see cref="T:Windows.Foundation.Point" /> и содержит ли он те же значения, что данный объект <see cref="T:Windows.Foundation.Point" />. </summary>
+      <returns>true, если <paramref name="obj" /> является <see cref="T:Windows.Foundation.Point" /> и содержит те же значения <see cref="P:Windows.Foundation.Point.X" /> и <see cref="P:Windows.Foundation.Point.Y" />, что и данный <see cref="T:Windows.Foundation.Point" />; в противном случае — false.</returns>
+      <param name="o">Объект для сравнения.</param>
+    </member>
+    <member name="M:Windows.Foundation.Point.Equals(Windows.Foundation.Point)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Сравнивает две структуры <see cref="T:Windows.Foundation.Point" />, чтобы определить, равны ли они.</summary>
+      <returns>true, если структуры <see cref="T:Windows.Foundation.Point" /> имеют одинаковые значения <see cref="P:Windows.Foundation.Point.X" /> и <see cref="P:Windows.Foundation.Point.Y" />; в противном случае — значение false.</returns>
+      <param name="value">Точка для сравнения с данным экземпляром.</param>
+    </member>
+    <member name="M:Windows.Foundation.Point.GetHashCode">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает хэш-код для данного объекта <see cref="T:Windows.Foundation.Point" />.</summary>
+      <returns>Хэш-код для данной структуры <see cref="T:Windows.Foundation.Point" />.</returns>
+    </member>
+    <member name="M:Windows.Foundation.Point.op_Equality(Windows.Foundation.Point,Windows.Foundation.Point)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Сравнивает две структуры <see cref="T:Windows.Foundation.Point" />, чтобы определить, равны ли они.</summary>
+      <returns>значение true,    Если оба  <see cref="P:Windows.Foundation.Point.X" />и  <see cref="P:Windows.Foundation.Point.Y" />значения  <paramref name="point1" />и  <paramref name="point2" />равны; в противном случае  значение false,.</returns>
+      <param name="point1">Первая сравниваемая структура <see cref="T:Windows.Foundation.Point" />.</param>
+      <param name="point2">Вторая сравниваемая структура <see cref="T:Windows.Foundation.Point" />.</param>
+    </member>
+    <member name="M:Windows.Foundation.Point.op_Inequality(Windows.Foundation.Point,Windows.Foundation.Point)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Сравнивает две структуры <see cref="T:Windows.Foundation.Point" /> на предмет их неравенства.</summary>
+      <returns>значение true,    при  <paramref name="point1" />и  <paramref name="point2" />у разных  <see cref="P:Windows.Foundation.Point.X" />или  <see cref="P:Windows.Foundation.Point.Y" />значения;  значение false,    при  <paramref name="point1" />и  <paramref name="point2" />с одинаковым  <see cref="P:Windows.Foundation.Point.X" />и  <see cref="P:Windows.Foundation.Point.Y" />значения.</returns>
+      <param name="point1">Первая точка для сравнения.</param>
+      <param name="point2">Вторая точка для сравнения.</param>
+    </member>
+    <member name="M:Windows.Foundation.Point.System#IFormattable#ToString(System.String,System.IFormatProvider)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Описание этого члена см. в разделе, посвященном <see cref="M:System.IFormattable.ToString(System.String,System.IFormatProvider)" />.</summary>
+      <returns>Строка, содержащая значение текущего экземпляра в заданном формате.</returns>
+      <param name="format">Строка, задающая используемый формат. -или- null для использования формата по умолчанию, определенного для типа реализации IFormattable</param>
+      <param name="provider">Объект IFormatProvider, используемый для форматирования значения. -или- null для получения сведений о форматировании чисел на основе текущего значения параметра языкового стандарта операционной системы. </param>
+    </member>
+    <member name="M:Windows.Foundation.Point.ToString">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Создает представление данного объекта <see cref="T:Windows.Foundation.Point" /> в виде <see cref="T:System.String" />. </summary>
+      <returns>Строка <see cref="T:System.String" />, содержащая значения <see cref="P:Windows.Foundation.Point.X" /> и <see cref="P:Windows.Foundation.Point.Y" /> данной структуры <see cref="T:Windows.Foundation.Point" />.</returns>
+    </member>
+    <member name="M:Windows.Foundation.Point.ToString(System.IFormatProvider)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Создает представление данного объекта <see cref="T:Windows.Foundation.Point" /> в виде <see cref="T:System.String" />. </summary>
+      <returns>Строка <see cref="T:System.String" />, содержащая значения <see cref="P:Windows.Foundation.Point.X" /> и <see cref="P:Windows.Foundation.Point.Y" /> данной структуры <see cref="T:Windows.Foundation.Point" />.</returns>
+      <param name="provider">Сведения о форматировании, связанные с языком и региональными параметрами.</param>
+    </member>
+    <member name="P:Windows.Foundation.Point.X">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Получает или задает значение координаты <see cref="P:Windows.Foundation.Point.X" /> этой структуры <see cref="T:Windows.Foundation.Point" />. </summary>
+      <returns>Значение координаты <see cref="P:Windows.Foundation.Point.X" /> этой структуры <see cref="T:Windows.Foundation.Point" />. Значение по умолчанию — 0.</returns>
+    </member>
+    <member name="P:Windows.Foundation.Point.Y">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Получает или задает значение координаты <see cref="P:Windows.Foundation.Point.Y" /> данной структуры <see cref="T:Windows.Foundation.Point" />. </summary>
+      <returns>Значение координаты <see cref="P:Windows.Foundation.Point.Y" /> этой структуры <see cref="T:Windows.Foundation.Point" />.  Значение по умолчанию — 0.</returns>
+    </member>
+    <member name="T:Windows.Foundation.Rect">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Описывает ширину, высоту и точку начала координат прямоугольника. </summary>
+    </member>
+    <member name="M:Windows.Foundation.Rect.#ctor(System.Double,System.Double,System.Double,System.Double)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Инициализирует новый экземпляр структуры <see cref="T:Windows.Foundation.Rect" />, которая имеет указанные координаты по осям Х и Y, а также ширину и высоту. </summary>
+      <param name="x">Координата по оси X верхнего левого угла прямоугольника.</param>
+      <param name="y">Координата по оси Y верхнего левого угла прямоугольника.</param>
+      <param name="width">Ширина прямоугольника.</param>
+      <param name="height">Высота прямоугольника.</param>
+    </member>
+    <member name="M:Windows.Foundation.Rect.#ctor(Windows.Foundation.Point,Windows.Foundation.Point)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Инициализирует структуру <see cref="T:Windows.Foundation.Rect" />, которая необходимо и достаточно велика, чтобы включать две указанных точки. </summary>
+      <param name="point1">Первая точка, которую должен включать новый прямоугольник.</param>
+      <param name="point2">Вторая точка, которую должен включать новый прямоугольник.</param>
+    </member>
+    <member name="M:Windows.Foundation.Rect.#ctor(Windows.Foundation.Point,Windows.Foundation.Size)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Инициализирует структуру <see cref="T:Windows.Foundation.Rect" /> на основе начала координат и размера. </summary>
+      <param name="location">Начало координат нового объекта <see cref="T:Windows.Foundation.Rect" />.</param>
+      <param name="size">Размер нового объекта <see cref="T:Windows.Foundation.Rect" />.</param>
+    </member>
+    <member name="P:Windows.Foundation.Rect.Bottom">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает координату по оси Y нижней стороны прямоугольника. </summary>
+      <returns>Координата по оси Y нижней стороны прямоугольника. Если прямоугольник пуст, значение — <see cref="F:System.Double.NegativeInfinity" />.</returns>
+    </member>
+    <member name="M:Windows.Foundation.Rect.Contains(Windows.Foundation.Point)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Указывает, включает ли прямоугольник, описанный <see cref="T:Windows.Foundation.Rect" />, указанную точку.</summary>
+      <returns>Значение true, если прямоугольник, описанный <see cref="T:Windows.Foundation.Rect" />, включает указанную точку; в противном случае — значение false.</returns>
+      <param name="point">Проверяемая точка.</param>
+    </member>
+    <member name="P:Windows.Foundation.Rect.Empty">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает специальное значение, которое представляет прямоугольник без расположения или области. </summary>
+      <returns>Пустой прямоугольник, который имеет значения свойств <see cref="P:Windows.Foundation.Rect.X" /> и <see cref="P:Windows.Foundation.Rect.Y" /> равными <see cref="F:System.Double.PositiveInfinity" /> и значения свойств <see cref="P:Windows.Foundation.Rect.Width" /> и <see cref="P:Windows.Foundation.Rect.Height" /> равными <see cref="F:System.Double.NegativeInfinity" />.</returns>
+    </member>
+    <member name="M:Windows.Foundation.Rect.Equals(System.Object)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Определение равенства указанного объекта текущему объекту <see cref="T:Windows.Foundation.Rect" />.</summary>
+      <returns>Значение true, если <paramref name="o" />— это <see cref="T:Windows.Foundation.Rect" /> и имеет те же значения x,y,width,height, что и текущий <see cref="T:Windows.Foundation.Rect" />; в противном случае false.</returns>
+      <param name="o">Объект, который требуется сравнить с текущим прямоугольником.</param>
+    </member>
+    <member name="M:Windows.Foundation.Rect.Equals(Windows.Foundation.Rect)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Определяет, равен ли заданный объект <see cref="T:Windows.Foundation.Rect" /> текущему объекту <see cref="T:Windows.Foundation.Rect" />. </summary>
+      <returns>Значение true, если указанный <see cref="T:Windows.Foundation.Rect" /> имеет те же значения x,y,width,height, что и текущий <see cref="T:Windows.Foundation.Rect" />; в противном случае false.</returns>
+      <param name="value">Прямоугольник, который требуется сравнить с текущим прямоугольником.</param>
+    </member>
+    <member name="M:Windows.Foundation.Rect.GetHashCode">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Создает хэш-код для прямоугольника <see cref="T:Windows.Foundation.Rect" />. </summary>
+      <returns>Хэш-код для текущей структуры <see cref="T:Windows.Foundation.Rect" />.</returns>
+    </member>
+    <member name="P:Windows.Foundation.Rect.Height">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Получает или задает высоту прямоугольника. </summary>
+      <returns>Значение, представляющее высоту прямоугольника. Значение по умолчанию — 0.</returns>
+    </member>
+    <member name="M:Windows.Foundation.Rect.Intersect(Windows.Foundation.Rect)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Находит пересечение прямоугольника, представленного текущим объектом <see cref="T:Windows.Foundation.Rect" />, и прямоугольника, представленного указанным объектом <see cref="T:Windows.Foundation.Rect" />, и сохраняет результаты как текущий объект <see cref="T:Windows.Foundation.Rect" />. </summary>
+      <param name="rect">Прямоугольник, который должен пересекаться с текущим прямоугольником.</param>
+    </member>
+    <member name="P:Windows.Foundation.Rect.IsEmpty">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает значение, которое показывает является ли прямоугольник <see cref="P:Windows.Foundation.Rect.Empty" />.</summary>
+      <returns>true, если прямоугольник обнаружен в <see cref="P:Windows.Foundation.Rect.Empty" />; в обратном случае false.</returns>
+    </member>
+    <member name="P:Windows.Foundation.Rect.Left">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает координату по оси X левой стороны прямоугольника. </summary>
+      <returns>Координата по оси X левой стороны прямоугольника.</returns>
+    </member>
+    <member name="M:Windows.Foundation.Rect.op_Equality(Windows.Foundation.Rect,Windows.Foundation.Rect)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Сравнивает две структуры <see cref="T:Windows.Foundation.Rect" />, чтобы определить, равны ли они.</summary>
+      <returns>значение true,    при  <see cref="T:Windows.Foundation.Rect" />структуры имеют одинаковый   x,y,Ширина,Высота  значения свойств; в противном случае  значение false,.</returns>
+      <param name="rect1">Первый прямоугольник для сравнения.</param>
+      <param name="rect2">Второй прямоугольник для сравнения.</param>
+    </member>
+    <member name="M:Windows.Foundation.Rect.op_Inequality(Windows.Foundation.Rect,Windows.Foundation.Rect)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Сравнивает две структуры <see cref="T:Windows.Foundation.Rect" />, чтобы выявить различие.  </summary>
+      <returns>Значение true, если структуры <see cref="T:Windows.Foundation.Rect" /> имеют одинаковые значения свойств x,y,width,height; в противном случае false.</returns>
+      <param name="rect1">Первый прямоугольник для сравнения.</param>
+      <param name="rect2">Второй прямоугольник для сравнения.</param>
+    </member>
+    <member name="P:Windows.Foundation.Rect.Right">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает координату по оси X правой стороны прямоугольника.  </summary>
+      <returns>Координата по оси X правой стороны прямоугольника.</returns>
+    </member>
+    <member name="M:Windows.Foundation.Rect.System#IFormattable#ToString(System.String,System.IFormatProvider)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Описание этого члена см. в разделе, посвященном <see cref="M:System.IFormattable.ToString(System.String,System.IFormatProvider)" />.</summary>
+      <returns>Строка, содержащая значение текущего экземпляра в заданном формате.</returns>
+      <param name="format">Строка, задающая используемый формат. -или- null для использования формата по умолчанию, определенного для типа реализации IFormattable</param>
+      <param name="provider">Объект IFormatProvider, используемый для форматирования значения. -или- null для получения сведений о форматировании чисел на основе текущего значения параметра языкового стандарта операционной системы. </param>
+    </member>
+    <member name="P:Windows.Foundation.Rect.Top">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает координату по оси Y верхней стороны прямоугольника. </summary>
+      <returns>Координата по оси Y верхней стороны прямоугольника.</returns>
+    </member>
+    <member name="M:Windows.Foundation.Rect.ToString">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает строковое представление структуры <see cref="T:Windows.Foundation.Rect" />. </summary>
+      <returns>Строковое представление текущей структуры <see cref="T:Windows.Foundation.Rect" />. Строка имеет следующую форму. "<see cref="P:Windows.Foundation.Rect.X" />,<see cref="P:Windows.Foundation.Rect.Y" />,<see cref="P:Windows.Foundation.Rect.Width" />,<see cref="P:Windows.Foundation.Rect.Height" />".</returns>
+    </member>
+    <member name="M:Windows.Foundation.Rect.ToString(System.IFormatProvider)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает строковое представление прямоугольника с использованием указанного поставщика формата. </summary>
+      <returns>Строковое представление текущего прямоугольника, которое определяется указанным поставщиком формата.</returns>
+      <param name="provider">Сведения о форматировании, связанные с языком и региональными параметрами.</param>
+    </member>
+    <member name="M:Windows.Foundation.Rect.Union(Windows.Foundation.Point)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Расширяет прямоугольник, представленный текущим объектом <see cref="T:Windows.Foundation.Rect" /> ровно настолько, чтобы вместить указанную точку. </summary>
+      <param name="point">Точка, которую необходимо включить.</param>
+    </member>
+    <member name="M:Windows.Foundation.Rect.Union(Windows.Foundation.Rect)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Расширяет прямоугольник, представленный текущим объектом <see cref="T:Windows.Foundation.Rect" /> ровно настолько, чтобы вместить указанный прямоугольник. </summary>
+      <param name="rect">Прямоугольник, который необходимо включить.</param>
+    </member>
+    <member name="P:Windows.Foundation.Rect.Width">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Получает или задает ширину прямоугольника.  </summary>
+      <returns>Значение, представляющее ширину прямоугольника в пикселях. Значение по умолчанию — 0.</returns>
+    </member>
+    <member name="P:Windows.Foundation.Rect.X">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Получает или задает координату по оси X левой стороны прямоугольника. </summary>
+      <returns>Координата по оси X левой стороны прямоугольника. Это значение интерпретируется как пиксели в пределах пространства координат.</returns>
+    </member>
+    <member name="P:Windows.Foundation.Rect.Y">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Получает или задает координату по оси Y верхней стороны прямоугольника. </summary>
+      <returns>Координата по оси Y верхней стороны прямоугольника. Это значение интерпретируется как пиксели в пределах пространства координат.</returns>
+    </member>
+    <member name="T:Windows.Foundation.Size">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Описывает ширину и высоту объекта. </summary>
+    </member>
+    <member name="M:Windows.Foundation.Size.#ctor(System.Double,System.Double)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Инициализирует новый экземпляр структуры <see cref="T:Windows.Foundation.Size" /> и присваивает ему начальные значения <paramref name="width" /> и <paramref name="height" />.</summary>
+      <param name="width">Исходная ширина экземпляра объекта <see cref="T:Windows.Foundation.Size" />.</param>
+      <param name="height">Исходная высота экземпляра структуры <see cref="T:Windows.Foundation.Size" />.</param>
+    </member>
+    <member name="P:Windows.Foundation.Size.Empty">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает значение, которое представляет статический пустой объект <see cref="T:Windows.Foundation.Size" />. </summary>
+      <returns>Пустой экземпляр <see cref="T:Windows.Foundation.Size" />.</returns>
+    </member>
+    <member name="M:Windows.Foundation.Size.Equals(System.Object)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Сравнивает на равенство объект с экземпляром <see cref="T:Windows.Foundation.Size" />. </summary>
+      <returns>true, если размеры равны; в обратном случае — значение false.</returns>
+      <param name="o">Объект <see cref="T:System.Object" /> для сравнения.</param>
+    </member>
+    <member name="M:Windows.Foundation.Size.Equals(Windows.Foundation.Size)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Сравнивает значение с экземпляром <see cref="T:Windows.Foundation.Size" /> на наличие равенства. </summary>
+      <returns>true, если экземпляры <see cref="T:Windows.Foundation.Size" /> равны; в обратном случае — значение false.</returns>
+      <param name="value">Размер для сравнения с текущим экземпляром <see cref="T:Windows.Foundation.Size" />.</param>
+    </member>
+    <member name="M:Windows.Foundation.Size.GetHashCode">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Получает хэш-код для этого экземпляра объекта <see cref="T:Windows.Foundation.Size" />. </summary>
+      <returns>Хэш-код данного экземпляра <see cref="T:Windows.Foundation.Size" />.</returns>
+    </member>
+    <member name="P:Windows.Foundation.Size.Height">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Получает или задает высоту данного экземпляра объекта <see cref="T:Windows.Foundation.Size" />. </summary>
+      <returns>Свойство <see cref="P:Windows.Foundation.Size.Height" /> данного экземпляра объекта <see cref="T:Windows.Foundation.Size" /> в пикселях. Значение по умолчанию — 0. Данное значение не может быть отрицательным.</returns>
+    </member>
+    <member name="P:Windows.Foundation.Size.IsEmpty">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Получает значение, которое показывает, является ли данный экземпляр объекта <see cref="T:Windows.Foundation.Size" /> свойством <see cref="P:Windows.Foundation.Size.Empty" />. </summary>
+      <returns>Значение true, если данный экземпляр размера является свойством <see cref="P:Windows.Foundation.Size.Empty" />; в противном случае — значение false.</returns>
+    </member>
+    <member name="M:Windows.Foundation.Size.op_Equality(Windows.Foundation.Size,Windows.Foundation.Size)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Сравнивает на равенство два экземпляра <see cref="T:Windows.Foundation.Size" />. </summary>
+      <returns>true, если экземпляры <see cref="T:Windows.Foundation.Size" /> равны; в обратном случае — значение false.</returns>
+      <param name="size1">Первый экземпляр <see cref="T:Windows.Foundation.Size" /> для сравнения.</param>
+      <param name="size2">Второй экземпляр <see cref="T:Windows.Foundation.Size" /> для сравнения.</param>
+    </member>
+    <member name="M:Windows.Foundation.Size.op_Inequality(Windows.Foundation.Size,Windows.Foundation.Size)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Сравнивает два экземпляра <see cref="T:Windows.Foundation.Size" /> на предмет их неравенства. </summary>
+      <returns>true, если экземпляры <see cref="T:Windows.Foundation.Size" /> не равны; в обратном случае — значение false.</returns>
+      <param name="size1">Первый экземпляр <see cref="T:Windows.Foundation.Size" /> для сравнения.</param>
+      <param name="size2">Второй экземпляр <see cref="T:Windows.Foundation.Size" /> для сравнения.</param>
+    </member>
+    <member name="M:Windows.Foundation.Size.ToString">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Возвращает строковое представление объекта <see cref="T:Windows.Foundation.Size" />.</summary>
+      <returns>Строковое представление объекта <see cref="T:Windows.Foundation.Size" />.</returns>
+    </member>
+    <member name="P:Windows.Foundation.Size.Width">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Получает или задает ширину данного экземпляра объекта <see cref="T:Windows.Foundation.Size" />. </summary>
+      <returns>Свойство <see cref="P:Windows.Foundation.Size.Width" /> данного экземпляра объекта <see cref="T:Windows.Foundation.Size" /> в пикселях. Значение по умолчанию — 0. Значение не может быть отрицательным.</returns>
+    </member>
+    <member name="T:Windows.UI.Color">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Описывает цвет в терминах каналов альфа, красного, зеленого и синего. </summary>
+    </member>
+    <member name="P:Windows.UI.Color.A">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Получает или задает значение альфа-канала цвета sRGB. </summary>
+      <returns>Значение альфа-канала цвета sRGB как значение от 0 до 255.</returns>
+    </member>
+    <member name="P:Windows.UI.Color.B">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Получает или задает значение синего канала цвета sRGB. </summary>
+      <returns>Значение синего канала цвета sRGB как значение от 0 до 255.</returns>
+    </member>
+    <member name="M:Windows.UI.Color.Equals(System.Object)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Проверяет, является ли указанный объект структурой <see cref="T:Windows.UI.Color" />, эквивалентной структуре текущему цвету. </summary>
+      <returns>true, если заданный объект является структурой <see cref="T:Windows.UI.Color" /> и равен текущей структуре <see cref="T:Windows.UI.Color" />; в противном случае — значение false.</returns>
+      <param name="o">Объект для сравнения с текущей структурой <see cref="T:Windows.UI.Color" />.</param>
+    </member>
+    <member name="M:Windows.UI.Color.Equals(Windows.UI.Color)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Проверяет, идентична ли заданная структура <see cref="T:Windows.UI.Color" /> текущему цвету.</summary>
+      <returns>true, если заданная структура <see cref="T:Windows.UI.Color" /> равна текущей структуре <see cref="T:Windows.UI.Color" />; в противном случае — значение false.</returns>
+      <param name="color">Структура <see cref="T:Windows.UI.Color" /> для сравнения с текущей структурой <see cref="T:Windows.UI.Color" />.</param>
+    </member>
+    <member name="M:Windows.UI.Color.FromArgb(System.Byte,System.Byte,System.Byte,System.Byte)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Создает новую структуру <see cref="T:Windows.UI.Color" /> с использованием заданного альфа-канал а и значений цветовых каналов sRGB. </summary>
+      <returns>Структура <see cref="T:Windows.UI.Color" /> с заданными значениями.</returns>
+      <param name="a">Значение альфа-канала, <see cref="P:Windows.UI.Color.A" />, для нового цвета. Значение должно находиться в диапазоне от 0 до 255.</param>
+      <param name="r">Красный канал, <see cref="P:Windows.UI.Color.R" />, для нового цвета. Значение должно находиться в диапазоне от 0 до 255.</param>
+      <param name="g">Зеленый канал, <see cref="P:Windows.UI.Color.G" />, для нового цвета. Значение должно находиться в диапазоне от 0 до 255.</param>
+      <param name="b">Синий канал, <see cref="P:Windows.UI.Color.B" />, для нового цвета. Значение должно находиться в диапазоне от 0 до 255.</param>
+    </member>
+    <member name="P:Windows.UI.Color.G">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Получает или задает значение зеленого канала sRGB для цвета. </summary>
+      <returns>Значение зеленого канала цвета sRGB как значение от 0 до 255.</returns>
+    </member>
+    <member name="M:Windows.UI.Color.GetHashCode">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Получает хэш-код текущей структуры <see cref="T:Windows.UI.Color" />. </summary>
+      <returns>Хэш-код для текущей структуры <see cref="T:Windows.UI.Color" />.</returns>
+    </member>
+    <member name="M:Windows.UI.Color.op_Equality(Windows.UI.Color,Windows.UI.Color)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Проверяет идентичность двух структур <see cref="T:Windows.UI.Color" />. </summary>
+      <returns>Значение true, если параметры <paramref name="color1" /> и <paramref name="color2" /> равны; в обратном случае — значение false.</returns>
+      <param name="color1">Первая сравниваемая структура <see cref="T:Windows.UI.Color" />.</param>
+      <param name="color2">Вторая сравниваемая структура <see cref="T:Windows.UI.Color" />.</param>
+    </member>
+    <member name="M:Windows.UI.Color.op_Inequality(Windows.UI.Color,Windows.UI.Color)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Проверяет, являются ли две структуры <see cref="T:Windows.UI.Color" /> не идентичными. </summary>
+      <returns>Значение true, если параметры <paramref name="color1" /> и <paramref name="color2" /> не равны; в противном случае — значение false.</returns>
+      <param name="color1">Первая сравниваемая структура <see cref="T:Windows.UI.Color" />.</param>
+      <param name="color2">Вторая сравниваемая структура <see cref="T:Windows.UI.Color" />.</param>
+    </member>
+    <member name="P:Windows.UI.Color.R">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Получает или задает значение красного канала цвета sRGB. </summary>
+      <returns>Значение красного канала цвета sRGB как значение от 0 до 255.</returns>
+    </member>
+    <member name="M:Windows.UI.Color.System#IFormattable#ToString(System.String,System.IFormatProvider)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Описание этого члена см. в разделе, посвященном <see cref="M:System.IFormattable.ToString(System.String,System.IFormatProvider)" />.</summary>
+      <returns>Строка, содержащая значение текущего экземпляра в заданном формате.</returns>
+      <param name="format">Строка, задающая используемый формат. -или- null для использования формата по умолчанию, определенного для типа реализации IFormattable</param>
+      <param name="provider">Объект IFormatProvider, используемый для форматирования значения. -или- null для получения сведений о форматировании чисел на основе текущего значения параметра языкового стандарта операционной системы. </param>
+    </member>
+    <member name="M:Windows.UI.Color.ToString">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Создает строковое представление цвета с использованием каналов ARGB в шестнадцатеричной нотации. </summary>
+      <returns>Строковое представление данного цвета.</returns>
+    </member>
+    <member name="M:Windows.UI.Color.ToString(System.IFormatProvider)">
+      <summary>[КРИТИЧЕСКИЙ С ТОЧКИ ЗРЕНИЯ БЕЗОПАСНОСТИ] Создает строковое представление цвета с использованием каналов ARGB и заданного поставщика формата. </summary>
+      <returns>Строковое представление данного цвета.</returns>
+      <param name="provider">Сведения о форматировании, связанные с языком и региональными параметрами.</param>
+    </member>
+  </members>
+</doc>

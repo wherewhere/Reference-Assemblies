@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Microsoft.Devices.Sensors</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.Devices.Sensors.Accelerometer">
+      <summary>デバイスの加速度計センサーに対するアクセスを Windows Phone アプリケーションに提供します。</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Accelerometer.#ctor">
+      <summary>
+        <see cref="T:Microsoft.Devices.Sensors.Accelerometer" /> オブジェクトの新しいインスタンスを作成します。</summary>
+      <exception cref="T:Microsoft.Devices.Sensors.SensorFailedException">アプリケーションごとの Accelerometer クラスの同時インスタンス数の上限 10 を超過しました。</exception>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Accelerometer.Dispose">
+      <summary>
+        <see cref="T:Microsoft.Devices.Sensors.Accelerometer" /> によって使用されているマネージ リソースおよびアンマネージ リソースを解放します。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.Accelerometer.IsSupported">
+      <summary>アプリケーションが実行されているデバイスが加速度計センサーをサポートしているかどうかを取得または設定します。</summary>
+      <returns>アプリケーションが実行されているデバイスが加速度計センサーをサポートしている場合は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="E:Microsoft.Devices.Sensors.Accelerometer.ReadingChanged">
+      <summary>新規データが加速度計から到着すると発生します。このメソッドは現在のリリースでは推奨されていません。代わりに、アプリケーションでは <see cref="T:Microsoft.Devices.Sensors.SensorBase`1" /> クラスの <see cref="E:Microsoft.Devices.Sensors.SensorBase`1.CurrentValueChanged" /> イベントを使用する必要があります。</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Accelerometer.Start">
+      <summary>加速度計からのデータ取得を開始します。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.Accelerometer.State">
+      <summary>加速度計の現在の状態を取得します。値は <see cref="T:Microsoft.Devices.Sensors.SensorState" /> 列挙体のメンバーです。</summary>
+      <returns>種類: <see cref="T:Microsoft.Devices.Sensors.SensorState" />.</returns>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Accelerometer.Stop">
+      <summary>加速度計からのデータ取得を停止します。</summary>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.AccelerometerFailedException">
+      <summary>
+        <see cref="M:Microsoft.Devices.Sensors.Accelerometer.Start" /> または <see cref="M:Microsoft.Devices.Sensors.Accelerometer.Stop" /> に対する呼び出し時にスローされる可能性がある例外。Message フィールドは例外の理由を説明し、<see cref="P:Microsoft.Devices.Sensors.AccelerometerFailedException.ErrorId" /> フィールドには、加速度計フレームワークの基になるネイティブ コード実装からのエラー コードが含まれます。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerFailedException.ErrorId">
+      <summary>加速度計フレームワークの基になるネイティブ コード実装からのエラー コード。</summary>
+      <returns>種類:  <see cref="T:System.Int32" />.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.AccelerometerReading">
+      <summary>デバイスに加えられた力の大きさおよび方向を示す、加速度計の測定値の加速度およびタイムスタンプを格納します。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReading.Acceleration">
+      <summary>デバイスの加速ベクトル (重力単位) を取得します。</summary>
+      <returns>デバイスの加速度。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReading.Timestamp">
+      <summary>加速度センサーの測定値を取得した時間を示すタイムスタンプを取得します。これは、センサー全体の測定値を関連付け、生センサー データを処理するアルゴリズムへの追加的な入力を提供します。</summary>
+      <returns>加速度計の測定値が取得された時刻。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.AccelerometerReadingEventArgs">
+      <summary>
+        <see cref="E:Microsoft.Devices.Sensors.Accelerometer.ReadingChanged" /> イベントのデータを提供します。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReadingEventArgs.Timestamp">
+      <summary>加速度計の測定値が取得された時刻を示すタイムスタンプ。</summary>
+      <returns>種類: <see cref="T:System.DateTimeOffset" />.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReadingEventArgs.X">
+      <summary>X 方向の加速度 (重力単位)。</summary>
+      <returns>種類: <see cref="T:System.Double" />.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReadingEventArgs.Y">
+      <summary>Y 方向の加速度 (重力単位)。</summary>
+      <returns>種類: <see cref="T:System.Double" />.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReadingEventArgs.Z">
+      <summary>Z 方向の加速度 (重力単位)。</summary>
+      <returns>種類:  <see cref="T:System.Double" />.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.AttitudeReading">
+      <summary>空間におけるデバイスの方向に関する情報を格納します。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.Pitch">
+      <summary>姿勢測定値のピッチ (ラジアン) を取得します。</summary>
+      <returns>姿勢測定値のピッチ。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.Quaternion">
+      <summary>姿勢測定値の四元表現を取得します。</summary>
+      <returns>姿勢測定値の四元表現。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.Roll">
+      <summary>姿勢測定値のロール (ラジアン) を取得します。</summary>
+      <returns>姿勢測定値のロール。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.RotationMatrix">
+      <summary>姿勢測定値の行列表現を取得します。</summary>
+      <returns>姿勢測定値の行列表現。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.Timestamp">
+      <summary>加速度センサーの測定値を取得した時間を示すタイムスタンプを取得します。これは、センサー全体の測定値を関連付け、生センサー データを処理するアルゴリズムへの追加的な入力を提供します。</summary>
+      <returns>姿勢測定値が取得された時刻。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.Yaw">
+      <summary>姿勢測定値のヨーを取得します。</summary>
+      <returns>姿勢測定値のヨー。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.CalibrationEventArgs">
+      <summary>
+        <see cref="E:Microsoft.Devices.Sensors.Compass.Calibrate" /> およびイベントのデータを提供します。</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.CalibrationEventArgs.#ctor">
+      <summary>
+        <see cref="T:Microsoft.Devices.Sensors.CalibrationEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.Compass">
+      <summary>デバイスのコンパス センサーに対するアクセスを Windows Phone アプリケーションに提供します。</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Compass.#ctor">
+      <summary>
+        <see cref="T:Microsoft.Devices.Sensors.Compass" /> クラスの新しいインスタンスを初期化します。</summary>
+      <exception cref="T:Microsoft.Devices.Sensors.SensorFailedException">アプリケーションごとの Compass クラスの同時インスタンス数の上限 10 を超過しました。</exception>
+    </member>
+    <member name="E:Microsoft.Devices.Sensors.Compass.Calibrate">
+      <summary>オペレーティング システムによって、調整が必要なコンパスが検出された場合に発生します。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.Compass.IsSupported">
+      <summary>アプリケーションが実行されているデバイスがコンパス センサーをサポートしているかどうかを取得します。</summary>
+      <returns>種類: <see cref="T:System.Boolean" />。アプリケーションが実行されているデバイスがコンパス センサーをサポートしている場合は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.CompassReading">
+      <summary>デバイスのコンパス センサーによって検出された磁場の情報が格納されます。この情報を使用することで、地球の磁場に対するデバイスの方向を判断できます。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.CompassReading.HeadingAccuracy">
+      <summary>コンパス方位測定値の精度 (度数) を取得します。</summary>
+      <returns>コンパス方位測定値の精度。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.CompassReading.MagneticHeading">
+      <summary>地球の磁北から時計回りに測定された方位 (度数) を取得します。</summary>
+      <returns>地球の磁北に対する方位。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.CompassReading.MagnetometerReading">
+      <summary>生の磁力計の測定値 (マイクロテスラ) を取得します。</summary>
+      <returns>生の磁力計の測定値。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.CompassReading.Timestamp">
+      <summary>コンパスの測定値が取得された時刻を示すタイムスタンプを取得します。これは、センサー全体の測定値を関連付け、生センサー データを処理するアルゴリズムへの追加的な入力を提供します。</summary>
+      <returns>コンパスの測定値が取得された時刻。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.CompassReading.TrueHeading">
+      <summary>地球の地理的北方向から時計回りに測定された方位 (度数) を取得します。</summary>
+      <returns>地球の地理的北方向に対する方位。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.Gyroscope">
+      <summary>デバイスのジャイロスコープ センサーに対するアクセスを Windows Phone アプリケーションに提供します。</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Gyroscope.#ctor">
+      <summary>Gyroscope クラスの新しいインスタンスを初期化します。</summary>
+      <exception cref="T:Microsoft.Devices.Sensors.SensorFailedException">アプリケーションごとの Gyroscope クラスの同時インスタンス数の上限 10 を超過しました。</exception>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.Gyroscope.IsSupported">
+      <summary>アプリケーションが実行されているデバイスがジャイロスコープ センサーをサポートしているかどうかを取得または設定します。</summary>
+      <returns>アプリケーションが実行されているデバイスがジャイロスコープ センサーをサポートしている場合は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.GyroscopeReading">
+      <summary>デバイスの回転加速度に関する情報が格納されます。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.GyroscopeReading.RotationRate">
+      <summary>デバイスの各軸の回転速度 (ラジアン/秒) を取得します。</summary>
+      <returns>デバイスの各軸の回転速度。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.GyroscopeReading.Timestamp">
+      <summary>ジャイロスコープの測定値が取得された時刻を示すタイムスタンプを取得します。これは、センサー全体の測定値を関連付け、生センサー データを処理するアルゴリズムへの追加的な入力を提供します。</summary>
+      <returns>ジャイロスコープの測定値が取得された時刻。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.ISensorReading">
+      <summary>すべてのセンサー測定クラスによって実装されるインターフェイス。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.ISensorReading.Timestamp">
+      <summary>センサーの測定値が取得された時刻を示すタイムスタンプを取得します。これは、センサー全体の測定値を関連付け、生センサー データを処理するアルゴリズムへの追加的な入力を提供します。</summary>
+      <returns>種類: <see cref="T:System.DateTimeOffset" />。センサーの測定値が取得された時刻。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.Motion">
+      <summary>デバイスの向きおよびモーションに関する情報を Windows Phone アプリケーションに提供します。</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Motion.#ctor">
+      <summary>
+        <see cref="T:Microsoft.Devices.Sensors.Motion" /> クラスの新しいインスタンスを初期化します。</summary>
+      <exception cref="T:Microsoft.Devices.Sensors.SensorFailedException">アプリケーションごとの Motion クラスの同時インスタンス数の上限 10 を超過しました。</exception>
+    </member>
+    <member name="E:Microsoft.Devices.Sensors.Motion.Calibrate">
+      <summary>操作によって、調整が必要なコンパスが検出された場合に発生します。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.Motion.IsSupported">
+      <summary>アプリケーションが実行されているデバイスが <see cref="T:Microsoft.Devices.Sensors.Motion" /> クラスで必要なセンサーをサポートしているかどうかを取得または設定します。</summary>
+      <returns>アプリケーションが実行されているデバイスが <see cref="T:Microsoft.Devices.Sensors.Motion" /> クラスで必要なセンサーをサポートしている場合は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.MotionReading">
+      <summary>デバイスの向きおよび移動に関する情報を格納します。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.MotionReading.Attitude">
+      <summary>デバイスの姿勢 (ヨー、ピッチ、ロール) を取得します (ラジアン)。</summary>
+      <returns>デバイスの姿勢。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.MotionReading.DeviceAcceleration">
+      <summary>デバイスの線形加速度 (重力単位) を取得します。</summary>
+      <returns>デバイスの線形加速度。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.MotionReading.DeviceRotationRate">
+      <summary>デバイスの回転速度 (ラジアン/秒) を取得します。</summary>
+      <returns>デバイスの回転速度。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.MotionReading.Gravity">
+      <summary>
+        <see cref="T:Microsoft.Devices.Sensors.MotionReading" /> に関連した重力ベクトルを取得します。</summary>
+      <returns>MotionReading に関連した重力ベクトル。</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.MotionReading.Timestamp">
+      <summary>
+        <see cref="T:Microsoft.Devices.Sensors.MotionReading" /> が計算された時刻を示すタイムスタンプを取得します。これは、センサー全体の測定値を関連付け、生センサー データを処理するアルゴリズムへの追加的な入力を提供します。</summary>
+      <returns>種類: <see cref="T:System.DateTimeOffset" />。MotionReading が計算された時刻。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.SensorBase`1">
+      <summary>すべての Windows Phone センサー クラスの基本クラスです。</summary>
+      <typeparam name="TSensorReading">センサーによって返される測定値の型。</typeparam>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.SensorBase`1.CurrentValue">
+      <summary>センサーの現在の値を含んだ <see cref="T:Microsoft.Devices.Sensors.ISensorReading" /> を実装するオブジェクトを取得します。このオブジェクトの型は、参照されるセンサーに応じて、<see cref="T:Microsoft.Devices.Sensors.AccelerometerReading" />、<see cref="T:Microsoft.Devices.Sensors.CompassReading" />、<see cref="T:Microsoft.Devices.Sensors.GyroscopeReading" />、<see cref="T:Microsoft.Devices.Sensors.MotionReading" /> のいずれかになります。</summary>
+      <returns>種類: <see cref="{0}" />。センサーの現在の値を含んだ <see cref="T:Microsoft.Devices.Sensors.ISensorReading" /> を実装するオブジェクト。</returns>
+    </member>
+    <member name="E:Microsoft.Devices.Sensors.SensorBase`1.CurrentValueChanged">
+      <summary>新規データがセンサーから到着すると発生します。</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.SensorBase`1.Dispose">
+      <summary>センサーが使用するマネージ リソースおよびアンマネージ リソースを解放します。</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.SensorBase`1.Finalize">
+      <summary>Object がガベージ コレクションで再利用される前に、オブジェクトがリソースを解放して他のクリーンアップ操作を実行できるようにします。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.SensorBase`1.IsDataValid">
+      <summary>センサーのデータの有効性を取得します。</summary>
+      <returns>種類: <see cref="T:System.Boolean" />。センサーのデータが有効な場合は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.SensorBase`1.Start">
+      <summary>センサーからのデータ取得を開始します。</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.SensorBase`1.Stop">
+      <summary>センサーからのデータ取得を停止します。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.SensorBase`1.TimeBetweenUpdates">
+      <summary>
+        <see cref="E:Microsoft.Devices.Sensors.SensorBase`1.CurrentValueChanged" /> イベントの適切な間隔を取得または設定します。</summary>
+      <returns>種類: <see cref="T:System.TimeSpan" />。CurrentValueChanged イベントの適切な間隔。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.SensorFailedException">
+      <summary>センサー操作が失敗した場合にスローされる例外を表します。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.SensorFailedException.ErrorId">
+      <summary>例外の原因を示すエラー ID。</summary>
+      <returns>種類:  <see cref="T:System.Int32" />.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.SensorReadingEventArgs`1">
+      <summary>
+        <see cref="E:Microsoft.Devices.Sensors.SensorBase`1.CurrentValueChanged" /> イベントのデータを提供します。</summary>
+      <typeparam name="T">イベント データに含まれる測定値の型。</typeparam>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.SensorReadingEventArgs`1.#ctor">
+      <summary>
+        <see cref="T:Microsoft.Devices.Sensors.SensorReadingEventArgs`1" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.SensorReadingEventArgs`1.SensorReading">
+      <summary>SensorReadingEventArgs に関連するセンサー測定データを取得します。</summary>
+      <returns>SensorReadingEventArgs に関連するセンサー測定データ。</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.SensorState">
+      <summary>加速度計の現在の状態を表すための値の列挙。センサーの状態は、その <see cref="P:Microsoft.Devices.Sensors.Accelerometer.State" /> プロパティを使用して取得できます。</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.NotSupported">
+      <summary>センサー ハードウェアが利用できません。</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.Ready">
+      <summary>センサーが利用可能で、データを解決しています。</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.Initializing">
+      <summary>センサーが利用可能で、初期化しています。</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.NoData">
+      <summary>センサーがデータを取得できません。</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.NoPermissions">
+      <summary>呼び出し元に、センサーのデータに対するアクセス許可がありません。</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.Disabled">
+      <summary>センサーが無効です。</summary>
+    </member>
+  </members>
+</doc>

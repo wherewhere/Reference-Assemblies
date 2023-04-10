@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.ComponentModel.EventBasedAsync</name>
+  </assembly>
+  <members>
+    <member name="T:System.ComponentModel.AsyncCompletedEventArgs">
+      <summary>MethodNameCompleted 이벤트에 대한 데이터를 제공합니다.</summary>
+    </member>
+    <member name="M:System.ComponentModel.AsyncCompletedEventArgs.#ctor(System.Exception,System.Boolean,System.Object)">
+      <summary>
+        <see cref="T:System.ComponentModel.AsyncCompletedEventArgs" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+      <param name="error">비동기 작업 중 발생한 오류입니다.</param>
+      <param name="cancelled">비동기 작업이 취소되었는지 여부를 나타내는 값입니다.</param>
+      <param name="userState">
+        <see cref="M:System.ComponentModel.BackgroundWorker.RunWorkerAsync(System.Object)" /> 메서드에 전달되는 사용자가 제공한 선택적인 상태 개체입니다.</param>
+    </member>
+    <member name="P:System.ComponentModel.AsyncCompletedEventArgs.Cancelled">
+      <summary>비동기 작업이 취소되었는지 여부를 나타내는 값을 가져옵니다.</summary>
+      <returns>백그라운드 작업이 취소되었으면 true이고, 그렇지 않으면 false입니다. 기본값은 false입니다.</returns>
+    </member>
+    <member name="P:System.ComponentModel.AsyncCompletedEventArgs.Error">
+      <summary>비동기 작업 중 발생한 오류를 나타내는 값을 가져옵니다.</summary>
+      <returns>비동기 작업 중 오류가 발생했으면 <see cref="T:System.Exception" /> 인스턴스이고, 그렇지 않으면 null입니다.</returns>
+    </member>
+    <member name="M:System.ComponentModel.AsyncCompletedEventArgs.RaiseExceptionIfNecessary">
+      <summary>비동기 작업에 실패한 경우 사용자가 제공한 예외를 발생시킵니다.</summary>
+      <exception cref="T:System.InvalidOperationException">
+        <see cref="P:System.ComponentModel.AsyncCompletedEventArgs.Cancelled" /> 속성이 true일 경우(이 속성은</exception>
+      <exception cref="T:System.Reflection.TargetInvocationException">
+        <see cref="P:System.ComponentModel.AsyncCompletedEventArgs.Error" /> 속성이 비동기 작업에서 설정된 경우 <see cref="P:System.Exception.InnerException" /> 속성에는 <see cref="P:System.ComponentModel.AsyncCompletedEventArgs.Error" />에 대한 참조가 들어 있습니다.</exception>
+    </member>
+    <member name="P:System.ComponentModel.AsyncCompletedEventArgs.UserState">
+      <summary>비동기 작업의 고유 식별자를 가져옵니다.</summary>
+      <returns>비동기 작업을 고유하게 식별하는 개체 참조이거나, 설정된 값이 없으면 null입니다.</returns>
+    </member>
+    <member name="T:System.ComponentModel.AsyncCompletedEventHandler">
+      <summary>비동기 작업의 MethodNameCompleted 이벤트를 처리할 메서드를 나타냅니다.</summary>
+    </member>
+    <member name="M:System.ComponentModel.AsyncCompletedEventHandler.#ctor(System.Object,System.IntPtr)">
+    </member>
+    <member name="M:System.ComponentModel.AsyncCompletedEventHandler.BeginInvoke(System.Object,System.ComponentModel.AsyncCompletedEventArgs,System.AsyncCallback,System.Object)">
+    </member>
+    <member name="M:System.ComponentModel.AsyncCompletedEventHandler.EndInvoke(System.IAsyncResult)">
+    </member>
+    <member name="M:System.ComponentModel.AsyncCompletedEventHandler.Invoke(System.Object,System.ComponentModel.AsyncCompletedEventArgs)">
+    </member>
+    <member name="T:System.ComponentModel.ProgressChangedEventArgs">
+      <summary>
+        <see cref="E:System.ComponentModel.BackgroundWorker.ProgressChanged" /> 이벤트에 대한 데이터를 제공합니다.</summary>
+    </member>
+    <member name="M:System.ComponentModel.ProgressChangedEventArgs.#ctor(System.Int32,System.Object)">
+      <summary>
+        <see cref="T:System.ComponentModel.ProgressChangedEventArgs" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+      <param name="progressPercentage">비동기 작업의 완료율입니다.</param>
+      <param name="userState">고유한 사용자 상태입니다.</param>
+    </member>
+    <member name="P:System.ComponentModel.ProgressChangedEventArgs.ProgressPercentage">
+      <summary>비동기 작업의 진행률을 가져옵니다.</summary>
+      <returns>비동기 작업의 진행을 나타내는 백분율 값입니다.</returns>
+    </member>
+    <member name="P:System.ComponentModel.ProgressChangedEventArgs.UserState">
+      <summary>고유한 사용자 상태를 가져옵니다.</summary>
+      <returns>사용자 상태를 나타내는 고유한 <see cref="T:System.Object" />입니다.</returns>
+    </member>
+    <member name="T:System.ComponentModel.ProgressChangedEventHandler">
+      <summary>
+        <see cref="T:System.ComponentModel.BackgroundWorker" /> 클래스의 <see cref="E:System.ComponentModel.BackgroundWorker.ProgressChanged" /> 이벤트를 처리할 메서드를 나타냅니다. 이 클래스는 상속될 수 없습니다.</summary>
+    </member>
+    <member name="M:System.ComponentModel.ProgressChangedEventHandler.#ctor(System.Object,System.IntPtr)">
+    </member>
+    <member name="M:System.ComponentModel.ProgressChangedEventHandler.BeginInvoke(System.Object,System.ComponentModel.ProgressChangedEventArgs,System.AsyncCallback,System.Object)">
+    </member>
+    <member name="M:System.ComponentModel.ProgressChangedEventHandler.EndInvoke(System.IAsyncResult)">
+    </member>
+    <member name="M:System.ComponentModel.ProgressChangedEventHandler.Invoke(System.Object,System.ComponentModel.ProgressChangedEventArgs)">
+    </member>
+  </members>
+</doc>

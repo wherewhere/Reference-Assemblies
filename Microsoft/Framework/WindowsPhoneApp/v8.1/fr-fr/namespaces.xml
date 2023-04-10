@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="N:Microsoft.CSharp.RuntimeBinder">
+      <summary>L'espace de noms <see cref="N:Microsoft.CSharp.RuntimeBinder" /> fournit des classes et des interfaces qui prennent en charge l'interopérabilité entre Dynamic Language Runtime et C#.</summary>
+    </member>
+    <member name="N:Microsoft.VisualBasic">
+      <summary>L'espace de noms <see cref="N:Microsoft.VisualBasic" /> contient des types qui prennent en charge le runtime Visual Basic dans Visual Basic.</summary>
+    </member>
+    <member name="N:Microsoft.VisualBasic.CompilerServices">
+      <summary>L'espace de noms <see cref="N:Microsoft.VisualBasic.CompilerServices" /> contient des types utilisables en interne uniquement qui prennent en charge le compilateur Visual Basic.</summary>
+    </member>
+    <member name="N:System">
+      <summary>L'espace de noms <see cref="N:System" /> contient des classes fondamentales et des classes de base qui définissent des types de données valeur et référence, des événements et des gestionnaires d'événements, des interfaces, des attributs, ainsi que des exceptions de traitement couramment utilisés.</summary>
+    </member>
+    <member name="N:System.CodeDom.Compiler">
+      <summary>L'espace de noms <see cref="N:System.CodeDom.Compiler" /> contient des types utilisés pour gérer la génération et la compilation de code source dans les langages de programmation pris en charge. Chaque générateur de code peut produire du code source dans un langage de programmation spécifique, basé sur la structure des modèles de code source CodeDOM (Code Document Object Model) qui contiennent des éléments fournis par l'espace de noms <see cref="N:System.CodeDom" />.</summary>
+    </member>
+    <member name="N:System.Collections">
+      <summary>L'espace de noms <see cref="N:System.Collections" /> contient des interfaces et classes qui définissent différentes collections d'objets, par exemple, les listes, les files d'attente, les tableaux de valeurs de bit, les tables de hachage et les dictionnaires.</summary>
+    </member>
+    <member name="N:System.Collections.Concurrent">
+      <summary>L'espace de noms System.Collections.Concurrent fournit plusieurs classes de collection thread-safe qui doivent être utilisées à la place des types correspondants dans les espaces de noms <see cref="N:System.Collections" /> et <see cref="N:System.Collections.Generic" /> chaque fois que plusieurs threads accèdent simultanément à la collection.</summary>
+    </member>
+    <member name="N:System.Collections.Generic">
+      <summary>L'espace de noms <see cref="N:System.Collections.Generic" /> contient des interfaces et des classes qui définissent des collections génériques permettant aux utilisateurs de créer des collections fortement typées. Celles-ci fournissent une cohérence des types et des performances meilleures que les collections fortement typées non génériques.</summary>
+    </member>
+    <member name="N:System.Collections.ObjectModel">
+      <summary>L'espace de noms <see cref="N:System.Collections.ObjectModel" /> contient des classes qui peuvent être utilisées comme des collections dans le modèle objet d'une bibliothèque réutilisable. Utilisez ces classes lorsque les propriétés ou les méthodes retournent des collections.</summary>
+    </member>
+    <member name="N:System.Collections.Specialized">
+      <summary>L'espace de noms <see cref="N:System.Collections.Specialized" /> contient des collections spécialisées et fortement typées ; par exemple, un dictionnaire de liste liée, un vecteur de bits et des collections qui ne contiennent que des chaînes.</summary>
+    </member>
+    <member name="N:System.ComponentModel">
+      <summary>L'espace de noms <see cref="N:System.ComponentModel" /> fournit des classes qui sont utilisées pour implémenter le comportement au moment de l'exécution et au moment du design des composants et des contrôles. Cet espace de noms inclut les classes de base et les interfaces pour l'implémentation des attributs et des convertisseurs de type, pour la liaison à des sources de données et pour la licence des composants.</summary>
+    </member>
+    <member name="N:System.ComponentModel.DataAnnotations">
+      <summary>L'espace de noms <see cref="N:System.ComponentModel.DataAnnotations" /> fournit des classes d'attributs utilisées pour définir des métadonnées pour les contrôles ASP.NET MVC et ASP.NET.</summary>
+    </member>
+    <member name="N:System.ComponentModel.DataAnnotations.Schema">
+      <summary>L'espace de noms <see cref="N:System.ComponentModel.DataAnnotations.Schema" /> fournit une prise en charge des classes d'attributs utilisées pour définir des métadonnées pour les contrôles ASP.NET MVC et ASP.NET.</summary>
+    </member>
+    <member name="N:System.Diagnostics">
+      <summary>L'espace de noms <see cref="N:System.Diagnostics" /> fournit des classes qui vous permettent d'interagir avec des processus système, des journaux des événements et des compteurs de performance.</summary>
+    </member>
+    <member name="N:System.Diagnostics.CodeAnalysis">
+      <summary>L'espace de noms <see cref="N:System.Diagnostics.CodeAnalysis" /> contient des classes pour une interaction avec les outils d'analyse du code. Ces outils sont utilisés pour analyser la conformité du code aux conventions de codage telles que les règles d'attribution de nom ou de sécurité.</summary>
+    </member>
+    <member name="N:System.Diagnostics.Contracts">
+      <summary>L'espace de noms <see cref="N:System.Diagnostics.Contracts" /> contient des classes statiques pour la représentation de contrats de programme tels que conditions préalables, post-conditions et invariants.</summary>
+    </member>
+    <member name="N:System.Diagnostics.Tracing">
+      <summary>L'espace de noms <see cref="N:System.Diagnostics.Tracing" /> fournit des types et des membres qui vous permettent de créer des événements fortement typés devant être capturés par le suivi d'événements pour Windows (ETW).</summary>
+    </member>
+    <member name="N:System.Dynamic">
+      <summary>L'espace de noms <see cref="N:System.Dynamic" /> fournit des classes et des interfaces qui prennent en charge Dynamic Language Runtime.</summary>
+    </member>
+    <member name="N:System.Globalization">
+      <summary>L'espace de noms <see cref="N:System.Globalization" /> contient des classes qui définissent les informations se rapportant à la culture, notamment la langue, le pays ou la région, les calendriers utilisés, le format en vigueur pour les dates, les devises, les nombres ainsi que l'ordre de tri des chaînes. Ces classes permettent d'écrire des applications globalisées (internationalisées). Les classes telles que <see cref="T:System.Globalization.StringInfo" /> et <see cref="T:System.Globalization.TextInfo" /> fournissent des fonctionnalités de globalisation avancées, notamment la prise en charge de substituts et le traitement d'éléments de texte.</summary>
+    </member>
+    <member name="N:System.IO">
+      <summary>L'espace de noms System.IO contient des types qui permettent la lecture et l'écriture dans des fichiers et des flux de données, ainsi que des types qui permettent la prise en charge de fichiers et de répertoires de base.</summary>
+    </member>
+    <member name="N:System.IO.Compression">
+      <summary>L'espace de noms <see cref="N:System.IO.Compression" /> contient des classes qui fournissent des services de compression et de décompression de base pour les flux de données.</summary>
+    </member>
+    <member name="N:System.Linq">
+      <summary>L'espace de noms <see cref="N:System.Linq" /> fournit des classes et des interfaces qui prennent en charge les requêtes qui utilisent LINQ (Language Integrated Query).</summary>
+    </member>
+    <member name="N:System.Linq.Expressions">
+      <summary>L'espace de noms <see cref="N:System.Linq.Expressions" /> contient les classes, interfaces et énumérations qui activent les expressions de code de niveau langage à représenter comme des objets sous la forme d'arborescences d'expression.</summary>
+    </member>
+    <member name="N:System.Net">
+      <summary>L'espace de noms <see cref="N:System.Net" /> constitue une interface de programmation simple pour un grand nombre des protocoles réseau employés aujourd'hui. Les classes <see cref="T:System.Net.WebRequest" /> et <see cref="T:System.Net.WebResponse" /> constituent la base de ce qui est convenu d'appeler des protocoles enfichables, une implémentation de services réseau vous permettant de développer des applications qui utilisent des ressources Internet sans vous soucier des spécificités de chaque protocole. Les classes de l'espace de noms <see cref="N:System.Net" /> peuvent être utilisées pour développer des applications Windows Store ou des applications de bureau. Si elles sont utilisées dans une application Windows Store, les classes de l'espace de noms <see cref="N:System.Net" /> sont affectées par la fonctionnalité d'isolement réseau, qui fait partie du modèle de sécurité des applications utilisé par l'aperçu pour développeurs Windows. Les fonctions de réseau appropriées doivent être activées dans le manifeste d'application pour une application Windows Store, afin qu'une application Windows Store puisse accéder au réseau. Pour plus d'informations, consultez Isolement réseau pour les applications de mémoire windows.</summary>
+    </member>
+    <member name="N:System.Net.Http">
+      <summary>L'espace de noms <see cref="N:System.Net.Http" /> fournit une interface de programmation pour les applications HTTP modernes.</summary>
+    </member>
+    <member name="N:System.Net.Http.Headers">
+      <summary>Prend en charge les collections d'en-têtes HTTP utilisés par l'espace de noms <see cref="N:System.Net.Http" /></summary>
+    </member>
+    <member name="N:System.Net.NetworkInformation">
+      <summary>L'espace de noms <see cref="N:System.Net.NetworkInformation" /> fournit l'accès aux données de trafic réseau, aux informations d'adresse réseau et la notification des modifications d'adresse pour l'ordinateur local. L'espace de noms contient également des classes qui implémentent l'utilitaire Ping. Vous pouvez utiliser <see cref="T:System.Net.NetworkInformation.Ping" /> et des classes connexes pour vérifier si un ordinateur est accessible via le réseau.</summary>
+    </member>
+    <member name="N:System.Numerics">
+      <summary>L'espace de noms <see cref="N:System.Numerics" /> contient des types numériques qui complètent les primitives numériques, telles que <see cref="T:System.Byte" />, <see cref="T:System.Double" /> et <see cref="T:System.Int32" />, définies par le .NET Framework.</summary>
+    </member>
+    <member name="N:System.Reflection">
+      <summary>L'espace de noms <see cref="N:System.Reflection" /> contient des types qui récupèrent des informations sur les assemblys, les modules, les membres, les paramètres et d'autres entités en code managé en examinant leurs métadonnées. Ces types peuvent également être utilisés pour manipuler des instances de types chargés, par exemple pour raccorder des événements ou appeler des méthodes. Pour créer des types de façon dynamique, utilisez l'espace de noms <see cref="N:System.Reflection.Emit" />.</summary>
+    </member>
+    <member name="N:System.Reflection.Context">
+      <summary>L'espace de noms <see cref="N:System.Reflection.Context" /> contient des classes qui permettent l'utilisation de contextes de réflexion personnalisés.</summary>
+    </member>
+    <member name="N:System.Reflection.Emit">
+      <summary>L'espace de noms <see cref="N:System.Reflection.Emit" /> contient des classes qui permettent à un compilateur ou à un outil d'émettre des métadonnées et le langage MSIL (Microsoft Intermediate Language) et de générer éventuellement un fichier exécutable portable (PE) sur le disque. Les clients principaux de ces classes sont les compilateurs et les moteurs de script.</summary>
+    </member>
+    <member name="N:System.Resources">
+      <summary>L'espace de noms <see cref="N:System.Resources" /> fournit des classes et des interfaces permettant aux développeurs de créer, de stocker et de gérer diverses ressources spécifiques d'une culture utilisées dans une application. L'une des classes les plus importantes de l'espace de noms <see cref="N:System.Resources" /> est la classe <see cref="T:System.Resources.ResourceManager" />.</summary>
+    </member>
+    <member name="N:System.Runtime">
+      <summary>L'espace de noms <see cref="N:System.Runtime" /> contient des types avancés qui prennent en charge divers espaces de noms, tels que System, Runtime et Security.</summary>
+    </member>
+    <member name="N:System.Runtime.CompilerServices">
+      <summary>L'espace de noms <see cref="N:System.Runtime.CompilerServices" /> fournit des fonctionnalités pour les writers de compilateur qui utilisent du code managé pour spécifier des attributs dans les métadonnées qui affectent le comportement du Common Language Runtime au moment de l'exécution.</summary>
+    </member>
+    <member name="N:System.Runtime.ExceptionServices">
+      <summary>L'espace de noms <see cref="N:System.Runtime.ExceptionServices" /> fournit des classes pour la gestion avancée des exceptions.</summary>
+    </member>
+    <member name="N:System.Runtime.InteropServices">
+      <summary>L'espace de noms <see cref="N:System.Runtime.InteropServices" /> fournit une grande variété de membres qui prennent en charge COM Interop et les services d'appel de plateforme. Si vous n'êtes pas familiarisé avec ces services, consultez Interopération avec du code non managé.</summary>
+    </member>
+    <member name="N:System.Runtime.InteropServices.ComTypes">
+      <summary>L'espace de noms System.Runtime.InteropServices.ComTypes contient des méthodes qui sont des définitions de fonctions COM pour le code managé. Ces fonctions remplacent les méthodes UCOM* devenues obsolètes dans l'espace de noms <see cref="N:System.Runtime.InteropServices" />.</summary>
+    </member>
+    <member name="N:System.Runtime.InteropServices.WindowsRuntime">
+      <summary>L'espace de noms <see cref="N:System.Runtime.InteropServices.WindowsRuntime" /> contient des classes qui prennent en charge l'interopérabilité entre le code managé et Windows Runtime et qui permettent la création de types Windows Runtime avec du code managé.</summary>
+    </member>
+    <member name="N:System.Runtime.Serialization">
+      <summary>L'espace de noms <see cref="N:System.Runtime.Serialization" /> contient des classes qui peuvent être utilisées pour sérialiser et désérialiser des objets. La sérialisation est le processus de conversion d'un objet ou d'un graphique d'objets en séquence linéaire d'octets pour stockage ou transmission à un autre emplacement. La désérialisation est le processus consistant à accepter des informations stockées et à recréer des objets à partir de celles-ci.</summary>
+    </member>
+    <member name="N:System.Runtime.Serialization.Json">
+      <summary>Fournit les classes liées à la sérialisation JSON.</summary>
+    </member>
+    <member name="N:System.Runtime.Versioning">
+      <summary>L'espace de noms <see cref="N:System.Runtime.Versioning" /> contient des types avancés qui prennent en charge le contrôle de version dans les implémentations côte à côte du .NET Framework.</summary>
+    </member>
+    <member name="N:System.Security">
+      <summary>L'espace de noms <see cref="N:System.Security" /> fournit la structure sous-jacente du système de sécurité du Common Language Runtime, y compris les classes de base pour les autorisations.</summary>
+    </member>
+    <member name="N:System.Security.Principal">
+      <summary>L'espace de noms <see cref="N:System.Security.Principal" /> définit un objet principal qui représente le contexte de sécurité sous lequel du code est exécuté. Pour plus d'informations, consultez Sécurité basée sur les rôles.</summary>
+    </member>
+    <member name="N:System.ServiceModel">
+      <summary>Fournit les classes liées au modèle de service.</summary>
+    </member>
+    <member name="N:System.ServiceModel.Channels">
+      <summary>Fournit les classes liées aux canaux de modèles de service.</summary>
+    </member>
+    <member name="N:System.ServiceModel.Description">
+      <summary>Fournit les classes liées à la description du modèle de service.</summary>
+    </member>
+    <member name="N:System.ServiceModel.Dispatcher">
+      <summary>Fournit les classes liées à la distribution du modèle de service.</summary>
+    </member>
+    <member name="N:System.ServiceModel.Security">
+      <summary>L'espace de noms <see cref="N:System.ServiceModel.Security" /> traite des rubriques générales liées à la sécurité, par exemple <see cref="T:System.ServiceModel.Security.SecurityAlgorithmSuite" />.</summary>
+    </member>
+    <member name="N:System.ServiceModel.Security.Tokens">
+      <summary>Traite des jetons de sécurité et des certificats.</summary>
+    </member>
+    <member name="N:System.Text">
+      <summary>L'espace de noms <see cref="N:System.Text" /> contient des classes qui représentent les encodages de caractères ASCII et Unicode, des classes de base abstraites pour la conversion de blocs de caractères en blocs d'octets et inversement et une classe d'assistance qui manipule et met en forme des objets <see cref="T:System.String" /> sans créer d'instances intermédiaires de <see cref="T:System.String" />.</summary>
+    </member>
+    <member name="N:System.Text.RegularExpressions">
+      <summary>L'espace de noms <see cref="N:System.Text.RegularExpressions" /> contient des classes qui permettent d'accéder au moteur d'expressions régulières du .NET Framework. Cet espace de noms fournit des fonctions d'expressions régulières qui peuvent être utilisées à partir de toute plateforme et tout langage s'exécutant dans Microsoft .NET Framework. Outre les types contenus dans cet espace de noms, la classe <see cref="T:System.Configuration.RegexStringValidator" /> vous permet de déterminer si une chaîne particulière est conforme à un modèle d'expression régulière.</summary>
+    </member>
+    <member name="N:System.Threading">
+      <summary>L'espace de noms <see cref="N:System.Threading" /> fournit des classes et des interfaces permettant la programmation multithread. En plus des classes destinées à la synchronisation des activités des threads et de l'accès aux données (<see cref="T:System.Threading.Mutex" />, <see cref="T:System.Threading.Monitor" />, <see cref="T:System.Threading.Interlocked" />, <see cref="T:System.Threading.AutoResetEvent" />, etc.), cet espace de noms comprend une classe <see cref="T:System.Threading.ThreadPool" /> qui permet d'utiliser un pool de threads fournis par le système et une classe <see cref="T:System.Threading.Timer" /> qui exécute des méthodes de rappel sur les threads du pool.</summary>
+    </member>
+    <member name="N:System.Threading.Tasks">
+      <summary>L'espace de noms System.Threading.Tasks fournit les types qui simplifient le travail d'écriture de code simultané et asynchrone. Les principaux types sont : <see cref="T:System.Threading.Tasks.Task" /> qui représente une opération asynchrone pouvant être mise en attente et annulée, et <see cref="T:System.Threading.Tasks.Task`1" /> qui est une tâche pouvant retourner une valeur. La classe <see cref="T:System.Threading.Tasks.TaskFactory" /> fournit des méthodes statiques pour la création et le lancement de tâches et la classe <see cref="T:System.Threading.Tasks.TaskScheduler" /> fournit l'infrastructure de planification de thread par défaut.</summary>
+    </member>
+    <member name="N:System.Windows.Input">
+      <summary>Fournit des types pour prendre en charge le système d'entrée Windows Presentation Foundation (WPF). Cela inclut des classes d'abstraction de périphérique pour souris, clavier et périphériques de stylet, une classe de gestionnaire d'entrée commune, prise en charge des commandes personnalisées et de leur exécution, et diverses classes d'utilitaires.</summary>
+    </member>
+    <member name="N:System.Xml">
+      <summary>L'espace de noms <see cref="N:System.Xml" /> fournit une prise en charge standard du traitement XML.</summary>
+    </member>
+    <member name="N:System.Xml.Linq">
+      <summary>Contient les classes pour LINQ to XML. LINQ to XML est une interface de programmation XML en mémoire qui vous permet de modifier des documents XML efficacement et facilement.</summary>
+    </member>
+    <member name="N:System.Xml.Schema">
+      <summary>L'espace de noms <see cref="N:System.Xml.Schema" /> contient les classes XML qui assurent la prise en charge standard des schémas XSD (XML Schema Definition).</summary>
+    </member>
+    <member name="N:System.Xml.Serialization">
+      <summary>L'espace de noms <see cref="N:System.Xml.Serialization" /> contient des classes servant à sérialiser des objets en documents au format XML ou en flux.</summary>
+    </member>
+    <member name="N:Windows.Foundation">
+      <summary>L'espace de noms <see cref="N:Windows.Foundation" /> contient les types qui prennent en charge le développement d'applications Windows Store avec le .NET Framework.</summary>
+    </member>
+    <member name="N:Windows.UI">
+      <summary>L'espace de noms <see cref="N:Windows.UI" /> contient les types qui prennent en charge le développement d'applications Windows Store avec le .NET Framework.</summary>
+    </member>
+    <member name="N:Windows.UI.Xaml">
+      <summary>L'espace de noms <see cref="N:Windows.UI.Xaml" /> contient les types qui prennent en charge le développement d'applications Windows Store avec le .NET Framework.</summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Automation">
+      <summary>L'espace de noms <see cref="N:Windows.UI.Xaml.Automation" /> contient les types qui prennent en charge le développement d'applications Windows Store avec le .NET Framework.</summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Controls.Primitives">
+      <summary>L'espace de noms <see cref="N:Windows.UI.Xaml.Controls.Primitives" /> contient les types qui prennent en charge le développement d'applications Windows Store avec le .NET Framework.</summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Markup">
+      <summary>L'espace de noms <see cref="N:Windows.UI.Xaml.Markup" /> contient les types qui prennent en charge le développement d'applications Windows Store avec le .NET Framework.</summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Media">
+      <summary>L'espace de noms <see cref="N:Windows.UI.Xaml.Media" /> contient les types qui prennent en charge le développement d'applications du Windows Store avec le .NET Framework.</summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Media.Animation">
+      <summary>L'espace de noms <see cref="N:Windows.UI.Xaml.Media.Animation" /> contient les types qui prennent en charge le développement d'applications Windows Store avec le .NET Framework.</summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Media.Media3D">
+      <summary>L'espace de noms <see cref="N:Windows.UI.Xaml.Media.Media3D" /> contient les types qui prennent en charge le développement d'applications Windows Store avec le .NET Framework.</summary>
+    </member>
+  </members>
+</doc>

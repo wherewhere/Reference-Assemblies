@@ -1,0 +1,519 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.Diagnostics.Tracing</name>
+  </assembly>
+  <members>
+    <member name="T:System.Diagnostics.Tracing.EventAttribute">
+      <summary>イベントに追加イベントのスキーマ情報を指定します。</summary>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventAttribute.#ctor(System.Int32)">
+      <summary>指定したイベント識別子を使用して、<see cref="T:System.Diagnostics.Tracing.EventAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="eventId">イベントのイベント識別子。</param>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventAttribute.EventId">
+      <summary>イベントの識別子を取得または設定します。</summary>
+      <returns>イベント識別子。 この値は、0 を超える値である必要があります。</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventAttribute.Keywords">
+      <summary>イベントのキーワードを取得または設定します。</summary>
+      <returns>列挙値のビットごとの組み合わせ。</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventAttribute.Level">
+      <summary>イベントのレベルを取得または設定します。</summary>
+      <returns>イベントのレベルを指定する列挙値の 1 つ。</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventAttribute.Message">
+      <summary>イベントのメッセージを取得または設定します。</summary>
+      <returns>イベントに関するメッセージ。</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventAttribute.Opcode">
+      <summary>イベントのオペレーション コードを取得または設定します。</summary>
+      <returns>操作コードを指定する列挙値の 1 つ。</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventAttribute.Task">
+      <summary>イベントのタスクを取得または設定します。</summary>
+      <returns>イベントのタスク。</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventAttribute.Version">
+      <summary>イベントのバージョンを取得または設定します。</summary>
+      <returns>イベントのバージョン。</returns>
+    </member>
+    <member name="T:System.Diagnostics.Tracing.EventCommand">
+      <summary>
+        <see cref="M:System.Diagnostics.Tracing.EventSource.OnEventCommand(System.Diagnostics.Tracing.EventCommandEventArgs)" /> コールバックに渡されるコマンド (<see cref="P:System.Diagnostics.Tracing.EventCommandEventArgs.Command" /> プロパティ) を表します。</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventCommand.Disable">
+      <summary>イベントを無効にします。</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventCommand.Enable">
+      <summary>イベントを有効にします。</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventCommand.SendManifest">
+      <summary>マニフェストを送信します。</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventCommand.Update">
+      <summary>イベントを更新します。</summary>
+    </member>
+    <member name="T:System.Diagnostics.Tracing.EventCommandEventArgs">
+      <summary>
+        <see cref="M:System.Diagnostics.Tracing.EventSource.OnEventCommand(System.Diagnostics.Tracing.EventCommandEventArgs)" /> のコールバックの引数を提供します。</summary>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventCommandEventArgs.Arguments">
+      <summary>コールバックの引数の配列を取得します。</summary>
+      <returns>コールバック引数の配列。</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventCommandEventArgs.Command">
+      <summary>コールバック用のコマンドを取得します。</summary>
+      <returns>コールバック コマンド。</returns>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventCommandEventArgs.DisableEvent(System.Int32)">
+      <summary>指定した識別子を持つイベントを無効にします。</summary>
+      <returns>
+        <paramref name="eventId" /> が範囲内にある場合は true。それ以外の場合は false。</returns>
+      <param name="eventId">無効にするイベントの識別子。</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventCommandEventArgs.EnableEvent(System.Int32)">
+      <summary>指定した識別子を持つイベントを有効にします。</summary>
+      <returns>
+        <paramref name="eventId" /> が範囲内にある場合は true。それ以外の場合は false。</returns>
+      <param name="eventId">有効にするイベントの識別子。</param>
+    </member>
+    <member name="T:System.Diagnostics.Tracing.EventKeywords">
+      <summary>イベントに適用される標準キーワードを定義します。</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventKeywords.AuditFailure">
+      <summary>失敗したすべてのセキュリティ監査イベントにアタッチされます。 このキーワードは、セキュリティ ログ内のイベントにのみ使用してください。</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventKeywords.AuditSuccess">
+      <summary>成功したすべてのセキュリティ監査イベントにアタッチされます。 このキーワードは、セキュリティ ログ内のイベントにのみ使用してください。</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventKeywords.CorrelationHint">
+      <summary>関連アクティビティ ID (相関 ID) が算出された値で、一意であるとは限らない (実際の GUID ではない) 転送イベントにアタッチされます。</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventKeywords.EventLogClassic">
+      <summary>RaiseEvent 関数を使用して発生するイベントにアタッチされます。</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventKeywords.None">
+      <summary>イベントの発行時にキーワードに関するフィルター処理が行われません。</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventKeywords.Sqm">
+      <summary>すべての SQM (Service Quality Mechanism) イベントにアタッチされます。</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventKeywords.WdiContext">
+      <summary>すべての Windows 診断インフラストラクチャ (WDI) コンテキスト イベントにアタッチされます。</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventKeywords.WdiDiagnostic">
+      <summary>すべての Windows 診断インフラストラクチャ (WDI) 診断イベントにアタッチされます。</summary>
+    </member>
+    <member name="T:System.Diagnostics.Tracing.EventLevel">
+      <summary>イベントのレベルを識別します。</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventLevel.Critical">
+      <summary>このレベルは重大なエラーに相当します。これは主要なエラーを発生させる深刻なエラーです。</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventLevel.Error">
+      <summary>このレベルは、問題を示す標準のエラーを追加します。</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventLevel.Informational">
+      <summary>このレベルは、エラーではない情報イベントまたは情報メッセージを追加します。 これらのイベントは、アプリケーションの進行状況や状態を追跡するのに役立ちます。</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventLevel.LogAlways">
+      <summary>イベントに対してレベルのフィルター処理は行われません。</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventLevel.Verbose">
+      <summary>このレベルは詳細なイベントまたはメッセージを追加します。 これにより、すべてのイベントがログに記録されます。</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventLevel.Warning">
+      <summary>このレベルは警告イベント (たとえば、ディスクの空き容量がほとんどないために発行されるイベント) を追加します。</summary>
+    </member>
+    <member name="T:System.Diagnostics.Tracing.EventListener">
+      <summary>イベント ソースからのイベントを有効または無効にするメソッドを提供します。</summary>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventListener.#ctor">
+      <summary>
+        <see cref="T:System.Diagnostics.Tracing.EventListener" /> クラスの新しいインスタンスを作成します。</summary>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventListener.DisableEvents(System.Diagnostics.Tracing.EventSource)">
+      <summary>指定したイベント ソースのすべてのイベントを無効にします。</summary>
+      <param name="eventSource">イベントを無効にするイベント ソース。</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventListener.Dispose">
+      <summary>
+        <see cref="T:System.Diagnostics.Tracing.EventListener" /> クラスの現在のインスタンスによって使用されているリソースを解放します。</summary>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventListener.EnableEvents(System.Diagnostics.Tracing.EventSource,System.Diagnostics.Tracing.EventLevel)">
+      <summary>指定した詳細レベル以下の指定したイベント ソースのイベントを有効にします。</summary>
+      <param name="eventSource">イベントを有効にするイベント ソース。</param>
+      <param name="level">有効にするイベントのレベル。</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventListener.EnableEvents(System.Diagnostics.Tracing.EventSource,System.Diagnostics.Tracing.EventLevel,System.Diagnostics.Tracing.EventKeywords)">
+      <summary>指定した詳細レベル以下で、キーワード フラグが一致している指定したイベント ソースのイベントを有効にします。</summary>
+      <param name="eventSource">イベントを有効にするイベント ソース。</param>
+      <param name="level">有効にするイベントのレベル。</param>
+      <param name="matchAnyKeyword">イベントを有効にするために必要なキーワード フラグ。</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventListener.EnableEvents(System.Diagnostics.Tracing.EventSource,System.Diagnostics.Tracing.EventLevel,System.Diagnostics.Tracing.EventKeywords,System.Collections.Generic.IDictionary{System.String,System.String})">
+      <summary>指定した詳細レベル以下で、イベント キーワード フラグが一致し、引数が一致している指定したイベント ソースのイベントを有効にします。</summary>
+      <param name="eventSource">イベントを有効にするイベント ソース。</param>
+      <param name="level">有効にするイベントのレベル。</param>
+      <param name="matchAnyKeyword">イベントを有効にするために必要なキーワード フラグ。</param>
+      <param name="arguments">イベントを有効にするために一致させる引数。</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventListener.EventSourceIndex(System.Diagnostics.Tracing.EventSource)">
+      <summary>指定されたイベント ソースを表す負でない小さい数値を取得します。</summary>
+      <returns>指定されたイベント ソースを表す負でない小さい数値。</returns>
+      <param name="eventSource">インデックスを検索するイベント ソース。</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventListener.OnEventSourceCreated(System.Diagnostics.Tracing.EventSource)">
+      <summary>イベント リスナーが作成される場合や、新しいイベント ソースがリスナーにアタッチされる場合に、既存のすべてのイベント ソースに対して呼び出されます。</summary>
+      <param name="eventSource">イベント ソース。</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventListener.OnEventWritten(System.Diagnostics.Tracing.EventWrittenEventArgs)">
+      <summary>イベント リスナーがイベントを有効にしたイベント ソースによってイベントが記述されたときに呼び出されます。</summary>
+      <param name="eventData">イベントを表すイベント引数。</param>
+    </member>
+    <member name="T:System.Diagnostics.Tracing.EventOpcode">
+      <summary>イベント ソースがイベントにアタッチする標準オペレーション コードを定義します。</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventOpcode.DataCollectionStart">
+      <summary>トレース コレクション開始イベント。</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventOpcode.DataCollectionStop">
+      <summary>トレース コレクション停止イベント。</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventOpcode.Extension">
+      <summary>拡張イベント。</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventOpcode.Info">
+      <summary>情報イベント。</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventOpcode.Receive">
+      <summary>アプリケーション内のアクティビティがデータを受信したときに発行されるイベント。</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventOpcode.Reply">
+      <summary>アプリケーション内のアクティビティがイベントに応答した後で発行されるイベント。</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventOpcode.Resume">
+      <summary>アプリケーション内のアクティビティが中断状態から再開した後に発行されるイベント。 イベントは <see cref="F:System.Diagnostics.Tracing.EventOpcode.Suspend" /> オペレーション コードがあるイベントに続く必要があります。</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventOpcode.Send">
+      <summary>アプリケーション内のアクティビティがデータまたはシステム リソースを別のアクティビティに転送したときに発行されるイベント。</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventOpcode.Start">
+      <summary>アプリケーションが新しいトランザクションまたはアクティビティを開始したときに発行されるイベント。 <see cref="F:System.Diagnostics.Tracing.EventOpcode.Start" /> コードがあるイベントが、<see cref="F:System.Diagnostics.Tracing.EventOpcode.Stop" /> コードのあるイベントを間にはさまずに複数個連続している場合は、このオペレーション コードが別のトランザクションまたはアクティビティに埋め込まれている可能性があります。</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventOpcode.Stop">
+      <summary>アプリケーション内のアクティビティまたはトランザクションが終了したときに発行されるイベント。 このイベントは、<see cref="F:System.Diagnostics.Tracing.EventOpcode.Start" /> オペレーション コードがあり、対になっていない直前のイベントに対応しています。</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventOpcode.Suspend">
+      <summary>アプリケーション内のアクティビティが中断されたときに発行されるイベント。</summary>
+    </member>
+    <member name="T:System.Diagnostics.Tracing.EventSource">
+      <summary>Windows イベント トレーシング (ETW: Event Tracing for Windows) のイベントを作成できます。</summary>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.#ctor">
+      <summary>
+        <see cref="T:System.Diagnostics.Tracing.EventSource" /> クラスの新しいインスタンスを作成します。</summary>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.#ctor(System.Boolean)">
+      <summary>
+        <see cref="T:System.Diagnostics.Tracing.EventSource" /> クラスの新しいインスタンスを作成し、基になる Windows コードでエラーが発生した場合に例外をスローするかどうかを指定します。</summary>
+      <param name="throwOnEventWriteErrors">エラーが基になる Windows コードで発生した場合に例外をスローする場合は true。それ以外の場合は false。</param>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventSource.ConstructionException">
+      <summary>イベント ソースの作成中にスローされた例外を取得します。</summary>
+      <returns>イベント ソースの作成中にスローされた例外、または例外がスローされなかった場合は null。</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventSource.CurrentThreadActivityId">
+      <summary>現在のスレッドのアクティビティ ID を取得します。</summary>
+      <returns>現在のスレッドのアクティビティ ID。</returns>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.Dispose">
+      <summary>
+        <see cref="T:System.Diagnostics.Tracing.EventSource" /> クラスの現在のインスタンスによって使用されているすべてのリソースを解放します。</summary>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.Dispose(System.Boolean)">
+      <summary>
+        <see cref="T:System.Diagnostics.Tracing.EventSource" /> クラスが使用しているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+      <param name="disposing">マネージ リソースとアンマネージ リソースの両方を解放する場合は true。アンマネージ リソースだけを解放する場合は false。</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.Finalize">
+      <summary>
+        <see cref="T:System.Diagnostics.Tracing.EventSource" /> オブジェクトがガベージ コレクションによって収集される前に、そのオブジェクトがリソースを解放し、その他のクリーンアップ操作を実行できるようにします。</summary>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.GenerateManifest(System.Type,System.String)">
+      <summary>現在のイベント ソースに関連付けられている XML マニフェストの文字列を返します。</summary>
+      <returns>XML データ文字列。</returns>
+      <param name="eventSourceType">イベント ソースの型。</param>
+      <param name="assemblyPathToIncludeInManifest">マニフェストに含める .dll ファイルのパス。</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.GetGuid(System.Type)">
+      <summary>イベント ソースのこの実装の一意の識別子を取得します。</summary>
+      <returns>このイベント ソース型の一意の識別子。</returns>
+      <param name="eventSourceType">イベント ソースの型。</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.GetName(System.Type)">
+      <summary>イベント ソースのフレンドリ名を取得します。</summary>
+      <returns>イベント ソースの表示名。 既定値は、クラスの単純名です。</returns>
+      <param name="eventSourceType">イベント ソースの型。</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.GetSources">
+      <summary>アプリケーション ドメインのすべてのイベント ソースのスナップショットを取得します。</summary>
+      <returns>アプリケーション ドメインのすべてのイベント ソースの列挙。</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventSource.Guid">
+      <summary>イベント ソースの一意の識別子。</summary>
+      <returns>イベント ソースの一意の識別子。</returns>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.IsEnabled">
+      <summary>現在のイベント ソースが有効かどうかを判断します。</summary>
+      <returns>現在のイベント ソースが有効になっている場合は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.IsEnabled(System.Diagnostics.Tracing.EventLevel,System.Diagnostics.Tracing.EventKeywords)">
+      <summary>指定したレベルとキーワードを持つ現在のイベント ソースが有効かどうかを判断します。</summary>
+      <returns>イベント ソースが有効な場合は true。それ以外の場合は false。</returns>
+      <param name="level">イベント ソースのレベル。</param>
+      <param name="keywords">イベント ソースのキーワード。</param>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventSource.Name">
+      <summary>イベント ソースから派生するクラスの表示名。</summary>
+      <returns>派生クラスの表示名。既定値は、クラスの単純名です。</returns>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.OnEventCommand(System.Diagnostics.Tracing.EventCommandEventArgs)">
+      <summary>現在のイベント ソースがコントローラーによって更新されるときに呼び出されます。</summary>
+      <param name="command">イベントの引数。</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.SendCommand(System.Diagnostics.Tracing.EventSource,System.Diagnostics.Tracing.EventCommand,System.Collections.Generic.IDictionary{System.String,System.String})">
+      <summary>指定されたイベント ソースにコマンドを送信します。</summary>
+      <param name="eventSource">コマンドを送信する先のイベント ソース。</param>
+      <param name="command">送信するイベント コマンド。</param>
+      <param name="commandArguments">イベント コマンドの引数。</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.SetCurrentThreadActivityId(System.Guid)">
+      <summary>現在のスレッドのアクティビティ ID を設定します。</summary>
+      <param name="activityId">現在のスレッドの新しいアクティビティ ID、または現在のスレッドの作業が任意のアクティビティに関連付けられていないことを示す <see cref="F:System.Guid.Empty" />。</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.SetCurrentThreadActivityId(System.Guid,System.Guid@)">
+      <summary>現在のスレッドでは、アクティビティ ID を設定し、前のアクティビティの ID を返します。</summary>
+      <param name="activityId">現在のスレッドの新しいアクティビティ ID、または現在のスレッドの作業が任意のアクティビティに関連付けられていないことを示す <see cref="F:System.Guid.Empty" />。</param>
+      <param name="oldActivityThatWillContinue">このメソッドが返されるとき、現在のスレッドの前のアクティビティの ID を含みます。</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.ToString">
+      <summary>現在のイベント ソース インスタンスを文字列で表現したものを取得します。</summary>
+      <returns>現在のイベント ソースを識別する、名前と一意の識別子。</returns>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.WriteEvent(System.Int32)">
+      <summary>指定されたイベント識別子を使用して、イベントを書き込みます。</summary>
+      <param name="eventId">イベント識別子。 この値は、ゼロより大きい値である必要があります。</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.WriteEvent(System.Int32,System.Int32)">
+      <summary>指定されたイベント識別子と 32 ビット整数引数を使用して、イベントを書き込みます。</summary>
+      <param name="eventId">イベント識別子。 この値は、ゼロより大きい値である必要があります。</param>
+      <param name="arg1">整数引数。</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.WriteEvent(System.Int32,System.Int32,System.Int32)">
+      <summary>指定されたイベント識別子と 32 ビット整数引数を使用して、イベントを書き込みます。</summary>
+      <param name="eventId">イベント識別子。 この値は、ゼロより大きい値である必要があります。</param>
+      <param name="arg1">整数引数。</param>
+      <param name="arg2">整数引数。</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.WriteEvent(System.Int32,System.Int32,System.Int32,System.Int32)">
+      <summary>指定されたイベント識別子と 32 ビット整数引数を使用して、イベントを書き込みます。</summary>
+      <param name="eventId">イベント識別子。 この値は、ゼロより大きい値である必要があります。</param>
+      <param name="arg1">整数引数。</param>
+      <param name="arg2">整数引数。</param>
+      <param name="arg3">整数引数。</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.WriteEvent(System.Int32,System.Int64)">
+      <summary>指定されたイベント識別子と 64 ビット整数引数を使用して、イベントを書き込みます。</summary>
+      <param name="eventId">イベント識別子。 この値は、ゼロより大きい値である必要があります。</param>
+      <param name="arg1">64 ビット整数引数。</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.WriteEvent(System.Int32,System.Int64,System.Int64)">
+      <summary>指定されたイベント識別子と 64 ビットの引数を使用して、イベントを書き込みます。</summary>
+      <param name="eventId">イベント識別子。 この値は、ゼロより大きい値である必要があります。</param>
+      <param name="arg1">64 ビット整数引数。</param>
+      <param name="arg2">64 ビット整数引数。</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.WriteEvent(System.Int32,System.Int64,System.Int64,System.Int64)">
+      <summary>指定されたイベント識別子と 64 ビットの引数を使用して、イベントを書き込みます。</summary>
+      <param name="eventId">イベント識別子。 この値は、ゼロより大きい値である必要があります。</param>
+      <param name="arg1">64 ビット整数引数。</param>
+      <param name="arg2">64 ビット整数引数。</param>
+      <param name="arg3">64 ビット整数引数。</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.WriteEvent(System.Int32,System.Object[])">
+      <summary>指定されたイベント識別子と引数の配列を使用して、イベントを書き込みます。</summary>
+      <param name="eventId">イベント識別子。 この値は、ゼロより大きい値である必要があります。</param>
+      <param name="args">オブジェクトの配列。</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.WriteEvent(System.Int32,System.String)">
+      <summary>指定されたイベント識別子と文字列引数を使用して、イベントを書き込みます。</summary>
+      <param name="eventId">イベント識別子。 この値は、ゼロより大きい値である必要があります。</param>
+      <param name="arg1">文字列引数。</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.WriteEvent(System.Int32,System.String,System.Int32)">
+      <summary>指定されたイベント識別子と引数を使用して、イベントを書き込みます。</summary>
+      <param name="eventId">イベント識別子。 この値は、ゼロより大きい値である必要があります。</param>
+      <param name="arg1">文字列引数。</param>
+      <param name="arg2">32 ビット整数引数。</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.WriteEvent(System.Int32,System.String,System.Int32,System.Int32)">
+      <summary>指定されたイベント識別子と引数を使用して、イベントを書き込みます。</summary>
+      <param name="eventId">イベント識別子。 この値は、ゼロより大きい値である必要があります。</param>
+      <param name="arg1">文字列引数。</param>
+      <param name="arg2">32 ビット整数引数。</param>
+      <param name="arg3">32 ビット整数引数。</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.WriteEvent(System.Int32,System.String,System.Int64)">
+      <summary>指定されたイベント識別子と引数を使用して、イベントを書き込みます。</summary>
+      <param name="eventId">イベント識別子。 この値は、ゼロより大きい値である必要があります。</param>
+      <param name="arg1">文字列引数。</param>
+      <param name="arg2">64 ビット整数引数。</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.WriteEvent(System.Int32,System.String,System.String)">
+      <summary>指定されたイベント識別子と文字列引数を使用して、イベントを書き込みます。</summary>
+      <param name="eventId">イベント識別子。 この値は、ゼロより大きい値である必要があります。</param>
+      <param name="arg1">文字列引数。</param>
+      <param name="arg2">文字列引数。</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.WriteEvent(System.Int32,System.String,System.String,System.String)">
+      <summary>指定されたイベント識別子と文字列引数を使用して、イベントを書き込みます。</summary>
+      <param name="eventId">イベント識別子。 この値は、ゼロより大きい値である必要があります。</param>
+      <param name="arg1">文字列引数。</param>
+      <param name="arg2">文字列引数。</param>
+      <param name="arg3">文字列引数。</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.WriteEventCore(System.Int32,System.Int32,System.Diagnostics.Tracing.EventSource.EventData*)">
+      <summary>指定したイベント識別子およびイベント データを使用して、<see cref="Overload:System.Diagnostics.Tracing.EventSource.WriteEvent" /> の新しいオーバーロードを作成します。</summary>
+      <param name="eventId">イベント識別子。</param>
+      <param name="eventDataCount">イベント データ項目数。</param>
+      <param name="data">イベント データを格納している構造体。</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.WriteEventWithRelatedActivityId(System.Int32,System.Guid,System.Object[])">
+      <summary>現在のアクティビティが別のアクティビティに関連していることを示すイベントを書き込みます。</summary>
+      <param name="eventId">
+        <see cref="T:System.Diagnostics.Tracing.EventSource" /> のこのイベントを一意に識別する識別子。</param>
+      <param name="childActivityID">関連するアクティビティ識別子。</param>
+      <param name="args">イベント データを格納するオブジェクトの配列。</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.WriteEventWithRelatedActivityIdCore(System.Int32,System.Guid*,System.Int32,System.Diagnostics.Tracing.EventSource.EventData*)">
+      <summary>現在のアクティビティが別のアクティビティに関連していることを示すイベントを書き込みます。</summary>
+      <param name="eventId">
+        <see cref="T:System.Diagnostics.Tracing.EventSource" /> のこのイベントを一意に識別する識別子。</param>
+      <param name="childActivityID">子アクティビティ ID の GUID へのポインター。</param>
+      <param name="eventDataCount">
+        <paramref name="data" /> フィールド内の項目の数。</param>
+      <param name="data">イベント データ フィールドの最初の項目へのポインター。</param>
+    </member>
+    <member name="T:System.Diagnostics.Tracing.EventSource.EventData">
+      <summary>
+        <see cref="M:System.Diagnostics.Tracing.EventSource.WriteEventCore(System.Int32,System.Int32,System.Diagnostics.Tracing.EventSource.EventData*)" /> のメソッドを使用して <see cref="Overload:System.Diagnostics.Tracing.EventSource.WriteEvent" /> の高速なオーバーロードを作成するようにイベント データを提供します。</summary>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventSource.EventData.DataPointer">
+      <summary>新しい <see cref="Overload:System.Diagnostics.Tracing.EventSource.WriteEvent" /> オーバーロードのデータへのポインターを取得または設定します。</summary>
+      <returns>データへのポインター。</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventSource.EventData.Size">
+      <summary>新しい <see cref="Overload:System.Diagnostics.Tracing.EventSource.WriteEvent" /> オーバーロードのペイロード項目の数を取得または設定します。</summary>
+      <returns>新しいオーバーロードのペイロードの項目数。</returns>
+    </member>
+    <member name="T:System.Diagnostics.Tracing.EventSourceAttribute">
+      <summary>Windows イベント トレーシング (ETW) の名前がイベント ソース クラスの名前とは関係なく定義されるようにします。</summary>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSourceAttribute.#ctor">
+      <summary>
+        <see cref="T:System.Diagnostics.Tracing.EventSourceAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventSourceAttribute.Guid">
+      <summary>イベント ソース識別子を取得または設定します。</summary>
+      <returns>イベントのソース識別子。</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventSourceAttribute.LocalizationResources">
+      <summary>ローカリゼーション リソース ファイルの名前を取得または設定します。</summary>
+      <returns>ローカリゼーション リソース ファイル名。ローカリゼーション リソース ファイルが見つからない場合は、null。</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventSourceAttribute.Name">
+      <summary>イベント ソースの名前を取得または設定します。</summary>
+      <returns>イベント ソースの名前。</returns>
+    </member>
+    <member name="T:System.Diagnostics.Tracing.EventSourceException">
+      <summary>Windows イベント トレーシング (ETW) 中にエラーが発生するとスローされる例外。</summary>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSourceException.#ctor">
+      <summary>
+        <see cref="T:System.Diagnostics.Tracing.EventSourceException" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSourceException.#ctor(System.String)">
+      <summary>指定したエラー メッセージを使用して、<see cref="T:System.Diagnostics.Tracing.EventSourceException" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="message">エラーを説明するメッセージ。</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSourceException.#ctor(System.String,System.Exception)">
+      <summary>指定したエラー メッセージと、この例外の原因である内部例外への参照を使用して、<see cref="T:System.Diagnostics.Tracing.EventSourceException" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="message">例外の原因を説明するエラー メッセージ。</param>
+      <param name="innerException">現在の例外の原因である例外。または、内部例外を指定しない場合は null。</param>
+    </member>
+    <member name="T:System.Diagnostics.Tracing.EventTask">
+      <summary>イベントに適用されるタスクを定義します。</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventTask.None">
+      <summary>未定義タスク。</summary>
+    </member>
+    <member name="T:System.Diagnostics.Tracing.EventWrittenEventArgs">
+      <summary>
+        <see cref="M:System.Diagnostics.Tracing.EventListener.OnEventWritten(System.Diagnostics.Tracing.EventWrittenEventArgs)" /> コールバックのデータを提供します。</summary>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventWrittenEventArgs.ActivityId">
+      <summary>イベントが書き込まれたスレッドのアクティビティ ID を取得します。</summary>
+      <returns>イベントが書き込まれたスレッドのアクティビティ ID。</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventWrittenEventArgs.EventId">
+      <summary>イベント識別子を取得します。</summary>
+      <returns>イベント識別子。</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventWrittenEventArgs.EventSource">
+      <summary>イベント ソース オブジェクトを取得します。</summary>
+      <returns>イベント ソース オブジェクト。</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventWrittenEventArgs.Keywords">
+      <summary>イベントのキーワードを取得します。</summary>
+      <returns>イベントのキーワード。</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventWrittenEventArgs.Level">
+      <summary>イベントのレベルを取得します。</summary>
+      <returns>イベントのレベル。</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventWrittenEventArgs.Message">
+      <summary>イベントに関するメッセージを取得します。</summary>
+      <returns>イベントに関するメッセージ。</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventWrittenEventArgs.Opcode">
+      <summary>イベントのオペレーション コードを取得します。</summary>
+      <returns>イベントのオペレーション コード。</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventWrittenEventArgs.Payload">
+      <summary>イベントのペイロードを取得します。</summary>
+      <returns>イベントのペイロード。</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventWrittenEventArgs.RelatedActivityId">
+      <summary>現在のインスタンスによって表されるアクティビティに関連付けられているアクティビティの ID を取得します。</summary>
+      <returns>関連するアクティビティの識別子、または関連するアクティビティがない場合は <see cref="F:System.Guid.Empty" /> です。</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventWrittenEventArgs.Task">
+      <summary>イベントのタスクを取得します。</summary>
+      <returns>イベントのタスク。</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventWrittenEventArgs.Version">
+      <summary>イベントのバージョンを取得します。</summary>
+      <returns>イベントのバージョン。</returns>
+    </member>
+    <member name="T:System.Diagnostics.Tracing.NonEventAttribute">
+      <summary>イベントを生成していないメソッドを識別します。</summary>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.NonEventAttribute.#ctor">
+      <summary>
+        <see cref="T:System.Diagnostics.Tracing.NonEventAttribute" /> クラスの新しいインスタンスを作成します。</summary>
+    </member>
+  </members>
+</doc>

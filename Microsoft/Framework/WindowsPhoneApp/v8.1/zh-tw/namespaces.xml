@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="N:Microsoft.CSharp.RuntimeBinder">
+      <summary>
+        <see cref="N:Microsoft.CSharp.RuntimeBinder" /> 命名空間提供能夠支援 Dynamic Language Runtime 和 C# 之間互通的類別和介面。</summary>
+    </member>
+    <member name="N:Microsoft.VisualBasic">
+      <summary>
+        <see cref="N:Microsoft.VisualBasic" /> 命名空間包含支援 Visual Basic 之 Visual Basic 執行階段的型別。</summary>
+    </member>
+    <member name="N:Microsoft.VisualBasic.CompilerServices">
+      <summary>
+        <see cref="N:Microsoft.VisualBasic.CompilerServices" /> 命名空間包含支援 Visual Basic 編譯器、僅限內部使用的型別。</summary>
+    </member>
+    <member name="N:System">
+      <summary>
+        <see cref="N:System" /> 命名空間 (Namespace) 含有定義常用值和參考資料型別 (Data Type)、事件和事件處理常式、介面、屬性 (Attribute) 和處理例外狀況的主要類別和基底類別。</summary>
+    </member>
+    <member name="N:System.CodeDom.Compiler">
+      <summary>
+        <see cref="N:System.CodeDom.Compiler" /> 命名空間 (Namespace) 所包含的型別可用來管理以支援的程式語言產生和編譯原始程式碼的作業。 根據 <see cref="N:System.CodeDom" /> 命名空間提供的項目所組成的程式碼文件物件模型 (Code Document Object Model，CodeDOM) 原始程式碼模型，程式碼產生器可個別地用特定程式語言產生原始程式碼。</summary>
+    </member>
+    <member name="N:System.Collections">
+      <summary>
+        <see cref="N:System.Collections" /> 命名空間 (Namespace) 包含介面和類別，它們會定義多種物件集合，例如清單、佇列、位元陣列、雜湊表和字典。</summary>
+    </member>
+    <member name="N:System.Collections.Concurrent">
+      <summary>System.Collections.Concurrent 命名空間提供數個安全執行緒集合類別，每當有多個執行緒同時存取集合時，應該使用這些類別來代替 <see cref="N:System.Collections" /> 和 <see cref="N:System.Collections.Generic" /> 命名空間中的對應型別。</summary>
+    </member>
+    <member name="N:System.Collections.Generic">
+      <summary>
+        <see cref="N:System.Collections.Generic" /> 命名空間包含會定義泛型集合的介面和類別，可讓使用者建立強型別集合，提供比起非泛型強型別集合更佳的型別安全和效能。</summary>
+    </member>
+    <member name="N:System.Collections.ObjectModel">
+      <summary>
+        <see cref="N:System.Collections.ObjectModel" /> 命名空間包含可做為重複使用程式庫物件模型中集合之類別。 當屬性或方法傳回集合時，請使用這些類別。</summary>
+    </member>
+    <member name="N:System.Collections.Specialized">
+      <summary>
+        <see cref="N:System.Collections.Specialized" /> 命名空間 (Namespace) 包含特定和強型別 (Strongly-Typed) 集合；例如，連結的清單字典、位元向量和只包含字串的集合。</summary>
+    </member>
+    <member name="N:System.ComponentModel">
+      <summary>
+        <see cref="N:System.ComponentModel" /> 命名空間提供類別，用於實作元件和控制項的執行階段和設計階段行為。 這個命名空間會包含基底類別 (Base Class) 和介面，用於實作屬性 (Attribute) 和型別轉換子 (Type Converter)、繫結至資料來源，以及授權元件。</summary>
+    </member>
+    <member name="N:System.ComponentModel.DataAnnotations">
+      <summary>
+        <see cref="N:System.ComponentModel.DataAnnotations" /> 命名空間 (Namespace) 提供屬性類別，這些類別可用來定義 ASP.NET MVC 和 ASP.NET 資料控制項的中繼資料 (Metadata)。</summary>
+    </member>
+    <member name="N:System.ComponentModel.DataAnnotations.Schema">
+      <summary>
+        <see cref="N:System.ComponentModel.DataAnnotations.Schema" /> 命名空間 (Namespace) 提供對屬性類別的支援，這些類別可用來定義 ASP.NET MVC 和 ASP.NET 資料控制項的中繼資料 (Metadata)。</summary>
+    </member>
+    <member name="N:System.Diagnostics">
+      <summary>
+        <see cref="N:System.Diagnostics" /> 命名空間提供類別，允許您與系統處理序 (Process)、事件記錄檔和效能計數器互動。</summary>
+    </member>
+    <member name="N:System.Diagnostics.CodeAnalysis">
+      <summary>
+        <see cref="N:System.Diagnostics.CodeAnalysis" /> 命名空間包含用於程式碼分析工具互動的類別。 這些工具是用於分析程式碼是否符合編碼慣例，例如命名或安全性規則。</summary>
+    </member>
+    <member name="N:System.Diagnostics.Contracts">
+      <summary>
+        <see cref="N:System.Diagnostics.Contracts" /> 命名空間包含代表程式合約的靜態類別，例如前置條件、後置條件及非變異。</summary>
+    </member>
+    <member name="N:System.Diagnostics.Tracing">
+      <summary>
+        <see cref="N:System.Diagnostics.Tracing" />命名空間提供型別和成員，可讓您建立 Windows (ETW) 之事件追蹤所要擷取的強型別事件。</summary>
+    </member>
+    <member name="N:System.Dynamic">
+      <summary>
+        <see cref="N:System.Dynamic" /> 命名空間提供能夠支援 Dynamic Language Runtime 的類別和介面。</summary>
+    </member>
+    <member name="N:System.Globalization">
+      <summary>
+        <see cref="N:System.Globalization" /> 命名空間含有定義相關文化特性資訊的類別，包括語言、國家 (地區)、使用中的日曆、格式化日期模式、貨幣和數字，和字串排序次序。 在撰寫全球化 (國際化) 的應用程式時，這些類別十分有用。 像是 <see cref="T:System.Globalization.StringInfo" /> 和 <see cref="T:System.Globalization.TextInfo" /> 這些類別會提供進階的全球化功能，包括 Surrogate 支援和文字項目處理。</summary>
+    </member>
+    <member name="N:System.IO">
+      <summary>System.IO 命名空間 (Namespace) 包含允許讀取和寫入對檔案和資料流加以的型別，以及提供基本檔案和目錄支援的型別。</summary>
+    </member>
+    <member name="N:System.IO.Compression">
+      <summary>
+        <see cref="N:System.IO.Compression" /> 命名空間包含提供資料流基本壓縮和解壓縮服務的類別。</summary>
+    </member>
+    <member name="N:System.Linq">
+      <summary>
+        <see cref="N:System.Linq" /> 命名空間提供能夠支援查詢使用 Language-Integrated Query (LINQ) 的類別和介面。</summary>
+    </member>
+    <member name="N:System.Linq.Expressions">
+      <summary>
+        <see cref="N:System.Linq.Expressions" /> 命名空間包含類別、介面和列舉，可使用運算式樹狀結構格式將這些語言層級程式碼運算式表示為物件。</summary>
+    </member>
+    <member name="N:System.Net">
+      <summary>
+        <see cref="N:System.Net" /> 命名空間提供一個簡單的程式設計介面，讓現今網路所用的許多通訊協定 (Protocol) 使用。 <see cref="T:System.Net.WebRequest" /> 和 <see cref="T:System.Net.WebResponse" /> 類別可當做外掛式通訊協定的基礎，此網路服務的實作 (Implementation) 讓您可以使用網際網路資源來開發應用程式，而不需考慮個別通訊協定的細節。 <see cref="N:System.Net" /> 命名空間中的類別可用來開發 Windows 市集應用程式或桌面應用程式。 當 <see cref="N:System.Net" /> 命名空間的類別在 Windows 市集應用程式中使用時，會受到網路隔離功能的影響，此功能為 Windows 開發人員預覽使用的應用程式安全性模型的一部分。 必須在 Windows 市集應用程式的應用程式資訊清單中啟用適當的網路功能，系統才能允許 Windows 市集應用程式進行網路存取。 如需詳細資訊，請參閱 Windows 存放應用程式的網路隔離。</summary>
+    </member>
+    <member name="N:System.Net.Http">
+      <summary>
+        <see cref="N:System.Net.Http" />命名空間提供現代 HTTP 應用程式的程式設計介面。</summary>
+    </member>
+    <member name="N:System.Net.Http.Headers">
+      <summary>提供 <see cref="N:System.Net.Http" /> 命名空間所使用 HTTP 標頭集合的支援</summary>
+    </member>
+    <member name="N:System.Net.NetworkInformation">
+      <summary>
+        <see cref="N:System.Net.NetworkInformation" /> 命名空間提供網路流量資料、網路位址資訊，以及本機電腦位址變更告知的存取。 此命名空間也包含實作 Ping 公用程式的類別。 您可以使用 <see cref="T:System.Net.NetworkInformation.Ping" /> 和相關類別，檢查電腦是否可透過網路存取。</summary>
+    </member>
+    <member name="N:System.Numerics">
+      <summary>包含由 .NET Framework 定義之 <see cref="N:System.Numerics" /> 命名空間的數值基本型別，例如 <see cref="T:System.Byte" />、<see cref="T:System.Double" /> 和 <see cref="T:System.Int32" />。</summary>
+    </member>
+    <member name="N:System.Reflection">
+      <summary>
+        <see cref="N:System.Reflection" /> 命名空間 (Namespace) 包含的型別可透過檢查 Managed 程式碼中組件、模組、成員、參數和其他實體 (Entity) 的中繼資料 (Metadata)，擷取這些項目的相關資訊。 您也可以使用這些型別管理已載入之型別的執行個體 (Instance)，例如連結事件或叫用 (Invoke) 方法。 若要動態建立型別，請使用 <see cref="N:System.Reflection.Emit" /> 命名空間。</summary>
+    </member>
+    <member name="N:System.Reflection.Context">
+      <summary>
+        <see cref="N:System.Reflection.Context" />命名空間包含可啟用自訂反映內容的類別。</summary>
+    </member>
+    <member name="N:System.Reflection.Emit">
+      <summary>
+        <see cref="N:System.Reflection.Emit" /> 命名空間 (Namespace) 包含允許編譯器 (Compiler) 或工具發出中繼資料 (Metadata) 和 Microsoft Intermediate Language (MSIL) 的類別，並且選擇性地在磁碟上產生可攜式執行檔。 這些類別的主要用戶端是指令碼引擎和編譯器。</summary>
+    </member>
+    <member name="N:System.Resources">
+      <summary>
+        <see cref="N:System.Resources" /> 命名空間提供類別和介面，可以讓開發人員建立、儲存和管理應用程式中所用的各種特定文化特性的資源。 <see cref="N:System.Resources" /> 命名空間的其中一個最重要類別是 <see cref="T:System.Resources.ResourceManager" /> 類別。</summary>
+    </member>
+    <member name="N:System.Runtime">
+      <summary>
+        <see cref="N:System.Runtime" /> 命名空間包含支援各種命名空間的進階型別，例如 System、Runtime 和 Security 命名空間。</summary>
+    </member>
+    <member name="N:System.Runtime.CompilerServices">
+      <summary>
+        <see cref="N:System.Runtime.CompilerServices" /> 命名空間 (Namespace) 為使用 Managed 程式碼指定會影響 Common Language Runtime 執行階段行為的中繼資料 (Metadata) 屬性 (Attribute) 的編譯器撰寫者，提供功能。</summary>
+    </member>
+    <member name="N:System.Runtime.ExceptionServices">
+      <summary>
+        <see cref="N:System.Runtime.ExceptionServices" /> 命名空間提供進階例外狀況處理的類別。</summary>
+    </member>
+    <member name="N:System.Runtime.InteropServices">
+      <summary>
+        <see cref="N:System.Runtime.InteropServices" /> 命名空間提供各種支援 COM Interop 和平台叫用服務的成員。 如果您不熟悉這些服務，請參閱 與 Unmanaged 程式碼互通。</summary>
+    </member>
+    <member name="N:System.Runtime.InteropServices.ComTypes">
+      <summary>System.Runtime.InteropServices.ComTypes 命名空間包含 Managed 程式碼 COM 函式定義的方法。 這些函式取代了 <see cref="N:System.Runtime.InteropServices" /> 命名空間中目前已過時的 UCOM* 方法。</summary>
+    </member>
+    <member name="N:System.Runtime.InteropServices.WindowsRuntime">
+      <summary>
+        <see cref="N:System.Runtime.InteropServices.WindowsRuntime" />命名空間包含類別，該類別支援 managed 程式碼和Windows 執行階段之間的互通性，並可讓您以managed 程式碼建立Windows 執行階段型別。</summary>
+    </member>
+    <member name="N:System.Runtime.Serialization">
+      <summary>
+        <see cref="N:System.Runtime.Serialization" /> 命名空間 (Namespace) 包含可用於序列化和還原序列化物件的類別。 序列化 (Serialization) 是將物件或物件圖形轉換為用於對其他位置進行儲存或傳輸之位元組線性序列的程序。 還原序列化 (Deserialization) 是納入所儲存訊息並從其中重新建立物件的程序。</summary>
+    </member>
+    <member name="N:System.Runtime.Serialization.Json">
+      <summary>提供與 Json 序列化相關的類別。</summary>
+    </member>
+    <member name="N:System.Runtime.Versioning">
+      <summary>
+        <see cref="N:System.Runtime.Versioning" /> 命名空間包含支援 .NET Framework 並存實作版本控制的進階型別。</summary>
+    </member>
+    <member name="N:System.Security">
+      <summary>
+        <see cref="N:System.Security" /> 命名空間提供 Common Language Runtime 安全性系統的基礎結構，包含使用權限的基底類別 (Base class)。</summary>
+    </member>
+    <member name="N:System.Security.Principal">
+      <summary>
+        <see cref="N:System.Security.Principal" /> 命名空間 (Namespace) 定義主體物件，表示程式碼正在執行的安全性內容。 如需詳細資訊，請參閱以角色為基礎的安全性。</summary>
+    </member>
+    <member name="N:System.ServiceModel">
+      <summary>提供與服務模型相關的類別。</summary>
+    </member>
+    <member name="N:System.ServiceModel.Channels">
+      <summary>提供與服務模型通道相關的類別。</summary>
+    </member>
+    <member name="N:System.ServiceModel.Description">
+      <summary>提供與服務模型描述相關的類別。</summary>
+    </member>
+    <member name="N:System.ServiceModel.Dispatcher">
+      <summary>提供與分派服務模型相關的類別。</summary>
+    </member>
+    <member name="N:System.ServiceModel.Security">
+      <summary>
+        <see cref="N:System.ServiceModel.Security" /> 命名空間處理一般安全性相關的主題，例如 <see cref="T:System.ServiceModel.Security.SecurityAlgorithmSuite" />。</summary>
+    </member>
+    <member name="N:System.ServiceModel.Security.Tokens">
+      <summary>處理安全性權杖和憑證。</summary>
+    </member>
+    <member name="N:System.Text">
+      <summary>
+        <see cref="N:System.Text" /> 命名空間包含表示 ASCII 和 Unicode 字元編碼的類別、字元區塊和位元組區塊間轉換的抽象基底類別，以及管理和格式化 <see cref="T:System.String" /> 物件而不需建立 <see cref="T:System.String" /> 中繼執行個體的 Helper 類別。</summary>
+    </member>
+    <member name="N:System.Text.RegularExpressions">
+      <summary>
+        <see cref="N:System.Text.RegularExpressions" /> 命名空間包含提供存取 .NET Framework 規則運算式引擎的類別。 命名空間所提供的規則運算式功能可用於任何平台或 Microsoft .NET Framework 內執行的語言。 除了這個命名空間中包含的型別以外，<see cref="T:System.Configuration.RegexStringValidator" /> 類別可讓您判斷特定字串是否符合規則運算式模式。</summary>
+    </member>
+    <member name="N:System.Threading">
+      <summary>
+        <see cref="N:System.Threading" /> 命名空間提供能夠啟用多執行緒程式設計功能的類別和介面。 除了用來同步處理執行緒活動和資料存取的類別 (<see cref="T:System.Threading.Mutex" />、<see cref="T:System.Threading.Monitor" />、<see cref="T:System.Threading.Interlocked" />、<see cref="T:System.Threading.AutoResetEvent" /> 等) 之外，這個命名空間還包含能讓您使用系統提供的執行緒集區的 <see cref="T:System.Threading.ThreadPool" /> 類別，以及能在執行緒集區執行緒上執行回呼方法的 <see cref="T:System.Threading.Timer" /> 類別。</summary>
+    </member>
+    <member name="N:System.Threading.Tasks">
+      <summary>System.Threading.Tasks 命名空間會提供簡化並行和非同步程式碼撰寫工作的型別。 主要型別為 <see cref="T:System.Threading.Tasks.Task" /> (表示可以等候和取消的非同步作業)，以及 <see cref="T:System.Threading.Tasks.Task`1" /> (屬於可以傳回值的工作)。 <see cref="T:System.Threading.Tasks.TaskFactory" /> 類別提供靜態方法，可建立和啟動工作，而 <see cref="T:System.Threading.Tasks.TaskScheduler" /> 類別提供預設執行緒排程基礎結構。</summary>
+    </member>
+    <member name="N:System.Windows.Input">
+      <summary>提供型別以支援 Windows Presentation Foundation (WPF) 輸入系統。 這包括滑鼠、鍵盤及手寫筆裝置的裝置抽象類別、通用輸入管理員類別、對使用命令和自訂命令的支援，以及各種公用程式類別。</summary>
+    </member>
+    <member name="N:System.Xml">
+      <summary>
+        <see cref="N:System.Xml" /> 命名空間提供處理 XML 的標準架構支援。</summary>
+    </member>
+    <member name="N:System.Xml.Linq">
+      <summary>包含 LINQ to XML 的類別 (Class)。 LINQ to XML 是一種記憶體中的 XML 程式設計介面，讓您可以方便有效地修改 XML 文件。</summary>
+    </member>
+    <member name="N:System.Xml.Schema">
+      <summary>
+        <see cref="N:System.Xml.Schema" /> 命名空間 (Namespace) 包含提供 XML 結構描述定義語言 (XSD) 之標準架構支援的 XML 類別。</summary>
+    </member>
+    <member name="N:System.Xml.Serialization">
+      <summary>
+        <see cref="N:System.Xml.Serialization" /> 命名空間 (Namespace) 包含用於將物件序列化為 XML 格式文件或資料流的類別。</summary>
+    </member>
+    <member name="N:Windows.Foundation">
+      <summary>
+        <see cref="N:Windows.Foundation" /> 命名空間包含支援使用 .NET Framework 開發 Windows 市集 應用程式的型別。</summary>
+    </member>
+    <member name="N:Windows.UI">
+      <summary>
+        <see cref="N:Windows.UI" /> 命名空間包含支援使用 .NET Framework 開發 Windows 市集 應用程式的型別。</summary>
+    </member>
+    <member name="N:Windows.UI.Xaml">
+      <summary>
+        <see cref="N:Windows.UI.Xaml" /> 命名空間包含支援使用 .NET Framework 開發 Windows 市集 應用程式的型別。</summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Automation">
+      <summary>
+        <see cref="N:Windows.UI.Xaml.Automation" /> 命名空間包含支援使用 .NET Framework 開發 Windows 市集 應用程式的型別。</summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Controls.Primitives">
+      <summary>
+        <see cref="N:Windows.UI.Xaml.Controls.Primitives" /> 命名空間包含支援使用 .NET Framework 開發 Windows 市集 應用程式的型別。</summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Markup">
+      <summary>
+        <see cref="N:Windows.UI.Xaml.Markup" /> 命名空間包含支援使用 .NET Framework 開發 Windows 市集 應用程式的型別。</summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Media">
+      <summary>
+        <see cref="N:Windows.UI.Xaml.Media" /> 命名空間包含支援使用 .NET Framework 開發 Windows 市集應用程式的型別。</summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Media.Animation">
+      <summary>
+        <see cref="N:Windows.UI.Xaml.Media.Animation" /> 命名空間包含支援使用 .NET Framework 開發 Windows 市集 應用程式的型別。</summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Media.Media3D">
+      <summary>
+        <see cref="N:Windows.UI.Xaml.Media.Media3D" /> 命名空間包含支援使用 .NET Framework 開發 Windows 市集 應用程式的型別。</summary>
+    </member>
+  </members>
+</doc>

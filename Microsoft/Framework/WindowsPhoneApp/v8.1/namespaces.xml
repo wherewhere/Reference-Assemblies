@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="N:Microsoft.CSharp.RuntimeBinder">
+      <summary>The <see cref="N:Microsoft.CSharp.RuntimeBinder" /> namespace provides classes and interfaces that support interoperation between Dynamic Language Runtime and C#.</summary>
+    </member>
+    <member name="N:Microsoft.VisualBasic">
+      <summary>The <see cref="N:Microsoft.VisualBasic" /> namespace contains types that support the Visual Basic Runtime in Visual Basic.</summary>
+    </member>
+    <member name="N:Microsoft.VisualBasic.CompilerServices">
+      <summary>The <see cref="N:Microsoft.VisualBasic.CompilerServices" /> namespace contains internal-use only types that support the Visual Basic compiler.</summary>
+    </member>
+    <member name="N:System">
+      <summary>The <see cref="N:System" /> namespace contains fundamental classes and base classes that define commonly-used value and reference data types, events and event handlers, interfaces, attributes, and processing exceptions.</summary>
+    </member>
+    <member name="N:System.CodeDom.Compiler">
+      <summary>The <see cref="N:System.CodeDom.Compiler" /> namespace contains types for managing the generation and compilation of source code in supported programming languages. Code generators can each produce source code in a particular programming language based on the structure of Code Document Object Model (CodeDOM) source code models consisting of elements provided by the <see cref="N:System.CodeDom" /> namespace.</summary>
+    </member>
+    <member name="N:System.Collections">
+      <summary>The <see cref="N:System.Collections" /> namespace contains interfaces and classes that define various collections of objects, such as lists, queues, bit arrays, hash tables and dictionaries.</summary>
+    </member>
+    <member name="N:System.Collections.Concurrent">
+      <summary>The System.Collections.Concurrent namespace provides several thread-safe collection classes that should be used in place of the corresponding types in the <see cref="N:System.Collections" /> and <see cref="N:System.Collections.Generic" /> namespaces whenever multiple threads are accessing the collection concurrently. </summary>
+    </member>
+    <member name="N:System.Collections.Generic">
+      <summary>The <see cref="N:System.Collections.Generic" /> namespace contains interfaces and classes that define generic collections, which allow users to create strongly typed collections that provide better type safety and performance than non-generic strongly typed collections.</summary>
+    </member>
+    <member name="N:System.Collections.ObjectModel">
+      <summary>The <see cref="N:System.Collections.ObjectModel" /> namespace contains classes that can be used as collections in the object model of a reusable library. Use these classes when properties or methods return collections.</summary>
+    </member>
+    <member name="N:System.Collections.Specialized">
+      <summary>The <see cref="N:System.Collections.Specialized" /> namespace contains specialized and strongly-typed collections; for example, a linked list dictionary, a bit vector, and collections that contain only strings.</summary>
+    </member>
+    <member name="N:System.ComponentModel">
+      <summary>The <see cref="N:System.ComponentModel" /> namespace provides classes that are used to implement the run-time and design-time behavior of components and controls. This namespace includes the base classes and interfaces for implementing attributes and type converters, binding to data sources, and licensing components.</summary>
+    </member>
+    <member name="N:System.ComponentModel.DataAnnotations">
+      <summary>The <see cref="N:System.ComponentModel.DataAnnotations" /> namespace provides attribute classes that are used to define metadata for ASP.NET MVC and ASP.NET data controls. </summary>
+    </member>
+    <member name="N:System.ComponentModel.DataAnnotations.Schema">
+      <summary>The <see cref="N:System.ComponentModel.DataAnnotations.Schema" /> namespace provides support for attribute classes that are used to define metadata for ASP.NET MVC and ASP.NET data controls.</summary>
+    </member>
+    <member name="N:System.Diagnostics">
+      <summary>The <see cref="N:System.Diagnostics" /> namespace provides classes that allow you to interact with system processes, event logs, and performance counters.</summary>
+    </member>
+    <member name="N:System.Diagnostics.CodeAnalysis">
+      <summary>The <see cref="N:System.Diagnostics.CodeAnalysis" /> namespace contains classes for interaction with code analysis tools. These tools are used to analyze code for conformance to coding conventions such as naming or security rules.</summary>
+    </member>
+    <member name="N:System.Diagnostics.Contracts">
+      <summary>The <see cref="N:System.Diagnostics.Contracts" /> namespace contains static classes for representing program contracts such as preconditions, postconditions, and invariants.</summary>
+    </member>
+    <member name="N:System.Diagnostics.Tracing">
+      <summary>The <see cref="N:System.Diagnostics.Tracing" /> namespace provides types and members that enable you to create strongly typed events to be captured by event tracing for Windows (ETW).</summary>
+    </member>
+    <member name="N:System.Dynamic">
+      <summary>The <see cref="N:System.Dynamic" /> namespace provides classes and interfaces that support Dynamic Language Runtime.</summary>
+    </member>
+    <member name="N:System.Globalization">
+      <summary>The <see cref="N:System.Globalization" /> namespace contains classes that define culture-related information, including language, country/region, calendars in use, format patterns for dates, currency, and numbers, and sort order for strings. These classes are useful for writing globalized (internationalized) applications. Classes such as <see cref="T:System.Globalization.StringInfo" /> and <see cref="T:System.Globalization.TextInfo" /> provide advanced globalization functionalities, including surrogate support and text element processing.</summary>
+    </member>
+    <member name="N:System.IO">
+      <summary>The System.IO namespace contains types that allow reading and writing to files and data streams, and types that provide basic file and directory support.</summary>
+    </member>
+    <member name="N:System.IO.Compression">
+      <summary>The <see cref="N:System.IO.Compression" /> namespace contains classes that provide basic compression and decompression services for streams. </summary>
+    </member>
+    <member name="N:System.Linq">
+      <summary>The <see cref="N:System.Linq" /> namespace provides classes and interfaces that support queries that use Language-Integrated Query (LINQ).</summary>
+    </member>
+    <member name="N:System.Linq.Expressions">
+      <summary>The <see cref="N:System.Linq.Expressions" /> namespace contains classes, interfaces and enumerations that enable language-level code expressions to be represented as objects in the form of expression trees.</summary>
+    </member>
+    <member name="N:System.Net">
+      <summary>The <see cref="N:System.Net" /> namespace provides a simple programming interface for many of the protocols used on networks today. The <see cref="T:System.Net.WebRequest" /> and <see cref="T:System.Net.WebResponse" /> classes form the basis of what are called pluggable protocols, an implementation of network services that enables you to develop applications that use Internet resources without worrying about the specific details of the individual protocols.Classes in the <see cref="N:System.Net" /> namespace can be used to develop Windows Store apps or desktop apps. When used in a Windows Store app, classes in the <see cref="N:System.Net" /> namespace are affected by network isolation feature, part of the application security model used by the Windows Developer Preview. The appropriate network capabilities must be enabled in the app manifest for a Windows Store app for the system to allow network access by a Windows Store app. For more information, see the Network Isolation for Windows Store Apps. </summary>
+    </member>
+    <member name="N:System.Net.Http">
+      <summary>The <see cref="N:System.Net.Http" /> namespace provides a programming interface for modern HTTP applications.</summary>
+    </member>
+    <member name="N:System.Net.Http.Headers">
+      <summary>Provides support for collections of HTTP headers used by the <see cref="N:System.Net.Http" /> namespace</summary>
+    </member>
+    <member name="N:System.Net.NetworkInformation">
+      <summary>The <see cref="N:System.Net.NetworkInformation" /> namespace provides access to network traffic data, network address information, and notification of address changes for the local computer. The namespace also contains classes that implement the Ping utility. You can use <see cref="T:System.Net.NetworkInformation.Ping" /> and related classes to check whether a computer is reachable across the network.</summary>
+    </member>
+    <member name="N:System.Numerics">
+      <summary>The <see cref="N:System.Numerics" /> namespace contains numeric types that complement the numeric primitives, such as <see cref="T:System.Byte" />, <see cref="T:System.Double" />, and <see cref="T:System.Int32" />, that are defined by the .NET Framework.</summary>
+    </member>
+    <member name="N:System.Reflection">
+      <summary>The <see cref="N:System.Reflection" /> namespace contains types that retrieve information about assemblies, modules, members, parameters, and other entities in managed code by examining their metadata. These types also can be used to manipulate instances of loaded types, for example to hook up events or to invoke methods. To dynamically create types, use the <see cref="N:System.Reflection.Emit" /> namespace.</summary>
+    </member>
+    <member name="N:System.Reflection.Context">
+      <summary>The <see cref="N:System.Reflection.Context" /> namespace contains classes that enable customized reflection contexts.</summary>
+    </member>
+    <member name="N:System.Reflection.Emit">
+      <summary>The <see cref="N:System.Reflection.Emit" /> namespace contains classes that allow a compiler or tool to emit metadata and Microsoft intermediate language (MSIL) and optionally generate a PE file on disk. The primary clients of these classes are script engines and compilers.</summary>
+    </member>
+    <member name="N:System.Resources">
+      <summary>The <see cref="N:System.Resources" /> namespace provides classes and interfaces that allow developers to create, store, and manage various culture-specific resources used in an application. One of the most important classes of the <see cref="N:System.Resources" /> namespace is the <see cref="T:System.Resources.ResourceManager" /> class.</summary>
+    </member>
+    <member name="N:System.Runtime">
+      <summary>The <see cref="N:System.Runtime" /> namespace contains advanced types that support diverse namespaces such as the System, Runtime, and the Security namespaces.</summary>
+    </member>
+    <member name="N:System.Runtime.CompilerServices">
+      <summary>The <see cref="N:System.Runtime.CompilerServices" /> namespace provides functionality for compiler writers who use managed code to specify attributes in metadata that affect the run-time behavior of the common language runtime.</summary>
+    </member>
+    <member name="N:System.Runtime.ExceptionServices">
+      <summary>The <see cref="N:System.Runtime.ExceptionServices" /> namespace provides classes for advanced exception handling.</summary>
+    </member>
+    <member name="N:System.Runtime.InteropServices">
+      <summary>The <see cref="N:System.Runtime.InteropServices" /> namespace provides a wide variety of members that support COM interop and platform invoke services. If you are unfamiliar with these services, see Interoperating with Unmanaged Code. </summary>
+    </member>
+    <member name="N:System.Runtime.InteropServices.ComTypes">
+      <summary>The System.Runtime.InteropServices.ComTypes namespace contains methods that are defintions of COM functions for managed code. These functions replace the now-obsolete UCOM* methods in the <see cref="N:System.Runtime.InteropServices" /> namespace.</summary>
+    </member>
+    <member name="N:System.Runtime.InteropServices.WindowsRuntime">
+      <summary>The <see cref="N:System.Runtime.InteropServices.WindowsRuntime" /> namespace contains classes that support interoperation between managed code and the Windows Runtime, and that enable the creation of Windows Runtime types with managed code. </summary>
+    </member>
+    <member name="N:System.Runtime.Serialization">
+      <summary>The <see cref="N:System.Runtime.Serialization" /> namespace contains classes that can be used for serializing and deserializing objects. Serialization is the process of converting an object or a graph of objects into a linear sequence of bytes for either storage or transmission to another location. Deserialization is the process of taking in stored information and recreating objects from it.</summary>
+    </member>
+    <member name="N:System.Runtime.Serialization.Json">
+      <summary>Provides classes related to Json serialization.</summary>
+    </member>
+    <member name="N:System.Runtime.Versioning">
+      <summary>The <see cref="N:System.Runtime.Versioning" /> namespace contains advanced types that support versioning in side by side implementations of the .NET Framework.</summary>
+    </member>
+    <member name="N:System.Security">
+      <summary>The <see cref="N:System.Security" /> namespace provides the underlying structure of the common language runtime security system, including base classes for permissions.</summary>
+    </member>
+    <member name="N:System.Security.Principal">
+      <summary>The <see cref="N:System.Security.Principal" /> namespace defines a principal object that represents the security context under which code is running. For more information, see Role-Based Security. </summary>
+    </member>
+    <member name="N:System.ServiceModel">
+      <summary>Provides classes related to the service model.</summary>
+    </member>
+    <member name="N:System.ServiceModel.Channels">
+      <summary>Provides classes related to service model channels.</summary>
+    </member>
+    <member name="N:System.ServiceModel.Description">
+      <summary>Provides classes related to the service model description.</summary>
+    </member>
+    <member name="N:System.ServiceModel.Dispatcher">
+      <summary>Provides classes related to dispatching the service model.</summary>
+    </member>
+    <member name="N:System.ServiceModel.Security">
+      <summary>The <see cref="N:System.ServiceModel.Security" /> namespace deals with general security-related topics, for example, <see cref="T:System.ServiceModel.Security.SecurityAlgorithmSuite" />.</summary>
+    </member>
+    <member name="N:System.ServiceModel.Security.Tokens">
+      <summary>Deals with security tokens and certificates.</summary>
+    </member>
+    <member name="N:System.Text">
+      <summary>The <see cref="N:System.Text" /> namespace contains classes that represent ASCII and Unicode character encodings; abstract base classes for converting blocks of characters to and from blocks of bytes; and a helper class that manipulates and formats <see cref="T:System.String" /> objects without creating intermediate instances of <see cref="T:System.String" />.</summary>
+    </member>
+    <member name="N:System.Text.RegularExpressions">
+      <summary>The <see cref="N:System.Text.RegularExpressions" /> namespace contains classes that provide access to the .NET Framework regular expression engine. The namespace provides regular expression functionality that may be used from any platform or language that runs within the Microsoft .NET Framework. In addition to the types contained in this namespace, the <see cref="T:System.Configuration.RegexStringValidator" /> class enables you to determine whether a particular string conforms to a regular expression pattern.</summary>
+    </member>
+    <member name="N:System.Threading">
+      <summary>The <see cref="N:System.Threading" /> namespace provides classes and interfaces that enable multithreaded programming. In addition to classes for synchronizing thread activities and access to data (<see cref="T:System.Threading.Mutex" />, <see cref="T:System.Threading.Monitor" />, <see cref="T:System.Threading.Interlocked" />, <see cref="T:System.Threading.AutoResetEvent" />, and so on), this namespace includes a <see cref="T:System.Threading.ThreadPool" /> class that allows you to use a pool of system-supplied threads, and a <see cref="T:System.Threading.Timer" /> class that executes callback methods on thread pool threads.</summary>
+    </member>
+    <member name="N:System.Threading.Tasks">
+      <summary>The System.Threading.Tasks namespace provides types that simplify the work of writing concurrent and asynchronous code. The main types are <see cref="T:System.Threading.Tasks.Task" /> which represents an asynchronous operation that can be waited on and cancelled, and <see cref="T:System.Threading.Tasks.Task`1" />, which is a task that can return a value. The <see cref="T:System.Threading.Tasks.TaskFactory" /> class provides static methods for creating and starting tasks, and the <see cref="T:System.Threading.Tasks.TaskScheduler" /> class provides the default thread scheduling infrastructure.</summary>
+    </member>
+    <member name="N:System.Windows.Input">
+      <summary>Provides types to support the Windows Presentation Foundation (WPF) input system. This includes device abstraction classes for mouse, keyboard, and stylus devices, a common input manager class, support for commanding and custom commands, and various utility classes.</summary>
+    </member>
+    <member name="N:System.Xml">
+      <summary>The <see cref="N:System.Xml" /> namespace provides standards-based support for processing XML.</summary>
+    </member>
+    <member name="N:System.Xml.Linq">
+      <summary>Contains the classes for LINQ to XML. LINQ to XML is an in-memory XML programming interface that enables you to modify XML documents efficiently and easily.</summary>
+    </member>
+    <member name="N:System.Xml.Schema">
+      <summary>The <see cref="N:System.Xml.Schema" /> namespace contains the XML classes that provide standards-based support for XML schema definition language (XSD) schemas.</summary>
+    </member>
+    <member name="N:System.Xml.Serialization">
+      <summary>The <see cref="N:System.Xml.Serialization" /> namespace contains classes that are used to serialize objects into XML format documents or streams.</summary>
+    </member>
+    <member name="N:Windows.Foundation">
+      <summary>The <see cref="N:Windows.Foundation" /> namespace contains types that support the development of Windows Store apps with the .NET Framework. </summary>
+    </member>
+    <member name="N:Windows.UI">
+      <summary>The <see cref="N:Windows.UI" /> namespace contains types that support the development of Windows Store apps with the .NET Framework. </summary>
+    </member>
+    <member name="N:Windows.UI.Xaml">
+      <summary>The <see cref="N:Windows.UI.Xaml" /> namespace contains types that support the development of Windows Store apps with the .NET Framework. </summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Automation">
+      <summary>The <see cref="N:Windows.UI.Xaml.Automation" /> namespace contains types that support the development of Windows Store apps with the .NET Framework. </summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Controls.Primitives">
+      <summary>The <see cref="N:Windows.UI.Xaml.Controls.Primitives" /> namespace contains types that support the development of Windows Store apps with the .NET Framework. </summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Markup">
+      <summary>The <see cref="N:Windows.UI.Xaml.Markup" /> namespace contains types that support the development of Windows Store apps with the .NET Framework. </summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Media">
+      <summary>The <see cref="N:Windows.UI.Xaml.Media" /> namespace contains types that support the development of Windows Store apps with the .NET Framework. </summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Media.Animation">
+      <summary>The <see cref="N:Windows.UI.Xaml.Media.Animation" /> namespace contains types that support the development of Windows Store apps with the .NET Framework. </summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Media.Media3D">
+      <summary>The <see cref="N:Windows.UI.Xaml.Media.Media3D" /> namespace contains types that support the development of Windows Store apps with the .NET Framework. </summary>
+    </member>
+  </members>
+</doc>

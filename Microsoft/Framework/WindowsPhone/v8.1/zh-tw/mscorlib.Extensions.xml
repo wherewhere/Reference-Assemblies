@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>mscorlib.Extensions</name>
+  </assembly>
+  <members>
+    <member name="T:System.Runtime.CompilerServices.CodeGenerationAttribute">
+      <summary>指定產生程式碼的設定。</summary>
+    </member>
+    <member name="M:System.Runtime.CompilerServices.CodeGenerationAttribute.#ctor(System.Runtime.CompilerServices.CodeGenerationFlags)">
+      <summary>初始化 <see cref="T:System.Runtime.CompilerServices.CodeGenerationAttribute" /> 類別的新執行個體。</summary>
+      <param name="flags">指定如何產生程式碼的旗標。</param>
+    </member>
+    <member name="P:System.Runtime.CompilerServices.CodeGenerationAttribute.CodeGenerationFlags">
+      <summary>取得指定如何產生程式碼的旗標。</summary>
+      <returns>指定如何產生程式碼的旗標。</returns>
+    </member>
+    <member name="T:System.Runtime.CompilerServices.CodeGenerationFlags">
+      <summary>定義指定如何產生程式碼的旗標。</summary>
+    </member>
+    <member name="F:System.Runtime.CompilerServices.CodeGenerationFlags.EnableFPIntrinsicsUsingSIMD">
+      <summary>指定 Just-In-Time (JIT) 編譯器可在特定向量和矩陣作業使用 SIMD 指令。</summary>
+    </member>
+    <member name="T:System.Security.Cryptography.ProtectedData">
+      <summary>提供加密和解密資料的方法。無法繼承此類別。</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.ProtectedData.Protect(System.Byte[],System.Byte[])">
+      <summary>將指定位元組陣列中的資料加密，並傳回包含加密資料的位元組陣列。</summary>
+      <returns>表示加密資料的位元組陣列。</returns>
+      <param name="userData">包含要加密之資料的位元組陣列。</param>
+      <param name="optionalEntropy">用來提高加密複雜性的選擇性額外位元組陣列，若為 null 則表示沒有額外的複雜性。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="userData" /> 參數為 null。</exception>
+      <exception cref="T:System.Security.Cryptography.CryptographicException">加密失敗。</exception>
+      <exception cref="T:System.NotSupportedException">作業系統不支援此方法。</exception>
+      <exception cref="T:System.OutOfMemoryException">系統在加密資料時記憶體不足。</exception>
+    </member>
+    <member name="M:System.Security.Cryptography.ProtectedData.Unprotect(System.Byte[],System.Byte[])">
+      <summary>將指定位元組陣列中的資料解密，並傳回包含解密資料的位元組陣列。</summary>
+      <returns>表示解密資料的位元組陣列。</returns>
+      <param name="encryptedData">包含使用 <see cref="M:System.Security.Cryptography.ProtectedData.Protect(System.Byte[],System.Byte[])" /> 方法加密之資料的位元組陣列。</param>
+      <param name="optionalEntropy">進行資料加密所使用的選擇性額外位元組陣列，如果沒有使用額外位元組陣列則為 null。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="encryptedData" /> 參數為 null。</exception>
+      <exception cref="T:System.Security.Cryptography.CryptographicException">解密失敗。</exception>
+      <exception cref="T:System.NotSupportedException">作業系統不支援此方法。</exception>
+      <exception cref="T:System.OutOfMemoryException">記憶體不足。</exception>
+    </member>
+  </members>
+</doc>

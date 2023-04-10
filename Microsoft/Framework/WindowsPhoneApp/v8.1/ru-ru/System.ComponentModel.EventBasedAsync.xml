@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.ComponentModel.EventBasedAsync</name>
+  </assembly>
+  <members>
+    <member name="T:System.ComponentModel.AsyncCompletedEventArgs">
+      <summary>Предоставляет данные для события ИмяМетодаCompleted.</summary>
+    </member>
+    <member name="M:System.ComponentModel.AsyncCompletedEventArgs.#ctor(System.Exception,System.Boolean,System.Object)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.ComponentModel.AsyncCompletedEventArgs" />.</summary>
+      <param name="error">Любая ошибка, возникающая в ходе асинхронной операции.</param>
+      <param name="cancelled">Значение, показывающее, была ли отменена асинхронная операция.</param>
+      <param name="userState">Необязательный заданный пользователем объект состояния, переданный методу <see cref="M:System.ComponentModel.BackgroundWorker.RunWorkerAsync(System.Object)" />.</param>
+    </member>
+    <member name="P:System.ComponentModel.AsyncCompletedEventArgs.Cancelled">
+      <summary>Возвращает значение, показывающее, была ли отменена асинхронная операция.</summary>
+      <returns>Значение true, если фоновая операция была отменена; в противном случае — значение false. Значение по умолчанию — false.</returns>
+    </member>
+    <member name="P:System.ComponentModel.AsyncCompletedEventArgs.Error">
+      <summary>Возвращает значение, показывающее, какая ошибка произошла в течение асинхронной операции.</summary>
+      <returns>Экземпляр исключения <see cref="T:System.Exception" />, если в ходе асинхронной операции произошла ошибка; в противном случае — значение null.</returns>
+    </member>
+    <member name="M:System.ComponentModel.AsyncCompletedEventArgs.RaiseExceptionIfNecessary">
+      <summary>Вызывает предоставленное пользователем исключение в случае неудачного выполнения асинхронной операции.</summary>
+      <exception cref="T:System.InvalidOperationException">Значение свойства <see cref="P:System.ComponentModel.AsyncCompletedEventArgs.Cancelled" /> — true.</exception>
+      <exception cref="T:System.Reflection.TargetInvocationException">Свойство <see cref="P:System.ComponentModel.AsyncCompletedEventArgs.Error" /> было установлено асинхронной операцией. Свойство <see cref="P:System.Exception.InnerException" /> содержит ссылку на ошибку <see cref="P:System.ComponentModel.AsyncCompletedEventArgs.Error" />.</exception>
+    </member>
+    <member name="P:System.ComponentModel.AsyncCompletedEventArgs.UserState">
+      <summary>Возвращает уникальный идентификатор для асинхронной задачи.</summary>
+      <returns>Ссылка на объект, уникальным образом идентифицирующая асинхронную задачу; в противном случае — значение null, если значение не было задано.</returns>
+    </member>
+    <member name="T:System.ComponentModel.AsyncCompletedEventHandler">
+      <summary>Представляет метод, который будет обрабатывать событие ИмяМетодаCompleted асинхронной операции.</summary>
+    </member>
+    <member name="M:System.ComponentModel.AsyncCompletedEventHandler.#ctor(System.Object,System.IntPtr)">
+    </member>
+    <member name="M:System.ComponentModel.AsyncCompletedEventHandler.BeginInvoke(System.Object,System.ComponentModel.AsyncCompletedEventArgs,System.AsyncCallback,System.Object)">
+    </member>
+    <member name="M:System.ComponentModel.AsyncCompletedEventHandler.EndInvoke(System.IAsyncResult)">
+    </member>
+    <member name="M:System.ComponentModel.AsyncCompletedEventHandler.Invoke(System.Object,System.ComponentModel.AsyncCompletedEventArgs)">
+    </member>
+    <member name="T:System.ComponentModel.ProgressChangedEventArgs">
+      <summary>Предоставляет данные для события <see cref="E:System.ComponentModel.BackgroundWorker.ProgressChanged" />.</summary>
+    </member>
+    <member name="M:System.ComponentModel.ProgressChangedEventArgs.#ctor(System.Int32,System.Object)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.ComponentModel.ProgressChangedEventArgs" />.</summary>
+      <param name="progressPercentage">Выполненный процент асинхронной задачи.</param>
+      <param name="userState">Уникальное пользовательское состояние.</param>
+    </member>
+    <member name="P:System.ComponentModel.ProgressChangedEventArgs.ProgressPercentage">
+      <summary>Возвращает процент выполнения асинхронной задачи.</summary>
+      <returns>Значение в процентах, показывающее выполнение асинхронной задачи.</returns>
+    </member>
+    <member name="P:System.ComponentModel.ProgressChangedEventArgs.UserState">
+      <summary>Возвращает уникальное пользовательское состояние.</summary>
+      <returns>Уникальный объект <see cref="T:System.Object" />, показывающий пользовательское состояние.</returns>
+    </member>
+    <member name="T:System.ComponentModel.ProgressChangedEventHandler">
+      <summary>Представляет метод, с помощью которого будет выполняться обработка события <see cref="E:System.ComponentModel.BackgroundWorker.ProgressChanged" /> класса <see cref="T:System.ComponentModel.BackgroundWorker" />. Этот класс не наследуется.</summary>
+    </member>
+    <member name="M:System.ComponentModel.ProgressChangedEventHandler.#ctor(System.Object,System.IntPtr)">
+    </member>
+    <member name="M:System.ComponentModel.ProgressChangedEventHandler.BeginInvoke(System.Object,System.ComponentModel.ProgressChangedEventArgs,System.AsyncCallback,System.Object)">
+    </member>
+    <member name="M:System.ComponentModel.ProgressChangedEventHandler.EndInvoke(System.IAsyncResult)">
+    </member>
+    <member name="M:System.ComponentModel.ProgressChangedEventHandler.Invoke(System.Object,System.ComponentModel.ProgressChangedEventArgs)">
+    </member>
+  </members>
+</doc>

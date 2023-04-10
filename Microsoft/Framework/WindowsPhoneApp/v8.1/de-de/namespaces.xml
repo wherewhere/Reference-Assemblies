@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="N:Microsoft.CSharp.RuntimeBinder">
+      <summary>Im <see cref="N:Microsoft.CSharp.RuntimeBinder" />-Namespace werden Klassen und Schnittstellen bereitgestellt, die eine Interoperation zwischen Dynamic Language Runtime und C# ermöglichen.</summary>
+    </member>
+    <member name="N:Microsoft.VisualBasic">
+      <summary>Der <see cref="N:Microsoft.VisualBasic" />-Namespace enthält Typen, die die Visual Basic-Laufzeit in Visual Basic unterstützen.</summary>
+    </member>
+    <member name="N:Microsoft.VisualBasic.CompilerServices">
+      <summary>Der <see cref="N:Microsoft.VisualBasic.CompilerServices" />-Namespace enthält Typen, die den Visual Basic-Compiler unterstützen und ausschließlich für den internen Gebrauch bestimmt sind.</summary>
+    </member>
+    <member name="N:System">
+      <summary>Der <see cref="N:System" />-Namespace enthält grundlegende Klassen und Basisklassen, mit denen häufig verwendete Wert- und Verweisdatentypen, Ereignisse und Ereignishandler, Schnittstellen, Attribute und Ausnahmen bei der Verarbeitung definiert werden.</summary>
+    </member>
+    <member name="N:System.CodeDom.Compiler">
+      <summary>Der <see cref="N:System.CodeDom.Compiler" />-Namespace enthält Typen, mit denen das Generieren und Kompilieren von Quellcode in unterstützten Programmiersprachen verwaltet wird. Code-Generatoren können jeweils Quellcode in einer bestimmten Programmiersprache erstellen, der auf der Struktur von CodeDOM-Quellcodemodellen (Code Document Object Model) beruht, die aus Elementen bestehen, die vom <see cref="N:System.CodeDom" />-Namespace bereitgestellt werden.</summary>
+    </member>
+    <member name="N:System.Collections">
+      <summary>Der <see cref="N:System.Collections" />-Namespace enthält Schnittstellen und Klassen, die verschiedene Auflistungen von Objekten definieren, z. B. Listen, Warteschlangen, Bitarrays, Hashtabellen und Wörterbücher.</summary>
+    </member>
+    <member name="N:System.Collections.Concurrent">
+      <summary>Der System.Collections.Concurrent-Namespace stellt mehrere threadsichere Auflistungsklassen bereit, die anstelle der entsprechenden Typen im <see cref="N:System.Collections" />- und im <see cref="N:System.Collections.Generic" />-Namespace verwendet werden sollen, wenn mehrere Threads gleichzeitig auf die Auflistung zugreifen.</summary>
+    </member>
+    <member name="N:System.Collections.Generic">
+      <summary>Der <see cref="N:System.Collections.Generic" />-Namespace enthält Schnittstellen und Klassen, die generische Auflistungen definieren. Mit diesen können Benutzer stark typisierte Auflistungen erstellen, die höhere Typsicherheit und Leistung als nicht generische stark typisierte Auflistungen bieten.</summary>
+    </member>
+    <member name="N:System.Collections.ObjectModel">
+      <summary>Der <see cref="N:System.Collections.ObjectModel" />-Namespace enthält Klassen, die als Auflistungen im Objektmodell einer wiederverwendbaren Bibliothek verwendet werden können. Verwenden Sie diese Klassen, wenn Eigenschaften oder Methoden Auflistungen zurückgeben.</summary>
+    </member>
+    <member name="N:System.Collections.Specialized">
+      <summary>Der <see cref="N:System.Collections.Specialized" />-Namespace enthält besondere und stark typisierte Auflistungen, z. B. ein verknüpftes Listen-Dictionary, einen Bitvektor sowie Auflistungen, die ausschließlich Zeichenfolgen enthalten.</summary>
+    </member>
+    <member name="N:System.ComponentModel">
+      <summary>Der <see cref="N:System.ComponentModel" />-Namespace stellt Klassen bereit, die für die Implementierung des Verhaltens von Komponenten und Steuerelementen zur Laufzeit und zur Entwurfszeit verwendet werden. Dieser Namespace enthält die Basisklassen und Schnittstellen zum Implementieren von Attributen, Typkonvertern, Bindungen an Datenquellen und Lizenzierungskomponenten.</summary>
+    </member>
+    <member name="N:System.ComponentModel.DataAnnotations">
+      <summary>Der <see cref="N:System.ComponentModel.DataAnnotations" />-Namespace stellt Attributklassen bereit, mit denen Metadaten für ASP.NET-MVC- und ASP.NET Daten-Steuerelementen definiert werden.</summary>
+    </member>
+    <member name="N:System.ComponentModel.DataAnnotations.Schema">
+      <summary>Der <see cref="N:System.ComponentModel.DataAnnotations.Schema" />-Namespace unterstützt mit denen Metadaten für ASP.NET-MVC- und ASP.NET Daten-Steuerelemente definiert werden.</summary>
+    </member>
+    <member name="N:System.Diagnostics">
+      <summary>Der <see cref="N:System.Diagnostics" />-Namespace stellt Klassen bereit, die die Interaktion mit Systemprozessen, Ereignisprotokollen und Leistungsindikatoren ermöglichen.</summary>
+    </member>
+    <member name="N:System.Diagnostics.CodeAnalysis">
+      <summary>Der <see cref="N:System.Diagnostics.CodeAnalysis" />-Namespace enthält Klassen für die Interaktion mit Codeanalysetools. Diese Tools werden verwendet, um Code hinsichtlich der Übereinstimmung mit Codierungskonventionen wie der Benennung oder den Sicherheitsregeln zu analysieren.</summary>
+    </member>
+    <member name="N:System.Diagnostics.Contracts">
+      <summary>Der <see cref="N:System.Diagnostics.Contracts" />-Namespace enthält statische Klassen zum Darstellen von Programmverträgen, z. B. Vorbedingungen, Nachbedingungen und Invarianten.</summary>
+    </member>
+    <member name="N:System.Diagnostics.Tracing">
+      <summary>Der <see cref="N:System.Diagnostics.Tracing" />-Namespace stellt Typen und Member bereit, die es Ihnen ermöglichen, stark typisiert Ereignisse zu erstellen, die von der Ereignisablaufverfolgung für Windows (ETW) aufgezeichnet werden können.</summary>
+    </member>
+    <member name="N:System.Dynamic">
+      <summary>Im <see cref="N:System.Dynamic" />-Namespace werden Klassen und Schnittstellen bereitgestellt, die Dynamic Language Runtime unterstützen.</summary>
+    </member>
+    <member name="N:System.Globalization">
+      <summary>Der <see cref="N:System.Globalization" />-Namespace enthält Klassen, mit denen kulturbezogene Informationen definiert werden. Hierzu zählen die Sprache, das Land/die Region, die verwendeten Kalender, das Formatierungsmuster für Datumsangaben, Währungen und Zahlen sowie die Sortierreihenfolge für Zeichenfolgen. Diese Klassen sind hilfreich beim Schreiben globalisierter (internationalisierter) Anwendungen. Klassen wie <see cref="T:System.Globalization.StringInfo" /> und <see cref="T:System.Globalization.TextInfo" /> bieten fortgeschrittene Globalisierungsfunktionen, beispielsweise Unterstützung von Ersatzzeichen und Verarbeitung von Textelementen.</summary>
+    </member>
+    <member name="N:System.IO">
+      <summary>Der System.IO-Namespace enthält Typen, die das Lesen und Schreiben für Dateien und Datenstreams zulassen, sowie Typen, die grundlegende Unterstützung für Dateien und Verzeichnisse bieten.</summary>
+    </member>
+    <member name="N:System.IO.Compression">
+      <summary>Der <see cref="N:System.IO.Compression" />-Namespace enthält Klassen, die grundlegende Komprimierungs- und Dekomprimierungsdienste für Streams bereitstellen.</summary>
+    </member>
+    <member name="N:System.Linq">
+      <summary>Der <see cref="N:System.Linq" />-Namespace stellt Klassen und Schnittstellen bereit, die Abfragen mit Sprachintegrierte Abfrage (Language-Integrated Query, LINQ) unterstützen.</summary>
+    </member>
+    <member name="N:System.Linq.Expressions">
+      <summary>Der <see cref="N:System.Linq.Expressions" />-Namespace enthält Klassen, Schnittstellen und Enumerationen, mit denen Codeausdrücke auf Sprachebene als in Form von Ausdrucksstrukturen als Objekte dargestellt werden können.</summary>
+    </member>
+    <member name="N:System.Net">
+      <summary>Der <see cref="N:System.Net" />-Namespace bietet eine einfache Programmierschnittstelle für zahlreiche in modernen Netzwerken verwendete Protokolle. Die <see cref="T:System.Net.WebRequest" />-Klasse und die <see cref="T:System.Net.WebResponse" />-Klasse bilden die Grundlage so genannter austauschbarer Protokolle. Hierbei handelt es sich um eine Implementierung von Netzwerkdiensten, mit denen Sie Internetressourcen verwendende Anwendungen entwickeln können, ohne die Details der einzelnen Protokolle beachten zu müssen. Klassen im <see cref="N:System.Net" />-Namespace können verwendet werden, um Windows Store-Apps oder Desktop-Apps zu entwickeln. Wenn sie in einer Windows Store-App verwendet werden, sind Klassen im <see cref="N:System.Net" />-Namespace von der Netzwerkisolationsfunktion betroffen, die Teil des Anwendungssicherheitsmodells ist, das von der Windows Developer Preview verwendet wird. Die jeweiligen Netzwerkfunktionen müssen im Anwendungsmanifest für eine Windows Store-App aktiviert sein, damit das System den Netzwerkzugriff durch eine Windows Store-App zulässt. Weitere Informationen finden Sie unter Netzwerkisolation für Windows Store-Apps.</summary>
+    </member>
+    <member name="N:System.Net.Http">
+      <summary>Der <see cref="N:System.Net.Http" />-Namespace stellt eine Programmierschnittstelle für moderne HTTP-Anwendungen zur Verfügung.</summary>
+    </member>
+    <member name="N:System.Net.Http.Headers">
+      <summary>Bietet Unterstützung für Auflistungen von HTTP-Headern, die vom <see cref="N:System.Net.Http" />-Namespace verwendet werden</summary>
+    </member>
+    <member name="N:System.Net.NetworkInformation">
+      <summary>Der <see cref="N:System.Net.NetworkInformation" />-Namespace bietet Zugriff auf Daten für Netzwerkadressen und Netzwerkverkehr sowie Benachrichtigungen über Adressänderungen für den lokalen Computer. Der Namespace enthält auch Klassen, die das Ping-Dienstprogramm implementieren. Mit <see cref="T:System.Net.NetworkInformation.Ping" /> und verwandten Klassen kann überprüft werden, ob ein Computer über das Netzwerk erreichbar ist.</summary>
+    </member>
+    <member name="N:System.Numerics">
+      <summary>Der <see cref="N:System.Numerics" />-Namespace enthält numerische Typen, die die numerischen Primitiven ergänzt, z. B. <see cref="T:System.Byte" />, <see cref="T:System.Double" /> und <see cref="T:System.Int32" />, die von .NET Framework definiert werden.</summary>
+    </member>
+    <member name="N:System.Reflection">
+      <summary>Der <see cref="N:System.Reflection" />-Namespace enthält Typen, die Informationen zu Assemblys, Modulen, Membern, Parametern und sonstigen Entitäten in verwaltetem Code abrufen, indem sie die zugehörigen Metadaten untersuchen. Mit diesen Typen können auch Instanzen von geladenen Typen bearbeitet werden, beispielsweise zum Verknüpfen von Ereignissen oder zum Aufrufen von Methoden. Verwenden Sie zum dynamischen Erstellen von Typen den <see cref="N:System.Reflection.Emit" />-Namespace.</summary>
+    </member>
+    <member name="N:System.Reflection.Context">
+      <summary>Der <see cref="N:System.Reflection.Context" />-Namespace enthält Klassen, die benutzerdefinierte Reflektionskontexte aktivieren.</summary>
+    </member>
+    <member name="N:System.Reflection.Emit">
+      <summary>Der <see cref="N:System.Reflection.Emit" />-Namespace enthält Klassen, die es einem Compiler oder Tool ermöglichen, Metadaten und MILS (Microsoft Intermediate Language) auszugeben sowie optional eine PE-Datei auf einem Datenträger zu generieren. Die wichtigsten Clients dieser Klassen sind Skriptmodule und Compiler.</summary>
+    </member>
+    <member name="N:System.Resources">
+      <summary>Der <see cref="N:System.Resources" />-Namespace stellt Klassen und Schnittstellen bereit, die Entwicklern das Erstellen, Speichern und Verwalten verschiedener kulturabhängiger Ressourcen ermöglichen, die in einer Anwendung verwendet werden. Eine der wichtigsten Klassen des <see cref="N:System.Resources" />-Namespaces ist die <see cref="T:System.Resources.ResourceManager" />-Klasse.</summary>
+    </member>
+    <member name="N:System.Runtime">
+      <summary>Der <see cref="N:System.Runtime" />-Namespace enthält erweiterte Typen zur Unterstützung verschiedener Namespaces wie System, Runtime und Security.</summary>
+    </member>
+    <member name="N:System.Runtime.CompilerServices">
+      <summary>Der <see cref="N:System.Runtime.CompilerServices" />-Namespace stellt Funktionen für Compilerentwickler bereit, die Attribute in Metadaten, die das Laufzeitverhalten der Common Language Runtime beeinflussen, in verwaltetem Code angeben.</summary>
+    </member>
+    <member name="N:System.Runtime.ExceptionServices">
+      <summary>Der <see cref="N:System.Runtime.ExceptionServices" /> -Namespace stellt Klassen für erweiterte Ausnahmebehandlung bereit.</summary>
+    </member>
+    <member name="N:System.Runtime.InteropServices">
+      <summary>Der <see cref="N:System.Runtime.InteropServices" />-Namespace stellt eine Vielzahl von Membern bereit, die Dienste für COM-Interop und Plattformaufrufe unterstützen. Wenn Sie mit diesen Diensten nicht vertraut sind, finden Sie weitere Informationen unter Interoperation mit nicht verwaltetem Code.</summary>
+    </member>
+    <member name="N:System.Runtime.InteropServices.ComTypes">
+      <summary>Der System.Runtime.InteropServices.ComTypes-Namespace enthält Methoden, die Definitionen von COM-Funktionen für verwalteten Code darstellen. Diese Funktionen ersetzen die jetzt veralteten UCOM*-Methoden im <see cref="N:System.Runtime.InteropServices" />-Namespace.</summary>
+    </member>
+    <member name="N:System.Runtime.InteropServices.WindowsRuntime">
+      <summary>Der <see cref="N:System.Runtime.InteropServices.WindowsRuntime" />-Namespace enthält Klassen, die die Interoperation zwischen verwaltetem Code und Windows-Runtime unterstützen, und die die Erstellung von Windows-Runtime-Typen mit verwaltetem Code aktivieren.</summary>
+    </member>
+    <member name="N:System.Runtime.Serialization">
+      <summary>Der <see cref="N:System.Runtime.Serialization" />-Namespace enthält Klassen, mit denen Objekte serialisiert und deserialisiert werden können. Bei der Serialisierung handelt es sich um die Konvertierung eines Objekts oder eines Objektdiagramms in eine lineare Folge von Bytes, die entweder gespeichert oder an einen anderen Ort übertragen werden. Bei der Deserialisierung werden gespeicherte Informationen erfasst und erneut Objekte daraus erstellt.</summary>
+    </member>
+    <member name="N:System.Runtime.Serialization.Json">
+      <summary>Stellt Klassen bereit, die mit Json-Serialisierung verknüpft sind.</summary>
+    </member>
+    <member name="N:System.Runtime.Versioning">
+      <summary>Der <see cref="N:System.Runtime.Versioning" />-Namespace enthält erweiterte Typen, die die Versionsverwaltung in Parallelimplementierungen von .NET Framework unterstützen.</summary>
+    </member>
+    <member name="N:System.Security">
+      <summary>Der <see cref="N:System.Security" />-Namespace stellt die dem Sicherheitssystem der Common Language Runtime zugrunde liegende Struktur einschließlich der Basisklassen für Berechtigungen bereit.</summary>
+    </member>
+    <member name="N:System.Security.Principal">
+      <summary>Der <see cref="N:System.Security.Principal" />-Namespace definiert ein Hauptobjekt, das den Sicherheitskontext darstellt, in dem Code ausgeführt wird. Weitere Informationen finden Sie unter Rollenbasierte Sicherheit.</summary>
+    </member>
+    <member name="N:System.ServiceModel">
+      <summary>Stellt Klassen bereit, die mit dem Dienstmodell verknüpft sind.</summary>
+    </member>
+    <member name="N:System.ServiceModel.Channels">
+      <summary>Stellt Klassen bereit, die mit Dienstmodellkanälen verknüpft sind.</summary>
+    </member>
+    <member name="N:System.ServiceModel.Description">
+      <summary>Stellt Klassen bereit, die mit der Dienstsmodellbeschreibung verknüpft sind.</summary>
+    </member>
+    <member name="N:System.ServiceModel.Dispatcher">
+      <summary>Stellt Klassen bereit, die mit dem Verteilen des Dienstsmodells verknüpft sind.</summary>
+    </member>
+    <member name="N:System.ServiceModel.Security">
+      <summary>Dieser <see cref="N:System.ServiceModel.Security" />-Namespace behandelt allgemeine sicherheitsbezogene Themen zu , beispielsweise <see cref="T:System.ServiceModel.Security.SecurityAlgorithmSuite" />.</summary>
+    </member>
+    <member name="N:System.ServiceModel.Security.Tokens">
+      <summary>Behandelt Sicherheitstoken und Zertifikate.</summary>
+    </member>
+    <member name="N:System.Text">
+      <summary>Der <see cref="N:System.Text" />-Namespace enthält Klassen, die ASCII- und Unicode-Zeichencodierungen darstellen, abstrakte Basisklassen zur Konvertierung von Zeichenblöcken in Byteblöcke und umgekehrt sowie eine Hilfsklasse, die <see cref="T:System.String" />-Objekte bearbeitet und formatiert, ohne Zwischeninstanzen von <see cref="T:System.String" /> zu erstellen.</summary>
+    </member>
+    <member name="N:System.Text.RegularExpressions">
+      <summary>Der <see cref="N:System.Text.RegularExpressions" />-Namespace enthält Klassen, die den Zugriff auf das .NET Framework-Modul für reguläre Ausdrücke ermöglichen. Der Namespace stellt Funktionen für reguläre Ausdrücke bereit, die von jeder in Microsoft .NET Framework ausgeführten Plattform oder Sprache verwendet werden können. Zusätzlich zu den in diesem Namespace enthaltenen Typen können Sie mit der <see cref="T:System.Configuration.RegexStringValidator" />-Klasse ermitteln, ob eine bestimmte Zeichenfolge dem Muster eines regulären Ausdrucks entspricht.</summary>
+    </member>
+    <member name="N:System.Threading">
+      <summary>Der <see cref="N:System.Threading" />-Namespace stellt Klassen und Schnittstellen bereit, die Multithreadprogrammierung ermöglichen. Neben den Klassen zum Synchronisieren von Threadaktivitäten und Datenzugriff (<see cref="T:System.Threading.Mutex" />, <see cref="T:System.Threading.Monitor" />, <see cref="T:System.Threading.Interlocked" />, <see cref="T:System.Threading.AutoResetEvent" /> usw.) enthält dieser Namespace eine <see cref="T:System.Threading.ThreadPool" />-Klasse, die die Verwendung eines Pools von Systemthreads ermöglicht, und eine <see cref="T:System.Threading.Timer" />-Klasse, die Rückrufmethoden für Threads des Threadpools ausführt.</summary>
+    </member>
+    <member name="N:System.Threading.Tasks">
+      <summary>Der System.Threading.Tasks-Namespace stellt Typen bereit, die das Schreiben von parallelem und asynchronem Code vereinfachen. Die Hauptarten sind <see cref="T:System.Threading.Tasks.Task" />, ein asynchroner Vorgang, auf den gewartet und der abgebrochen werden kann, und <see cref="T:System.Threading.Tasks.Task`1" />, eine Aufgabe, die einen Wert zurückgeben kann. Die <see cref="T:System.Threading.Tasks.TaskFactory" />-Klasse stellt statische Methoden zum Erstellen und Starten von Aufgaben bereit, und die <see cref="T:System.Threading.Tasks.TaskScheduler" />-Klasse stellt die Standardinfrastruktur für die Threadplanung bereit.</summary>
+    </member>
+    <member name="N:System.Windows.Input">
+      <summary>Stellt Typen bereit, um das Windows Presentation Foundation (WPF)-Eingabesystem zu unterstützen. Dies beinhaltet Geräteabstraktionsklassen für Maus-, Tastatur- und Tablettstiftgeräte, eine gemeinsame Eingabe-Managerklasse, Unterstützung für die Befehlsverwendung und für benutzerdefinierte Befehle sowie verschiedene Dienstprogrammklassen.</summary>
+    </member>
+    <member name="N:System.Xml">
+      <summary>Der <see cref="N:System.Xml" />-Namespace stellt eine auf Standards aufbauende Unterstützung für die XML-Verarbeitung bereit.</summary>
+    </member>
+    <member name="N:System.Xml.Linq">
+      <summary>Enthält die Klassen für LINQ to XML. LINQ to XML ist eine speicherinterne XML-Programmierschnittstelle, mit der Sie XML-Dokumente effizient und auf einfache Weise ändern können.</summary>
+    </member>
+    <member name="N:System.Xml.Schema">
+      <summary>Der <see cref="N:System.Xml.Schema" />-Namespace enthält XML-Klassen, die auf Standards basierende Unterstützung für XSD-Schemas (XML Schema Definition) bereitstellen.</summary>
+    </member>
+    <member name="N:System.Xml.Serialization">
+      <summary>Der <see cref="N:System.Xml.Serialization" />-Namespace enthält Klassen, die zum Serialisieren von Objekten in Dokumente oder Streams im XML-Format verwendet werden.</summary>
+    </member>
+    <member name="N:Windows.Foundation">
+      <summary>Der <see cref="N:Windows.Foundation" />-Namespace enthält Typen, die die Entwicklung von Windows Store-Apps bei .NET Framework unterstützen.</summary>
+    </member>
+    <member name="N:Windows.UI">
+      <summary>Der <see cref="N:Windows.UI" />-Namespace enthält Typen, die die Entwicklung von Windows Store-Apps bei .NET Framework unterstützen.</summary>
+    </member>
+    <member name="N:Windows.UI.Xaml">
+      <summary>Der <see cref="N:Windows.UI.Xaml" />-Namespace enthält Typen, die die Entwicklung von Windows Store-Apps bei .NET Framework unterstützen.</summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Automation">
+      <summary>Der <see cref="N:Windows.UI.Xaml.Automation" />-Namespace enthält Typen, die die Entwicklung von Windows Store-Apps bei .NET Framework unterstützen.</summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Controls.Primitives">
+      <summary>Der <see cref="N:Windows.UI.Xaml.Controls.Primitives" />-Namespace enthält Typen, die die Entwicklung von Windows Store-Apps bei .NET Framework unterstützen.</summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Markup">
+      <summary>Der <see cref="N:Windows.UI.Xaml.Markup" />-Namespace enthält Typen, die die Entwicklung von Windows Store-Apps bei .NET Framework unterstützen.</summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Media">
+      <summary>Der <see cref="N:Windows.UI.Xaml.Media" />-Namespace enthält Typen, die die Entwicklung von Windows Store-Apps mit .NET Framework unterstützen.</summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Media.Animation">
+      <summary>Der <see cref="N:Windows.UI.Xaml.Media.Animation" />-Namespace enthält Typen, die die Entwicklung von Windows Store-Apps bei .NET Framework unterstützen.</summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Media.Media3D">
+      <summary>Der <see cref="N:Windows.UI.Xaml.Media.Media3D" />-Namespace enthält Typen, die die Entwicklung von Windows Store-Apps bei .NET Framework unterstützen.</summary>
+    </member>
+  </members>
+</doc>

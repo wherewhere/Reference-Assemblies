@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.Text.Encoding.Extensions</name>
+  </assembly>
+  <members>
+    <member name="T:System.Text.UnicodeEncoding">
+      <summary>유니코드 문자의 UTF-16 인코딩을 나타냅니다.</summary>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UnicodeEncoding.#ctor">
+      <summary>
+        <see cref="T:System.Text.UnicodeEncoding" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+    </member>
+    <member name="M:System.Text.UnicodeEncoding.#ctor(System.Boolean,System.Boolean)">
+      <summary>
+        <see cref="T:System.Text.UnicodeEncoding" /> 클래스의 새 인스턴스를 초기화합니다. 매개 변수를 사용하여 big endian 바이트 순서를 사용할지 여부와 유니코드 바이트 순서 표시를 제공할지 여부를 지정할 수 있습니다.</summary>
+      <param name="bigEndian">big endian 바이트 순서(최상위 바이트 먼저)를 사용하려면 true이고, little endian 바이트 순서(최하위 바이트 먼저)를 사용하려면 false입니다.</param>
+      <param name="byteOrderMark">유니코드 바이트 순서 표시를 제공하도록 지정하려면 true이고, 그렇지 않으면 false입니다.</param>
+    </member>
+    <member name="M:System.Text.UnicodeEncoding.#ctor(System.Boolean,System.Boolean,System.Boolean)">
+      <summary>
+        <see cref="T:System.Text.UnicodeEncoding" /> 클래스의 새 인스턴스를 초기화합니다. 매개 변수를 사용하여 big endian 바이트 순서를 사용할지 여부, 유니코드 바이트 순서 표시를 제공할지 여부 및 잘못된 인코딩이 검색되었을 때 예외를 throw할지 여부를 지정할 수 있습니다.</summary>
+      <param name="bigEndian">big endian 바이트 순서(최상위 바이트 먼저)를 사용하려면 true이고, little endian 바이트 순서(최하위 바이트 먼저)를 사용하려면 false입니다.</param>
+      <param name="byteOrderMark">유니코드 바이트 순서 표시를 제공하도록 지정하려면 true이고, 그렇지 않으면 false입니다.</param>
+      <param name="throwOnInvalidBytes">잘못된 인코딩을 발견할 경우 예외가 throw되도록 지정하려면 true이고, 그렇지 않으면 false입니다.</param>
+    </member>
+    <member name="M:System.Text.UnicodeEncoding.Equals(System.Object)">
+      <summary>지정한 <see cref="T:System.Object" />가 현재 <see cref="T:System.Text.UnicodeEncoding" /> 개체와 같은지 여부를 확인합니다.</summary>
+      <returns>
+        <paramref name="value" />가 <see cref="T:System.Text.UnicodeEncoding" />의 인스턴스이고 현재 개체와 같으면 true이고, 그렇지 않으면 false입니다.</returns>
+      <param name="value">현재 개체와 비교할 <see cref="T:System.Object" />입니다.</param>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="M:System.Text.UnicodeEncoding.GetByteCount(System.Char[],System.Int32,System.Int32)">
+      <summary>지정한 문자 배열의 문자 집합을 인코딩할 경우 생성되는 바이트 수를 계산합니다.</summary>
+      <returns>지정한 문자를 인코딩할 경우 생성되는 바이트 수입니다.</returns>
+      <param name="chars">인코딩할 문자 집합이 들어 있는 문자 배열입니다.</param>
+      <param name="index">인코딩할 첫 번째 문자의 인덱스입니다.</param>
+      <param name="count">인코딩할 문자 수입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="chars" /> 가 null (Nothing)인 경우</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> 또는 <paramref name="count" />가 0보다 작은 경우 또는  <paramref name="index" /> 및 <paramref name="count" />가 <paramref name="chars" />의 유효한 범위를 나타내지 않는 경우 또는  결과 바이트 수가 정수로 반환될 수 있는 최대 숫자보다 큰 경우</exception>
+      <exception cref="T:System.ArgumentException">오류 검색 기능을 사용하고 있으며 <paramref name="chars" />에 잘못된 문자 시퀀스가 포함되어 있는 경우</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">대체(fallback)가 발생한 경우. 자세한 내용은 .NET Framework의 문자 인코딩를 참조하십시오. -및- <see cref="P:System.Text.Encoding.EncoderFallback" />이 <see cref="T:System.Text.EncoderExceptionFallback" />로 설정됩니다.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UnicodeEncoding.GetByteCount(System.String)">
+      <summary>지정된 <see cref="T:System.String" />의 문자를 인코딩하여 생성된 바이트 수를 계산합니다.</summary>
+      <returns>지정한 문자를 인코딩할 경우 생성되는 바이트 수입니다.</returns>
+      <param name="s">인코딩할 문자 집합이 포함된 <see cref="T:System.String" />입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="s" /> 가 null (Nothing)인 경우</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">결과 바이트 수가 정수로 반환될 수 있는 최대 숫자보다 큰 경우</exception>
+      <exception cref="T:System.ArgumentException">오류 검색 기능을 사용하고 있으며 <paramref name="s" />에 잘못된 문자 시퀀스가 포함되어 있는 경우</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">대체(fallback)가 발생한 경우. 자세한 내용은 .NET Framework의 문자 인코딩를 참조하십시오. -및- <see cref="P:System.Text.Encoding.EncoderFallback" />이 <see cref="T:System.Text.EncoderExceptionFallback" />로 설정됩니다.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UnicodeEncoding.GetBytes(System.Char[],System.Int32,System.Int32,System.Byte[],System.Int32)">
+      <summary>지정한 문자 배열의 문자 집합을 지정한 바이트 배열로 인코딩합니다.</summary>
+      <returns>
+        <paramref name="bytes" />에 써지는 실제 바이트 수입니다.</returns>
+      <param name="chars">인코딩할 문자 집합이 들어 있는 문자 배열입니다.</param>
+      <param name="charIndex">인코딩할 첫 번째 문자의 인덱스입니다.</param>
+      <param name="charCount">인코딩할 문자 수입니다.</param>
+      <param name="bytes">결과 바이트 시퀀스를 포함할 바이트 배열입니다.</param>
+      <param name="byteIndex">결과 바이트 시퀀스를 쓰기 시작할 인덱스입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="chars" /> 가 null (Nothing)인 경우 또는  <paramref name="bytes" />가 null (Nothing)인 경우</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="charIndex" />, <paramref name="charCount" /> 또는 <paramref name="byteIndex" />가 0보다 작은 경우 또는  <paramref name="charIndex" /> 및 <paramref name="charCount" />가 <paramref name="chars" />의 유효한 범위를 나타내지 않는 경우 또는  <paramref name="byteIndex" />가 <paramref name="bytes" />의 유효한 인덱스가 아닌 경우</exception>
+      <exception cref="T:System.ArgumentException">오류 검색 기능을 사용하고 있으며 <paramref name="chars" />에 잘못된 문자 시퀀스가 포함되어 있는 경우 또는  <paramref name="bytes" />의 용량(<paramref name="byteIndex" /> ~ 배열 끝)이 부족해서 결과 바이트를 수용할 수 없는 경우</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">대체(fallback)가 발생한 경우. 자세한 내용은 .NET Framework의 문자 인코딩를 참조하십시오. -및- <see cref="P:System.Text.Encoding.EncoderFallback" />이 <see cref="T:System.Text.EncoderExceptionFallback" />로 설정됩니다.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UnicodeEncoding.GetBytes(System.String,System.Int32,System.Int32,System.Byte[],System.Int32)">
+      <summary>지정된 <see cref="T:System.String" />의 문자 집합을 지정된 바이트 배열로 인코딩합니다.</summary>
+      <returns>
+        <paramref name="bytes" />에 써지는 실제 바이트 수입니다.</returns>
+      <param name="s">인코딩할 문자 집합이 포함된 <see cref="T:System.String" />입니다.</param>
+      <param name="charIndex">인코딩할 첫 번째 문자의 인덱스입니다.</param>
+      <param name="charCount">인코딩할 문자 수입니다.</param>
+      <param name="bytes">결과 바이트 시퀀스를 포함할 바이트 배열입니다.</param>
+      <param name="byteIndex">결과 바이트 시퀀스를 쓰기 시작할 인덱스입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="s" /> 가 null (Nothing)인 경우 또는  <paramref name="bytes" />가 null (Nothing)인 경우</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="charIndex" />, <paramref name="charCount" /> 또는 <paramref name="byteIndex" />가 0보다 작은 경우 또는  <paramref name="charIndex" /> 및 <paramref name="charCount" />가 <paramref name="chars" />의 유효한 범위를 나타내지 않는 경우 또는  <paramref name="byteIndex" />가 <paramref name="bytes" />의 유효한 인덱스가 아닌 경우</exception>
+      <exception cref="T:System.ArgumentException">오류 검색 기능을 사용하고 있으며 <paramref name="s" />에 잘못된 문자 시퀀스가 포함되어 있는 경우 또는  <paramref name="bytes" />의 용량(<paramref name="byteIndex" /> ~ 배열 끝)이 부족해서 결과 바이트를 수용할 수 없는 경우</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">대체(fallback)가 발생한 경우. 자세한 내용은 .NET Framework의 문자 인코딩를 참조하십시오. -및- <see cref="P:System.Text.Encoding.EncoderFallback" />이 <see cref="T:System.Text.EncoderExceptionFallback" />로 설정됩니다.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UnicodeEncoding.GetCharCount(System.Byte[],System.Int32,System.Int32)">
+      <summary>지정한 바이트 배열의 바이트 시퀀스를 디코딩할 경우 생성되는 문자 수를 계산합니다.</summary>
+      <returns>지정한 바이트 시퀀스를 디코딩할 경우 생성되는 문자 수입니다.</returns>
+      <param name="bytes">디코딩할 바이트 시퀀스를 포함하는 바이트 배열입니다.</param>
+      <param name="index">디코딩할 첫 번째 바이트의 인덱스입니다.</param>
+      <param name="count">디코딩할 바이트 수입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="bytes" />가 null (Nothing)인 경우</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> 또는 <paramref name="count" />가 0보다 작은 경우 또는  <paramref name="index" /> 및 <paramref name="count" />가 <paramref name="bytes" />의 유효한 범위를 나타내지 않는 경우 또는  결과 바이트 수가 정수로 반환될 수 있는 최대 숫자보다 큰 경우</exception>
+      <exception cref="T:System.ArgumentException">오류 검색 기능을 사용하고 있으며 <paramref name="bytes" />에 잘못된 바이트 시퀀스가 포함되어 있는 경우</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">대체(fallback)가 발생한 경우. 자세한 내용은 .NET Framework의 문자 인코딩를 참조하십시오. -및- <see cref="P:System.Text.Encoding.DecoderFallback" />이 <see cref="T:System.Text.DecoderExceptionFallback" />로 설정됩니다.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UnicodeEncoding.GetChars(System.Byte[],System.Int32,System.Int32,System.Char[],System.Int32)">
+      <summary>지정한 바이트 배열의 바이트 시퀀스를 지정한 문자 배열로 디코딩합니다.</summary>
+      <returns>
+        <paramref name="chars" />에 써지는 실제 문자 수입니다.</returns>
+      <param name="bytes">디코딩할 바이트 시퀀스를 포함하는 바이트 배열입니다.</param>
+      <param name="byteIndex">디코딩할 첫 번째 바이트의 인덱스입니다.</param>
+      <param name="byteCount">디코딩할 바이트 수입니다.</param>
+      <param name="chars">결과 문자 집합을 포함할 문자 배열입니다.</param>
+      <param name="charIndex">결과 문자 집합을 쓰기 시작할 인덱스입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="bytes" />가 null (Nothing)인 경우 또는  <paramref name="chars" /> 가 null (Nothing)인 경우</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="byteIndex" />, <paramref name="byteCount" /> 또는 <paramref name="charIndex" />가 0보다 작은 경우 또는  <paramref name="byteindex" /> 및 <paramref name="byteCount" />가 <paramref name="bytes" />의 유효한 범위를 나타내지 않는 경우 또는  <paramref name="charIndex" />가 <paramref name="chars" />의 유효한 인덱스가 아닌 경우</exception>
+      <exception cref="T:System.ArgumentException">오류 검색 기능을 사용하고 있으며 <paramref name="bytes" />에 잘못된 바이트 시퀀스가 포함되어 있는 경우 또는  <paramref name="chars" />의 용량(<paramref name="charIndex" /> ~ 배열 끝)이 부족해서 결과 문자를 수용할 수 없는 경우</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">대체(fallback)가 발생한 경우. 자세한 내용은 .NET Framework의 문자 인코딩를 참조하십시오. -및- <see cref="P:System.Text.Encoding.DecoderFallback" />이 <see cref="T:System.Text.DecoderExceptionFallback" />로 설정됩니다.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UnicodeEncoding.GetDecoder">
+      <summary>UTF-16으로 인코딩된 바이트 시퀀스를 유니코드 문자 시퀀스로 변환하는 디코더를 가져옵니다.</summary>
+      <returns>UTF-16로 인코딩된 바이트 시퀀스를 유니코드 문자 시퀀스로 변환하는 <see cref="T:System.Text.Decoder" />입니다.</returns>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UnicodeEncoding.GetEncoder">
+      <summary>유니코드 문자 시퀀스를 UTF-16으로 인코딩된 바이트 시퀀스로 변환하는 인코더를 가져옵니다.</summary>
+      <returns>유니코드 문자 시퀀스를 UTF-16으로 인코딩된 바이트 시퀀스로 변환하는 <see cref="T:System.Text.Encoder" /> 개체입니다.</returns>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UnicodeEncoding.GetHashCode">
+      <summary>현재 인스턴스의 해시 코드를 반환합니다.</summary>
+      <returns>현재 <see cref="T:System.Text.UnicodeEncoding" /> 개체의 해시 코드입니다.</returns>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UnicodeEncoding.GetMaxByteCount(System.Int32)">
+      <summary>지정한 수의 문자를 인코딩할 경우 생성되는 최대 바이트 수를 계산합니다.</summary>
+      <returns>지정한 수의 문자를 인코딩할 경우 생성되는 최대 바이트 수입니다.</returns>
+      <param name="charCount">인코딩할 문자 수입니다.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="charCount" />가 0보다 작은 경우 또는  결과 바이트 수가 정수로 반환될 수 있는 최대 숫자보다 큰 경우</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">대체(fallback)가 발생한 경우. 자세한 내용은 .NET Framework의 문자 인코딩를 참조하십시오. -및- <see cref="P:System.Text.Encoding.EncoderFallback" />이 <see cref="T:System.Text.EncoderExceptionFallback" />로 설정됩니다.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UnicodeEncoding.GetMaxCharCount(System.Int32)">
+      <summary>지정한 수의 바이트를 디코딩할 경우 생성되는 최대 문자 수를 계산합니다.</summary>
+      <returns>지정한 수의 바이트를 디코딩할 경우 생성되는 최대 문자 수입니다.</returns>
+      <param name="byteCount">디코딩할 바이트 수입니다.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="byteCount" />가 0보다 작은 경우 또는  결과 바이트 수가 정수로 반환될 수 있는 최대 숫자보다 큰 경우</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">대체(fallback)가 발생한 경우. 자세한 내용은 .NET Framework의 문자 인코딩를 참조하십시오. -및- <see cref="P:System.Text.Encoding.DecoderFallback" />이 <see cref="T:System.Text.DecoderExceptionFallback" />로 설정됩니다.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UnicodeEncoding.GetPreamble">
+      <summary>이 인스턴스의 생성자가 바이트 순서 표시를 요청하는 경우 UTF-16 형식으로 인코딩된 유니코드 바이트 순서 표시를 반환합니다.</summary>
+      <returns>이 인스턴스의 생성자가 바이트 순서 표시를 요청하면 유니코드 바이트 순서 표시가 들어 있는 바이트 배열입니다. 그렇지 않으면 이 메서드는 길이가 0인 바이트 배열을 반환합니다.</returns>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UnicodeEncoding.GetString(System.Byte[],System.Int32,System.Int32)">
+      <summary>바이트 배열의 바이트 범위를 문자열로 디코딩합니다.</summary>
+      <returns>지정된 바이트 시퀀스의 디코딩 결과가 포함된 <see cref="T:System.String" /> 개체입니다.</returns>
+      <param name="bytes">디코딩할 바이트 시퀀스를 포함하는 바이트 배열입니다.</param>
+      <param name="index">디코딩할 첫 번째 바이트의 인덱스입니다.</param>
+      <param name="count">디코딩할 바이트 수입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="bytes" />가 null (Nothing)인 경우</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> 또는 <paramref name="count" />가 0보다 작은 경우 또는  <paramref name="index" /> 및 <paramref name="count" />가 <paramref name="bytes" />의 유효한 범위를 나타내지 않는 경우</exception>
+      <exception cref="T:System.ArgumentException">오류 검색 기능을 사용하고 있으며 <paramref name="bytes" />에 잘못된 바이트 시퀀스가 포함되어 있는 경우</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">대체(fallback)가 발생한 경우. 자세한 내용은 .NET Framework의 문자 인코딩를 참조하십시오. -및- <see cref="P:System.Text.Encoding.DecoderFallback" />이 <see cref="T:System.Text.DecoderExceptionFallback" />로 설정됩니다.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="T:System.Text.UTF8Encoding">
+      <summary>유니코드 문자의 UTF-8 인코딩을 나타냅니다.</summary>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UTF8Encoding.#ctor">
+      <summary>
+        <see cref="T:System.Text.UTF8Encoding" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+    </member>
+    <member name="M:System.Text.UTF8Encoding.#ctor(System.Boolean)">
+      <summary>
+        <see cref="T:System.Text.UTF8Encoding" /> 클래스의 새 인스턴스를 초기화합니다. 매개 변수는 유니코드 바이트 순서 표시를 제공할지 여부를 지정합니다.</summary>
+      <param name="encoderShouldEmitUTF8Identifier">유니코드 바이트 순서 표시를 제공하도록 지정하려면 true이고, 그렇지 않으면 false입니다.</param>
+    </member>
+    <member name="M:System.Text.UTF8Encoding.#ctor(System.Boolean,System.Boolean)">
+      <summary>
+        <see cref="T:System.Text.UTF8Encoding" /> 클래스의 새 인스턴스를 초기화합니다. 매개 변수는 유니코드 바이트 순서 표시를 제공할지 여부와 잘못된 인코딩이 검색되었을 때 예외를 throw할지 여부를 지정합니다.</summary>
+      <param name="encoderShouldEmitUTF8Identifier">유니코드 바이트 순서 표시를 제공하도록 지정하려면 true이고, 그렇지 않으면 false입니다.</param>
+      <param name="throwOnInvalidBytes">잘못된 인코딩을 발견하면 예외가 throw되도록 지정하려면 true이고, 그렇지 않으면 false입니다.</param>
+    </member>
+    <member name="M:System.Text.UTF8Encoding.Equals(System.Object)">
+      <summary>지정한 <see cref="T:System.Object" />가 현재 <see cref="T:System.Text.UTF8Encoding" /> 개체와 같은지 여부를 확인합니다.</summary>
+      <returns>
+        <paramref name="value" />가 <see cref="T:System.Text.UTF8Encoding" />의 인스턴스이고 현재 개체와 같으면 true이고, 그렇지 않으면 false입니다.</returns>
+      <param name="value">현재 인스턴스와 비교할 <see cref="T:System.Object" />입니다.</param>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="M:System.Text.UTF8Encoding.GetByteCount(System.Char[],System.Int32,System.Int32)">
+      <summary>지정한 문자 배열의 문자 집합을 인코딩할 경우 생성되는 바이트 수를 계산합니다.</summary>
+      <returns>지정한 문자를 인코딩할 경우 생성되는 바이트 수입니다.</returns>
+      <param name="chars">인코딩할 문자 집합이 들어 있는 문자 배열입니다.</param>
+      <param name="index">인코딩할 첫 번째 문자의 인덱스입니다.</param>
+      <param name="count">인코딩할 문자 수입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="chars" />가 null입니다.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> 또는 <paramref name="count" />가 0보다 작은 경우 또는  <paramref name="index" /> 및 <paramref name="count" />가 <paramref name="chars" />의 유효한 범위를 나타내지 않는 경우 또는  결과 바이트 수가 정수로 반환될 수 있는 최대 숫자보다 큰 경우</exception>
+      <exception cref="T:System.ArgumentException">오류 검색 기능을 사용하고 있으며 <paramref name="chars" />에 잘못된 문자 시퀀스가 포함되어 있는 경우</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">대체(fallback)가 발생한 경우. 자세한 내용은 .NET Framework의 문자 인코딩를 참조하십시오. -및- <see cref="P:System.Text.Encoding.EncoderFallback" />이 <see cref="T:System.Text.EncoderExceptionFallback" />로 설정됩니다.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UTF8Encoding.GetByteCount(System.String)">
+      <summary>지정된 <see cref="T:System.String" />의 문자를 인코딩하여 생성된 바이트 수를 계산합니다.</summary>
+      <returns>지정한 문자를 인코딩할 경우 생성되는 바이트 수입니다.</returns>
+      <param name="chars">인코딩할 문자 집합이 포함된 <see cref="T:System.String" />입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="chars" />가 null입니다.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">결과 바이트 수가 정수로 반환될 수 있는 최대 숫자보다 큰 경우</exception>
+      <exception cref="T:System.ArgumentException">오류 검색 기능을 사용하고 있으며 <paramref name="chars" />에 잘못된 문자 시퀀스가 포함되어 있는 경우</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">대체(fallback)가 발생한 경우. 자세한 내용은 .NET Framework의 문자 인코딩를 참조하십시오. -및- <see cref="P:System.Text.Encoding.EncoderFallback" />이 <see cref="T:System.Text.EncoderExceptionFallback" />로 설정됩니다.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UTF8Encoding.GetBytes(System.Char[],System.Int32,System.Int32,System.Byte[],System.Int32)">
+      <summary>지정한 문자 배열의 문자 집합을 지정한 바이트 배열로 인코딩합니다.</summary>
+      <returns>
+        <paramref name="bytes" />에 써지는 실제 바이트 수입니다.</returns>
+      <param name="chars">인코딩할 문자 집합이 들어 있는 문자 배열입니다.</param>
+      <param name="charIndex">인코딩할 첫 번째 문자의 인덱스입니다.</param>
+      <param name="charCount">인코딩할 문자 수입니다.</param>
+      <param name="bytes">결과 바이트 시퀀스를 포함할 바이트 배열입니다.</param>
+      <param name="byteIndex">결과 바이트 시퀀스를 쓰기 시작할 인덱스입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="chars" />가 null입니다. 또는  <paramref name="bytes" />가 null입니다.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="charIndex" />, <paramref name="charCount" /> 또는 <paramref name="byteIndex" />가 0보다 작은 경우 또는  <paramref name="charIndex" /> 및 <paramref name="charCount" />가 <paramref name="chars" />의 유효한 범위를 나타내지 않는 경우 또는  <paramref name="byteIndex" />가 <paramref name="bytes" />의 유효한 인덱스가 아닌 경우</exception>
+      <exception cref="T:System.ArgumentException">오류 검색 기능을 사용하고 있으며 <paramref name="chars" />에 잘못된 문자 시퀀스가 포함되어 있는 경우 또는  <paramref name="bytes" />의 용량(<paramref name="byteIndex" /> ~ 배열 끝)이 부족해서 결과 바이트를 수용할 수 없는 경우</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">대체(fallback)가 발생한 경우. 자세한 내용은 .NET Framework의 문자 인코딩를 참조하십시오. -및- <see cref="P:System.Text.Encoding.EncoderFallback" />이 <see cref="T:System.Text.EncoderExceptionFallback" />로 설정됩니다.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UTF8Encoding.GetBytes(System.String,System.Int32,System.Int32,System.Byte[],System.Int32)">
+      <summary>지정된 <see cref="T:System.String" />의 문자 집합을 지정된 바이트 배열로 인코딩합니다.</summary>
+      <returns>
+        <paramref name="bytes" />에 써지는 실제 바이트 수입니다.</returns>
+      <param name="s">인코딩할 문자 집합이 포함된 <see cref="T:System.String" />입니다.</param>
+      <param name="charIndex">인코딩할 첫 번째 문자의 인덱스입니다.</param>
+      <param name="charCount">인코딩할 문자 수입니다.</param>
+      <param name="bytes">결과 바이트 시퀀스를 포함할 바이트 배열입니다.</param>
+      <param name="byteIndex">결과 바이트 시퀀스를 쓰기 시작할 인덱스입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="s" />가 null입니다. 또는  <paramref name="bytes" />가 null입니다.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="charIndex" />, <paramref name="charCount" /> 또는 <paramref name="byteIndex" />가 0보다 작은 경우 또는  <paramref name="charIndex" /> 및 <paramref name="charCount" />가 <paramref name="chars" />의 유효한 범위를 나타내지 않는 경우 또는  <paramref name="byteIndex" />가 <paramref name="bytes" />의 유효한 인덱스가 아닌 경우</exception>
+      <exception cref="T:System.ArgumentException">오류 검색 기능을 사용하고 있으며 <paramref name="s" />에 잘못된 문자 시퀀스가 포함되어 있는 경우 또는  <paramref name="bytes" />의 용량(<paramref name="byteIndex" /> ~ 배열 끝)이 부족해서 결과 바이트를 수용할 수 없는 경우</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">대체(fallback)가 발생한 경우. 자세한 내용은 .NET Framework의 문자 인코딩를 참조하십시오. -및- <see cref="P:System.Text.Encoding.EncoderFallback" />이 <see cref="T:System.Text.EncoderExceptionFallback" />로 설정됩니다.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UTF8Encoding.GetCharCount(System.Byte[],System.Int32,System.Int32)">
+      <summary>지정한 바이트 배열의 바이트 시퀀스를 디코딩할 경우 생성되는 문자 수를 계산합니다.</summary>
+      <returns>지정한 바이트 시퀀스를 디코딩할 경우 생성되는 문자 수입니다.</returns>
+      <param name="bytes">디코딩할 바이트 시퀀스를 포함하는 바이트 배열입니다.</param>
+      <param name="index">디코딩할 첫 번째 바이트의 인덱스입니다.</param>
+      <param name="count">디코딩할 바이트 수입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="bytes" />가 null입니다.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> 또는 <paramref name="count" />가 0보다 작은 경우 또는  <paramref name="index" /> 및 <paramref name="count" />가 <paramref name="bytes" />의 유효한 범위를 나타내지 않는 경우 또는  결과 바이트 수가 정수로 반환될 수 있는 최대 숫자보다 큰 경우</exception>
+      <exception cref="T:System.ArgumentException">오류 검색 기능을 사용하고 있으며 <paramref name="bytes" />에 잘못된 바이트 시퀀스가 포함되어 있는 경우</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">대체(fallback)가 발생한 경우. 자세한 내용은 .NET Framework의 문자 인코딩를 참조하십시오. -및- <see cref="P:System.Text.Encoding.DecoderFallback" />이 <see cref="T:System.Text.DecoderExceptionFallback" />로 설정됩니다.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UTF8Encoding.GetChars(System.Byte[],System.Int32,System.Int32,System.Char[],System.Int32)">
+      <summary>지정한 바이트 배열의 바이트 시퀀스를 지정한 문자 배열로 디코딩합니다.</summary>
+      <returns>
+        <paramref name="chars" />에 써지는 실제 문자 수입니다.</returns>
+      <param name="bytes">디코딩할 바이트 시퀀스를 포함하는 바이트 배열입니다.</param>
+      <param name="byteIndex">디코딩할 첫 번째 바이트의 인덱스입니다.</param>
+      <param name="byteCount">디코딩할 바이트 수입니다.</param>
+      <param name="chars">결과 문자 집합을 포함할 문자 배열입니다.</param>
+      <param name="charIndex">결과 문자 집합을 쓰기 시작할 인덱스입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="bytes" />가 null입니다. 또는  <paramref name="chars" />가 null입니다.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="byteIndex" />, <paramref name="byteCount" /> 또는 <paramref name="charIndex" />가 0보다 작은 경우 또는  <paramref name="byteindex" /> 및 <paramref name="byteCount" />가 <paramref name="bytes" />의 유효한 범위를 나타내지 않는 경우 또는  <paramref name="charIndex" />가 <paramref name="chars" />의 유효한 인덱스가 아닌 경우</exception>
+      <exception cref="T:System.ArgumentException">오류 검색 기능을 사용하고 있으며 <paramref name="bytes" />에 잘못된 바이트 시퀀스가 포함되어 있는 경우 또는  <paramref name="chars" />의 용량(<paramref name="charIndex" /> ~ 배열 끝)이 부족해서 결과 문자를 수용할 수 없는 경우</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">대체(fallback)가 발생한 경우. 자세한 내용은 .NET Framework의 문자 인코딩를 참조하십시오. -및- <see cref="P:System.Text.Encoding.DecoderFallback" />이 <see cref="T:System.Text.DecoderExceptionFallback" />로 설정됩니다.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UTF8Encoding.GetDecoder">
+      <summary>UTF-8로 인코딩된 바이트 시퀀스를 유니코드 문자 시퀀스로 변환하는 디코더를 가져옵니다.</summary>
+      <returns>UTF-8로 인코딩된 바이트 시퀀스를 유니코드 문자 시퀀스로 변환하는 <see cref="T:System.Text.Decoder" />입니다.</returns>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UTF8Encoding.GetEncoder">
+      <summary>유니코드 문자 시퀀스를 UTF-8로 인코딩된 바이트 시퀀스로 변환하는 인코더를 가져옵니다.</summary>
+      <returns>유니코드 문자 시퀀스를 UTF-8로 인코딩된 바이트 시퀀스로 변환하는 <see cref="T:System.Text.Encoder" />입니다.</returns>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UTF8Encoding.GetHashCode">
+      <summary>현재 인스턴스의 해시 코드를 반환합니다.</summary>
+      <returns>현재 인스턴스에 대한 해시 코드입니다.</returns>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UTF8Encoding.GetMaxByteCount(System.Int32)">
+      <summary>지정한 수의 문자를 인코딩할 경우 생성되는 최대 바이트 수를 계산합니다.</summary>
+      <returns>지정한 수의 문자를 인코딩할 경우 생성되는 최대 바이트 수입니다.</returns>
+      <param name="charCount">인코딩할 문자 수입니다.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="charCount" />가 0보다 작은 경우 또는  결과 바이트 수가 정수로 반환될 수 있는 최대 숫자보다 큰 경우</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">대체(fallback)가 발생한 경우. 자세한 내용은 .NET Framework의 문자 인코딩를 참조하십시오. -및- <see cref="P:System.Text.Encoding.EncoderFallback" />이 <see cref="T:System.Text.EncoderExceptionFallback" />로 설정됩니다.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UTF8Encoding.GetMaxCharCount(System.Int32)">
+      <summary>지정한 수의 바이트를 디코딩할 경우 생성되는 최대 문자 수를 계산합니다.</summary>
+      <returns>지정한 수의 바이트를 디코딩할 경우 생성되는 최대 문자 수입니다.</returns>
+      <param name="byteCount">디코딩할 바이트 수입니다.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="byteCount" />가 0보다 작은 경우 또는  결과 바이트 수가 정수로 반환될 수 있는 최대 숫자보다 큰 경우</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">대체(fallback)가 발생한 경우. 자세한 내용은 .NET Framework의 문자 인코딩를 참조하십시오. -및- <see cref="P:System.Text.Encoding.DecoderFallback" />이 <see cref="T:System.Text.DecoderExceptionFallback" />로 설정됩니다.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UTF8Encoding.GetPreamble">
+      <summary>이 인스턴스의 생성자가 바이트 순서 표시를 요청하는 경우 UTF-8 형식으로 인코딩된 유니코드 바이트 순서 표시를 반환합니다.</summary>
+      <returns>이 인스턴스의 생성자가 바이트 순서 표시를 요청하면 유니코드 바이트 순서 표시가 들어 있는 바이트 배열입니다. 그렇지 않으면 이 메서드는 길이가 0인 바이트 배열을 반환합니다.</returns>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UTF8Encoding.GetString(System.Byte[],System.Int32,System.Int32)">
+      <summary>바이트 배열의 바이트 범위를 문자열로 디코딩합니다.</summary>
+      <returns>지정된 바이트 시퀀스에 대한 디코딩 결과가 포함된 <see cref="T:System.String" />입니다.</returns>
+      <param name="bytes">디코딩할 바이트 시퀀스를 포함하는 바이트 배열입니다.</param>
+      <param name="index">디코딩할 첫 번째 바이트의 인덱스입니다.</param>
+      <param name="count">디코딩할 바이트 수입니다.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="bytes" />가 null입니다.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> 또는 <paramref name="count" />가 0보다 작은 경우 또는  <paramref name="index" /> 및 <paramref name="count" />가 <paramref name="bytes" />의 유효한 범위를 나타내지 않는 경우</exception>
+      <exception cref="T:System.ArgumentException">오류 검색 기능을 사용하고 있으며 <paramref name="bytes" />에 잘못된 바이트 시퀀스가 포함되어 있는 경우</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">대체(fallback)가 발생한 경우. 자세한 내용은 .NET Framework의 문자 인코딩를 참조하십시오. -및- <see cref="P:System.Text.Encoding.DecoderFallback" />이 <see cref="T:System.Text.DecoderExceptionFallback" />로 설정됩니다.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+  </members>
+</doc>

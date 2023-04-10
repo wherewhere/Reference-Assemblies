@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Xna.Framework.MediaLibraryExtensions</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Xna.Framework.Media.PhoneExtensions.SongMetadata">
+            <summary>
+            Metadata about the song to provide to the MediaLibrary SaveSong 
+            extension method.  When specified provided to SaveSong, all properties
+            are required, except the AlbumArtUri, ArtistBackgroundUri and 
+            AlbumArtistBackgroundUri.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.Media.PhoneExtensions.SongMetadata.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.Media.PhoneExtensions.SongMetadata.Name">
+            <summary>
+            Name of the Song.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.Media.PhoneExtensions.SongMetadata.Duration">
+            <summary>
+            Duration of the Song.  
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.Media.PhoneExtensions.SongMetadata.ArtistName">
+            <summary>
+            The name of the Artist of the Song.  SaveSong will either create an Artist 
+            or add the Artist to an existing Artist with this name.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.Media.PhoneExtensions.SongMetadata.GenreName">
+            <summary>
+            The name of the Genre of the Song.  SaveSong will either create a Genre 
+            or add the Song to an existing Genre with this name.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.Media.PhoneExtensions.SongMetadata.AlbumName">
+            <summary>
+            The name of the Album that contains the Song.  SaveSong will either 
+            create an Album or add the Song to an existing Album with this name.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.Media.PhoneExtensions.SongMetadata.TrackNumber">
+            <summary>
+            Track Number of the Song on the Album.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.Media.PhoneExtensions.SongMetadata.AlbumArtistName">
+            <summary>
+            The name of the Artist of the Album.  SaveSong will either create an Artist 
+            or add the Song to an existing Artist with this name.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.Media.PhoneExtensions.SongMetadata.AlbumReleaseDate">
+            <summary>
+            The release date of the Album that contains the Song.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.Media.PhoneExtensions.SongMetadata.AlbumArtUri">
+            <summary>
+            A Uri to the cover art for the Album.  If specified, this must point 
+            to a JPEG file in the local file system, if specified.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.Media.PhoneExtensions.SongMetadata.ArtistBackgroundUri">
+            <summary>
+            A Uri to the background image art for the Song's Artist.  If specified, 
+            this must point to a JPEG file in the local file system, if specified.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.Media.PhoneExtensions.SongMetadata.AlbumArtistBackgroundUri">
+            <summary>
+            A Uri to the background image art for the Album's Artist.  If specified, 
+            this must point to a JPEG file in the local file system, if specified.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.Media.PhoneExtensions.SaveSongOperation">
+            <summary>
+            Operation to perform when saving a song.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xna.Framework.Media.PhoneExtensions.SaveSongOperation.CopyToLibrary">
+            <summary>
+            Copy the contents of the files into the media library, and leave them in
+            their existing locations.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xna.Framework.Media.PhoneExtensions.SaveSongOperation.MoveToLibrary">
+            <summary>
+            Move the contents of the files into the media library, and delete them 
+            from their existing locations.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.Media.PhoneExtensions.MediaLibraryExtensions">
+            <summary>
+            Extension methods to allow adding and removing Songs from the XNA MediaLibrary.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.Media.PhoneExtensions.MediaLibraryExtensions.SaveSong(Microsoft.Xna.Framework.Media.MediaLibrary,System.Uri,Microsoft.Xna.Framework.Media.PhoneExtensions.SongMetadata,Microsoft.Xna.Framework.Media.PhoneExtensions.SaveSongOperation)">
+            <summary>
+            Extension Method that Adds a song to the XNA MediaLibrary.  Additional
+            Artist, Album and Genre objects may also be created for the metadata
+            either contained in the file or provided by the songMetadata parameter.
+            </summary>
+            <param name="library">extension method this</param>
+            <param name="filename">Uri path to an MP3 or WMA (non-drm) file that you want to add to the medialibrary.  Must be on the local file system.</param>
+            <param name="songMetadata">
+                optional metadata about the song to use when the song does not 
+                itself contain metadata.  When not provided, the metadata contained 
+                in the file will be used, and if that is not complete the operation
+                will fail.
+                </param>
+            <param name="operation">What should happen to the files that are specified.</param>
+            <returns>The added Song</returns>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.Media.PhoneExtensions.MediaLibraryExtensions.Delete(Microsoft.Xna.Framework.Media.MediaLibrary,Microsoft.Xna.Framework.Media.Song)">
+            <summary>
+            Extension Method that Deletes a song from the XNA MediaLibrary.  The
+            user will be prompted whether they wish to delete the song, and when
+            they accept, the song will be deleted.  This is a cascading delete, such
+            that if the song is the last Song in the Album and the Album is the last
+            Album for an Artist, the Album or Artist will be deleted from the 
+            MediaLibrary as well.
+            </summary>
+            <param name="library">extension method this</param>
+            <param name="song">the Song to delete</param>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.Media.PhoneExtensions.MediaLibraryExtensions.GetPathFromToken(Microsoft.Xna.Framework.Media.MediaLibrary,System.String)">
+            <summary>
+            Get a path from the MediaLibrary based on a media item token
+            </summary>
+            <param name="library">extension method this</param>
+            <param name="token">Token representing the media item</param>
+            <returns>Path of the media item</returns>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.Media.PhoneExtensions.MediaLibraryExtensions.GetPath(Microsoft.Xna.Framework.Media.Picture)">
+            <summary>
+            Get a path from the MediaLibrary based on a picture object
+            </summary>
+            <param name="picture">extension method this</param>
+            <returns>Path of the picture</returns>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.Media.PhoneExtensions.MediaLibraryExtensions.GetPreviewImage(Microsoft.Xna.Framework.Media.Picture)">
+            <summary>
+            Extension Method that gets the "screen-sized" image for the picture.
+            </summary>
+            <param name="picture">extension method this</param>
+            <returns>The image stream</returns>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.Media.PhoneExtensions.MediaLibraryExtensions.DeleteSongInternal(System.UInt32)">
+            <summary>
+            secure internal method to request that the song be deleted.
+            </summary>
+            <param name="zmediaitem"></param>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.Media.PhoneExtensions.MediaLibraryExtensions.GetHandleForZMediaItem(System.UInt32)">
+            <summary>
+            secure internal method to get the XNA handle for a zmediaitem id.
+            </summary>
+            <param name="zmediaitem"></param>
+            <returns>the XNA handle of the item</returns>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.Media.PhoneExtensions.MediaLibraryExtensions.GetZMediaItemForHandle(System.UInt32)">
+            <summary>
+            secure internal method to get the zmediaitem id from an XNA handle for it.
+            </summary>
+            <param name="handle"></param>
+            <returns>the ZMEDIAITEM id of the item</returns>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.Media.PhoneExtensions.MediaLibraryExtensions.SaveSongInternal(System.String,Microsoft.Xna.Framework.Media.PhoneExtensions.MyNativeMethods.MEDIAAPI_SONGMETADATA,Microsoft.Xna.Framework.Media.PhoneExtensions.SaveSongOperation)">
+            <summary>
+            secure internal method to save a song, including the meta data, will marshal the
+            metadata structure and make sure it is cleaned up.
+            </summary>
+            <param name="filename"></param>
+            <param name="songMetadata"></param>
+            <param name="operation"></param>
+            <returns>the ZMEDIAITEM id of the new item</returns>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.Media.PhoneExtensions.MediaLibraryExtensions.SaveSongInternal(System.String,System.IntPtr,Microsoft.Xna.Framework.Media.PhoneExtensions.SaveSongOperation)">
+            <summary>
+            secure internal method to save a song, once metadata has been marshaled.
+            </summary>
+            <param name="filename"></param>
+            <param name="pSongMetadata"></param>
+            <param name="operation"></param>
+            <returns>the ZMEDIAITEM id of the new item</returns>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.Media.PhoneExtensions.MediaLibraryExtensions.GetPathFromTokenInternal(System.Guid)">
+            <summary>
+            Get a path from the MediaLibrary based on a media item token
+            </summary>
+            <param name="token">Token representing the media item</param>
+            <returns>Path of the media item</returns>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.Media.PhoneExtensions.MediaLibraryExtensions.GetPathFromItemInternal(System.UInt32)">
+            <summary>
+            Get a path from the MediaLibrary based on ZMID
+            </summary>
+            <param name="zmediaitem">Id representing the media item</param>
+            <returns>Path of the media item</returns>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.Media.PhoneExtensions.MediaLibraryExtensions.GetExceptionFromResult(System.UInt32)">
+            <summary>Get an exception from an HRESULT</summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.Media.PhoneExtensions.MyNativeMethods">
+            <summary>
+            Holds all interop calls pertaining to the media api
+            </summary>
+        </member>
+    </members>
+</doc>

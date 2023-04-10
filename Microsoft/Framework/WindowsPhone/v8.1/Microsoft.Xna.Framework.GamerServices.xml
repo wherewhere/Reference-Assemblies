@@ -1,0 +1,2654 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Xna.Framework.GamerServices</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.ActionDialogHelper">
+            <summary>
+            ActionDialogHelper handles the interop with the ActionRequestedDialog.  It represent the IAsyncResult and uses
+            for async methods, and stores the results of the dialog for use by the 'End' methods.  This helpers supports both
+            TextInput and MessageBox dialogs.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.ErrorHandler">
+            <summary>
+            Helper for throwing managed exceptions in response to
+            gamer services and networking error HRESULT codes.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.ErrorHandler.GetExceptionFromResult(System.UInt32)">
+            <summary>Get an exception from an HRESULT</summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.FriendGamer">
+            <summary>
+            Class gives presence information for a friend of the local gamer.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.Gamer">
+            <summary>
+            Abstract base class for types that represent game players (profiles which have an
+            associated gamertag). The concrete types SignedInGamer and NetworkGamer derive from this.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Gamer.#ctor(System.UInt32)">
+            <summary>
+            internal constructor initializes a new gamer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Gamer.Dispose">
+            <summary>
+            Immediately releases the unmanaged resources used by this object.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Gamer.ToString">
+            <summary>
+            Converts the gamer to a string. This method just
+            returns the value of the Gamertag property.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Gamer.BeginGetFromGamertag(System.String,System.AsyncCallback,System.Object)">
+            <summary>
+            Starts an asynchronous gamer object create operation.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Gamer.EndGetFromGamertag(System.IAsyncResult)">
+            <summary>
+            Ends an asynchronous gamer object create operation.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Gamer.GetFromGamertag(System.String)">
+            <summary>
+            Reads gamer data for specified gamer tag.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Gamer.BeginGetPartnerToken(System.String,System.AsyncCallback,System.Object)">
+            <summary>
+            Starts an asynchronous partner token reading.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Gamer.EndGetPartnerToken(System.IAsyncResult)">
+            <summary>
+            Ends an asynchronous partner token read.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Gamer.GetPartnerToken(System.String)">
+            <summary>
+            Read partner token string.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Gamer.GetProfile">
+            <summary>
+            Reads profile data for this gamer. This operation can take some
+            time if called on a remote gamer instance, in which case you might
+            prefer to use the non-blocking BeginGetProfile alternative, but
+            will complete quickly when used with a locally signed in profile.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Gamer.BeginGetProfile(System.AsyncCallback,System.Object)">
+            <summary>
+            Starts an asynchronous profile read operation.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Gamer.EndGetProfile(System.IAsyncResult)">
+            <summary>
+            Ends an asynchronous profile read operation.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Gamer.WriteLeaderboard">
+            <summary>
+            Flush leaderboard data.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Gamer.ResetLeaderboardWriter">
+            <summary>
+            Resets the leaderboard writer state at the end of a gameplay session.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.Gamer.Gamertag">
+            <summary>
+            Gets the gamertag string.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.Gamer.DisplayName">
+            <summary>
+            Gets the display name string.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.Gamer.KernelHandle">
+            <summary>
+            the kernel handle that backs this object. this is only valid for network gamers; for local gamers this will
+            always be 0.
+            </summary>        
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.Gamer.InternalIndex">
+            <summary>
+            gamers always belong to some kind of collection: a network session, or Gamer.SignedInGamers. this property indexes
+            into those collections. a value of -1 indicates that this managed object is no longer valid ( ie player has signed out
+            or left the session ).
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.Gamer.Tag">
+            <summary>
+            Gets or sets a custom object which can be used to attach
+            arbitrary user defined data to the gamer.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.Gamer.IsDisposed">
+            <summary>
+            Gets a value that indicates whether the object is disposed.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.Gamer.SignedInGamers">
+            <summary>
+            Gets a collection containing all of the players which are signed in locally. The collection will be sorted
+            in PlayerIndex order, though some PlayerIndexes can be skipped. For example, if players 1 and 3 are signed in,
+            the Gamers collection will contain two LocalGamers.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.Gamer.LeaderboardWriter">
+            <summary>
+            Gets an object that can be used to write leaderboard statistics for this gamer.
+            Leaderboards can be written from local, player match, or ranked sessions, using
+            the following rules:
+            
+            - Ranked sessions can write to both arbitrated and non-arbitrated leaderboards.
+            - Other session types can only write to non-arbitrated leaderboards.
+            
+            - Arbitrated statistics should be written by all machines for all gamers.
+            - Non-arbitrated statistics should only be written by their local machine.
+            
+            - In ranked sessions, all machines should report TrueSkill for all gamers.
+            - In other session types, only the host should report TrueSkill data.
+            
+            Leaderboards can only be written when the session is actually playing the game, not
+            when it is in the lobby state. This property will return null if leaderboards are
+            not available for this gamer, which occurs in system link sessions, or if the gamer
+            profile is a guest or not signed into Live, or if the game is in trial mode.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.FriendGamer.#ctor(System.UInt32)">
+            <summary>
+            Internal constructor.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.FriendGamer.Presence">
+            <summary>
+            Gets a title-defined presence string describing
+            what this friend is currently doing.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.FriendGamer.IsOnline">
+            <summary>
+            Gets whether this friend is currently online.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.FriendGamer.IsPlaying">
+            <summary>
+            Gets whether this friend is currently playing a game.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.FriendGamer.IsJoinable">
+            <summary>
+            Gets whether this friend is currently in a public session that can be joined.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.FriendGamer.IsAway">
+            <summary>
+            Gets whether this friend is currently away from their machine.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.FriendGamer.IsBusy">
+            <summary>
+            Gets whether this friend is currently busy.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.FriendGamer.HasVoice">
+            <summary>
+            Gets whether this friend currently has voice capability.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.FriendGamer.FriendRequestReceivedFrom">
+            <summary>
+            Gets whether the local gamer who requested the friends
+            list has recieved a friend request from this gamer.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.FriendGamer.FriendRequestSentTo">
+            <summary>
+            Gets whether the local gamer who requested the friends
+            list has sent a friend request to this gamer.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.FriendGamer.InviteReceivedFrom">
+            <summary>
+            Gets whether the local gamer who requested the friends
+            list has recieved an invitation from this friend.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.FriendGamer.InviteSentTo">
+            <summary>
+            Gets whether the local gamer who requested the friends
+            list has sent an invitation to this friend.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.FriendGamer.InviteAccepted">
+            <summary>
+            Gets whether this friend has accepted an invitation
+            from the local gamer who requested the friends list.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.FriendGamer.InviteRejected">
+            <summary>
+            Gets whether this friend has rejected an invitation
+            from the local gamer who requested the friends list.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.FriendCollection">
+            <summary>
+            Collection holds the entire friends list of a local gamer.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.GamerCollection`1">
+            <summary>
+            A Collection of Gamers. Accessed Through NetworkSession.AllGamers, NetworkSession.LocalGamers,
+            NetworkSession.RemoteGamers, and Gamer.SignedInGamers. This collection cannot be modified, and will be
+            updated automatically during GamerServicesDispatcher.Update.
+            </summary>
+            <typeparam name="T">The type of gamer contained in this collection. This will be either SignedInGamer or
+            NetworkGamer.</typeparam>
+        </member>
+        <member name="F:Microsoft.Xna.Framework.GamerServices.GamerCollection`1.wrappedList">
+            <summary>
+            The list that this ReadOnlyCollection wraps.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.GamerCollection`1.#ctor">
+            <summary>
+            internal ctor does no work, just chains to the base.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.GamerCollection`1.System#Collections#Generic#IEnumerable{Microsoft#Xna#Framework#GamerServices#Gamer}#GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the Gamer classes in this collection.
+            </summary>
+            <returns>An IEnumerator for the GamerCollection.</returns>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.GamerCollection`1.FindGamerWithInternalIndexAndRemove(System.Int32)">
+            <summary>
+            Helper function will loop through all gamers in the list, find the one that has an internalIndex
+            that matches the parameter, and remove it from the list. Useful for grabbing a player with a specific
+            PlayerIndex out of the collection.
+            
+            this function is used by SignedInGamer.HandlePlayerSignInChanged to pull signed-out players from this
+            collection.
+            </summary>
+            <param name="index">the index to search for</param>
+            <returns>the gamer who has been removed.</returns>
+            <exception cref="T:System.InvalidOperationException">Thrown if the index can't be found.</exception>
+        </member>
+        <member name="F:Microsoft.Xna.Framework.GamerServices.GamerCollection`1.internalIndexComparer">
+            <summary>
+            static instance of an IComparer implementation that compares Gamers' internal indices.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.GamerCollection`1.Insert(`0)">
+            <summary>
+            Insert a new gamer into the collection in internalIndex order. If someone with his
+            internalIndex already exists, an InvalidOperationException is thrown.
+            </summary>
+            <param name="newGamer">the gamer to add</param>
+            <exception cref="T:System.InvalidOperationException">thrown if someone with this index already
+            exists.</exception>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.GamerCollection`1.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the Gamer classes in this collection.
+            </summary>
+            <returns>An IEnumerator for the GamerCollection.</returns>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.GamerCollection`1.GamerCollectionEnumerator">
+            <summary>
+            Enumerates the contents of a GamerCollection.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xna.Framework.GamerServices.GamerCollection`1.GamerCollectionEnumerator.internalEnumerator">
+            <summary>
+            the list enumerator that we're wrapping. all calls are proxied to him.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.GamerCollection`1.GamerCollectionEnumerator.#ctor(System.Collections.Generic.List{`0}.Enumerator)">
+            <summary>
+            Creates a GamerCollectionEnumerator, taking in an enumerator to proxy to.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.GamerCollection`1.GamerCollectionEnumerator.Dispose">
+            <summary>
+            Releases all the resources required by GamerCollection.GamerCollectionEnumerator.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.GamerCollection`1.GamerCollectionEnumerator.MoveNext">
+            <summary>
+            Advances the enumerator to the next element.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.GamerCollection`1.GamerCollectionEnumerator.Current">
+            <summary>
+            Gets the element at the current position of the enumerator.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.FriendCollection.#ctor(System.UInt32)">
+            <summary>
+            Internal constructor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.FriendCollection.Finalize">
+            <summary>
+            Finalizer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.FriendCollection.Dispose">
+            <summary>
+            Destroys the friends list.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.FriendCollection.Dispose(System.Boolean)">
+            <summary>
+            Destroys the friends list, using the standard IDisposable pattern.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.FriendCollection.IsDisposed">
+            <summary>
+            Queries whether this object has been disposed.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.GamerPrivilegeSetting">
+            <summary>
+            Enum describing the conditions in which a privilege is available.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xna.Framework.GamerServices.GamerPrivilegeSetting.Blocked">
+            <summary>
+            This privilege is not available for the current gamer profile.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xna.Framework.GamerServices.GamerPrivilegeSetting.FriendsOnly">
+            <summary>
+            This privilege is only available for friends of the current gamer profile.
+            Use the SignedInGamer.IsFriend method to check which gamers are friends.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xna.Framework.GamerServices.GamerPrivilegeSetting.Everyone">
+            <summary>
+            This privilege is available for the current gamer profile.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.GamerPrivileges">
+            <summary>
+            Privileges describe what operations a gamer is allowed to perform.
+            They can be defined by parental control settings, and also will be
+            set automatically in response to things like age, region, and whether
+            the gamer has a Gold or Silver account. Games do not need to explicitly
+            check privileges, because a GamerPrivilegeException will be thrown
+            if they try to perform an unsupported operation, but these privilege
+            bits may be useful to detect that an operation is unavailable before
+            calling it so as to grey-out the relevant menu option.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.GamerPrivileges.#ctor(Microsoft.Xna.Framework.GamerServices.GamerPrivilegeOptions)">
+            <summary>
+            Internal constructor.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.GamerPrivileges.AllowOnlineSessions">
+            <summary>
+            Checks whether this gamer is allowed to play in online network sessions.
+            This may be disabled based on parental control settings, and also depending
+            on whether the gamer has a Gold or Silver Live account. Note that this does
+            not affect System Link sessions, which are always available.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.GamerPrivileges.AllowCommunication">
+            <summary>
+            Checks whether this gamer is allowed to send and receive communications
+            using voice, text, messaging, or game invites. Titles do not need to do
+            anything special to disable voice if this privilege is disabled: the
+            framework will handle that automatically.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.GamerPrivileges.AllowProfileViewing">
+            <summary>
+            Checks whether this gamer is allowed to view the profiles of other gamers.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.GamerPrivileges.AllowUserCreatedContent">
+            <summary>
+            Checks whether this gamer is allowed to access user content that was created by other gamers.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.GamerPrivileges.AllowTradeContent">
+            <summary>
+            Checks whether this gamer is allowed to trade content with other gamers.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.GamerPrivileges.AllowPurchaseContent">
+            <summary>
+            Checks whether this gamer is allowed to purchase content from Live Marketplace.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.GamerPrivileges.AllowPremiumContent">
+            <summary>
+            Checks whether this gamer is allowed to use premium content  from Live Marketplace.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.SignedInEventArgs">
+            <summary>
+            SignedInEventArgs are the arguments to the SignedInGamer.SignedIn event, and will be passed to event
+            handlers when new players sign in. This class contains the SignedInGamer that just signed in.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.SignedInEventArgs.#ctor(Microsoft.Xna.Framework.GamerServices.SignedInGamer)">
+            <summary>
+            Initializes a new instance of the SignedInEventArgs class.
+            </summary>
+            <param name="gamer">the gamer that has just signed in.</param>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.SignedInEventArgs.Gamer">
+            <summary>
+            The Gamer that has just signed in.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.SignedOutEventArgs">
+            <summary>
+            SignedOutEventArgs are the arguments to the SignedInGamer.SignedOut event, and will be passed to event
+            handlers when players sign out. This class contains the SignedInGamer that just signed out.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.SignedOutEventArgs.#ctor(Microsoft.Xna.Framework.GamerServices.SignedInGamer)">
+            <summary>
+            Initializes a new instance of the SignedOutEventArgs class.
+            </summary>
+            <param name="gamer">the gamer that has just signed out.</param>
+            <exception cref="T:System.ArgumentNullException">An ArgumentNullException is thrown if the "gamer" argument is null.</exception>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.SignedOutEventArgs.Gamer">
+            <summary>
+            The Gamer that has just signed out.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.InviteAcceptedEventArgs">
+            <summary>
+            Argument data passed to the NetworkSession.InviteAccepted event.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.InviteAcceptedEventArgs.#ctor(Microsoft.Xna.Framework.GamerServices.SignedInGamer,System.Boolean)">
+            <summary>
+            Constructs a new event arguments instance.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.InviteAcceptedEventArgs.IsCurrentSession">
+            <summary>
+            Represents this invite come from current session or not.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.InviteAcceptedEventArgs.Gamer">
+            <summary>
+            Gets the gamer who has accepted this invite.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.GamerServicesNotAvailableException">
+            <summary>
+            Exception thrown if the Gamer Services system cannot be successfully initialized.
+            The two most likely reasons this can happen is if an XNA game is being run using
+            the XNA Framework redistributable, which does not currently include the Games for
+            Windows - LIVE functionality, or if some other Games for Windows - LIVE title is
+            already running.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.GamerServicesNotAvailableException.#ctor">
+            <summary>
+            Constructs an empty exception.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.GamerServicesNotAvailableException.#ctor(System.String)">
+            <summary>
+            Constructs an exception with the specified error message.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.GamerServicesNotAvailableException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructs an exception with the specified error message and inner exception.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.Guide">
+            <summary>
+            Gives access to the Guide user interface, which provides message boxes,
+            a text entry system, and other suchlike useful screens.
+            </summary>
+            <summary>
+            Gives access to the Guide user interface, which provides message boxes,
+            a text entry system, and other suchlike useful screens.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Guide.CloseDialog">
+            <summary>
+              Closes the active ActionDialog.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Guide.CompleteDialog">
+            <summary>
+            Complete pending activeDialog. This method gets called on ResumedHost event.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Guide.BeginShowMessageBox(Microsoft.Xna.Framework.PlayerIndex,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Int32,Microsoft.Xna.Framework.GamerServices.MessageBoxIcon,System.AsyncCallback,System.Object)">
+            <summary>
+            Begins an asynchronous operation that will show a message box using the supplied parameters.
+            </summary>
+            <param name="player">the player who will get the message box. On Windows, the only valid option is PlayerIndex.One.</param>
+            <param name="title">the title of the message box</param>
+            <param name="text">the text for the message box.</param>
+            <param name="buttons">Captions for the buttons. There cannot be more than three captions.</param>
+            <param name="focusButton">a 0 based index, specifying which of the buttons will have focus.</param>
+            <param name="icon">The type of icon to display in the message box.</param>
+            <param name="callback">a callback function to be executed once the asynchronous operation has finished. Can be null.</param>
+            <param name="state">user data value attached to this async operation. Can be null.</param>
+            <returns>An IAsyncResult, which can be used to get the results of the asynchronous operation.
+            Use this object in the EndShowMessageBox function.</returns>
+            <exception cref="T:Microsoft.Xna.Framework.GamerServices.GuideAlreadyVisibleException">A GuideAlreadyVisibleException will be thrown if another Guide screen is currently being displayed.</exception>
+            <exception cref="T:System.InvalidOperationException">An InvalidOperationException will be thrown if this function is called before GamerServicesDispatcher.Initialize.</exception> 
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Guide.BeginShowMessageBox(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Int32,Microsoft.Xna.Framework.GamerServices.MessageBoxIcon,System.AsyncCallback,System.Object)">
+            <summary>
+            Version of BeginShowMessageBox without a player index in order to allow any user to respond to the message box
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Guide.EndShowMessageBox(System.IAsyncResult)">
+            <summary>
+            Finishes showing the message box. This call will block until the operation is finished, and will typically
+            be called from the callback function specified in BeginShowMessageBox.
+            </summary>
+            <param name="result">the result of the BeginShowMessageBox call.</param>
+            <returns>The button that the user pressed, or null if the dialog was cancelled.</returns>
+            <remarks>EndShowMessageBox can only be called once for each call to BeginShowMessageBox.</remarks>
+            <exception cref="T:System.ArgumentNullException">The result argument cannot be null.</exception>
+            <exception cref="T:System.ArgumentException">The result argument must have come from a call to BeginShowMessageBox.</exception>
+            <exception cref="T:System.InvalidOperationException">This End function cannot be called more than once for each call to Begin.</exception>
+            <exception cref="T:System.InvalidOperationException">An InvalidOperationException will be thrown if the GamerServices functionality has not been enabled.
+            To enable it, add a GamerServicesComponent to your Game.</exception>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Guide.ShowSignIn(System.Int32,System.Boolean)">
+            <summary>
+            This function shows a UI screen that will allow players to sign in.
+            </summary>
+            <param name="paneCount">The number of panes in the screen. Each pane will sign in one player.</param>
+            <param name="onlineOnly">Whether to display only online profiles.</param>
+            <remarks>paneCount must be 1, 2, or 4. On Windows, only one profile can be signed in at a time, and so
+            the Sign In UI will only display one pane, no matter what is passed as the paneCount argument.
+            If onlineOnly is set to true, gamers can sign in as "guests" of another profile.</remarks>
+            <exception cref="T:System.ArgumentException">An ArgumentException is thrown if paneCount is invalid.</exception>
+            <exception cref="T:Microsoft.Xna.Framework.GamerServices.GuideAlreadyVisibleException">A GuideAlreadyVisibleException will be thrown if another Guide screen is currently being displayed.</exception>
+            <exception cref="T:System.InvalidOperationException">An InvalidOperationException will be thrown if the GamerServices functionality has not been enabled.
+            To enable it, add a GamerServicesComponent to your Game.</exception>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Guide.ShowMessages(Microsoft.Xna.Framework.PlayerIndex)">
+            <summary>
+            Shows the Messages UI. The profile indicated by the "player" argument must be signed in to Live in order
+            to call this function.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Guide.ShowFriends(Microsoft.Xna.Framework.PlayerIndex)">
+            <summary>
+            Shows the Friends UI. The profile indicated by the "player" argument must be signed in to Live in order
+            to call this function.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Guide.ShowPlayers(Microsoft.Xna.Framework.PlayerIndex)">
+            <summary>
+            Shows the Players UI. The profile indicated by the "player" argument must be signed in to Live in order
+            to call this function.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Guide.ShowFriendRequest(Microsoft.Xna.Framework.PlayerIndex,Microsoft.Xna.Framework.GamerServices.Gamer)">
+            <summary>
+            Shows the Friend Request UI. The profile indicated by the "player" argument must be signed in to Live in order
+            to call this function.
+            </summary>
+            <param name="player">the player making the request</param>
+            <param name="gamer">the receipient of the friend request.</param>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Guide.ShowPlayerReview(Microsoft.Xna.Framework.PlayerIndex,Microsoft.Xna.Framework.GamerServices.Gamer)">
+            <summary>
+            Shows the Player Review UI. The profile indicated by the "player" argument must be signed in to Live in order
+            to call this function.
+            </summary>
+            <param name="player">the player reviewing.</param>
+            <param name="gamer">the Gamer being reviewed.</param>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Guide.ShowGamerCard(Microsoft.Xna.Framework.PlayerIndex,Microsoft.Xna.Framework.GamerServices.Gamer)">
+            <summary>
+            Shows the Gamer Card UI. The profile indicated by the "player" argument must be signed in to Live in order
+            to call this function.
+            </summary>
+            <param name="player">the player viewing the gamer card.</param>
+            <param name="gamer">the Gamer who's gamer card will be viewed.</param>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Guide.ShowParty(Microsoft.Xna.Framework.PlayerIndex)">
+            <summary>
+            Shows the Party Card UI. The profile indicated by the "player" argument must be signed in to Live in order
+            to call this function.
+            </summary>
+            <param name="player">the player viewing the party UI.</param>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Guide.ShowPartySessions(Microsoft.Xna.Framework.PlayerIndex)">
+            <summary>
+            Shows the Party sessions UI. The profile indicated by the "player" argument must be signed in to Live in order
+            to call this function.
+            </summary>
+            <param name="player">the player viewing the party UI.</param>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Guide.ShowComposeMessage(Microsoft.Xna.Framework.PlayerIndex,System.String,System.Collections.Generic.IEnumerable{Microsoft.Xna.Framework.GamerServices.Gamer})">
+            <summary>
+            Shows the Compose Message UI, which a player can use to write messages to other gamers.
+            </summary>
+            <param name="player">the player who will compose the message</param>
+            <param name="text">the text of the message</param>
+            <param name="recipients">the recipients of the message. This argument can be null, which will bring up the Select Gamertag UI.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">An ArgumentOutOfRangeException will be thrown on windows if
+            the player argument is not PlayerIndex.One.</exception>
+            <exception cref="T:System.ArgumentException">An ArgumentException will be thrown if text is null, empty, or too long.</exception>
+            <exception cref="T:System.ArgumentException">An ArgumentException will be thrown if any of the Gamers in recipients are null, or
+            if there are too many recipients.</exception>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Guide.DelayNotifications(System.TimeSpan)">
+            <summary>
+            Delays system notifications for the specified amount of time. Calling this function while notifications are already
+            delayed will have no effect. If the duration exceeds the maximum of 120 seconds, the maximum value is used instead.
+            </summary>
+            <param name="delay"></param>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Guide.ShowGameInvite(Microsoft.Xna.Framework.PlayerIndex,System.Collections.Generic.IEnumerable{Microsoft.Xna.Framework.GamerServices.Gamer})">
+            <summary>
+            Shows the Game Invite UI.
+            If the recipients list is null, the Guide will prompt for a recipient.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Guide.ShowMarketplace(Microsoft.Xna.Framework.PlayerIndex)">
+            <summary>
+            Shows the Marketplace UI. If the game was downloaded from LIVE Marketplace,
+            this will bring up the Marketplace page which can be used to purchase this
+            game. Once the game is purchased, Guide.IsTrialMode will become false.
+            If you are testing a game inside the Creators Club, Marketplace will not
+            have any way to purchase it. In this case, the ShowMarketplace call brings
+            up a placeholder screen that allows you to simulate the purchase for testing
+            purposes. To use this, your game should set Guide.SimulateTrialMode = true
+            in its constructor, then call ShowMarketplace when it wants to give the user
+            the option to purchase the full version.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Guide.ValidateShowMessageBoxArgs(Microsoft.Xna.Framework.PlayerIndex,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Int32)">
+            <summary>
+            Validates the arguments to BeginShowMessageBox. returns the number of buttons.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.Guide.IsScreenSaverEnabled">
+            <summary>
+            Enables or disables the screen saver. This property changes the UserIdleDetection setting on WindowsMobile.
+            <remarks>This is a per-game setting: disabling the screen saver for this game will
+            not permanently disable the screen saver. This is useful when displaying cutscenes,
+            or during other periods where the user is likely to be inactive
+            for a long period of time.</remarks>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.Guide.IsVisible">
+            <summary>
+            Checks whether a Guide user interface screen is currently active.
+            It is not possible to bring up other Guide screens while this
+            property is true.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.Guide.NotificationPosition">
+            <summary>
+            This property controls where notifications will appear on the screen.
+            </summary>            
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.Guide.IsTrialMode">
+            <summary>
+            Queries whether the game is currently running in limited trial mode.
+            
+            When your game is downloaded from LIVE Marketplace, this will be set
+            based on whether the current user has purchased the full version of
+            your game.
+            
+            When you are developing your game inside the Creators Club, IsTrialMode
+            will normally be false. To test this functionality while developing your
+            game, set the SimulateTrialMode property inside your Game constructor.
+            
+            When games are in trial mode, they must not allow multiplayer gameplay
+            over Xbox LIVE. System link and local sessions are permitted, however.
+            The framework automatically enforces this restriction by updating the
+            GamerPrivileges.AllowOnlineSessions state while in trial mode, and by
+            throwing a GamerPrivilegeException if you attempt to create or join a
+            network session.
+            
+            While in trial mode, commercial LIVE Arcade titles must also not save
+            game state ((although they can save user preferences), must not award
+            achievements, must not post to leaderboards.
+            
+            Once this property becomes false (indicating that the full game has
+            been unlocked) it will stay that way until the game exits. An unlocked
+            game will never return to trial mode, even if the profile who owned
+            the license signs out.
+            
+            The trial mode state may be set for a short period after the game
+            starts up, even if it has actually been purchased, while the license
+            mask is being validated. Your game should not assume this will be set
+            correctly while your constructor and Initialize methods are executing.
+            In fact you must handle this becoming unlocked at any time, because the
+            user could make a purchase from the Guide UI while your game is running.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.Guide.SimulateTrialMode">
+            <summary>
+            Allows titles to simulate trial mode restrictions before they are uploaded
+            to LIVE Marketplace. Setting this property to true in your game constructor
+            will artifically force IsTrialMode to true. Clear this back to false at some
+            later point (or call the ShowMarketplace API, which will do that for you)
+            to simulate purchasing the full game.
+            
+            This property is ignored once the game is on LIVE Marketplace, so there is no
+            need to remove any test code that uses it before releasing your final version.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.PlayerState">
+            <summary>
+            This class is used as a way to represent the current state of a player that is signed in. When a player signs in or out,
+            GamerServicesDispatcher.Update creates one of these using the information sent back from the kernel, and sends it to LocalGamers to
+            tell him to update the Gamers collection.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.SignedInGamerCollection.#ctor">
+            <summary>
+            Internal constructor.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.SignedInGamerCollection.Item(Microsoft.Xna.Framework.PlayerIndex)">
+            <summary>
+            Gets the local gamer with the specified PlayerIndex.
+            Returns null if no profile is currently signed in at that index.
+            
+            Indexing into the gamers collection by PlayerIndex is different to
+            using integer indices, because PlayerIndex values always correspond
+            to a specific gamepad index. For instance if there were four gamepads
+            connected and profiles were signed in using the second and fourth
+            gamepads but not the first and third, SignedInGamerCollection.Count
+            will return 2. Using the integer indexer you will see:
+            
+                SignedInGamerCollection[0] = first signed in profile
+                SignedInGamerCollection[1] = second signed in profile
+            
+            But using the PlayerIndex indexer you will see:
+            
+                SignedInGamerCollection[PlayerIndex.One] = null
+                SignedInGamerCollection[PlayerIndex.Two] = first signed in profile
+                SignedInGamerCollection[PlayerIndex.Three] = null
+                SignedInGamerCollection[PlayerIndex.Four] = second signed in profile
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.GamerServicesDispatcher">
+            <summary>
+            Xbox specific parts of the GamerServicesDispatcher implementation.
+            </summary>
+            <summary>
+            The GamerServicesDispatcher is required to use Gamer services functionality. This includes features such as
+            showing the guide, checking what profiles are checked in, and so on. The GamerServicesDispatcher should be
+            initialized once on startup, and Update should be called every frame.
+            
+            Most games will not interact with the GamerServicesDispatcher directly. Instead, they will use the
+            GamerServicesComponent, which wraps the GamerServicesDispatcher. However, programs which do not use
+            the default game template can use GamerServicesDispatcher directly.
+            
+            See GamerServicesDispatcher(Windows|Xbox).cs for the platform specific portions of this class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.GamerServicesDispatcher.PlatformInitialize">
+            <summary>
+            Xbox specific part of the Initialize method.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.GamerServicesDispatcher.PlatformUpdate">
+            <summary>
+            Xbox specific part of the Update method.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.GamerServicesDispatcher.Initialize(System.IServiceProvider)">
+            <summary>
+            Initialize prepares the GamerServicesDispatcher for use, and should be called once when the program is 
+            starting up.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">an ArgumentNullException is thrown if serviceProvider
+            is null.</exception>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.GamerServicesDispatcher.Update">
+            <summary>
+            Update should be called once per frame, and updates status and raises events related to
+            gamer services.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.GamerServicesDispatcher.WindowHandle">
+            <summary>
+            Gets or sets the handle to the underlying window. 
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.GamerServicesDispatcher.IsInitialized">
+            <summary>
+            Checks whether GamerServicesDispatcher.Initialize has been called.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xna.Framework.GamerServices.GamerServicesDispatcher.InstallingTitleUpdate">
+            <summary>
+            Notifies the game when a Games for Windows - LIVE title update is being installed.
+            Gamer services and networking functionality is no longer available after this event
+            has been raised: games should typically just exit in response to this. If you are
+            using the GamerServicesComponent, that automatically hooks this event up to call
+            Game.Exit, so you do not need to do anything special to handle title updates at all.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.UnsafeNativeMethods">
+            <summary>
+            Import native Win32 methods, for creating shared memory regions and event handles.
+            We can't use the CLR event classes here, because we need to specify custom security
+            attributes to allow them to be shared with the child process Panorama proxy.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.Achievement">
+            <summary>
+            Describes a single achievement, including the achievement name, description,
+            picture, and whether it has been achieved by the currently signed in gamer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Achievement.Dispose">
+            <summary>
+            Frees the achievement data when it is no longer required.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Achievement.GetPicture">
+            <summary>
+            Gets the achievement image.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.Achievement.Key">
+            <summary>
+            Gets the achievement key string. This is used for programmatic access:
+            achievements can be looked up from the AchievementCollection by key,
+            and the key is passed to the AwardAchievement method.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.Achievement.Name">
+            <summary>
+            Gets the (localized) achievement name string, for display to the user.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.Achievement.Description">
+            <summary>
+            Gets the (localized) achievement description string.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.Achievement.HowToEarn">
+            <summary>
+            Gets the (localized) description of the steps necessary to earn the achievement.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.Achievement.GamerScore">
+            <summary>
+            Gets the amount of gamer score for earning this achievement.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.Achievement.IsEarned">
+            <summary>
+            Gets whether the current player has earned this achievement.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.Achievement.EarnedOnline">
+            <summary>
+            Gets whether this achievement was earned while online.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.Achievement.DisplayBeforeEarned">
+            <summary>
+            Gets whether this achievement should be displayed before it is earned.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.Achievement.EarnedDateTime">
+            <summary>
+            Gets the date at which this achievement was earned.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.AchievementCollection">
+            <summary>
+            Collection holds the achievements belonging to a signed in gamer. This can be indexed
+            either by key string or in integer order. When indexing achievements by integer, or
+            iterating over the collection, they are ordered with earned achievements first (sorted
+            by most recently earned), then unearned non-hidden achievements (in the order they were
+            defined using XLAST), and finally any unearned hidden achievements (again in XLAST order).
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.AchievementCollection.#ctor(System.Collections.Generic.List{Microsoft.Xna.Framework.GamerServices.Achievement})">
+            <summary>
+            Internal constructor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.AchievementCollection.Dispose">
+            <summary>
+            Frees the achievement data when it is no longer required.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.AchievementCollection.CompareAchievements(Microsoft.Xna.Framework.GamerServices.Achievement,Microsoft.Xna.Framework.GamerServices.Achievement)">
+            <summary>
+            Helper sorts achievements into the recommended display order.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.AchievementCollection.RateAchievement(Microsoft.Xna.Framework.GamerServices.Achievement)">
+            <summary>
+            Helper for sorting achievements.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.AchievementCollection.GetEnumerator">
+            <summary>
+            Enumerates over all the achievements in the collection.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.AchievementCollection.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Explicit non-generic interface implementation.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.AchievementCollection.System#Collections#Generic#ICollection{Microsoft#Xna#Framework#GamerServices#Achievement}#Contains(Microsoft.Xna.Framework.GamerServices.Achievement)">
+            <summary>
+            Explicit collection interface implementation.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.AchievementCollection.System#Collections#Generic#ICollection{Microsoft#Xna#Framework#GamerServices#Achievement}#CopyTo(Microsoft.Xna.Framework.GamerServices.Achievement[],System.Int32)">
+            <summary>
+            Explicit collection interface implementation.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.AchievementCollection.System#Collections#Generic#IList{Microsoft#Xna#Framework#GamerServices#Achievement}#IndexOf(Microsoft.Xna.Framework.GamerServices.Achievement)">
+            <summary>
+            Explicit collection interface implementation.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.AchievementCollection.System#Collections#Generic#ICollection{Microsoft#Xna#Framework#GamerServices#Achievement}#Add(Microsoft.Xna.Framework.GamerServices.Achievement)">
+            <summary>
+            Make the collection immutable.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.AchievementCollection.System#Collections#Generic#ICollection{Microsoft#Xna#Framework#GamerServices#Achievement}#Clear">
+            <summary>
+            Make the collection immutable.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.AchievementCollection.System#Collections#Generic#IList{Microsoft#Xna#Framework#GamerServices#Achievement}#Insert(System.Int32,Microsoft.Xna.Framework.GamerServices.Achievement)">
+            <summary>
+            Make the collection immutable.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.AchievementCollection.System#Collections#Generic#ICollection{Microsoft#Xna#Framework#GamerServices#Achievement}#Remove(Microsoft.Xna.Framework.GamerServices.Achievement)">
+            <summary>
+            Make the collection immutable.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.AchievementCollection.System#Collections#Generic#IList{Microsoft#Xna#Framework#GamerServices#Achievement}#RemoveAt(System.Int32)">
+            <summary>
+            Make the collection immutable.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.AchievementCollection.IsDisposed">
+            <summary>
+            Queries whether this object has been disposed.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.AchievementCollection.Item(System.Int32)">
+            <summary>
+            Look up an achievement by index.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.AchievementCollection.Item(System.String)">
+            <summary>
+            Look up an achievement by string key.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.AchievementCollection.Count">
+            <summary>
+            Gets the number of achievements in the collection.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.AchievementCollection.System#Collections#Generic#IList{Microsoft#Xna#Framework#GamerServices#Achievement}#Item(System.Int32)">
+            <summary>
+            Explicit indexer implementation, in order to hide the setter method.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.AchievementCollection.System#Collections#Generic#ICollection{Microsoft#Xna#Framework#GamerServices#Achievement}#IsReadOnly">
+            <summary>
+            Explicit collection interface implementation.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.GameDefaults">
+            <summary>
+            Game defaults describe a gamers preferred settings.
+            Wherever possible, games should default to these values.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.GameDefaults.#ctor">
+            <summary>
+            Internal constructor reads settings from the packet buffer.
+            We take the buffer pointer in as an IntPtr rather than directly
+            as a byte*, in order to make unit testing easier.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.GameDefaults.GameDifficulty">
+            <summary>
+            Gets the default game difficulty setting.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.GameDefaults.ControllerSensitivity">
+            <summary>
+            Gets the default controller sensitivity setting.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.GameDefaults.PrimaryColor">
+            <summary>
+            Gets the preferred primary color for the player character.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.GameDefaults.SecondaryColor">
+            <summary>
+            Gets a secondary color selection for the player character.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.GameDefaults.AutoAim">
+            <summary>
+            For action games, gets whether the title should
+            automatically correct the gamers aim.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.GameDefaults.AutoCenter">
+            <summary>
+            For action games, gets whether the title should
+            automatically center the view when the gamer moves.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.GameDefaults.MoveWithRightThumbStick">
+            <summary>
+            For action titles, gets whether the gamer prefers to move
+            using the right thumbstick (if not set, use the left).
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.GameDefaults.InvertYAxis">
+            <summary>
+            For action titles, gets whether the gamer prefers
+            to invert the y-axis input of their controller.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.GameDefaults.ManualTransmission">
+            <summary>
+            For racing games, gets whether the gamer
+            prefers to drive a manual shift transmission.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.GameDefaults.RacingCameraAngle">
+            <summary>
+            For racing games, gets the gamers preferred camera angle.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.GameDefaults.AccelerateWithButtons">
+            <summary>
+            For racing games, gets whether the gamer prefers to use
+            controller buttons to accelerate (if not set, use triggers).
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.GameDefaults.BrakeWithButtons">
+            <summary>
+            For racing games, gets whether the gamer prefers to use
+            controller buttons to brake (if not set, use triggers).
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.InternalIndexComparer`1">
+            <summary>
+            An IComparer implementation for Gamers that compares internal indices. used to ensure
+            that GamerCollections are always in PlayerIndex order.
+            </summary>
+            <typeparam name="T">type of gamer to compare: can be any subclass of Gamer.</typeparam>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.InternalIndexComparer`1.Compare(`0,`0)">
+            <summary>
+            Compare one gamer to another. returns x.InternalIndex.CompareTo( y.InternalIndex )
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.GamerPresence">
+            <summary>
+            Class used to set the rich presence state for a locally signed in gamer profile.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.GamerPresence.#ctor">
+            <summary>
+            Constructor is internal, because presence objects are
+            populated automatically when the profile signs in.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.GamerPresence.PresenceMode">
+            <summary>
+            Gets or sets the current presence mode for this gamer. This is the status
+            string appears when you view a friend through the Guide or on Xbox.com.
+            Some of the presence mode options (eg. Score and Level) include a number
+            which can be set using the PresenceValue property.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.GamerPresence.PresenceValue">
+            <summary>
+            Gets or sets the custom presence value. This is inserted into the presence
+            string if you select one of the presence modes that includes a value,
+            for instance Score or Level.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.GamerProfile">
+            <summary>
+            Profile settings describe information about a gamer such as their motto,
+            reputation, and gamer picture. This data is accessible for both locally
+            signed in profiles and remote gamers that you are playing with in a
+            network session.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.GamerProfile.#ctor">
+            <summary>
+            Internal constructor reads settings from the packet buffer.
+            We take the buffer pointer in as an IntPtr rather than directly
+            as a byte*, in order to make unit testing easier.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.GamerProfile.Dispose">
+            <summary>
+            Disposes the profile data when it is no longer required.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.GamerProfile.GetGamerPicture">
+            <summary>
+            Gets the gamer picture, which will be sized 64x64.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.GamerProfile.IsDisposed">
+            <summary>
+            Queries whether this object has been disposed.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.GamerProfile.Motto">
+            <summary>
+            Gets the gamer motto string.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.GamerProfile.Reputation">
+            <summary>
+            Gets the gamer reputation, as a number of stars ranging 0 to 5.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.GamerProfile.GamerZone">
+            <summary>
+            Gets the GamerZone setting.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.GamerProfile.Region">
+            <summary>
+            Gets the region of this gamer.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.GamerProfile.GamerScore">
+            <summary>
+            Gets the GamerScore of this gamer.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.GamerProfile.TitlesPlayed">
+            <summary>
+            Gets the number of titles this gamer has played.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.GamerProfile.TotalAchievements">
+            <summary>
+            Gets the total number of achievements this gamer has obtained.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.GamerServicesProviderAccesor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.GamerServicesProviderAccesor.HookWebService">
+            <summary>
+            Change current web service instance to given wev service instance.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.GamerServicesProviderAccesor.RecoverWebService">
+            <summary>
+            Recover to original web service instance
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.Stub.GSPropertyName">
+            <summary>
+            Well known property name defines.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.Stub.IPropertyFiller">
+            <summary>
+            Generic interface for property bag.
+            This interface implemented by XNA Framework layer and pass to
+            IGamerServicesProvider interface methods.
+            IGamerServicesProvider calls Set/Get property values.
+            So we don't need to have another cached data between XNA Framework and
+            platform specific implementation layer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Stub.IPropertyFiller.BeginFillData">
+            <summary>
+            GSP calls this method before start fills current item data.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Stub.IPropertyFiller.EndFillData">
+            <summary>
+            GSP calls this method before after filled current item data.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Stub.IPropertyFiller.SetValue(System.String,System.String)">
+            <summary>
+            Fill Get specified key's property value.
+            </summary>
+            <returns>actual value</returns>
+            <remarks>
+            SetValue("DisplayName", "Jon Doe"); 
+            is the same as SetValue(GSPropertyName.DisplayName, "John Doe");
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Stub.IPropertyFiller.TryGetValue(System.String,System.String@)">
+            <summary>
+            Retrieve value from XNA Framework side.
+            Stub implementation gets data like Presense and Stats.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.Stub.IPropertyCollectionFiller">
+            <summary>
+            Interface for filling property collection.
+            </summary>
+            <remarks>
+            Here is how this interface works:
+            1) XNA Framework passes this interface to GS hub.
+            2) GS hub calls Reserve method that tells how many items will be fill.
+            3) XNA Framework allocates enough memory for fill.
+            4) GS hub fills individual PropertyFiller
+            5) GS hub calls MoveNext method to move next item.
+            6) Repeat 4-5 steps until fill all items.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Stub.IPropertyCollectionFiller.Reserve(System.Int32)">
+            <summary>
+            GSP calls before start enumerate each property fillers.
+            Implementation code should allocate specified size of items at this point.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.Stub.ILeaderboardColumnFiller">
+            <summary>
+            This interface uses for filling Leaderboard column information.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Stub.ILeaderboardColumnFiller.Reserve(System.Int32)">
+            <summary>
+            GSP calls before adding leaderboard columns.
+            Implementation code should allocate specified size of items at this point for
+            reduce unneccesary memory allocations.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Stub.ILeaderboardColumnFiller.BeginFillData">
+            <summary>
+            GSP calls this method before start fills current item data.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Stub.ILeaderboardColumnFiller.EndFillData">
+            <summary>
+            GSP calls this method before after filled current item data.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Stub.ILeaderboardColumnFiller.AddColumn(System.String,System.Type,System.Boolean)">
+            <summary>
+            Adding new column.
+            </summary>
+            <param name="name"></param>
+            <param name="type"></param>
+            <param name="readOnly"></param>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.Stub.GSLeaderboard">
+            <summary>
+            This structure holds current leaderboard information.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.Stub.GSSignedInStatusChangedEventArgs">
+            <summary>
+            This event args holds basic gamer profile.
+            </summary>
+            
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.Stub.GSSignedInStatusChangedEventArgs.PlayerIndex">
+            <summary>
+            Gets local player index.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.Stub.GSSignedInStatusChangedEventArgs.Gamer">
+            <summary>
+            Get gamer idendity handle who signed in.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.Stub.GSSignedInStatusChangedEventArgs.SignInState">
+            <summary>
+            Get gamer signed in state.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.Stub.GSWriteLeaderboardEventArgs">
+            <summary>
+            Leaderboard writer event args.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.Stub.GSWriteLeaderboardEventArgs.Gamer">
+            <summary>
+            Gets Gamer handle
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.Stub.IGamerServicesProvider">
+            <summary>
+            This is interface that provide gamer services which include profile,
+            achievement, and leaderboards.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Stub.IGamerServicesProvider.Initialize">
+            <summary>
+            Initialize GamerServices provider.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Stub.IGamerServicesProvider.Update">
+            <summary>
+            Update should be called frequently (typically gets called every 16ms, but
+            it might be up to 5 seconds), and updates status and
+            raises events related to gamer services.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Stub.IGamerServicesProvider.FillGamer(System.Int32,Microsoft.Xna.Framework.GamerServices.Stub.IPropertyFiller)">
+            <summary>
+            Fill basic gamer information.
+            </summary>
+            <param name="gamer">Gamer handle.</param>
+            <param name="filler"></param>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Stub.IGamerServicesProvider.BeginFillProfile(System.Int32,System.AsyncCallback,System.Object)">
+            <summary>
+            Get Profile details which includes Motto, GamerScor, and GameDefault.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Stub.IGamerServicesProvider.BeginGetGamerFromGamertag(System.String,System.AsyncCallback,System.Object)">
+            <summary>
+            Create gamer from given gamertag.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Stub.IGamerServicesProvider.BeginGetPartnerToken(System.String,System.AsyncCallback,System.Object)">
+            <summary>
+            Get partner token
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Stub.IGamerServicesProvider.InvokeDownloadPrivilegeOptions">
+            <summary>
+            Start downloading privileges options.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Stub.IGamerServicesProvider.FillFriendCollection(System.Int32,Microsoft.Xna.Framework.GamerServices.Stub.IPropertyCollectionFiller)">
+            <summary>
+            
+            </summary>
+            <param name="gamer"></param>
+            <param name="fillers"></param>
+            <returns>friend collection handle</returns>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Stub.IGamerServicesProvider.DisposeGamer(System.Int32)">
+            <summary>
+            Dispose given gamer resources
+            </summary>
+            <param name="gamerHandle"></param>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Stub.IGamerServicesProvider.DisposeFriendCollection(System.Int32)">
+            <summary>
+            Dispose friend collection resources.
+            </summary>
+            <param name="friendsHandle"></param>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Stub.IGamerServicesProvider.IsFriend(System.Int32,System.Int32)">
+            <summary>
+            Check if given two gamers are friend.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Stub.IGamerServicesProvider.GetStream(System.Int32)">
+            <summary>
+            Get stream from handle.
+            </summary>
+            <param name="handle"></param>
+            <returns></returns>
+            <remarks>This method uses for both picture stream and blob stream.
+            For picture stream, XNA Framework excpected to get a PNG file format stream.
+            For blob stream, XNA Framework expected to have BinaryStream.</remarks>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Stub.IGamerServicesProvider.CreateStream(System.Byte[],System.Int32)">
+            <summary>
+            Create stream for writable blob.
+            If you specified buffer as null, it creates read only stream.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Stub.IGamerServicesProvider.WritePresence(System.Int32,System.String)">
+            <summary>
+            Updated given gamer's presence.
+            </summary>
+            <param name="gamer"></param>
+            <param name="presence"></param>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Stub.IGamerServicesProvider.WritePresence(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Indie games should only allow to use this method to set presence.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Stub.IGamerServicesProvider.BeginGetAchievements(System.Int32,System.AsyncCallback,System.Object)">
+            <summary>
+            Get achievements
+            </summary>
+            <param name="gamer"></param>
+            <param name="callback"></param>
+            <param name="asyncState"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Stub.IGamerServicesProvider.BeginAwardAchievement(System.Int32,System.String,System.AsyncCallback,System.Object)">
+            <summary>
+            Start award achievement or gamer picture.
+            </summary>
+            <param name="gamer"></param>
+            <param name="achievementKey"></param>
+            <param name="callback"></param>
+            <param name="asyncState"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Stub.IGamerServicesProvider.BeginReadLeaderboard(Microsoft.Xna.Framework.GamerServices.LeaderboardIdentity,System.Collections.Generic.IEnumerable{System.Int32},System.Int32,System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+            <summary>
+            Starts reading leaderboard data for a collection of up to 101 gamers,
+            typically used to implement a friends leaderboard.
+            If you specify a non-zero pageSize parameter, only a subset of that many
+            entries will be visible at a time. This subset will initially be centered on
+            the specified pivotGamer (if that is not null), and can be scrolled using
+            the pageStart argument.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Stub.IGamerServicesProvider.EndReadLeaderboard(System.IAsyncResult,Microsoft.Xna.Framework.GamerServices.Stub.IPropertyCollectionFiller)">
+            <summary>
+            Retrieves the results from an asynchronous BeginReadLeaderboard call.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Stub.IGamerServicesProvider.FillLeaderboardColumns(Microsoft.Xna.Framework.GamerServices.LeaderboardIdentity,System.Boolean,Microsoft.Xna.Framework.GamerServices.Stub.ILeaderboardColumnFiller)">
+            <summary>
+            Get specified leaderboard columns information.
+            </summary>
+            <remarks>XNA Framework side call this method to get leaderboard columns which
+            came from XLAST information on XBL side and filled by pre-defained columns
+            on LIVEn side.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Stub.IGamerServicesProvider.WriteToLeaderboard(Microsoft.Xna.Framework.GamerServices.LeaderboardIdentity,Microsoft.Xna.Framework.GamerServices.Stub.IPropertyCollectionFiller)">
+            <summary>
+            Write stats.
+            </summary>
+            <remarks>This method gets called from XNA Framework implementation code when
+            WriteLeaderboard event occured.</remarks>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.Stub.IGamerServicesProvider.QueueAsyncTask(GamerServices.Platforms.Web.LIVEnTask,System.AsyncCallback,System.Object)">
+            <summary>
+            Queue Async task.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xna.Framework.GamerServices.Stub.IGamerServicesProvider.SignedInStatusChanged">
+            <summary>
+            This event occures when signed in gamer status has been changed.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xna.Framework.GamerServices.Stub.IGamerServicesProvider.WriteLeaderboard">
+            <summary>
+            This event occures when leaderboard data submitted to the system.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.GamerServicesProviderWeb">
+            <summary>
+            This is an implementation that uses Web accesses.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.GamerServicesProviderWeb.Dispose">
+            <summary>Dispose the resource</summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.GamerServicesProviderWeb.Dispose(System.Boolean)">
+            <summary>Dispose the resource</summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.GamerServicesProviderWeb.InvokeDownloadPrivilegeOptions">
+            <summary>
+            Start downloading privileges options.
+            </summary>
+        </member>
+        <member name="T:GamerServices.Platforms.Web.HandleManager">
+            <summary>
+            Handle mapping manager.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.LIVEn.IStreamStream.IsValidHandle">
+            <summary>
+            Returns true if the low-level resource handle is valid.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.LeaderboardEntry">
+            <summary>
+            Class representing a single row of a leaderboard, holding all the information
+            a specific gamer has uploaded to the board. This is used both when reading
+            leaderboard data (the LeaderboardReader class returns a collection of entries)
+            and also for writing (LeaderboardWriter.GetLeaderboard returns a
+            LeaderboardEntry which can be used to write data for a particular player).
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.LeaderboardEntry.#ctor(System.Boolean)">
+            <summary>
+            Construct leaderboard entry with specified columns.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.LeaderboardEntry.Gamer">
+            <summary>
+            Gets the gamer described by this leaderboard entry.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.LeaderboardEntry.Rating">
+            <summary>
+            Gets or sets the rating, which is a numeric value with a title-defined meaning
+            used to sort leaderboard entries and determine their rank. A shooting game
+            might use the number of kills or win ratio as the rating, while a racing game
+            could use lap times. Returns 0 if the gamer is not in the leaderboard.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.LeaderboardEntry.Columns">
+            <summary>
+            Gets a collection of column properties holding additional data about the
+            leaderboard entry, as defined in the XLAST configuration. When writing to
+            a leaderboard, this will be empty until column values are written to it.
+            When reading leaderboard data, it will only contain entries for columns
+            that were previously written, or will be empty if the gamer is not in the
+            leaderboard.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.LeaderboardColumnFiller">
+            <summary>
+            Leaderboard Column filler.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.LeaderboardEntryCollectionFiller">
+            <summary>
+            Leaderboard Entry filler
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.LeaderboardEntryCollectionFiller.Enumerator">
+            <summary>
+            Enumerator interface for iterating over the contents of the collection.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.LeaderboardEntryCollectionFiller.Enumerator.#ctor(Microsoft.Xna.Framework.GamerServices.LeaderboardEntryCollectionFiller)">
+            <summary>
+            Internal constructor sets the position to before the first element.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.LeaderboardEntryCollectionFiller.Enumerator.MoveNext">
+            <summary>
+            Advances to the next value in the collection.
+            Returns true as long as another value was available.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.LeaderboardEntryCollectionFiller.Enumerator.System#Collections#IEnumerator#Reset">
+            <summary>
+            Resets the enumerator to before the start of the collection.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.LeaderboardEntryCollectionFiller.Enumerator.Dispose">
+            <summary>
+            Implements the IDisposable interface.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.LeaderboardEntryCollectionFiller.Enumerator.Current">
+            <summary>
+            Gets the value at the current enumerator position.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.LeaderboardEntryCollectionFiller.Enumerator.System#Collections#IEnumerator#Current">
+            <summary>
+            Explicit implementation of the non-generic IEnumerator interface.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.LeaderboardIdentity">
+            <summary>
+            This strcut contains leaderboard identity information.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.LeaderboardIdentity.Create(Microsoft.Xna.Framework.GamerServices.LeaderboardKey,System.Int32)">
+            <summary>
+            Create leaderboard identity.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.LeaderboardIdentity.Create(Microsoft.Xna.Framework.GamerServices.LeaderboardKey)">
+            <summary>
+            Create leaderboard identity.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.LeaderboardIdentity.Key">
+            <summary>
+            Gets/Sets leaderboard key.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.LeaderboardIdentity.GameMode">
+            <summary>
+            Gets/Sets gamer mode of leaderboard key.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.LeaderboardReader">
+            <summary>
+            Class used to read data from leaderboards.
+            
+            Leaderboards can be read in three different ways:
+            
+            - By passing a page start index, which reads a range of consecutive
+              entries starting at that rank. This is typically used to read the
+              top scores, by passing 0 as the page start.
+            
+            - By passing a pivot gamer, which reads a range of consecutive entries
+              centered on the rank of that gamer. This is typically used to display
+              the entries immediately above and below the current local profile.
+            
+            - By passing a collection of gamers, which reads entries specifically for
+              those profiles. This is typically used to display a friends leaderboard.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.LeaderboardReader.#ctor">
+            <summary>
+            Private constructor: readers are created using the static Read methods.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.LeaderboardReader.Read(Microsoft.Xna.Framework.GamerServices.LeaderboardIdentity,System.Collections.Generic.IEnumerable{Microsoft.Xna.Framework.GamerServices.Gamer},Microsoft.Xna.Framework.GamerServices.Gamer,System.Int32)">
+            <summary>
+            Reads leaderboard data for a collection of up to 101 gamers, typically
+            used to implement a friends leaderboard. If you specify a non-zero pageSize
+            parameter, only a subset of that many entries will be visible at a time. This
+            subset will initially be centered on the specified pivotGamer (if that is not
+            null), and can be scrolled using the PageUp and PageDown methods. This is a
+            blocking call: for asynchronous use, see the BeginRead alternative.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.LeaderboardReader.Read(Microsoft.Xna.Framework.GamerServices.LeaderboardIdentity,Microsoft.Xna.Framework.GamerServices.Gamer,System.Int32)">
+            <summary>
+            Reads a page of leaderboard data centered on the specified pivot gamer,
+            typically used to implement a "my scores" leaderboard. It is not possible
+            to read more than 100 leaderboard entries in a single call. If you want to
+            scroll through a larger list, use the PageUp and PageDown methods. This
+            is a blocking call: for asynchronous use, see the BeginRead alternative.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.LeaderboardReader.Read(Microsoft.Xna.Framework.GamerServices.LeaderboardIdentity,System.Int32,System.Int32)">
+            <summary>
+            Reads a page of leaderboard data starting at the specified rank, typically
+            used to implement a "best scores" leaderboard by passing pageStart = 0.
+            It is not possible to read more than 100 leaderboard entries in a single call.
+            If you want to scroll through a larger list, use the PageUp and PageDown methods. 
+            This is a blocking call: for asynchronous use, see the BeginRead alternative.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.LeaderboardReader.BeginRead(Microsoft.Xna.Framework.GamerServices.LeaderboardIdentity,System.Collections.Generic.IEnumerable{Microsoft.Xna.Framework.GamerServices.Gamer},Microsoft.Xna.Framework.GamerServices.Gamer,System.Int32,System.AsyncCallback,System.Object)">
+            <summary>
+            Starts reading leaderboard data for a collection of up to 101 gamers, typically
+            used to implement a friends leaderboard. If you specify a non-zero pageSize parameter,
+            only a subset of that many entries will be visible at a time. This subset will
+            initially be centered on the specified pivotGamer (if that is not null), and can
+            be scrolled using the PageUp and PageDown methods.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.LeaderboardReader.BeginRead(Microsoft.Xna.Framework.GamerServices.LeaderboardIdentity,Microsoft.Xna.Framework.GamerServices.Gamer,System.Int32,System.AsyncCallback,System.Object)">
+            <summary>
+            Starts reading a page of leaderboard data centered on the specified
+            pivot gamer, typically used to implement a "my scores" leaderboard.
+            It is not possible to read more than 100 leaderboard entries in a single call.
+            If you want to scroll through a larger list, use the PageUp and PageDown methods. 
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.LeaderboardReader.BeginRead(Microsoft.Xna.Framework.GamerServices.LeaderboardIdentity,System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+            <summary>
+            Starts reading a page of leaderboard data starting at the specified rank,
+            typically used to implement a "best scores" leaderboard by passing pageStart = 0.
+            It is not possible to read more than 100 leaderboard entries in a single call.
+            If you want to scroll through a larger list, use the PageUp and PageDown methods. 
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.LeaderboardReader.BeginReadInternal(Microsoft.Xna.Framework.GamerServices.LeaderboardIdentity,System.Collections.Generic.IEnumerable{Microsoft.Xna.Framework.GamerServices.Gamer},Microsoft.Xna.Framework.GamerServices.Gamer,System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+            <summary>
+            Internal static method.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.LeaderboardReader.EndRead(System.IAsyncResult)">
+            <summary>
+            Retrieves the results from an asynchronous BeginRead call.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.LeaderboardReader.Finalize">
+            <summary>
+            Finalizer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.LeaderboardReader.Dispose">
+            <summary>
+            Destroys the leaderboard reader.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.LeaderboardReader.Dispose(System.Boolean)">
+            <summary>
+            Destroys the leaderboard reader, using the standard IDisposable pattern.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.LeaderboardReader.DisposeGamers">
+            <summary>
+            Helper function marks that the gamer instances attached
+            to our leaderboard entries are no longer valid.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.LeaderboardReader.PageUp">
+            <summary>
+            Pages upward through the leaderboard. This is a blocking method.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.LeaderboardReader.PageDown">
+            <summary>
+            Pages downward through the leaderboard. This is a blocking method.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.LeaderboardReader.BeginPageUp(System.AsyncCallback,System.Object)">
+            <summary>
+            Starts an asynchronous page up operation.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.LeaderboardReader.BeginPageDown(System.AsyncCallback,System.Object)">
+            <summary>
+            Starts an asynchronous page down operation.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.LeaderboardReader.EndPageUp(System.IAsyncResult)">
+            <summary>
+            Ends an asynchronous page up operation.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.LeaderboardReader.EndPageDown(System.IAsyncResult)">
+            <summary>
+            Ends an asynchronous page down operation.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.LeaderboardReader.BeginPage(System.Boolean,System.AsyncCallback,System.Object)">
+            <summary>
+            Internal helper starts an asynchronous page up or down operation.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.LeaderboardReader.EndPage(System.Boolean,System.IAsyncResult)">
+            <summary>
+            Internal helper ends an asynchronous page up or down operation.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.LeaderboardReader.GetNewPageStart(System.Boolean)">
+            <summary>
+            Computes a new start index in response to a page up or page down request.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.LeaderboardReader.LeaderboardIdentity">
+            <summary>
+            Gets the identity of this leaderboard, as defined in the XLAST configuration.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.LeaderboardReader.TotalLeaderboardSize">
+            <summary>
+            Gets the total number of entries in this leaderboard. This will usually
+            be greater than Entries.Count, because only a small portion of the board
+            can be read at one time.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.LeaderboardReader.PageStart">
+            <summary>
+            Gets the starting position of the currently visible leaderboard page.
+            To scroll through the leaderboard, use the PageUp and PageDown methods to
+            alter the current page position.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.LeaderboardReader.Entries">
+            <summary>
+            Gets a collection holding the currently visible leaderboard entries.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.LeaderboardReader.IsDisposed">
+            <summary>
+            Queries whether this object has been disposed.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.LeaderboardReader.CanPageUp">
+            <summary>
+            Queries whether it is possible to page up through the leaderboard.
+            This will return false if the reader is already at the top of the
+            leaderboard, or a paging operation is already in progress.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.LeaderboardReader.CanPageDown">
+            <summary>
+            Queries whether it is possible to page down through the leaderboard.
+            This will return false if the reader is already at the bottom of the
+            leaderboard, or a paging operation is already in progress.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.LeaderboardReader.AsyncResult">
+            <summary>
+            This is async result that returns to application level.
+            This holds BeginRead parameters.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.LeaderboardReader.LeaderboardGamer">
+            <summary>
+            Concrete subclass of the abstract Gamer class, allows us to attach a valid
+            Gamer instance to LeaderboardEntry structures that were read from Live,
+            even where no other valid Gamer instance might exist.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.LeaderboardWriter">
+            <summary>
+            The leaderboard writer is used to record statistics for players in a
+            NetworkSession. Data can be written at any time during gameplay, but
+            is only flushed to the server when the host calls EndGame. Data may be
+            written for both local and remote gamers, using the following rules:
+            
+            - Ranked sessions can write to both arbitrated and non-arbitrated leaderboards.
+            - Other session types can only write to non-arbitrated leaderboards.
+            
+            - Arbitrated statistics should be written by all machines for all gamers.
+            - Non-arbitrated statistics should only be written by their local machine.
+            
+            - In ranked sessions, all machines should report TrueSkill for all gamers.
+            - In other session types, only the host should report TrueSkill data.
+            
+            Leaderboards can only be written while in a NetworkSession, and while in
+            the gameplay state rather than in the lobby. To write scores from a single
+            player game, create a session using NetworkSessionType.LocalWithLeaderboards.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.LeaderboardWriter.#ctor(Microsoft.Xna.Framework.GamerServices.Gamer)">
+            <summary>
+            Internal constructor: the writer is automatically populated and hangs off the NetworkGamer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.LeaderboardWriter.GetLeaderboard(Microsoft.Xna.Framework.GamerServices.LeaderboardIdentity)">
+            <summary>
+            Gets a LeaderboardEntry object which can be used to write statistics to a
+            leaderboard. You can write up to 5 different leaderboards per session.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.LeaderboardWriter.Reset">
+            <summary>
+            Resets the leaderboard writer state at the end of a gameplay session.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.LeaderboardWriter.WriteChanges">
+            <summary>
+            Writes any property changes.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.LeaderboardWriter.IsChanged">
+            <summary>
+            Queries whether any data in this leaderboard writer has actually been changed.
+            </summary>
+        </member>
+        <member name="T:GamerServices.Platforms.Web.LIVEnTask">
+            <summary>
+            This is abstract class that holds LIVEn request information such as profile read,
+            achievements, and leaderboard requests.
+            </summary>
+        </member>
+        <member name="M:GamerServices.Platforms.Web.LIVEnTask.BeginProcess(Microsoft.Xna.Framework.GamerServices.LIVEn.ILIVEnService,System.AsyncCallback,System.Object)">
+            <summary>
+            Start working this task.
+            </summary>
+        </member>
+        <member name="M:GamerServices.Platforms.Web.LIVEnTask.Do">
+            <summary>
+            Doing this job. this method gets called from background thread.
+            </summary>
+        </member>
+        <member name="M:GamerServices.Platforms.Web.LIVEnLeaderboardReader.CreateBlobStream(System.Byte[],System.String)">
+            <summary>
+            Read entire blob data into the memory.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.LIVEn.LIVEnService">
+            <summary>
+            LIVEn Service APIs
+            These methods are meant be call from background thread.
+            You will get deadlock if you call these methods in UI trehad.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.LIVEn.LIVEnService.GetWebStream(System.String)">
+            <summary>
+            Request web request for read.
+            </summary>
+            <param name="requestUri"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.LIVEn.LIVEnService.GetAuthenticatedWebStream(Microsoft.Xna.Framework.GamerServices.GfServiceType,System.String,Microsoft.Xna.Framework.GamerServices.GfRequestMethod,System.String)">
+            <summary>
+            Request web request for read.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.PropertyDictionary">
+            <summary>
+            Dictionary holds a set of XLAST properties, used to define presence state
+            or leaderboard column values. Properties can be read and written either as
+            loosely typed boxed objects, or via the strongly typed SetValue and GetValue*
+            overloads. If properties are accessed using types different to those defined
+            in the XLAST file, values will automatically be converted using the standard
+            System.Convert behavior, in which case the property data may be boxed. No
+            boxing is performed if properties and accessed using the same type that was
+            defined in the XLAST file.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.#ctor(System.Boolean,System.Int32)">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.Add(System.String,Microsoft.Xna.Framework.GamerServices.PropertyValue)">
+            <summary>
+            Adds a new property to the dictionary.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.GetProperty(System.String,System.Boolean)">
+            <summary>
+            Helper looks up a property by name, throwing a nice exception if it does not exist.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.Reset">
+            <summary>
+            Resets the leaderboard writer state at the end of a gameplay session.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.GetValueInt32(System.String)">
+            <summary>
+            Gets the value of the property with the specified key, as type Int32.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.GetValueInt64(System.String)">
+            <summary>
+            Gets the value of the property with the specified key, as type Int64.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.GetValueSingle(System.String)">
+            <summary>
+            Gets the value of the property with the specified key, as type Single.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.GetValueDouble(System.String)">
+            <summary>
+            Gets the value of the property with the specified key, as type Double.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.GetValueString(System.String)">
+            <summary>
+            Gets the value of the property with the specified key, as type String.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.GetValueOutcome(System.String)">
+            <summary>
+            Gets the value of the property with the specified key, as type LeaderboardOutcome.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.GetValueDateTime(System.String)">
+            <summary>
+            Gets the value of the property with the specified key, as type DateTime.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.GetValueTimeSpan(System.String)">
+            <summary>
+            Gets the value of the property with the specified key, as type TimeSpan.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.GetValueStream(System.String)">
+            <summary>
+            Gets the value of the property with the specified key, as type stream.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.GetTypedValue``1(System.String)">
+            <summary>
+            Helper for reading strongly typed property values.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.SetValue(System.String,System.Int32)">
+            <summary>
+            Sets the value of the property with the specified key, as type Int32.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.SetValue(System.String,System.Int64)">
+            <summary>
+            Sets the value of the property with the specified key, as type Int64.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.SetValue(System.String,System.Single)">
+            <summary>
+            Sets the value of the property with the specified key, as type Single.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.SetValue(System.String,System.Double)">
+            <summary>
+            Sets the value of the property with the specified key, as type Double.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.SetValue(System.String,System.String)">
+            <summary>
+            Sets the value of the property with the specified key, as type String.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.SetValue(System.String,Microsoft.Xna.Framework.GamerServices.LeaderboardOutcome)">
+            <summary>
+            Sets the value of the property with the specified key, as type LeaderboardOutcome
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.SetValue(System.String,System.DateTime)">
+            <summary>
+            Sets the value of the property with the specified key, as type DateTime
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.SetValue(System.String,System.TimeSpan)">
+            <summary>
+            Sets the value of the property with the specified key, as type TimeSpan
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.SetUntypedValue(System.String,System.Object)">
+            <summary>
+            Helper for setting loosely typed (boxed) or reference type property values.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.SetTypedValue``1(System.String,``0)">
+            <summary>
+            Helper for setting strongly typed property values.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.ContainsKey(System.String)">
+            <summary>
+            Queries whether the dictionary contains an entry with the specified key.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.TryGetValue(System.String,System.Object@)">
+            <summary>
+            Tries to get the value of the specified property,
+            returning false if the specified key does not exist.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.GetEnumerator">
+            <summary>
+            Gets an enumerator for iterating over the contents of the dictionary.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Gets an enumerator for iterating over the contents of the dictionary.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String@System#Object}}#Contains(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+            <summary>
+            Queries whether the collection contains the specified item.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String@System#Object}}#CopyTo(System.Collections.Generic.KeyValuePair{System.String,System.Object}[],System.Int32)">
+            <summary>
+            Copies the contents of the collection to the specified array.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.System#Collections#Generic#IDictionary{System#String@System#Object}#Add(System.String,System.Object)">
+            <summary>
+            Make the collection immutable.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String@System#Object}}#Add(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+            <summary>
+            Make the collection immutable.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String@System#Object}}#Clear">
+            <summary>
+            Make the collection immutable.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.System#Collections#Generic#IDictionary{System#String@System#Object}#Remove(System.String)">
+            <summary>
+            Make the collection immutable.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String@System#Object}}#Remove(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+            <summary>
+            Make the collection immutable.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.Count">
+            <summary>
+            Gets the number of entries in the dictionary.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.Item(System.String)">
+            <summary>
+            Gets or sets the value of the specified property.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.System#Collections#Generic#IDictionary{System#String@System#Object}#Keys">
+            <summary>
+            Gets a collection holding the keys of the dictionary.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.System#Collections#Generic#IDictionary{System#String@System#Object}#Values">
+            <summary>
+            Gets a collection holding the values of the dictionary.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.PropertyDictionary.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String@System#Object}}#IsReadOnly">
+            <summary>
+            Queries whether the collection is read-only.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.GamerFiller">
+            <summary>
+            Gamer object filler.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.SignedInGamerFiller">
+            <summary>
+            SignedInGamer filler
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.AchievementsCollectionFiller.Enumerator">
+            <summary>
+            Enumerator interface for iterating over the contents of the collection.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.AchievementsCollectionFiller.Enumerator.#ctor(System.Collections.Generic.List{Microsoft.Xna.Framework.GamerServices.Achievement},Microsoft.Xna.Framework.GamerServices.AchievementFiller)">
+            <summary>
+            Internal constructor sets the position to before the first element.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.AchievementsCollectionFiller.Enumerator.MoveNext">
+            <summary>
+            Advances to the next value in the collection.
+            Returns true as long as another value was available.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.AchievementsCollectionFiller.Enumerator.System#Collections#IEnumerator#Reset">
+            <summary>
+            Resets the enumerator to before the start of the collection.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.AchievementsCollectionFiller.Enumerator.Dispose">
+            <summary>
+            Implements the IDisposable interface.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.AchievementsCollectionFiller.Enumerator.Current">
+            <summary>
+            Gets the value at the current enumerator position.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.AchievementsCollectionFiller.Enumerator.System#Collections#IEnumerator#Current">
+            <summary>
+            Explicit implementation of the non-generic IEnumerator interface.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.PropertyValue">
+            <summary>
+            Helper used by the public PropertyDictionary API. This combines an XlastProperty
+            metadata descriptor with the current value of the property, and also tracks a boolean
+            flag indicating whether the property has been changed. Strongly typed subclasses
+            allow us to store the various types of property without resorting to boxing.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyValue.GetValue">
+            <summary>
+            Gets the current value of the property, as a dynamically typed boxed object.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.PropertyValue.SetValue(System.Object)">
+            <summary>
+            Sets the value of the property, from a dynamically typed boxed object.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xna.Framework.GamerServices.PropertyValue.IsChanged">
+            <summary>
+            Tracks whether the property value has been changed.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xna.Framework.GamerServices.PropertyValue.IsReadOnly">
+            <summary>
+            Is this read only property?
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.TypedPropertyValue`1">
+            <summary>
+            Strongly typed generic subclass represents int, long, float, and double
+            property types, allowing their values to be read and written without boxing.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xna.Framework.GamerServices.TypedPropertyValue`1.currentValue">
+            <summary>
+            Strongly typed property value.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.TypedPropertyValue`1.GetValue">
+            <summary>
+            Gets the current value of the property, as a dynamically typed boxed object.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.TypedPropertyValue`1.GetTypedValue">
+            <summary>
+            Gets the current value of the property, as a strongly typed primitive value.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.TypedPropertyValue`1.SetValue(System.Object)">
+            <summary>
+            Sets the value of the property, from a dynamically typed boxed object.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.TypedPropertyValue`1.SetTypedValue(`0)">
+            <summary>
+            Sets the value of the property, from a strongly typed primitive value.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.SignedInGamer">
+            <summary>
+            A SignedInGamer represents a player that is signed in on the local console. To get an instance of a SignedInGamer, 
+            use the Gamer.SignedInGamers collection. The SignedInGamer class can be used to query the signed-in gamers Gamertag,
+            game defaults, profile, and more.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.SignedInGamer.HandlePlayerSignInChanged(System.Object,Microsoft.Xna.Framework.GamerServices.Stub.GSSignedInStatusChangedEventArgs)">
+            <summary>
+            This function is called by GamerServicesDispatcher.Update in response to sign in changed events. It'll update the Gamers collection,
+            invalidate any gamers that signed out, and fire the events.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.SignedInGamer.IsFriend(Microsoft.Xna.Framework.GamerServices.Gamer)">
+            <summary>
+            Queries whether the specified gamer is a friend of this local gamer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.SignedInGamer.GetFriends">
+            <summary>
+            Reads the friends list of this local gamer. This includes both the
+            gamertags of the friends and their current presence information.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.SignedInGamer.BeginAwardAchievement(System.String,System.AsyncCallback,System.Object)">
+            <summary>
+            Begins the asynchronous process of awarding the specified achievement to a locally signed in gamer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.SignedInGamer.EndAwardAchievement(System.IAsyncResult)">
+            <summary>
+            This function should be called when the system has finished awarding the achievement, and is used to ensure
+            that the process finished successfully.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.SignedInGamer.AwardAchievement(System.String)">
+            <summary>
+            Awards an achievement. This is a blocking call:
+            to query asynchronously, use Begin/EndAwardAchievement instead.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.SignedInGamer.BeginGetAchievements(System.AsyncCallback,System.Object)">
+            <summary>
+            Starts an asynchronous achievement query operation.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.SignedInGamer.EndGetAchievements(System.IAsyncResult)">
+            <summary>
+            Ends an asynchronous achievement query operation.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.SignedInGamer.GetAchievements">
+            <summary>
+            Reads achievements for this gamer. This will include both earned and
+            not-yet-earned achievements: check the Achievement.IsEarned property
+            if you only want to display one or the other. This is a blocking call:
+            to query asynchronously, use Begin/EndGetAchievements instead.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.SignedInGamer.PlayerIndex">
+            <summary>
+            The PlayerIndex of this SignedInGamer. For example, if the associated gamer is playing on controller 1, this will be
+            PlayerIndex.One.
+            </summary>        
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.SignedInGamer.IsSignedInToLive">
+            <summary>
+            This property will be set to true if the current profile is signed in to live.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.SignedInGamer.IsGuest">
+            <summary>
+            IsGuest can be used to query whether or not this SignedInGamer is the guest of another live-enabled profile.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.SignedInGamer.GameDefaults">
+            <summary>
+            Game defaults describe a gamers preferred settings.
+            Wherever possible, games should default to these values.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.SignedInGamer.Privileges">
+            <summary>
+            Privileges describe what operations a gamer is allowed to perform.
+            They can be defined by parental control settings, and also will be
+            set automatically in response to things like age, region, and whether
+            the gamer has a Gold or Silver account. Games do not need to explicitly
+            check privileges, because a GamerPrivilegeException will be thrown
+            if they try to perform an unsupported operation, but these privilege
+            bits may be useful to detect that an operation is unavailable before
+            calling it so as to grey-out the relevant menu option.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.SignedInGamer.PartySize">
+            <summary>
+            Gets party member count include yourself.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xna.Framework.GamerServices.SignedInGamer.SignedIn">
+            <summary>
+            Subscribe to this event to be notified when new players sign in. This event will be called during GamerServicesDispatcher.Update.
+            When this event is fired, the Gamers collection will already be updated with the newly signed in player.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xna.Framework.GamerServices.SignedInGamer.SignedOut">
+            <summary>
+            Subscribe to this event to be notified when players sign out. This event will be called during GamerServicesDispatcher.Update.
+            When this event is fired, the SignedInGamer that has just signed out will have already been removed from the Gamers collection.
+            Any existing references to this SignedInGamer will be invalid, and should no longer be used.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.SignedInGamer.Presence">
+            <summary>
+            Gets an object used to set the rich presence state for this gamer.
+            </summary>
+        </member>
+        <member name="T:GamerServices.Platforms.Web.XmlReaderHelper">
+            <summary>
+            Helper extension methods for XmlReader class.
+            </summary>
+        </member>
+        <member name="M:GamerServices.Platforms.Web.XmlReaderHelper.ReadUntil(System.Xml.XmlReader,System.String)">
+            <summary>
+            Keep reading until find given element.
+            </summary>
+            <returns>return true when it finds specified element, otherwise it returns false.</returns>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.XlastConfiguration">
+            <summary>
+            Class holds metadata about an XLAST title configuration.
+            This is a partial class so the runtime framework can extend
+            it, adding a static instance accessor that looks up the
+            configuration data from an embedded assembly resource.
+            </summary>
+            <summary>
+            Extend the XLAST metadata class (which is shared between the runtime framework
+            and the design time ExtractXlastConfiguration task), adding a singleton instance
+            accessor that loads metadata from a resource embedded in the startup assembly.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.XlastConfiguration.LoadEmbeddedResource">
+            <summary>
+            Loads XLAST metadata from an embedded resource.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.XlastConfiguration.GetKeyForValue``2(System.Collections.Generic.Dictionary{``0,``1},``1)">
+            <summary>
+            Helper for doing a reverse value -> key lookup in a dictionary.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xna.Framework.GamerServices.XlastConfiguration.Instance">
+            <summary>
+            Gets the XLAST metadata for the currently executing title.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.XlastLeaderboard">
+            <summary>
+            Class holds metadata about an XLAST leaderboard.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.XlastLeaderboardColumn">
+            <summary>
+            Class holds metadata about an XLAST leaderboard column.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.XlastProperty">
+            <summary>
+            Class holds metadata about an XLAST property or context.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.XlastPropertyType">
+            <summary>
+            Enum describes the type of an XLAST property or context.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.XlastReader">
+            <summary>
+            Helper class reads XLAST metadata from our binary format.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.XlastReader.Read(System.IO.Stream)">
+            <summary>
+            Reads XLAST metadata from our binary format.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.XlastReader.ReadSharedString">
+            <summary>
+            Reads a shared string, which is stored as an index into the shared table.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.XlastReader.ReadSharedProperty">
+            <summary>
+            Reads a shared property, which is stored as an index into the shared table.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.XlastReader.ReadPropertyData">
+            <summary>
+            Helper for reading property metadata.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.XlastReader.ReadLeaderboard">
+            <summary>
+            Helper for reading leaderboard metadata.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.XlastReader.ReadLeaderboardColumn">
+            <summary>
+            Helper for reading leaderboard column metadata.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.XlastReader.ReadArray``1(Microsoft.Xna.Framework.GamerServices.XlastReader.Reader{``0})">
+            <summary>
+            Helper for reading arrays of any data type.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.XlastReader.ReadDictionary``1(Microsoft.Xna.Framework.GamerServices.XlastReader.Reader{``0})">
+            <summary>
+            Helper for reading dictionaries of any data type.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.NotificationPosition">
+            <summary>
+            NotificationPosition is used as an argument to the function Guide.SetNotificationPosition, and determines
+            where notifications will appear on the screen.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.ControllerSensitivity">
+            <summary>
+            Game default setting indicating how sensitive this
+            gamer likes their controller input to be.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.GameDifficulty">
+            <summary>
+            Game default setting indicating how difficult this
+            gamer likes things to be.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.RacingCameraAngle">
+            <summary>
+            Game default setting indicating what camera angle this
+            gamer prefers to use in racing games.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xna.Framework.GamerServices.RacingCameraAngle.Back">
+            <summary>
+            Traditional third-person camera view from behind the car.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xna.Framework.GamerServices.RacingCameraAngle.Front">
+            <summary>
+            Camera view from in front of the car (the car itself is not visible).
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xna.Framework.GamerServices.RacingCameraAngle.Inside">
+            <summary>
+            Camera view from inside the the car, looking through the windscreen.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.GamerZone">
+            <summary>
+            GamerZone settings.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.GamerPresenceMode">
+            <summary>
+            Possible options for the GamerPresence.PresenceMode property.
+            These define the status string that will appear when you view
+            a friend through the Live Guide or on Xbox.com.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.LeaderboardKey">
+            <summary>
+            Pre-defined leaderboard names
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.GamerPrivilegeException">
+            <summary>
+            Exception thrown if a gamer services or network API is called
+            without a suitable profile signed in. This can happen if there is
+            no profile signed in at all, or if the signed in profile has parental
+            control settings that prohibit the requested action.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.GamerPrivilegeException.#ctor">
+            <summary>
+            Constructs an empty exception.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.GamerPrivilegeException.#ctor(System.String)">
+            <summary>
+            Constructs an exception with the specified error message.
+            </summary>d
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.GamerPrivilegeException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructs an exception with the specified error message and inner exception.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.GameUpdateRequiredException">
+            <summary>
+            Exception thrown if there is a failure while communicating over the network.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.GameUpdateRequiredException.#ctor">
+            <summary>
+            Constructs an empty exception.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.GameUpdateRequiredException.#ctor(System.String)">
+            <summary>
+            Constructs an exception with the specified error message.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.GameUpdateRequiredException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructs an exception with the specified error message and inner exception.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.GuideAlreadyVisibleException">
+            <summary>
+            Exception thrown when the programmer calls a function that will bring up a Guide UI, but the Guide is already active.
+            Only one guide screen can be active at a time. Users should wait until Guide.IsVisible is false before calling
+            guide functions.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.GuideAlreadyVisibleException.#ctor">
+            <summary>
+            Constructs an empty exception.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.GuideAlreadyVisibleException.#ctor(System.String)">
+            <summary>
+            Constructs an exception with the specified error message.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.GuideAlreadyVisibleException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructs an exception with the specified error message and inner exception.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.NetworkException">
+            <summary>
+            Exception thrown if there is a failure while communicating over the network.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.NetworkException.#ctor">
+            <summary>
+            Constructs an empty exception.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.NetworkException.#ctor(System.String)">
+            <summary>
+            Constructs an exception with the specified error message.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.NetworkException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructs an exception with the specified error message and inner exception.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.NetworkNotAvailableException">
+            <summary>
+            Exception thrown if no network is available. This can occur on Xbox if
+            the network cable is unplugged, or on Zune if wireless is disabled.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.NetworkNotAvailableException.#ctor">
+            <summary>
+            Constructs an empty exception.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.NetworkNotAvailableException.#ctor(System.String)">
+            <summary>
+            Constructs an exception with the specified error message.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.NetworkNotAvailableException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructs an exception with the specified error message and inner exception.
+            </summary>
+        </member>
+    </members>
+</doc>

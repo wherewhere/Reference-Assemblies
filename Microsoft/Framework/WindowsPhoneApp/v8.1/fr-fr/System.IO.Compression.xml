@@ -1,0 +1,430 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.IO.Compression</name>
+  </assembly>
+  <members>
+    <member name="T:System.IO.Compression.CompressionLevel">
+      <summary>Spécifie les valeurs qui indiquent si une opération de compression souligne la rapidité ou la taille de compression.</summary>
+    </member>
+    <member name="F:System.IO.Compression.CompressionLevel.Fastest">
+      <summary>L'opération de compression doit s'exécuter aussi rapidement que possible, même si le fichier résultant n'est pas compressé de manière optimale.</summary>
+    </member>
+    <member name="F:System.IO.Compression.CompressionLevel.NoCompression">
+      <summary>Aucune compression ne doit être exécutée sur le fichier.</summary>
+    </member>
+    <member name="F:System.IO.Compression.CompressionLevel.Optimal">
+      <summary>L'opération de compression doit être compressée de manière optimale, même si elle prend plus de temps.</summary>
+    </member>
+    <member name="T:System.IO.Compression.CompressionMode">
+      <summary>Spécifie s'il faut compresser ou décompresser le flux sous-jacent.</summary>
+    </member>
+    <member name="F:System.IO.Compression.CompressionMode.Compress">
+      <summary>Compresse le flux sous-jacent.</summary>
+    </member>
+    <member name="F:System.IO.Compression.CompressionMode.Decompress">
+      <summary>Décompresse le flux sous-jacent.</summary>
+    </member>
+    <member name="T:System.IO.Compression.DeflateStream">
+      <summary>Fournit des méthodes et des propriétés pour compresser et décompresser des flux à l'aide de l'algorithme Deflate.</summary>
+    </member>
+    <member name="M:System.IO.Compression.DeflateStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionLevel)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.IO.Compression.DeflateStream" /> à l'aide du flux et du niveau de compression spécifiés.</summary>
+      <param name="stream">Flux à compresser.</param>
+      <param name="compressionLevel">L'une des valeurs d'énumération qui indique s'il faut mettre l'accent sur la rapidité et l'efficacité de compression en compressant le flux de données.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="stream" /> a la valeur null.</exception>
+      <exception cref="T:System.ArgumentException">Le flux ne prend pas en charge les opérations d'écriture telles que la compression. (La propriété <see cref="P:System.IO.Stream.CanWrite" /> sur l'objet de flux est false.)</exception>
+    </member>
+    <member name="M:System.IO.Compression.DeflateStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionLevel,System.Boolean)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.IO.Compression.DeflateStream" /> à l'aide du flux et du niveau de compression spécifiés, et permet éventuellement de laisser le flux ouvert.</summary>
+      <param name="stream">Flux à compresser.</param>
+      <param name="compressionLevel">L'une des valeurs d'énumération qui indique s'il faut mettre l'accent sur la rapidité et l'efficacité de compression en compressant le flux de données.</param>
+      <param name="leaveOpen">true pour maintenir l'objet de flux ouvert après avoir supprimé l'objet <see cref="T:System.IO.Compression.DeflateStream" /> ; sinon, false.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="stream" /> a la valeur null.</exception>
+      <exception cref="T:System.ArgumentException">Le flux ne prend pas en charge les opérations d'écriture telles que la compression. (La propriété <see cref="P:System.IO.Stream.CanWrite" /> sur l'objet de flux est false.)</exception>
+    </member>
+    <member name="M:System.IO.Compression.DeflateStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionMode)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.IO.Compression.DeflateStream" /> à l'aide du flux et du mode de compression spécifiés.</summary>
+      <param name="stream">Flux à compresser ou décompresser.</param>
+      <param name="mode">L'une des valeurs d'énumération qui indique s'il faut compresser ou décompresser le flux.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="stream" /> a la valeur null.</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="mode" /> n'est pas une valeur <see cref="T:System.IO.Compression.CompressionMode" /> valide. ou <see cref="T:System.IO.Compression.CompressionMode" /> a la valeur <see cref="F:System.IO.Compression.CompressionMode.Compress" /> et <see cref="P:System.IO.Stream.CanWrite" /> a la valeur false. ou <see cref="T:System.IO.Compression.CompressionMode" /> a la valeur <see cref="F:System.IO.Compression.CompressionMode.Decompress" /> et <see cref="P:System.IO.Stream.CanRead" /> a la valeur false.</exception>
+    </member>
+    <member name="M:System.IO.Compression.DeflateStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionMode,System.Boolean)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.IO.Compression.DeflateStream" /> à l'aide du flux et du mode de compression spécifiés, et permet éventuellement de laisser le flux ouvert.</summary>
+      <param name="stream">Flux à compresser ou décompresser.</param>
+      <param name="mode">L'une des valeurs d'énumération qui indique s'il faut compresser ou décompresser le flux.</param>
+      <param name="leaveOpen">true pour maintenir le flux ouvert après avoir supprimé l'objet <see cref="T:System.IO.Compression.DeflateStream" /> ; sinon, false.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="stream" /> a la valeur null.</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="mode" /> n'est pas une valeur <see cref="T:System.IO.Compression.CompressionMode" /> valide. ou <see cref="T:System.IO.Compression.CompressionMode" /> a la valeur <see cref="F:System.IO.Compression.CompressionMode.Compress" /> et <see cref="P:System.IO.Stream.CanWrite" /> a la valeur false. ou <see cref="T:System.IO.Compression.CompressionMode" /> a la valeur <see cref="F:System.IO.Compression.CompressionMode.Decompress" /> et <see cref="P:System.IO.Stream.CanRead" /> a la valeur false.</exception>
+    </member>
+    <member name="P:System.IO.Compression.DeflateStream.BaseStream">
+      <summary>Obtient une référence au flux sous-jacent.</summary>
+      <returns>Objet de flux qui représente le flux sous-jacent.</returns>
+      <exception cref="T:System.ObjectDisposedException">Le flux sous-jacent est fermé.</exception>
+    </member>
+    <member name="P:System.IO.Compression.DeflateStream.CanRead">
+      <summary>Obtient une valeur indiquant si le flux prend en charge la lecture pendant la décompression d'un fichier.</summary>
+      <returns>true si la valeur <see cref="T:System.IO.Compression.CompressionMode" /> est Decompress, que le flux sous-jacent est ouvert et qu'il prend en charge la lecture ; sinon, false.</returns>
+    </member>
+    <member name="P:System.IO.Compression.DeflateStream.CanSeek">
+      <summary>Obtient une valeur indiquant si le flux prend en charge la recherche.</summary>
+      <returns>false dans tous les cas.</returns>
+    </member>
+    <member name="P:System.IO.Compression.DeflateStream.CanWrite">
+      <summary>Obtient une valeur indiquant si le flux prend en charge l'écriture.</summary>
+      <returns>true si la valeur <see cref="T:System.IO.Compression.CompressionMode" /> est Compress, que le flux sous-jacent prend en charge l'écriture et qu'il n'est pas fermé ; sinon, false.</returns>
+    </member>
+    <member name="M:System.IO.Compression.DeflateStream.Dispose(System.Boolean)">
+      <summary>Libère les ressources non managées utilisées par <see cref="T:System.IO.Compression.DeflateStream" /> et libère éventuellement les ressources managées.</summary>
+      <param name="disposing">true pour libérer les ressources managées et non managées ; false pour libérer uniquement les ressources non managées.</param>
+    </member>
+    <member name="M:System.IO.Compression.DeflateStream.Flush">
+      <summary>L'implémentation actuelle de cette méthode n'a aucune fonctionnalité.</summary>
+      <exception cref="T:System.ObjectDisposedException">Le flux est fermé.</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="P:System.IO.Compression.DeflateStream.Length">
+      <summary>Cette propriété n'est pas prise en charge et lève toujours <see cref="T:System.NotSupportedException" />.</summary>
+      <returns>Valeur Long.</returns>
+      <exception cref="T:System.NotSupportedException">Cette propriété n'est pas prise en charge sur ce flux.</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="P:System.IO.Compression.DeflateStream.Position">
+      <summary>Cette propriété n'est pas prise en charge et lève toujours <see cref="T:System.NotSupportedException" />.</summary>
+      <returns>Valeur Long.</returns>
+      <exception cref="T:System.NotSupportedException">Cette propriété n'est pas prise en charge sur ce flux.</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.IO.Compression.DeflateStream.Read(System.Byte[],System.Int32,System.Int32)">
+      <summary>Lit un certain nombre d'octets décompressés dans le tableau d'octets spécifié.</summary>
+      <returns>Nombre d'octets qui ont été lus dans le tableau d'octets.</returns>
+      <param name="array">Tableau pour décompresser les octets.</param>
+      <param name="offset">Offset d'octet dans <paramref name="array" /> auquel les octets lus sont placés.</param>
+      <param name="count">Nombre maximal d'octets décompressés à lire.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> a la valeur null.</exception>
+      <exception cref="T:System.InvalidOperationException">La valeur <see cref="T:System.IO.Compression.CompressionMode" /> était Compress lorsque l'objet a été créé. - ou -  Le flux sous-jacent ne prend pas en charge la lecture.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> ou <paramref name="count" /> est inférieur à zéro. ou La longueur de <paramref name="array" /> moins le point de départ de l'index est inférieure à <paramref name="count" />.</exception>
+      <exception cref="T:System.IO.InvalidDataException">Le format des données n'est pas valide.</exception>
+      <exception cref="T:System.ObjectDisposedException">Le flux est fermé.</exception>
+    </member>
+    <member name="M:System.IO.Compression.DeflateStream.Seek(System.Int64,System.IO.SeekOrigin)">
+      <summary>Cette opération n'est pas prise en charge et lève toujours <see cref="T:System.NotSupportedException" />.</summary>
+      <returns>Valeur Long.</returns>
+      <param name="offset">Emplacement dans le flux.</param>
+      <param name="origin">Une des valeurs de <see cref="T:System.IO.SeekOrigin" />.</param>
+      <exception cref="T:System.NotSupportedException">Cette propriété n'est pas prise en charge sur ce flux.</exception>
+    </member>
+    <member name="M:System.IO.Compression.DeflateStream.SetLength(System.Int64)">
+      <summary>Cette opération n'est pas prise en charge et lève toujours <see cref="T:System.NotSupportedException" />.</summary>
+      <param name="value">Longueur du flux.</param>
+      <exception cref="T:System.NotSupportedException">Cette propriété n'est pas prise en charge sur ce flux.</exception>
+    </member>
+    <member name="M:System.IO.Compression.DeflateStream.Write(System.Byte[],System.Int32,System.Int32)">
+      <summary>Écrit les octets compressés dans le flux sous-jacent à partir du tableau d'octets spécifié.</summary>
+      <param name="array">Mémoire tampon qui contient les données à compresser.</param>
+      <param name="offset">Décalage d'octets du <paramref name="array" /> à partir duquel les octets lus sont lus.</param>
+      <param name="count">Nombre maximal d'octets à écrire.</param>
+    </member>
+    <member name="T:System.IO.Compression.GZipStream">
+      <summary>Fournit les méthodes et les propriétés utilisées pour compresser et décompresser des flux.</summary>
+    </member>
+    <member name="M:System.IO.Compression.GZipStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionLevel)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.IO.Compression.GZipStream" /> à l'aide du flux et du niveau de compression spécifiés.</summary>
+      <param name="stream">Flux à compresser.</param>
+      <param name="compressionLevel">L'une des valeurs d'énumération qui indique s'il faut mettre l'accent sur la rapidité et l'efficacité de compression en compressant le flux de données.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="stream" /> a la valeur null.</exception>
+      <exception cref="T:System.ArgumentException">Le flux ne prend pas en charge les opérations d'écriture telles que la compression. (La propriété <see cref="P:System.IO.Stream.CanWrite" /> sur l'objet de flux est false.)</exception>
+    </member>
+    <member name="M:System.IO.Compression.GZipStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionLevel,System.Boolean)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.IO.Compression.GZipStream" /> à l'aide du flux et du niveau de compression spécifiés, et permet éventuellement de laisser le flux ouvert.</summary>
+      <param name="stream">Flux à compresser.</param>
+      <param name="compressionLevel">L'une des valeurs d'énumération qui indique s'il faut mettre l'accent sur la rapidité et l'efficacité de compression en compressant le flux de données.</param>
+      <param name="leaveOpen">true pour maintenir l'objet de flux ouvert après avoir supprimé l'objet <see cref="T:System.IO.Compression.GZipStream" /> ; sinon, false.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="stream" /> a la valeur null.</exception>
+      <exception cref="T:System.ArgumentException">Le flux ne prend pas en charge les opérations d'écriture telles que la compression. (La propriété <see cref="P:System.IO.Stream.CanWrite" /> sur l'objet de flux est false.)</exception>
+    </member>
+    <member name="M:System.IO.Compression.GZipStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionMode)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.IO.Compression.GZipStream" /> à l'aide du flux et du mode de compression spécifiés.</summary>
+      <param name="stream">Flux à compresser ou décompresser.</param>
+      <param name="mode">L'une des valeurs d'énumération qui indique s'il faut compresser ou décompresser le flux.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="stream" /> a la valeur null.</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="mode" /> n'est pas une valeur d'énumération <see cref="T:System.IO.Compression.CompressionMode" /> valide. ou <see cref="T:System.IO.Compression.CompressionMode" /> a la valeur <see cref="F:System.IO.Compression.CompressionMode.Compress" /> et <see cref="P:System.IO.Stream.CanWrite" /> a la valeur false. ou <see cref="T:System.IO.Compression.CompressionMode" /> a la valeur <see cref="F:System.IO.Compression.CompressionMode.Decompress" /> et <see cref="P:System.IO.Stream.CanRead" /> a la valeur false.</exception>
+    </member>
+    <member name="M:System.IO.Compression.GZipStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionMode,System.Boolean)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.IO.Compression.GZipStream" /> à l'aide du flux et du mode de compression spécifiés, et permet éventuellement de laisser le flux ouvert.</summary>
+      <param name="stream">Flux à compresser ou décompresser.</param>
+      <param name="mode">L'une des valeurs d'énumération qui indique s'il faut compresser ou décompresser le flux.</param>
+      <param name="leaveOpen">true pour maintenir le flux ouvert après avoir supprimé l'objet <see cref="T:System.IO.Compression.GZipStream" /> ; sinon, false.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="stream" /> a la valeur null.</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="mode" /> n'est pas une valeur <see cref="T:System.IO.Compression.CompressionMode" /> valide. ou <see cref="T:System.IO.Compression.CompressionMode" /> a la valeur <see cref="F:System.IO.Compression.CompressionMode.Compress" /> et <see cref="P:System.IO.Stream.CanWrite" /> a la valeur false. ou <see cref="T:System.IO.Compression.CompressionMode" /> a la valeur <see cref="F:System.IO.Compression.CompressionMode.Decompress" /> et <see cref="P:System.IO.Stream.CanRead" /> a la valeur false.</exception>
+    </member>
+    <member name="P:System.IO.Compression.GZipStream.BaseStream">
+      <summary>Obtient une référence au flux sous-jacent.</summary>
+      <returns>Objet de flux qui représente le flux sous-jacent.</returns>
+      <exception cref="T:System.ObjectDisposedException">Le flux sous-jacent est fermé.</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="P:System.IO.Compression.GZipStream.CanRead">
+      <summary>Obtient une valeur indiquant si le flux prend en charge la lecture pendant la décompression d'un fichier.</summary>
+      <returns>true si la valeur <see cref="T:System.IO.Compression.CompressionMode" /> est Decompress,, que le flux sous-jacent prend en charge la lecture et qu'il n'est pas fermé ; sinon, false.</returns>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="P:System.IO.Compression.GZipStream.CanSeek">
+      <summary>Obtient une valeur indiquant si le flux prend en charge la recherche.</summary>
+      <returns>false dans tous les cas.</returns>
+    </member>
+    <member name="P:System.IO.Compression.GZipStream.CanWrite">
+      <summary>Obtient une valeur indiquant si le flux prend en charge l'écriture.</summary>
+      <returns>true si la valeur <see cref="T:System.IO.Compression.CompressionMode" /> est Compress, que le flux sous-jacent prend en charge l'écriture et qu'il n'est pas fermé ; sinon, false.</returns>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.IO.Compression.GZipStream.Dispose(System.Boolean)">
+      <summary>Libère les ressources non managées utilisées par <see cref="T:System.IO.Compression.GZipStream" /> et libère éventuellement les ressources managées.</summary>
+      <param name="disposing">true pour libérer les ressources managées et non managées ; false pour libérer uniquement les ressources non managées.</param>
+    </member>
+    <member name="M:System.IO.Compression.GZipStream.Flush">
+      <summary>L'implémentation actuelle de cette méthode n'a aucune fonctionnalité.</summary>
+      <exception cref="T:System.ObjectDisposedException">Le flux est fermé.</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="P:System.IO.Compression.GZipStream.Length">
+      <summary>Cette propriété n'est pas prise en charge et lève toujours <see cref="T:System.NotSupportedException" />.</summary>
+      <returns>Valeur Long.</returns>
+      <exception cref="T:System.NotSupportedException">Cette propriété n'est pas prise en charge sur ce flux.</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="P:System.IO.Compression.GZipStream.Position">
+      <summary>Cette propriété n'est pas prise en charge et lève toujours <see cref="T:System.NotSupportedException" />.</summary>
+      <returns>Valeur Long.</returns>
+      <exception cref="T:System.NotSupportedException">Cette propriété n'est pas prise en charge sur ce flux.</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.IO.Compression.GZipStream.Read(System.Byte[],System.Int32,System.Int32)">
+      <summary>Lit un certain nombre d'octets décompressés dans le tableau d'octets spécifié.</summary>
+      <returns>Nombre d'octets qui ont été décompressés dans le tableau d'octets. Si la fin du flux a été atteinte, zéro ou le nombre d'octets lus est retourné.</returns>
+      <param name="array">Tableau utilisé pour décompresser les octets.</param>
+      <param name="offset">Offset d'octet dans <paramref name="array" /> auquel les octets lus sont placés.</param>
+      <param name="count">Nombre maximal d'octets décompressés à lire.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> a la valeur null.</exception>
+      <exception cref="T:System.InvalidOperationException">La valeur <see cref="T:System.IO.Compression.CompressionMode" /> était Compress lorsque l'objet a été créé. - ou - Le flux sous-jacent ne prend pas en charge la lecture.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> ou <paramref name="count" /> est inférieur à zéro. ou La longueur de <paramref name="array" /> moins le point de départ de l'index est inférieure à <paramref name="count" />.</exception>
+      <exception cref="T:System.IO.InvalidDataException">Le format des données n'est pas valide.</exception>
+      <exception cref="T:System.ObjectDisposedException">Le flux est fermé.</exception>
+    </member>
+    <member name="M:System.IO.Compression.GZipStream.Seek(System.Int64,System.IO.SeekOrigin)">
+      <summary>Cette propriété n'est pas prise en charge et lève toujours <see cref="T:System.NotSupportedException" />.</summary>
+      <returns>Valeur Long.</returns>
+      <param name="offset">Emplacement dans le flux.</param>
+      <param name="origin">Une des valeurs de <see cref="T:System.IO.SeekOrigin" />.</param>
+      <exception cref="T:System.NotSupportedException">Cette propriété n'est pas prise en charge sur ce flux.</exception>
+    </member>
+    <member name="M:System.IO.Compression.GZipStream.SetLength(System.Int64)">
+      <summary>Cette propriété n'est pas prise en charge et lève toujours <see cref="T:System.NotSupportedException" />.</summary>
+      <param name="value">Longueur du flux.</param>
+      <exception cref="T:System.NotSupportedException">Cette propriété n'est pas prise en charge sur ce flux.</exception>
+    </member>
+    <member name="M:System.IO.Compression.GZipStream.Write(System.Byte[],System.Int32,System.Int32)">
+      <summary>Écrit les octets compressés dans le flux sous-jacent à partir du tableau d'octets spécifié.</summary>
+      <param name="array">Mémoire tampon qui contient les données à compresser.</param>
+      <param name="offset">Décalage d'octets du <paramref name="array" /> à partir duquel les octets lus sont lus.</param>
+      <param name="count">Nombre maximal d'octets à écrire.</param>
+      <exception cref="T:System.ObjectDisposedException">L'opération d'écriture ne peut pas être exécutée car le flux est fermé.</exception>
+    </member>
+    <member name="T:System.IO.Compression.ZipArchive">
+      <summary>Représente un package de fichiers compressés au format d'archivage Zip.</summary>
+    </member>
+    <member name="M:System.IO.Compression.ZipArchive.#ctor(System.IO.Stream)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.IO.Compression.ZipArchive" /> à partir du flux spécifié.</summary>
+      <param name="stream">Flux qui contient l'archive à lire.</param>
+      <exception cref="T:System.ArgumentException">Le flux ne prend pas en charge l'écriture ou bien il est déjà fermé.</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="stream" /> a la valeur null.</exception>
+      <exception cref="T:System.IO.InvalidDataException">Le contenu du flux de données n'est pas au format d'archivage ZIP.</exception>
+    </member>
+    <member name="M:System.IO.Compression.ZipArchive.#ctor(System.IO.Stream,System.IO.Compression.ZipArchiveMode)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.IO.Compression.ZipArchive" /> à partir du flux spécifié et avec le mode spécifié.</summary>
+      <param name="stream">Flux de sortie ou d'entrée.</param>
+      <param name="mode">L'une des valeurs d'énumération qui indique si l'archive zip est utilisée pour lire, créer ou mettre à jour des entrées.</param>
+      <exception cref="T:System.ArgumentException">Le flux de données est déjà fermé, ou les fonctions du flux de données ne correspondent pas au mode.</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="stream" /> a la valeur null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="mode" /> n'est pas une valeur valide.</exception>
+      <exception cref="T:System.IO.InvalidDataException">Le contenu du flux de données n'a pas pu être interprété comme une archive ZIP. ou <paramref name="mode" /> est <see cref="F:System.IO.Compression.ZipArchiveMode.Update" /> et l'entrée est manquante dans l'archive, ou est endommagée et ne peut pas être lue. ou <paramref name="mode" /> est <see cref="F:System.IO.Compression.ZipArchiveMode.Update" /> et une entrée est trop grande pour être contenue dans la mémoire.</exception>
+    </member>
+    <member name="M:System.IO.Compression.ZipArchive.#ctor(System.IO.Stream,System.IO.Compression.ZipArchiveMode,System.Boolean)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.IO.Compression.ZipArchive" /> sur le flux de données spécifié pour le mode spécifié, et permet éventuellement de laisser le flux ouvert.</summary>
+      <param name="stream">Flux de sortie ou d'entrée.</param>
+      <param name="mode">L'une des valeurs d'énumération qui indique si l'archive zip est utilisée pour lire, créer ou mettre à jour des entrées.</param>
+      <param name="leaveOpen">true pour maintenir le flux ouvert après avoir supprimé l'objet <see cref="T:System.IO.Compression.ZipArchive" /> ; sinon, false.</param>
+      <exception cref="T:System.ArgumentException">Le flux de données est déjà fermé, ou les fonctions du flux de données ne correspondent pas au mode.</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="stream" /> a la valeur null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="mode" /> n'est pas une valeur valide.</exception>
+      <exception cref="T:System.IO.InvalidDataException">Le contenu du flux de données n'a pas pu être interprété comme une archive ZIP. ou <paramref name="mode" /> est <see cref="F:System.IO.Compression.ZipArchiveMode.Update" /> et l'entrée est manquante dans l'archive, ou est endommagée et ne peut pas être lue. ou <paramref name="mode" /> est <see cref="F:System.IO.Compression.ZipArchiveMode.Update" /> et une entrée est trop grande pour être contenue dans la mémoire.</exception>
+    </member>
+    <member name="M:System.IO.Compression.ZipArchive.#ctor(System.IO.Stream,System.IO.Compression.ZipArchiveMode,System.Boolean,System.Text.Encoding)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.IO.Compression.ZipArchive" /> sur le flux de données spécifié pour le mode spécifié, utilise l'encodage spécifié pour les noms d'entrée, et permet éventuellement de laisser le flux ouvert.</summary>
+      <param name="stream">Flux de sortie ou d'entrée.</param>
+      <param name="mode">L'une des valeurs d'énumération qui indique si l'archive zip est utilisée pour lire, créer ou mettre à jour des entrées.</param>
+      <param name="leaveOpen">true pour maintenir le flux ouvert après avoir supprimé l'objet <see cref="T:System.IO.Compression.ZipArchive" /> ; sinon, false.</param>
+      <param name="entryNameEncoding">Encodage à utiliser lors de la lecture ou de l'écriture des noms d'entrée dans cette archive. Spécifie une valeur pour ce paramètre uniquement lorsqu'un encodage est obligatoire pour l'interopérabilité avec les outils et les bibliothèques d'archivage de zip qui ne prennent pas en charge l'encodage UTF-8 pour les noms d'entrée.</param>
+      <exception cref="T:System.ArgumentException">Le flux de données est déjà fermé, ou les fonctions du flux de données ne correspondent pas au mode.</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="stream" /> a la valeur null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="mode" /> n'est pas une valeur valide.</exception>
+      <exception cref="T:System.IO.InvalidDataException">Le contenu du flux de données n'a pas pu être interprété comme une archive ZIP. ou <paramref name="mode" /> est <see cref="F:System.IO.Compression.ZipArchiveMode.Update" /> et l'entrée est manquante dans l'archive, ou est endommagée et ne peut pas être lue. ou <paramref name="mode" /> est <see cref="F:System.IO.Compression.ZipArchiveMode.Update" /> et une entrée est trop grande pour être contenue dans la mémoire.</exception>
+    </member>
+    <member name="M:System.IO.Compression.ZipArchive.CreateEntry(System.String)">
+      <summary>Crée une entrée vide qui porte le chemin d'accès et le nom d'entrée spécifiés dans l'archive zip.</summary>
+      <returns>Entrée vide dans l'archive ZIP.</returns>
+      <param name="entryName">Chemin d'accès, relatif à la racine de l'archive, qui spécifie le nom de l'entrée à créer.</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="entryName" /> a la valeur <see cref="F:System.String.Empty" />.</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="entryName" /> a la valeur null.</exception>
+      <exception cref="T:System.NotSupportedException">L'archive zip ne prend pas en charge l'écriture.</exception>
+      <exception cref="T:System.ObjectDisposedException">L'archive zip de a été supprimée.</exception>
+    </member>
+    <member name="M:System.IO.Compression.ZipArchive.CreateEntry(System.String,System.IO.Compression.CompressionLevel)">
+      <summary>Crée une entrée vide qui porte le nom d'entrée et le niveau de compression spécifiés dans l'archive zip.</summary>
+      <returns>Entrée vide dans l'archive ZIP.</returns>
+      <param name="entryName">Chemin d'accès, relatif à la racine de l'archive, qui spécifie le nom de l'entrée à créer.</param>
+      <param name="compressionLevel">L'une des valeurs d'énumération qui indique s'il faut mettre l'accent sur rapidité ou la compression en créant l'entrée.</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="entryName" /> a la valeur <see cref="F:System.String.Empty" />.</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="entryName" /> a la valeur null.</exception>
+      <exception cref="T:System.NotSupportedException">L'archive zip ne prend pas en charge l'écriture.</exception>
+      <exception cref="T:System.ObjectDisposedException">L'archive zip de a été supprimée.</exception>
+    </member>
+    <member name="M:System.IO.Compression.ZipArchive.Dispose">
+      <summary>Libère les ressources utilisées par l'instance actuelle de la classe <see cref="T:System.IO.Compression.ZipArchive" />.</summary>
+    </member>
+    <member name="M:System.IO.Compression.ZipArchive.Dispose(System.Boolean)">
+      <summary>Appelée par les méthodes <see cref="M:System.IO.Compression.ZipArchive.Dispose" /> et <see cref="M:System.Object.Finalize" /> pour libérer les ressources non managées utilisées par l'instance actuelle de la classe <see cref="T:System.IO.Compression.ZipArchive" /> ; termine éventuellement d'écrire l'archive et libère les ressources managées.</summary>
+      <param name="disposing">true pour terminer l'écriture de l'archive et libérer les ressources managées et non managées ; false pour récupérer uniquement des ressources non managées.</param>
+    </member>
+    <member name="P:System.IO.Compression.ZipArchive.Entries">
+      <summary>Obtient la collection d'entrées figurant actuellement dans l'archive ZIP.</summary>
+      <returns>Collection d'entrées figurant actuellement dans l'archive ZIP.</returns>
+      <exception cref="T:System.NotSupportedException">L'archive ZIP ne prend pas en charge la lecture.</exception>
+      <exception cref="T:System.ObjectDisposedException">L'archive zip de a été supprimée.</exception>
+      <exception cref="T:System.IO.InvalidDataException">L'archive ZIP est endommagée et ses entrées ne peuvent pas être récupérées.</exception>
+    </member>
+    <member name="M:System.IO.Compression.ZipArchive.GetEntry(System.String)">
+      <summary>Récupère un wrapper pour l'entrée spécifiée dans l'archive Zip.</summary>
+      <returns>Wrapper pour l'entrée spécifiée dans l'archive ; null si l'entrée n'existe pas dans l'archive.</returns>
+      <param name="entryName">Chemin d'accès, relatif à la racine de l'archive, qui identifie l'entrée à récupérer.</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="entryName" /> a la valeur <see cref="F:System.String.Empty" />.</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="entryName" /> a la valeur null.</exception>
+      <exception cref="T:System.NotSupportedException">L'archive ZIP ne prend pas en charge la lecture.</exception>
+      <exception cref="T:System.ObjectDisposedException">L'archive zip de a été supprimée.</exception>
+      <exception cref="T:System.IO.InvalidDataException">L'archive ZIP est endommagée et ses entrées ne peuvent pas être récupérées.</exception>
+    </member>
+    <member name="P:System.IO.Compression.ZipArchive.Mode">
+      <summary>Obtient une valeur qui décrit le type d'action que l'archive zip peut exécuter sur des entrées.</summary>
+      <returns>L'une des valeurs d'énumération qui décrit le type d'action (lecture, création ou mise à jour) que l'archive zip peut effectuer sur les entrées.</returns>
+    </member>
+    <member name="T:System.IO.Compression.ZipArchiveEntry">
+      <summary>Représente un fichier compressé dans une archive Zip.</summary>
+    </member>
+    <member name="P:System.IO.Compression.ZipArchiveEntry.Archive">
+      <summary>Obtient l'archive ZIP à laquelle l'entrée appartient.</summary>
+      <returns>Archive ZIP à laquelle l'entrée appartient, ou null si l'entrée a été supprimée.</returns>
+    </member>
+    <member name="P:System.IO.Compression.ZipArchiveEntry.CompressedLength">
+      <summary>Obtient la taille compressée de l'entrée dans l'archive zip.</summary>
+      <returns>Taille compressée de l'entrée dans l'archive ZIP.</returns>
+      <exception cref="T:System.InvalidOperationException">La valeur de la propriété n'est pas disponible car l'entrée a été modifiée.</exception>
+    </member>
+    <member name="M:System.IO.Compression.ZipArchiveEntry.Delete">
+      <summary>Supprime l'entrée de l'archive zip.</summary>
+      <exception cref="T:System.IO.IOException">L'entrée est déjà ouverte pour la lecture ou l'écriture.</exception>
+      <exception cref="T:System.NotSupportedException">L'archive ZIP de cette entrée a été ouverte dans un mode autre que <see cref="F:System.IO.Compression.ZipArchiveMode.Update" />.</exception>
+      <exception cref="T:System.ObjectDisposedException">L'archive ZIP de cette entrée a été supprimée.</exception>
+    </member>
+    <member name="P:System.IO.Compression.ZipArchiveEntry.FullName">
+      <summary>Obtient le chemin d'accès relatif de l'entrée dans l'archive zip.</summary>
+      <returns>Chemin d'accès relatif de l'entrée dans l'archive ZIP.</returns>
+    </member>
+    <member name="P:System.IO.Compression.ZipArchiveEntry.LastWriteTime">
+      <summary>Obtient ou définit la date de dernière modification de l'entrée dans l'archive zip.</summary>
+      <returns>Heure à laquelle l'entrée a été modifiée pour la dernière fois dans l'archive ZIP.</returns>
+      <exception cref="T:System.NotSupportedException">La tentative de définition de cette propriété a échoué, car l'archive ZIP de l'entrée est en mode <see cref="F:System.IO.Compression.ZipArchiveMode.Read" /> .</exception>
+      <exception cref="T:System.IO.IOException">Le mode d'archivage a la valeur <see cref="F:System.IO.Compression.ZipArchiveMode.Create" />. - ou - Le mode d'archivage a la valeur <see cref="F:System.IO.Compression.ZipArchiveMode.Update" /> et l'entrée a été ouverte.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Tentative d'affecter cette propriété à une valeur qui est, soit antérieure au 1er janvier 1980, 00:00:00 (minuit), soit ultérieure au 31 décembre 2017, 23:59:58 (une seconde avant minuit).</exception>
+    </member>
+    <member name="P:System.IO.Compression.ZipArchiveEntry.Length">
+      <summary>Obtient la taille décompressée de l'entrée dans l'archive zip.</summary>
+      <returns>Taille décompressée de l'entrée dans l'archive ZIP.</returns>
+      <exception cref="T:System.InvalidOperationException">La valeur de la propriété n'est pas disponible car l'entrée a été modifiée.</exception>
+    </member>
+    <member name="P:System.IO.Compression.ZipArchiveEntry.Name">
+      <summary>Obtient le nom du fichier de l'entrée dans l'archive zip.</summary>
+      <returns>Nom de fichier de l'entrée dans l'archive ZIP.</returns>
+    </member>
+    <member name="M:System.IO.Compression.ZipArchiveEntry.Open">
+      <summary>Ouvre l'entrée à partir de l'archive zip.</summary>
+      <returns>Flux de données qui représente le contenu de l'entrée.</returns>
+      <exception cref="T:System.IO.IOException">L'entrée est actuellement ouverte en écriture. ou L'entrée a été supprimée de l'archive. ou L'archive de cette entrée a été ouverte en mode <see cref="F:System.IO.Compression.ZipArchiveMode.Create" /> et cette entrée a déjà été écrite.</exception>
+      <exception cref="T:System.IO.InvalidDataException">L'entrée est manquante dans l'archive, ou est endommagée et ne peut pas être lue.  ou L'entrée a été compressée à l'aide d'une méthode de compression non prise en charge.</exception>
+      <exception cref="T:System.ObjectDisposedException">L'archive ZIP de cette entrée a été supprimée.</exception>
+    </member>
+    <member name="M:System.IO.Compression.ZipArchiveEntry.ToString">
+      <summary>Extrait le chemin d'accès relatif de l'entrée dans l'archive Zip.</summary>
+      <returns>Chemin d'accès relatif de l'entrée, qui est la valeur stockée dans la propriété <see cref="P:System.IO.Compression.ZipArchiveEntry.FullName" />.</returns>
+    </member>
+    <member name="T:System.IO.Compression.ZipArchiveMode">
+      <summary>Spécifie les valeurs pour interagir avec les entrées d'archive ZIP.</summary>
+    </member>
+    <member name="F:System.IO.Compression.ZipArchiveMode.Create">
+      <summary>Seule la création de nouvelles entrées d'archivage est autorisée.</summary>
+    </member>
+    <member name="F:System.IO.Compression.ZipArchiveMode.Read">
+      <summary>Seule la lecture des entrées d'archivage est autorisée.</summary>
+    </member>
+    <member name="F:System.IO.Compression.ZipArchiveMode.Update">
+      <summary>Les opérations de lecture et d'écriture sont autorisées pour les entrées d'archivage.</summary>
+    </member>
+  </members>
+</doc>

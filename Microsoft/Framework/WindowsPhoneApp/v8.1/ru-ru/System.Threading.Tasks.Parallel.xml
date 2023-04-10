@@ -1,0 +1,479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.Threading.Tasks.Parallel</name>
+  </assembly>
+  <members>
+    <member name="T:System.Threading.Tasks.Parallel">
+      <summary>Предоставляет поддержку параллельных циклов и областей.</summary>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,System.Action{System.Int32})">
+      <summary>Выполняет цикл for (For в Visual Basic), в котором итерации могут выполняться параллельно.</summary>
+      <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
+      <param name="fromInclusive">Начальный индекс (включительно).</param>
+      <param name="toExclusive">Конечный индекс, не включительно.</param>
+      <param name="body">Делегат, который вызывается один раз за итерацию.</param>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="body" /> равен пустой ссылке (null).</exception>
+      <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,System.Action{System.Int32,System.Threading.Tasks.ParallelLoopState})">
+      <summary>Выполняет цикл for (For в Visual Basic), обеспечивая возможность параллельного выполнения итераций, а также контроля состояния цикла и управления этим состоянием.</summary>
+      <returns>Структура , в которой содержатся сведения о выполненной части цикла.</returns>
+      <param name="fromInclusive">Начальный индекс (включительно).</param>
+      <param name="toExclusive">Конечный индекс, не включительно.</param>
+      <param name="body">Делегат, который вызывается один раз за итерацию.</param>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="body" /> равен пустой ссылке (null).</exception>
+      <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.For``1(System.Int32,System.Int32,System.Func{``0},System.Func{System.Int32,System.Threading.Tasks.ParallelLoopState,``0,``0},System.Action{``0})">
+      <summary>Выполняет цикл for (For в Visual Basic) с локальными данными потока, обеспечивая возможность параллельного выполнения итераций, а также контроля состояния цикла и управления этим состоянием.</summary>
+      <returns>Структура , в которой содержатся сведения о выполненной части цикла.</returns>
+      <param name="fromInclusive">Начальный индекс (включительно).</param>
+      <param name="toExclusive">Конечный индекс, не включительно.</param>
+      <param name="localInit">Делегат функции, который возвращает начальное состояние локальных данных для каждой задачи.</param>
+      <param name="body">Делегат, который вызывается один раз за итерацию.</param>
+      <param name="localFinally">Делегат, который выполняет финальное действие с локальным состоянием каждой задачи.</param>
+      <typeparam name="TLocal">Тип данных, локальных для потока.</typeparam>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="body" /> равен пустой ссылке (null). -или- Аргумент <paramref name="localInit" /> равен пустой ссылке (null). -или- Аргумент <paramref name="localFinally" /> равен пустой ссылке (null).</exception>
+      <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,System.Threading.Tasks.ParallelOptions,System.Action{System.Int32})">
+      <summary>Выполняет цикл for (For в Visual Basic), обеспечивая возможность параллельного выполнения итераций и настройки параметров цикла.</summary>
+      <returns>Структура , в которой содержатся сведения о выполненной части цикла.</returns>
+      <param name="fromInclusive">Начальный индекс (включительно).</param>
+      <param name="toExclusive">Конечный индекс, не включительно.</param>
+      <param name="parallelOptions">Объект, используемый для настройки поведения этой операции.</param>
+      <param name="body">Делегат, который вызывается один раз за итерацию.</param>
+      <exception cref="T:System.OperationCanceledException">Токен <see cref="T:System.Threading.CancellationToken" /> в аргументе <paramref name="parallelOptions" /> отменен.</exception>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="body" /> равен пустой ссылке (null). -или- Аргумент <paramref name="parallelOptions" /> равен пустой ссылке (null).</exception>
+      <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,System.Threading.Tasks.ParallelOptions,System.Action{System.Int32,System.Threading.Tasks.ParallelLoopState})">
+      <summary>Выполняет цикл for (For в Visual Basic), обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.</summary>
+      <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
+      <param name="fromInclusive">Начальный индекс (включительно).</param>
+      <param name="toExclusive">Конечный индекс, не включительно.</param>
+      <param name="parallelOptions">Объект, используемый для настройки поведения этой операции.</param>
+      <param name="body">Делегат, который вызывается один раз за итерацию.</param>
+      <exception cref="T:System.OperationCanceledException">Токен <see cref="T:System.Threading.CancellationToken" /> в аргументе <paramref name="parallelOptions" /> отменен.</exception>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="body" /> равен пустой ссылке (null). -или- Аргумент <paramref name="parallelOptions" /> равен пустой ссылке (null).</exception>
+      <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.For``1(System.Int32,System.Int32,System.Threading.Tasks.ParallelOptions,System.Func{``0},System.Func{System.Int32,System.Threading.Tasks.ParallelLoopState,``0,``0},System.Action{``0})">
+      <summary>Выполняет цикл for (For в Visual Basic) с локальными данными потока, обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.</summary>
+      <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
+      <param name="fromInclusive">Начальный индекс (включительно).</param>
+      <param name="toExclusive">Конечный индекс, не включительно.</param>
+      <param name="parallelOptions">Объект, используемый для настройки поведения этой операции.</param>
+      <param name="localInit">Делегат функции, который возвращает начальное состояние локальных данных для каждой задачи.</param>
+      <param name="body">Делегат, который вызывается один раз за итерацию.</param>
+      <param name="localFinally">Делегат, который выполняет финальное действие с локальным состоянием каждой задачи.</param>
+      <typeparam name="TLocal">Тип данных, локальных для потока.</typeparam>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="body" /> равен пустой ссылке (null). -или- Аргумент <paramref name="localInit" /> равен пустой ссылке (null). -или- Аргумент <paramref name="localFinally" /> равен пустой ссылке (null). -или- Аргумент <paramref name="parallelOptions" /> равен пустой ссылке (null).</exception>
+      <exception cref="T:System.OperationCanceledException">Токен <see cref="T:System.Threading.CancellationToken" /> в аргументе <paramref name="parallelOptions" /> отменен.</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
+      <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,System.Action{System.Int64})">
+      <summary>Выполняет цикл for (For в Visual Basic) с 64-разрядными индексами, в котором итерации могут выполняться параллельно.</summary>
+      <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
+      <param name="fromInclusive">Начальный индекс (включительно).</param>
+      <param name="toExclusive">Конечный индекс, не включительно.</param>
+      <param name="body">Делегат, который вызывается один раз за итерацию.</param>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="body" /> равен пустой ссылке (null).</exception>
+      <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,System.Action{System.Int64,System.Threading.Tasks.ParallelLoopState})">
+      <summary>Выполняет цикл for (For в Visual Basic) с 64-разрядными индексами, обеспечивая возможность параллельного выполнения итераций, а также контроля состояния цикла и управления этим состоянием.</summary>
+      <returns>Структура <see cref="T:System.Threading.Tasks.ParallelLoopResult" />, в которой содержатся сведения о выполненной части цикла.</returns>
+      <param name="fromInclusive">Начальный индекс (включительно).</param>
+      <param name="toExclusive">Конечный индекс, не включительно.</param>
+      <param name="body">Делегат, который вызывается один раз за итерацию.</param>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="body" /> равен пустой ссылке (null).</exception>
+      <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.For``1(System.Int64,System.Int64,System.Func{``0},System.Func{System.Int64,System.Threading.Tasks.ParallelLoopState,``0,``0},System.Action{``0})">
+      <summary>Выполняет цикл for (For в Visual Basic) с 64-разрядными индексами и локальными данными потока, обеспечивая возможность параллельного выполнения итераций, а также контроля состояния цикла и управления этим состоянием.</summary>
+      <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
+      <param name="fromInclusive">Начальный индекс (включительно).</param>
+      <param name="toExclusive">Конечный индекс, не включительно.</param>
+      <param name="localInit">Делегат функции, который возвращает начальное состояние локальных данных для каждой задачи.</param>
+      <param name="body">Делегат, который вызывается один раз за итерацию.</param>
+      <param name="localFinally">Делегат, который выполняет финальное действие с локальным состоянием каждой задачи.</param>
+      <typeparam name="TLocal">Тип данных, локальных для потока.</typeparam>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="body" /> равен пустой ссылке (null). -или- Аргумент <paramref name="localInit" /> равен пустой ссылке (null). -или- Аргумент <paramref name="localFinally" /> равен пустой ссылке (null).</exception>
+      <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,System.Threading.Tasks.ParallelOptions,System.Action{System.Int64})">
+      <summary>Выполняет цикл for (For в Visual Basic) с 64-разрядными индексами, обеспечивая возможность параллельного выполнения итераций и настройки параметров цикла.</summary>
+      <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
+      <param name="fromInclusive">Начальный индекс (включительно).</param>
+      <param name="toExclusive">Конечный индекс, не включительно.</param>
+      <param name="parallelOptions">Объект, используемый для настройки поведения этой операции.</param>
+      <param name="body">Делегат, который вызывается один раз за итерацию.</param>
+      <exception cref="T:System.OperationCanceledException">Токен <see cref="T:System.Threading.CancellationToken" /> в аргументе <paramref name="parallelOptions" /> отменен.</exception>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="body" /> равен пустой ссылке (null). -или- Аргумент <paramref name="parallelOptions" /> равен пустой ссылке (null).</exception>
+      <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,System.Threading.Tasks.ParallelOptions,System.Action{System.Int64,System.Threading.Tasks.ParallelLoopState})">
+      <summary>Выполняет цикл for (For в Visual Basic) с 64-разрядными индексами, обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.</summary>
+      <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
+      <param name="fromInclusive">Начальный индекс (включительно).</param>
+      <param name="toExclusive">Конечный индекс, не включительно.</param>
+      <param name="parallelOptions">Объект, используемый для настройки поведения этой операции.</param>
+      <param name="body">Делегат, который вызывается один раз за итерацию.</param>
+      <exception cref="T:System.OperationCanceledException">Токен <see cref="T:System.Threading.CancellationToken" /> в аргументе <paramref name="parallelOptions" /> отменен.</exception>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="body" /> равен пустой ссылке (null). -или- Аргумент <paramref name="parallelOptions" /> равен пустой ссылке (null).</exception>
+      <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.For``1(System.Int64,System.Int64,System.Threading.Tasks.ParallelOptions,System.Func{``0},System.Func{System.Int64,System.Threading.Tasks.ParallelLoopState,``0,``0},System.Action{``0})">
+      <summary>Выполняет цикл for (For в Visual Basic) с 64-разрядными индексами и локальными данными потока, обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.</summary>
+      <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
+      <param name="fromInclusive">Начальный индекс (включительно).</param>
+      <param name="toExclusive">Конечный индекс, не включительно.</param>
+      <param name="parallelOptions">Объект, используемый для настройки поведения этой операции.</param>
+      <param name="localInit">Делегат функции, который возвращает начальное состояние локальных данных для каждого потока.</param>
+      <param name="body">Делегат, который вызывается один раз за итерацию.</param>
+      <param name="localFinally">Делегат, который выполняет финальное действие с локальным состоянием каждого потока.</param>
+      <typeparam name="TLocal">Тип данных, локальных для потока.</typeparam>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="body" /> равен пустой ссылке (null). -или- Аргумент <paramref name="localInit" /> равен пустой ссылке (null). -или- Аргумент <paramref name="localFinally" /> равен пустой ссылке (null). -или- Аргумент <paramref name="parallelOptions" /> равен пустой ссылке (null).</exception>
+      <exception cref="T:System.OperationCanceledException">Токен <see cref="T:System.Threading.CancellationToken" /> в аргументе <paramref name="parallelOptions" /> отменен.</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
+      <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.OrderablePartitioner{``0},System.Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})">
+      <summary>Выполняет операцию foreach (For Each в Visual Basic) для объекта <see cref="T:System.Collections.Concurrent.OrderablePartitioner`1" />, обеспечивая возможность параллельного выполнения итераций, а также контроля состояния цикла и управления этим состоянием.</summary>
+      <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
+      <param name="source">Упорядочиваемый разделитель, содержащий исходный источник данных.</param>
+      <param name="body">Делегат, который вызывается один раз за итерацию.</param>
+      <typeparam name="TSource">Тип элементов в объекте <paramref name="source" />.</typeparam>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> равен пустой ссылке (null). -или- Аргумент <paramref name="body" /> равен пустой ссылке (null).</exception>
+      <exception cref="T:System.InvalidOperationException">Свойство <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> в упорядочиваемом разделителе <paramref name="source" /> возвращает значение false. -или- Свойство <see cref="P:System.Collections.Concurrent.OrderablePartitioner`1.KeysNormalized" /> в упорядочиваемом разделителе источника возвращает значение false. -или- Все методы в упорядочиваемом модуле разделения источника возвращают null.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Concurrent.OrderablePartitioner{``0},System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},System.Action{``1})">
+      <summary>Выполняет операцию foreach (For Each в Visual Basic) с локальными данными потока для объекта <see cref="T:System.Collections.Concurrent.OrderablePartitioner`1" />, обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.</summary>
+      <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
+      <param name="source">Упорядочиваемый разделитель, содержащий исходный источник данных.</param>
+      <param name="localInit">Делегат функции, который возвращает начальное состояние локальных данных для каждой задачи.</param>
+      <param name="body">Делегат, который вызывается один раз за итерацию.</param>
+      <param name="localFinally">Делегат, который выполняет финальное действие с локальным состоянием каждой задачи.</param>
+      <typeparam name="TSource">Тип элементов в объекте <paramref name="source" />.</typeparam>
+      <typeparam name="TLocal">Тип данных, локальных для потока.</typeparam>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> равен пустой ссылке (null). -или- Аргумент <paramref name="body" /> равен пустой ссылке (null). -или- Аргумент <paramref name="localInit" /> равен пустой ссылке (null). -или- Аргумент <paramref name="localFinally" /> равен пустой ссылке (null).</exception>
+      <exception cref="T:System.InvalidOperationException">Свойство <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> в разделителе <paramref name="source" /><see cref="T:System.Collections.Concurrent.Partitioner" /> возвращает значение false или разделитель возвращает части со значением null.</exception>
+      <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.OrderablePartitioner{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})">
+      <summary>Выполняет операцию foreach (For Each в Visual Basic) для объекта <see cref="T:System.Collections.Concurrent.OrderablePartitioner`1" />, обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.</summary>
+      <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
+      <param name="source">Упорядочиваемый разделитель, содержащий исходный источник данных.</param>
+      <param name="parallelOptions">Объект, используемый для настройки поведения этой операции.</param>
+      <param name="body">Делегат, который вызывается один раз за итерацию.</param>
+      <typeparam name="TSource">Тип элементов в объекте <paramref name="source" />.</typeparam>
+      <exception cref="T:System.OperationCanceledException">Токен <see cref="T:System.Threading.CancellationToken" /> в аргументе <paramref name="parallelOptions" /> отменен</exception>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> равен пустой ссылке (null). -или- Аргумент <paramref name="parallelOptions" /> равен пустой ссылке (null). -или- Аргумент <paramref name="body" /> равен пустой ссылке (null).</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
+      <exception cref="T:System.InvalidOperationException">Свойство <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> в упорядочиваемом разделителе <paramref name="source" /> возвращает значение false. -или- Свойство <see cref="P:System.Collections.Concurrent.OrderablePartitioner`1.KeysNormalized" /> в упорядочиваемом разделителе <paramref name="source" /> возвращает значение false. -или- Исключение, которое возникает, когда методы в упорядочиваемом разделителе <paramref name="source" /> возвращают значение null.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Concurrent.OrderablePartitioner{``0},System.Threading.Tasks.ParallelOptions,System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},System.Action{``1})">
+      <summary>Выполняет операцию foreach (For Each в Visual Basic) с 64-разрядными индексами и локальными данными потока для объекта <see cref="T:System.Collections.Concurrent.OrderablePartitioner`1" />, обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.</summary>
+      <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
+      <param name="source">Упорядочиваемый разделитель, содержащий исходный источник данных.</param>
+      <param name="parallelOptions">Объект, используемый для настройки поведения этой операции.</param>
+      <param name="localInit">Делегат функции, который возвращает начальное состояние локальных данных для каждой задачи.</param>
+      <param name="body">Делегат, который вызывается один раз за итерацию.</param>
+      <param name="localFinally">Делегат, который выполняет финальное действие с локальным состоянием каждой задачи.</param>
+      <typeparam name="TSource">Тип элементов в объекте <paramref name="source" />.</typeparam>
+      <typeparam name="TLocal">Тип данных, локальных для потока.</typeparam>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> равен пустой ссылке (null). -или- Аргумент <paramref name="parallelOptions" /> равен пустой ссылке (null). -или- Аргумент <paramref name="body" /> равен пустой ссылке (null). -или- Аргумент <paramref name="localInit" /> или аргумент <paramref name="localFinally" /> имеет значение null.</exception>
+      <exception cref="T:System.InvalidOperationException">Свойство <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> в разделителе <paramref name="source" /><see cref="T:System.Collections.Concurrent.Partitioner" /> возвращает значение false или разделитель возвращает части со значением null.</exception>
+      <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
+      <exception cref="T:System.OperationCanceledException">Токен <see cref="T:System.Threading.CancellationToken" /> в аргументе <paramref name="parallelOptions" /> отменен.</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.Partitioner{``0},System.Action{``0})">
+      <summary>Выполняет операцию foreach (For Each в Visual Basic) для объекта <see cref="T:System.Collections.Concurrent.Partitioner" />, обеспечивая возможность параллельного выполнения итераций.</summary>
+      <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
+      <param name="source">Разделитель, содержащий исходный источник данных.</param>
+      <param name="body">Делегат, который вызывается один раз за итерацию.</param>
+      <typeparam name="TSource">Тип элементов в объекте <paramref name="source" />.</typeparam>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> равен пустой ссылке (null). -или- Аргумент <paramref name="body" /> равен пустой ссылке (null).</exception>
+      <exception cref="T:System.InvalidOperationException">Свойство <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> в разделителе <paramref name="source" /> возвращает false. -или- Исключение, которое возникает, когда какие-либо методы в разделителе <paramref name="source" /> возвращают значение null. -или- Метод <see cref="M:System.Collections.Concurrent.Partitioner`1.GetPartitions(System.Int32)" /> в разделителе <paramref name="source" /> не возвращает правильное число разделов.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.Partitioner{``0},System.Action{``0,System.Threading.Tasks.ParallelLoopState})">
+      <summary>Выполняет операцию foreach (For Each в Visual Basic) для объекта <see cref="T:System.Collections.Concurrent.Partitioner" />, обеспечивая возможность параллельного выполнения итераций, а также контроля состояния цикла и управления этим состоянием.</summary>
+      <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
+      <param name="source">Разделитель, содержащий исходный источник данных.</param>
+      <param name="body">Делегат, который вызывается один раз за итерацию.</param>
+      <typeparam name="TSource">Тип элементов в объекте <paramref name="source" />.</typeparam>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> равен пустой ссылке (null). -или- Аргумент <paramref name="body" /> равен пустой ссылке (null).</exception>
+      <exception cref="T:System.InvalidOperationException">Свойство <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> в разделителе <paramref name="source" /> возвращает false. -или- Метод в разделителе <paramref name="source" /> возвращает null. -или- Метод <see cref="M:System.Collections.Concurrent.Partitioner`1.GetPartitions(System.Int32)" /> в разделителе <paramref name="source" /> не возвращает правильное число разделов.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Concurrent.Partitioner{``0},System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},System.Action{``1})">
+      <summary>Выполняет операцию foreach (For Each в Visual Basic) с локальными данными потока для объекта <see cref="T:System.Collections.Concurrent.Partitioner" />, обеспечивая возможность параллельного выполнения итераций, а также контроля состояния цикла и управления этим состоянием.</summary>
+      <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
+      <param name="source">Разделитель, содержащий исходный источник данных.</param>
+      <param name="localInit">Делегат функции, который возвращает начальное состояние локальных данных для каждой задачи.</param>
+      <param name="body">Делегат, который вызывается один раз за итерацию.</param>
+      <param name="localFinally">Делегат, который выполняет финальное действие с локальным состоянием каждой задачи.</param>
+      <typeparam name="TSource">Тип элементов в объекте <paramref name="source" />.</typeparam>
+      <typeparam name="TLocal">Тип данных, локальных для потока.</typeparam>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> равен пустой ссылке (null). -или- Аргумент <paramref name="body" /> равен пустой ссылке (null). -или- Аргумент <paramref name="localInit" /> равен пустой ссылке (null). -или- Аргумент <paramref name="localFinally" /> равен пустой ссылке (null).</exception>
+      <exception cref="T:System.InvalidOperationException">Свойство <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> в разделителе <paramref name="source" /><see cref="T:System.Collections.Concurrent.Partitioner" /> возвращает значение false или разделитель возвращает части со значением null.</exception>
+      <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.Partitioner{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0})">
+      <summary>Выполняет операцию following examplereach (For Each в Visual Basic) для объекта <see cref="T:System.Collections.Concurrent.Partitioner" />, обеспечивая возможность параллельного выполнения итераций и настройки параметров цикла.</summary>
+      <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
+      <param name="source">Разделитель, содержащий исходный источник данных.</param>
+      <param name="parallelOptions">Объект, используемый для настройки поведения этой операции.</param>
+      <param name="body">Делегат, который вызывается один раз за итерацию.</param>
+      <typeparam name="TSource">Тип элементов в объекте <paramref name="source" />.</typeparam>
+      <exception cref="T:System.OperationCanceledException">Токен <see cref="T:System.Threading.CancellationToken" /> в аргументе <paramref name="parallelOptions" /> отменен.</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> равен пустой ссылке (null). -или- Аргумент <paramref name="parallelOptions" /> равен пустой ссылке (null). -или- Аргумент <paramref name="body" /> равен пустой ссылке (null).</exception>
+      <exception cref="T:System.InvalidOperationException">Свойство <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> в разделителе <paramref name="source" /> возвращает false. -или- Исключение, которое возникает, когда какие-либо методы в разделителе <paramref name="source" /> возвращают значение null.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.Partitioner{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0,System.Threading.Tasks.ParallelLoopState})">
+      <summary>Выполняет операцию foreach (For Each в Visual Basic) для объекта <see cref="T:System.Collections.Concurrent.Partitioner" />, обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.</summary>
+      <returns>Структура , в которой содержатся сведения о выполненной части цикла.</returns>
+      <param name="source">Разделитель, содержащий исходный источник данных.</param>
+      <param name="parallelOptions">Объект, используемый для настройки поведения этой операции.</param>
+      <param name="body">Делегат, который вызывается один раз за итерацию.</param>
+      <typeparam name="TSource">Тип элементов в объекте <paramref name="source" />.</typeparam>
+      <exception cref="T:System.OperationCanceledException">Токен <see cref="T:System.Threading.CancellationToken" /> в аргументе <paramref name="parallelOptions" /> отменен.</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> равен пустой ссылке (null). -или- Аргумент <paramref name="parallelOptions" /> равен пустой ссылке (null). -или- Аргумент <paramref name="body" /> равен пустой ссылке (null).</exception>
+      <exception cref="T:System.InvalidOperationException">Свойство <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> в разделителе <paramref name="source" /> возвращает false. -или- Исключение, которое возникает, когда какие-либо методы в разделителе <paramref name="source" /> возвращают значение null.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Concurrent.Partitioner{``0},System.Threading.Tasks.ParallelOptions,System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},System.Action{``1})">
+      <summary>Выполняет операцию foreach (For Each в Visual Basic) с локальными данными потока для объекта <see cref="T:System.Collections.Concurrent.Partitioner" />, обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.</summary>
+      <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
+      <param name="source">Разделитель, содержащий исходный источник данных.</param>
+      <param name="parallelOptions">Объект, используемый для настройки поведения этой операции.</param>
+      <param name="localInit">Делегат функции, который возвращает начальное состояние локальных данных для каждой задачи.</param>
+      <param name="body">Делегат, который вызывается один раз за итерацию.</param>
+      <param name="localFinally">Делегат, который выполняет финальное действие с локальным состоянием каждой задачи.</param>
+      <typeparam name="TSource">Тип элементов в объекте <paramref name="source" />.</typeparam>
+      <typeparam name="TLocal">Тип данных, локальных для потока.</typeparam>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> равен пустой ссылке (null). -или- Аргумент <paramref name="parallelOptions" /> равен пустой ссылке (null). -или- Аргумент <paramref name="body" /> равен пустой ссылке (null). -или- Аргумент <paramref name="localInit" /> равен пустой ссылке (null). -или- Аргумент <paramref name="localFinally" /> равен пустой ссылке (null).</exception>
+      <exception cref="T:System.InvalidOperationException">Свойство <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> в разделителе <paramref name="source" /><see cref="T:System.Collections.Concurrent.Partitioner" /> возвращает значение false или разделитель возвращает части со значением null.</exception>
+      <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
+      <exception cref="T:System.OperationCanceledException">Токен <see cref="T:System.Threading.CancellationToken" /> в аргументе <paramref name="parallelOptions" /> отменен.</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+      <summary>Выполняет операцию foreach (For Each в Visual Basic) для объекта <see cref="T:System.Collections.IEnumerable" />, обеспечивая возможность параллельного выполнения итераций.</summary>
+      <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
+      <param name="source">Перечислимый источник данных.</param>
+      <param name="body">Делегат, который вызывается один раз за итерацию.</param>
+      <typeparam name="TSource">Тип данных в источнике.</typeparam>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> равен пустой ссылке (null). -или- Аргумент <paramref name="body" /> равен пустой ссылке (null).</exception>
+      <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Threading.Tasks.ParallelLoopState})">
+      <summary>Выполняет операцию foreach (For Each в Visual Basic) для объекта <see cref="T:System.Collections.IEnumerable" />, обеспечивая возможность параллельного выполнения итераций, а также контроля состояния цикла и управления этим состоянием.</summary>
+      <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
+      <param name="source">Перечислимый источник данных.</param>
+      <param name="body">Делегат, который вызывается один раз за итерацию.</param>
+      <typeparam name="TSource">Тип данных в источнике.</typeparam>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> равен пустой ссылке (null). -или- Аргумент <paramref name="body" /> равен пустой ссылке (null).</exception>
+      <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})">
+      <summary>Выполняет операцию foreach (For Each в Visual Basic) с 64-разрядными индексами для объекта <see cref="T:System.Collections.IEnumerable" />, обеспечивая возможность параллельного выполнения итераций, а также контроля состояния цикла и управления этим состоянием.</summary>
+      <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
+      <param name="source">Перечислимый источник данных.</param>
+      <param name="body">Делегат, который вызывается один раз за итерацию.</param>
+      <typeparam name="TSource">Тип данных в источнике.</typeparam>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> равен пустой ссылке (null). -или- Аргумент <paramref name="body" /> равен пустой ссылке (null).</exception>
+      <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Generic.IEnumerable{``0},System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},System.Action{``1})">
+      <summary>Выполняет операцию foreach (For Each в Visual Basic) с локальными данными потока для объекта <see cref="T:System.Collections.IEnumerable" />, обеспечивая возможность параллельного выполнения итераций, а также контроля состояния цикла и управления этим состоянием.</summary>
+      <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
+      <param name="source">Перечислимый источник данных.</param>
+      <param name="localInit">Делегат функции, который возвращает начальное состояние локальных данных для каждой задачи.</param>
+      <param name="body">Делегат, который вызывается один раз за итерацию.</param>
+      <param name="localFinally">Делегат, который выполняет финальное действие с локальным состоянием каждой задачи.</param>
+      <typeparam name="TSource">Тип данных в источнике.</typeparam>
+      <typeparam name="TLocal">Тип данных, локальных для потока.</typeparam>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> равен пустой ссылке (null). -или- Аргумент <paramref name="body" /> равен пустой ссылке (null). -или- Аргумент <paramref name="localInit" /> равен пустой ссылке (null). -или- Аргумент <paramref name="localFinally" /> равен пустой ссылке (null).</exception>
+      <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Generic.IEnumerable{``0},System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},System.Action{``1})">
+      <summary>Выполняет операцию foreach (For Each в Visual Basic) с локальными данными потока для объекта <see cref="T:System.Collections.IEnumerable" />, обеспечивая возможность параллельного выполнения итераций, а также контроля состояния цикла и управления этим состоянием.</summary>
+      <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
+      <param name="source">Перечислимый источник данных.</param>
+      <param name="localInit">Делегат функции, который возвращает начальное состояние локальных данных для каждой задачи.</param>
+      <param name="body">Делегат, который вызывается один раз за итерацию.</param>
+      <param name="localFinally">Делегат, который выполняет финальное действие с локальным состоянием каждой задачи.</param>
+      <typeparam name="TSource">Тип данных в источнике.</typeparam>
+      <typeparam name="TLocal">Тип данных, локальных для потока.</typeparam>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> равен пустой ссылке (null). -или- Аргумент <paramref name="body" /> равен пустой ссылке (null). -или- Аргумент <paramref name="localInit" /> равен пустой ссылке (null). -или- Аргумент <paramref name="localFinally" /> равен пустой ссылке (null).</exception>
+      <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0})">
+      <summary>Выполняет операцию foreach (For Each в Visual Basic) для объекта <see cref="T:System.Collections.IEnumerable" />, обеспечивая возможность параллельного выполнения итераций и настройки параметров цикла.</summary>
+      <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
+      <param name="source">Перечислимый источник данных.</param>
+      <param name="parallelOptions">Объект, используемый для настройки поведения этой операции.</param>
+      <param name="body">Делегат, который вызывается один раз за итерацию.</param>
+      <typeparam name="TSource">Тип данных в источнике.</typeparam>
+      <exception cref="T:System.OperationCanceledException">Токен <see cref="T:System.Threading.CancellationToken" /> в аргументе <paramref name="parallelOptions" /> отменен</exception>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> равен пустой ссылке (null). -или- Аргумент <paramref name="parallelOptions" /> равен пустой ссылке (null). -или- Аргумент <paramref name="body" /> равен пустой ссылке (null).</exception>
+      <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0,System.Threading.Tasks.ParallelLoopState})">
+      <summary>Выполняет операцию foreach (For Each в Visual Basic) для объекта <see cref="T:System.Collections.IEnumerable" />, обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.</summary>
+      <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
+      <param name="source">Перечислимый источник данных.</param>
+      <param name="parallelOptions">Объект, используемый для настройки поведения этой операции.</param>
+      <param name="body">Делегат, который вызывается один раз за итерацию.</param>
+      <typeparam name="TSource">Тип данных в источнике.</typeparam>
+      <exception cref="T:System.OperationCanceledException">Токен <see cref="T:System.Threading.CancellationToken" /> в аргументе <paramref name="parallelOptions" /> отменен</exception>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> равен пустой ссылке (null). -или- Аргумент <paramref name="parallelOptions" /> равен пустой ссылке (null). -или- Аргумент <paramref name="body" /> равен пустой ссылке (null).</exception>
+      <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})">
+      <summary>Выполняет операцию foreach (For Each в Visual Basic) с 64-разрядными индексами для объекта <see cref="T:System.Collections.IEnumerable" />, обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.</summary>
+      <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
+      <param name="source">Перечислимый источник данных.</param>
+      <param name="parallelOptions">Объект, используемый для настройки поведения этой операции.</param>
+      <param name="body">Делегат, который вызывается один раз за итерацию.</param>
+      <typeparam name="TSource">Тип данных в источнике.</typeparam>
+      <exception cref="T:System.OperationCanceledException">Токен <see cref="T:System.Threading.CancellationToken" /> в аргументе <paramref name="parallelOptions" /> отменен</exception>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> равен пустой ссылке (null). -или- Аргумент <paramref name="parallelOptions" /> равен пустой ссылке (null). -или- Аргумент <paramref name="body" /> равен пустой ссылке (null).</exception>
+      <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Generic.IEnumerable{``0},System.Threading.Tasks.ParallelOptions,System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},System.Action{``1})">
+      <summary>Выполняет операцию foreach (For Each в Visual Basic) с локальными данными потока для объекта <see cref="T:System.Collections.IEnumerable" />, обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.</summary>
+      <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
+      <param name="source">Перечислимый источник данных.</param>
+      <param name="parallelOptions">Объект, используемый для настройки поведения этой операции.</param>
+      <param name="localInit">Делегат функции, который возвращает начальное состояние локальных данных для каждой задачи.</param>
+      <param name="body">Делегат, который вызывается один раз за итерацию.</param>
+      <param name="localFinally">Делегат, который выполняет финальное действие с локальным состоянием каждой задачи.</param>
+      <typeparam name="TSource">Тип данных в источнике.</typeparam>
+      <typeparam name="TLocal">Тип данных, локальных для потока.</typeparam>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> равен пустой ссылке (null). -или- Аргумент <paramref name="parallelOptions" /> равен пустой ссылке (null). -или- Аргумент <paramref name="body" /> равен пустой ссылке (null). -или- Аргумент <paramref name="localInit" /> равен пустой ссылке (null). -или- Аргумент <paramref name="localFinally" /> равен пустой ссылке (null).</exception>
+      <exception cref="T:System.OperationCanceledException">Токен <see cref="T:System.Threading.CancellationToken" /> в аргументе <paramref name="parallelOptions" /> отменен.</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
+      <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Generic.IEnumerable{``0},System.Threading.Tasks.ParallelOptions,System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},System.Action{``1})">
+      <summary>Выполняет операцию foreach (For Each в Visual Basic) с 64-разрядными индексами и локальными данными потока для объекта <see cref="T:System.Collections.IEnumerable" />, обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.</summary>
+      <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
+      <param name="source">Перечислимый источник данных.</param>
+      <param name="parallelOptions">Объект, используемый для настройки поведения этой операции.</param>
+      <param name="localInit">Делегат функции, который возвращает начальное состояние локальных данных для каждой задачи.</param>
+      <param name="body">Делегат, который вызывается один раз за итерацию.</param>
+      <param name="localFinally">Делегат, который выполняет финальное действие с локальным состоянием каждой задачи.</param>
+      <typeparam name="TSource">Тип данных в источнике.</typeparam>
+      <typeparam name="TLocal">Тип данных, локальных для потока.</typeparam>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> равен пустой ссылке (null). -или- Аргумент <paramref name="parallelOptions" /> равен пустой ссылке (null). -или- Аргумент <paramref name="body" /> равен пустой ссылке (null). -или- Аргумент <paramref name="localInit" /> равен пустой ссылке (null). -или- Аргумент <paramref name="localFinally" /> равен пустой ссылке (null).</exception>
+      <exception cref="T:System.OperationCanceledException">Токен <see cref="T:System.Threading.CancellationToken" /> в аргументе <paramref name="parallelOptions" /> отменен.</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
+      <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.Invoke(System.Action[])">
+      <summary>Выполняет все предоставленные действия, в том числе параллельно.</summary>
+      <param name="actions">Массив действий <see cref="T:System.Action" /> для выполнения.</param>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="actions" /> равен пустой ссылке (null).</exception>
+      <exception cref="T:System.AggregateException">Исключение, которое возникает, когда любое действие в массиве <paramref name="actions" /> создает исключение.</exception>
+      <exception cref="T:System.ArgumentException">Массив <paramref name="actions" /> содержит элемент null.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.Invoke(System.Threading.Tasks.ParallelOptions,System.Action[])">
+      <summary>Выполняет каждое из указанных действий по возможности в параллельном режиме, если операция не отменена пользователем.</summary>
+      <param name="parallelOptions">Объект, используемый для настройки поведения этой операции.</param>
+      <param name="actions">Массив действий для выполнения.</param>
+      <exception cref="T:System.OperationCanceledException">
+        <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" /> задан.</exception>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="actions" /> равен пустой ссылке (null). -или- Аргумент <paramref name="parallelOptions" /> равен пустой ссылке (null).</exception>
+      <exception cref="T:System.AggregateException">Исключение, которое возникает, когда любое действие в массиве <paramref name="actions" /> создает исключение.</exception>
+      <exception cref="T:System.ArgumentException">Массив <paramref name="actions" /> содержит элемент null.</exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
+    </member>
+    <member name="T:System.Threading.Tasks.ParallelLoopResult">
+      <summary>Предоставляет состояние выполнения цикла <see cref="T:System.Threading.Tasks.Parallel" />.</summary>
+    </member>
+    <member name="P:System.Threading.Tasks.ParallelLoopResult.IsCompleted">
+      <summary>Получает значение, указывающее, дошел ли цикл до завершения, то есть все итерации цикла выполнены и он не получил запроса на преждевременное прерывание работы.</summary>
+      <returns>Значение true, если цикл был завершен; в противном случае — значение false.</returns>
+    </member>
+    <member name="P:System.Threading.Tasks.ParallelLoopResult.LowestBreakIteration">
+      <summary>Получает индекс нижней итерации, из которой был вызван метод <see cref="M:System.Threading.Tasks.ParallelLoopState.Break" />.</summary>
+      <returns>Возвращает целое число, представляющее самую нижнюю итерацию, из которой был вызван оператор Break.</returns>
+    </member>
+    <member name="T:System.Threading.Tasks.ParallelLoopState">
+      <summary>Позволяет итерациям циклов <see cref="T:System.Threading.Tasks.Parallel" /> взаимодействовать с другими итерациями. Экземпляр этого класса предоставляется каждому циклу параллельным классом; невозможно создавать экземпляры в пользовательском коде.</summary>
+    </member>
+    <member name="M:System.Threading.Tasks.ParallelLoopState.Break">
+      <summary>Сообщает, что цикл <see cref="T:System.Threading.Tasks.Parallel" /> должен прекратить выполнение в первый удобный для системы момент в итерациях после текущей.</summary>
+      <exception cref="T:System.InvalidOperationException">Был ранее вызван метод <see cref="M:System.Threading.Tasks.ParallelLoopState.Stop" />. <see cref="M:System.Threading.Tasks.ParallelLoopState.Break" /> и <see cref="M:System.Threading.Tasks.ParallelLoopState.Stop" /> не могут использоваться в сочетании итерациями одного и того же цикла.</exception>
+    </member>
+    <member name="P:System.Threading.Tasks.ParallelLoopState.IsExceptional">
+      <summary>Получает значение, указывающее, создалось ли в какой-либо итерации цикла исключение, не обработанное данной итерацией.</summary>
+      <returns>Значение true, если было создано необработанное исключение; в противном случае — значение false.</returns>
+    </member>
+    <member name="P:System.Threading.Tasks.ParallelLoopState.IsStopped">
+      <summary>Получает значение, указывающее, вызывала ли какая-либо итерация цикла метод <see cref="M:System.Threading.Tasks.ParallelLoopState.Stop" />.</summary>
+      <returns>Значение true, если какая-либо итерация остановила цикл; в противном случае — значение false.</returns>
+    </member>
+    <member name="P:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration">
+      <summary>Получает нижнюю итерацию цикла, из которой был вызван метод <see cref="M:System.Threading.Tasks.ParallelLoopState.Break" />.</summary>
+      <returns>Целое число, представляющее низшую итерацию, из которой был вызван метод Break. В случае цикла <see cref="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.Partitioner{``0},System.Action{``0})" /> значение основано на внутренне создаваемом индексе.</returns>
+    </member>
+    <member name="P:System.Threading.Tasks.ParallelLoopState.ShouldExitCurrentIteration">
+      <summary>Получает значение, указывающее, следует ли текущей итерации цикла выйти на основе запросов от этой или других итераций.</summary>
+      <returns>Значение true, если текущая итерация должна завершать работу; в противном случае — значение false.</returns>
+    </member>
+    <member name="M:System.Threading.Tasks.ParallelLoopState.Stop">
+      <summary>Сообщает, что цикл <see cref="T:System.Threading.Tasks.Parallel" /> должен прекратить выполнение в первый удобный для системы момент.</summary>
+      <exception cref="T:System.InvalidOperationException">Был ранее вызван метод <see cref="M:System.Threading.Tasks.ParallelLoopState.Break" />. <see cref="M:System.Threading.Tasks.ParallelLoopState.Break" /> и <see cref="M:System.Threading.Tasks.ParallelLoopState.Stop" /> не могут использоваться в сочетании итерациями одного и того же цикла.</exception>
+    </member>
+    <member name="T:System.Threading.Tasks.ParallelOptions">
+      <summary>Хранит параметры, настраивающие работу методов класса <see cref="T:System.Threading.Tasks.Parallel" />.</summary>
+    </member>
+    <member name="M:System.Threading.Tasks.ParallelOptions.#ctor">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.Threading.Tasks.ParallelOptions" />.</summary>
+    </member>
+    <member name="P:System.Threading.Tasks.ParallelOptions.CancellationToken">
+      <summary>Получает или задает свойство <see cref="T:System.Threading.CancellationToken" />, связанное с экземпляром <see cref="T:System.Threading.Tasks.ParallelOptions" />.</summary>
+      <returns>Токен, связанный с данным экземпляром.</returns>
+    </member>
+    <member name="P:System.Threading.Tasks.ParallelOptions.MaxDegreeOfParallelism">
+      <summary>Получает или задает максимальную степень параллельности, которую включает данный экземпляр ParallelOptions.</summary>
+      <returns>Целое число, представляющее максимальную степень параллелизма.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">Исключение, возникающее, когда <see cref="P:System.Threading.Tasks.ParallelOptions.MaxDegreeOfParallelism" /> установлено равным 0 или некоторому значению меньше -1.</exception>
+    </member>
+    <member name="P:System.Threading.Tasks.ParallelOptions.TaskScheduler">
+      <summary>Получает или задает свойство <see cref="T:System.Threading.Tasks.TaskScheduler" />, связанное с экземпляром <see cref="T:System.Threading.Tasks.ParallelOptions" />. Установка этого свойства на значение NULL означает, что следует использовать текущий планировщик.</summary>
+      <returns>Планировщик заданий, связанный с данным экземпляром.</returns>
+    </member>
+  </members>
+</doc>

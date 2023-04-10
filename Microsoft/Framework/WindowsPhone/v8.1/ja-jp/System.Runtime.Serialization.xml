@@ -1,0 +1,2283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.Runtime.Serialization</name>
+  </assembly>
+  <members>
+    <member name="T:System.Runtime.Serialization.CollectionDataContractAttribute">
+      <summary>コレクション型に適用される場合、コレクション項目要素のカスタム指定を可能にします。この属性は、<see cref="T:System.Runtime.Serialization.DataContractSerializer" /> によって、有効でシリアル化可能なコレクションとして認識されるコレクション型にのみ適用できます。</summary>
+    </member>
+    <member name="M:System.Runtime.Serialization.CollectionDataContractAttribute.#ctor">
+      <summary>
+        <see cref="T:System.Runtime.Serialization.CollectionDataContractAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="P:System.Runtime.Serialization.CollectionDataContractAttribute.IsReference">
+      <summary>オブジェクト参照データを維持するかどうかを示す値を取得または設定します。</summary>
+      <returns>標準 XML を使用してオブジェクト参照データを保持する場合は true。それ以外の場合は false。既定値は false です。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.CollectionDataContractAttribute.ItemName">
+      <summary>コレクション要素のカスタム名を取得または設定します。</summary>
+      <returns>コレクション要素に適用する名前。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.CollectionDataContractAttribute.KeyName">
+      <summary>ディクショナリ キー名のカスタム名を取得または設定します。</summary>
+      <returns>既定のディクショナリ キー名の代わりに使用する名前。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.CollectionDataContractAttribute.Name">
+      <summary>コレクション型のデータ コントラクト名を取得または設定します。</summary>
+      <returns>コレクション型のデータ コントラクト名。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.CollectionDataContractAttribute.Namespace">
+      <summary>データ コントラクトの名前空間を取得または設定します。</summary>
+      <returns>データ コントラクトの名前空間。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.CollectionDataContractAttribute.ValueName">
+      <summary>ディクショナリ値名のカスタム名を取得または設定します。</summary>
+      <returns>既定のディクショナリ値名の代わりに使用する名前。</returns>
+    </member>
+    <member name="T:System.Runtime.Serialization.ContractNamespaceAttribute">
+      <summary>データ コントラクトの CLR 名前空間と XML 名前空間を指定します。</summary>
+    </member>
+    <member name="M:System.Runtime.Serialization.ContractNamespaceAttribute.#ctor(System.String)">
+      <summary>指定された名前空間を使用する <see cref="T:System.Runtime.Serialization.ContractNamespaceAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="contractNamespace">コントラクトの名前空間。</param>
+    </member>
+    <member name="P:System.Runtime.Serialization.ContractNamespaceAttribute.ClrNamespace">
+      <summary>データ コントラクト型の CLR 名前空間を取得または設定します。</summary>
+      <returns>型の CLR-legal 名前空間。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.ContractNamespaceAttribute.ContractNamespace">
+      <summary>データ コントラクト メンバーの名前空間を取得します。</summary>
+      <returns>データ コントラクト メンバーの名前空間。</returns>
+    </member>
+    <member name="T:System.Runtime.Serialization.DataContractAttribute">
+      <summary>型がデータ コントラクトを定義または実装し、<see cref="T:System.Runtime.Serialization.DataContractSerializer" /> などのシリアライザーによってシリアル化できるよう指定します。</summary>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractAttribute.#ctor">
+      <summary>
+        <see cref="T:System.Runtime.Serialization.DataContractAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataContractAttribute.IsReference">
+      <summary>オブジェクト参照データを維持するかどうかを示す値を取得または設定します。</summary>
+      <returns>標準 XML を使用してオブジェクト参照データを保持する場合は true。それ以外の場合は false。既定値は false です。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataContractAttribute.Name">
+      <summary>型のデータ コントラクトの名前を取得または設定します。</summary>
+      <returns>データ コントラクト メンバーのローカル名。既定値は属性が適用されるクラスの名前です。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataContractAttribute.Namespace">
+      <summary>その型のデータ コントラクトの名前空間を取得または設定します。</summary>
+      <returns>データ コントラクトの名前空間。</returns>
+    </member>
+    <member name="T:System.Runtime.Serialization.DataContractResolver">
+      <summary>シリアル化および逆シリアル化中に xsi:type 形式との間で動的に型をマップする機構を提供します。</summary>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractResolver.#ctor">
+      <summary>
+        <see cref="T:System.Runtime.Serialization.DataContractResolver" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractResolver.ResolveName(System.String,System.String,System.Type,System.Runtime.Serialization.DataContractResolver)">
+      <summary>逆シリアル化中に指定された xsi:type 名と名前空間をデータ コントラクト型にマップするには、このメソッドをオーバーライドします。</summary>
+      <returns>xsi:type 名と名前空間がマップされる型。</returns>
+      <param name="typeName">マップする xsi:type 名。</param>
+      <param name="typeNamespace">マップする xsi:type 名前空間。</param>
+      <param name="declaredType">データ コントラクトで宣言された型。</param>
+      <param name="knownTypeResolver">既知の型リゾルバー。</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractResolver.TryResolveType(System.Type,System.Type,System.Runtime.Serialization.DataContractResolver,System.Xml.XmlDictionaryString@,System.Xml.XmlDictionaryString@)">
+      <summary>シリアル化中に xsi:type 名と名前空間にデータ コントラクト型をマップするには、このメソッドをオーバーライドします。</summary>
+      <returns>マッピングが成功した場合は true。それ以外の場合は false。</returns>
+      <param name="type">マップする型。</param>
+      <param name="declaredType">データ コントラクトで宣言された型。</param>
+      <param name="knownTypeResolver">既知の型リゾルバー。</param>
+      <param name="typeName">xsi:型名。</param>
+      <param name="typeNamespace">xsi:type 名前空間。</param>
+    </member>
+    <member name="T:System.Runtime.Serialization.DataContractSerializer">
+      <summary>型のインスタンスを、提供されたデータ コントラクトを使用する XML ストリームまたはドキュメントにシリアル化および逆シリアル化します。このクラスは継承できません。</summary>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.#ctor(System.Type)">
+      <summary>
+        <see cref="T:System.Runtime.Serialization.DataContractSerializer" /> クラスの新しいインスタンスを初期化して、指定された型のオブジェクトをシリアル化または逆シリアル化します。</summary>
+      <param name="type">シリアル化または逆シリアル化されるインスタンスの型。</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.#ctor(System.Type,System.Collections.Generic.IEnumerable{System.Type})">
+      <summary>
+        <see cref="T:System.Runtime.Serialization.DataContractSerializer" /> クラスの新しいインスタンスを初期化し、指定された型のオブジェクト、オブジェクト グラフにある既知の型のコレクションをシリアル化または逆シリアル化します。</summary>
+      <param name="type">シリアル化または逆シリアル化されるインスタンスの型。</param>
+      <param name="knownTypes">オブジェクト グラフに存在する可能性のある型を含む <see cref="T:System.Type" /> の <see cref="T:System.Collections.Generic.IEnumerable`1" />。</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.#ctor(System.Type,System.Runtime.Serialization.DataContractSerializerSettings)">
+      <summary>
+        <see cref="T:System.Runtime.Serialization.DataContractSerializer" /> クラスの新しいインスタンスを初期化して指定した型および設定のオブジェクトをシリアル化または逆シリアル化します。</summary>
+      <param name="type">シリアル化または逆シリアル化するインスタンスの型。</param>
+      <param name="settings">シリアライザーの設定。</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.#ctor(System.Type,System.String,System.String)">
+      <summary>
+        <see cref="T:System.Runtime.Serialization.DataContractSerializer" /> クラスの新しいインスタンスを初期化して、提供された XML ルート要素および名前空間を使用する指定された型のオブジェクトをシリアル化または逆シリアル化します。</summary>
+      <param name="type">シリアル化または逆シリアル化されるインスタンスの型。</param>
+      <param name="rootName">シリアル化または逆シリアル化するコンテンツを含む XML 要素の名前。</param>
+      <param name="rootNamespace">シリアル化または逆シリアル化するコンテンツを含む XML 要素の名前空間。</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.#ctor(System.Type,System.String,System.String,System.Collections.Generic.IEnumerable{System.Type})">
+      <summary>
+        <see cref="T:System.Runtime.Serialization.DataContractSerializer" /> クラスの新しいインスタンスを初期化して、指定された型のオブジェクトをシリアル化または逆シリアル化します。このメソッドは、オブジェクト グラフにある既知の型のリストのほか、2 つの文字列パラメーターのルート XML 要素および名前空間も指定します。</summary>
+      <param name="type">シリアル化または逆シリアル化されるインスタンスの型。</param>
+      <param name="rootName">コンテンツのルート要素名。</param>
+      <param name="rootNamespace">ルート要素の名前空間。</param>
+      <param name="knownTypes">オブジェクト グラフに存在する可能性のある型を含む <see cref="T:System.Type" /> の <see cref="T:System.Collections.Generic.IEnumerable`1" />。</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.#ctor(System.Type,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>
+        <see cref="T:System.Runtime.Serialization.DataContractSerializer" /> クラスの新しいインスタンスを初期化して、型 <see cref="T:System.Xml.XmlDictionaryString" /> のパラメーターで指定された XML ルート要素および名前空間を使用する指定された型のオブジェクトをシリアル化または逆シリアル化します。</summary>
+      <param name="type">シリアル化または逆シリアル化されるインスタンスの型。</param>
+      <param name="rootName">コンテンツのルート要素名を含む <see cref="T:System.Xml.XmlDictionaryString" />。</param>
+      <param name="rootNamespace">ルート要素の名前空間を含む <see cref="T:System.Xml.XmlDictionaryString" />。</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.#ctor(System.Type,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Collections.Generic.IEnumerable{System.Type})">
+      <summary>
+        <see cref="T:System.Runtime.Serialization.DataContractSerializer" /> クラスの新しいインスタンスを初期化して、指定された型のオブジェクトをシリアル化または逆シリアル化します。このメソッドは、オブジェクト グラフにある既知の型のリストのほか、2 つの <see cref="T:System.Xml.XmlDictionaryString" /> パラメーターのルート XML 要素および名前空間も指定します。</summary>
+      <param name="type">シリアル化または逆シリアル化されるインスタンスの型。</param>
+      <param name="rootName">コンテンツのルート要素名を含む <see cref="T:System.Xml.XmlDictionaryString" />。</param>
+      <param name="rootNamespace">ルート要素の名前空間を含む <see cref="T:System.Xml.XmlDictionaryString" />。</param>
+      <param name="knownTypes">オブジェクト グラフにある既知の型を含む <see cref="T:System.Type" /> の <see cref="T:System.Collections.Generic.IEnumerable`1" />。</param>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataContractSerializer.IgnoreExtensionDataObject">
+      <summary>クラスがシリアル化または逆シリアル化されているときにクラスの拡張によって提供されるデータを無視するかどうかを指定する値を取得します。</summary>
+      <returns>拡張データを省略する場合は true、それ以外の場合は false。既定値は true です。</returns>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.IsStartObject(System.Xml.XmlDictionaryReader)">
+      <summary>
+        <see cref="T:System.Xml.XmlDictionaryReader" /> が逆シリアル化可能なオブジェクト上に配置されるかどうかを判断します。</summary>
+      <returns>リーダーが読み取り対象のストリームの開始要素の位置にある場合は true。それ以外の場合は false。</returns>
+      <param name="reader">XML ストリームの読み取りに使用される <see cref="T:System.Xml.XmlDictionaryReader" />。</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.IsStartObject(System.Xml.XmlReader)">
+      <summary>
+        <see cref="T:System.Xml.XmlReader" /> が逆シリアル化可能なオブジェクト上に配置されるかどうかを判断します。</summary>
+      <returns>リーダーが読み取り対象のストリームの開始要素の位置にある場合は true。それ以外の場合は false。</returns>
+      <param name="reader">XML ストリームの読み取りに使用される <see cref="T:System.Xml.XmlReader" />。</param>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataContractSerializer.KnownTypes">
+      <summary>
+        <see cref="T:System.Runtime.Serialization.DataContractSerializer" /> のインスタンスを使用してシリアル化されたオブジェクト グラフに存在する可能性のある型のコレクションを取得します。</summary>
+      <returns>
+        <see cref="T:System.Runtime.Serialization.DataContractSerializer" /> コンストラクターに既知の型として渡された型 (予期された型) が含まれている <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph">
+      <summary>シリアル化または逆シリアル化するオブジェクトグラフの項目の最大数を取得します。</summary>
+      <returns>シリアル化または逆シリアル化する項目の最大数を取得します。既定値は <see cref="F:System.Int32.MaxValue" /> です。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">項目の数が最大値を超えています。</exception>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataContractSerializer.PreserveObjectReferences">
+      <summary>非標準 XML コンストラクトを使用してオブジェクト参照データを保持するかどうかを指定する値を取得します。</summary>
+      <returns>参照を保持する場合は true。それ以外の場合は false。既定値は false です。</returns>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.ReadObject(System.Xml.XmlDictionaryReader,System.Boolean)">
+      <summary>
+        <see cref="T:System.Xml.XmlDictionaryReader" /> で XML ストリームを読み取って逆シリアル化されたオブジェクトを返し、値を読み取る前にオブジェクト名を検証するチェックを行うかどうかを指定します。</summary>
+      <returns>逆シリアル化されたオブジェクト。</returns>
+      <param name="reader">XML ストリームの読み取りに使用される <see cref="T:System.Xml.XmlDictionaryReader" />。</param>
+      <param name="verifyObjectName">オブジェクトの名前がコンストラクターで提供されているルート名の値に対応しているかを確認する場合は true。それ以外の場合は false。</param>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">
+        <paramref name="verifyObjectName" /> パラメーターが true に設定されており、要素名と名前空間がコンストラクターに設定された値と一致しません。</exception>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.ReadObject(System.Xml.XmlReader)">
+      <summary>
+        <see cref="T:System.Xml.XmlReader" /> で XML ストリームを読み込み、逆シリアル化されたオブジェクトを返します。</summary>
+      <returns>逆シリアル化されたオブジェクト。</returns>
+      <param name="reader">XML ストリームの読み取りに使用される <see cref="T:System.Xml.XmlReader" />。</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.ReadObject(System.Xml.XmlReader,System.Boolean)">
+      <summary>
+        <see cref="T:System.Xml.XmlReader" /> で XML ストリームを読み取って逆シリアル化されたオブジェクトを返し、値を読み取る前にオブジェクト名を検証するチェックを行うかどうかを指定します。</summary>
+      <returns>逆シリアル化されたオブジェクト。</returns>
+      <param name="reader">XML ストリームの読み取りに使用される <see cref="T:System.Xml.XmlReader" />。</param>
+      <param name="verifyObjectName">オブジェクトの名前がコンストラクターで提供されているルート名の値に対応しているかを確認する場合は true。それ以外の場合は false。</param>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">
+        <paramref name="verifyObjectName" /> パラメーターが true に設定されており、要素名と名前空間がコンストラクターに設定された値と一致しません。</exception>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataContractSerializer.SerializeReadOnlyTypes">
+      <summary>読み取り専用の型をシリアル化するかどうかを指定する値を取得します。</summary>
+      <returns>読み取り専用の型をシリアル化する場合は true。すべての型をシリアル化する場合は false。</returns>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.WriteEndObject(System.Xml.XmlDictionaryWriter)">
+      <summary>
+        <see cref="T:System.Xml.XmlDictionaryWriter" /> を使用して、終了 XML 要素を書き込みます。</summary>
+      <param name="writer">ストリームの書き込みに使用される <see cref="T:System.Xml.XmlDictionaryWriter" />。</param>
+      <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">データ コントラクト ルールに準拠していない種類をシリアル化しています。たとえば、<see cref="T:System.Runtime.Serialization.DataContractAttribute" /> 属性はこの種類には適用されていません。</exception>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">書き込み中のインスタンスに問題があります。</exception>
+      <exception cref="T:System.ServiceModel.QuotaExceededException">シリアル化されるオブジェクトの最大数を超過しました。<see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" /> プロパティを確認します。</exception>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.WriteEndObject(System.Xml.XmlWriter)">
+      <summary>
+        <see cref="T:System.Xml.XmlWriter" /> を使用して、終了 XML 要素を書き込みます。</summary>
+      <param name="writer">ストリームの書き込みに使用される <see cref="T:System.Xml.XmlWriter" />。</param>
+      <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">データ コントラクト ルールに準拠していない種類をシリアル化しています。たとえば、<see cref="T:System.Runtime.Serialization.DataContractAttribute" /> 属性はこの種類には適用されていません。</exception>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">書き込み中のインスタンスに問題があります。</exception>
+      <exception cref="T:System.ServiceModel.QuotaExceededException">シリアル化されるオブジェクトの最大数を超過しました。<see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" /> プロパティを確認します。</exception>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.WriteObject(System.Xml.XmlWriter,System.Object)">
+      <summary>
+        <see cref="T:System.Xml.XmlWriter" /> を使用してすべてのオブジェクト データ (開始 XML 要素、コンテンツ、終了要素) を XML ドキュメントまたはストリームに書き込みます。</summary>
+      <param name="writer">XML ドキュメントまたはストリームの書き込みに使用される <see cref="T:System.Xml.XmlWriter" />。</param>
+      <param name="graph">ストリームに書き込むデータが含まれたオブジェクト。</param>
+      <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">データ コントラクト ルールに準拠していない種類をシリアル化しています。たとえば、<see cref="T:System.Runtime.Serialization.DataContractAttribute" /> 属性はこの種類には適用されていません。</exception>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">書き込み中のインスタンスに問題があります。</exception>
+      <exception cref="T:System.ServiceModel.QuotaExceededException">シリアル化されるオブジェクトの最大数を超過しました。<see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" /> プロパティを確認します。</exception>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.WriteObjectContent(System.Xml.XmlDictionaryWriter,System.Object)">
+      <summary>
+        <see cref="T:System.Xml.XmlDictionaryWriter" /> を使用して XML コンテンツを書き込みます。</summary>
+      <param name="writer">ストリームの書き込みに使用される <see cref="T:System.Xml.XmlDictionaryWriter" />。</param>
+      <param name="graph">ストリームへの書き込みに使用されるオブジェクト。</param>
+      <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">データ コントラクト ルールに準拠していない種類をシリアル化しています。たとえば、<see cref="T:System.Runtime.Serialization.DataContractAttribute" /> 属性はこの種類には適用されていません。</exception>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">書き込み中のインスタンスに問題があります。</exception>
+      <exception cref="T:System.ServiceModel.QuotaExceededException">シリアル化されるオブジェクトの最大数を超過しました。<see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" /> プロパティを確認します。</exception>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.WriteObjectContent(System.Xml.XmlWriter,System.Object)">
+      <summary>
+        <see cref="T:System.Xml.XmlWriter" /> を使用して XML コンテンツを書き込みます。</summary>
+      <param name="writer">ストリームの書き込みに使用される <see cref="T:System.Xml.XmlWriter" />。</param>
+      <param name="graph">ストリームに書き込むオブジェクト。</param>
+      <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">データ コントラクト ルールに準拠していない種類をシリアル化しています。たとえば、<see cref="T:System.Runtime.Serialization.DataContractAttribute" /> 属性はこの種類には適用されていません。</exception>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">書き込み中のインスタンスに問題があります。</exception>
+      <exception cref="T:System.ServiceModel.QuotaExceededException">シリアル化されるオブジェクトの最大数を超過しました。<see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" /> プロパティを確認します。</exception>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.WriteStartObject(System.Xml.XmlDictionaryWriter,System.Object)">
+      <summary>
+        <see cref="T:System.Xml.XmlDictionaryWriter" /> を使用して、開始 XML 要素を書き込みます。</summary>
+      <param name="writer">XML 開始要素の書き込みに使用される <see cref="T:System.Xml.XmlDictionaryWriter" />。</param>
+      <param name="graph">書き込み対象のオブジェクト。</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializer.WriteStartObject(System.Xml.XmlWriter,System.Object)">
+      <summary>
+        <see cref="T:System.Xml.XmlWriter" /> を使用して、開始 XML 要素を書き込みます。</summary>
+      <param name="writer">XML 開始要素の書き込みに使用される <see cref="T:System.Xml.XmlWriter" />。</param>
+      <param name="graph">書き込み対象のオブジェクト。</param>
+    </member>
+    <member name="T:System.Runtime.Serialization.DataContractSerializerSettings">
+      <summary>データ コントラクトのシリアライザー設定を指定します。</summary>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataContractSerializerSettings.#ctor">
+      <summary>
+        <see cref="T:System.Runtime.Serialization.DataContractSerializerSettings" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataContractSerializerSettings.DataContractResolver">
+      <summary>xsi:type 宣言を既知のコントラクト型に動的にマップするために使用されるコンポーネントを取得または設定します。</summary>
+      <returns>xsi:type 宣言を既知のコントラクト型に動的にマップするために使用されるコンポーネント。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataContractSerializerSettings.KnownTypes">
+      <summary>DataContractSerializerSettings のインスタンスを使用してシリアル化されたオブジェクト グラフに存在する可能性のある種類のコレクションを取得または設定します。</summary>
+      <returns>DataContractSerializerSettings のインスタンスを使用してシリアル化されたオブジェクト グラフに存在する可能性のある種類のコレクション。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataContractSerializerSettings.MaxItemsInObjectGraph">
+      <summary>シリアル化または逆シリアル化するオブジェクト グラフの項目の最大数を取得または設定します。</summary>
+      <returns>シリアル化または逆シリアル化するオブジェクト グラフの項目の最大数。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataContractSerializerSettings.PreserveObjectReferences">
+      <summary>非標準 XML コンストラクトを使用してオブジェクト参照データを保持するかどうかを指定する値を取得または設定します。</summary>
+      <returns>非標準 XML コンストラクトを使用してオブジェクト参照データを保持する場合は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataContractSerializerSettings.RootName">
+      <summary>選択したオブジェクトのルート名を取得または設定します。</summary>
+      <returns>選択したオブジェクトのルート名。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataContractSerializerSettings.RootNamespace">
+      <summary>指定したオブジェクトのルート名前空間を取得または設定します。</summary>
+      <returns>指定したオブジェクトのルート名前空間。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataContractSerializerSettings.SerializeReadOnlyTypes">
+      <summary>読み取り専用の型をシリアル化するかどうかを指定する値を取得または設定します。</summary>
+      <returns>読み取り専用型をシリアル化する場合は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="T:System.Runtime.Serialization.DataMemberAttribute">
+      <summary>型のメンバーに適用された場合、メンバーがデータ コントラクトの一部となり、<see cref="T:System.Runtime.Serialization.DataContractSerializer" /> によってシリアル化されるよう指定します。</summary>
+    </member>
+    <member name="M:System.Runtime.Serialization.DataMemberAttribute.#ctor">
+      <summary>
+        <see cref="T:System.Runtime.Serialization.DataMemberAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue">
+      <summary>シリアル化されているフィールドまたはプロパティの既定値をシリアル化するかどうかを指定する値を取得または設定します。</summary>
+      <returns>メンバーの既定値をシリアル化ストリームで生成する必要がある場合は true。それ以外の場合は false。既定値は true です。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataMemberAttribute.IsRequired">
+      <summary>シリアル化エンジンに逆シリアル化される場合、メンバーがシリアル化されたデータにある必要があるかどうかを指示する値を取得または設定します。</summary>
+      <returns>メンバーが必要な場合は true。それ以外の場合は false。既定値は false です。</returns>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">メンバーがある場合とない場合がありますが、既定値は <see cref="P:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue" /> が true に設定されています。</exception>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataMemberAttribute.Name">
+      <summary>データ メンバーの名前を取得または設定します。</summary>
+      <returns>データ メンバーの名前。データ メンバーの指定された型のデータ コントラクトの既定の名前は、その型の CLR メンバー名です。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.DataMemberAttribute.Order">
+      <summary>メンバーのシリアル化および逆シリアル化の順序を取得または設定します。</summary>
+      <returns>シリアル化または逆シリアル化の番号順。</returns>
+    </member>
+    <member name="T:System.Runtime.Serialization.EnumMemberAttribute">
+      <summary>フィールドが列挙メンバーとなりシリアル化されるよう指定します。</summary>
+    </member>
+    <member name="M:System.Runtime.Serialization.EnumMemberAttribute.#ctor">
+      <summary>
+        <see cref="T:System.Runtime.Serialization.EnumMemberAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="P:System.Runtime.Serialization.EnumMemberAttribute.Value">
+      <summary>属性が適用される列挙メンバーに関連付けられた値を取得または設定します。</summary>
+      <returns>列挙メンバーに関連付けられた値。</returns>
+    </member>
+    <member name="T:System.Runtime.Serialization.IgnoreDataMemberAttribute">
+      <summary>型のメンバーに適用された場合、メンバーがデータ コントラクトの一部ではなく、シリアル化されないよう指定します。</summary>
+    </member>
+    <member name="M:System.Runtime.Serialization.IgnoreDataMemberAttribute.#ctor">
+      <summary>
+        <see cref="T:System.Runtime.Serialization.IgnoreDataMemberAttribute" /> クラスの新しいインスタンスを初期化します。 </summary>
+    </member>
+    <member name="T:System.Runtime.Serialization.InvalidDataContractException">
+      <summary>
+        <see cref="T:System.Runtime.Serialization.DataContractSerializer" /> でシリアル化および逆シリアル化時に無効なデータ コントラクトが発生した場合にスローされる例外。</summary>
+    </member>
+    <member name="M:System.Runtime.Serialization.InvalidDataContractException.#ctor">
+      <summary>
+        <see cref="T:System.Runtime.Serialization.InvalidDataContractException" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:System.Runtime.Serialization.InvalidDataContractException.#ctor(System.String)">
+      <summary>指定されたエラー メッセージを使用して <see cref="T:System.Runtime.Serialization.InvalidDataContractException" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="message">エラーの説明。</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.InvalidDataContractException.#ctor(System.String,System.Exception)">
+      <summary>指定されたエラー メッセージと内部例外の <see cref="T:System.Runtime.Serialization.InvalidDataContractException" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="message">エラーの説明。</param>
+      <param name="innerException">元の <see cref="T:System.Exception" />。 </param>
+    </member>
+    <member name="T:System.Runtime.Serialization.KnownTypeAttribute">
+      <summary>指定された型をシリアル化または逆シリアル化する場合に <see cref="T:System.Runtime.Serialization.DataContractSerializer" /> によって認識される方を指定します。</summary>
+    </member>
+    <member name="M:System.Runtime.Serialization.KnownTypeAttribute.#ctor(System.String)">
+      <summary>既知の型の <see cref="T:System.Runtime.Serialization.KnownTypeAttribute" /> を返すメソッドの名前の付いた <see cref="T:System.Collections.IEnumerable" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="methodName">データのシリアル化または逆シリアル化時に使用される型の <see cref="T:System.Collections.IEnumerable" /> を返すメソッドの名前。</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.KnownTypeAttribute.#ctor(System.Type)">
+      <summary>指定された型の <see cref="T:System.Runtime.Serialization.KnownTypeAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="type">データをシリアル化または逆シリアル化する場合に既知の型として含まれる <see cref="T:System.Type" />。</param>
+    </member>
+    <member name="P:System.Runtime.Serialization.KnownTypeAttribute.MethodName">
+      <summary>シリアル化または逆シリアル化時に認識される型のリストを返すメソッドの名前を取得します。</summary>
+      <returns>
+        <see cref="T:System.Runtime.Serialization.KnownTypeAttribute" /> クラスで定義された型のメソッドの名前。</returns>
+    </member>
+    <member name="P:System.Runtime.Serialization.KnownTypeAttribute.Type">
+      <summary>
+        <see cref="T:System.Runtime.Serialization.DataContractSerializer" /> によるシリアル化または逆シリアル化の際に認識される型を取得します。</summary>
+      <returns>シリアル化または逆シリアル化の際に使用される <see cref="T:System.Type" />。</returns>
+    </member>
+    <member name="T:System.Runtime.Serialization.XmlObjectSerializer">
+      <summary>オブジェクトを XML ストリームまたはドキュメントとしてシリアル化するために使用される基本クラスを提供します。このクラスは抽象クラスです。</summary>
+      <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">データ コントラクト ルールに準拠していない種類をシリアル化しています。たとえば、<see cref="T:System.Runtime.Serialization.DataContractAttribute" /> 属性はこの種類には適用されていません。</exception>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">シリアル化されるインスタンスに問題があります。</exception>
+    </member>
+    <member name="M:System.Runtime.Serialization.XmlObjectSerializer.#ctor">
+      <summary>
+        <see cref="T:System.Runtime.Serialization.XmlObjectSerializer" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:System.Runtime.Serialization.XmlObjectSerializer.IsStartObject(System.Xml.XmlDictionaryReader)">
+      <summary>
+        <see cref="T:System.Xml.XmlDictionaryReader" /> が読み取り可能な XML 要素の上に配置されるかどうかを指定する値を取得します。</summary>
+      <returns>リーダーがデータを読み取ることができる場合は true。それ以外の場合は false。</returns>
+      <param name="reader">XML ストリームまたはドキュメントの読み取りに使用される <see cref="T:System.Xml.XmlDictionaryReader" />。</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.XmlObjectSerializer.IsStartObject(System.Xml.XmlReader)">
+      <summary>
+        <see cref="T:System.Xml.XmlReader" /> が読み取り可能な XML 要素の上に配置されるかどうかを指定する値を取得します。</summary>
+      <returns>リーダーが開始要素に位置づけられている場合は true。それ以外の場合は false。</returns>
+      <param name="reader">XML ストリームまたはドキュメントの読み取りに使用される <see cref="T:System.Xml.XmlReader" />。</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.XmlObjectSerializer.ReadObject(System.IO.Stream)">
+      <summary>
+        <see cref="T:System.IO.Stream" /> で XML ストリームまたはドキュメントを読み込み、逆シリアル化されたオブジェクトを返します。</summary>
+      <returns>逆シリアル化されたオブジェクト。</returns>
+      <param name="stream">XML ストリームまたはドキュメントの読み取りに使用される <see cref="T:System.IO.Stream" />。</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.XmlObjectSerializer.ReadObject(System.Xml.XmlDictionaryReader)">
+      <summary>
+        <see cref="T:System.Xml.XmlDictionaryReader" /> で XML ドキュメントまたはストリームを読み取り、逆シリアル化されたオブジェクトを返します。</summary>
+      <returns>逆シリアル化されたオブジェクト。</returns>
+      <param name="reader">XML ドキュメントの読み取りに使用される <see cref="T:System.Xml.XmlDictionaryReader" />。</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.XmlObjectSerializer.ReadObject(System.Xml.XmlDictionaryReader,System.Boolean)">
+      <summary>派生クラスで実装する場合、<see cref="T:System.Xml.XmlDictionaryReader" /> で XML ストリームまたはドキュメントを読み込み、逆シリアル化されたオブジェクトを返します。</summary>
+      <returns>逆シリアル化されたオブジェクト。</returns>
+      <param name="reader">XML ドキュメントの読み取りに使用される <see cref="T:System.Xml.XmlDictionaryReader" />。</param>
+      <param name="verifyObjectName">開始 XML 要素および終了 XML 要素の名前および名前空間がルート名およびルート名前空間に対応するかどうかを確認する場合は true。検証をスキップする場合は false。</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.XmlObjectSerializer.ReadObject(System.Xml.XmlReader)">
+      <summary>
+        <see cref="T:System.Xml.XmlReader" /> で XML ドキュメントまたはストリームを読み取り、逆シリアル化されたオブジェクトを返します。</summary>
+      <returns>逆シリアル化されたオブジェクト。</returns>
+      <param name="reader">XML ストリームまたはドキュメントの読み取りに使用される <see cref="T:System.Xml.XmlReader" />。</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.XmlObjectSerializer.ReadObject(System.Xml.XmlReader,System.Boolean)">
+      <summary>
+        <see cref="T:System.Xml.XmlReader" /> で XML ドキュメントまたはストリームを読み取り、逆シリアル化されたオブジェクトを返します。データを読み込む前にシリアライザーがデータを読み込むことができるかどうかを指定することもできます。</summary>
+      <returns>逆シリアル化されたオブジェクト。</returns>
+      <param name="reader">XML ドキュメントまたはストリームの読み取りに使用される <see cref="T:System.Xml.XmlReader" />。</param>
+      <param name="verifyObjectName">開始 XML 要素および終了 XML 要素の名前および名前空間がルート名およびルート名前空間に対応するかどうかを確認する場合は true。検証をスキップする場合は false。</param>
+    </member>
+    <member name="M:System.Runtime.Serialization.XmlObjectSerializer.WriteEndObject(System.Xml.XmlDictionaryWriter)">
+      <summary>
+        <see cref="T:System.Xml.XmlDictionaryWriter" /> を使用して、終了 XML 要素としてオブジェクト データの終了を XML ドキュメントまたはストリーム書き込みます。</summary>
+      <param name="writer">XML ドキュメントまたはストリームの書き込みに使用される <see cref="T:System.Xml.XmlDictionaryWriter" />。</param>
+      <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">データ コントラクト ルールに準拠していない種類をシリアル化しています。たとえば、<see cref="T:System.Runtime.Serialization.DataContractAttribute" /> 属性はこの種類には適用されていません。</exception>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">シリアル化されるインスタンスに問題があります。</exception>
+      <exception cref="T:System.ServiceModel.QuotaExceededException">シリアル化されるオブジェクトの最大数を超過しました。<see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" /> プロパティを確認します。</exception>
+    </member>
+    <member name="M:System.Runtime.Serialization.XmlObjectSerializer.WriteEndObject(System.Xml.XmlWriter)">
+      <summary>
+        <see cref="T:System.Xml.XmlWriter" /> を使用して、終了 XML 要素としてオブジェクト データの終了を XML ドキュメントまたはストリーム書き込みます。</summary>
+      <param name="writer">XML ドキュメントまたはストリームの書き込みに使用される <see cref="T:System.Xml.XmlWriter" />。</param>
+      <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">データ コントラクト ルールに準拠していない種類をシリアル化しています。たとえば、<see cref="T:System.Runtime.Serialization.DataContractAttribute" /> 属性はこの種類には適用されていません。</exception>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">シリアル化されるインスタンスに問題があります。</exception>
+      <exception cref="T:System.ServiceModel.QuotaExceededException">シリアル化されるオブジェクトの最大数を超過しました。<see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" /> プロパティを確認します。</exception>
+    </member>
+    <member name="M:System.Runtime.Serialization.XmlObjectSerializer.WriteObject(System.IO.Stream,System.Object)">
+      <summary>指定された <see cref="T:System.IO.Stream" /> と共に、オブジェクトの完全な内容 (開始、内容、および終了) を XML ドキュメントまたはストリームに書き込みます。</summary>
+      <param name="stream">XML ドキュメントまたはストリームの書き込みに使用される <see cref="T:System.IO.Stream" />。</param>
+      <param name="graph">ストリームに書き込むデータが含まれたオブジェクト。</param>
+      <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">データ コントラクト ルールに準拠していない種類をシリアル化しています。たとえば、<see cref="T:System.Runtime.Serialization.DataContractAttribute" /> 属性はこの種類には適用されていません。</exception>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">シリアル化されるインスタンスに問題があります。</exception>
+      <exception cref="T:System.ServiceModel.QuotaExceededException">シリアル化されるオブジェクトの最大数を超過しました。<see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" /> プロパティを確認します。</exception>
+    </member>
+    <member name="M:System.Runtime.Serialization.XmlObjectSerializer.WriteObject(System.Xml.XmlDictionaryWriter,System.Object)">
+      <summary>指定された <see cref="T:System.Xml.XmlDictionaryWriter" /> と共に、オブジェクトの完全な内容 (開始、内容、および終了) を XML ドキュメントまたはストリームに書き込みます。</summary>
+      <param name="writer">XML ドキュメントまたはストリームへのコンテンツの書き込みに使用される <see cref="T:System.Xml.XmlDictionaryWriter" />。</param>
+      <param name="graph">書き込む内容を含むオブジェクト。</param>
+      <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">データ コントラクト ルールに準拠していない種類をシリアル化しています。たとえば、<see cref="T:System.Runtime.Serialization.DataContractAttribute" /> 属性はこの種類には適用されていません。</exception>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">シリアル化されるインスタンスに問題があります。</exception>
+      <exception cref="T:System.ServiceModel.QuotaExceededException">シリアル化されるオブジェクトの最大数を超過しました。<see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" /> プロパティを確認します。</exception>
+    </member>
+    <member name="M:System.Runtime.Serialization.XmlObjectSerializer.WriteObject(System.Xml.XmlWriter,System.Object)">
+      <summary>指定された <see cref="T:System.Xml.XmlWriter" /> と共に、オブジェクトの完全な内容 (開始、内容、および終了) を XML ドキュメントまたはストリームに書き込みます。</summary>
+      <param name="writer">XML ドキュメントまたはストリームの書き込みに使用される <see cref="T:System.Xml.XmlWriter" />。</param>
+      <param name="graph">書き込む内容を含むオブジェクト。</param>
+      <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">データ コントラクト ルールに準拠していない種類をシリアル化しています。たとえば、<see cref="T:System.Runtime.Serialization.DataContractAttribute" /> 属性はこの種類には適用されていません。</exception>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">シリアル化されるインスタンスに問題があります。</exception>
+      <exception cref="T:System.ServiceModel.QuotaExceededException">シリアル化されるオブジェクトの最大数を超過しました。<see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" /> プロパティを確認します。</exception>
+    </member>
+    <member name="M:System.Runtime.Serialization.XmlObjectSerializer.WriteObjectContent(System.Xml.XmlDictionaryWriter,System.Object)">
+      <summary>指定された <see cref="T:System.Xml.XmlDictionaryWriter" /> を使用してオブジェクトのコンテンツのみを XML ドキュメントまたはストリームに書き込みます。</summary>
+      <param name="writer">XML ドキュメントまたはストリームの書き込みに使用される <see cref="T:System.Xml.XmlDictionaryWriter" />。</param>
+      <param name="graph">書き込む内容を含むオブジェクト。</param>
+      <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">データ コントラクト ルールに準拠していない種類をシリアル化しています。たとえば、<see cref="T:System.Runtime.Serialization.DataContractAttribute" /> 属性はこの種類には適用されていません。</exception>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">シリアル化されるインスタンスに問題があります。</exception>
+      <exception cref="T:System.ServiceModel.QuotaExceededException">シリアル化されるオブジェクトの最大数を超過しました。<see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" /> プロパティを確認します。</exception>
+    </member>
+    <member name="M:System.Runtime.Serialization.XmlObjectSerializer.WriteObjectContent(System.Xml.XmlWriter,System.Object)">
+      <summary>指定された <see cref="T:System.Xml.XmlWriter" /> を使用してオブジェクトのコンテンツのみを XML ドキュメントまたはストリームに書き込みます。</summary>
+      <param name="writer">XML ドキュメントまたはストリームの書き込みに使用される <see cref="T:System.Xml.XmlWriter" />。</param>
+      <param name="graph">書き込む内容を含むオブジェクト。</param>
+      <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">データ コントラクト ルールに準拠していない種類をシリアル化しています。たとえば、<see cref="T:System.Runtime.Serialization.DataContractAttribute" /> 属性はこの種類には適用されていません。</exception>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">シリアル化されるインスタンスに問題があります。</exception>
+      <exception cref="T:System.ServiceModel.QuotaExceededException">シリアル化されるオブジェクトの最大数を超過しました。<see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" /> プロパティを確認します。</exception>
+    </member>
+    <member name="M:System.Runtime.Serialization.XmlObjectSerializer.WriteStartObject(System.Xml.XmlDictionaryWriter,System.Object)">
+      <summary>指定された <see cref="T:System.Xml.XmlDictionaryWriter" /> を使用して、オブジェクトのデータの開始を開始 XML 要素として書き込みます。</summary>
+      <param name="writer">XML ドキュメントへの書き込みに使用される <see cref="T:System.Xml.XmlDictionaryWriter" />。</param>
+      <param name="graph">シリアル化対象のオブジェクト。</param>
+      <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">データ コントラクト ルールに準拠していない種類をシリアル化しています。たとえば、<see cref="T:System.Runtime.Serialization.DataContractAttribute" /> 属性はこの種類には適用されていません。</exception>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">シリアル化されるインスタンスに問題があります。</exception>
+      <exception cref="T:System.ServiceModel.QuotaExceededException">シリアル化されるオブジェクトの最大数を超過しました。<see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" /> プロパティを確認します。</exception>
+    </member>
+    <member name="M:System.Runtime.Serialization.XmlObjectSerializer.WriteStartObject(System.Xml.XmlWriter,System.Object)">
+      <summary>指定された <see cref="T:System.Xml.XmlWriter" /> を使用して、オブジェクトのデータの開始を開始 XML 要素として書き込みます。</summary>
+      <param name="writer">XML ドキュメントへの書き込みに使用される <see cref="T:System.Xml.XmlWriter" />。</param>
+      <param name="graph">シリアル化対象のオブジェクト。</param>
+      <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">データ コントラクト ルールに準拠していない種類をシリアル化しています。たとえば、<see cref="T:System.Runtime.Serialization.DataContractAttribute" /> 属性はこの種類には適用されていません。</exception>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">シリアル化されるインスタンスに問題があります。</exception>
+      <exception cref="T:System.ServiceModel.QuotaExceededException">シリアル化されるオブジェクトの最大数を超過しました。<see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" /> プロパティを確認します。</exception>
+    </member>
+    <member name="T:System.Xml.IXmlDictionary">
+      <summary>
+        <see cref="T:System.Xml.XmlDictionaryReader" /> および <see cref="T:System.Xml.XmlDictionaryWriter" /> の実装によって使用される、XML ディクショナリを実装する必要のあるコントラクトを定義するインターフェイス。</summary>
+    </member>
+    <member name="M:System.Xml.IXmlDictionary.TryLookup(System.Int32,System.Xml.XmlDictionaryString@)">
+      <summary>辞書のエントリの検索を試行します。</summary>
+      <returns>
+        <paramref name="key" /> が辞書にある場合は true。それ以外の場合は false。</returns>
+      <param name="key">確認するキー。</param>
+      <param name="result">
+        <paramref name="key" /> が <see cref="T:System.Xml.IXmlDictionary" /> で検出された場合は、キーにマップされる <see cref="T:System.Xml.XmlDictionaryString" />。それ以外の場合は null。</param>
+    </member>
+    <member name="M:System.Xml.IXmlDictionary.TryLookup(System.String,System.Xml.XmlDictionaryString@)">
+      <summary>指定された文字列値について辞書を確認します。</summary>
+      <returns>
+        <paramref name="value" /> が辞書にある場合は true。それ以外の場合は false。</returns>
+      <param name="value">確認する文字列。</param>
+      <param name="result">
+        <paramref name="value" /> が <see cref="T:System.Xml.IXmlDictionary" /> で検出された場合は、キーにマップされる <see cref="T:System.Xml.XmlDictionaryString" />。それ以外の場合は null。</param>
+    </member>
+    <member name="M:System.Xml.IXmlDictionary.TryLookup(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString@)">
+      <summary>指定された <see cref="T:System.Xml.XmlDictionaryString" /> について辞書を確認します。</summary>
+      <returns>
+        <see cref="T:System.Xml.XmlDictionaryString" /> が辞書にある場合は true。それ以外の場合は false。</returns>
+      <param name="value">確認中の <see cref="T:System.Xml.XmlDictionaryString" />。</param>
+      <param name="result">
+        <paramref name="value" /> が <see cref="T:System.Xml.IXmlDictionary" /> で検出された場合は、キーにマップされる <see cref="T:System.Xml.XmlDictionaryString" />。それ以外の場合は null。</param>
+    </member>
+    <member name="T:System.Xml.UniqueId">
+      <summary>GUID に最適化された一意の識別子を示します。</summary>
+    </member>
+    <member name="M:System.Xml.UniqueId.#ctor">
+      <summary>新しい一意の GUID を使用して、<see cref="T:System.Xml.UniqueId" /> クラスの新しいインスタンスを作成します。</summary>
+    </member>
+    <member name="M:System.Xml.UniqueId.#ctor(System.Byte[])">
+      <summary>
+        <see cref="T:System.Guid" /> を表すバイト配列を使用して、<see cref="T:System.Xml.UniqueId" /> クラスの新しいインスタンスを作成します。</summary>
+      <param name="guid">
+        <see cref="T:System.Guid" /> を表すバイト配列。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="guid" /> が null です。</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="guid" /> が有効な 16 バイト未満です。</exception>
+    </member>
+    <member name="M:System.Xml.UniqueId.#ctor(System.Byte[],System.Int32)">
+      <summary>
+        <see cref="T:System.Guid" /> を表す byte 配列の、オフセットで指定されている位置から開始して、<see cref="T:System.Xml.UniqueId" /> クラスの新しいインスタンスを作成します。</summary>
+      <param name="guid">
+        <see cref="T:System.Guid" /> を表す byte 配列。</param>
+      <param name="offset">
+        <see cref="T:System.Guid" /> を表す byte 配列内のオフセット位置。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="guid" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" />  が 0 より小さいか、または配列の長さより大きくなっています。</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="guid" /> と <paramref name="offset" /> が有効な 16 バイト未満です。</exception>
+    </member>
+    <member name="M:System.Xml.UniqueId.#ctor(System.Char[],System.Int32,System.Int32)">
+      <summary>エントリ数を指定し、char のオフセットで指定されている位置から開始して、このクラスの新しいインスタンスを作成します。</summary>
+      <param name="chars">
+        <see cref="T:System.Guid" /> を表す char 配列。</param>
+      <param name="offset">
+        <see cref="T:System.Guid" /> を表す char 配列内のオフセット位置。</param>
+      <param name="count">
+        <paramref name="offset" /> から始まる、使用する配列エントリの数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="chars" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" />  が 0 より小さいか、または配列の長さより大きくなっています。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">0 より小さい、または配列の長さから <paramref name="offset" /> を引いた値より大きい <paramref name="count" />。</exception>
+      <exception cref="T:System.FormatException">
+        <paramref name="count" /> は 0 と等しくなります。</exception>
+    </member>
+    <member name="M:System.Xml.UniqueId.#ctor(System.Guid)">
+      <summary>
+        <see cref="T:System.Guid" /> を使用して、<see cref="T:System.Xml.UniqueId" /> クラスの新しいインスタンスを作成します。</summary>
+      <param name="guid">
+        <see cref="T:System.Guid" />。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="guid" /> が null です。</exception>
+    </member>
+    <member name="M:System.Xml.UniqueId.#ctor(System.String)">
+      <summary>文字列を使用して、<see cref="T:System.Xml.UniqueId" /> クラスの新しいインスタンスを作成します。</summary>
+      <param name="value">
+        <see cref="T:System.Xml.UniqueId" /> の生成に使用される文字列。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="value" /> が null です。</exception>
+      <exception cref="T:System.FormatException">
+        <paramref name="value" /> の長さが 0 です。</exception>
+    </member>
+    <member name="P:System.Xml.UniqueId.CharArrayLength">
+      <summary>
+        <see cref="T:System.Xml.UniqueId" /> の文字列表現の長さを示す値を取得します。</summary>
+      <returns>
+        <see cref="T:System.Xml.UniqueId" /> の文字列表現の長さ。</returns>
+    </member>
+    <member name="M:System.Xml.UniqueId.Equals(System.Object)">
+      <summary>オブジェクトがこの <see cref="T:System.Xml.UniqueId" /> と等しいかどうかをテストします。</summary>
+      <returns>オブジェクトがこの <see cref="T:System.Xml.UniqueId" /> と等しい場合は true。それ以外の場合は false。</returns>
+      <param name="obj">比較するオブジェクト。</param>
+    </member>
+    <member name="M:System.Xml.UniqueId.GetHashCode">
+      <summary>この <see cref="T:System.Xml.UniqueId" /> のハッシュ コード表現を作成します。</summary>
+      <returns>この <see cref="T:System.Xml.UniqueId" /> の整数ハッシュ コード表現。</returns>
+    </member>
+    <member name="P:System.Xml.UniqueId.IsGuid">
+      <summary>
+        <see cref="T:System.Xml.UniqueId" /> が <see cref="T:System.Guid" /> であるかどうかを示す値を取得します。</summary>
+      <returns>
+        <see cref="T:System.Xml.UniqueId" /> が <see cref="T:System.Guid" /> の場合は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="M:System.Xml.UniqueId.op_Equality(System.Xml.UniqueId,System.Xml.UniqueId)">
+      <summary>2 つの <see cref="T:System.Xml.UniqueId" /> オブジェクトが等しいかどうかを調べる等値演算子をオーバーライドします。</summary>
+      <returns>2 つの <see cref="T:System.Xml.UniqueId" /> が等しい場合、または両方とも null の場合は true。両者が等しくない場合、または一方のみが null の場合は false。</returns>
+      <param name="id1">最初の <see cref="T:System.Xml.UniqueId" />。</param>
+      <param name="id2">2 番目の <see cref="T:System.Xml.UniqueId" />。</param>
+    </member>
+    <member name="M:System.Xml.UniqueId.op_Inequality(System.Xml.UniqueId,System.Xml.UniqueId)">
+      <summary>2 つの <see cref="T:System.Xml.UniqueId" /> が等しくないかどうかを調べる等値演算子をオーバーライドします。</summary>
+      <returns>オーバーライドされた等値演算子が false を返す場合は true。それ以外の場合は false。</returns>
+      <param name="id1">最初の <see cref="T:System.Xml.UniqueId" />。</param>
+      <param name="id2">2 番目の <see cref="T:System.Xml.UniqueId" />。</param>
+    </member>
+    <member name="M:System.Xml.UniqueId.ToCharArray(System.Char[],System.Int32)">
+      <summary>
+        <see cref="T:System.Xml.UniqueId" /> 値を char 配列に格納します。</summary>
+      <returns>
+        <see cref="T:System.Xml.UniqueId" /> 値で埋められた char 配列のエントリの数。</returns>
+      <param name="chars">char 配列。</param>
+      <param name="offset">char 配列内の <see cref="T:System.Xml.UniqueId" /> 値の挿入開始位置。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="chars" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" />  が 0 より小さいか、または配列の長さより大きくなっています。</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="guid " /> と <paramref name=" offset" /> が有効な 16 バイト未満です。</exception>
+    </member>
+    <member name="M:System.Xml.UniqueId.ToString">
+      <summary>
+        <see cref="T:System.Xml.UniqueId" /> 値を文字列形式で表示します。</summary>
+      <returns>
+        <see cref="T:System.Xml.UniqueId" /> 値。</returns>
+    </member>
+    <member name="M:System.Xml.UniqueId.TryGetGuid(System.Byte[],System.Int32)">
+      <summary>
+        <see cref="T:System.Xml.UniqueId" /> の値を <see cref="T:System.Guid" /> として取得し、指定されたオフセットの指定されたバイト配列に値を格納しようとします。</summary>
+      <returns>
+        <see cref="T:System.Xml.UniqueId" /> のこのインスタンスに格納された値が <see cref="T:System.Guid" /> である場合は true。それ以外の場合は false。</returns>
+      <param name="buffer">
+        <see cref="T:System.Guid" /> を含む byte 配列。</param>
+      <param name="offset">byte 配列内の <see cref="T:System.Guid" /> 値の挿入開始位置。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="buffer" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" />  が 0 より小さいか、または配列の長さより大きくなっています。</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="buffer" /> と <paramref name="offset" /> が有効な 16 バイト未満です。</exception>
+    </member>
+    <member name="M:System.Xml.UniqueId.TryGetGuid(System.Guid@)">
+      <summary>
+        <see cref="T:System.Xml.UniqueId" /> の値を <see cref="T:System.Guid" /> として取得しようとします。</summary>
+      <returns>
+        <see cref="T:System.Xml.UniqueId" /> が <see cref="T:System.Guid" /> を表す場合は true。それ以外の場合は false。</returns>
+      <param name="guid">成功した場合は <see cref="T:System.Guid" />、それ以外の場合は <see cref="F:System.Guid.Empty" />。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="buffer" /> が null です。</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="buffer" /> と <paramref name="offset" /> が有効な 16 バイト未満です。</exception>
+    </member>
+    <member name="T:System.Xml.XmlBinaryReaderSession">
+      <summary>最適化された文字列を動的に管理できるようにします。</summary>
+    </member>
+    <member name="M:System.Xml.XmlBinaryReaderSession.#ctor">
+      <summary>
+        <see cref="T:System.Xml.XmlBinaryReaderSession" /> クラスの新しいインスタンスを作成します。</summary>
+    </member>
+    <member name="M:System.Xml.XmlBinaryReaderSession.Add(System.Int32,System.String)">
+      <summary>入力パラメーターから <see cref="T:System.Xml.XmlDictionaryString" /> を作成し、内部コレクションに追加します。</summary>
+      <returns>
+        <see cref="T:System.Xml.XmlDictionaryString" />。</returns>
+      <param name="id">キー値。</param>
+      <param name="value">値。</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="id" /> が 0 未満です。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="value" /> が null です。</exception>
+      <exception cref="T:System.InvalidOperationException">キー = <paramref name="id" /> を使用したエントリは既に存在しています。</exception>
+    </member>
+    <member name="M:System.Xml.XmlBinaryReaderSession.Clear">
+      <summary>すべてのコンテンツの内部コレクションを消去します。</summary>
+    </member>
+    <member name="M:System.Xml.XmlBinaryReaderSession.TryLookup(System.Int32,System.Xml.XmlDictionaryString@)">
+      <summary>内部コレクションに指定されたキーのエントリが含まれるかどうかを確認します。</summary>
+      <returns>
+        <paramref name="key" /> と一致するエントリが見つかった場合は true。それ以外の場合は false。</returns>
+      <param name="key">一致するキー。</param>
+      <param name="result">見つかった場合は <see cref="T:System.Xml.XmlDictionaryString" />。それ以外の場合は null。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="key" /> が null です。</exception>
+    </member>
+    <member name="M:System.Xml.XmlBinaryReaderSession.TryLookup(System.String,System.Xml.XmlDictionaryString@)">
+      <summary>内部コレクションに指定された文字列値のエントリが含まれるかどうかを確認します。</summary>
+      <returns>
+        <paramref name="value" /> に一致するエントリが発見された場合は true。それ以外の場合は false。</returns>
+      <param name="value">一致する文字列値。</param>
+      <param name="result">見つかった場合は <see cref="T:System.Xml.XmlDictionaryString" />。それ以外の場合は null。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="value" /> が null です。</exception>
+    </member>
+    <member name="M:System.Xml.XmlBinaryReaderSession.TryLookup(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString@)">
+      <summary>内部コレクションに指定されたエントリが含まれるかどうかを確認します。</summary>
+      <returns>
+        <paramref name="value" /> に一致するエントリが発見された場合は true。それ以外の場合は false。</returns>
+      <param name="value">一致する値。</param>
+      <param name="result">見つかった場合は <see cref="T:System.Xml.XmlDictionaryString" />。それ以外の場合は null。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="value" /> が null です。</exception>
+    </member>
+    <member name="T:System.Xml.XmlBinaryWriterSession">
+      <summary>動的ディクショナリを使用してメッセージ内に表示される共通文字列を圧縮し、状態を維持できるようにします。</summary>
+    </member>
+    <member name="M:System.Xml.XmlBinaryWriterSession.#ctor">
+      <summary>
+        <see cref="T:System.Xml.XmlBinaryWriterSession" /> クラスの新しいインスタンスを作成します。</summary>
+    </member>
+    <member name="M:System.Xml.XmlBinaryWriterSession.Reset">
+      <summary>内部コレクションを消去します。</summary>
+    </member>
+    <member name="M:System.Xml.XmlBinaryWriterSession.TryAdd(System.Xml.XmlDictionaryString,System.Int32@)">
+      <summary>
+        <see cref="T:Sytem.Xml.XmlDictionaryString" /> を内部コレクションに追加しようとします。</summary>
+      <returns>例外がスローされた場合を除いて true です。</returns>
+      <param name="value">追加する <see cref="T:Sytem.Xml.XmlDictionaryString" />。</param>
+      <param name="key">正常に追加された <see cref="T:Sytem.Xml.XmlDictionaryString" /> のキー。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="value" /> が null です。</exception>
+      <exception cref="T:System.InvalidOperationException">キー = <paramref name="key" /> を使用したエントリは既に存在しています。</exception>
+    </member>
+    <member name="T:System.Xml.XmlDictionary">
+      <summary>Windows Phone の XML リーダー/ライターの実装の最適化に使用されるディクショナリを実装します。</summary>
+    </member>
+    <member name="M:System.Xml.XmlDictionary.#ctor">
+      <summary>空の <see cref="T:System.Xml.XmlDictionary" /> を作成します。</summary>
+    </member>
+    <member name="M:System.Xml.XmlDictionary.#ctor(System.Int32)">
+      <summary>初期容量で <see cref="T:System.Xml.XmlDictionary" /> を作成します。</summary>
+      <param name="capacity">ディクショナリの初期サイズ。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionary.Add(System.String)">
+      <summary>文字列を <see cref="T:System.Xml.XmlDictionary" /> に追加します。</summary>
+      <returns>追加された <see cref="T:System.Xml.XmlDictionaryString" />。</returns>
+      <param name="value">ディクショナリに追加する文字列。</param>
+    </member>
+    <member name="P:System.Xml.XmlDictionary.Empty">
+      <summary>static で空の <see cref="T:System.Xml.IXmlDictionary" /> を取得します。</summary>
+      <returns>static で空の <see cref="T:System.Xml.IXmlDictionary" />。</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionary.TryLookup(System.Int32,System.Xml.XmlDictionaryString@)">
+      <summary>辞書のエントリの検索を試行します。</summary>
+      <returns>キーが XML ディクショナリにある場合は true、それ以外の場合は false。</returns>
+      <param name="key">検索するキー。</param>
+      <param name="result">
+        <paramref name="key" /> が <see cref="T:System.Xml.XmlDictionary" /> に存在する場合は、キーにマップされる <see cref="T:System.Xml.XmlDictionaryString" />。それ以外の場合は null。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionary.TryLookup(System.String,System.Xml.XmlDictionaryString@)">
+      <summary>指定された文字列値について辞書を確認します。</summary>
+      <returns>値が <see cref="T:System.Xml.XmlDictionary" /> にある場合は true、それ以外の場合は false。</returns>
+      <param name="value">確認される文字列値。</param>
+      <param name="result">
+        <paramref name="value" /> が <see cref="T:System.Xml.XmlDictionary" /> に存在する場合は、キーにマップされる <see cref="T:System.Xml.XmlDictionaryString" />。それ以外の場合は null。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="value" /> が null です。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionary.TryLookup(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString@)">
+      <summary>指定された <see cref="T:System.Xml.XmlDictionaryString" /> について辞書を確認します。</summary>
+      <returns>
+        <see cref="T:System.Xml.XmlDictionaryString" /> が辞書にある場合は true。それ以外の場合は false。</returns>
+      <param name="value">確認中の <see cref="T:System.Xml.XmlDictionaryString" />。</param>
+      <param name="result">
+        <paramref name="value" /> が <see cref="T:System.Xml.XmlDictionary" /> に存在する場合は、キーにマップされる <see cref="T:System.Xml.XmlDictionaryString" />。それ以外の場合は null。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="value" /> が null です。</exception>
+    </member>
+    <member name="T:System.Xml.XmlDictionaryReader">
+      <summary>追加のシリアル化および逆シリアル化の機能を <see cref="T:System.Xml.XmlReader" /> に提供する abstractWindows Phone クラス。</summary>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.#ctor">
+      <summary>この基本クラスから派生した非抽象クラスによって実装される場合、その派生クラスの新しいインスタンスを作成します。</summary>
+    </member>
+    <member name="P:System.Xml.XmlDictionaryReader.CanCanonicalize">
+      <summary>このプロパティは常に false を返します。正規化がサポートされている場合、派生クラスで true を返すようにオーバーライドできます。</summary>
+      <returns>false を返します。</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.CreateBinaryReader(System.Byte[],System.Int32,System.Int32,System.Xml.IXmlDictionary,System.Xml.XmlDictionaryReaderQuotas)">
+      <summary>.NET バイナリ XML 形式を読み込める <see cref="T:System.Xml.XmlDictionaryReader" /> のインスタンスを作成します。</summary>
+      <returns>
+        <see cref="T:System.Xml.XmlDictionaryReader" /> のインスタンス。</returns>
+      <param name="buffer">読み込み元のバッファー。</param>
+      <param name="offset">
+        <paramref name="buffer" /> での読み込みの開始位置。</param>
+      <param name="count">
+        <paramref name="buffer" /> から読み込み可能なバイト数。</param>
+      <param name="dictionary">使用する <see cref="T:System.Xml.XmlDictionary" />。</param>
+      <param name="quotas">この操作に適用されるクォータ。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="buffer" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が 0 より小さいか、またはバッファーの長さより大きくなっています。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が 0 より小さいか、またはバッファーの長さからオフセットを引いたものより大きくなっています。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.CreateBinaryReader(System.Byte[],System.Int32,System.Int32,System.Xml.IXmlDictionary,System.Xml.XmlDictionaryReaderQuotas,System.Xml.XmlBinaryReaderSession)">
+      <summary>.NET バイナリ XML 形式を読み込める <see cref="T:System.Xml.XmlDictionaryReader" /> のインスタンスを作成します。</summary>
+      <returns>
+        <see cref="T:System.Xml.XmlDictionaryReader" /> クラスのインスタンス。</returns>
+      <param name="buffer">読み込み元のバッファー。</param>
+      <param name="offset">
+        <paramref name="buffer" /> での読み込みの開始位置。</param>
+      <param name="count">
+        <paramref name="buffer" /> から読み込み可能なバイト数。</param>
+      <param name="dictionary">使用する <see cref="T:System.Xml.XmlDictionary" />。</param>
+      <param name="quotas">この操作に適用されるクォータ。</param>
+      <param name="session">リーダーによって使用される <see cref="T:System.Xml.XmlBinaryReaderSession" /> のインスタンス。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="buffer" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が 0 より小さいか、またはバッファーの長さより大きくなっています。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が 0 より小さいか、またはバッファーの長さからオフセットを引いたものより大きくなっています。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.CreateBinaryReader(System.Byte[],System.Int32,System.Int32,System.Xml.XmlDictionaryReaderQuotas)">
+      <summary>.NET バイナリ XML 形式を読み込める <see cref="T:System.Xml.XmlDictionaryReader" /> のインスタンスを作成します。</summary>
+      <returns>
+        <see cref="T:System.Xml.XmlDictionaryReader" /> のインスタンス。</returns>
+      <param name="buffer">読み込み元のバッファー。</param>
+      <param name="offset">
+        <paramref name="buffer" /> での読み込みの開始位置。</param>
+      <param name="count">
+        <paramref name="buffer" /> から読み込み可能なバイト数。</param>
+      <param name="quotas">この操作に適用されるクォータ。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="buffer" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が 0 より小さいか、またはバッファーの長さより大きくなっています。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が 0 より小さいか、またはバッファーの長さからオフセットを引いたものより大きくなっています。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.CreateBinaryReader(System.Byte[],System.Xml.XmlDictionaryReaderQuotas)">
+      <summary>.NET バイナリ XML 形式を読み込める <see cref="T:System.Xml.XmlDictionaryReader" /> のインスタンスを作成します。</summary>
+      <returns>
+        <see cref="T:System.Xml.XmlDictionaryReader" /> のインスタンス。</returns>
+      <param name="buffer">読み込み元のバッファー。</param>
+      <param name="quotas">この操作に適用されるクォータ。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="buffer" /> が null です。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.CreateBinaryReader(System.IO.Stream,System.Xml.IXmlDictionary,System.Xml.XmlDictionaryReaderQuotas)">
+      <summary>.NET バイナリ XML 形式を読み込める <see cref="T:System.Xml.XmlDictionaryReader" /> のインスタンスを作成します。</summary>
+      <returns>
+        <see cref="T:System.Xml.XmlDictionaryReader" /> のインスタンス。</returns>
+      <param name="stream">読み込み元のストリーム。</param>
+      <param name="dictionary">使用する <see cref="T:System.Xml.XmlDictionary" />。</param>
+      <param name="quotas">この操作に適用されるクォータ。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="stream" /> または <paramref name="quotas" /> が null です。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.CreateBinaryReader(System.IO.Stream,System.Xml.IXmlDictionary,System.Xml.XmlDictionaryReaderQuotas,System.Xml.XmlBinaryReaderSession)">
+      <summary>.NET バイナリ XML 形式を読み込める <see cref="T:System.Xml.XmlDictionaryReader" /> のインスタンスを作成します。</summary>
+      <returns>
+        <see cref="T:System.Xml.XmlDictionaryReader" /> のインスタンス。</returns>
+      <param name="stream">読み込み元のストリーム。</param>
+      <param name="dictionary">使用する <see cref="T:System.Xml.XmlDictionary" />。</param>
+      <param name="quotas">この操作に適用されるクォータ。</param>
+      <param name="session">リーダーによって使用される <see cref="T:System.Xml.XmlBinaryReaderSession" /> のインスタンス。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="stream" /> が null です。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.CreateBinaryReader(System.IO.Stream,System.Xml.XmlDictionaryReaderQuotas)">
+      <summary>.NET バイナリ XML 形式を読み込める <see cref="T:System.Xml.XmlDictionaryReader" /> のインスタンスを作成します。</summary>
+      <returns>
+        <see cref="T:System.Xml.XmlDictionaryReader" /> のインスタンス。</returns>
+      <param name="stream">読み込み元のストリーム。</param>
+      <param name="quotas">この操作に適用されるクォータ。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="stream" /> が null です。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.CreateDictionaryReader(System.Xml.XmlReader)">
+      <summary>既存の <see cref="T:System.Xml.XmlReader" /> からの <see cref="T:System.Xml.XmlDictionaryReader" /> のインスタンスを作成します。</summary>
+      <returns>
+        <see cref="T:System.Xml.XmlDictionaryReader" /> のインスタンス。</returns>
+      <param name="reader">
+        <see cref="T:System.Xml.XmlReader" /> のインスタンス。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="reader" /> が null です。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.CreateTextReader(System.Byte[],System.Int32,System.Int32,System.Xml.XmlDictionaryReaderQuotas)">
+      <summary>
+        <see cref="T:System.Xml.XmlDictionaryReader" /> のインスタンスを作成します。</summary>
+      <returns>
+        <see cref="T:System.Xml.XmlDictionaryReader" /> のインスタンス。</returns>
+      <param name="buffer">読み込み元のバッファー。</param>
+      <param name="offset">
+        <paramref name="buffer" /> での読み込みの開始位置。</param>
+      <param name="count">
+        <paramref name="buffer" /> から読み込み可能なバイト数。</param>
+      <param name="quotas">リーダーに適用されたクォータ。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.CreateTextReader(System.Byte[],System.Xml.XmlDictionaryReaderQuotas)">
+      <summary>
+        <see cref="T:System.Xml.XmlDictionaryReader" /> のインスタンスを作成します。</summary>
+      <returns>
+        <see cref="T:System.Xml.XmlDictionaryReader" /> のインスタンス。</returns>
+      <param name="buffer">読み込み元のバッファー。</param>
+      <param name="quotas">リーダーに適用されたクォータ。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="buffer" /> が null です。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.CreateTextReader(System.IO.Stream,System.Xml.XmlDictionaryReaderQuotas)">
+      <summary>
+        <see cref="T:System.Xml.XmlDictionaryReader" /> のインスタンスを作成します。</summary>
+      <returns>
+        <see cref="T:System.Xml.XmlDictionaryReader" /> のインスタンス。</returns>
+      <param name="stream">読み込み元のストリーム。</param>
+      <param name="quotas">リーダーに適用されたクォータ。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.EndCanonicalization">
+      <summary>このメソッドは基本クラスではサポートされていません。派生クラスで実装できます。</summary>
+      <exception cref="T:System.NotSupportedException">このメソッドは基本クラスではサポートされていません。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.GetAttribute(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>派生クラスでオーバーライドされると、属性の値を取得します。</summary>
+      <returns>属性の値。</returns>
+      <param name="localName">属性のローカル名を表す <see cref="T:System.Xml.XmlDictionaryString" />。</param>
+      <param name="namespaceUri">属性の名前空間を表す <see cref="T:System.Xml.XmlDictionaryString" />。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.IndexOfLocalName(System.String[],System.String)">
+      <summary>名前の配列内の現在のノードのローカル名のインデックスを取得します。</summary>
+      <returns>名前の配列内の現在のノードのローカル名のインデックス。</returns>
+      <param name="localNames">検索するローカル名の文字列配列。</param>
+      <param name="namespaceUri">現在のノードの名前空間。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="localNames" /> または名前のいずれかが null です。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="namespaceUri" /> が null です。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.IndexOfLocalName(System.Xml.XmlDictionaryString[],System.Xml.XmlDictionaryString)">
+      <summary>名前の配列内の現在のノードのローカル名のインデックスを取得します。</summary>
+      <returns>名前の配列内の現在のノードのローカル名のインデックス。</returns>
+      <param name="localNames">検索するローカル名の <see cref="T:System.Xml.XmlDictionaryString" /> 配列。</param>
+      <param name="namespaceUri">現在のノードの名前空間。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="localNames" /> または名前のいずれかが null です。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="namespaceUri" /> が null です。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.IsLocalName(System.String)">
+      <summary>パラメーター <paramref name="localName" /> が現在のノードのローカル名であるかどうかを確認します。</summary>
+      <returns>
+        <paramref name="localName" /> が現在のノードのローカル名と一致する場合は true。それ以外の場合は false。</returns>
+      <param name="localName">現在のノードのローカル名。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.IsLocalName(System.Xml.XmlDictionaryString)">
+      <summary>パラメーター <paramref name="localName" /> が現在のノードのローカル名であるかどうかを確認します。</summary>
+      <returns>
+        <paramref name="localName" /> が現在のノードのローカル名と一致する場合は true。それ以外の場合は false。</returns>
+      <param name="localName">現在のノードのローカル名を示す <see cref="T:System.Xml.XmlDictionaryString" />。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="localName" /> が null です。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.IsNamespaceUri(System.String)">
+      <summary>パラメーター <paramref name="namespaceUri" /> が現在のノードの名前空間であるかどうかを確認します。</summary>
+      <returns>
+        <paramref name="namespaceUri" /> が現在のノードの名前空間と一致する場合は true。それ以外の場合は false。</returns>
+      <param name="namespaceUri">現在のノードの名前空間。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="namespaceUri" /> が null です。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.IsNamespaceUri(System.Xml.XmlDictionaryString)">
+      <summary>パラメーター <paramref name="namespaceUri" /> が現在のノードの名前空間であるかどうかを確認します。</summary>
+      <returns>
+        <paramref name="namespaceUri" /> が現在のノードの名前空間と一致する場合は true。それ以外の場合は false。</returns>
+      <param name="namespaceUri">現在のノードの名前空間。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="namespaceUri" /> が null です。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.IsStartArray(System.Type@)">
+      <summary>リーダーが配列の始点にあるかどうかを確認します。このクラスは false を返しますが、配列の概念を持つ派生クラスは true を返す場合があります。</summary>
+      <returns>リーダーが配列ノードの始点にある場合は true。それ以外の場合は false。</returns>
+      <param name="type">有効なノードの場合はノードの型。それ以外の場合は null。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.IsStartElement(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>最初の要素が開始要素または空の要素かどうか、ローカル名および名前空間の URI が現在のノードのものと一致するかどうかをテストします。</summary>
+      <returns>配列の最初の要素が開始要素または空の要素で、<paramref name="localName" /> と <paramref name="namespaceUri" /> と一致する場合は true。それ以外の場合は false。</returns>
+      <param name="localName">属性のローカル名を表す <see cref="T:System.Xml.XmlDictionaryString" />。</param>
+      <param name="namespaceUri">属性の名前空間を表す <see cref="T:System.Xml.XmlDictionaryString" />。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.IsTextNode(System.Xml.XmlNodeType)">
+      <summary>現在のノードがテキスト ノードであるかどうかをテストします。</summary>
+      <returns>ノードの型が <see cref="F:System.Xml.XmlNodetype.Text" />、<see cref="F:System.Xml.XmlNodetype.Whitespace" />、<see cref="F:System.Xml.XmlNodetype.SignificantWhitespace" />、<see cref="F:System.Xml.XmlNodetype.CDATA" />、または <see cref="F:System.Xml.XmlNodetype.Attribute" /> である場合は true。それ以外の場合は false。</returns>
+      <param name="nodeType">テストされるノードの型。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.MoveToStartElement">
+      <summary>現在のコンテンツ ノードが開始要素であるかどうかをテストします。</summary>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.MoveToStartElement(System.String)">
+      <summary>現在のコンテンツ ノードが開始要素であるかどうか、要素の <see cref="P:System.Xml.XmlReader.Name" /> プロパティが指定された引数と一致するかどうかをテストします。</summary>
+      <param name="name">要素の <see cref="P:System.Xml.XmlReader.Name" /> プロパティ。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.MoveToStartElement(System.String,System.String)">
+      <summary>現在のコンテンツ ノードが開始要素であるかどうか、要素の <see cref="P:System.Xml.XmlReader.LocalName" /> プロパティおよび <see cref="P:System.Xml.XmlReader.NamespaceURI" /> プロパティが指定された引数と一致するかどうかをテストします。</summary>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.MoveToStartElement(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>現在のコンテンツ ノードが開始要素であるかどうか、要素の <see cref="P:System.Xml.XmlReader.LocalName" /> プロパティおよび <see cref="P:System.Xml.XmlReader.NamespaceURI" /> プロパティが指定された引数と一致するかどうかをテストします。</summary>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+    </member>
+    <member name="P:System.Xml.XmlDictionaryReader.Quotas">
+      <summary>このリーダー クラスの現在のインスタンスに適用するクォータ値を取得します。</summary>
+      <returns>
+        <see cref="T:System.Xml.XmlDictionaryReaderQuotas" /> を返します。</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.String,System.String,System.Boolean[],System.Int32,System.Int32)">
+      <summary>繰り返し発生する <see cref="T:System.Boolean" /> ノードを型指定された配列に読み込みます。</summary>
+      <returns>配列に置かれるノードの数。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素のローカル名。</param>
+      <param name="array">ノードが置かれる配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列に置かれるノードの数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.String,System.String,System.DateTime[],System.Int32,System.Int32)">
+      <summary>繰り返し発生する <see cref="T:System.DateTime" /> ノードを型指定された配列に読み込みます。</summary>
+      <returns>配列に置かれるノードの数。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">ノードが置かれる配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列に置かれるノードの数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.String,System.String,System.Decimal[],System.Int32,System.Int32)">
+      <summary>繰り返し発生する <see cref="T:System.Decimal" /> ノードを型指定された配列に読み込みます。</summary>
+      <returns>配列に置かれるノードの数。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">ノードが置かれる配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列に置かれるノードの数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.String,System.String,System.Double[],System.Int32,System.Int32)">
+      <summary>繰り返し発生する <see cref="T:System.Double" /> ノードを型指定された配列に読み込みます。</summary>
+      <returns>配列に置かれるノードの数。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">ノードが置かれる配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列に置かれるノードの数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.String,System.String,System.Guid[],System.Int32,System.Int32)">
+      <summary>繰り返し発生する <see cref="T:System.Guid" /> ノードを型指定された配列に読み込みます。</summary>
+      <returns>配列に置かれるノードの数。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">ノードが置かれる配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列に置かれるノードの数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.String,System.String,System.Int16[],System.Int32,System.Int32)">
+      <summary>繰り返し発生する short 整数を型指定された配列に読み込みます。</summary>
+      <returns>配列に置かれる整数の数。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">整数が置かれる配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列に置かれる整数の数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.String,System.String,System.Int32[],System.Int32,System.Int32)">
+      <summary>繰り返し発生する整数を型指定された配列に読み込みます。</summary>
+      <returns>配列に置かれる整数の数。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">整数が置かれる配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列に置かれる整数の数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.String,System.String,System.Int64[],System.Int32,System.Int32)">
+      <summary>繰り返し発生する long 整数を型指定された配列に読み込みます。</summary>
+      <returns>配列に置かれる整数の数。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">整数が置かれる配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列に置かれる整数の数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.String,System.String,System.Single[],System.Int32,System.Int32)">
+      <summary>繰り返し発生する float 数を型指定された配列に読み込みます。</summary>
+      <returns>配列に置かれる浮動小数点数の数。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">浮動小数点数が置かれる配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列に置かれる浮動小数点数の数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.String,System.String,System.TimeSpan[],System.Int32,System.Int32)">
+      <summary>繰り返し発生する <see cref="T:System.TimeSpan" /> ノードを型指定された配列に読み込みます。</summary>
+      <returns>配列に置かれるノードの数。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">ノードが置かれる配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列に置かれるノードの数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Boolean[],System.Int32,System.Int32)">
+      <summary>繰り返し発生する <see cref="T:System.Boolean" /> ノードを型指定された配列に読み込みます。</summary>
+      <returns>配列に置かれるノードの数。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">ノードが置かれる配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列に置かれるノードの数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.DateTime[],System.Int32,System.Int32)">
+      <summary>繰り返し発生する <see cref="T:System.DateTime" /> ノードを型指定された配列に読み込みます。</summary>
+      <returns>配列に置かれるノードの数。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">ノードが置かれる配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列に置かれるノードの数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Decimal[],System.Int32,System.Int32)">
+      <summary>繰り返し発生する <see cref="T:System.Decimal" /> ノードを型指定された配列に読み込みます。</summary>
+      <returns>配列に置かれるノードの数。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">ノードが置かれる配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列に置かれるノードの数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Double[],System.Int32,System.Int32)">
+      <summary>繰り返し発生する <see cref="T:System.Double" /> ノードの型を型指定された配列に読み込みます。</summary>
+      <returns>配列に置かれるノードの数。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">ノードが置かれる配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列に置かれるノードの数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Guid[],System.Int32,System.Int32)">
+      <summary>繰り返し発生する <see cref="T:System.Guid" /> ノードを型指定された配列に読み込みます。</summary>
+      <returns>配列に置かれるノードの数。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">ノードが置かれる配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列に置かれるノードの数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Int16[],System.Int32,System.Int32)">
+      <summary>繰り返し発生する short 整数を型指定された配列に読み込みます。</summary>
+      <returns>配列に置かれる整数の数。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">整数が置かれる配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列に置かれる整数の数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Int32[],System.Int32,System.Int32)">
+      <summary>繰り返し発生する整数を型指定された配列に読み込みます。</summary>
+      <returns>配列に置かれる整数の数。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">整数が置かれる配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列に置かれる整数の数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Int64[],System.Int32,System.Int32)">
+      <summary>繰り返し発生する long 整数を型指定された配列に読み込みます。</summary>
+      <returns>配列に置かれる整数の数。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">整数が置かれる配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列に置かれる整数の数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Single[],System.Int32,System.Int32)">
+      <summary>繰り返し発生する float 数を型指定された配列に読み込みます。</summary>
+      <returns>配列に置かれる浮動小数点数の数。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">浮動小数点数が置かれる配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列に置かれる浮動小数点数の数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.TimeSpan[],System.Int32,System.Int32)">
+      <summary>繰り返し発生する <see cref="T:System.TimeSpan" /> ノードを型指定された配列に読み込みます。</summary>
+      <returns>配列に置かれるノードの数。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">ノードが置かれる配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列に置かれるノードの数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadBooleanArray(System.String,System.String)">
+      <summary>繰り返し発生する <see cref="T:System.Boolean" /> ノードを型指定された配列に読み込みます。</summary>
+      <returns>
+        <see cref="T:System.Boolean" /> ノードの <see cref="T:System.Boolean" /> 配列。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadBooleanArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>繰り返し発生する <see cref="T:System.Boolean" /> ノードを型指定された配列に読み込みます。</summary>
+      <returns>
+        <see cref="T:System.Boolean" /> ノードの <see cref="T:System.Boolean" /> 配列。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadContentAs(System.Type,System.Xml.IXmlNamespaceResolver)">
+      <summary>ノードのコンテンツを指定された型に変換します。</summary>
+      <returns>要求された型に変換された、連結されたテキストのコンテンツまたは属性値。</returns>
+      <param name="type">返される値の <see cref="T:System.Type" />。</param>
+      <param name="namespaceResolver">型変換に関連する名前空間プレフィックスの解決に使用される <see cref="T:System.Xml.IXmlNamespaceResolver" /> オブジェクト。たとえば、<see cref="T:System.Xml.XmlQualifiedName" /> オブジェクトを xs:string に変換するときにこれを使用できます。この値は null 参照にすることができます。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadContentAsBase64">
+      <summary>コンテンツを読み取り、Base64 でデコードされたバイナリ バイトを返します。</summary>
+      <returns>デコードされた Base64 バイナリ バイトを含む <see cref="T:System.Byte" /> 配列。</returns>
+      <exception cref="T:System.Xml.XmlException">配列サイズはこのリーダーの MaxArrayLength クォータより大きくなります。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadContentAsBinHex">
+      <summary>コンテンツを読み取り、BinHex でデコードされたバイナリ バイトを返します。</summary>
+      <returns>BinHex でデコードされたバイナリ バイトを含むバイト配列。</returns>
+      <exception cref="T:System.Xml.XmlException">
+        <see cref="F:System.Int32.MaxValue" /> より大きい配列サイズ。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadContentAsBinHex(System.Int32)">
+      <summary>コンテンツを読み取り、BinHex でデコードされたバイナリ バイトを返します。</summary>
+      <returns>BinHex でデコードされたバイナリ バイトを含むバイト配列。</returns>
+      <param name="maxByteArrayContentLength">最大配列長。</param>
+      <exception cref="T:System.Xml.XmlException">
+        <paramref name="maxByteArrayContentLength" /> より大きい配列サイズ。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadContentAsChars(System.Char[],System.Int32,System.Int32)">
+      <summary>コンテンツを char 配列に読み取ります。</summary>
+      <returns>読み取る文字数。</returns>
+      <param name="chars">文字が挿入される配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列に挿入する文字数。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadContentAsDecimal">
+      <summary>ノードのコンテンツを decimal に変換します。</summary>
+      <returns>ノードのコンテンツの decimal 表現。</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadContentAsFloat">
+      <summary>ノードのコンテンツを float に変換します。</summary>
+      <returns>ノードのコンテンツの float 表現。</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadContentAsGuid">
+      <summary>ノードのコンテンツを guid に変換します。</summary>
+      <returns>ノードのコンテンツの guid 表現。</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadContentAsQualifiedName(System.String@,System.String@)">
+      <summary>ノードのコンテンツを修飾名表現に変換します。</summary>
+      <param name="localName">修飾された名前の <see cref="P:System.Xml.XmlReader.LocalName" /> 部分 (out パラメーター)。</param>
+      <param name="namespaceUri">修飾された名前の <see cref="P:System.Xml.XmlReader.NamespaceURI" /> 部分 (out パラメーター)。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadContentAsString">
+      <summary>ノードの内容を文字列に変換します。</summary>
+      <returns>文字列形式でのノードの内容。</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadContentAsString(System.Int32)">
+      <summary>ノードの内容を文字列に変換します。</summary>
+      <returns>文字列形式のノード コンテンツ。</returns>
+      <param name="maxStringContentLength">最大文字列長。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadContentAsString(System.String[],System.Int32@)">
+      <summary>ノードの内容を文字列に変換します。</summary>
+      <returns>文字列形式でのノードの内容。</returns>
+      <param name="strings">コンテンツが一致する文字列の配列。</param>
+      <param name="index">内容と一致する <paramref name="strings" /> におけるエントリのインデックス。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="strings" /> が null です。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="strings" /> のエントリが null です。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadContentAsString(System.Xml.XmlDictionaryString[],System.Int32@)">
+      <summary>ノードの内容を文字列に変換します。</summary>
+      <returns>文字列形式でのノードの内容。</returns>
+      <param name="strings">コンテンツが一致する <see cref="T:System.Xml.XmlDictionaryString" /> オブジェクトの配列。</param>
+      <param name="index">内容と一致する <paramref name="strings" /> におけるエントリのインデックス。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="strings" /> が null です。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="strings" /> のエントリが null です。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadContentAsTimeSpan">
+      <summary>ノードのコンテンツを <see cref="T:System.TimeSpan" /> に変換します。</summary>
+      <returns>ノードのコンテンツの <see cref="T:System.TimeSpan" /> 表示。</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadContentAsUniqueId">
+      <summary>ノードのコンテンツを一意の識別子に変換します。</summary>
+      <returns>一意識別子として表されたノードの内容。</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadDateTimeArray(System.String,System.String)">
+      <summary>ノードの内容を <see cref="T:System.DateTime" /> 配列に変換します。</summary>
+      <returns>
+        <see cref="T:System.DateTime" /> 配列として表されたノードの内容。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadDateTimeArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>ノードの内容を <see cref="T:System.DateTime" /> 配列に変換します。</summary>
+      <returns>
+        <see cref="T:System.DateTime" /> 配列として表されたノードの内容。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadDecimalArray(System.String,System.String)">
+      <summary>ノードの内容を <see cref="T:System.DateTime" /> 配列に変換します。</summary>
+      <returns>
+        <see cref="T:System.Decimal" /> 配列として表されたノードの内容。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadDecimalArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>ノードの内容を <see cref="T:System.DateTime" /> 配列に変換します。</summary>
+      <returns>
+        <see cref="T:System.Decimal" /> 配列として表されたノードの内容。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadDoubleArray(System.String,System.String)">
+      <summary>ノードの内容を <see cref="T:System.DateTime" /> 配列に変換します。</summary>
+      <returns>
+        <see cref="T:System.Double" /> 配列として表されたノードの内容。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadDoubleArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>ノードの内容を <see cref="T:System.DateTime" /> 配列に変換します。</summary>
+      <returns>
+        <see cref="T:System.Double" /> 配列として表されたノードの内容。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadElementContentAsBase64">
+      <summary>ノードのコンテンツを Base64 バイトの配列に変換します。</summary>
+      <returns>
+        <see cref="T:System.Byte" /> を返します。</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadElementContentAsBinHex">
+      <summary>ノードのコンテンツを BinHex バイトの配列に変換します。</summary>
+      <returns>
+        <see cref="T:System.Byte" /> を返します。</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadElementContentAsBoolean">
+      <summary>要素のコンテンツを <see cref="T:System.Boolean" /> に変換します。</summary>
+      <returns>
+        <see cref="T:System.Boolean" /> として表されたノードのコンテンツ。</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadElementContentAsDateTime">
+      <summary>要素のコンテンツを <see cref="T:System.DateTime" /> に変換します。</summary>
+      <returns>
+        <see cref="T:System.DateTime" /> として表されたノードのコンテンツ。</returns>
+      <exception cref="T:System.ArgumentException">要素が有効な形式ではありません。</exception>
+      <exception cref="T:System.FormatException">要素が有効な形式ではありません。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadElementContentAsDecimal">
+      <summary>要素のコンテンツを <see cref="T:System.Decimal" /> に変換します。</summary>
+      <returns>
+        <see cref="T:System.Decimal" /> として表されたノードのコンテンツ。</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadElementContentAsDouble">
+      <summary>要素のコンテンツを <see cref="T:System.Double" /> に変換します。</summary>
+      <returns>
+        <see cref="T:System.Double" /> として表されたノードのコンテンツ。</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadElementContentAsFloat">
+      <summary>要素のコンテンツを浮動小数点数 (<see cref="T:System.Single" />) に変換します。</summary>
+      <returns>浮動小数点数 (<see cref="T:System.Single" />) として表されたノードのコンテンツ。</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadElementContentAsGuid">
+      <summary>要素のコンテンツを <see cref="T:System.Guid" /> に変換します。</summary>
+      <returns>
+        <see cref="T:System.Guid" /> として表されたノードのコンテンツ。</returns>
+      <exception cref="T:System.ArgumentException">要素が有効な形式ではありません。</exception>
+      <exception cref="T:System.FormatException">要素が有効な形式ではありません。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadElementContentAsInt">
+      <summary>要素のコンテンツを整数 (<see cref="T:System.Int32" />) に変換します。</summary>
+      <returns>整数 (<see cref="T:System.Int32" />) として表されたノードのコンテンツ。</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadElementContentAsLong">
+      <summary>要素のコンテンツを長整数 (<see cref="T:System.Int64" />) に変換します。</summary>
+      <returns>長整数 (<see cref="T:System.Int64" />) として表されたノードのコンテンツ。</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadElementContentAsString">
+      <summary>要素のコンテンツを <see cref="T:System.String" /> に変換します。</summary>
+      <returns>
+        <see cref="T:System.String" /> として表されたノードのコンテンツ。</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadElementContentAsTimeSpan">
+      <summary>要素のコンテンツを <see cref="T:System.TimeSpan" /> に変換します。</summary>
+      <returns>
+        <see cref="T:System.TimeSpan" /> として表されたノードのコンテンツ。</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadElementContentAsUniqueId">
+      <summary>要素のコンテンツを一意の識別子に変換します。</summary>
+      <returns>一意識別子として表されたノードの内容。</returns>
+      <exception cref="T:System.ArgumentException">要素が有効な形式ではありません。</exception>
+      <exception cref="T:System.FormatException">要素が有効な形式ではありません。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadFullStartElement">
+      <summary>現在のノードが開始要素かどうか、また空でない要素かどうかを確認し、これらの条件を満たす場合は現在のノードを読み取り、リーダーを次のノードに進めます。開始要素ではない、または空の要素である場合に例外をスローします。</summary>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadFullStartElement(System.String)">
+      <summary>指定されたノードが開始要素かどうか、また空でない要素かどうかを確認し、これらの条件を満たす場合は現在のノードを読み取り、リーダーを次のノードに進めます。開始要素ではない、または空の要素である場合に例外をスローします。</summary>
+      <param name="name">要素の修飾名。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadFullStartElement(System.String,System.String)">
+      <summary>指定された <paramref name="localName" /> と <paramref name="namespaceUri" /> のあるノードが開始要素であるかどうか、および空でない要素であるかどうかを確認し、これらの条件が満たされた場合、リーダーを次のノードに繰り上げます。開始要素ではない、または空の要素である場合に例外をスローします。</summary>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadFullStartElement(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>指定された <paramref name="localName" /> と <paramref name="namespaceUri" /> のあるノードが開始要素であるかどうか、および空でない要素であるかどうかを確認し、これらの条件が満たされた場合、リーダーを次のノードに繰り上げます。開始要素ではない、または空の要素である場合に例外をスローします。</summary>
+      <param name="localName">要素のローカル <see cref="T:System.Xml.XmlDictionaryString" /> 名。</param>
+      <param name="namespaceUri">要素の <see cref="T:System.Xml.XmlDictionaryString" /> 名前空間 URI。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadGuidArray(System.String,System.String)">
+      <summary>指定された <paramref name="localName" /> と <paramref name="namespaceUri" /> のあるノードの系列の内容を <see cref="T:System.Guid" /> の配列に読み込みます。</summary>
+      <returns>
+        <see cref="T:System.Guid" /> の配列。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadGuidArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>指定された <paramref name="localName" /> と <paramref name="namespaceUri" /> のあるノードの系列の内容を <see cref="T:System.Guid" /> の配列に読み込みます。</summary>
+      <returns>
+        <see cref="T:System.Guid" /> の配列。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadInt16Array(System.String,System.String)">
+      <summary>指定された <paramref name="localName" /> と <paramref name="namespaceUri" /> のあるノードの系列の内容を short 整数の配列 (<see cref="T:System.Int16" />) に読み込みます。</summary>
+      <returns>short 整数の配列 (<see cref="T:System.Int16" />)。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadInt16Array(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>指定された <paramref name="localName" /> と <paramref name="namespaceUri" /> のあるノードの系列の内容を short 整数の配列 (<see cref="T:System.Int16" />) に読み込みます。</summary>
+      <returns>short 整数の配列 (<see cref="T:System.Int16" />)。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadInt32Array(System.String,System.String)">
+      <summary>指定された <paramref name="localName" /> と <paramref name="namespaceUri" /> のあるノードの系列の内容を整数の配列 (<see cref="T:System.Int32" />) に読み込みます。</summary>
+      <returns>整数の配列 (<see cref="T:System.Int32" />)。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadInt32Array(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>指定された <paramref name="localName" /> と <paramref name="namespaceUri" /> のあるノードの系列の内容を整数の配列 (<see cref="T:System.Int32" />) に読み込みます。</summary>
+      <returns>整数の配列 (<see cref="T:System.Int32" />)。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadInt64Array(System.String,System.String)">
+      <summary>指定された <paramref name="localName" /> と <paramref name="namespaceUri" /> のあるノードの系列の内容を long 整数の配列 (<see cref="T:System.Int64" />) に読み込みます。</summary>
+      <returns>long 整数の配列 (<see cref="T:System.Int64" />)。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadInt64Array(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>指定された <paramref name="localName" /> と <paramref name="namespaceUri" /> のあるノードの系列の内容を long 整数の配列 (<see cref="T:System.Int64" />) に読み込みます。</summary>
+      <returns>long 整数の配列 (<see cref="T:System.Int64" />)。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadSingleArray(System.String,System.String)">
+      <summary>指定された <paramref name="localName" /> と <paramref name="namespaceUri" /> のあるノードの系列の内容を float 数の配列 (<see cref="T:System.Single" />) に読み込みます。</summary>
+      <returns>float 数の配列 (<see cref="T:System.Single" />)。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadSingleArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>指定された <paramref name="localName" /> と <paramref name="namespaceUri" /> のあるノードの系列の内容を float 数の配列 (<see cref="T:System.Single" />) に読み込みます。</summary>
+      <returns>float 数の配列 (<see cref="T:System.Single" />)。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadStartElement(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>指定した <paramref name="localName" /> および <paramref name="namespaceUri" /> のノードが開始要素かどうかを確認し、リーダーを次のノードに進めます。ノードが開始要素でない場合は例外をスローします。</summary>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadTimeSpanArray(System.String,System.String)">
+      <summary>指定された <paramref name="localName" /> と <paramref name="namespaceUri" /> のあるノードの系列の内容を <see cref="T:System.TimeSpan" /> 配列に読み込みます。</summary>
+      <returns>
+        <see cref="T:System.TimeSpan" /> 配列。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadTimeSpanArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>指定された <paramref name="localName" /> と <paramref name="namespaceUri" /> のあるノードの系列の内容を <see cref="T:System.TimeSpan" /> 配列に読み込みます。</summary>
+      <returns>
+        <see cref="T:System.TimeSpan" /> 配列。</returns>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.ReadValueAsBase64(System.Byte[],System.Int32,System.Int32)">
+      <summary>このメソッドはこのクラスではサポートされていません。</summary>
+      <returns>
+        <see cref="T:System.Int32" />。</returns>
+      <param name="buffer">読み込み元のバッファー。</param>
+      <param name="offset">
+        <paramref name="buffer" /> での読み込みの開始位置。</param>
+      <param name="count">
+        <paramref name="buffer" /> から読み込み可能なバイト数。</param>
+      <exception cref="T:System.NotSupportedException">常時。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.StartCanonicalization(System.IO.Stream,System.Boolean,System.String[])">
+      <summary>このメソッドはこのクラスではサポートされていません。派生クラスで実装される場合があります。</summary>
+      <param name="stream">読み取り元のストリーム。</param>
+      <param name="includeComments">コメントを含めるかどうかを決定します。</param>
+      <param name="inclusivePrefixes">含める必要のあるプレフィックス。</param>
+      <exception cref="T:System.NotSupportedException">常時。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.TryGetArrayLength(System.Int32@)">
+      <summary>このクラスには実装されていません (常に false を返します)。派生クラスでオーバーライドできる場合があります。</summary>
+      <returns>派生クラスでオーバーライドされていない場合は false。</returns>
+      <param name="count">派生クラスでオーバーライドされていない場合は 0 を返します。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.TryGetBase64ContentLength(System.Int32@)">
+      <summary>このクラスには実装されていません (常に false を返します)。派生クラスでオーバーライドできる場合があります。</summary>
+      <returns>派生クラスでオーバーライドされていない場合は false。</returns>
+      <param name="length">派生クラスでオーバーライドされていない場合は 0 を返します。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.TryGetLocalNameAsDictionaryString(System.Xml.XmlDictionaryString@)">
+      <summary>このクラスには実装されていません (常に false を返します)。派生クラスでオーバーライドできる場合があります。</summary>
+      <returns>派生クラスでオーバーライドされていない場合は false。</returns>
+      <param name="localName">派生クラスでオーバーライドされていない場合は null を返します。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.TryGetNamespaceUriAsDictionaryString(System.Xml.XmlDictionaryString@)">
+      <summary>このクラスには実装されていません (常に false を返します)。派生クラスでオーバーライドできる場合があります。</summary>
+      <returns>派生クラスでオーバーライドされていない場合は false。</returns>
+      <param name="namespaceUri">派生クラスでオーバーライドされていない場合は null を返します。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReader.TryGetValueAsDictionaryString(System.Xml.XmlDictionaryString@)">
+      <summary>このクラスには実装されていません (常に false を返します)。派生クラスでオーバーライドできる場合があります。</summary>
+      <returns>派生クラスでオーバーライドされていない場合は false。</returns>
+      <param name="value">派生クラスでオーバーライドされていない場合は null を返します。</param>
+    </member>
+    <member name="T:System.Xml.XmlDictionaryReaderQuotas">
+      <summary>
+        <see cref="T:System.Xml.XmlDictionaryReader" /> のクォータ値を含みます。</summary>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryReaderQuotas.#ctor">
+      <summary>
+        <see cref="T:System.Xml.XmlDictionaryReaderQuotas" /> クラスのインスタンスを作成します。</summary>
+    </member>
+    <member name="P:System.Xml.XmlDictionaryReaderQuotas.Max">
+      <summary>すべてのプロパティを最大値に設定したこのクラスのインスタンスを取得します。</summary>
+      <returns>プロパティを <see cref="F:System.Int32.MaxValue" /> に設定した <see cref="T:System.Xml.XmlDictionaryReaderQuotas" /> のインスタンス。</returns>
+    </member>
+    <member name="P:System.Xml.XmlDictionaryReaderQuotas.MaxArrayLength">
+      <summary>許容される最大配列長を取得します。</summary>
+      <returns>許容される最大配列長。既定値は <see cref="F:System.Int32.MaxValue" /> です。</returns>
+      <exception cref="T:System.InvalidOperationException">set による値の設定を試行しましたが、このインスタンスのクォータ値は読み取り専用です。</exception>
+      <exception cref="T:System.ArgumentException">set で値を 0 未満に設定しようとしています。</exception>
+    </member>
+    <member name="P:System.Xml.XmlDictionaryReaderQuotas.MaxBytesPerRead">
+      <summary>各読み取りに返される最大許容バイトを取得します。</summary>
+      <returns>各読み取りに返される最大許容バイト。既定値は 4096 です。</returns>
+      <exception cref="T:System.InvalidOperationException">set による値の設定を試行しましたが、このインスタンスのクォータ値は読み取り専用です。</exception>
+      <exception cref="T:System.ArgumentException">set で値を 0 未満に設定しようとしています。</exception>
+    </member>
+    <member name="P:System.Xml.XmlDictionaryReaderQuotas.MaxDepth">
+      <summary>ノードのネストの深さの最大値を取得します。</summary>
+      <returns>ノードのネストの深さの最大値。既定値は 32 です。</returns>
+      <exception cref="T:System.InvalidOperationException">set による値の設定を試行しましたが、このインスタンスのクォータ値は読み取り専用です。</exception>
+      <exception cref="T:System.ArgumentException">set で値を 0 未満に設定しようとしています。</exception>
+    </member>
+    <member name="P:System.Xml.XmlDictionaryReaderQuotas.MaxNameTableCharCount">
+      <summary>テーブル名に使用できる最大文字数を取得します。</summary>
+      <returns>テーブル名に使用できる最大文字数。既定値は 16384 です。</returns>
+      <exception cref="T:System.InvalidOperationException">set による値の設定を試行しましたが、このインスタンスのクォータ値は読み取り専用です。</exception>
+      <exception cref="T:System.ArgumentException">set で値を 0 未満に設定しようとしています。</exception>
+    </member>
+    <member name="P:System.Xml.XmlDictionaryReaderQuotas.MaxStringContentLength">
+      <summary>リーダーによって返される最大文字列長を取得します。</summary>
+      <returns>リーダーによって返される最大文字列長。既定値は 8192 です。</returns>
+      <exception cref="T:System.InvalidOperationException">set による値の設定を試行しましたが、このインスタンスのクォータ値は読み取り専用です。</exception>
+      <exception cref="T:System.ArgumentException">set で値を 0 未満に設定しようとしています。</exception>
+    </member>
+    <member name="T:System.Xml.XmlDictionaryString">
+      <summary>
+        <see cref="T:System.Xml.XmlDictionary" /> に格納されるエントリを示します。</summary>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryString.#ctor(System.Xml.IXmlDictionary,System.String,System.Int32)">
+      <summary>
+        <see cref="T:System.Xml.XmlDictionaryString" /> クラスのインスタンスを作成します。</summary>
+      <param name="dictionary">このインスタンスを含む <see cref="T:System.Xml.IXmlDictionary" />。</param>
+      <param name="value">ディクショナリ エントリの値である文字列。</param>
+      <param name="key">ディクショナリ エントリのキーである整数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="value" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="key" /> が 0 より小さいか、または <see cref="F:System.Int32.MaxValue" /> / 4 を超えています。</exception>
+    </member>
+    <member name="P:System.Xml.XmlDictionaryString.Dictionary">
+      <summary>
+        <see cref="T:System.Xml.XmlDictionaryString" /> のインスタンスのコンストラクターに渡される <see cref="T:System.Xml.IXmlDictionary" /> を示します。</summary>
+      <returns>ディクショナリ エントリの <see cref="T:System.Xml.IXmlDictionary" />。</returns>
+    </member>
+    <member name="P:System.Xml.XmlDictionaryString.Empty">
+      <summary>空の文字列を示す <see cref="T:System.Xml.XmlDictionaryString" /> を取得します。</summary>
+      <returns>空の文字列を示す <see cref="T:System.Xml.XmlDictionaryString" />。</returns>
+    </member>
+    <member name="P:System.Xml.XmlDictionaryString.Key">
+      <summary>この <see cref="T:System.Xml.XmlDictionaryString" /> ディクショナリ エントリの整数キーを取得します。</summary>
+      <returns>このディクショナリ エントリの整数キー。</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryString.ToString">
+      <summary>この <see cref="T:System.Xml.XmlDictionaryString" /> インスタンスのテキスト表現を返します。</summary>
+      <returns>クラスのこのインスタンスの文字列値。</returns>
+    </member>
+    <member name="P:System.Xml.XmlDictionaryString.Value">
+      <summary>この <see cref="T:System.Xml.XmlDictionaryString" /> ディクショナリ エントリの文字列値を取得します。</summary>
+      <returns>このディクショナリ エントリの文字列値。</returns>
+    </member>
+    <member name="T:System.Xml.XmlDictionaryWriter">
+      <summary>シリアル化および逆シリアル化を行う抽象クラス。</summary>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.#ctor">
+      <summary>このクラスのインスタンスを作成します。このクラスは抽象型であるため派生クラスによってのみ呼び出されます。</summary>
+    </member>
+    <member name="P:System.Xml.XmlDictionaryWriter.CanCanonicalize">
+      <summary>このプロパティは常に false を返します。正規化がサポートされている場合、派生クラスで true を返すようにオーバーライドできます。</summary>
+      <returns>false。</returns>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.CreateBinaryWriter(System.IO.Stream)">
+      <summary>Windows Phone バイナリ XML 形式を書き込む <see cref="T:System.Xml.XmlDictionaryWriter" /> のインスタンスを作成します。</summary>
+      <returns>
+        <see cref="T:System.Xml.XmlDictionaryWriter" /> のインスタンス。</returns>
+      <param name="stream">書き込まれるストリーム。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.CreateBinaryWriter(System.IO.Stream,System.Xml.IXmlDictionary)">
+      <summary>Windows Phone バイナリ XML 形式を書き込む <see cref="T:System.Xml.XmlDictionaryWriter" /> のインスタンスを作成します。</summary>
+      <returns>
+        <see cref="T:System.Xml.XmlDictionaryWriter" /> のインスタンス。</returns>
+      <param name="stream">書き込まれるストリーム。</param>
+      <param name="dictionary">共有辞書として使用する <see cref="T:System.Xml.XmlDictionary" />。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.CreateBinaryWriter(System.IO.Stream,System.Xml.IXmlDictionary,System.Xml.XmlBinaryWriterSession)">
+      <summary>Windows Phone バイナリ XML 形式を書き込む <see cref="T:System.Xml.XmlDictionaryWriter" /> のインスタンスを作成します。</summary>
+      <returns>
+        <see cref="T:System.Xml.XmlDictionaryWriter" /> のインスタンス。</returns>
+      <param name="stream">書き込まれるストリーム。</param>
+      <param name="dictionary">共有辞書として使用する <see cref="T:System.Xml.XmlDictionary" />。</param>
+      <param name="session">使用する <see cref="T:System.Xml.XmlBinaryWriterSession" />。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.CreateBinaryWriter(System.IO.Stream,System.Xml.IXmlDictionary,System.Xml.XmlBinaryWriterSession,System.Boolean)">
+      <summary>Windows Phone バイナリ XML 形式を書き込む <see cref="T:System.Xml.XmlDictionaryWriter" /> のインスタンスを作成します。</summary>
+      <returns>
+        <see cref="T:System.Xml.XmlDictionaryWriter" /> のインスタンス。</returns>
+      <param name="stream">読み込み元のストリーム。</param>
+      <param name="dictionary">共有辞書として使用する <see cref="T:System.Xml.XmlDictionary" />。</param>
+      <param name="session">使用する <see cref="T:System.Xml.XmlBinaryWriterSession" />。</param>
+      <param name="ownsStream">true の場合、完了するとストリームがライターによって閉じられます。それ以外の場合は false。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.CreateDictionaryWriter(System.Xml.XmlWriter)">
+      <summary>既存の <see cref="T:System.Xml.XmlWriter" /> からの <see cref="T:System.Xml.XmlDictionaryWriter" /> のインスタンスを作成します。</summary>
+      <returns>
+        <see cref="T:System.Xml.XmlDictionaryWriter" /> のインスタンス。</returns>
+      <param name="writer">
+        <see cref="T:System.Xml.XmlWriter" /> のインスタンス。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="writer" /> が null です。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.CreateTextWriter(System.IO.Stream)">
+      <summary>テキスト XML を書き込む <see cref="T:System.Xml.XmlDictionaryWriter" /> のインスタンスを作成します。</summary>
+      <returns>
+        <see cref="T:System.Xml.XmlDictionaryWriter" /> のインスタンス。</returns>
+      <param name="stream">書き込まれるストリーム。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.CreateTextWriter(System.IO.Stream,System.Text.Encoding)">
+      <summary>テキスト XML を書き込む <see cref="T:System.Xml.XmlDictionaryWriter" /> のインスタンスを作成します。</summary>
+      <returns>
+        <see cref="T:System.Xml.XmlDictionaryWriter" /> のインスタンス。</returns>
+      <param name="stream">書き込まれるストリーム。</param>
+      <param name="encoding">出力の文字エンコード。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.CreateTextWriter(System.IO.Stream,System.Text.Encoding,System.Boolean)">
+      <summary>テキスト XML を書き込む <see cref="T:System.Xml.XmlDictionaryWriter" /> のインスタンスを作成します。</summary>
+      <returns>
+        <see cref="T:System.Xml.XmlDictionaryWriter" /> のインスタンス。</returns>
+      <param name="stream">書き込まれるストリーム。</param>
+      <param name="encoding">ストリームの文字エンコード。</param>
+      <param name="ownsStream">true の場合、完了するとストリームがライターによって閉じられます。それ以外の場合は false。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.EndCanonicalization">
+      <summary>このメソッドはまだ実装されていません。</summary>
+      <exception cref="T:System.NotSupportedException">このメソッドはまだ実装されていません。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.StartCanonicalization(System.IO.Stream,System.Boolean,System.String[])">
+      <summary>このメソッドはまだ実装されていません。このメソッドを呼び出すと、<see cref="T:System.NotSupportedException" /> がスローされます。</summary>
+      <param name="stream">書き込まれるストリーム。</param>
+      <param name="includeComments">コメントを含めるかどうかを決定します。</param>
+      <param name="inclusivePrefixes">含める必要のあるプレフィックス。</param>
+      <exception cref="T:System.NotSupportedException">このメソッドはまだ実装されていません。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.String,System.String,System.Boolean[],System.Int32,System.Int32)">
+      <summary>
+        <see cref="T:System.Boolean" /> 配列の値を書き込みます。</summary>
+      <param name="prefix">名前空間プレフィックス。</param>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">データを含む配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列から書き込む値の数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.String,System.String,System.DateTime[],System.Int32,System.Int32)">
+      <summary>
+        <see cref="T:System.DateTime" /> 配列からノードを書き込みます。</summary>
+      <param name="prefix">名前空間プレフィックス。</param>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">ノードを含む配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列から取得するノードの数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.String,System.String,System.Decimal[],System.Int32,System.Int32)">
+      <summary>
+        <see cref="T:System.Decimal" /> 配列からノードを書き込みます。</summary>
+      <param name="prefix">名前空間プレフィックス。</param>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">ノードを含む配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列から取得するノードの数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.String,System.String,System.Double[],System.Int32,System.Int32)">
+      <summary>
+        <see cref="T:System.Double" /> 配列からノードを書き込みます。</summary>
+      <param name="prefix">名前空間プレフィックス。</param>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">ノードを含む配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列から取得するノードの数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.String,System.String,System.Guid[],System.Int32,System.Int32)">
+      <summary>
+        <see cref="T:System.Guid" /> 配列からノードを書き込みます。</summary>
+      <param name="prefix">名前空間プレフィックス。</param>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">ノードを含む配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列から取得するノードの数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.String,System.String,System.Int16[],System.Int32,System.Int32)">
+      <summary>
+        <see cref="T:System.Int16" /> 配列からノードを書き込みます。</summary>
+      <param name="prefix">名前空間プレフィックス。</param>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">ノードを含む配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列から取得するノードの数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.String,System.String,System.Int32[],System.Int32,System.Int32)">
+      <summary>
+        <see cref="T:System.Int32" /> 配列からノードを書き込みます。</summary>
+      <param name="prefix">名前空間プレフィックス。</param>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">ノードを含む配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列から取得するノードの数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.String,System.String,System.Int64[],System.Int32,System.Int32)">
+      <summary>
+        <see cref="T:System.Int64" /> 配列からノードを書き込みます。</summary>
+      <param name="prefix">名前空間プレフィックス。</param>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">ノードを含む配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列から取得するノードの数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.String,System.String,System.Single[],System.Int32,System.Int32)">
+      <summary>
+        <see cref="T:System.Single" /> 配列からノードを書き込みます。</summary>
+      <param name="prefix">名前空間プレフィックス。</param>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">ノードを含む配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列から取得するノードの数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.String,System.String,System.TimeSpan[],System.Int32,System.Int32)">
+      <summary>
+        <see cref="T:System.TimeSpan" /> 配列からノードを書き込みます。</summary>
+      <param name="prefix">名前空間プレフィックス。</param>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">ノードを含む配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列から取得するノードの数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Boolean[],System.Int32,System.Int32)">
+      <summary>
+        <see cref="T:System.Boolean" /> 配列のノードを書き込みます。</summary>
+      <param name="prefix">名前空間プレフィックス。</param>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">ノードを含む配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列から取得するノードの数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.DateTime[],System.Int32,System.Int32)">
+      <summary>
+        <see cref="T:System.DateTime" /> 配列からノードを書き込みます。</summary>
+      <param name="prefix">名前空間プレフィックス。</param>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">ノードを含む配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列から取得するノードの数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Decimal[],System.Int32,System.Int32)">
+      <summary>
+        <see cref="T:System.Decimal" /> 配列からノードを書き込みます。</summary>
+      <param name="prefix">名前空間プレフィックス。</param>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">ノードを含む配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列から取得するノードの数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Double[],System.Int32,System.Int32)">
+      <summary>
+        <see cref="T:System.Double" /> 配列からノードを書き込みます。</summary>
+      <param name="prefix">名前空間プレフィックス。</param>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">ノードを含む配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列から取得するノードの数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Guid[],System.Int32,System.Int32)">
+      <summary>
+        <see cref="T:System.Guid" /> 配列からノードを書き込みます。</summary>
+      <param name="prefix">名前空間プレフィックス。</param>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">ノードを含む配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列から取得するノードの数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Int16[],System.Int32,System.Int32)">
+      <summary>
+        <see cref="T:System.Int16" /> 配列からノードを書き込みます。</summary>
+      <param name="prefix">名前空間プレフィックス。</param>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">ノードを含む配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列から取得するノードの数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Int32[],System.Int32,System.Int32)">
+      <summary>
+        <see cref="T:System.Int32" /> 配列からノードを書き込みます。</summary>
+      <param name="prefix">名前空間プレフィックス。</param>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">ノードを含む配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列から取得するノードの数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Int64[],System.Int32,System.Int32)">
+      <summary>
+        <see cref="T:System.Int64" /> 配列からノードを書き込みます。</summary>
+      <param name="prefix">名前空間プレフィックス。</param>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">ノードを含む配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列から取得するノードの数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Single[],System.Int32,System.Int32)">
+      <summary>
+        <see cref="T:System.Single" /> 配列からノードを書き込みます。</summary>
+      <param name="prefix">名前空間プレフィックス。</param>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">ノードを含む配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列から取得するノードの数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.TimeSpan[],System.Int32,System.Int32)">
+      <summary>
+        <see cref="T:System.TimeSpan" /> 配列からノードを書き込みます。</summary>
+      <param name="prefix">名前空間プレフィックス。</param>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="array">ノードを含む配列。</param>
+      <param name="offset">配列内の開始インデックス。</param>
+      <param name="count">配列から取得するノードの数。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="array" /> が null です。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="offset" /> が &lt; 0、または &gt; <paramref name="array" /> の長さです。</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="count" /> が &lt; 0、または &gt; <paramref name="array" /> - <paramref name="offset" /> の長さです。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteAttributeString(System.String,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.String)">
+      <summary>属性の修飾名と値を書き込みます。</summary>
+      <param name="prefix">属性のプレフィックス。</param>
+      <param name="localName">属性のローカル名。</param>
+      <param name="namespaceUri">属性の名前空間 URI。</param>
+      <param name="value">属性。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteAttributeString(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.String)">
+      <summary>属性の修飾名と値を書き込みます。</summary>
+      <param name="localName">属性のローカル名。</param>
+      <param name="namespaceUri">属性の名前空間 URI。</param>
+      <param name="value">属性。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteElementString(System.String,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.String)">
+      <summary>テキスト コンテンツと共に要素を書き込みます。</summary>
+      <param name="prefix">要素のプレフィックス。</param>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="value">要素のコンテンツ。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteElementString(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.String)">
+      <summary>テキスト コンテンツと共に要素を書き込みます。</summary>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <param name="value">要素のコンテンツ。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteNode(System.Xml.XmlDictionaryReader,System.Boolean)">
+      <summary>
+        <see cref="T:System.Xml.XmlDictionaryReader" /> から現在の XML ノードを書き込みます。</summary>
+      <param name="reader">
+        <see cref="T:System.Xml.XmlDictionaryReader" />。</param>
+      <param name="defattr">true の場合、XmlReader から既定の属性をコピーします。XmlReader からコピーしないとき、true の場合は既定の属性を使用し、それ以外の場合は false。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="reader" /> が null です。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteNode(System.Xml.XmlReader,System.Boolean)">
+      <summary>
+        <see cref="T:System.Xml.XmlReader" /> から現在の XML ノードを書き込みます。</summary>
+      <param name="reader">
+        <see cref="T:System.Xml.XmlReader" />。</param>
+      <param name="defattr">true の場合、<see cref="T:System.Xml.XmlReader" /> から既定の属性をコピーします。それ以外の場合は false。true の場合、既定の属性を使用します。それ以外の場合は false。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="reader" /> が null です。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteQualifiedName(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>名前空間修飾名を書き込みます。このメソッドは、指定した名前空間のスコープ内にあるプレフィックスを検索します。</summary>
+      <param name="localName">修飾名のローカル名。</param>
+      <param name="namespaceUri">修飾名の名前空間 URI。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="localName" /> が null です。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteStartAttribute(System.String,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>指定されたプレフィックス、ローカル名、名前空間 URI で属性の開始要素を書き込みます。</summary>
+      <param name="prefix">名前空間プレフィックス。</param>
+      <param name="localName">属性のローカル名。</param>
+      <param name="namespaceUri">属性の名前空間 URI。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteStartAttribute(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>指定されたローカル名および名前空間 URI を使用して、属性の開始を書き込みます。</summary>
+      <param name="localName">属性のローカル名。</param>
+      <param name="namespaceUri">属性の名前空間 URI。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteStartElement(System.String,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>指定された開始要素を書き込み、指定された名前空間およびプレフィックスと関連付けます。</summary>
+      <param name="prefix">要素のプレフィックス。</param>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <exception cref="T:System.InvalidOperationException">ライターが閉じられました。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteStartElement(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>指定された開始要素を書き込み、指定された名前空間と関連付けます。</summary>
+      <param name="localName">要素のローカル名。</param>
+      <param name="namespaceUri">要素の名前空間 URI。</param>
+      <exception cref="T:System.InvalidOperationException">ライターが閉じられました。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteString(System.Xml.XmlDictionaryString)">
+      <summary>指定されたテキスト コンテンツを書き込みます。</summary>
+      <param name="value">書き込むテキスト。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteTextNode(System.Xml.XmlDictionaryReader,System.Boolean)">
+      <summary>
+        <see cref="T:System.Xml.XmlDictionaryReader" /> が現在配置されているテキスト ノードを書き込みます。</summary>
+      <param name="reader">テキスト値の取得元の <see cref="T:System.Xml.XmlDictionaryReader" />。</param>
+      <param name="isAttribute">リーダーが属性値または要素コンテンツにあるかどうかを指定します。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteValue(System.Guid)">
+      <summary>
+        <see cref="T:System.Guid" /> 値を書き込みます。</summary>
+      <param name="value">書き込む <see cref="T:System.Guid" /> 値。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteValue(System.TimeSpan)">
+      <summary>
+        <see cref="T:System.TimeSpan" /> 値を書き込みます。</summary>
+      <param name="value">書き込む <see cref="T:System.TimeSpan" /> 値。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteValue(System.Xml.UniqueId)">
+      <summary>一意の ID 値を書き込みます。</summary>
+      <param name="value">書き込む一意の ID 値。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="value" /> が null です。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteValue(System.Xml.XmlDictionaryString)">
+      <summary>
+        <see cref="T:System.Xml.XmlDictionaryString" /> 値を書き込みます。</summary>
+      <param name="value">
+        <see cref="T:System.Xml.XmlDictionaryString" /> 値。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteXmlAttribute(System.String,System.String)">
+      <summary>現在のノードの標準 XML 属性を書き込みます。</summary>
+      <param name="localName">属性のローカル名。</param>
+      <param name="value">属性の値。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteXmlAttribute(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)">
+      <summary>現在のノードの XML 属性を書き込みます。</summary>
+      <param name="localName">属性のローカル名。</param>
+      <param name="value">属性の値。</param>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteXmlnsAttribute(System.String,System.String)">
+      <summary>名前空間宣言属性を書き込みます。</summary>
+      <param name="prefix">指定された名前空間にバインドされたプレフィックス。</param>
+      <param name="namespaceUri">プレフィックスがバインドされた名前空間。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="namespaceUri" /> が null です。</exception>
+    </member>
+    <member name="M:System.Xml.XmlDictionaryWriter.WriteXmlnsAttribute(System.String,System.Xml.XmlDictionaryString)">
+      <summary>名前空間宣言属性を書き込みます。</summary>
+      <param name="prefix">指定された名前空間にバインドされたプレフィックス。</param>
+      <param name="namespaceUri">プレフィックスがバインドされた名前空間。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="namespaceUri" /> が null です。</exception>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Xna.Framework.GamerServicesExtensions</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Xna.Framework.GamerServices.SignedInGamerExtensions">
+            <summary>
+            Extensions to SignedInGamer that add Profile Data storage.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.SignedInGamerExtensions.BeginAwardAvatarAssets(Microsoft.Xna.Framework.GamerServices.SignedInGamer,System.String[],System.AsyncCallback,System.Object)">
+            <summary>
+            Begins the async process of awarding the specified avatar assets to a locally signed in gamer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.SignedInGamerExtensions.EndAwardAvatarAssets(Microsoft.Xna.Framework.GamerServices.SignedInGamer,System.IAsyncResult)">
+            <summary>
+            This function should be called when the system has finished awarding the avatar asset, and is used to ensure
+            that the process finished successfully.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.GamerServices.SignedInGamerExtensions.AwardAvatarAssets(Microsoft.Xna.Framework.GamerServices.SignedInGamer,System.String[])">
+            <summary>
+            Awards an Avatar Assets. This is a blocking call:
+            to query asynchronously, use Begin/EndAwardAvatarAssets instead.
+            </summary>
+        </member>
+    </members>
+</doc>

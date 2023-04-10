@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>mscorlib.Extensions</name>
+  </assembly>
+  <members>
+    <member name="T:System.Runtime.CompilerServices.CodeGenerationAttribute">
+      <summary>Gibt Einstellungen für die Codegenerierung an.</summary>
+    </member>
+    <member name="M:System.Runtime.CompilerServices.CodeGenerationAttribute.#ctor(System.Runtime.CompilerServices.CodeGenerationFlags)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:System.Runtime.CompilerServices.CodeGenerationAttribute" />-Klasse.</summary>
+      <param name="flags">Flags, die angeben, wie Code generiert wird.</param>
+    </member>
+    <member name="P:System.Runtime.CompilerServices.CodeGenerationAttribute.CodeGenerationFlags">
+      <summary>Ruft die Flags ab, die angeben, wie Code generiert wird.</summary>
+      <returns>Die Flags, die angeben, wie Code generiert wird.</returns>
+    </member>
+    <member name="T:System.Runtime.CompilerServices.CodeGenerationFlags">
+      <summary>definiert Flags, die angeben, wie Code generiert wird.</summary>
+    </member>
+    <member name="F:System.Runtime.CompilerServices.CodeGenerationFlags.EnableFPIntrinsicsUsingSIMD">
+      <summary>Gibt an, dass der JIT (Just-inTime)-Compiler für bestimmte Vektor- und Matrixoperationen SIMD-Anweisungen verwenden kann.</summary>
+    </member>
+    <member name="T:System.Security.Cryptography.ProtectedData">
+      <summary>Stellt Methoden zum Verschlüsseln und Entschlüsseln von Daten bereit. Die Klasse kann nicht geerbt werden.</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.ProtectedData.Protect(System.Byte[],System.Byte[])">
+      <summary>Verschlüsselt die Daten in einem angegebenen Bytearray und gibt ein Bytearray zurück, das die verschlüsselten Daten enthält.</summary>
+      <returns>Ein Bytearray, das die verschlüsselten Daten darstellt.</returns>
+      <param name="userData">Ein Bytearray, das die zu verschlüsselnden Daten enthält. </param>
+      <param name="optionalEntropy">Ein optionales zusätzliches Bytearray, das verwendet wurde, um die Komplexität der Verschlüsselung zu vergrößern, oder NULL für keine zusätzliche Komplexität.</param>
+      <exception cref="T:System.ArgumentNullException">Der <paramref name="userData" />-Parameter ist NULL.</exception>
+      <exception cref="T:System.Security.Cryptography.CryptographicException">Die Verschlüsselung ist fehlgeschlagen.</exception>
+      <exception cref="T:System.NotSupportedException">Dieses Methode wird vom Betriebssystem nicht unterstützt. </exception>
+      <exception cref="T:System.OutOfMemoryException">Es steht nicht genügend Arbeitsspeicher zum Verschlüsseln der Daten zur Verfügung.</exception>
+    </member>
+    <member name="M:System.Security.Cryptography.ProtectedData.Unprotect(System.Byte[],System.Byte[])">
+      <summary>Entschlüsselt die Daten in einem angegebenen Bytearray und gibt ein Bytearray zurück, das die entschlüsselten Daten enthält.</summary>
+      <returns>Ein Bytearray, das die entschlüsselten Daten darstellt.</returns>
+      <param name="encryptedData">Ein Bytearray, das Daten enthält, die mit der <see cref="M:System.Security.Cryptography.ProtectedData.Protect(System.Byte[],System.Byte[])" />-Methode verschlüsselt wurden. </param>
+      <param name="optionalEntropy">Ein optionales zusätzliches Bytearray, das verwendet wurde, um die Daten zu verschlüsseln, oder NULL, wenn das zusätzliche Bytearray nicht verwendet wurde.</param>
+      <exception cref="T:System.ArgumentNullException">Der <paramref name="encryptedData" />-Parameter ist NULL.</exception>
+      <exception cref="T:System.Security.Cryptography.CryptographicException">Die Entschlüsselung ist fehlgeschlagen.</exception>
+      <exception cref="T:System.NotSupportedException">Dieses Methode wird vom Betriebssystem nicht unterstützt. </exception>
+      <exception cref="T:System.OutOfMemoryException">Nicht genügend Arbeitsspeicher.</exception>
+    </member>
+  </members>
+</doc>

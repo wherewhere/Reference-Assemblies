@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="N:Microsoft.CSharp.RuntimeBinder">
+      <summary>
+        <see cref="N:Microsoft.CSharp.RuntimeBinder" /> 名前空間には、動的言語ランタイムと C# の間の相互運用をサポートするクラスとインターフェイスが用意されています。</summary>
+    </member>
+    <member name="N:Microsoft.VisualBasic">
+      <summary>
+        <see cref="N:Microsoft.VisualBasic" /> 名前空間には、Visual Basic の Visual Basic ランタイムをサポートする型が含まれています。</summary>
+    </member>
+    <member name="N:Microsoft.VisualBasic.CompilerServices">
+      <summary>
+        <see cref="N:Microsoft.VisualBasic.CompilerServices" /> 名前空間には、Visual Basic コンパイラをサポートする、内部使用専用の型が含まれています。</summary>
+    </member>
+    <member name="N:System">
+      <summary>
+        <see cref="N:System" /> 名前空間には、共通して使用される値データ型と参照データ型、イベントとイベント ハンドラー、インターフェイス、属性、および処理例外を定義する基本的なクラスや基本クラスが含まれています。</summary>
+    </member>
+    <member name="N:System.CodeDom.Compiler">
+      <summary>
+        <see cref="N:System.CodeDom.Compiler" /> 名前空間には、サポートされるプログラミング言語のソース コードの生成とコンパイルを管理するための型があります。 コード ジェネレーターはそれぞれ、<see cref="N:System.CodeDom" /> 名前空間で提供される要素から成る、CodeDOM (Code Document Object Model) のソース コード モデルの構造に基づいて、特定のプログラミング言語によるソース コードを生成できます。</summary>
+    </member>
+    <member name="N:System.Collections">
+      <summary>
+        <see cref="N:System.Collections" /> 名前空間は、リスト、キュー、ビット配列、ハッシュ テーブル、ディクショナリなどのオブジェクトのさまざまなコレクションを定義するインターフェイスとクラスを格納します。</summary>
+    </member>
+    <member name="N:System.Collections.Concurrent">
+      <summary>System.Collections.Concurrent 名前空間には、スレッド セーフなコレクション クラスがいくつか用意されています。複数のスレッドがコレクションに同時にアクセスするときに、これらのコレクション クラスを <see cref="N:System.Collections" /> 名前空間および <see cref="N:System.Collections.Generic" /> 名前空間の対応する型の代わりに使用する必要があります。</summary>
+    </member>
+    <member name="N:System.Collections.Generic">
+      <summary>
+        <see cref="N:System.Collections.Generic" /> 名前空間には、ジェネリック コレクションを定義するインターフェイスとクラスが含まれています。このコレクションを使用することにより、ユーザーは、汎用的でない厳密に型指定されたコレクションに比べてタイプ セーフでパフォーマンスが高い、厳密に型指定されたコレクションを作成できるようになります。</summary>
+    </member>
+    <member name="N:System.Collections.ObjectModel">
+      <summary>
+        <see cref="N:System.Collections.ObjectModel" /> 名前空間には、再利用可能なライブラリのオブジェクト モデルでコレクションとして使用できるクラスが含まれています。 これらのクラスは、プロパティまたはメソッドがコレクションを返す場合に使用します。</summary>
+    </member>
+    <member name="N:System.Collections.Specialized">
+      <summary>
+        <see cref="N:System.Collections.Specialized" /> 名前空間には、特殊な厳密に型指定されたコレクションが含まれます。たとえば、リンクされたリスト ディクショナリ、ビット ベクター、文字列だけを含むコレクションなどがあります。</summary>
+    </member>
+    <member name="N:System.ComponentModel">
+      <summary>
+        <see cref="N:System.ComponentModel" /> 名前空間には、コンポーネントやコントロールの実行時動作およびデザイン時動作を実装するためのクラスが用意されています。 この名前空間には、属性、型コンバーター、データ ソースへの連結、およびライセンス コンポーネントを実装するための基本クラスと基本インターフェイスが含まれています。</summary>
+    </member>
+    <member name="N:System.ComponentModel.DataAnnotations">
+      <summary>
+        <see cref="N:System.ComponentModel.DataAnnotations" /> 名前空間には、ASP.NET MVC コントロールおよび ASP.NET データ コントロールのメタデータを定義するために使用される属性クラスが用意されています。</summary>
+    </member>
+    <member name="N:System.ComponentModel.DataAnnotations.Schema">
+      <summary>
+        <see cref="N:System.ComponentModel.DataAnnotations.Schema" /> 名前空間は、ASP.NET MVC コントロールおよび ASP.NET データ コントロールのメタデータを定義するために使用される属性クラスをサポートしています。</summary>
+    </member>
+    <member name="N:System.Diagnostics">
+      <summary>
+        <see cref="N:System.Diagnostics" /> 名前空間には、システム プロセス、イベント ログ、およびパフォーマンス カウンターと対話するためのクラスが用意されています。</summary>
+    </member>
+    <member name="N:System.Diagnostics.CodeAnalysis">
+      <summary>
+        <see cref="N:System.Diagnostics.CodeAnalysis" /> 名前空間には、コード分析ツールとの対話用のクラスが含まれています。 これらのツールは、コードが命名やセキュリティなどに関するコーディング規則に準拠しているかどうかを分析するために使用します。</summary>
+    </member>
+    <member name="N:System.Diagnostics.Contracts">
+      <summary>
+        <see cref="N:System.Diagnostics.Contracts" /> 名前空間には、事前条件、事後条件、不変条件などのプログラム コントラクトを表すための静的クラスが含まれています。</summary>
+    </member>
+    <member name="N:System.Diagnostics.Tracing">
+      <summary>
+        <see cref="N:System.Diagnostics.Tracing" /> 名前空間は、Windows (ETW) のイベント トレースがキャプチャ厳密に入力したイベントを作成できるようにする型およびメンバーを示します。</summary>
+    </member>
+    <member name="N:System.Dynamic">
+      <summary>
+        <see cref="N:System.Dynamic" /> 名前空間には、動的言語ランタイムをサポートするクラスとインターフェイスが用意されています。</summary>
+    </member>
+    <member name="N:System.Globalization">
+      <summary>
+        <see cref="N:System.Globalization" /> 名前空間に格納されているクラスにより、言語、国/地域、使用する暦、日付形式、通貨形式、数値形式、文字列並べ替え順序などのカルチャ関連情報が定義されます。 これらのクラスは、グローバライズされた (国際対応) アプリケーションを作成する場合に便利です。 <see cref="T:System.Globalization.StringInfo" /> や <see cref="T:System.Globalization.TextInfo" /> などのクラスは、サロゲート サポートやテキスト要素処理などの高度なグローバリゼーション機能を提供します。</summary>
+    </member>
+    <member name="N:System.IO">
+      <summary>System.IO 名前空間には、ファイルとデータ ストリームの読み取りと書き込みを可能にするための型、およびファイルとディレクトリに関する基本的なサポートを提供する型が含まれています。</summary>
+    </member>
+    <member name="N:System.IO.Compression">
+      <summary>
+        <see cref="N:System.IO.Compression" /> 名前空間には、ストリームの圧縮と圧縮解除に関する基本的なサービスを提供するクラスが含まれます。</summary>
+    </member>
+    <member name="N:System.Linq">
+      <summary>
+        <see cref="N:System.Linq" /> 名前空間は、統合言語クエリ (LINQ) を使用するクエリをサポートするクラスとインターフェイスを提供します。</summary>
+    </member>
+    <member name="N:System.Linq.Expressions">
+      <summary>
+        <see cref="N:System.Linq.Expressions" /> 名前空間には、言語レベルのコード式を式ツリーの形式でオブジェクトとして表せるクラス、インターフェイス、および列挙体が含まれます。</summary>
+    </member>
+    <member name="N:System.Net">
+      <summary>
+        <see cref="N:System.Net" /> 名前空間は、今日のネットワークで使用される多くのプロトコルに対し、単純なプログラミング インターフェイスを提供します。 <see cref="T:System.Net.WebRequest" /> クラスおよび <see cref="T:System.Net.WebResponse" /> クラスは、プラグ可能なプロトコルと呼ばれるものの基礎、つまり、それぞれのプロトコルの固有の詳細を気にせずにインターネット リソースを使用するアプリケーションを開発できるネットワーク サービスの実装の基礎を形成します。 <see cref="N:System.Net" /> 名前空間のクラスは Windows ストア スタイルのアプリケーションまたはデスクトップ アプリケーションで使用できます。 Windows ストア アプリで使用する場合、<see cref="N:System.Net" /> 名前空間のクラスはネットワークの分離機能の影響を受けます。この機能は、Windows Developer Preview によって使用されるアプリケーション セキュリティ モデルの一部です。 Windows ストア アプリによるネットワーク アクセスがシステムで許可されるようにするには、Windows ストア アプリのアプリケーション マニフェストで適切なネットワーク機能を有効にする必要があります。 詳細については、「Windows の店舗 App のネットワーク分離」を参照してください。</summary>
+    </member>
+    <member name="N:System.Net.Http">
+      <summary>
+        <see cref="N:System.Net.Http" /> 名前空間は、最新の HTTP アプリケーション用のプログラミング インターフェイスを提供します。</summary>
+    </member>
+    <member name="N:System.Net.Http.Headers">
+      <summary>
+        <see cref="N:System.Net.Http" /> の名前空間で使用される HTTP ヘッダーのコレクションのサポートを提供します。</summary>
+    </member>
+    <member name="N:System.Net.NetworkInformation">
+      <summary>
+        <see cref="N:System.Net.NetworkInformation" /> 名前空間は、ネットワーク トラフィック データ、ネットワーク アドレス情報、ローカル コンピューターのアドレス変更通知へのアクセスを提供します。 この名前空間には、Ping ユーティリティを実装するクラスも含まれています。 <see cref="T:System.Net.NetworkInformation.Ping" /> および関連するクラスを使用すると、特定のコンピューターにネットワーク経由でアクセスできるかどうかをチェックできます。</summary>
+    </member>
+    <member name="N:System.Numerics">
+      <summary>
+        <see cref="N:System.Numerics" /> 名前空間には、.NET Framework に定義されているプリミティブ数値型 (<see cref="T:System.Byte" />、<see cref="T:System.Double" />、<see cref="T:System.Int32" /> など) を補足する数値型が含まれています。</summary>
+    </member>
+    <member name="N:System.Reflection">
+      <summary>
+        <see cref="N:System.Reflection" /> 名前空間には、アセンブリ、モジュール、メンバー、パラメーター、およびその他のマネージ コード内のエンティティに関する情報を、そのメタデータを調べることで取得する型が含まれています。 これらの型は、イベントのフックやメソッドの呼び出しなど、読み込んだ型のインスタンスを操作する目的にも使用できます。 動的に型を作成するには、<see cref="N:System.Reflection.Emit" /> 名前空間を使用します。</summary>
+    </member>
+    <member name="N:System.Reflection.Context">
+      <summary>
+        <see cref="N:System.Reflection.Context" /> 名前空間には、カスタマイズしたリフレクション コンテキストを有効にするクラスが含まれています。</summary>
+    </member>
+    <member name="N:System.Reflection.Emit">
+      <summary>
+        <see cref="N:System.Reflection.Emit" /> 名前空間には、コンパイラまたはツールでメタデータおよび MSIL (Microsoft Intermediate Language) を生成し、オプションで PE ファイルをディスクに生成するためのクラスが含まれています。 これらのクラスの主なクライアントは、スクリプト エンジンとコンパイラです。</summary>
+    </member>
+    <member name="N:System.Resources">
+      <summary>
+        <see cref="N:System.Resources" /> 名前空間には、アプリケーションで使用されるさまざまなカルチャ固有のリソースを、開発者が作成、格納、および管理するためのクラスとインターフェイスが用意されています。 <see cref="N:System.Resources" /> 名前空間の最も重要なクラスの 1 つは、<see cref="T:System.Resources.ResourceManager" /> クラスです。</summary>
+    </member>
+    <member name="N:System.Runtime">
+      <summary>
+        <see cref="N:System.Runtime" /> 名前空間には、System、Runtime、Security の各名前空間など、さまざまな名前空間をサポートする高度な型が含まれています。</summary>
+    </member>
+    <member name="N:System.Runtime.CompilerServices">
+      <summary>
+        <see cref="N:System.Runtime.CompilerServices" /> 名前空間は、マネージ コードを使用して、共通言語ランタイムの実行時の動作に影響を与えるメタデータの属性を指定する機能をコンパイラ ライターに与えます。</summary>
+    </member>
+    <member name="N:System.Runtime.ExceptionServices">
+      <summary>
+        <see cref="N:System.Runtime.ExceptionServices" /> 名前空間は、高度な例外処理のためのクラスを提供します。</summary>
+    </member>
+    <member name="N:System.Runtime.InteropServices">
+      <summary>
+        <see cref="N:System.Runtime.InteropServices" /> 名前空間は、COM 相互運用サービスとプラットフォーム呼び出しサービスをサポートする各種メンバーを提供します。 これらのサービスの詳細については、「アンマネージ コードとの相互運用」を参照してください。</summary>
+    </member>
+    <member name="N:System.Runtime.InteropServices.ComTypes">
+      <summary>System.Runtime.InteropServices.ComTypes 名前空間には、マネージ コード用に COM の関数を定義したメソッドが含まれます。 <see cref="N:System.Runtime.InteropServices" /> 名前空間の UCOM* メソッドは廃止されました。代わりにこれらの関数を使用してください。</summary>
+    </member>
+    <member name="N:System.Runtime.InteropServices.WindowsRuntime">
+      <summary>
+        <see cref="N:System.Runtime.InteropServices.WindowsRuntime" /> 名前空間には、マネージ コードと Windows ランタイム 間の相互運用をサポートし、マネージ コードを使用した Windows ランタイム 方の作成を実現するクラスが含まれています。</summary>
+    </member>
+    <member name="N:System.Runtime.Serialization">
+      <summary>
+        <see cref="N:System.Runtime.Serialization" /> 名前空間は、オブジェクトのシリアル化および逆シリアル化に使用できるクラスを格納します。 シリアル化とは、別の場所へのストレージまたは伝送のために、オブジェクトまたはオブジェクトのグラフをバイトのリニア シーケンスに変換するプロセスです。 逆シリアル化は、格納されている情報を取り込んで、そこからオブジェクトを再び作成するプロセスです。</summary>
+    </member>
+    <member name="N:System.Runtime.Serialization.Json">
+      <summary>JSON シリアル化に関連するクラスを提供します。</summary>
+    </member>
+    <member name="N:System.Runtime.Versioning">
+      <summary>
+        <see cref="N:System.Runtime.Versioning" /> 名前空間には、.NET Framework と連携したバージョン管理をサポートする、高度な開発を想定した型が含まれます。</summary>
+    </member>
+    <member name="N:System.Security">
+      <summary>
+        <see cref="N:System.Security" /> 名前空間は、アクセス許可の基本クラスなど、共通言語ランタイムのセキュリティ システムの基盤となる構造を提供します。</summary>
+    </member>
+    <member name="N:System.Security.Principal">
+      <summary>
+        <see cref="N:System.Security.Principal" /> 名前空間は、コードを実行するときに使用するセキュリティ コンテキストを表すプリンシパル オブジェクトを定義します。 詳細については、「ロール ベース セキュリティ」を参照してください。</summary>
+    </member>
+    <member name="N:System.ServiceModel">
+      <summary>サービスのモデルと関連するクラスを提供します。</summary>
+    </member>
+    <member name="N:System.ServiceModel.Channels">
+      <summary>サービスのモデルのチャネルと関連するクラスを提供します。</summary>
+    </member>
+    <member name="N:System.ServiceModel.Description">
+      <summary>サービスのモデルの説明と関連するクラスを提供します。</summary>
+    </member>
+    <member name="N:System.ServiceModel.Dispatcher">
+      <summary>サービスのモデルのディスパッチと関連するクラスを提供します。</summary>
+    </member>
+    <member name="N:System.ServiceModel.Security">
+      <summary>
+        <see cref="N:System.ServiceModel.Security" /> 名前空間は、<see cref="T:System.ServiceModel.Security.SecurityAlgorithmSuite" /> など、セキュリティに関する一般的なトピックを扱います。</summary>
+    </member>
+    <member name="N:System.ServiceModel.Security.Tokens">
+      <summary>セキュリティ トークンと証明書を処理します。</summary>
+    </member>
+    <member name="N:System.Text">
+      <summary>
+        <see cref="N:System.Text" /> 名前空間には、ASCII および Unicode の文字エンコーディングを表すクラス、文字ブロックとバイト ブロックの相互変換を行う抽象基本クラス、および <see cref="T:System.String" /> の中間インスタンスを作成せずに <see cref="T:System.String" /> オブジェクトを操作し書式指定するヘルパー クラスが含まれます。</summary>
+    </member>
+    <member name="N:System.Text.RegularExpressions">
+      <summary>
+        <see cref="N:System.Text.RegularExpressions" /> 名前空間には、.NET Framework 正規表現エンジンへのアクセスを提供するクラスが含まれています。 この名前空間に用意されている正規表現機能は、Microsoft .NET Framework 内で実行される任意のプラットフォームまたは言語から使用できます。 この名前空間に格納されている型に加え、<see cref="T:System.Configuration.RegexStringValidator" /> クラスを使用すると、特定の文字列が正規表現パターンに準拠しているかどうかを確認できます。</summary>
+    </member>
+    <member name="N:System.Threading">
+      <summary>
+        <see cref="N:System.Threading" /> 名前空間には、マルチスレッド プログラミングを実現するクラスとインターフェイスが用意されています。 この名前空間には、スレッドの動作やデータへのアクセスを同期するためのクラス (<see cref="T:System.Threading.Mutex" />、<see cref="T:System.Threading.Monitor" />、<see cref="T:System.Threading.Interlocked" />、<see cref="T:System.Threading.AutoResetEvent" /> など) のほか、システムが提供するスレッド プールを使用するための <see cref="T:System.Threading.ThreadPool" /> クラス、スレッド プール スレッドでコールバック メソッドを実行するための <see cref="T:System.Threading.Timer" /> クラスも用意されています。</summary>
+    </member>
+    <member name="N:System.Threading.Tasks">
+      <summary>System.Threading.Tasks 名前空間は、同時実行コードおよび非同期コードを簡単に記述できるようにする型を提供します。 主要な型には、待機および取り消しができる非同期操作を表す <see cref="T:System.Threading.Tasks.Task" /> と、値を返すことができるタスクである <see cref="T:System.Threading.Tasks.Task`1" /> があります。 <see cref="T:System.Threading.Tasks.TaskFactory" /> クラスには、タスクを作成および開始するための静的メソッドが用意されています。また、<see cref="T:System.Threading.Tasks.TaskScheduler" /> クラスは、既定のスレッド スケジュール インフラストラクチャを提供します。</summary>
+    </member>
+    <member name="N:System.Windows.Input">
+      <summary>Windows Presentation Foundation (WPF) 入力システムをサポートする型を提供します。 これには、マウス、キーボード、スタイラス デバイスに対するデバイス抽象クラス、共通入力マネージャー クラス、コマンド実行およびカスタム コマンドのサポート、および各種ユーティリティ クラスが含まれます。</summary>
+    </member>
+    <member name="N:System.Xml">
+      <summary>
+        <see cref="N:System.Xml" /> 名前空間は、XML を処理するための標準ベースのサポートを提供します。</summary>
+    </member>
+    <member name="N:System.Xml.Linq">
+      <summary>LINQ to XML のクラスが含まれています。 LINQ to XML は、XML ドキュメントを簡単かつ効率的に変更できるようにする、メモリ内 XML プログラミング インターフェイスです。</summary>
+    </member>
+    <member name="N:System.Xml.Schema">
+      <summary>
+        <see cref="N:System.Xml.Schema" /> 名前空間には、XML スキーマ定義言語 (XSD) スキーマに対し標準ベースのサポートを提供する XML クラスが含まれています。</summary>
+    </member>
+    <member name="N:System.Xml.Serialization">
+      <summary>
+        <see cref="N:System.Xml.Serialization" /> 名前空間には、オブジェクトを XML 形式のドキュメントまたはストリームにシリアル化するために使用されるクラスが含まれています。</summary>
+    </member>
+    <member name="N:Windows.Foundation">
+      <summary>
+        <see cref="N:Windows.Foundation" /> 名前空間には、.NET Framework の Windows ストア アプリの開発をサポートする型が含まれています。</summary>
+    </member>
+    <member name="N:Windows.UI">
+      <summary>
+        <see cref="N:Windows.UI" /> 名前空間には、.NET Framework の Windows ストア アプリの開発をサポートする型が含まれています。</summary>
+    </member>
+    <member name="N:Windows.UI.Xaml">
+      <summary>
+        <see cref="N:Windows.UI.Xaml" /> 名前空間には、.NET Framework の Windows ストア アプリの開発をサポートする型が含まれています。</summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Automation">
+      <summary>
+        <see cref="N:Windows.UI.Xaml.Automation" /> 名前空間には、.NET Framework の Windows ストア アプリの開発をサポートする型が含まれています。</summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Controls.Primitives">
+      <summary>
+        <see cref="N:Windows.UI.Xaml.Controls.Primitives" /> 名前空間には、.NET Framework の Windows ストア アプリの開発をサポートする型が含まれています。</summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Markup">
+      <summary>
+        <see cref="N:Windows.UI.Xaml.Markup" /> 名前空間には、.NET Framework の Windows ストア アプリの開発をサポートする型が含まれています。</summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Media">
+      <summary>
+        <see cref="N:Windows.UI.Xaml.Media" /> 名前空間には、.NET Framework の Windows ストア アプリの開発をサポートする型が含まれています。</summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Media.Animation">
+      <summary>
+        <see cref="N:Windows.UI.Xaml.Media.Animation" /> 名前空間には、.NET Framework の Windows ストア アプリの開発をサポートする型が含まれています。</summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Media.Media3D">
+      <summary>
+        <see cref="N:Windows.UI.Xaml.Media.Media3D" /> 名前空間には、.NET Framework の Windows ストア アプリの開発をサポートする型が含まれています。</summary>
+    </member>
+  </members>
+</doc>

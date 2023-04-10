@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.IO.Compression</name>
+  </assembly>
+  <members>
+    <member name="T:System.IO.Compression.ZipArchive"></member>
+    <member name="M:System.IO.Compression.ZipArchive.#ctor(System.IO.Stream)"></member>
+    <member name="M:System.IO.Compression.ZipArchive.#ctor(System.IO.Stream,System.IO.Compression.ZipArchiveMode)"></member>
+    <member name="M:System.IO.Compression.ZipArchive.#ctor(System.IO.Stream,System.IO.Compression.ZipArchiveMode,System.Boolean)"></member>
+    <member name="M:System.IO.Compression.ZipArchive.CreateEntry(System.String)"></member>
+    <member name="M:System.IO.Compression.ZipArchive.CreateEntry(System.String,System.IO.Compression.CompressionLevel)"></member>
+    <member name="M:System.IO.Compression.ZipArchive.Dispose"></member>
+    <member name="M:System.IO.Compression.ZipArchive.Dispose(System.Boolean)"></member>
+    <member name="P:System.IO.Compression.ZipArchive.Entries"></member>
+    <member name="M:System.IO.Compression.ZipArchive.GetEntry(System.String)"></member>
+    <member name="P:System.IO.Compression.ZipArchive.Mode"></member>
+    <member name="T:System.IO.Compression.ZipArchiveEntry"></member>
+    <member name="P:System.IO.Compression.ZipArchiveEntry.Archive"></member>
+    <member name="P:System.IO.Compression.ZipArchiveEntry.CompressedLength"></member>
+    <member name="M:System.IO.Compression.ZipArchiveEntry.Delete"></member>
+    <member name="P:System.IO.Compression.ZipArchiveEntry.FullName"></member>
+    <member name="P:System.IO.Compression.ZipArchiveEntry.LastWriteTime"></member>
+    <member name="P:System.IO.Compression.ZipArchiveEntry.Length"></member>
+    <member name="P:System.IO.Compression.ZipArchiveEntry.Name"></member>
+    <member name="M:System.IO.Compression.ZipArchiveEntry.Open"></member>
+    <member name="M:System.IO.Compression.ZipArchiveEntry.ToString"></member>
+    <member name="T:System.IO.Compression.ZipArchiveMode"></member>
+    <member name="F:System.IO.Compression.ZipArchiveMode.Create">
+      <summary />
+    </member>
+    <member name="F:System.IO.Compression.ZipArchiveMode.Read">
+      <summary />
+    </member>
+    <member name="F:System.IO.Compression.ZipArchiveMode.Update">
+      <summary />
+    </member>
+  </members>
+</doc>

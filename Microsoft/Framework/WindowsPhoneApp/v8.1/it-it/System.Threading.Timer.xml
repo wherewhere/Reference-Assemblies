@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.Threading.Timer</name>
+  </assembly>
+  <members>
+    <member name="T:System.Threading.Timer">
+      <summary>Fornisce un meccanismo per eseguire un metodo a intervalli specificati. La classe non può essere ereditata.</summary>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Threading.Timer.#ctor(System.Threading.TimerCallback,System.Object,System.Int32,System.Int32)">
+      <summary>Consente di inizializzare una nuova istanza della classe Timer utilizzando un integer con segno a 32 bit per specificare l'intervallo di tempo.</summary>
+      <param name="callback">Delegato <see cref="T:System.Threading.TimerCallback" /> che rappresenta un metodo da eseguire.</param>
+      <param name="state">Oggetto contenente informazioni che devono essere utilizzate dal metodo di callback, oppure null.</param>
+      <param name="dueTime">Intervallo di attesa, in millisecondi, prima che venga chiamato <paramref name="callback" />. Specificare <see cref="F:System.Threading.Timeout.Infinite" /> per impedire l'avvio del timer. Specificare zero (0) per avviare il timer immediatamente.</param>
+      <param name="period">Intervallo di tempo, in millisecondi, tra le chiamate di <paramref name="callback" />. Specificare <see cref="F:System.Threading.Timeout.Infinite" /> per disabilitare la segnalazione periodica.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">Il parametro <paramref name="dueTime" /> o <paramref name="period" /> è negativo e non è uguale a <see cref="F:System.Threading.Timeout.Infinite" />.</exception>
+      <exception cref="T:System.ArgumentNullException">Il parametro <paramref name="callback" /> è null.</exception>
+    </member>
+    <member name="M:System.Threading.Timer.#ctor(System.Threading.TimerCallback,System.Object,System.TimeSpan,System.TimeSpan)">
+      <summary>Consente l'inizializzazione di una nuova istanza della classe Timer utilizzando i valori <see cref="T:System.TimeSpan" /> per misurare gli intervalli di tempo.</summary>
+      <param name="callback">Delegato <see cref="T:System.Threading.TimerCallback" /> che rappresenta un metodo da eseguire.</param>
+      <param name="state">Oggetto contenente informazioni che devono essere utilizzate dal metodo di callback, oppure null.</param>
+      <param name="dueTime">Intervallo <see cref="T:System.TimeSpan" /> che rappresenta il tempo di attesa prima che il parametro <paramref name="callback" /> richiami i propri metodi. Specificare un valore negativo di -1 millisecondi, per impedire l'avvio del timer. Specificare zero (0) per avviare il timer immediatamente.</param>
+      <param name="period">Intervallo di tempo tra le chiamate dei metodi a cui fa riferimento <paramref name="callback" />. Specificare un valore negativo di -1 millisecondi per disabilitare la segnalazione periodica.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">Il numero di millisecondi nel valore di <paramref name="dueTime" /> o <paramref name="period" /> è negativo e non è uguale a <see cref="F:System.Threading.Timeout.Infinite" />, oppure è maggiore di <see cref="F:System.Int32.MaxValue" />.</exception>
+      <exception cref="T:System.ArgumentNullException">Il parametro <paramref name="callback" /> è null.</exception>
+    </member>
+    <member name="M:System.Threading.Timer.Change(System.Int32,System.Int32)">
+      <summary>Consente di modificare il tempo di attesa e gli intervalli tra i richiami di un timer utilizzando integer con segno a 32 bit per misurare gli intervalli di tempo.</summary>
+      <returns>true se il timer è stato aggiornato correttamente, in caso contrario false.</returns>
+      <param name="dueTime">Intervallo di attesa, in millisecondi, prima di richiamare il metodo di callback specificato quando <see cref="T:System.Threading.Timer" /> è stato costruito. Specificare <see cref="F:System.Threading.Timeout.Infinite" /> per impedire il riavvio del timer. Specificare zero (0) per riavviare il timer immediatamente.</param>
+      <param name="period">Intervallo di tempo, in millisecondi, tra le chiamate del metodo di callback specificato quando è stato costruito <see cref="T:System.Threading.Timer" />. Specificare <see cref="F:System.Threading.Timeout.Infinite" /> per disabilitare la segnalazione periodica.</param>
+      <exception cref="T:System.ObjectDisposedException">L'istanza <see cref="T:System.Threading.Timer" /> è già stata eliminata.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Il parametro <paramref name="dueTime" /> o <paramref name="period" /> è negativo e non è uguale a <see cref="F:System.Threading.Timeout.Infinite" />.</exception>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="M:System.Threading.Timer.Change(System.TimeSpan,System.TimeSpan)">
+      <summary>Consente di modificare il tempo di attesa e gli intervalli tra i richiami di un timer utilizzando i valori di <see cref="T:System.TimeSpan" /> per misurare gli intervalli di tempo.</summary>
+      <returns>true se il timer è stato aggiornato correttamente, in caso contrario false.</returns>
+      <param name="dueTime">Parametro <see cref="T:System.TimeSpan" /> che rappresenta l'intervallo di attesa prima di richiamare il metodo di callback specificato quando <see cref="T:System.Threading.Timer" /> è stato costruito. Specificare un valore negativo di -1 millisecondi, per impedire il riavvio del timer. Specificare zero (0) per riavviare il timer immediatamente.</param>
+      <param name="period">Intervallo di tempo tra le chiamate del metodo di callback specificato quando è stato costruito <see cref="T:System.Threading.Timer" />. Specificare un valore negativo di -1 millisecondi per disabilitare la segnalazione periodica.</param>
+      <exception cref="T:System.ObjectDisposedException">L'istanza <see cref="T:System.Threading.Timer" /> è già stata eliminata.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Il valore del parametro <paramref name="dueTime" /> o <paramref name="period" /> è inferiore a -1, in millisecondi.</exception>
+      <exception cref="T:System.NotSupportedException">Il valore del parametro <paramref name="dueTime" /> o <paramref name="period" /> è superiore a 4294967294, in millisecondi.</exception>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="M:System.Threading.Timer.Dispose">
+      <summary>Consente di rilasciare tutte le risorse utilizzate dall'istanza corrente di <see cref="T:System.Threading.Timer" />.</summary>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="T:System.Threading.TimerCallback">
+      <summary>Rappresenta il metodo che gestisce le chiamate da un <see cref="T:System.Threading.Timer" />.</summary>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="M:System.Threading.TimerCallback.#ctor(System.Object,System.IntPtr)">
+    </member>
+    <member name="M:System.Threading.TimerCallback.BeginInvoke(System.Object,System.AsyncCallback,System.Object)">
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="M:System.Threading.TimerCallback.EndInvoke(System.IAsyncResult)">
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="M:System.Threading.TimerCallback.Invoke(System.Object)">
+      <filterpriority>2</filterpriority>
+    </member>
+  </members>
+</doc>

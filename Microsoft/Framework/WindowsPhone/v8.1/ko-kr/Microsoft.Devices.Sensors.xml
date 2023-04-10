@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Microsoft.Devices.Sensors</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.Devices.Sensors.Accelerometer">
+      <summary>장치의 가속도계 센서에 대한 Windows Phone 응용프로그램 액세스를 제공합니다.</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Accelerometer.#ctor">
+      <summary>
+        <see cref="T:Microsoft.Devices.Sensors.Accelerometer" /> 개체의 새 인스턴스를 만듭니다.</summary>
+      <exception cref="T:Microsoft.Devices.Sensors.SensorFailedException">응용프로그램 당 동시 Accelerometer 클래스 인스턴스 제한인 10을 초과했습니다.</exception>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Accelerometer.Dispose">
+      <summary>
+        <see cref="T:Microsoft.Devices.Sensors.Accelerometer" />에서 사용하는 관리되는 리소스 및 관리되지 않는 리소스를 릴리스합니다.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.Accelerometer.IsSupported">
+      <summary>응용프로그램이 실행되고 있는 장치의 가속도계 센서 지원 여부를 가져오거나 설정합니다.</summary>
+      <returns>응용프로그램이 실행되고 있는 장치가 가속도계 센서를 지원하면 true이고, 그렇지 않으면 false입니다.</returns>
+    </member>
+    <member name="E:Microsoft.Devices.Sensors.Accelerometer.ReadingChanged">
+      <summary>가속도계로부터 새 데이터가 도착하면 발생합니다. 이 메서드는 현재 릴리스에서는 더 이상 사용되지 않습니다. 응용프로그램은 대신 <see cref="T:Microsoft.Devices.Sensors.SensorBase`1" /> 클래스의 <see cref="E:Microsoft.Devices.Sensors.SensorBase`1.CurrentValueChanged" /> 이벤트를 사용합니다.</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Accelerometer.Start">
+      <summary>가속도계로부터 데이터 인식을 시작합니다.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.Accelerometer.State">
+      <summary>가속도계의 현재 상태를 가져옵니다. 값은 <see cref="T:Microsoft.Devices.Sensors.SensorState" /> 열거형의 멤버입니다.</summary>
+      <returns>형식: <see cref="T:Microsoft.Devices.Sensors.SensorState" />.</returns>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Accelerometer.Stop">
+      <summary>가속도계로부터 데이터 인식을 중지합니다.</summary>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.AccelerometerFailedException">
+      <summary>
+        <see cref="M:Microsoft.Devices.Sensors.Accelerometer.Start" /> 또는 <see cref="M:Microsoft.Devices.Sensors.Accelerometer.Stop" />을 호출하는 동안 발생할 수 있는 예외입니다. 메시지 필드는 예외의 이유를 설명하고 <see cref="P:Microsoft.Devices.Sensors.AccelerometerFailedException.ErrorId" /> 필드는 가속도계 프레임워크의 기본 네이티브 코드 구현에서의 오류 코드를 포함합니다.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerFailedException.ErrorId">
+      <summary>가속도계 프레임워크의 기본 네이티브 코드 구현에서의 오류 코드입니다.</summary>
+      <returns>형식: <see cref="T:System.Int32" />.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.AccelerometerReading">
+      <summary>장치에 적용되는 힘의 크기 및 방향을 나타내는 가속도계 표시값에 대한 가속도 및 타임스탬프를 포함합니다.  </summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReading.Acceleration">
+      <summary>장치의 가속도 벡터를 가져옵니다(중력 단위).</summary>
+      <returns>장치의 가속도입니다.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReading.Timestamp">
+      <summary>가속도계 표시값을 얻은 시간을 나타내는 타임스탬프를 가져옵니다. 센서 간 측정의 상관 관계를 지정하고, 원시 센서 데이터를 처리하는 알고리즘에 추가 입력을 제공하는 데 사용할 수 있습니다.</summary>
+      <returns>가속도계 표시값을 얻은 시간입니다.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.AccelerometerReadingEventArgs">
+      <summary>
+        <see cref="E:Microsoft.Devices.Sensors.Accelerometer.ReadingChanged" /> 이벤트에 대한 데이터를 제공합니다.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReadingEventArgs.Timestamp">
+      <summary>가속도계 표시값을 얻은 시간을 나타내는 타임스탬프입니다.</summary>
+      <returns>형식: <see cref="T:System.DateTimeOffset" />.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReadingEventArgs.X">
+      <summary>X 방향의 가속도입니다(중력 단위).</summary>
+      <returns>형식: <see cref="T:System.Double" />.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReadingEventArgs.Y">
+      <summary>Y 방향의 가속도입니다(중력 단위).</summary>
+      <returns>형식: <see cref="T:System.Double" />.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AccelerometerReadingEventArgs.Z">
+      <summary>Z 방향의 가속도입니다(중력 단위).</summary>
+      <returns>형식: <see cref="T:System.Double" />.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.AttitudeReading">
+      <summary>공간에서 장치 방향에 대한 정보를 포함합니다.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.Pitch">
+      <summary>자세 표시값의 피치를 가져옵니다(라디안).</summary>
+      <returns>자세 측정의 피치입니다.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.Quaternion">
+      <summary>자세 측정의 사원수 표현을 가져옵니다.</summary>
+      <returns>자세 측정의 사원수 표현입니다.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.Roll">
+      <summary>자세 표시값의 롤을 가져옵니다(라디안).</summary>
+      <returns>자세 측정의 롤입니다.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.RotationMatrix">
+      <summary>자세 측정의 매트릭스 표현을 가져옵니다.</summary>
+      <returns>자세 측정의 매트릭스 표현입니다.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.Timestamp">
+      <summary>가속도계 표시값을 얻은 시간을 나타내는 타임스탬프를 가져옵니다. 센서 간 측정의 상관 관계를 지정하고, 원시 센서 데이터를 처리하는 알고리즘에 추가 입력을 제공하는 데 사용할 수 있습니다.</summary>
+      <returns>자세 측정이 행해진 시간입니다.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.AttitudeReading.Yaw">
+      <summary>자세 표시값의 요를 가져옵니다(라디안).</summary>
+      <returns>자세 측정의 요입니다.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.CalibrationEventArgs">
+      <summary>
+        <see cref="E:Microsoft.Devices.Sensors.Compass.Calibrate" /> 및 이벤트에 대한 데이터를 제공합니다.</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.CalibrationEventArgs.#ctor">
+      <summary>
+        <see cref="T:Microsoft.Devices.Sensors.CalibrationEventArgs" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.Compass">
+      <summary>장치의 나침반 센서에 대한 Windows Phone 응용프로그램 액세스를 제공합니다.</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Compass.#ctor">
+      <summary>
+        <see cref="T:Microsoft.Devices.Sensors.Compass" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+      <exception cref="T:Microsoft.Devices.Sensors.SensorFailedException">응용프로그램 당 동시 Compass 클래스 인스턴스 제한인 10을 초과했습니다.</exception>
+    </member>
+    <member name="E:Microsoft.Devices.Sensors.Compass.Calibrate">
+      <summary>나침반을 보정해야 할 필요성이 감지되면 발생합니다.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.Compass.IsSupported">
+      <summary>응용프로그램이 실행되고 있는 장치의 나침반 센서 지원 여부를 가져옵니다.</summary>
+      <returns>형식: <see cref="T:System.Boolean" />. 응용프로그램이 실행되고 있는 장치가 나침반 센서를 지원하면 true이고, 그렇지 않으면 false입니다.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.CompassReading">
+      <summary>장치의 나침반 센서가 감지한 자기장에 대한 정보를 포함합니다. 이 정보는 지자기를 기준으로 장치의 방향을 결정하는 데 사용할 수 있습니다.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.CompassReading.HeadingAccuracy">
+      <summary>나침반 기수 방향 측정의 정확도를 가져옵니다(각도 단위).</summary>
+      <returns>나침반 기수 방향 측정의 정확도입니다.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.CompassReading.MagneticHeading">
+      <summary>자북에서 시계 방향으로 측정한 기수 방향을 가져옵니다(각도).</summary>
+      <returns>자북을 기준으로 하는 기수 방향입니다.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.CompassReading.MagnetometerReading">
+      <summary>원시 자기계 측정을 가져옵니다(마이크로테스라).</summary>
+      <returns>원시 자기계 측정입니다.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.CompassReading.Timestamp">
+      <summary>나침반 표시값을 얻은 시간을 나타내는 타임스탬프를 가져옵니다. 센서 간 측정의 상관 관계를 지정하고, 원시 센서 데이터를 처리하는 알고리즘에 추가 입력을 제공하는 데 사용할 수 있습니다.</summary>
+      <returns>나침반 측정이 행해진 시간입니다.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.CompassReading.TrueHeading">
+      <summary>진북에서 시계 방향으로 측정한 기수 방향을 가져옵니다(각도).</summary>
+      <returns>진북을 기준으로 하는 기수 방향입니다.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.Gyroscope">
+      <summary>장치의 자이로스코프 센서에 대한 Windows Phone 응용프로그램 액세스를 제공합니다.</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Gyroscope.#ctor">
+      <summary>Gyroscope 클래스의 새 인스턴스를 초기화합니다.</summary>
+      <exception cref="T:Microsoft.Devices.Sensors.SensorFailedException">응용프로그램 당 동시 Gyroscope 클래스 인스턴스 제한인 10을 초과했습니다.</exception>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.Gyroscope.IsSupported">
+      <summary>응용프로그램이 실행되고 있는 장치의 자이로스코프 센서 지원 여부를 가져오거나 설정합니다.</summary>
+      <returns>응용프로그램이 실행되고 있는 장치가 자이로스코프 센서를 지원하면 true이고, 그렇지 않으면 false입니다.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.GyroscopeReading">
+      <summary>장치의 회전 가속도에 대한 정보를 포함합니다.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.GyroscopeReading.RotationRate">
+      <summary>장치의 각 축 주위를 기준으로 한 회전 속도를 가져옵니다(초당 라디안).</summary>
+      <returns>장치의 각 축을 기준으로 한 회전 속도입니다.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.GyroscopeReading.Timestamp">
+      <summary>자이로스코프 표시값을 얻은 시간을 나타내는 타임스탬프를 가져옵니다. 센서 간 측정의 상관 관계를 지정하고, 원시 센서 데이터를 처리하는 알고리즘에 추가 입력을 제공하는 데 사용할 수 있습니다.</summary>
+      <returns>자이로스코프 측정이 행해진 시간입니다.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.ISensorReading">
+      <summary>모든 센서 측정 클래스에 의해 구현된 인터페이스입니다.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.ISensorReading.Timestamp">
+      <summary>센서 측정이 행해진 시간을 나타내는 타임스탬프를 가져옵니다. 센서 간 측정의 상관 관계를 지정하고, 원시 센서 데이터를 처리하는 알고리즘에 추가 입력을 제공하는 데 사용할 수 있습니다.</summary>
+      <returns>형식: <see cref="T:System.DateTimeOffset" />. 센서 측정이 행해진 시간입니다.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.Motion">
+      <summary>장치의 방향과 움직임에 대한 Windows Phone 응용프로그램 정보를 제공합니다.</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.Motion.#ctor">
+      <summary>
+        <see cref="T:Microsoft.Devices.Sensors.Motion" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+      <exception cref="T:Microsoft.Devices.Sensors.SensorFailedException">응용프로그램 당 동시 Motion 클래스 인스턴스 제한인 10을 초과했습니다.</exception>
+    </member>
+    <member name="E:Microsoft.Devices.Sensors.Motion.Calibrate">
+      <summary>나침반을 보정해야 할 필요성이 감지되면 발생합니다.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.Motion.IsSupported">
+      <summary>응용프로그램이 실행되고 있는 장치가 <see cref="T:Microsoft.Devices.Sensors.Motion" /> 클래스에 필요한 센서를 지원하는지 여부를 가져오거나 설정합니다.</summary>
+      <returns>응용프로그램이 실행되고 있는 장치가 <see cref="T:Microsoft.Devices.Sensors.Motion" /> 클래스에서 요구되는 센서를 지원하면 true이고, 그렇지 않으면 false입니다.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.MotionReading">
+      <summary>장치의 방향 및 움직임에 대한 정보를 포함합니다. </summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.MotionReading.Attitude">
+      <summary>장치의 자세(요, 피치, 롤)를 가져옵니다(라디안).</summary>
+      <returns>장치의 자세입니다.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.MotionReading.DeviceAcceleration">
+      <summary>장치의 선가속도 벡터를 가져옵니다(중력 단위).</summary>
+      <returns>장치의 선가속도입니다.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.MotionReading.DeviceRotationRate">
+      <summary>장치의 회전 속도를 가져옵니다(초당 라디안).</summary>
+      <returns>장치의 회전 속도입니다.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.MotionReading.Gravity">
+      <summary>
+        <see cref="T:Microsoft.Devices.Sensors.MotionReading" />과 연관된 중력 벡터를 가져옵니다.</summary>
+      <returns>MotionReading과 연관된 중력 벡터입니다.</returns>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.MotionReading.Timestamp">
+      <summary>
+        <see cref="T:Microsoft.Devices.Sensors.MotionReading" />이 계산되는 시간을 나타내는 타임스탬프를 가져옵니다. 센서 간 측정의 상관 관계를 지정하고, 원시 센서 데이터를 처리하는 알고리즘에 추가 입력을 제공하는 데 사용할 수 있습니다.</summary>
+      <returns>형식: <see cref="T:System.DateTimeOffset" />. MotionReading이 계산되는 시간입니다.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.SensorBase`1">
+      <summary>모든 Windows Phone 센서 클래스에 대한 기본 클래스입니다.</summary>
+      <typeparam name="TSensorReading">센서에서 반환되는 표시값의 형식입니다.</typeparam>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.SensorBase`1.CurrentValue">
+      <summary>센서의 현재 값을 포함하는 <see cref="T:Microsoft.Devices.Sensors.ISensorReading" />을 구현하는 개체를 가져옵니다. 이 개체는 참조할 센서에 따라 다음 형식 중 하나가 됩니다. <see cref="T:Microsoft.Devices.Sensors.AccelerometerReading" />, <see cref="T:Microsoft.Devices.Sensors.CompassReading" />, <see cref="T:Microsoft.Devices.Sensors.GyroscopeReading" />, <see cref="T:Microsoft.Devices.Sensors.MotionReading" />.</summary>
+      <returns>형식: <see cref="{0}" />. 센서의 현재 값을 포함하는 <see cref="T:Microsoft.Devices.Sensors.ISensorReading" />을 구현하는 개체입니다.</returns>
+    </member>
+    <member name="E:Microsoft.Devices.Sensors.SensorBase`1.CurrentValueChanged">
+      <summary>센서로부터 새 데이터가 도착하면 발생합니다.</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.SensorBase`1.Dispose">
+      <summary>센서에서 사용하는 관리되는 리소스 및 관리되지 않는 리소스를 릴리스합니다.</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.SensorBase`1.Finalize">
+      <summary>가비지 수집기에서 개체를 회수하기 전에 개체가 리소스를 해제하고 다른 정리 작업을 수행할 수 있게 합니다.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.SensorBase`1.IsDataValid">
+      <summary>센서 데이터의 유효성을 가져옵니다.</summary>
+      <returns>형식: <see cref="T:System.Boolean" />. 센서 데이터가 유효하면 true이고, 그렇지 않으면 false입니다.</returns>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.SensorBase`1.Start">
+      <summary>센서로부터 데이터 수집을 시작합니다.</summary>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.SensorBase`1.Stop">
+      <summary>센서로부터 데이터 수집을 중지합니다.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.SensorBase`1.TimeBetweenUpdates">
+      <summary>
+        <see cref="E:Microsoft.Devices.Sensors.SensorBase`1.CurrentValueChanged" /> 이벤트 간 기본 설정 시간을 가져오거나 설정합니다.</summary>
+      <returns>형식: <see cref="T:System.TimeSpan" />. CurrentValueChanged 이벤트 간 기본 설정 시간입니다.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.SensorFailedException">
+      <summary>센서 작동이 실패하면 발생되는 예외입니다.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.SensorFailedException.ErrorId">
+      <summary>예외의 원인을 나타내는 오류 ID입니다.</summary>
+      <returns>형식: <see cref="T:System.Int32" />.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.SensorReadingEventArgs`1">
+      <summary>
+        <see cref="E:Microsoft.Devices.Sensors.SensorBase`1.CurrentValueChanged" /> 이벤트에 대한 데이터를 제공합니다. </summary>
+      <typeparam name="T">이벤트 데이터에 포함된 측정값 유형입니다.</typeparam>
+    </member>
+    <member name="M:Microsoft.Devices.Sensors.SensorReadingEventArgs`1.#ctor">
+      <summary>
+        <see cref="T:Microsoft.Devices.Sensors.SensorReadingEventArgs`1" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+    </member>
+    <member name="P:Microsoft.Devices.Sensors.SensorReadingEventArgs`1.SensorReading">
+      <summary>SensorReadingEventArgs와 연관된 센서 측정 데이터를 가져옵니다.</summary>
+      <returns>SensorReadingEventArgs와 연관된 센서 측정 데이터입니다.</returns>
+    </member>
+    <member name="T:Microsoft.Devices.Sensors.SensorState">
+      <summary>가속도계의 현재 상태를 표현하기 위한 값의 열거형입니다.  센서의 상태는 <see cref="P:Microsoft.Devices.Sensors.Accelerometer.State" /> 속성을 사용하여 가져올 수 있습니다.</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.NotSupported">
+      <summary>센서 하드웨어는 사용할 수 없습니다.</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.Ready">
+      <summary>센서가 사용 가능한 상태이며 데이터를 처리 중입니다.</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.Initializing">
+      <summary>센서가 사용 가능한 상태이며 초기화 중입니다.</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.NoData">
+      <summary>센서가 데이터를 가져올 수 없습니다.</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.NoPermissions">
+      <summary>호출자에게 센서의 데이터에 액세스할 수 있는 권한이 없습니다.</summary>
+    </member>
+    <member name="F:Microsoft.Devices.Sensors.SensorState.Disabled">
+      <summary>센서를 사용하지 않도록 설정되어 있습니다.</summary>
+    </member>
+  </members>
+</doc>

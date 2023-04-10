@@ -1,0 +1,729 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.Net.Requests</name>
+  </assembly>
+  <members>
+    <member name="T:System.Net.HttpRequestHeader">
+      <summary>クライアント要求で指定される可能性のある HTTP ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Accept">
+      <summary>応答で受け入れることができる MIME タイプを指定する Accept ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.AcceptCharset">
+      <summary>応答で受け入れることができる文字セットを指定する Accept-Charset ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.AcceptEncoding">
+      <summary>応答で受け入れることができるコンテンツ エンコーディングを指定する Accept-Encoding ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.AcceptLanguage">
+      <summary>応答で推奨される自然言語を指定する Accept-Langauge ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Allow">
+      <summary>サポートされる HTTP メソッドのセットを指定する Allow ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Authorization">
+      <summary>サーバーに対してクライアントを認証するために提供される資格情報を指定する Authorization ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.CacheControl">
+      <summary>要求と応答のチェーンにおいて、すべてのキャッシュ コントロール機構が従う必要のあるディレクティブを指定する Cache-Control ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Connection">
+      <summary>特定の接続で必要なオプションを指定する Connection ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.ContentEncoding">
+      <summary>付随する本文データに適用されているエンコーディングを指定する Content-Encoding ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.ContentLanguage">
+      <summary>付随する本文データの 1 つ以上の自然言語を指定する Content-Langauge ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.ContentLength">
+      <summary>付随する本文データの長さ (バイト単位) を指定する Content-Length ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.ContentLocation">
+      <summary>付随する本文を取得することができる URI を指定する Content-Location ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.ContentMd5">
+      <summary>付随する本文データの MD5 ダイジェストを指定する Content-MD5 ヘッダー。これはエンド ツー エンドのメッセージの整合性チェックを提供する目的で使用します。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.ContentRange">
+      <summary>付随する本文データのうち適用される必要がある部分の、本文全体の中の位置を指定する Content-Range ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.ContentType">
+      <summary>付随する本文データの MIME タイプを指定する Content-Type ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Cookie">
+      <summary>サーバーに提供される Cookie データを指定する Cookie ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Date">
+      <summary>要求が最初に作成された日付と時刻を指定する Date ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Expect">
+      <summary>クライアントで必要とされる特定のサーバー動作を指定する Expect ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Expires">
+      <summary>付随する本文データが無効と見なされるようになる日付と時刻を指定する Expires ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.From">
+      <summary>要求元のユーザー エージェントを制御しているユーザーのインターネット電子メール アドレスを指定する From ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Host">
+      <summary>要求されているリソースのホスト名とポート番号を指定する Host ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.IfMatch">
+      <summary>クライアントのキャッシュされたコピーが、示されたリソースの現在のリソースである場合にだけ、要求された操作が実行される必要があることを指定する If-Match ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.IfModifiedSince">
+      <summary>要求されたリソースが、示された日付と時刻以降に変更されている場合にだけ、要求された操作が実行される必要があることを指定する If-Modified-Since ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.IfNoneMatch">
+      <summary>クライアントのキャッシュされたどのコピーも、示されたリソースの現在のリソースではない場合にだけ、要求された操作が実行される必要があることを指定する If-None-Match ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.IfRange">
+      <summary>クライアントのキャッシュされたコピーが現在のリソースである場合に、要求されたリソースの指定した範囲だけが送信される必要があることを指定する If-Range ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.IfUnmodifiedSince">
+      <summary>要求されたリソースが、示された日付と時刻以降に変更されていない場合にだけ、要求された操作が実行される必要があることを指定する If-Unmodified-Since ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.KeepAlive">
+      <summary>永続的な接続を維持するために使用するパラメーターを指定する Keep-Alive ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.LastModified">
+      <summary>付随する本文データが最後に変更された日付と時刻を指定する Last-Modified ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.MaxForwards">
+      <summary>この要求を転送できる残りの回数を示す整数を指定する Max-Forwards ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Pragma">
+      <summary>要求と応答のチェーンにおいて、エージェントに適用できる実装固有のディレクティブを指定する Pragma ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.ProxyAuthorization">
+      <summary>プロキシに対してクライアントを認証するために提供される資格情報を指定する Proxy-Authorization ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Range">
+      <summary>クライアントが応答全体の代わりに返却を要求する応答の 1 つ以上のサブ範囲を指定する Range ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Referer">
+      <summary>要求 URI の取得元のリソースの URI を指定する Referer ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Te">
+      <summary>応答で受け入れることができる転送のエンコーディングを指定する TE ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Trailer">
+      <summary>チャンク転送コーディングでエンコードされたメッセージのトレーラーにあるヘッダー フィールドを指定する Trailer ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.TransferEncoding">
+      <summary>メッセージ本文に変換が適用されている場合に、変換の種類を指定する Transfer-Encoding ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Translate">
+      <summary>WebDAV 機能と共に使用する、HTTP 仕様に対する Microsoft 拡張機能である Translate ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Upgrade">
+      <summary>クライアントがサポートする追加の通信プロトコルを指定する Upgrade ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.UserAgent">
+      <summary>クライアント エージェントに関する情報を指定する User-Agent ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Via">
+      <summary>ゲートウェイとプロキシ エージェントで使用される中間プロトコルを指定する Via ヘッダー。</summary>
+    </member>
+    <member name="F:System.Net.HttpRequestHeader.Warning">
+      <summary>メッセージに反映されない場合がある、メッセージの状態や変換に関する追加情報を指定する Warning ヘッダー。</summary>
+    </member>
+    <member name="T:System.Net.HttpWebRequest">
+      <summary>
+        <see cref="T:System.Net.WebRequest" /> クラスの HTTP 固有の実装を提供します。</summary>
+    </member>
+    <member name="M:System.Net.HttpWebRequest.Abort">
+      <summary>インターネット リソースへの要求を取り消します。</summary>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.Accept">
+      <summary>Accept HTTP ヘッダーの値を取得または設定します。</summary>
+      <returns>Accept HTTP ヘッダーの値。 既定値は null です。</returns>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.AllowReadStreamBuffering">
+      <summary>インターネット リソースから受け取ったデータをバッファリングするかどうかを示す値を取得または設定します。</summary>
+      <returns>
+        <see cref="T:System.Boolean" /> を返します。 インターネット リソースから受信したデータのバッファリングを有効にする場合は true。バッファリングを無効にする場合は false。 既定値は、true です。</returns>
+    </member>
+    <member name="M:System.Net.HttpWebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)">
+      <summary>データを書き込むために使用する <see cref="T:System.IO.Stream" /> オブジェクトの非同期要求を開始します。</summary>
+      <returns>非同期の要求を参照する <see cref="T:System.IAsyncResult" />。</returns>
+      <param name="callback">
+        <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+      <param name="state">この要求に対して使用する状態オブジェクト。</param>
+      <exception cref="T:System.Net.ProtocolViolationException">
+        <see cref="P:System.Net.HttpWebRequest.Method" /> プロパティが GET または HEAD です。 または <see cref="P:System.Net.HttpWebRequest.KeepAlive" /> は true で、<see cref="P:System.Net.HttpWebRequest.AllowWriteStreamBuffering" /> は false で、<see cref="P:System.Net.HttpWebRequest.ContentLength" /> は -1 で、<see cref="P:System.Net.HttpWebRequest.SendChunked" /> は false で、<see cref="P:System.Net.HttpWebRequest.Method" /> は POST または PUT です。</exception>
+      <exception cref="T:System.InvalidOperationException">ストリームが、<see cref="M:System.Net.HttpWebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)" /> の前回の呼び出しで使用されています。 または <see cref="P:System.Net.HttpWebRequest.TransferEncoding" /> に値が設定され、<see cref="P:System.Net.HttpWebRequest.SendChunked" /> が false です。 または スレッド プールのスレッドが不足しています。</exception>
+      <exception cref="T:System.NotSupportedException">要求のキャッシュ検証コントロールで、この要求の応答がキャッシュから取得できることが示されましたが、データの書き込みを行う要求でキャッシュは使用できません。 この例外は、キャッシュ検証コントロールの不適切なカスタム実装を使用した場合に発生することがあります。</exception>
+      <exception cref="T:System.Net.WebException">
+        <see cref="M:System.Net.HttpWebRequest.Abort" /> は既に呼び出されました。</exception>
+      <exception cref="T:System.ObjectDisposedException">.NET Compact Framework アプリケーションで、コンテンツ長が 0 の要求ストリームは取得されず、適切に閉じられました。 コンテンツ長が 0 の要求の処理の詳細については、「.NET Compact Framework のネットワーク プログラミング」を参照してください。</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Net.DnsPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Net.WebPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Diagnostics.PerformanceCounterPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Net.HttpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)">
+      <summary>インターネット リソースへの非同期要求を開始します。</summary>
+      <returns>非同期要求の応答を参照する <see cref="T:System.IAsyncResult" />。</returns>
+      <param name="callback">
+        <see cref="T:System.AsyncCallback" /> デリゲート</param>
+      <param name="state">この要求に対して使用する状態オブジェクト。</param>
+      <exception cref="T:System.InvalidOperationException">ストリームが、既に <see cref="M:System.Net.HttpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" /> の前回の呼び出しで使用されています。 または <see cref="P:System.Net.HttpWebRequest.TransferEncoding" /> に値が設定され、<see cref="P:System.Net.HttpWebRequest.SendChunked" /> が false です。 または スレッド プールのスレッドが不足しています。</exception>
+      <exception cref="T:System.Net.ProtocolViolationException">
+        <see cref="P:System.Net.HttpWebRequest.Method" /> が GET または HEAD で、<see cref="P:System.Net.HttpWebRequest.ContentLength" /> が 0 より大きいか、<see cref="P:System.Net.HttpWebRequest.SendChunked" /> が true です。 または <see cref="P:System.Net.HttpWebRequest.KeepAlive" /> は true で、<see cref="P:System.Net.HttpWebRequest.AllowWriteStreamBuffering" /> は false です。また、<see cref="P:System.Net.HttpWebRequest.ContentLength" /> は -1、<see cref="P:System.Net.HttpWebRequest.SendChunked" /> は false、<see cref="P:System.Net.HttpWebRequest.Method" /> は POST または PUT です。 または <see cref="T:System.Net.HttpWebRequest" /> にはエンティティ本体がありますが、<see cref="M:System.Net.HttpWebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)" /> メソッドを呼び出さずに、<see cref="M:System.Net.HttpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" /> メソッドが呼び出されます。 または <see cref="P:System.Net.HttpWebRequest.ContentLength" /> が 0 より大きいが、アプリケーションが約束されたすべてのデータを書き込むようになっていません。</exception>
+      <exception cref="T:System.Net.WebException">
+        <see cref="M:System.Net.HttpWebRequest.Abort" /> は既に呼び出されました。</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Net.DnsPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Net.WebPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Diagnostics.PerformanceCounterPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+      </PermissionSet>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.ContentType">
+      <summary>Content-type HTTP ヘッダーの値を取得または設定します。</summary>
+      <returns>Content-type HTTP ヘッダーの値。 既定値は null です。</returns>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.ContinueTimeout">
+      <summary>100 回の続行まで待機するミリ秒単位のタイムアウト値をサーバーから取得または設定します。</summary>
+      <returns>
+        <see cref="T:System.Int32" /> を返します。 100 回の続行まで待機するミリ秒単位のタイムアウト値。</returns>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.CookieContainer">
+      <summary>要求に関連付けられているクッキーを取得または設定します。</summary>
+      <returns>この要求に関連付けられているクッキーを格納している <see cref="T:System.Net.CookieContainer" />。</returns>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.Credentials">
+      <summary>要求に対して使用する認証情報を取得または設定します。</summary>
+      <returns>要求と関連付けられた認証資格情報を格納する <see cref="T:System.Net.ICredentials" />。 既定値は、null です。</returns>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Net.HttpWebRequest.EndGetRequestStream(System.IAsyncResult)">
+      <summary>データを書き込むために使用する <see cref="T:System.IO.Stream" /> オブジェクトの非同期要求を終了します。</summary>
+      <returns>要求データを書き込むために使用する <see cref="T:System.IO.Stream" />。</returns>
+      <param name="asyncResult">ストリームの保留中の要求。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="asyncResult" /> は null なので、</exception>
+      <exception cref="T:System.IO.IOException">要求が完了しませんでした。また、ストリームは使用できません。</exception>
+      <exception cref="T:System.ArgumentException">現在のインスタンスによって、<see cref="M:System.Net.HttpWebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)" /> への呼び出しから <paramref name="asyncResult" /> が返されませんでした。</exception>
+      <exception cref="T:System.InvalidOperationException">このメソッドは、<paramref name="asyncResult" /> を使用して既に呼び出されています。</exception>
+      <exception cref="T:System.Net.WebException">
+        <see cref="M:System.Net.HttpWebRequest.Abort" /> は既に呼び出されました。 または 要求の処理中にエラーが発生しました。</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Net.HttpWebRequest.EndGetResponse(System.IAsyncResult)">
+      <summary>インターネット リソースへの非同期要求を終了します。</summary>
+      <returns>インターネット リソースからの応答を格納している <see cref="T:System.Net.WebResponse" />。</returns>
+      <param name="asyncResult">応答の保留中の要求。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="asyncResult" /> は null なので、</exception>
+      <exception cref="T:System.InvalidOperationException">このメソッドは、<paramref name="asyncResult." /> を使用して既に呼び出されています。 または <see cref="P:System.Net.HttpWebRequest.ContentLength" /> プロパティが 0 を超えていますが、データが要求ストリームに書き込まれていません。</exception>
+      <exception cref="T:System.Net.WebException">
+        <see cref="M:System.Net.HttpWebRequest.Abort" /> は既に呼び出されました。 または 要求の処理中にエラーが発生しました。</exception>
+      <exception cref="T:System.ArgumentException">現在のインスタンスによって、<see cref="M:System.Net.HttpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" /> への呼び出しから <paramref name="asyncResult" /> が返されませんでした。</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.HaveResponse">
+      <summary>インターネット リソースから応答が受信されたかどうかを示す値を取得します。</summary>
+      <returns>応答を受信した場合は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.Headers">
+      <summary>HTTP ヘッダーを構成する名前と値のペアのコレクションを指定します。</summary>
+      <returns>HTTP 要求のヘッダーを構成する名前と値のペアを格納している <see cref="T:System.Net.WebHeaderCollection" />。</returns>
+      <exception cref="T:System.InvalidOperationException">要求が <see cref="M:System.Net.HttpWebRequest.GetRequestStream" />、<see cref="M:System.Net.HttpWebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)" />、<see cref="M:System.Net.HttpWebRequest.GetResponse" />、または <see cref="M:System.Net.HttpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" /> の各メソッドの呼び出しによって開始されました。</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.Method">
+      <summary>要求に対して使用するメソッドを取得または設定します。</summary>
+      <returns>インターネット リソースと通信するために使用する要求メソッド。 既定値は GET です。</returns>
+      <exception cref="T:System.ArgumentException">メソッドが指定されていません。 または メソッドの文字列に無効な文字が含まれています。</exception>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.RequestUri">
+      <summary>要求の元の URI (Uniform Resource Identifier) を取得します。</summary>
+      <returns>
+        <see cref="M:System.Net.WebRequest.Create(System.String)" /> メソッドに渡されたインターネット リソースの URI を格納している <see cref="T:System.Uri" />。</returns>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.SupportsCookieContainer">
+      <summary>要求が <see cref="T:System.Net.CookieContainer" /> をサポートするかどうかを示す値を取得します。</summary>
+      <returns>
+        <see cref="T:System.Boolean" /> を返します。 <see cref="T:System.Net.CookieContainer" /> がサポートされている場合は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="P:System.Net.HttpWebRequest.UseDefaultCredentials">
+      <summary>既定の資格情報が要求と共に送信されるかどうかを制御する <see cref="T:System.Boolean" /> 値を取得または設定します。</summary>
+      <returns>既定の資格情報を使用する場合は true。それ以外の場合は false。 既定値は false です。</returns>
+      <exception cref="T:System.InvalidOperationException">要求が送信された後で、このプロパティを設定しようとしました。</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Read="USERNAME" />
+      </PermissionSet>
+    </member>
+    <member name="T:System.Net.HttpWebResponse">
+      <summary>
+        <see cref="T:System.Net.WebResponse" /> クラスの HTTP 固有の実装を提供します。</summary>
+    </member>
+    <member name="P:System.Net.HttpWebResponse.ContentLength">
+      <summary>要求で返されるコンテンツ長を取得します。</summary>
+      <returns>要求で返されるバイト数。 コンテンツ長には、ヘッダー情報は含まれません。</returns>
+      <exception cref="T:System.ObjectDisposedException">現在のインスタンスは破棄されています。</exception>
+    </member>
+    <member name="P:System.Net.HttpWebResponse.ContentType">
+      <summary>応答のコンテンツ タイプを取得します。</summary>
+      <returns>応答のコンテンツ タイプを格納する文字列。</returns>
+      <exception cref="T:System.ObjectDisposedException">現在のインスタンスは破棄されています。</exception>
+    </member>
+    <member name="P:System.Net.HttpWebResponse.Cookies">
+      <summary>この応答に関連付けられているクッキーを取得または設定します。</summary>
+      <returns>この要求に関連付けられているクッキーを格納する <see cref="T:System.Net.CookieCollection" />。</returns>
+      <exception cref="T:System.ObjectDisposedException">現在のインスタンスは破棄されています。</exception>
+    </member>
+    <member name="M:System.Net.HttpWebResponse.Dispose(System.Boolean)">
+      <summary>
+        <see cref="T:System.Net.HttpWebResponse" /> が使用しているアンマネージ リソースを解放します。オプションでマネージ リソースも破棄します。</summary>
+      <param name="disposing">マネージ リソースとアンマネージ リソースの両方を解放する場合は true。アンマネージ リソースだけを解放する場合は false。</param>
+    </member>
+    <member name="M:System.Net.HttpWebResponse.GetResponseStream">
+      <summary>サーバーから応答の本文を読み取るために使用するストリームを取得します。</summary>
+      <returns>応答の本文を格納している <see cref="T:System.IO.Stream" />。</returns>
+      <exception cref="T:System.Net.ProtocolViolationException">応答ストリームがありません。</exception>
+      <exception cref="T:System.ObjectDisposedException">現在のインスタンスは破棄されています。</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="P:System.Net.HttpWebResponse.Headers">
+      <summary>応答に関連付けられているヘッダーをサーバーから取得します。</summary>
+      <returns>応答で返されるヘッダー情報を格納する <see cref="T:System.Net.WebHeaderCollection" />。</returns>
+      <exception cref="T:System.ObjectDisposedException">現在のインスタンスは破棄されています。</exception>
+    </member>
+    <member name="P:System.Net.HttpWebResponse.Method">
+      <summary>応答を返すために使用するメソッドを取得します。</summary>
+      <returns>応答を返すために使用する HTTP メソッドを格納する文字列。</returns>
+      <exception cref="T:System.ObjectDisposedException">現在のインスタンスは破棄されています。</exception>
+    </member>
+    <member name="P:System.Net.HttpWebResponse.ResponseUri">
+      <summary>要求に応答したインターネット リソースの URI を取得します。</summary>
+      <returns>要求に応答したインターネット リソースの URI を格納する <see cref="T:System.Uri" />。</returns>
+      <exception cref="T:System.ObjectDisposedException">現在のインスタンスは破棄されています。</exception>
+    </member>
+    <member name="P:System.Net.HttpWebResponse.StatusCode">
+      <summary>応答のステータスを取得します。</summary>
+      <returns>
+        <see cref="T:System.Net.HttpStatusCode" /> 値のいずれか。</returns>
+      <exception cref="T:System.ObjectDisposedException">現在のインスタンスは破棄されています。</exception>
+    </member>
+    <member name="P:System.Net.HttpWebResponse.StatusDescription">
+      <summary>応答で返されるステータス記述を取得します。</summary>
+      <returns>応答のステータスを記述する文字列。</returns>
+      <exception cref="T:System.ObjectDisposedException">現在のインスタンスは破棄されています。</exception>
+    </member>
+    <member name="P:System.Net.HttpWebResponse.SupportsHeaders">
+      <summary>ヘッダーがサポートされているかどうかを示す値を取得します。</summary>
+      <returns>
+        <see cref="T:System.Boolean" /> を返します。 ヘッダーがサポートされる場合は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="T:System.Net.IWebRequestCreate">
+      <summary>
+        <see cref="T:System.Net.WebRequest" /> インスタンスを作成するための基本インターフェイスを提供します。</summary>
+    </member>
+    <member name="M:System.Net.IWebRequestCreate.Create(System.Uri)">
+      <summary>
+        <see cref="T:System.Net.WebRequest" /> インスタンスを作成します。</summary>
+      <returns>
+        <see cref="T:System.Net.WebRequest" /> のインスタンス。</returns>
+      <param name="uri">Web リソースの URI。</param>
+      <exception cref="T:System.NotSupportedException">
+        <paramref name="uri" /> で指定された要求スキームは、この <see cref="T:System.Net.IWebRequestCreate" /> インスタンスではサポートされません。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="uri" /> は null です。</exception>
+      <exception cref="T:System.UriFormatException">Windows ストア アプリのための .NET または汎用性のあるクラス ライブラリで、基本クラスの例外 <see cref="T:System.FormatException" /> を代わりにキャッチします。 <paramref name="uri" /> で指定された URI が有効な URI ではありません。</exception>
+    </member>
+    <member name="T:System.Net.ProtocolViolationException">
+      <summary>ネットワーク プロトコルの使用中にエラーが発生した場合にスローされる例外。</summary>
+    </member>
+    <member name="M:System.Net.ProtocolViolationException.#ctor">
+      <summary>
+        <see cref="T:System.Net.ProtocolViolationException" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:System.Net.ProtocolViolationException.#ctor(System.String)">
+      <summary>指定したメッセージを使用して、<see cref="T:System.Net.ProtocolViolationException" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="message">エラー メッセージ文字列。</param>
+    </member>
+    <member name="T:System.Net.WebException">
+      <summary>プラグ可能プロトコルによるネットワークへのアクセスでエラーが発生した場合にスローされる例外。</summary>
+    </member>
+    <member name="M:System.Net.WebException.#ctor">
+      <summary>
+        <see cref="T:System.Net.WebException" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:System.Net.WebException.#ctor(System.String)">
+      <summary>
+        <see cref="T:System.Net.WebException" /> クラスの新しいインスタンスを、指定したエラー メッセージを使用して初期化します。</summary>
+      <param name="message">エラー メッセージのテキスト。</param>
+    </member>
+    <member name="M:System.Net.WebException.#ctor(System.String,System.Exception)">
+      <summary>
+        <see cref="T:System.Net.WebException" /> クラスの新しいインスタンスを、指定したエラー メッセージと入れ子になった例外を使用して初期化します。</summary>
+      <param name="message">エラー メッセージのテキスト。</param>
+      <param name="innerException">入れ子になった例外。</param>
+    </member>
+    <member name="M:System.Net.WebException.#ctor(System.String,System.Exception,System.Net.WebExceptionStatus,System.Net.WebResponse)">
+      <summary>
+        <see cref="T:System.Net.WebException" /> クラスの新しいインスタンスを、指定したエラー メッセージ、入れ子になった例外、ステータス、および応答を使用して初期化します。</summary>
+      <param name="message">エラー メッセージのテキスト。</param>
+      <param name="innerException">入れ子になった例外。</param>
+      <param name="status">
+        <see cref="T:System.Net.WebExceptionStatus" /> 値の 1 つ。</param>
+      <param name="response">リモート ホストからの応答を格納する <see cref="T:System.Net.WebResponse" /> インスタンス。</param>
+    </member>
+    <member name="M:System.Net.WebException.#ctor(System.String,System.Net.WebExceptionStatus)">
+      <summary>
+        <see cref="T:System.Net.WebException" /> クラスの新しいインスタンスを、指定したエラー メッセージとステータスを使用して初期化します。</summary>
+      <param name="message">エラー メッセージのテキスト。</param>
+      <param name="status">
+        <see cref="T:System.Net.WebExceptionStatus" /> 値の 1 つ。</param>
+    </member>
+    <member name="P:System.Net.WebException.Response">
+      <summary>リモート ホストが返す応答を取得します。</summary>
+      <returns>インターネット リソースから応答がある場合は、インターネット リソースからのエラー応答を格納した <see cref="T:System.Net.WebResponse" /> インスタンス。それ以外の場合は null。</returns>
+    </member>
+    <member name="P:System.Net.WebException.Status">
+      <summary>応答のステータスを取得します。</summary>
+      <returns>
+        <see cref="T:System.Net.WebExceptionStatus" /> 値の 1 つ。</returns>
+    </member>
+    <member name="T:System.Net.WebExceptionStatus">
+      <summary>
+        <see cref="T:System.Net.WebException" /> クラスのステータス コードを定義します。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.ConnectFailure">
+      <summary>トランスポート レベルで、リモート サービス ポイントと通信できませんでした。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.MessageLengthLimitExceeded">
+      <summary>サーバーに要求を送信、またはサーバーからの応答を受信しているときに、制限長を超えるメッセージが渡されました。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.Pending">
+      <summary>内部非同期要求が保留中です。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.RequestCanceled">
+      <summary>要求が取り消されたか、<see cref="M:System.Net.WebRequest.Abort" /> メソッドが呼び出されたか、または分類できないエラーが発生しました。 これは、<see cref="P:System.Net.WebException.Status" /> の既定値です。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.SendFailure">
+      <summary>完全な要求をリモート サーバーに送信できませんでした。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.Success">
+      <summary>エラーは発生しませんでした。</summary>
+    </member>
+    <member name="F:System.Net.WebExceptionStatus.UnknownError">
+      <summary>未知の種類の例外が発生しました。</summary>
+    </member>
+    <member name="T:System.Net.WebHeaderCollection">
+      <summary>要求または応答に関連付けられたプロトコル ヘッダーを格納します。</summary>
+    </member>
+    <member name="M:System.Net.WebHeaderCollection.#ctor">
+      <summary>
+        <see cref="T:System.Net.WebHeaderCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="P:System.Net.WebHeaderCollection.AllKeys">
+      <summary>コレクション内のすべてのヘッダー名 (キー) を取得します。</summary>
+      <returns>Web 要求に含まれるすべてのヘッダー名を格納している <see cref="T:System.String" /> 型の配列。</returns>
+    </member>
+    <member name="P:System.Net.WebHeaderCollection.Count">
+      <summary>コレクション内のヘッダーの数を取得します。</summary>
+      <returns>要求に含まれるヘッダーの数を示す <see cref="T:System.Int32" />。</returns>
+    </member>
+    <member name="P:System.Net.WebHeaderCollection.Item(System.Net.HttpRequestHeader)">
+      <summary>指定した要求ヘッダーを取得または設定します。</summary>
+      <returns>指定したヘッダー値を格納している <see cref="T:System.String" /> インスタンス。</returns>
+      <param name="header">要求ヘッダーの値。</param>
+      <exception cref="T:System.InvalidOperationException">この <see cref="T:System.Net.WebHeaderCollection" /> インスタンスは、<see cref="T:System.Net.HttpRequestHeader" /> のインスタンスを許可しません。</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="P:System.Net.WebHeaderCollection.Item(System.String)">
+    </member>
+    <member name="M:System.Net.WebHeaderCollection.System#Collections#IEnumerable#GetEnumerator">
+      <summary>
+        <see cref="T:System.Net.WebHeaderCollection" /> インスタンスを反復処理できる列挙子を返します。</summary>
+      <returns>
+        <see cref="T:System.Collections.IEnumerator" /> を返します。 <see cref="T:System.Net.WebHeaderCollection" /> インスタンスを反復処理できる列挙子。</returns>
+    </member>
+    <member name="M:System.Net.WebHeaderCollection.ToString">
+      <summary>このメソッドは、互換性のために残されています。</summary>
+      <returns>コレクションの <see cref="T:System.String" /> 表現。</returns>
+    </member>
+    <member name="T:System.Net.WebRequest">
+      <summary>Uniform Resource Identifier (URI) に対する要求を実行します。 これは abstract クラスです。</summary>
+    </member>
+    <member name="M:System.Net.WebRequest.#ctor">
+      <summary>
+        <see cref="T:System.Net.WebRequest" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:System.Net.WebRequest.Abort">
+      <summary>要求を中止します。</summary>
+      <exception cref="T:System.NotImplementedException">メソッドが派生クラスでオーバーライドされていないのに、そのメソッドへのアクセスが試行されました。</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Net.WebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)">
+      <summary>派生クラスでオーバーライドされると、<see cref="M:System.Net.WebRequest.GetRequestStream" /> メソッドの非同期バージョンを提供します。</summary>
+      <returns>非同期の要求を参照する <see cref="T:System.IAsyncResult" />。</returns>
+      <param name="callback">
+        <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+      <param name="state">非同期要求の状態情報を格納するオブジェクト。</param>
+      <exception cref="T:System.NotImplementedException">メソッドが派生クラスでオーバーライドされていないのに、そのメソッドへのアクセスが試行されました。</exception>
+    </member>
+    <member name="M:System.Net.WebRequest.BeginGetResponse(System.AsyncCallback,System.Object)">
+      <summary>派生クラスでオーバーライドされると、インターネット リソースの非同期要求を開始します。</summary>
+      <returns>非同期の要求を参照する <see cref="T:System.IAsyncResult" />。</returns>
+      <param name="callback">
+        <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+      <param name="state">非同期要求の状態情報を格納するオブジェクト。</param>
+      <exception cref="T:System.NotImplementedException">メソッドが派生クラスでオーバーライドされていないのに、そのメソッドへのアクセスが試行されました。</exception>
+    </member>
+    <member name="P:System.Net.WebRequest.ContentType">
+      <summary>派生クラスでオーバーライドされると、送信している要求データのコンテンツ タイプを取得または設定します。</summary>
+      <returns>要求データのコンテンツ タイプ。</returns>
+      <exception cref="T:System.NotImplementedException">プロパティが派生クラスでオーバーライドされていないのに、そのプロパティの取得または設定が試行されました。</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Net.WebRequest.Create(System.String)">
+      <summary>指定した URI スキーム用に新しい <see cref="T:System.Net.WebRequest" /> のインスタンスを初期化します。</summary>
+      <returns>特定の URI スキーム用の <see cref="T:System.Net.WebRequest" /> 派生クラス。</returns>
+      <param name="requestUriString">インターネット リソースを識別する URI。</param>
+      <exception cref="T:System.NotSupportedException">
+        <paramref name="requestUriString" /> で指定された要求スキームが登録されていません。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="requestUriString" /> は null です。</exception>
+      <exception cref="T:System.Security.SecurityException">呼び出し元に、要求された URI に接続するためのアクセス許可、または要求のリダイレクト先の URI に接続するためのアクセス許可がありません。</exception>
+      <exception cref="T:System.UriFormatException">Windows ストア アプリのための .NET または汎用性のあるクラス ライブラリで、基本クラスの例外 <see cref="T:System.FormatException" /> を代わりにキャッチします。 <paramref name="requestUriString" /> で指定された URI が有効な URI ではありません。</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Net.WebRequest.Create(System.Uri)">
+      <summary>指定した URI スキーム用に新しい <see cref="T:System.Net.WebRequest" /> のインスタンスを初期化します。</summary>
+      <returns>指定した URI スキーム用の <see cref="T:System.Net.WebRequest" /> 派生クラス。</returns>
+      <param name="requestUri">要求されたリソースの URI を格納する <see cref="T:System.Uri" />。</param>
+      <exception cref="T:System.NotSupportedException">
+        <paramref name="requestUri" /> で指定された要求スキームが登録されていません。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="requestUri" /> は null です。</exception>
+      <exception cref="T:System.Security.SecurityException">呼び出し元に、要求された URI に接続するためのアクセス許可、または要求のリダイレクト先の URI に接続するためのアクセス許可がありません。</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Net.WebRequest.CreateHttp(System.String)">
+      <summary>指定した URI 文字列用に新しい <see cref="T:System.Net.HttpWebRequest" /> インスタンスを初期化します。</summary>
+      <returns>
+        <see cref="T:System.Net.HttpWebRequest" /> を返します。 指定した URI 文字列の <see cref="T:System.Net.HttpWebRequest" /> インスタンス。</returns>
+      <param name="requestUriString">インターネット リソースを識別する URI 文字列。</param>
+      <exception cref="T:System.NotSupportedException">
+        <paramref name="requestUriString" /> で指定された要求スキームが、http スキームまたは https スキームです。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="requestUriString" /> は null です。</exception>
+      <exception cref="T:System.Security.SecurityException">呼び出し元に、要求された URI に接続するためのアクセス許可、または要求のリダイレクト先の URI に接続するためのアクセス許可がありません。</exception>
+      <exception cref="T:System.UriFormatException">
+        <paramref name="requestUriString" /> で指定された URI が有効な URI ではありません。</exception>
+    </member>
+    <member name="M:System.Net.WebRequest.CreateHttp(System.Uri)">
+      <summary>指定した URI 用に新しい <see cref="T:System.Net.HttpWebRequest" /> インスタンスを初期化します。</summary>
+      <returns>
+        <see cref="T:System.Net.HttpWebRequest" /> を返します。 指定した URI 文字列の <see cref="T:System.Net.HttpWebRequest" /> インスタンス。</returns>
+      <param name="requestUri">インターネット リソースを識別する URI。</param>
+      <exception cref="T:System.NotSupportedException">
+        <paramref name="requestUri" /> で指定された要求スキームが、http スキームまたは https スキームです。</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="requestUri" /> は null です。</exception>
+      <exception cref="T:System.Security.SecurityException">呼び出し元に、要求された URI に接続するためのアクセス許可、または要求のリダイレクト先の URI に接続するためのアクセス許可がありません。</exception>
+      <exception cref="T:System.UriFormatException">
+        <paramref name="requestUri" /> で指定された URI が有効な URI ではありません。</exception>
+    </member>
+    <member name="P:System.Net.WebRequest.Credentials">
+      <summary>派生クラスでオーバーライドされると、インターネット リソースを使用して要求を認証するために使用されるネットワーク資格情報を取得または設定します。</summary>
+      <returns>要求に関連付けられた認証資格情報を格納する <see cref="T:System.Net.ICredentials" />。 既定値は、null です。</returns>
+      <exception cref="T:System.NotImplementedException">プロパティが派生クラスでオーバーライドされていないのに、そのプロパティの取得または設定が試行されました。</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="P:System.Net.WebRequest.DefaultWebProxy">
+      <summary>グローバル HTTP プロキシを取得または設定します。</summary>
+      <returns>
+        <see cref="T:System.Net.WebRequest" /> のインスタンスへのすべての呼び出しで使用される <see cref="T:System.Net.IWebProxy" />。</returns>
+    </member>
+    <member name="M:System.Net.WebRequest.EndGetRequestStream(System.IAsyncResult)">
+      <summary>派生クラスでオーバーライドされると、インターネット リソースにデータを書き込むための <see cref="T:System.IO.Stream" /> を返します。</summary>
+      <returns>データを書き込む <see cref="T:System.IO.Stream" />。</returns>
+      <param name="asyncResult">ストリームの保留中の要求を参照する <see cref="T:System.IAsyncResult" />。</param>
+      <exception cref="T:System.NotImplementedException">メソッドが派生クラスでオーバーライドされていないのに、そのメソッドへのアクセスが試行されました。</exception>
+    </member>
+    <member name="M:System.Net.WebRequest.EndGetResponse(System.IAsyncResult)">
+      <summary>派生クラスでオーバーライドされると、<see cref="T:System.Net.WebResponse" /> を返します。</summary>
+      <returns>インターネット要求への応答を格納する <see cref="T:System.Net.WebResponse" />。</returns>
+      <param name="asyncResult">応答に対する保留中の要求を参照する <see cref="T:System.IAsyncResult" />。</param>
+      <exception cref="T:System.NotImplementedException">メソッドが派生クラスでオーバーライドされていないのに、そのメソッドへのアクセスが試行されました。</exception>
+    </member>
+    <member name="M:System.Net.WebRequest.GetRequestStreamAsync">
+      <summary>派生クラスでオーバーライドされると、インターネット リソースへのデータ書き込みの <see cref="T:System.IO.Stream" /> を非同期操作として返します。</summary>
+      <returns>
+        <see cref="T:System.Threading.Tasks.Task`1" /> を返します。 非同期操作を表すタスク オブジェクト。</returns>
+    </member>
+    <member name="M:System.Net.WebRequest.GetResponseAsync">
+      <summary>派生クラスでオーバーライドされると、インターネット要求への応答を非同期操作として返します。</summary>
+      <returns>
+        <see cref="T:System.Threading.Tasks.Task`1" /> を返します。 非同期操作を表すタスク オブジェクト。</returns>
+    </member>
+    <member name="P:System.Net.WebRequest.Headers">
+      <summary>派生クラスでオーバーライドされると、要求に関連付けられたヘッダーの名前/値ペアのコレクションを取得または設定します。</summary>
+      <returns>要求に関連付けられたヘッダーの名前/値ペアを格納する <see cref="T:System.Net.WebHeaderCollection" />。</returns>
+      <exception cref="T:System.NotImplementedException">プロパティが派生クラスでオーバーライドされていないのに、そのプロパティの取得または設定が試行されました。</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="P:System.Net.WebRequest.Method">
+      <summary>派生クラスでオーバーライドされると、要求で使用するプロトコル メソッドを取得または設定します。</summary>
+      <returns>要求で使用するプロトコル メソッド。</returns>
+      <exception cref="T:System.NotImplementedException">プロパティが派生クラスでオーバーライドされていないのに、そのプロパティの取得または設定が試行されました。</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="P:System.Net.WebRequest.Proxy">
+      <summary>派生クラスでオーバーライドされると、インターネット リソースにアクセスするために使用するネットワーク プロキシを取得または設定します。</summary>
+      <returns>インターネット リソースにアクセスするために使用する <see cref="T:System.Net.IWebProxy" />。</returns>
+      <exception cref="T:System.NotImplementedException">プロパティが派生クラスでオーバーライドされていないのに、そのプロパティの取得または設定が試行されました。</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Net.WebRequest.RegisterPrefix(System.String,System.Net.IWebRequestCreate)">
+      <summary>指定した URI 用の <see cref="T:System.Net.WebRequest" /> 派生クラスを登録します。</summary>
+      <returns>登録が成功した場合は true。それ以外の場合は false。</returns>
+      <param name="prefix">
+        <see cref="T:System.Net.WebRequest" /> 派生クラスが処理する完全な URI または URI プリフィックス。</param>
+      <param name="creator">
+        <see cref="T:System.Net.WebRequest" /> が <see cref="T:System.Net.WebRequest" /> 派生クラスを作成するために呼び出す作成メソッド。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="prefix" /> がnull または <paramref name="creator" /> は null です。</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="ControlEvidence" />
+        <IPermission class="System.Net.WebPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+      </PermissionSet>
+    </member>
+    <member name="P:System.Net.WebRequest.RequestUri">
+      <summary>派生クラスでオーバーライドされると、要求に関連付けられたインターネット リソースの URI を取得します。</summary>
+      <returns>要求に関連付けられているリソースを表す <see cref="T:System.Uri" />。</returns>
+      <exception cref="T:System.NotImplementedException">プロパティが派生クラスでオーバーライドされていないのに、そのプロパティの取得または設定が試行されました。</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="P:System.Net.WebRequest.UseDefaultCredentials">
+      <summary>派生クラスでオーバーライドされる場合、<see cref="P:System.Net.CredentialCache.DefaultCredentials" /> が要求と共に送信されるかどうかを制御する <see cref="T:System.Boolean" /> 値を取得または設定します。</summary>
+      <returns>既定の資格情報を使用する場合は true。それ以外の場合は false。 既定値 false です。</returns>
+      <exception cref="T:System.InvalidOperationException">要求が送信された後で、このプロパティを設定しようとしました。</exception>
+      <exception cref="T:System.NotImplementedException">プロパティが派生クラスでオーバーライドされていないのに、そのプロパティへのアクセスが試行されました。</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="T:System.Net.WebResponse">
+      <summary>URI (Uniform Resource Identifier) からの応答を利用できるようにします。 これは abstract クラスです。</summary>
+    </member>
+    <member name="M:System.Net.WebResponse.#ctor">
+      <summary>
+        <see cref="T:System.Net.WebResponse" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="P:System.Net.WebResponse.ContentLength">
+      <summary>派生クラスでオーバーライドされると、受信しているデータのコンテンツ長を取得または設定します。</summary>
+      <returns>インターネット リソースから返されるバイト数。</returns>
+      <exception cref="T:System.NotSupportedException">プロパティが派生クラスでオーバーライドされていないのに、そのプロパティの取得または設定が試行されました。</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="P:System.Net.WebResponse.ContentType">
+      <summary>派生クラスでオーバーライドされると、受信しているデータのコンテンツ タイプを取得または設定します。</summary>
+      <returns>応答のコンテンツ タイプを格納する文字列。</returns>
+      <exception cref="T:System.NotSupportedException">プロパティが派生クラスでオーバーライドされていないのに、そのプロパティの取得または設定が試行されました。</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Net.WebResponse.Dispose">
+      <summary>
+        <see cref="T:System.Net.WebResponse" /> オブジェクトによって使用されているアンマネージ リソースを解放します。</summary>
+    </member>
+    <member name="M:System.Net.WebResponse.Dispose(System.Boolean)">
+      <summary>
+        <see cref="T:System.Net.WebResponse" /> オブジェクトが使用しているアンマネージ リソースを解放します。オプションでマネージ リソースも破棄します。</summary>
+      <param name="disposing">マネージ リソースとアンマネージ リソースの両方を解放する場合は true。アンマネージ リソースだけを解放する場合は false。</param>
+    </member>
+    <member name="M:System.Net.WebResponse.GetResponseStream">
+      <summary>派生クラスでオーバーライドされると、インターネット リソースからデータ ストリームを返します。</summary>
+      <returns>インターネット リソースからデータを読み取るための <see cref="T:System.IO.Stream" /> クラスのインスタンス。</returns>
+      <exception cref="T:System.NotSupportedException">メソッドが派生クラスでオーバーライドされていないのに、そのメソッドへのアクセスが試行されました。</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="P:System.Net.WebResponse.Headers">
+      <summary>派生クラスでオーバーライドされると、この要求に関連付けられたヘッダーの名前と値のペアのコレクションを取得します。</summary>
+      <returns>この応答に関連付けられているヘッダーの値を格納している <see cref="T:System.Net.WebHeaderCollection" /> クラスのインスタンス。</returns>
+      <exception cref="T:System.NotSupportedException">プロパティが派生クラスでオーバーライドされていないのに、そのプロパティの取得または設定が試行されました。</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="P:System.Net.WebResponse.ResponseUri">
+      <summary>派生クラスでオーバーライドされると、要求に実際に応答したインターネット リソースの URI を取得します。</summary>
+      <returns>要求に実際に応答したインターネット リソースの URI を格納する <see cref="T:System.Uri" /> クラスのインスタンス。</returns>
+      <exception cref="T:System.NotSupportedException">プロパティが派生クラスでオーバーライドされていないのに、そのプロパティの取得または設定が試行されました。</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="P:System.Net.WebResponse.SupportsHeaders">
+      <summary>ヘッダーがサポートされているかどうかを示す値を取得します。</summary>
+      <returns>
+        <see cref="T:System.Boolean" /> を返します。 ヘッダーがサポートされる場合は true。それ以外の場合は false。</returns>
+    </member>
+  </members>
+</doc>

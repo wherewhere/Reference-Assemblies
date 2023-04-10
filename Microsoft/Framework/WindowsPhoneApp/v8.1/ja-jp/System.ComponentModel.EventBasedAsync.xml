@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.ComponentModel.EventBasedAsync</name>
+  </assembly>
+  <members>
+    <member name="T:System.ComponentModel.AsyncCompletedEventArgs">
+      <summary>MethodNameCompleted イベントのデータを提供します。</summary>
+    </member>
+    <member name="M:System.ComponentModel.AsyncCompletedEventArgs.#ctor(System.Exception,System.Boolean,System.Object)">
+      <summary>
+        <see cref="T:System.ComponentModel.AsyncCompletedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="error">非同期操作中に発生したエラー。</param>
+      <param name="cancelled">非同期操作がキャンセルされたかどうかを示す値。</param>
+      <param name="userState">
+        <see cref="M:System.ComponentModel.BackgroundWorker.RunWorkerAsync(System.Object)" /> メソッドに渡される、オプションのユーザー指定の状態オブジェクト。</param>
+    </member>
+    <member name="P:System.ComponentModel.AsyncCompletedEventArgs.Cancelled">
+      <summary>非同期操作がキャンセルされたかどうかを示す値を取得します。</summary>
+      <returns>バックグラウンドでの操作がキャンセルされた場合は true。それ以外の場合は false。 既定値は、false です。</returns>
+    </member>
+    <member name="P:System.ComponentModel.AsyncCompletedEventArgs.Error">
+      <summary>非同期操作中に発生したエラーを示す値を取得します。</summary>
+      <returns>非同期操作中にエラーが発生した場合は <see cref="T:System.Exception" /> インスタンス。それ以外の場合は null。</returns>
+    </member>
+    <member name="M:System.ComponentModel.AsyncCompletedEventArgs.RaiseExceptionIfNecessary">
+      <summary>非同期操作が失敗した場合は、ユーザー指定の例外を発生させます。</summary>
+      <exception cref="T:System.InvalidOperationException">
+        <see cref="P:System.ComponentModel.AsyncCompletedEventArgs.Cancelled" /> プロパティが true である。</exception>
+      <exception cref="T:System.Reflection.TargetInvocationException">
+        <see cref="P:System.ComponentModel.AsyncCompletedEventArgs.Error" /> プロパティは、非同期操作によって設定されています。 <see cref="P:System.Exception.InnerException" /> プロパティは、<see cref="P:System.ComponentModel.AsyncCompletedEventArgs.Error" /> への参照を保持します。</exception>
+    </member>
+    <member name="P:System.ComponentModel.AsyncCompletedEventArgs.UserState">
+      <summary>非同期タスクの一意の識別子を取得します。</summary>
+      <returns>非同期タスクを一意に識別するオブジェクト参照。値が設定されていない場合は null。</returns>
+    </member>
+    <member name="T:System.ComponentModel.AsyncCompletedEventHandler">
+      <summary>非同期操作の MethodNameCompleted イベントを処理するメソッドを表します。</summary>
+    </member>
+    <member name="M:System.ComponentModel.AsyncCompletedEventHandler.#ctor(System.Object,System.IntPtr)">
+    </member>
+    <member name="M:System.ComponentModel.AsyncCompletedEventHandler.BeginInvoke(System.Object,System.ComponentModel.AsyncCompletedEventArgs,System.AsyncCallback,System.Object)">
+    </member>
+    <member name="M:System.ComponentModel.AsyncCompletedEventHandler.EndInvoke(System.IAsyncResult)">
+    </member>
+    <member name="M:System.ComponentModel.AsyncCompletedEventHandler.Invoke(System.Object,System.ComponentModel.AsyncCompletedEventArgs)">
+    </member>
+    <member name="T:System.ComponentModel.ProgressChangedEventArgs">
+      <summary>
+        <see cref="E:System.ComponentModel.BackgroundWorker.ProgressChanged" /> イベントにデータを提供します。</summary>
+    </member>
+    <member name="M:System.ComponentModel.ProgressChangedEventArgs.#ctor(System.Int32,System.Object)">
+      <summary>
+        <see cref="T:System.ComponentModel.ProgressChangedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="progressPercentage">非同期タスクが完了した割合。</param>
+      <param name="userState">一意のユーザー状態。</param>
+    </member>
+    <member name="P:System.ComponentModel.ProgressChangedEventArgs.ProgressPercentage">
+      <summary>非同期タスクの進行状況の割合を取得します。</summary>
+      <returns>非同期タスクの進行状況を示す割合値。</returns>
+    </member>
+    <member name="P:System.ComponentModel.ProgressChangedEventArgs.UserState">
+      <summary>一意のユーザー状態を取得します。</summary>
+      <returns>ユーザー状態を示す一意の <see cref="T:System.Object" />。</returns>
+    </member>
+    <member name="T:System.ComponentModel.ProgressChangedEventHandler">
+      <summary>
+        <see cref="T:System.ComponentModel.BackgroundWorker" /> クラスの <see cref="E:System.ComponentModel.BackgroundWorker.ProgressChanged" /> イベントを処理するメソッドを表します。 このクラスは継承できません。</summary>
+    </member>
+    <member name="M:System.ComponentModel.ProgressChangedEventHandler.#ctor(System.Object,System.IntPtr)">
+    </member>
+    <member name="M:System.ComponentModel.ProgressChangedEventHandler.BeginInvoke(System.Object,System.ComponentModel.ProgressChangedEventArgs,System.AsyncCallback,System.Object)">
+    </member>
+    <member name="M:System.ComponentModel.ProgressChangedEventHandler.EndInvoke(System.IAsyncResult)">
+    </member>
+    <member name="M:System.ComponentModel.ProgressChangedEventHandler.Invoke(System.Object,System.ComponentModel.ProgressChangedEventArgs)">
+    </member>
+  </members>
+</doc>

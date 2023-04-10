@@ -1,0 +1,500 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.Diagnostics.Tracing</name>
+  </assembly>
+  <members>
+    <member name="T:System.Diagnostics.Tracing.EventAttribute">
+      <summary>Especifica información adicional del esquema de eventos para un evento.</summary>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventAttribute.#ctor(System.Int32)">
+      <summary>Inicializa una nueva instancia de la clase <see cref="T:System.Diagnostics.Tracing.EventAttribute" /> con el identificador de eventos especificado.</summary>
+      <param name="eventId">Identificador de eventos para el evento.</param>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventAttribute.EventId">
+      <summary>Obtiene o establece el identificador del evento.</summary>
+      <returns>Identificador de evento. Este valor debería ser mayor que 0.</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventAttribute.Keywords">
+      <summary>Obtiene o establece las palabras clave del evento.</summary>
+      <returns>Combinación bit a bit de los valores de la enumeración.</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventAttribute.Level">
+      <summary>Obtiene o establece el nivel del evento.</summary>
+      <returns>Uno de los valores de enumeración que especifica el nivel para el evento.</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventAttribute.Message">
+      <summary>Obtiene o establece el mensaje del evento.</summary>
+      <returns>El mensaje del evento.</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventAttribute.Opcode">
+      <summary>Obtiene o establece el código de operación para el evento.</summary>
+      <returns>Uno de los valores de la enumeración que especifica el código de operación.</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventAttribute.Task">
+      <summary>Obtiene o establece la tarea del evento.</summary>
+      <returns>Tarea para el evento.</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventAttribute.Version">
+      <summary>Obtiene o establece la versión del evento.</summary>
+      <returns>Versión del evento.</returns>
+    </member>
+    <member name="T:System.Diagnostics.Tracing.EventCommand">
+      <summary>Describe el comando (propiedad <see cref="P:System.Diagnostics.Tracing.EventCommandEventArgs.Command" />) que se pasa a la devolución de llamada del método <see cref="M:System.Diagnostics.Tracing.EventSource.OnEventCommand(System.Diagnostics.Tracing.EventCommandEventArgs)" />.</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventCommand.Disable">
+      <summary>Deshabilita el evento.</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventCommand.Enable">
+      <summary>Habilite el evento.</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventCommand.SendManifest">
+      <summary>Envíe el manifiesto.</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventCommand.Update">
+      <summary>Actualiza el evento.</summary>
+    </member>
+    <member name="T:System.Diagnostics.Tracing.EventCommandEventArgs">
+      <summary>Proporciona los argumentos para la devolución de llamada de <see cref="M:System.Diagnostics.Tracing.EventSource.OnEventCommand(System.Diagnostics.Tracing.EventCommandEventArgs)" />.</summary>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventCommandEventArgs.Arguments">
+      <summary>Obtiene la matriz de argumentos para la devolución de llamada.</summary>
+      <returns>Matriz de argumentos de devolución de llamada.</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventCommandEventArgs.Command">
+      <summary>Obtiene el comando para la devolución de llamada.</summary>
+      <returns>El comando de devolución de llamada.</returns>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventCommandEventArgs.DisableEvent(System.Int32)">
+      <summary>Deshabilita el evento que tiene el identificador especificado.</summary>
+      <returns>Es true si <paramref name="eventId" /> se encuentra en el intervalo; de lo contrario, false.</returns>
+      <param name="eventId">Identificador del evento que se va a deshabilitar.</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventCommandEventArgs.EnableEvent(System.Int32)">
+      <summary>Habilita el evento que tiene el identificador especificado.</summary>
+      <returns>Es true si <paramref name="eventId" /> se encuentra en el intervalo; de lo contrario, false.</returns>
+      <param name="eventId">Identificador del evento que se va a habilitar.</param>
+    </member>
+    <member name="T:System.Diagnostics.Tracing.EventKeywords">
+      <summary>Define las palabras clave estándar que se aplican a los eventos.</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventKeywords.AuditFailure">
+      <summary>Se asocia a todos los eventos de auditoría de seguridad que dan error. Use esta palabra clave solo para eventos del registro de seguridad.</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventKeywords.AuditSuccess">
+      <summary>Se asocia a todos los eventos de auditoría de seguridad correctos. Use esta palabra clave solo para eventos del registro de seguridad.</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventKeywords.CorrelationHint">
+      <summary>Se asocia para transferir los eventos donde el identificador de actividad relacionado (identificador de correlación) es un valor calculado y no se garantiza que sea único (es decir, no es un auténtico GUID).</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventKeywords.EventLogClassic">
+      <summary>Se adjunta a los eventos que se provocan utilizando la función RaiseEvent.</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventKeywords.None">
+      <summary>No se realiza ningún filtrado en las palabras clave cuando se publica el evento.</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventKeywords.Sqm">
+      <summary>Se asocia a todos los eventos de Mecanismo de calidad de servicio (SQM).</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventKeywords.WdiContext">
+      <summary>Se asocia a todos los eventos del contexto de la Infraestructura de diagnóstico de Windows (WDI).</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventKeywords.WdiDiagnostic">
+      <summary>Se asocia a todos los eventos de diagnóstico de la Infraestructura de diagnóstico de Windows (WDI).</summary>
+    </member>
+    <member name="T:System.Diagnostics.Tracing.EventLevel">
+      <summary>Identifica el nivel de un evento.</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventLevel.Critical">
+      <summary>Este nivel corresponde a errores críticos, que son errores graves que derivan en un error irrecuperable.</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventLevel.Error">
+      <summary>Este nivel agrega los errores comunes que suponen un problema.</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventLevel.Informational">
+      <summary>Este nivel agrega mensajes o eventos informativos que no indican errores. Estos eventos pueden ser de ayuda para el seguimiento del progreso o estado de una aplicación.</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventLevel.LogAlways">
+      <summary>No se realiza filtrado de niveles durante el evento.</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventLevel.Verbose">
+      <summary>Este nivel agrega eventos o mensajes largos. Hace que se registren todos los eventos.</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventLevel.Warning">
+      <summary>Este nivel agrega eventos de advertencia (por ejemplo, eventos que se publican porque se está a punto de alcanzar la capacidad total de un disco).</summary>
+    </member>
+    <member name="T:System.Diagnostics.Tracing.EventListener">
+      <summary>Proporciona métodos para habilitar y deshabilitar eventos de orígenes de eventos.</summary>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventListener.#ctor">
+      <summary>Crea una nueva instancia de la clase <see cref="T:System.Diagnostics.Tracing.EventListener" />.</summary>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventListener.DisableEvents(System.Diagnostics.Tracing.EventSource)">
+      <summary>Deshabilita todos los eventos del origen de eventos especificado.</summary>
+      <param name="eventSource">Origen de evento para el que se van a deshabilitar eventos.</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventListener.Dispose">
+      <summary>Libera los recursos utilizados por la instancia actual de la clase <see cref="T:System.Diagnostics.Tracing.EventListener" />.</summary>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventListener.EnableEvents(System.Diagnostics.Tracing.EventSource,System.Diagnostics.Tracing.EventLevel)">
+      <summary>Habilita los eventos del origen de eventos especificado que tiene el nivel de detalle especificado o inferior.</summary>
+      <param name="eventSource">Origen de evento para el que se van a habilitar eventos.</param>
+      <param name="level">Nivel de eventos que se va a habilitar.</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventListener.EnableEvents(System.Diagnostics.Tracing.EventSource,System.Diagnostics.Tracing.EventLevel,System.Diagnostics.Tracing.EventKeywords)">
+      <summary>Habilita los eventos del origen de eventos especificado que tiene el nivel de detalle especificado o inferior, y los marcadores de palabras clave coincidentes.</summary>
+      <param name="eventSource">Origen de evento para el que se van a habilitar eventos.</param>
+      <param name="level">Nivel de eventos que se va a habilitar.</param>
+      <param name="matchAnyKeyword">Marcas de palabra clave necesarias para habilitar los eventos.</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventListener.EnableEvents(System.Diagnostics.Tracing.EventSource,System.Diagnostics.Tracing.EventLevel,System.Diagnostics.Tracing.EventKeywords,System.Collections.Generic.IDictionary{System.String,System.String})">
+      <summary>Habilita los eventos del origen de eventos especificado que tiene el nivel de detalle especificado o inferior, el marcador de palabra clave de evento correspondiente, y los argumentos coincidentes.</summary>
+      <param name="eventSource">Origen de evento para el que se van a habilitar eventos.</param>
+      <param name="level">Nivel de eventos que se va a habilitar.</param>
+      <param name="matchAnyKeyword">Marcas de palabra clave necesarias para habilitar los eventos.</param>
+      <param name="arguments">Los argumentos que se hacen coincidir para habilitar los eventos.</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventListener.EventSourceIndex(System.Diagnostics.Tracing.EventSource)">
+      <summary>Obtiene un pequeño número no negativo que representa el origen de eventos especificado.</summary>
+      <returns>Pequeño número no negativo que representa el origen de eventos especificado.</returns>
+      <param name="eventSource">Origen de evento cuyo índice se va a buscar.</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventListener.OnEventSourceCreated(System.Diagnostics.Tracing.EventSource)">
+      <summary>Llamado para todos los orígenes de eventos existentes cuando se crea el agente de escucha de eventos y cuando un nuevo origen de evento se asocia al agente de escucha.</summary>
+      <param name="eventSource">Origen del evento.</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventListener.OnEventWritten(System.Diagnostics.Tracing.EventWrittenEventArgs)">
+      <summary>Se llama siempre que un evento ha sido escrito por un origen de eventos para el que el agente de escucha de eventos ha habilitado los eventos.</summary>
+      <param name="eventData">Argumentos de evento que describen el evento.</param>
+    </member>
+    <member name="T:System.Diagnostics.Tracing.EventOpcode">
+      <summary>Define los códigos de operación estándar que el origen de eventos adjunta a los eventos.</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventOpcode.DataCollectionStart">
+      <summary>Un evento de inicio de la colección de seguimiento.</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventOpcode.DataCollectionStop">
+      <summary>Un evento de detención de la colección de seguimiento.</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventOpcode.Extension">
+      <summary>Evento de extensión.</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventOpcode.Info">
+      <summary>Evento de información.</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventOpcode.Receive">
+      <summary>Se publica un evento cuando una actividad en una aplicación recibe datos.</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventOpcode.Reply">
+      <summary>Se publica un evento después de que una actividad en una aplicación responda a un evento.</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventOpcode.Resume">
+      <summary>Se publica un evento después de que una actividad en una aplicación se reanude desde un estado suspendido. El evento debe ir detrás de un evento con el código de operación <see cref="F:System.Diagnostics.Tracing.EventOpcode.Suspend" />.</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventOpcode.Send">
+      <summary>Se publica un evento cuando una actividad en una aplicación transfiere datos o recursos del sistema a otra actividad.</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventOpcode.Start">
+      <summary>Se publica un evento cuando una aplicación inicia una nueva transacción o actividad. Este código de operación se puede incrustar dentro de otra transacción o actividad cuando varios eventos que hacen que el código de <see cref="F:System.Diagnostics.Tracing.EventOpcode.Start" /> se sigan unos a otros sin un evento intermedio que tiene un código de <see cref="F:System.Diagnostics.Tracing.EventOpcode.Stop" />.</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventOpcode.Stop">
+      <summary>Se publica un evento cuando finaliza una actividad o transacción en una aplicación. El evento corresponde al último evento no emparejado que tiene un código de operación <see cref="F:System.Diagnostics.Tracing.EventOpcode.Start" />.</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventOpcode.Suspend">
+      <summary>Se publica un evento cuando se suspende una actividad en una aplicación.</summary>
+    </member>
+    <member name="T:System.Diagnostics.Tracing.EventSource">
+      <summary>Proporciona la capacidad de crear eventos de seguimiento de eventos para Windows (ETW).</summary>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.#ctor">
+      <summary>Crea una nueva instancia de la clase <see cref="T:System.Diagnostics.Tracing.EventSource" />.</summary>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.#ctor(System.Boolean)">
+      <summary>Crea una nueva instancia de la clase <see cref="T:System.Diagnostics.Tracing.EventSource" /> y especifica si se inicia una excepción cuando se produce un error en el código subyacente de Windows.</summary>
+      <param name="throwOnEventWriteErrors">true para producir una excepción cuando se produce un error en el código subyacente de Windows; si no, false.</param>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventSource.ConstructionException">
+      <summary>Obtiene cualquier excepción que se produjo durante la construcción de un origen de eventos.</summary>
+      <returns>La excepción que se produjo durante la construcción de un origen de eventos, o null si no se produjo ninguna excepción.</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventSource.CurrentThreadActivityId">
+      <summary>Obtiene el id. de actividad del subproceso actual.</summary>
+      <returns>Id. de actividad del subproceso actual.</returns>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.Dispose">
+      <summary>Libera todos los recursos usados por la instancia actual de la clase <see cref="T:System.Diagnostics.Tracing.EventSource" />.</summary>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.Dispose(System.Boolean)">
+      <summary>Libera los recursos no administrados utilizados por la clase <see cref="T:System.Diagnostics.Tracing.EventSource" /> y, de forma opcional, libera los recursos administrados.</summary>
+      <param name="disposing">Es true para liberar tanto recursos administrados como no administrados; es false para liberar únicamente recursos no administrados.</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.Finalize">
+      <summary>Permite que el objeto <see cref="T:System.Diagnostics.Tracing.EventSource" /> intente liberar recursos y realizar otras operaciones de limpieza antes de que la recolección de elementos no utilizados lo reclame.</summary>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.GenerateManifest(System.Type,System.String)">
+      <summary>Devuelve una cadena del manifiesto XML asociado al origen de eventos actual.</summary>
+      <returns>Cadena de datos XML.</returns>
+      <param name="eventSourceType">Tipo del origen del evento.</param>
+      <param name="assemblyPathToIncludeInManifest">La ruta de acceso al archivo .dll para incluir en el manifiesto.</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.GetGuid(System.Type)">
+      <summary>Obtiene el identificador único de esta implementación del origen del evento.</summary>
+      <returns>Un identificador único para este tipo de origen de eventos.</returns>
+      <param name="eventSourceType">Tipo del origen del evento.</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.GetName(System.Type)">
+      <summary>Obtiene el nombre descriptivo del origen del evento.</summary>
+      <returns>Nombre descriptivo del origen del evento. El valor predeterminado es el nombre sencillo de la clase.</returns>
+      <param name="eventSourceType">Tipo del origen del evento.</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.GetSources">
+      <summary>Obtiene una instantánea de todos los orígenes de eventos para el dominio de aplicación.</summary>
+      <returns>Una enumeración de todos los orígenes de eventos del dominio de aplicación.</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventSource.Guid">
+      <summary>Identificador único para el origen de eventos.</summary>
+      <returns>Un identificador único para el origen de eventos.</returns>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.IsEnabled">
+      <summary>Determina si el origen de eventos actual está habilitado.</summary>
+      <returns>true si el origen del evento actual está habilitado; en caso contrario, false.</returns>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.IsEnabled(System.Diagnostics.Tracing.EventLevel,System.Diagnostics.Tracing.EventKeywords)">
+      <summary>Determina si el origen de eventos actual que tiene el nivel y la palabra clave especificados está habilitado.</summary>
+      <returns>true si el origen del evento está habilitado; en caso contrario, false.</returns>
+      <param name="level">Nivel del origen del evento.</param>
+      <param name="keywords">Palabra clave del origen del evento.</param>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventSource.Name">
+      <summary>Nombre descriptivo de la clase que se deriva del origen de eventos.</summary>
+      <returns>Nombre descriptivo de la clase derivada.  El valor predeterminado es el nombre sencillo de la clase.</returns>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.OnEventCommand(System.Diagnostics.Tracing.EventCommandEventArgs)">
+      <summary>Se llama cuando el origen de eventos actual es actualizado por el controlador.</summary>
+      <param name="command">Argumentos del evento.</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.SendCommand(System.Diagnostics.Tracing.EventSource,System.Diagnostics.Tracing.EventCommand,System.Collections.Generic.IDictionary{System.String,System.String})">
+      <summary>Envía un comando a un origen de eventos especificado.</summary>
+      <param name="eventSource">Origen de evento al que se va a enviar el comando.</param>
+      <param name="command">Comando de evento que se va a enviar.</param>
+      <param name="commandArguments">Argumentos del comando de eventos.</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.SetCurrentThreadActivityId(System.Guid)">
+      <summary>Establece el id. de actividad del subproceso actual.</summary>
+      <param name="activityId">Nuevo identificador de actividad del subproceso actual o <see cref="F:System.Guid.Empty" /> para indicar que el trabajo en el subproceso actual no está asociado con ninguna actividad.</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.SetCurrentThreadActivityId(System.Guid,System.Guid@)">
+      <summary>Establece el identificador de actividad en el subproceso actual y devuelve el identificador de la actividad anterior.</summary>
+      <param name="activityId">Nuevo identificador de actividad del subproceso actual o <see cref="F:System.Guid.Empty" /> para indicar que el trabajo en el subproceso actual no está asociado con ninguna actividad.</param>
+      <param name="oldActivityThatWillContinue">El resultado que devuelve este método contiene el identificador de la actividad anterior en el subproceso actual.</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.ToString">
+      <summary>Obtiene una representación de cadena de la instancia del origen de eventos actual.</summary>
+      <returns>Nombre e identificador único que identifican el origen de eventos actual.</returns>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.WriteEvent(System.Int32)">
+      <summary>Escribe un evento con el identificador de eventos proporcionado.</summary>
+      <param name="eventId">Identificador de evento. Este valor debería ser mayor que 0.</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.WriteEvent(System.Int32,System.Int32)">
+      <summary>Escribe un evento con el identificador de eventos y el argumento entero de 32 bits especificados.</summary>
+      <param name="eventId">Identificador de evento. Este valor debería ser mayor que 0.</param>
+      <param name="arg1">Argumento de tipo entero.</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.WriteEvent(System.Int32,System.Int32,System.Int32)">
+      <summary>Escribe un evento con el identificador de eventos y los argumentos enteros de 32 bits especificados.</summary>
+      <param name="eventId">Identificador de evento. Este valor debería ser mayor que 0.</param>
+      <param name="arg1">Argumento de tipo entero.</param>
+      <param name="arg2">Argumento de tipo entero.</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.WriteEvent(System.Int32,System.Int32,System.Int32,System.Int32)">
+      <summary>Escribe un evento con el identificador de eventos y los argumentos enteros de 32 bits especificados.</summary>
+      <param name="eventId">Identificador de evento. Este valor debería ser mayor que 0.</param>
+      <param name="arg1">Argumento de tipo entero.</param>
+      <param name="arg2">Argumento de tipo entero.</param>
+      <param name="arg3">Argumento de tipo entero.</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.WriteEvent(System.Int32,System.Int64)">
+      <summary>Escribe un evento con el identificador de eventos y el argumento entero de 64 bits especificados.</summary>
+      <param name="eventId">Identificador de evento. Este valor debería ser mayor que 0.</param>
+      <param name="arg1">Argumento de tipo entero de 64 bits.</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.WriteEvent(System.Int32,System.Int64,System.Int64)">
+      <summary>Escribe un evento con el identificador de eventos y los argumentos de 64 bits especificados.</summary>
+      <param name="eventId">Identificador de evento. Este valor debería ser mayor que 0.</param>
+      <param name="arg1">Argumento de tipo entero de 64 bits.</param>
+      <param name="arg2">Argumento de tipo entero de 64 bits.</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.WriteEvent(System.Int32,System.Int64,System.Int64,System.Int64)">
+      <summary>Escribe un evento con el identificador de eventos y los argumentos de 64 bits especificados.</summary>
+      <param name="eventId">Identificador de evento. Este valor debería ser mayor que 0.</param>
+      <param name="arg1">Argumento de tipo entero de 64 bits.</param>
+      <param name="arg2">Argumento de tipo entero de 64 bits.</param>
+      <param name="arg3">Argumento de tipo entero de 64 bits.</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.WriteEvent(System.Int32,System.Object[])">
+      <summary>Escribe un evento con el identificador de eventos y la matriz de argumentos especificados.</summary>
+      <param name="eventId">Identificador de evento. Este valor debería ser mayor que 0.</param>
+      <param name="args">Matriz de objetos.</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.WriteEvent(System.Int32,System.String)">
+      <summary>Escribe un evento con el identificador de eventos y el argumento de cadena especificados.</summary>
+      <param name="eventId">Identificador de evento. Este valor debería ser mayor que 0.</param>
+      <param name="arg1">Argumento de cadena.</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.WriteEvent(System.Int32,System.String,System.Int32)">
+      <summary>Escribe un evento con el identificador de eventos y los argumentos especificados.</summary>
+      <param name="eventId">Identificador de evento. Este valor debería ser mayor que 0.</param>
+      <param name="arg1">Argumento de cadena.</param>
+      <param name="arg2">Argumento de tipo entero de 32 bits.</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.WriteEvent(System.Int32,System.String,System.Int32,System.Int32)">
+      <summary>Escribe un evento con el identificador de eventos y los argumentos especificados.</summary>
+      <param name="eventId">Identificador de evento. Este valor debería ser mayor que 0.</param>
+      <param name="arg1">Argumento de cadena.</param>
+      <param name="arg2">Argumento de tipo entero de 32 bits.</param>
+      <param name="arg3">Argumento de tipo entero de 32 bits.</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.WriteEvent(System.Int32,System.String,System.Int64)">
+      <summary>Escribe un evento con el identificador de eventos y los argumentos especificados.</summary>
+      <param name="eventId">Identificador de evento. Este valor debería ser mayor que 0.</param>
+      <param name="arg1">Argumento de cadena.</param>
+      <param name="arg2">Argumento de tipo entero de 64 bits.</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.WriteEvent(System.Int32,System.String,System.String)">
+      <summary>Escribe un evento con el identificador de eventos y los argumentos de cadena especificados.</summary>
+      <param name="eventId">Identificador de evento. Este valor debería ser mayor que 0.</param>
+      <param name="arg1">Argumento de cadena.</param>
+      <param name="arg2">Argumento de cadena.</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.WriteEvent(System.Int32,System.String,System.String,System.String)">
+      <summary>Escribe un evento con el identificador de eventos y los argumentos de cadena especificados.</summary>
+      <param name="eventId">Identificador de evento. Este valor debería ser mayor que 0.</param>
+      <param name="arg1">Argumento de cadena.</param>
+      <param name="arg2">Argumento de cadena.</param>
+      <param name="arg3">Argumento de cadena.</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.WriteEventCore(System.Int32,System.Int32,System.Diagnostics.Tracing.EventSource.EventData*)">
+      <summary>Crea una nueva sobrecarga del método <see cref="Overload:System.Diagnostics.Tracing.EventSource.WriteEvent" /> usando el identificador de eventos y los datos de eventos proporcionados.</summary>
+      <param name="eventId">Identificador de evento.</param>
+      <param name="eventDataCount">El número de elementos de datos de eventos.</param>
+      <param name="data">Estructura que contiene los datos del evento.</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.WriteEventWithRelatedActivityId(System.Int32,System.Guid,System.Object[])">
+      <summary>Escribe un evento que indica que la actividad actual se relaciona con otra actividad.</summary>
+      <param name="eventId">Un identificador que identifica de forma única este evento dentro de <see cref="T:System.Diagnostics.Tracing.EventSource" />.</param>
+      <param name="childActivityID">El identificador de actividad relacionado.</param>
+      <param name="args">Matriz de objetos que contiene los datos del evento.</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSource.WriteEventWithRelatedActivityIdCore(System.Int32,System.Guid*,System.Int32,System.Diagnostics.Tracing.EventSource.EventData*)">
+      <summary>Escribe un evento que indica que la actividad actual se relaciona con otra actividad.</summary>
+      <param name="eventId">Un identificador que identifica de forma única este evento dentro de <see cref="T:System.Diagnostics.Tracing.EventSource" />.</param>
+      <param name="childActivityID">Puntero a la interfaz de usuario del id. de la actividad secundaria.</param>
+      <param name="eventDataCount">Número de elementos del campo <paramref name="data" />.</param>
+      <param name="data">Un puntero al primer elemento del campo de datos de evento.</param>
+    </member>
+    <member name="T:System.Diagnostics.Tracing.EventSource.EventData">
+      <summary>Proporciona los datos de evento para crear sobrecargas rápidas de <see cref="Overload:System.Diagnostics.Tracing.EventSource.WriteEvent" /> con el método <see cref="M:System.Diagnostics.Tracing.EventSource.WriteEventCore(System.Int32,System.Int32,System.Diagnostics.Tracing.EventSource.EventData*)" />.</summary>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventSource.EventData.DataPointer">
+      <summary>Obtiene o establece el puntero a los datos de la nueva sobrecarga de <see cref="Overload:System.Diagnostics.Tracing.EventSource.WriteEvent" />.</summary>
+      <returns>Puntero a los datos.</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventSource.EventData.Size">
+      <summary>Obtiene o establece el número de elementos de carga en la nueva sobrecarga de <see cref="Overload:System.Diagnostics.Tracing.EventSource.WriteEvent" />.</summary>
+      <returns>El número de elementos de carga en la nueva sobrecarga.</returns>
+    </member>
+    <member name="T:System.Diagnostics.Tracing.EventSourceAttribute">
+      <summary>Permite que el seguimiento de eventos para el nombre Windows (ETW) se defina independientemente del nombre de la clase del origen de eventos.</summary>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSourceAttribute.#ctor">
+      <summary>Inicializa una nueva instancia de la clase <see cref="T:System.Diagnostics.Tracing.EventSourceAttribute" />.</summary>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventSourceAttribute.Guid">
+      <summary>Obtiene o establece el identificador de origen de evento.</summary>
+      <returns>Identificador de origen del evento.</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventSourceAttribute.LocalizationResources">
+      <summary>Obtiene o establece el nombre del archivo de recursos de localización.</summary>
+      <returns>Nombre del archivo de recursos de localización, o null si no existe el archivo de recursos de localización.</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventSourceAttribute.Name">
+      <summary>Obtiene o establece el nombre del origen del evento.</summary>
+      <returns>Nombre del origen de eventos.</returns>
+    </member>
+    <member name="T:System.Diagnostics.Tracing.EventSourceException">
+      <summary>Excepción que se produce cuando ocurre un error durante el seguimiento de eventos para Windows (ETW).</summary>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSourceException.#ctor">
+      <summary>Inicializa una nueva instancia de la clase <see cref="T:System.Diagnostics.Tracing.EventSourceException" />.</summary>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSourceException.#ctor(System.String)">
+      <summary>Inicializa una nueva instancia de la clase <see cref="T:System.Diagnostics.Tracing.EventSourceException" /> con el mensaje de error especificado.</summary>
+      <param name="message">Mensaje que describe el error.</param>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.EventSourceException.#ctor(System.String,System.Exception)">
+      <summary>Inicializa una nueva instancia de la clase <see cref="T:System.Diagnostics.Tracing.EventSourceException" /> con el mensaje de error especificado y una referencia a la excepción interna que representa la causa de esta excepción.</summary>
+      <param name="message">Mensaje de error que explica la razón de la excepción.</param>
+      <param name="innerException">La excepción que es la causa de la excepción actual o null si no se especifica ninguna excepción interna.</param>
+    </member>
+    <member name="T:System.Diagnostics.Tracing.EventTask">
+      <summary>Define las tareas que se aplican a los eventos.</summary>
+    </member>
+    <member name="F:System.Diagnostics.Tracing.EventTask.None">
+      <summary>Tarea definida.</summary>
+    </member>
+    <member name="T:System.Diagnostics.Tracing.EventWrittenEventArgs">
+      <summary>Proporciona datos para la devolución de llamada <see cref="M:System.Diagnostics.Tracing.EventListener.OnEventWritten(System.Diagnostics.Tracing.EventWrittenEventArgs)" />.</summary>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventWrittenEventArgs.ActivityId">
+      <summary>Obtiene el id. de actividad del subproceso en el que se escribió el evento.</summary>
+      <returns>El id. de actividad del subproceso en el que se escribió el evento.</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventWrittenEventArgs.EventId">
+      <summary>Obtiene el identificador de evento.</summary>
+      <returns>Identificador de evento.</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventWrittenEventArgs.EventSource">
+      <summary>Obtiene el objeto de origen del evento.</summary>
+      <returns>Objeto de origen del evento.</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventWrittenEventArgs.Keywords">
+      <summary>Obtiene las palabras clave del evento.</summary>
+      <returns>Palabras clave para el evento.</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventWrittenEventArgs.Level">
+      <summary>Obtiene el nivel del evento.</summary>
+      <returns>Nivel del evento.</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventWrittenEventArgs.Message">
+      <summary>Obtiene el mensaje del evento.</summary>
+      <returns>El mensaje del evento.</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventWrittenEventArgs.Opcode">
+      <summary>Obtiene el código de operación para el evento.</summary>
+      <returns>Código de operación para el evento.</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventWrittenEventArgs.Payload">
+      <summary>Obtiene la carga del evento.</summary>
+      <returns>Carga para el evento.</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventWrittenEventArgs.RelatedActivityId">
+      <summary>Obtiene el identificador de una actividad relacionado con la actividad representada por la instancia actual.</summary>
+      <returns>El identificador de la actividad relacionada o <see cref="F:System.Guid.Empty" /> si no hay ninguna actividad relacionada.</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventWrittenEventArgs.Task">
+      <summary>Obtiene la tarea del evento.</summary>
+      <returns>Tarea para el evento.</returns>
+    </member>
+    <member name="P:System.Diagnostics.Tracing.EventWrittenEventArgs.Version">
+      <summary>Obtiene la versión del evento.</summary>
+      <returns>Versión del evento.</returns>
+    </member>
+    <member name="T:System.Diagnostics.Tracing.NonEventAttribute">
+      <summary>Identifica un método que no está generando un evento.</summary>
+    </member>
+    <member name="M:System.Diagnostics.Tracing.NonEventAttribute.#ctor">
+      <summary>Crea una nueva instancia de la clase <see cref="T:System.Diagnostics.Tracing.NonEventAttribute" />.</summary>
+    </member>
+  </members>
+</doc>

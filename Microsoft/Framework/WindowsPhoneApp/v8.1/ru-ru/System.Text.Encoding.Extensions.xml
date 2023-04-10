@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.Text.Encoding.Extensions</name>
+  </assembly>
+  <members>
+    <member name="T:System.Text.UnicodeEncoding">
+      <summary>Предоставляет кодировку символов Юникода в формате UTF-16.</summary>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UnicodeEncoding.#ctor">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.Text.UnicodeEncoding" />.</summary>
+    </member>
+    <member name="M:System.Text.UnicodeEncoding.#ctor(System.Boolean,System.Boolean)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.Text.UnicodeEncoding" />. Параметры указывают, следует ли использовать обратный порядок следования байтов и предоставлять ли метку порядка следования байтов Юникода.</summary>
+      <param name="bigEndian">Значение true соответствует использованию обратного порядка следования байтов (самый старший байт располагается на первом месте), значение false соответствует использованию прямого порядка следования байтов (на первом месте находится самый младший байт).</param>
+      <param name="byteOrderMark">true, чтобы указать, что предоставляется метка порядка следования байтов Юникода; в противном случае — false.</param>
+    </member>
+    <member name="M:System.Text.UnicodeEncoding.#ctor(System.Boolean,System.Boolean,System.Boolean)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.Text.UnicodeEncoding" />. Параметры указывают, следует ли использовать обратный порядок следования байтов, должна ли предоставляться метка порядка следования байтов Юникода и следует ли выдавать исключение при обнаружении недопустимой кодировки.</summary>
+      <param name="bigEndian">Значение true соответствует использованию обратного порядка следования байтов (самый старший байт располагается на первом месте), значение false соответствует использованию прямого порядка следования байтов (на первом месте находится самый младший байт).</param>
+      <param name="byteOrderMark">true, чтобы указать, что предоставляется метка порядка следования байтов Юникода; в противном случае — false.</param>
+      <param name="throwOnInvalidBytes">true, чтобы указать, что следует выдавать исключение при обнаружении недопустимой кодировки; в противном случае — false.</param>
+    </member>
+    <member name="M:System.Text.UnicodeEncoding.Equals(System.Object)">
+      <summary>Определяет, равен ли заданный объект <see cref="T:System.Object" /> текущему объекту <see cref="T:System.Text.UnicodeEncoding" />.</summary>
+      <returns>true, если параметр <paramref name="value" /> является экземпляром класса <see cref="T:System.Text.UnicodeEncoding" /> и равен текущему объекту; в противном случае — false.</returns>
+      <param name="value">Объект <see cref="T:System.Object" />, который требуется сравнить с текущим объектом.</param>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="M:System.Text.UnicodeEncoding.GetByteCount(System.Char[],System.Int32,System.Int32)">
+      <summary>Вычисляет число байтов, созданных при кодировании набора символов из указанного массива символов.</summary>
+      <returns>Число байтов, полученных при кодировании заданных символов.</returns>
+      <param name="chars">Массив символов, содержащий набор кодируемых символов.</param>
+      <param name="index">Индекс первого кодируемого символа.</param>
+      <param name="count">Число кодируемых символов.</param>
+      <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="chars" /> равно null (Nothing).</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="index" /> или <paramref name="count" /> меньше нуля. -или-  Значения параметров <paramref name="index" /> и <paramref name="count" /> не указывают допустимый диапазон в <paramref name="chars" />. -или-  Результирующее количество байтов больше максимального количества, которое может быть возвращено в виде целого числа.</exception>
+      <exception cref="T:System.ArgumentException">Включена функция обнаружения ошибок, <paramref name="chars" /> содержит недопустимую последовательность символов.</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">Использована альтернативная кодировка (подробное объяснение см. в разделе Кодировки в .NET Framework) и  Свойству <see cref="P:System.Text.Encoding.EncoderFallback" /> присвоено значение <see cref="T:System.Text.EncoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UnicodeEncoding.GetByteCount(System.String)">
+      <summary>Вычисляет количество байтов, созданных при кодировании символов в заданной <see cref="T:System.String" />.</summary>
+      <returns>Число байтов, полученных при кодировании заданных символов.</returns>
+      <param name="s">Объект <see cref="T:System.String" />, содержащий набор символов для кодирования.</param>
+      <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="s" /> равно null (Nothing).</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Результирующее количество байтов больше максимального количества, которое может быть возвращено в виде целого числа.</exception>
+      <exception cref="T:System.ArgumentException">Включена функция обнаружения ошибок, и параметр <paramref name="s" /> содержит недопустимую последовательность символов.</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">Использована альтернативная кодировка (подробное объяснение см. в разделе Кодировки в .NET Framework) и  Свойству <see cref="P:System.Text.Encoding.EncoderFallback" /> присвоено значение <see cref="T:System.Text.EncoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UnicodeEncoding.GetBytes(System.Char[],System.Int32,System.Int32,System.Byte[],System.Int32)">
+      <summary>Кодирует набор символов из заданного массива символов в указанный массив байтов.</summary>
+      <returns>Фактическое число байтов, записанных в <paramref name="bytes" />.</returns>
+      <param name="chars">Массив символов, содержащий набор кодируемых символов.</param>
+      <param name="charIndex">Индекс первого кодируемого символа.</param>
+      <param name="charCount">Число кодируемых символов.</param>
+      <param name="bytes">Массив байтов, в который будет помещена результирующая последовательность байтов.</param>
+      <param name="byteIndex">Индекс, с которого начинается запись результирующей последовательности байтов.</param>
+      <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="chars" /> равно null (Nothing). -или-  Значение параметра <paramref name="bytes" /> равно null (Nothing).</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="charIndex" />, <paramref name="charCount" /> или <paramref name="byteIndex" /> меньше нуля. -или-  Значения параметров <paramref name="charIndex" /> и <paramref name="charCount" /> не указывают допустимый диапазон в <paramref name="chars" />. -или-  Значение параметра <paramref name="byteIndex" /> не является допустимым индексом в <paramref name="bytes" />.</exception>
+      <exception cref="T:System.ArgumentException">Включена функция обнаружения ошибок, <paramref name="chars" /> содержит недопустимую последовательность символов. -или-  Недостаточно емкости <paramref name="bytes" /> от <paramref name="byteIndex" /> до конца массива для размещения полученных байтов.</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">Использована альтернативная кодировка (подробное объяснение см. в разделе Кодировки в .NET Framework) и  Свойству <see cref="P:System.Text.Encoding.EncoderFallback" /> присвоено значение <see cref="T:System.Text.EncoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UnicodeEncoding.GetBytes(System.String,System.Int32,System.Int32,System.Byte[],System.Int32)">
+      <summary>Кодирует набор символов из заданного параметра типа <see cref="T:System.String" /> в указанный массив байтов.</summary>
+      <returns>Фактическое число байтов, записанных в <paramref name="bytes" />.</returns>
+      <param name="s">Объект <see cref="T:System.String" />, содержащий набор символов для кодирования.</param>
+      <param name="charIndex">Индекс первого кодируемого символа.</param>
+      <param name="charCount">Число кодируемых символов.</param>
+      <param name="bytes">Массив байтов, в который будет помещена результирующая последовательность байтов.</param>
+      <param name="byteIndex">Индекс, с которого начинается запись результирующей последовательности байтов.</param>
+      <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="s" /> равно null (Nothing). -или-  Значение параметра <paramref name="bytes" /> равно null (Nothing).</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="charIndex" />, <paramref name="charCount" /> или <paramref name="byteIndex" /> меньше нуля. -или-  Значения параметров <paramref name="charIndex" /> и <paramref name="charCount" /> не указывают допустимый диапазон в <paramref name="chars" />. -или-  Значение параметра <paramref name="byteIndex" /> не является допустимым индексом в <paramref name="bytes" />.</exception>
+      <exception cref="T:System.ArgumentException">Включена функция обнаружения ошибок, и параметр <paramref name="s" /> содержит недопустимую последовательность символов. -или-  Недостаточно емкости <paramref name="bytes" /> от <paramref name="byteIndex" /> до конца массива для размещения полученных байтов.</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">Использована альтернативная кодировка (подробное объяснение см. в разделе Кодировки в .NET Framework) и  Свойству <see cref="P:System.Text.Encoding.EncoderFallback" /> присвоено значение <see cref="T:System.Text.EncoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UnicodeEncoding.GetCharCount(System.Byte[],System.Int32,System.Int32)">
+      <summary>Вычисляет количество символов, полученных при декодировании последовательности байтов из заданного массива байтов.</summary>
+      <returns>Число символов, полученных при декодировании заданной последовательности байтов.</returns>
+      <param name="bytes">Массив байтов, содержащий последовательность байтов, которую требуется декодировать.</param>
+      <param name="index">Индекс первого декодируемого байта.</param>
+      <param name="count">Число байтов для декодирования.</param>
+      <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="bytes" /> равно null (Nothing).</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="index" /> или <paramref name="count" /> меньше нуля. -или-  Значения параметров <paramref name="index" /> и <paramref name="count" /> не указывают допустимый диапазон в <paramref name="bytes" />. -или-  Результирующее количество байтов больше максимального количества, которое может быть возвращено в виде целого числа.</exception>
+      <exception cref="T:System.ArgumentException">Включена функция обнаружения ошибок, <paramref name="bytes" /> содержит недопустимую последовательность байтов.</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">Использована альтернативная кодировка (подробное объяснение см. в разделе Кодировки в .NET Framework) и  Свойству <see cref="P:System.Text.Encoding.DecoderFallback" /> присвоено значение <see cref="T:System.Text.DecoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UnicodeEncoding.GetChars(System.Byte[],System.Int32,System.Int32,System.Char[],System.Int32)">
+      <summary>Декодирует последовательность байтов из заданного массива байтов в указанный массив символов.</summary>
+      <returns>Фактическое число символов, записанных в <paramref name="chars" />.</returns>
+      <param name="bytes">Массив байтов, содержащий последовательность байтов, которую требуется декодировать.</param>
+      <param name="byteIndex">Индекс первого декодируемого байта.</param>
+      <param name="byteCount">Число байтов для декодирования.</param>
+      <param name="chars">Массив символов, в который будет помещен результирующий набор символов.</param>
+      <param name="charIndex">Индекс, с которого начинается запись результирующего набора символов.</param>
+      <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="bytes" /> равно null (Nothing). -или-  Значение параметра <paramref name="chars" /> равно null (Nothing).</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="byteIndex" />, <paramref name="byteCount" /> или <paramref name="charIndex" /> меньше нуля. -или-  Значения параметров <paramref name="byteindex" /> и <paramref name="byteCount" /> не указывают допустимый диапазон в <paramref name="bytes" />. -или-  Значение параметра <paramref name="charIndex" /> не является допустимым индексом в <paramref name="chars" />.</exception>
+      <exception cref="T:System.ArgumentException">Включена функция обнаружения ошибок, <paramref name="bytes" /> содержит недопустимую последовательность байтов. -или-  Недостаточно емкости <paramref name="chars" /> от <paramref name="charIndex" /> до конца массива для размещения полученных символов.</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">Использована альтернативная кодировка (подробное объяснение см. в разделе Кодировки в .NET Framework) и  Свойству <see cref="P:System.Text.Encoding.DecoderFallback" /> присвоено значение <see cref="T:System.Text.DecoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UnicodeEncoding.GetDecoder">
+      <summary>Получает средство декодирования, преобразующее последовательность байтов в кодировке UTF-16 в последовательность символов Юникода.</summary>
+      <returns>
+        <see cref="T:System.Text.Decoder" />, преобразующий последовательность байтов в кодировке UTF-16 в последовательность символов Юникода.</returns>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UnicodeEncoding.GetEncoder">
+      <summary>Получает средство кодирования, преобразующее последовательность символов Юникода в последовательность байтов в кодировке UTF-16.</summary>
+      <returns>Объект <see cref="T:System.Text.Encoder" />, преобразующий последовательность символов Юникода в последовательность байтов в кодировке UTF-16.</returns>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UnicodeEncoding.GetHashCode">
+      <summary>Возвращает хэш-код текущего экземпляра.</summary>
+      <returns>Хэш-код для текущего объекта <see cref="T:System.Text.UnicodeEncoding" />.</returns>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UnicodeEncoding.GetMaxByteCount(System.Int32)">
+      <summary>Вычисляет максимальное количество байтов, полученных при кодировании заданного числа символов.</summary>
+      <returns>Максимальное количество байтов, полученных при кодировании заданного количества символов.</returns>
+      <param name="charCount">Число кодируемых символов.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="charCount" /> меньше нуля. -или-  Результирующее количество байтов больше максимального количества, которое может быть возвращено в виде целого числа.</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">Использована альтернативная кодировка (подробное объяснение см. в разделе Кодировки в .NET Framework) и  Свойству <see cref="P:System.Text.Encoding.EncoderFallback" /> присвоено значение <see cref="T:System.Text.EncoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UnicodeEncoding.GetMaxCharCount(System.Int32)">
+      <summary>Вычисляет максимальное количество символов, полученных при декодировании заданного числа байтов.</summary>
+      <returns>Максимальное количество символов, полученных при декодировании заданного количества байтов.</returns>
+      <param name="byteCount">Число байтов для декодирования.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="byteCount" /> меньше нуля. -или-  Результирующее количество байтов больше максимального количества, которое может быть возвращено в виде целого числа.</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">Использована альтернативная кодировка (подробное объяснение см. в разделе Кодировки в .NET Framework) и  Свойству <see cref="P:System.Text.Encoding.DecoderFallback" /> присвоено значение <see cref="T:System.Text.DecoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UnicodeEncoding.GetPreamble">
+      <summary>Возвращает метку порядка следования байтов Юникода, закодированную в формате UTF-16, если конструктор данного экземпляра запрашивает метку порядка следования байтов.</summary>
+      <returns>Массив байтов, содержащий метку порядка следования байтов Юникода, закодированную в формате UTF-16, если конструктор данного экземпляра запрашивает метку порядка следования байтов. В противоположном случае этот метод возвращает массив байтов, имеющий нулевую длину.</returns>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UnicodeEncoding.GetString(System.Byte[],System.Int32,System.Int32)">
+      <summary>Декодирует диапазон байтов из массива байтов в строку.</summary>
+      <returns>Объект <see cref="T:System.String" />, содержащий результаты декодирования заданной последовательности байтов.</returns>
+      <param name="bytes">Массив байтов, содержащий последовательность байтов, которую требуется декодировать.</param>
+      <param name="index">Индекс первого декодируемого байта.</param>
+      <param name="count">Число байтов для декодирования.</param>
+      <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="bytes" /> равно null (Nothing).</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="index" /> или <paramref name="count" /> меньше нуля. -или-  Значения параметров <paramref name="index" /> и <paramref name="count" /> не указывают допустимый диапазон в <paramref name="bytes" />.</exception>
+      <exception cref="T:System.ArgumentException">Включена функция обнаружения ошибок, <paramref name="bytes" /> содержит недопустимую последовательность байтов.</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">Использована альтернативная кодировка (подробное объяснение см. в разделе Кодировки в .NET Framework) и  Свойству <see cref="P:System.Text.Encoding.DecoderFallback" /> присвоено значение <see cref="T:System.Text.DecoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="T:System.Text.UTF8Encoding">
+      <summary>Предоставляет кодировку знаков Юникода в формате UTF-8.</summary>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UTF8Encoding.#ctor">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.Text.UTF8Encoding" />.</summary>
+    </member>
+    <member name="M:System.Text.UTF8Encoding.#ctor(System.Boolean)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.Text.UTF8Encoding" />. Параметр указывает, нужно ли предоставлять метку порядка следования байтов Юникода.</summary>
+      <param name="encoderShouldEmitUTF8Identifier">true, чтобы указать, что предоставляется метка порядка следования байтов Юникода; в противном случае — false.</param>
+    </member>
+    <member name="M:System.Text.UTF8Encoding.#ctor(System.Boolean,System.Boolean)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.Text.UTF8Encoding" />. Параметры указывают, должна ли предоставляться метка порядка следования байтов Юникода и следует ли выдавать исключение при обнаружении недопустимой кодировки.</summary>
+      <param name="encoderShouldEmitUTF8Identifier">true, чтобы указать, что предоставляется метка порядка следования байтов Юникода; в противном случае — false.</param>
+      <param name="throwOnInvalidBytes">true, чтобы указать, что следует выдавать исключение при обнаружении недопустимой кодировки; в противном случае — false.</param>
+    </member>
+    <member name="M:System.Text.UTF8Encoding.Equals(System.Object)">
+      <summary>Определяет, равен ли заданный объект <see cref="T:System.Object" /> текущему объекту <see cref="T:System.Text.UTF8Encoding" />.</summary>
+      <returns>true, если параметр <paramref name="value" /> является экземпляром класса <see cref="T:System.Text.UTF8Encoding" /> и равен текущему объекту; в противном случае — false.</returns>
+      <param name="value">
+        <see cref="T:System.Object" /> для сравнения с текущим экземпляром.</param>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="M:System.Text.UTF8Encoding.GetByteCount(System.Char[],System.Int32,System.Int32)">
+      <summary>Вычисляет число байтов, созданных при кодировании набора символов из указанного массива символов.</summary>
+      <returns>Число байтов, полученных при кодировании заданных символов.</returns>
+      <param name="chars">Массив символов, содержащий набор кодируемых символов.</param>
+      <param name="index">Индекс первого кодируемого символа.</param>
+      <param name="count">Число кодируемых символов.</param>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="chars" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="index" /> или <paramref name="count" /> меньше нуля. -или-  Значения параметров <paramref name="index" /> и <paramref name="count" /> не указывают допустимый диапазон в <paramref name="chars" />. -или-  Результирующее количество байтов больше максимального количества, которое может быть возвращено в виде целого числа.</exception>
+      <exception cref="T:System.ArgumentException">Включена функция обнаружения ошибок, <paramref name="chars" /> содержит недопустимую последовательность символов.</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">Использована альтернативная кодировка (подробное объяснение см. в разделе Кодировки в .NET Framework) и  Свойству <see cref="P:System.Text.Encoding.EncoderFallback" /> присвоено значение <see cref="T:System.Text.EncoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UTF8Encoding.GetByteCount(System.String)">
+      <summary>Вычисляет количество байтов, созданных при кодировании символов в заданной <see cref="T:System.String" />.</summary>
+      <returns>Число байтов, полученных при кодировании заданных символов.</returns>
+      <param name="chars">Объект <see cref="T:System.String" />, содержащий набор символов для кодирования.</param>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="chars" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Результирующее количество байтов больше максимального количества, которое может быть возвращено в виде целого числа.</exception>
+      <exception cref="T:System.ArgumentException">Включена функция обнаружения ошибок, <paramref name="chars" /> содержит недопустимую последовательность символов.</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">Использована альтернативная кодировка (подробное объяснение см. в разделе Кодировки в .NET Framework) и  Свойству <see cref="P:System.Text.Encoding.EncoderFallback" /> присвоено значение <see cref="T:System.Text.EncoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UTF8Encoding.GetBytes(System.Char[],System.Int32,System.Int32,System.Byte[],System.Int32)">
+      <summary>Кодирует набор символов из заданного массива символов в указанный массив байтов.</summary>
+      <returns>Фактическое число байтов, записанных в <paramref name="bytes" />.</returns>
+      <param name="chars">Массив символов, содержащий набор кодируемых символов.</param>
+      <param name="charIndex">Индекс первого кодируемого символа.</param>
+      <param name="charCount">Число кодируемых символов.</param>
+      <param name="bytes">Массив байтов, в который будет помещена результирующая последовательность байтов.</param>
+      <param name="byteIndex">Индекс, с которого начинается запись результирующей последовательности байтов.</param>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="chars" /> имеет значение null. -или-  Параметр <paramref name="bytes" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="charIndex" />, <paramref name="charCount" /> или <paramref name="byteIndex" /> меньше нуля. -или-  Значения параметров <paramref name="charIndex" /> и <paramref name="charCount" /> не указывают допустимый диапазон в <paramref name="chars" />. -или-  Значение параметра <paramref name="byteIndex" /> не является допустимым индексом в <paramref name="bytes" />.</exception>
+      <exception cref="T:System.ArgumentException">Включена функция обнаружения ошибок, <paramref name="chars" /> содержит недопустимую последовательность символов. -или-  Недостаточно емкости <paramref name="bytes" /> от <paramref name="byteIndex" /> до конца массива для размещения полученных байтов.</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">Использована альтернативная кодировка (подробное объяснение см. в разделе Кодировки в .NET Framework) и  Свойству <see cref="P:System.Text.Encoding.EncoderFallback" /> присвоено значение <see cref="T:System.Text.EncoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UTF8Encoding.GetBytes(System.String,System.Int32,System.Int32,System.Byte[],System.Int32)">
+      <summary>Кодирует набор символов из заданного параметра типа <see cref="T:System.String" /> в указанный массив байтов.</summary>
+      <returns>Фактическое число байтов, записанных в <paramref name="bytes" />.</returns>
+      <param name="s">Объект <see cref="T:System.String" />, содержащий набор символов для кодирования.</param>
+      <param name="charIndex">Индекс первого кодируемого символа.</param>
+      <param name="charCount">Число кодируемых символов.</param>
+      <param name="bytes">Массив байтов, в который будет помещена результирующая последовательность байтов.</param>
+      <param name="byteIndex">Индекс, с которого начинается запись результирующей последовательности байтов.</param>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="s" /> имеет значение null. -или-  Параметр <paramref name="bytes" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="charIndex" />, <paramref name="charCount" /> или <paramref name="byteIndex" /> меньше нуля. -или-  Значения параметров <paramref name="charIndex" /> и <paramref name="charCount" /> не указывают допустимый диапазон в <paramref name="chars" />. -или-  Значение параметра <paramref name="byteIndex" /> не является допустимым индексом в <paramref name="bytes" />.</exception>
+      <exception cref="T:System.ArgumentException">Включена функция обнаружения ошибок, и параметр <paramref name="s" /> содержит недопустимую последовательность символов. -или-  Недостаточно емкости <paramref name="bytes" /> от <paramref name="byteIndex" /> до конца массива для размещения полученных байтов.</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">Использована альтернативная кодировка (подробное объяснение см. в разделе Кодировки в .NET Framework) и  Свойству <see cref="P:System.Text.Encoding.EncoderFallback" /> присвоено значение <see cref="T:System.Text.EncoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UTF8Encoding.GetCharCount(System.Byte[],System.Int32,System.Int32)">
+      <summary>Вычисляет количество символов, полученных при декодировании последовательности байтов из заданного массива байтов.</summary>
+      <returns>Число символов, полученных при декодировании заданной последовательности байтов.</returns>
+      <param name="bytes">Массив байтов, содержащий последовательность байтов, которую требуется декодировать.</param>
+      <param name="index">Индекс первого декодируемого байта.</param>
+      <param name="count">Число байтов для декодирования.</param>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="bytes" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="index" /> или <paramref name="count" /> меньше нуля. -или-  Значения параметров <paramref name="index" /> и <paramref name="count" /> не указывают допустимый диапазон в <paramref name="bytes" />. -или-  Результирующее количество байтов больше максимального количества, которое может быть возвращено в виде целого числа.</exception>
+      <exception cref="T:System.ArgumentException">Включена функция обнаружения ошибок, <paramref name="bytes" /> содержит недопустимую последовательность байтов.</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">Использована альтернативная кодировка (подробное объяснение см. в разделе Кодировки в .NET Framework) и  Свойству <see cref="P:System.Text.Encoding.DecoderFallback" /> присвоено значение <see cref="T:System.Text.DecoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UTF8Encoding.GetChars(System.Byte[],System.Int32,System.Int32,System.Char[],System.Int32)">
+      <summary>Декодирует последовательность байтов из заданного массива байтов в указанный массив символов.</summary>
+      <returns>Фактическое число символов, записанных в <paramref name="chars" />.</returns>
+      <param name="bytes">Массив байтов, содержащий последовательность байтов, которую требуется декодировать.</param>
+      <param name="byteIndex">Индекс первого декодируемого байта.</param>
+      <param name="byteCount">Число байтов для декодирования.</param>
+      <param name="chars">Массив символов, в который будет помещен результирующий набор символов.</param>
+      <param name="charIndex">Индекс, с которого начинается запись результирующего набора символов.</param>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="bytes" /> имеет значение null. -или-  Параметр <paramref name="chars" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="byteIndex" />, <paramref name="byteCount" /> или <paramref name="charIndex" /> меньше нуля. -или-  Значения параметров <paramref name="byteindex" /> и <paramref name="byteCount" /> не указывают допустимый диапазон в <paramref name="bytes" />. -или-  Значение параметра <paramref name="charIndex" /> не является допустимым индексом в <paramref name="chars" />.</exception>
+      <exception cref="T:System.ArgumentException">Включена функция обнаружения ошибок, <paramref name="bytes" /> содержит недопустимую последовательность байтов. -или-  Недостаточно емкости <paramref name="chars" /> от <paramref name="charIndex" /> до конца массива для размещения полученных символов.</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">Использована альтернативная кодировка (подробное объяснение см. в разделе Кодировки в .NET Framework) и  Свойству <see cref="P:System.Text.Encoding.DecoderFallback" /> присвоено значение <see cref="T:System.Text.DecoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UTF8Encoding.GetDecoder">
+      <summary>Получает средство декодирования, преобразующее последовательность байтов в кодировке UTF-8 в последовательность символов Юникода.</summary>
+      <returns>
+        <see cref="T:System.Text.Decoder" />, преобразующий последовательность байтов в кодировке UTF-8 в последовательность символов Юникода.</returns>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UTF8Encoding.GetEncoder">
+      <summary>Получает средство кодирования, преобразующее последовательность символов Юникода в последовательность байтов в кодировке UTF-8.</summary>
+      <returns>
+        <see cref="T:System.Text.Encoder" />, преобразующий последовательность символов Юникода в последовательность байтов в кодировке UTF-8.</returns>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UTF8Encoding.GetHashCode">
+      <summary>Возвращает хэш-код текущего экземпляра.</summary>
+      <returns>Хэш-код для текущего экземпляра.</returns>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UTF8Encoding.GetMaxByteCount(System.Int32)">
+      <summary>Вычисляет максимальное количество байтов, полученных при кодировании заданного числа символов.</summary>
+      <returns>Максимальное количество байтов, полученных при кодировании заданного количества символов.</returns>
+      <param name="charCount">Число кодируемых символов.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="charCount" /> меньше нуля. -или-  Результирующее количество байтов больше максимального количества, которое может быть возвращено в виде целого числа.</exception>
+      <exception cref="T:System.Text.EncoderFallbackException">Использована альтернативная кодировка (подробное объяснение см. в разделе Кодировки в .NET Framework) и  Свойству <see cref="P:System.Text.Encoding.EncoderFallback" /> присвоено значение <see cref="T:System.Text.EncoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UTF8Encoding.GetMaxCharCount(System.Int32)">
+      <summary>Вычисляет максимальное количество символов, полученных при декодировании заданного числа байтов.</summary>
+      <returns>Максимальное количество символов, полученных при декодировании заданного количества байтов.</returns>
+      <param name="byteCount">Число байтов для декодирования.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="byteCount" /> меньше нуля. -или-  Результирующее количество байтов больше максимального количества, которое может быть возвращено в виде целого числа.</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">Использована альтернативная кодировка (подробное объяснение см. в разделе Кодировки в .NET Framework) и  Свойству <see cref="P:System.Text.Encoding.DecoderFallback" /> присвоено значение <see cref="T:System.Text.DecoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UTF8Encoding.GetPreamble">
+      <summary>Возвращает метку порядка следования байтов Юникода, закодированную в формате UTF-8, если конструктор данного экземпляра запрашивает метку порядка следования байтов.</summary>
+      <returns>Массив байтов, содержащий метку порядка следования байтов Юникода, закодированную в формате UTF-16, если конструктор данного экземпляра запрашивает метку порядка следования байтов. В противоположном случае этот метод возвращает массив байтов, имеющий нулевую длину.</returns>
+      <filterpriority>1</filterpriority>
+    </member>
+    <member name="M:System.Text.UTF8Encoding.GetString(System.Byte[],System.Int32,System.Int32)">
+      <summary>Декодирует диапазон байтов из массива байтов в строку.</summary>
+      <returns>
+        <see cref="T:System.String" /> содержит результаты декодирования заданной последовательности байтов.</returns>
+      <param name="bytes">Массив байтов, содержащий последовательность байтов, которую требуется декодировать.</param>
+      <param name="index">Индекс первого декодируемого байта.</param>
+      <param name="count">Число байтов для декодирования.</param>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="bytes" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="index" /> или <paramref name="count" /> меньше нуля. -или-  Значения параметров <paramref name="index" /> и <paramref name="count" /> не указывают допустимый диапазон в <paramref name="bytes" />.</exception>
+      <exception cref="T:System.ArgumentException">Включена функция обнаружения ошибок, <paramref name="bytes" /> содержит недопустимую последовательность байтов.</exception>
+      <exception cref="T:System.Text.DecoderFallbackException">Использована альтернативная кодировка (подробное объяснение см. в разделе Кодировки в .NET Framework) и  Свойству <see cref="P:System.Text.Encoding.DecoderFallback" /> присвоено значение <see cref="T:System.Text.DecoderExceptionFallback" />.</exception>
+      <filterpriority>1</filterpriority>
+    </member>
+  </members>
+</doc>

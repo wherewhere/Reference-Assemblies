@@ -1,0 +1,478 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.Threading.Tasks.Parallel</name>
+  </assembly>
+  <members>
+    <member name="T:System.Threading.Tasks.Parallel">
+      <summary>Proporciona compatibilidad con regiones y bucles paralelos.</summary>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,System.Action{System.Int32})">
+      <summary>Ejecuta un bucle for (For en Visual Basic) en el que es posible ejecutar iteraciones en paralelo.</summary>
+      <returns>Estructura que contiene información sobre qué parte del bucle se ha completado.</returns>
+      <param name="fromInclusive">Índice inicial, inclusivo.</param>
+      <param name="toExclusive">Índice final, exclusivo.</param>
+      <param name="body">Delegado que se invoca una vez por cada iteración.</param>
+      <exception cref="T:System.ArgumentNullException">El argumento <paramref name="body" /> es null.</exception>
+      <exception cref="T:System.AggregateException">La excepción que contiene todas las excepciones individuales producidas en todos los subprocesos.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,System.Action{System.Int32,System.Threading.Tasks.ParallelLoopState})">
+      <summary>Ejecuta una bucle for (For en Visual Basic) donde se pueden ejecutar iteraciones en paralelo, y el estado del bucle se puede supervisar y manipular.</summary>
+      <returns>Estructura que contiene información sobre qué parte del bucle se ha completado.</returns>
+      <param name="fromInclusive">Índice inicial, inclusivo.</param>
+      <param name="toExclusive">Índice final, exclusivo.</param>
+      <param name="body">Delegado que se invoca una vez por cada iteración.</param>
+      <exception cref="T:System.ArgumentNullException">El argumento <paramref name="body" /> es null.</exception>
+      <exception cref="T:System.AggregateException">La excepción que contiene todas las excepciones individuales producidas en todos los subprocesos.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.For``1(System.Int32,System.Int32,System.Func{``0},System.Func{System.Int32,System.Threading.Tasks.ParallelLoopState,``0,``0},System.Action{``0})">
+      <summary>Ejecuta un bucle for (For en Visual Basic) con datos locales del subproceso en el que es posible ejecutar iteraciones en paralelo, y el estado del bucle se puede supervisar y manipular.</summary>
+      <returns>Estructura que contiene información sobre qué parte del bucle se ha completado.</returns>
+      <param name="fromInclusive">Índice inicial, inclusivo.</param>
+      <param name="toExclusive">Índice final, exclusivo.</param>
+      <param name="localInit">Delegado de función que devuelve el estado inicial de los datos locales de cada tarea.</param>
+      <param name="body">Delegado que se invoca una vez por cada iteración.</param>
+      <param name="localFinally">Delegado que realiza una acción final en el estado local de cada tarea.</param>
+      <typeparam name="TLocal">Tipo de los datos locales de subprocesos.</typeparam>
+      <exception cref="T:System.ArgumentNullException">El argumento <paramref name="body" /> es null. O bien El argumento <paramref name="localInit" /> es null. O bien El argumento <paramref name="localFinally" /> es null.</exception>
+      <exception cref="T:System.AggregateException">La excepción que contiene todas las excepciones individuales producidas en todos los subprocesos.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,System.Threading.Tasks.ParallelOptions,System.Action{System.Int32})">
+      <summary>Ejecuta un bucle for (For en Visual Basic) en el que se pueden ejecutar iteraciones en paralelo y configurar las opciones de bucle.</summary>
+      <returns>Estructura que contiene información sobre qué parte del bucle se ha completado.</returns>
+      <param name="fromInclusive">Índice inicial, inclusivo.</param>
+      <param name="toExclusive">Índice final, exclusivo.</param>
+      <param name="parallelOptions">Objeto que configura el comportamiento de esta operación.</param>
+      <param name="body">Delegado que se invoca una vez por cada iteración.</param>
+      <exception cref="T:System.OperationCanceledException">
+        <see cref="T:System.Threading.CancellationToken" /> en el argumento <paramref name="parallelOptions" /> se cancela.</exception>
+      <exception cref="T:System.ArgumentNullException">El argumento <paramref name="body" /> es null. O bien El argumento <paramref name="parallelOptions" /> es null.</exception>
+      <exception cref="T:System.AggregateException">La excepción que contiene todas las excepciones individuales producidas en todos los subprocesos.</exception>
+      <exception cref="T:System.ObjectDisposedException">El objeto <see cref="T:System.Threading.CancellationTokenSource" /> asociado a <see cref="T:System.Threading.CancellationToken" /> en el <paramref name="parallelOptions" /> se ha desechado.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,System.Threading.Tasks.ParallelOptions,System.Action{System.Int32,System.Threading.Tasks.ParallelLoopState})">
+      <summary>Ejecuta un bucle for (For en Visual Basic) donde se pueden ejecutar iteraciones en paralelo y configurar opciones de bucle, y el estado del bucle se puede supervisar y manipular.</summary>
+      <returns>Estructura que contiene información sobre qué parte del bucle se ha completado.</returns>
+      <param name="fromInclusive">Índice inicial, inclusivo.</param>
+      <param name="toExclusive">Índice final, exclusivo.</param>
+      <param name="parallelOptions">Objeto que configura el comportamiento de esta operación.</param>
+      <param name="body">Delegado que se invoca una vez por cada iteración.</param>
+      <exception cref="T:System.OperationCanceledException">
+        <see cref="T:System.Threading.CancellationToken" /> en el argumento <paramref name="parallelOptions" /> se cancela.</exception>
+      <exception cref="T:System.ArgumentNullException">El argumento <paramref name="body" /> es null. O bien El argumento <paramref name="parallelOptions" /> es null.</exception>
+      <exception cref="T:System.AggregateException">La excepción que contiene todas las excepciones individuales producidas en todos los subprocesos.</exception>
+      <exception cref="T:System.ObjectDisposedException">El objeto <see cref="T:System.Threading.CancellationTokenSource" /> asociado a <see cref="T:System.Threading.CancellationToken" /> en el <paramref name="parallelOptions" /> se ha desechado.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.For``1(System.Int32,System.Int32,System.Threading.Tasks.ParallelOptions,System.Func{``0},System.Func{System.Int32,System.Threading.Tasks.ParallelLoopState,``0,``0},System.Action{``0})">
+      <summary>Ejecuta un bucle for (For en Visual Basic) con datos locales del subproceso en el que es posible ejecutar iteraciones en paralelo, se pueden configurar opciones de bucle, y el estado del bucle se puede supervisar y manipular.</summary>
+      <returns>Estructura que contiene información sobre qué parte del bucle se ha completado.</returns>
+      <param name="fromInclusive">Índice inicial, inclusivo.</param>
+      <param name="toExclusive">Índice final, exclusivo.</param>
+      <param name="parallelOptions">Objeto que configura el comportamiento de esta operación.</param>
+      <param name="localInit">Delegado de función que devuelve el estado inicial de los datos locales de cada tarea.</param>
+      <param name="body">Delegado que se invoca una vez por cada iteración.</param>
+      <param name="localFinally">Delegado que realiza una acción final en el estado local de cada tarea.</param>
+      <typeparam name="TLocal">Tipo de los datos locales de subprocesos.</typeparam>
+      <exception cref="T:System.ArgumentNullException">El argumento <paramref name="body" /> es null. O bien El argumento <paramref name="localInit" /> es null. O bien El argumento <paramref name="localFinally" /> es null. O bien El argumento <paramref name="parallelOptions" /> es null.</exception>
+      <exception cref="T:System.OperationCanceledException">
+        <see cref="T:System.Threading.CancellationToken" /> en el argumento <paramref name="parallelOptions" /> se cancela.</exception>
+      <exception cref="T:System.ObjectDisposedException">El objeto <see cref="T:System.Threading.CancellationTokenSource" /> asociado a <see cref="T:System.Threading.CancellationToken" /> en el <paramref name="parallelOptions" /> se ha desechado.</exception>
+      <exception cref="T:System.AggregateException">La excepción que contiene todas las excepciones individuales producidas en todos los subprocesos.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,System.Action{System.Int64})">
+      <summary>Ejecuta un bucle for (For en Visual Basic) con índices 64 bits en el que se pueden ejecutar iteraciones en paralelo.</summary>
+      <returns>Estructura que contiene información sobre qué parte del bucle se ha completado.</returns>
+      <param name="fromInclusive">Índice inicial, inclusivo.</param>
+      <param name="toExclusive">Índice final, exclusivo.</param>
+      <param name="body">Delegado que se invoca una vez por cada iteración.</param>
+      <exception cref="T:System.ArgumentNullException">El argumento <paramref name="body" /> es null.</exception>
+      <exception cref="T:System.AggregateException">La excepción que contiene todas las excepciones individuales producidas en todos los subprocesos.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,System.Action{System.Int64,System.Threading.Tasks.ParallelLoopState})">
+      <summary>Ejecuta un bucle for (For en Visual Basic) con índices de 64 bits en el que es posible ejecutar iteraciones en paralelo, y el estado del bucle se puede supervisar y manipular.</summary>
+      <returns>Estructura <see cref="T:System.Threading.Tasks.ParallelLoopResult" /> que contiene información sobre la parte completada del bucle.</returns>
+      <param name="fromInclusive">Índice inicial, inclusivo.</param>
+      <param name="toExclusive">Índice final, exclusivo.</param>
+      <param name="body">Delegado que se invoca una vez por cada iteración.</param>
+      <exception cref="T:System.ArgumentNullException">El argumento <paramref name="body" /> es null.</exception>
+      <exception cref="T:System.AggregateException">La excepción que contiene todas las excepciones individuales producidas en todos los subprocesos.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.For``1(System.Int64,System.Int64,System.Func{``0},System.Func{System.Int64,System.Threading.Tasks.ParallelLoopState,``0,``0},System.Action{``0})">
+      <summary>Ejecuta un bucle for (For en Visual Basic) con índices de 64 bits y datos locales del subproceso en el que es posible ejecutar iteraciones en paralelo, y el estado del bucle se puede supervisar y manipular.</summary>
+      <returns>Estructura que contiene información sobre qué parte del bucle se ha completado.</returns>
+      <param name="fromInclusive">Índice inicial, inclusivo.</param>
+      <param name="toExclusive">Índice final, exclusivo.</param>
+      <param name="localInit">Delegado de función que devuelve el estado inicial de los datos locales de cada tarea.</param>
+      <param name="body">Delegado que se invoca una vez por cada iteración.</param>
+      <param name="localFinally">Delegado que realiza una acción final en el estado local de cada tarea.</param>
+      <typeparam name="TLocal">Tipo de los datos locales de subprocesos.</typeparam>
+      <exception cref="T:System.ArgumentNullException">El argumento <paramref name="body" /> es null. O bien El argumento <paramref name="localInit" /> es null. O bien El argumento <paramref name="localFinally" /> es null.</exception>
+      <exception cref="T:System.AggregateException">La excepción que contiene todas las excepciones individuales producidas en todos los subprocesos.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,System.Threading.Tasks.ParallelOptions,System.Action{System.Int64})">
+      <summary>Ejecuta un bucle for (For en Visual Basic) con índices de 64 bits en el que se pueden ejecutar iteraciones en paralelo y configurar opciones de bucle.</summary>
+      <returns>Estructura que contiene información sobre qué parte del bucle se ha completado.</returns>
+      <param name="fromInclusive">Índice inicial, inclusivo.</param>
+      <param name="toExclusive">Índice final, exclusivo.</param>
+      <param name="parallelOptions">Objeto que configura el comportamiento de esta operación.</param>
+      <param name="body">Delegado que se invoca una vez por cada iteración.</param>
+      <exception cref="T:System.OperationCanceledException">
+        <see cref="T:System.Threading.CancellationToken" /> en el argumento <paramref name="parallelOptions" /> se cancela.</exception>
+      <exception cref="T:System.ArgumentNullException">El argumento <paramref name="body" /> es null. O bien El argumento <paramref name="parallelOptions" /> es null.</exception>
+      <exception cref="T:System.AggregateException">La excepción que contiene todas las excepciones individuales producidas en todos los subprocesos.</exception>
+      <exception cref="T:System.ObjectDisposedException">El objeto <see cref="T:System.Threading.CancellationTokenSource" /> asociado a <see cref="T:System.Threading.CancellationToken" /> en el <paramref name="parallelOptions" /> se ha desechado.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,System.Threading.Tasks.ParallelOptions,System.Action{System.Int64,System.Threading.Tasks.ParallelLoopState})">
+      <summary>Ejecuta un bucle for (For en Visual Basic) con índices de 64 bits en el que es posible ejecutar iteraciones en paralelo y configurar opciones de bucle, y el estado del bucle se puede supervisar y manipular.</summary>
+      <returns>Estructura que contiene información sobre qué parte del bucle se ha completado.</returns>
+      <param name="fromInclusive">Índice inicial, inclusivo.</param>
+      <param name="toExclusive">Índice final, exclusivo.</param>
+      <param name="parallelOptions">Objeto que configura el comportamiento de esta operación.</param>
+      <param name="body">Delegado que se invoca una vez por cada iteración.</param>
+      <exception cref="T:System.OperationCanceledException">
+        <see cref="T:System.Threading.CancellationToken" /> en el argumento <paramref name="parallelOptions" /> se cancela.</exception>
+      <exception cref="T:System.ArgumentNullException">El argumento <paramref name="body" /> es null. O bien El argumento <paramref name="parallelOptions" /> es null.</exception>
+      <exception cref="T:System.AggregateException">La excepción que contiene todas las excepciones individuales producidas en todos los subprocesos.</exception>
+      <exception cref="T:System.ObjectDisposedException">El objeto <see cref="T:System.Threading.CancellationTokenSource" /> asociado a <see cref="T:System.Threading.CancellationToken" /> en el <paramref name="parallelOptions" /> se ha desechado.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.For``1(System.Int64,System.Int64,System.Threading.Tasks.ParallelOptions,System.Func{``0},System.Func{System.Int64,System.Threading.Tasks.ParallelLoopState,``0,``0},System.Action{``0})">
+      <summary>Ejecuta un bucle for (For en Visual Basic) con índices de 64 bits y datos locales del subproceso en el que es posible ejecutar iteraciones en paralelo, se pueden configurar opciones de bucle, y el estado del bucle se puede supervisar y manipular.</summary>
+      <returns>Estructura que contiene información sobre qué parte del bucle se ha completado.</returns>
+      <param name="fromInclusive">Índice inicial, inclusivo.</param>
+      <param name="toExclusive">Índice final, exclusivo.</param>
+      <param name="parallelOptions">Objeto que configura el comportamiento de esta operación.</param>
+      <param name="localInit">Delegado de función que devuelve el estado inicial de los datos locales de cada subproceso.</param>
+      <param name="body">Delegado que se invoca una vez por cada iteración.</param>
+      <param name="localFinally">Delegado que realiza una acción final en el estado local de cada subproceso.</param>
+      <typeparam name="TLocal">Tipo de los datos locales de subprocesos.</typeparam>
+      <exception cref="T:System.ArgumentNullException">El argumento <paramref name="body" /> es null. O bien El argumento <paramref name="localInit" /> es null. O bien El argumento <paramref name="localFinally" /> es null. O bien El argumento <paramref name="parallelOptions" /> es null.</exception>
+      <exception cref="T:System.OperationCanceledException">
+        <see cref="T:System.Threading.CancellationToken" /> en el argumento <paramref name="parallelOptions" /> se cancela.</exception>
+      <exception cref="T:System.ObjectDisposedException">El objeto <see cref="T:System.Threading.CancellationTokenSource" /> asociado a <see cref="T:System.Threading.CancellationToken" /> en el <paramref name="parallelOptions" /> se ha desechado.</exception>
+      <exception cref="T:System.AggregateException">La excepción que contiene todas las excepciones individuales producidas en todos los subprocesos.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.OrderablePartitioner{``0},System.Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})">
+      <summary>Ejecuta una operación foreach (For Each en Visual Basic) en <see cref="T:System.Collections.Concurrent.OrderablePartitioner`1" /> donde se pueden ejecutar iteraciones en paralelo, y el estado del bucle se puede supervisar y manipular.</summary>
+      <returns>Estructura que contiene información sobre qué parte del bucle se ha completado.</returns>
+      <param name="source">El particionador ordenable que contiene el origen de datos original.</param>
+      <param name="body">Delegado que se invoca una vez por cada iteración.</param>
+      <typeparam name="TSource">Tipo de los elementos de <paramref name="source" />.</typeparam>
+      <exception cref="T:System.ArgumentNullException">El argumento <paramref name="source" /> es null. O bien El argumento <paramref name="body" /> es null.</exception>
+      <exception cref="T:System.InvalidOperationException">La propiedad <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> del particionador ordenable <paramref name="source" /> devuelve false. O bien La propiedad <see cref="P:System.Collections.Concurrent.OrderablePartitioner`1.KeysNormalized" /> del particionador ordenable de origen devuelve false. O bien Cualquier método en el particionador ordenable de origen devuelve null.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Concurrent.OrderablePartitioner{``0},System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},System.Action{``1})">
+      <summary>Ejecuta una operación foreach (For Each en Visual Basic) con datos locales del subproceso en <see cref="T:System.Collections.Concurrent.OrderablePartitioner`1" /> donde se pueden ejecutar iteraciones en paralelo y configurar opciones de bucle, y el estado del bucle se puede supervisar y manipular.</summary>
+      <returns>Estructura que contiene información sobre qué parte del bucle se ha completado.</returns>
+      <param name="source">El particionador ordenable que contiene el origen de datos original.</param>
+      <param name="localInit">Delegado de función que devuelve el estado inicial de los datos locales de cada tarea.</param>
+      <param name="body">Delegado que se invoca una vez por cada iteración.</param>
+      <param name="localFinally">Delegado que realiza una acción final en el estado local de cada tarea.</param>
+      <typeparam name="TSource">Tipo de los elementos de <paramref name="source" />.</typeparam>
+      <typeparam name="TLocal">Tipo de los datos locales de subprocesos.</typeparam>
+      <exception cref="T:System.ArgumentNullException">El argumento <paramref name="source" /> es null. O bien El argumento <paramref name="body" /> es null. O bien El argumento <paramref name="localInit" /> es null. O bien El argumento <paramref name="localFinally" /> es null.</exception>
+      <exception cref="T:System.InvalidOperationException">La propiedad <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> del <see cref="T:System.Collections.Concurrent.Partitioner" /><paramref name="source" /> devuelve false o el particionador devuelve particiones null.</exception>
+      <exception cref="T:System.AggregateException">La excepción que contiene todas las excepciones individuales producidas en todos los subprocesos.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.OrderablePartitioner{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})">
+      <summary>Ejecuta una operación foreach (For Each en Visual Basic) en <see cref="T:System.Collections.Concurrent.OrderablePartitioner`1" /> donde se pueden ejecutar iteraciones en paralelo y configurar opciones de bucle, y el estado del bucle se puede supervisar y manipular.</summary>
+      <returns>Estructura que contiene información sobre qué parte del bucle se ha completado.</returns>
+      <param name="source">El particionador ordenable que contiene el origen de datos original.</param>
+      <param name="parallelOptions">Objeto que configura el comportamiento de esta operación.</param>
+      <param name="body">Delegado que se invoca una vez por cada iteración.</param>
+      <typeparam name="TSource">Tipo de los elementos de <paramref name="source" />.</typeparam>
+      <exception cref="T:System.OperationCanceledException">
+        <see cref="T:System.Threading.CancellationToken" /> en el argumento <paramref name="parallelOptions" /> se cancela</exception>
+      <exception cref="T:System.ArgumentNullException">El argumento <paramref name="source" /> es null. O bien El argumento <paramref name="parallelOptions" /> es null. O bien El argumento <paramref name="body" /> es null.</exception>
+      <exception cref="T:System.ObjectDisposedException">El objeto <see cref="T:System.Threading.CancellationTokenSource" /> asociado a <see cref="T:System.Threading.CancellationToken" /> en el <paramref name="parallelOptions" /> se ha desechado.</exception>
+      <exception cref="T:System.InvalidOperationException">La propiedad <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> del particionador ordenable <paramref name="source" /> devuelve false. O bien La propiedad <see cref="P:System.Collections.Concurrent.OrderablePartitioner`1.KeysNormalized" /> del particionador ordenable <paramref name="source" /> devuelve false. O bien La excepción que se produce cuando cualquier método del particionador ordenable <paramref name="source" /> devuelve null.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Concurrent.OrderablePartitioner{``0},System.Threading.Tasks.ParallelOptions,System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},System.Action{``1})">
+      <summary>Ejecuta una operación foreach (For Each en Visual Basic) con índices de 64 bits y datos locales del subproceso en <see cref="T:System.Collections.Concurrent.OrderablePartitioner`1" /> donde se pueden ejecutar iteraciones en paralelo y configurar opciones de bucle, y el estado del bucle se puede supervisar y manipular.</summary>
+      <returns>Estructura que contiene información sobre qué parte del bucle se ha completado.</returns>
+      <param name="source">El particionador ordenable que contiene el origen de datos original.</param>
+      <param name="parallelOptions">Objeto que configura el comportamiento de esta operación.</param>
+      <param name="localInit">Delegado de función que devuelve el estado inicial de los datos locales de cada tarea.</param>
+      <param name="body">Delegado que se invoca una vez por cada iteración.</param>
+      <param name="localFinally">Delegado que realiza una acción final en el estado local de cada tarea.</param>
+      <typeparam name="TSource">Tipo de los elementos de <paramref name="source" />.</typeparam>
+      <typeparam name="TLocal">Tipo de los datos locales de subprocesos.</typeparam>
+      <exception cref="T:System.ArgumentNullException">El argumento <paramref name="source" /> es null. O bien El argumento <paramref name="parallelOptions" /> es null. O bien El argumento <paramref name="body" /> es null. O bien El argumento <paramref name="localInit" /> o <paramref name="localFinally" /> es null.</exception>
+      <exception cref="T:System.InvalidOperationException">La propiedad <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> del <see cref="T:System.Collections.Concurrent.Partitioner" /><paramref name="source" /> devuelve false o el creador de particiones devuelve particiones null.</exception>
+      <exception cref="T:System.AggregateException">La excepción que contiene todas las excepciones individuales producidas en todos los subprocesos.</exception>
+      <exception cref="T:System.OperationCanceledException">
+        <see cref="T:System.Threading.CancellationToken" /> en el argumento <paramref name="parallelOptions" /> se cancela.</exception>
+      <exception cref="T:System.ObjectDisposedException">El objeto <see cref="T:System.Threading.CancellationTokenSource" /> asociado a <see cref="T:System.Threading.CancellationToken" /> en el <paramref name="parallelOptions" /> se ha desechado.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.Partitioner{``0},System.Action{``0})">
+      <summary>Ejecuta una operación foreach (For Each en Visual Basic) en <see cref="T:System.Collections.Concurrent.Partitioner" />, en la que es posible ejecutar iteraciones en paralelo.</summary>
+      <returns>Estructura que contiene información sobre qué parte del bucle se ha completado.</returns>
+      <param name="source">Particionador que contiene el origen de datos original.</param>
+      <param name="body">Delegado que se invoca una vez por cada iteración.</param>
+      <typeparam name="TSource">Tipo de los elementos de <paramref name="source" />.</typeparam>
+      <exception cref="T:System.ArgumentNullException">El argumento <paramref name="source" /> es null. O bien El argumento <paramref name="body" /> es null.</exception>
+      <exception cref="T:System.InvalidOperationException">La propiedad <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> del particionador <paramref name="source" /> devuelve false. O bien La excepción que se produce cuando cualquier método del particionador <paramref name="source" /> devuelve null. O bien El método <see cref="M:System.Collections.Concurrent.Partitioner`1.GetPartitions(System.Int32)" /> del particionador <paramref name="source" /> no devuelve el número correcto de particiones.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.Partitioner{``0},System.Action{``0,System.Threading.Tasks.ParallelLoopState})">
+      <summary>Ejecuta una operación foreach (For Each en Visual Basic) en <see cref="T:System.Collections.Concurrent.Partitioner" /> donde se pueden ejecutar iteraciones en paralelo, y el estado del bucle se puede supervisar y manipular.</summary>
+      <returns>Estructura que contiene información sobre qué parte del bucle se ha completado.</returns>
+      <param name="source">Particionador que contiene el origen de datos original.</param>
+      <param name="body">Delegado que se invoca una vez por cada iteración.</param>
+      <typeparam name="TSource">Tipo de los elementos de <paramref name="source" />.</typeparam>
+      <exception cref="T:System.ArgumentNullException">El argumento <paramref name="source" /> es null. O bien El argumento <paramref name="body" /> es null.</exception>
+      <exception cref="T:System.InvalidOperationException">La propiedad <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> del particionador <paramref name="source" /> devuelve false. O bien Un método del particionador <paramref name="source" /> devuelve null. O bien El método <see cref="M:System.Collections.Concurrent.Partitioner`1.GetPartitions(System.Int32)" /> del particionador <paramref name="source" /> no devuelve el número correcto de particiones.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Concurrent.Partitioner{``0},System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},System.Action{``1})">
+      <summary>Ejecuta una operación foreach (For Each en Visual Basic) con datos locales del subproceso en <see cref="T:System.Collections.Concurrent.Partitioner" /> donde se pueden ejecutar iteraciones en paralelo, y el estado del bucle se puede supervisar y manipular.</summary>
+      <returns>Estructura que contiene información sobre qué parte del bucle se ha completado.</returns>
+      <param name="source">Particionador que contiene el origen de datos original.</param>
+      <param name="localInit">Delegado de función que devuelve el estado inicial de los datos locales de cada tarea.</param>
+      <param name="body">Delegado que se invoca una vez por cada iteración.</param>
+      <param name="localFinally">Delegado que realiza una acción final en el estado local de cada tarea.</param>
+      <typeparam name="TSource">Tipo de los elementos de <paramref name="source" />.</typeparam>
+      <typeparam name="TLocal">Tipo de los datos locales de subprocesos.</typeparam>
+      <exception cref="T:System.ArgumentNullException">El argumento <paramref name="source" /> es null. O bien El argumento <paramref name="body" /> es null. O bien El argumento <paramref name="localInit" /> es null. O bien El argumento <paramref name="localFinally" /> es null.</exception>
+      <exception cref="T:System.InvalidOperationException">La propiedad <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> del <see cref="T:System.Collections.Concurrent.Partitioner" /><paramref name="source" /> devuelve false o el particionador devuelve particiones null.</exception>
+      <exception cref="T:System.AggregateException">La excepción que contiene todas las excepciones individuales producidas en todos los subprocesos.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.Partitioner{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0})">
+      <summary>Ejecuta una operación following examplereach (For Each en Visual Basic) en <see cref="T:System.Collections.Concurrent.Partitioner" /> donde se pueden ejecutar iteraciones en paralelo y configurar las opciones de bucle.</summary>
+      <returns>Estructura que contiene información sobre qué parte del bucle se ha completado.</returns>
+      <param name="source">Particionador que contiene el origen de datos original.</param>
+      <param name="parallelOptions">Objeto que configura el comportamiento de esta operación.</param>
+      <param name="body">Delegado que se invoca una vez por cada iteración.</param>
+      <typeparam name="TSource">Tipo de los elementos de <paramref name="source" />.</typeparam>
+      <exception cref="T:System.OperationCanceledException">
+        <see cref="T:System.Threading.CancellationToken" /> en el argumento <paramref name="parallelOptions" /> se cancela.</exception>
+      <exception cref="T:System.ObjectDisposedException">El objeto <see cref="T:System.Threading.CancellationTokenSource" /> asociado a <see cref="T:System.Threading.CancellationToken" /> en el <paramref name="parallelOptions" /> se ha desechado.</exception>
+      <exception cref="T:System.ArgumentNullException">El argumento <paramref name="source" /> es null. O bien El argumento <paramref name="parallelOptions" /> es null. O bien El argumento <paramref name="body" /> es null.</exception>
+      <exception cref="T:System.InvalidOperationException">La propiedad <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> del particionador <paramref name="source" /> devuelve false. O bien La excepción que se produce cuando cualquier método del particionador <paramref name="source" /> devuelve null.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.Partitioner{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0,System.Threading.Tasks.ParallelLoopState})">
+      <summary>Ejecuta una operación foreach (For Each en Visual Basic) en <see cref="T:System.Collections.Concurrent.Partitioner" /> donde se pueden ejecutar iteraciones en paralelo y configurar opciones de bucle, y el estado del bucle se puede supervisar y manipular.</summary>
+      <returns>Estructura que contiene información sobre qué parte del bucle se ha completado.</returns>
+      <param name="source">Particionador que contiene el origen de datos original.</param>
+      <param name="parallelOptions">Objeto que configura el comportamiento de esta operación.</param>
+      <param name="body">Delegado que se invoca una vez por cada iteración.</param>
+      <typeparam name="TSource">Tipo de los elementos de <paramref name="source" />.</typeparam>
+      <exception cref="T:System.OperationCanceledException">
+        <see cref="T:System.Threading.CancellationToken" /> en el argumento <paramref name="parallelOptions" /> se cancela.</exception>
+      <exception cref="T:System.ObjectDisposedException">El objeto <see cref="T:System.Threading.CancellationTokenSource" /> asociado a <see cref="T:System.Threading.CancellationToken" /> en el <paramref name="parallelOptions" /> se ha desechado.</exception>
+      <exception cref="T:System.ArgumentNullException">El argumento <paramref name="source" /> es null. O bien El argumento <paramref name="parallelOptions" /> es null. O bien El argumento <paramref name="body" /> es null.</exception>
+      <exception cref="T:System.InvalidOperationException">La propiedad <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> del particionador <paramref name="source" /> devuelve false. O bien La excepción que se produce cuando cualquier método del particionador <paramref name="source" /> devuelve null.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Concurrent.Partitioner{``0},System.Threading.Tasks.ParallelOptions,System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},System.Action{``1})">
+      <summary>Ejecuta una operación foreach (For Each en Visual Basic) con datos locales del subproceso en <see cref="T:System.Collections.Concurrent.Partitioner" /> donde se pueden ejecutar iteraciones en paralelo y configurar opciones de bucle, y el estado del bucle se puede supervisar y manipular.</summary>
+      <returns>Estructura que contiene información sobre qué parte del bucle se ha completado.</returns>
+      <param name="source">Particionador que contiene el origen de datos original.</param>
+      <param name="parallelOptions">Objeto que configura el comportamiento de esta operación.</param>
+      <param name="localInit">Delegado de función que devuelve el estado inicial de los datos locales de cada tarea.</param>
+      <param name="body">Delegado que se invoca una vez por cada iteración.</param>
+      <param name="localFinally">Delegado que realiza una acción final en el estado local de cada tarea.</param>
+      <typeparam name="TSource">Tipo de los elementos de <paramref name="source" />.</typeparam>
+      <typeparam name="TLocal">Tipo de los datos locales de subprocesos.</typeparam>
+      <exception cref="T:System.ArgumentNullException">El argumento <paramref name="source" /> es null. O bien El argumento <paramref name="parallelOptions" /> es null. O bien El argumento <paramref name="body" /> es null. O bien El argumento <paramref name="localInit" /> es null. O bien El argumento <paramref name="localFinally" /> es null.</exception>
+      <exception cref="T:System.InvalidOperationException">La propiedad <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> del <see cref="T:System.Collections.Concurrent.Partitioner" /><paramref name="source" /> devuelve false o el particionador devuelve particiones null.</exception>
+      <exception cref="T:System.AggregateException">La excepción que contiene todas las excepciones individuales producidas en todos los subprocesos.</exception>
+      <exception cref="T:System.OperationCanceledException">
+        <see cref="T:System.Threading.CancellationToken" /> en el argumento <paramref name="parallelOptions" /> se cancela.</exception>
+      <exception cref="T:System.ObjectDisposedException">El objeto <see cref="T:System.Threading.CancellationTokenSource" /> asociado a <see cref="T:System.Threading.CancellationToken" /> en el <paramref name="parallelOptions" /> se ha desechado.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+      <summary>Ejecuta una operación foreach (For Each en Visual Basic) en <see cref="T:System.Collections.IEnumerable" />, en la que es posible ejecutar iteraciones en paralelo.</summary>
+      <returns>Estructura que contiene información sobre qué parte del bucle se ha completado.</returns>
+      <param name="source">Origen de datos enumerable.</param>
+      <param name="body">Delegado que se invoca una vez por cada iteración.</param>
+      <typeparam name="TSource">El tipo de los datos del origen.</typeparam>
+      <exception cref="T:System.ArgumentNullException">El argumento <paramref name="source" /> es null. O bien El argumento <paramref name="body" /> es null.</exception>
+      <exception cref="T:System.AggregateException">La excepción que contiene todas las excepciones individuales producidas en todos los subprocesos.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Threading.Tasks.ParallelLoopState})">
+      <summary>Ejecuta una operación foreach (For Each en Visual Basic) en <see cref="T:System.Collections.IEnumerable" /> donde se pueden ejecutar iteraciones en paralelo, y el estado del bucle se puede supervisar y manipular.</summary>
+      <returns>Estructura que contiene información sobre qué parte del bucle se ha completado.</returns>
+      <param name="source">Origen de datos enumerable.</param>
+      <param name="body">Delegado que se invoca una vez por cada iteración.</param>
+      <typeparam name="TSource">El tipo de los datos del origen.</typeparam>
+      <exception cref="T:System.ArgumentNullException">El argumento <paramref name="source" /> es null. O bien El argumento <paramref name="body" /> es null.</exception>
+      <exception cref="T:System.AggregateException">La excepción que contiene todas las excepciones individuales producidas en todos los subprocesos.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})">
+      <summary>Ejecuta una operación foreach (For Each en Visual Basic) con índices de 64 bits en <see cref="T:System.Collections.IEnumerable" /> donde se pueden ejecutar iteraciones en paralelo, y el estado del bucle se puede supervisar y manipular.</summary>
+      <returns>Estructura que contiene información sobre qué parte del bucle se ha completado.</returns>
+      <param name="source">Origen de datos enumerable.</param>
+      <param name="body">Delegado que se invoca una vez por cada iteración.</param>
+      <typeparam name="TSource">El tipo de los datos del origen.</typeparam>
+      <exception cref="T:System.ArgumentNullException">El argumento <paramref name="source" /> es null. O bien El argumento <paramref name="body" /> es null.</exception>
+      <exception cref="T:System.AggregateException">La excepción que contiene todas las excepciones individuales producidas en todos los subprocesos.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Generic.IEnumerable{``0},System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},System.Action{``1})">
+      <summary>Ejecuta una operación foreach (For Each en Visual Basic) con datos locales del subproceso en <see cref="T:System.Collections.IEnumerable" /> donde se pueden ejecutar iteraciones en paralelo, y el estado del bucle se puede supervisar y manipular.</summary>
+      <returns>Estructura que contiene información sobre qué parte del bucle se ha completado.</returns>
+      <param name="source">Origen de datos enumerable.</param>
+      <param name="localInit">Delegado de función que devuelve el estado inicial de los datos locales de cada tarea.</param>
+      <param name="body">Delegado que se invoca una vez por cada iteración.</param>
+      <param name="localFinally">Delegado que realiza una acción final en el estado local de cada tarea.</param>
+      <typeparam name="TSource">El tipo de los datos del origen.</typeparam>
+      <typeparam name="TLocal">Tipo de los datos locales de subprocesos.</typeparam>
+      <exception cref="T:System.ArgumentNullException">El argumento <paramref name="source" /> es null. O bien El argumento <paramref name="body" /> es null. O bien El argumento <paramref name="localInit" /> es null. O bien El argumento <paramref name="localFinally" /> es null.</exception>
+      <exception cref="T:System.AggregateException">La excepción que contiene todas las excepciones individuales producidas en todos los subprocesos.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Generic.IEnumerable{``0},System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},System.Action{``1})">
+      <summary>Ejecuta una operación foreach (For Each en Visual Basic) con datos locales del subproceso en <see cref="T:System.Collections.IEnumerable" /> donde se pueden ejecutar iteraciones en paralelo, y el estado del bucle se puede supervisar y manipular.</summary>
+      <returns>Estructura que contiene información sobre qué parte del bucle se ha completado.</returns>
+      <param name="source">Origen de datos enumerable.</param>
+      <param name="localInit">Delegado de función que devuelve el estado inicial de los datos locales de cada tarea.</param>
+      <param name="body">Delegado que se invoca una vez por cada iteración.</param>
+      <param name="localFinally">Delegado que realiza una acción final en el estado local de cada tarea.</param>
+      <typeparam name="TSource">El tipo de los datos del origen.</typeparam>
+      <typeparam name="TLocal">Tipo de los datos locales de subprocesos.</typeparam>
+      <exception cref="T:System.ArgumentNullException">El argumento <paramref name="source" /> es null. O bien El argumento <paramref name="body" /> es null. O bien El argumento <paramref name="localInit" /> es null. O bien El argumento <paramref name="localFinally" /> es null.</exception>
+      <exception cref="T:System.AggregateException">La excepción que contiene todas las excepciones individuales producidas en todos los subprocesos.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0})">
+      <summary>Ejecuta una operación foreach (For Each en Visual Basic) en <see cref="T:System.Collections.IEnumerable" /> donde se pueden ejecutar iteraciones en paralelo y configurar las opciones de bucle.</summary>
+      <returns>Estructura que contiene información sobre qué parte del bucle se ha completado.</returns>
+      <param name="source">Origen de datos enumerable.</param>
+      <param name="parallelOptions">Objeto que configura el comportamiento de esta operación.</param>
+      <param name="body">Delegado que se invoca una vez por cada iteración.</param>
+      <typeparam name="TSource">El tipo de los datos del origen.</typeparam>
+      <exception cref="T:System.OperationCanceledException">
+        <see cref="T:System.Threading.CancellationToken" /> en el argumento <paramref name="parallelOptions" /> se cancela</exception>
+      <exception cref="T:System.ArgumentNullException">El argumento <paramref name="source" /> es null. O bien El argumento <paramref name="parallelOptions" /> es null. O bien El argumento <paramref name="body" /> es null.</exception>
+      <exception cref="T:System.AggregateException">La excepción que contiene todas las excepciones individuales producidas en todos los subprocesos.</exception>
+      <exception cref="T:System.ObjectDisposedException">El objeto <see cref="T:System.Threading.CancellationTokenSource" /> asociado a <see cref="T:System.Threading.CancellationToken" /> en el <paramref name="parallelOptions" /> se ha desechado.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0,System.Threading.Tasks.ParallelLoopState})">
+      <summary>Ejecuta una operación foreach (For Each en Visual Basic) en <see cref="T:System.Collections.IEnumerable" /> donde se pueden ejecutar iteraciones en paralelo y configurar opciones de bucle, y el estado del bucle se puede supervisar y manipular.</summary>
+      <returns>Estructura que contiene información sobre qué parte del bucle se ha completado.</returns>
+      <param name="source">Origen de datos enumerable.</param>
+      <param name="parallelOptions">Objeto que configura el comportamiento de esta operación.</param>
+      <param name="body">Delegado que se invoca una vez por cada iteración.</param>
+      <typeparam name="TSource">El tipo de los datos del origen.</typeparam>
+      <exception cref="T:System.OperationCanceledException">
+        <see cref="T:System.Threading.CancellationToken" /> en el argumento <paramref name="parallelOptions" /> se cancela</exception>
+      <exception cref="T:System.ArgumentNullException">El argumento <paramref name="source" /> es null. O bien El argumento <paramref name="parallelOptions" /> es null. O bien El argumento <paramref name="body" /> es null.</exception>
+      <exception cref="T:System.AggregateException">La excepción que contiene todas las excepciones individuales producidas en todos los subprocesos.</exception>
+      <exception cref="T:System.ObjectDisposedException">El objeto <see cref="T:System.Threading.CancellationTokenSource" /> asociado a <see cref="T:System.Threading.CancellationToken" /> en el <paramref name="parallelOptions" /> se ha desechado.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})">
+      <summary>Ejecuta una operación foreach (For Each in Visual Basic) con índices de 64 bits en <see cref="T:System.Collections.IEnumerable" /> donde se pueden ejecutar iteraciones en paralelo y configurar opciones de bucle, y el estado del bucle se puede supervisar y manipular.</summary>
+      <returns>Estructura que contiene información sobre qué parte del bucle se ha completado.</returns>
+      <param name="source">Origen de datos enumerable.</param>
+      <param name="parallelOptions">Objeto que configura el comportamiento de esta operación.</param>
+      <param name="body">Delegado que se invoca una vez por cada iteración.</param>
+      <typeparam name="TSource">El tipo de los datos del origen.</typeparam>
+      <exception cref="T:System.OperationCanceledException">
+        <see cref="T:System.Threading.CancellationToken" /> en el argumento <paramref name="parallelOptions" /> se cancela</exception>
+      <exception cref="T:System.ArgumentNullException">El argumento <paramref name="source" /> es null. O bien El argumento <paramref name="parallelOptions" /> es null. O bien El argumento <paramref name="body" /> es null.</exception>
+      <exception cref="T:System.AggregateException">La excepción que contiene todas las excepciones individuales producidas en todos los subprocesos.</exception>
+      <exception cref="T:System.ObjectDisposedException">El objeto <see cref="T:System.Threading.CancellationTokenSource" /> asociado a <see cref="T:System.Threading.CancellationToken" /> en el <paramref name="parallelOptions" /> se ha desechado.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Generic.IEnumerable{``0},System.Threading.Tasks.ParallelOptions,System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},System.Action{``1})">
+      <summary>Ejecuta una operación foreach (For Each en Visual Basic) con datos locales del subproceso en <see cref="T:System.Collections.IEnumerable" /> donde se pueden ejecutar iteraciones en paralelo y configurar opciones de bucle, y el estado del bucle se puede supervisar y manipular.</summary>
+      <returns>Estructura que contiene información sobre qué parte del bucle se ha completado.</returns>
+      <param name="source">Origen de datos enumerable.</param>
+      <param name="parallelOptions">Objeto que configura el comportamiento de esta operación.</param>
+      <param name="localInit">Delegado de función que devuelve el estado inicial de los datos locales de cada tarea.</param>
+      <param name="body">Delegado que se invoca una vez por cada iteración.</param>
+      <param name="localFinally">Delegado que realiza una acción final en el estado local de cada tarea.</param>
+      <typeparam name="TSource">El tipo de los datos del origen.</typeparam>
+      <typeparam name="TLocal">Tipo de los datos locales de subprocesos.</typeparam>
+      <exception cref="T:System.ArgumentNullException">El argumento <paramref name="source" /> es null. O bien El argumento <paramref name="parallelOptions" /> es null. O bien El argumento <paramref name="body" /> es null. O bien El argumento <paramref name="localInit" /> es null. O bien El argumento <paramref name="localFinally" /> es null.</exception>
+      <exception cref="T:System.OperationCanceledException">
+        <see cref="T:System.Threading.CancellationToken" /> en el argumento <paramref name="parallelOptions" /> se cancela.</exception>
+      <exception cref="T:System.ObjectDisposedException">El objeto <see cref="T:System.Threading.CancellationTokenSource" /> asociado a <see cref="T:System.Threading.CancellationToken" /> en el <paramref name="parallelOptions" /> se ha desechado.</exception>
+      <exception cref="T:System.AggregateException">La excepción que contiene todas las excepciones individuales producidas en todos los subprocesos.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Generic.IEnumerable{``0},System.Threading.Tasks.ParallelOptions,System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},System.Action{``1})">
+      <summary>Ejecuta una operación foreach (For Each en Visual Basic) con índices de 64 bits y datos locales del subproceso en <see cref="T:System.Collections.IEnumerable" /> donde se pueden ejecutar iteraciones en paralelo y configurar opciones de bucle, y el estado del bucle se puede supervisar y manipular.</summary>
+      <returns>Estructura que contiene información sobre qué parte del bucle se ha completado.</returns>
+      <param name="source">Origen de datos enumerable.</param>
+      <param name="parallelOptions">Objeto que configura el comportamiento de esta operación.</param>
+      <param name="localInit">Delegado de función que devuelve el estado inicial de los datos locales de cada tarea.</param>
+      <param name="body">Delegado que se invoca una vez por cada iteración.</param>
+      <param name="localFinally">Delegado que realiza una acción final en el estado local de cada tarea.</param>
+      <typeparam name="TSource">El tipo de los datos del origen.</typeparam>
+      <typeparam name="TLocal">Tipo de los datos locales de subprocesos.</typeparam>
+      <exception cref="T:System.ArgumentNullException">El argumento <paramref name="source" /> es null. O bien El argumento <paramref name="parallelOptions" /> es null. O bien El argumento <paramref name="body" /> es null. O bien El argumento <paramref name="localInit" /> es null. O bien El argumento <paramref name="localFinally" /> es null.</exception>
+      <exception cref="T:System.OperationCanceledException">
+        <see cref="T:System.Threading.CancellationToken" /> en el argumento <paramref name="parallelOptions" /> se cancela.</exception>
+      <exception cref="T:System.ObjectDisposedException">El objeto <see cref="T:System.Threading.CancellationTokenSource" /> asociado a <see cref="T:System.Threading.CancellationToken" /> en el <paramref name="parallelOptions" /> se ha desechado.</exception>
+      <exception cref="T:System.AggregateException">La excepción que contiene todas las excepciones individuales producidas en todos los subprocesos.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.Invoke(System.Action[])">
+      <summary>Ejecuta cada una de las acciones proporcionadas, posiblemente en paralelo.</summary>
+      <param name="actions">Matriz de <see cref="T:System.Action" /> que se va a ejecutar.</param>
+      <exception cref="T:System.ArgumentNullException">El argumento <paramref name="actions" /> es null.</exception>
+      <exception cref="T:System.AggregateException">La excepción que se produce cuando cualquier acción de la matriz <paramref name="actions" /> produce una excepción.</exception>
+      <exception cref="T:System.ArgumentException">La matriz <paramref name="actions" /> contiene un elemento null.</exception>
+    </member>
+    <member name="M:System.Threading.Tasks.Parallel.Invoke(System.Threading.Tasks.ParallelOptions,System.Action[])">
+      <summary>Ejecuta todas las acciones proporcionadas, posiblemente en paralelo, a menos que el usuario cancele la operación.</summary>
+      <param name="parallelOptions">Objeto que configura el comportamiento de esta operación.</param>
+      <param name="actions">Matriz de acciones que se va a ejecutar.</param>
+      <exception cref="T:System.OperationCanceledException">
+        <see cref="T:System.Threading.CancellationToken" /> en el estado <paramref name="parallelOptions" /> está establecido.</exception>
+      <exception cref="T:System.ArgumentNullException">El argumento <paramref name="actions" /> es null. O bien El argumento <paramref name="parallelOptions" /> es null.</exception>
+      <exception cref="T:System.AggregateException">La excepción que se produce cuando cualquier acción de la matriz <paramref name="actions" /> produce una excepción.</exception>
+      <exception cref="T:System.ArgumentException">La matriz <paramref name="actions" /> contiene un elemento null.</exception>
+      <exception cref="T:System.ObjectDisposedException">El objeto <see cref="T:System.Threading.CancellationTokenSource" /> asociado a <see cref="T:System.Threading.CancellationToken" /> en el <paramref name="parallelOptions" /> se ha desechado.</exception>
+    </member>
+    <member name="T:System.Threading.Tasks.ParallelLoopResult">
+      <summary>Proporciona el estado de realización en la ejecución de un bucle <see cref="T:System.Threading.Tasks.Parallel" />.</summary>
+    </member>
+    <member name="P:System.Threading.Tasks.ParallelLoopResult.IsCompleted">
+      <summary>Obtiene un valor que indica si el bucle se ejecutó hasta completarse, como que se ejecutaron todas las iteraciones del bucle y que el bucle no recibió ninguna solicitud para finalizar prematuramente.</summary>
+      <returns>Es true si el bucle se ejecutó hasta completarse; de lo contrario, es false.</returns>
+    </member>
+    <member name="P:System.Threading.Tasks.ParallelLoopResult.LowestBreakIteration">
+      <summary>Obtiene el índice de la iteración más baja desde la que se llamó a <see cref="M:System.Threading.Tasks.ParallelLoopState.Break" />.</summary>
+      <returns>Devuelve un entero que representa la iteración más baja desde la que se llamó a la instrucción Break.</returns>
+    </member>
+    <member name="T:System.Threading.Tasks.ParallelLoopState">
+      <summary>Habilita iteraciones de bucles <see cref="T:System.Threading.Tasks.Parallel" /> para interactuar con otras iteraciones. La clase Parallel proporciona una instancia de esta clase a cada bucle; no se pueden crear instancias en el código de usuario.</summary>
+    </member>
+    <member name="M:System.Threading.Tasks.ParallelLoopState.Break">
+      <summary>Comunica que el bucle <see cref="T:System.Threading.Tasks.Parallel" /> debe cesar, en cuanto pueda el sistema, la ejecución de iteraciones después de la iteración actual.</summary>
+      <exception cref="T:System.InvalidOperationException">El método <see cref="M:System.Threading.Tasks.ParallelLoopState.Stop" /> se definió previamente. Las iteraciones del mismo bucle no pueden utilizar <see cref="M:System.Threading.Tasks.ParallelLoopState.Break" /> y <see cref="M:System.Threading.Tasks.ParallelLoopState.Stop" /> en combinación.</exception>
+    </member>
+    <member name="P:System.Threading.Tasks.ParallelLoopState.IsExceptional">
+      <summary>Obtiene si alguna iteración del bucle ha producido una excepción que la iteración no controló.</summary>
+      <returns>Es true si se produjo una excepción no controlada; de lo contrario, es false.</returns>
+    </member>
+    <member name="P:System.Threading.Tasks.ParallelLoopState.IsStopped">
+      <summary>Obtiene si alguna iteración del bucle ha llamado a <see cref="M:System.Threading.Tasks.ParallelLoopState.Stop" />.</summary>
+      <returns>Es true si cualquier iteración ha detenido el bucle; de lo contrario, es false.</returns>
+    </member>
+    <member name="P:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration">
+      <summary>Obtiene la iteración más baja del bucle desde el que se llamó a <see cref="M:System.Threading.Tasks.ParallelLoopState.Break" />.</summary>
+      <returns>Entero que representa la iteración más baja desde la que se llamó a Break. En el caso de un bucle <see cref="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.Partitioner{``0},System.Action{``0})" />, el valor está basado en un índice generado internamente.</returns>
+    </member>
+    <member name="P:System.Threading.Tasks.ParallelLoopState.ShouldExitCurrentIteration">
+      <summary>Obtiene si la iteración actual del bucle debe salir basándose en las solicitudes realizadas por esta u otras iteraciones.</summary>
+      <returns>Es true si la iteración actual debería terminar; de lo contrario, es false.</returns>
+    </member>
+    <member name="M:System.Threading.Tasks.ParallelLoopState.Stop">
+      <summary>Comunica que el bucle <see cref="T:System.Threading.Tasks.Parallel" /> debe cesar la ejecución cuanto antes pueda hacerlo el sistema.</summary>
+      <exception cref="T:System.InvalidOperationException">El método <see cref="M:System.Threading.Tasks.ParallelLoopState.Break" /> se definió previamente. Las iteraciones del mismo bucle no pueden utilizar <see cref="M:System.Threading.Tasks.ParallelLoopState.Break" /> y <see cref="M:System.Threading.Tasks.ParallelLoopState.Stop" /> en combinación.</exception>
+    </member>
+    <member name="T:System.Threading.Tasks.ParallelOptions">
+      <summary>Almacena las opciones que configuran el funcionamiento de los métodos en la clase <see cref="T:System.Threading.Tasks.Parallel" />.</summary>
+    </member>
+    <member name="M:System.Threading.Tasks.ParallelOptions.#ctor">
+      <summary>Inicializa una nueva instancia de la clase <see cref="T:System.Threading.Tasks.ParallelOptions" />.</summary>
+    </member>
+    <member name="P:System.Threading.Tasks.ParallelOptions.CancellationToken">
+      <summary>Obtiene o establece el <see cref="T:System.Threading.CancellationToken" /> asociado a esta instancia de <see cref="T:System.Threading.Tasks.ParallelOptions" />.</summary>
+      <returns>Token que está asociado a esta instancia.</returns>
+    </member>
+    <member name="P:System.Threading.Tasks.ParallelOptions.MaxDegreeOfParallelism">
+      <summary>Obtiene o establece el grado máximo de paralelismo habilitado por esta instancia de ParallelOptions.</summary>
+      <returns>Entero que representa el grado máximo de paralelismo.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">La excepción que se produce cuando esta propiedad <see cref="P:System.Threading.Tasks.ParallelOptions.MaxDegreeOfParallelism" /> está establecida en 0 o en algún valor menor que -1.</exception>
+    </member>
+    <member name="P:System.Threading.Tasks.ParallelOptions.TaskScheduler">
+      <summary>Obtiene o establece el <see cref="T:System.Threading.Tasks.TaskScheduler" /> asociado a esta instancia de <see cref="T:System.Threading.Tasks.ParallelOptions" />. Al establecer esta propiedad en null, se indica que no debe usarse el programador actual.</summary>
+      <returns>Programador de tareas asociado a esta instancia.</returns>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="N:Microsoft.CSharp.RuntimeBinder">
+      <summary>Пространство имен <see cref="N:Microsoft.CSharp.RuntimeBinder" /> предоставляет классы и интерфейсы, поддерживающие взаимодействие между средой DLR и языком C#.</summary>
+    </member>
+    <member name="N:Microsoft.VisualBasic">
+      <summary>Пространство имен <see cref="N:Microsoft.VisualBasic" /> содержит типы, которые поддерживают среду выполнения Visual Basic в Visual Basic.</summary>
+    </member>
+    <member name="N:Microsoft.VisualBasic.CompilerServices">
+      <summary>Пространство имен <see cref="N:Microsoft.VisualBasic.CompilerServices" /> содержит типы, предназначенные только для внутреннего пользования и поддерживающие компилятор Visual Basic.</summary>
+    </member>
+    <member name="N:System">
+      <summary>Пространство имен <see cref="N:System" /> содержит фундаментальные и базовые классы, которые определяют распространенные типы значений и ссылочные типы данных, события и обработчики событий, интерфейсы, атрибуты и исключения обработки.</summary>
+    </member>
+    <member name="N:System.CodeDom.Compiler">
+      <summary>Пространство имен <see cref="N:System.CodeDom.Compiler" /> содержит типы для управления генерацией и компиляцией исходного кода в поддерживаемых языках программирования. Каждый генератор кода может создавать исходный код на определенном языке программирования на основе структуры моделей исходного кода CodeDOM, состоящих из элементов, предоставляемых пространством имен <see cref="N:System.CodeDom" />.</summary>
+    </member>
+    <member name="N:System.Collections">
+      <summary>Пространство имен <see cref="N:System.Collections" /> содержит интерфейсы и классы, которые определяют различные коллекции объектов, такие как списки, очереди, двоичные массивы, хэш-таблицы и словари.</summary>
+    </member>
+    <member name="N:System.Collections.Concurrent">
+      <summary>Пространство имен System.Collections.Concurrent предоставляет несколько потокобезопасных классов коллекций, которые следует использовать вместо соответствующих типов в пространствах имен <see cref="N:System.Collections" /> и <see cref="N:System.Collections.Generic" />, если несколько потоков параллельно обращаются к такой коллекции.</summary>
+    </member>
+    <member name="N:System.Collections.Generic">
+      <summary>Пространство имен <see cref="N:System.Collections.Generic" /> содержит интерфейсы и классы, определяющие универсальные коллекции, которые позволяют пользователям создавать строго типизированные коллекции, обеспечивающие повышенную производительность и безопасность типов по сравнению с неуниверсальными строго типизированными коллекциями.</summary>
+    </member>
+    <member name="N:System.Collections.ObjectModel">
+      <summary>Пространство имен <see cref="N:System.Collections.ObjectModel" /> содержит классы, которые могут использоваться в качестве коллекций в объектной модели многократно используемой библиотеки. Эти классы предназначены для использования со свойствами и методами, возвращающими коллекции.</summary>
+    </member>
+    <member name="N:System.Collections.Specialized">
+      <summary>Пространство имен <see cref="N:System.Collections.Specialized" /> содержит специализированные и строго типизированные коллекции, например словарь в виде связанного списка, битовый вектор или коллекции, которые содержат только строки.</summary>
+    </member>
+    <member name="N:System.ComponentModel">
+      <summary>Пространство имен <see cref="N:System.ComponentModel" /> содержит классы, реализующие поведение компонентов и элементов управления во время проектирования и выполнения. Данное пространство имен включает базовые классы и интерфейсы, предназначенные для реализации преобразователей атрибутов и типов, для привязки к источникам данных и для лицензирования компонентов.</summary>
+    </member>
+    <member name="N:System.ComponentModel.DataAnnotations">
+      <summary>Пространство имен <see cref="N:System.ComponentModel.DataAnnotations" /> предоставляет классы атрибутов, используемые для определения метаданных для ASP.NET MVC и элементов управления данными ASP.NET.</summary>
+    </member>
+    <member name="N:System.ComponentModel.DataAnnotations.Schema">
+      <summary>Пространство имен <see cref="N:System.ComponentModel.DataAnnotations.Schema" /> предоставляет поддержку классов атрибутов, используемых для определения метаданных для ASP.NET MVC и элементов управления данными ASP.NET.</summary>
+    </member>
+    <member name="N:System.Diagnostics">
+      <summary>В пространстве имен <see cref="N:System.Diagnostics" /> предусмотрены классы, позволяющие осуществлять взаимодействие с системными процессами, журналами событий и счетчиками производительности.</summary>
+    </member>
+    <member name="N:System.Diagnostics.CodeAnalysis">
+      <summary>Пространство имен <see cref="N:System.Diagnostics.CodeAnalysis" /> содержит классы для взаимодействия со средствами анализа кода. Средства анализа кода применяются для анализа кода на соответствие соглашениям о его написании, в частности правилам именования и безопасности.</summary>
+    </member>
+    <member name="N:System.Diagnostics.Contracts">
+      <summary>Пространство имен <see cref="N:System.Diagnostics.Contracts" /> содержит статические классы для представления контрактов программы, таких как предусловие, постусловие и инвариантность объектов.</summary>
+    </member>
+    <member name="N:System.Diagnostics.Tracing">
+      <summary>Пространство имен <see cref="N:System.Diagnostics.Tracing" /> предоставляет типы и члены, позволяющие создавать строго типизированные события, которые будут захватываться системой трассировки событий для Windows (ETW).</summary>
+    </member>
+    <member name="N:System.Dynamic">
+      <summary>Пространство имен <see cref="N:System.Dynamic" /> предоставляет классы и интерфейсы, поддерживающие среду DLR.</summary>
+    </member>
+    <member name="N:System.Globalization">
+      <summary>Пространство имен <see cref="N:System.Globalization" /> содержит классы, определяющие сведения, относящиеся к культуре, такие как язык, название страны, используемые календари, шаблоны форматирования дат, денежных сумм и чисел, а также порядок сортировки строк. Эти классы применяются при создании многоязыковых приложений. Такие классы, как <see cref="T:System.Globalization.StringInfo" /> и <see cref="T:System.Globalization.TextInfo" />, обладают расширенными возможностями глобализации, включая поддержку заменителей и обработку текстовых элементов.</summary>
+    </member>
+    <member name="N:System.IO">
+      <summary>Пространство имен System.IO содержит типы, позволяющие осуществлять чтение и запись в файлы и потоки данных, а также типы для базовой поддержки файлов и папок.</summary>
+    </member>
+    <member name="N:System.IO.Compression">
+      <summary>Пространство имен <see cref="N:System.IO.Compression" /> содержит классы, предоставляющие основные службы сжатия и распаковки для потоков.</summary>
+    </member>
+    <member name="N:System.Linq">
+      <summary>Пространство имен <see cref="N:System.Linq" /> содержит классы и интерфейсы, которые поддерживают запросы, использующие LINQ.</summary>
+    </member>
+    <member name="N:System.Linq.Expressions">
+      <summary>Пространство имен <see cref="N:System.Linq.Expressions" /> содержит классы, интерфейсы и перечисления, позволяющие представлять выражения кода уровня языка в виде объектов в форме деревьев выражений.</summary>
+    </member>
+    <member name="N:System.Net">
+      <summary>Пространство имен <see cref="N:System.Net" /> предоставляет простой программный интерфейс для многих протоколов, используемых в современных сетях. Классы <see cref="T:System.Net.WebRequest" /> и <see cref="T:System.Net.WebResponse" /> образуют основу так называемых подключаемых протоколов, которые представляют собой реализацию сетевых служб, позволяющих разрабатывать приложения, использующие ресурсы Интернета, не заботясь о конкретных особенностях отдельных протоколов. Классы в пространстве имен <see cref="N:System.Net" /> можно использовать для разработки Приложений для Магазина Windows или приложений рабочего стола. При использовании в Приложении для Магазина Windows классы пространства имен <see cref="N:System.Net" /> затрагиваются функцией сетевой изоляции, являющейся частью модели безопасности приложений, используемой системой Windows Developer Preview. Соответствующие сетевые возможности необходимо включить в манифесте приложения для Приложения для Магазина Windows для системы, чтобы разрешить сетевой доступ Приложениям для Магазина Windows. Дополнительные сведения см. в разделе Сетевая изоляция приложений хранилища Windows.</summary>
+    </member>
+    <member name="N:System.Net.Http">
+      <summary>Пространство имен <see cref="N:System.Net.Http" /> обеспечивает интерфейс программирования для современных приложений HTTP.</summary>
+    </member>
+    <member name="N:System.Net.Http.Headers">
+      <summary>Предоставляет поддержку коллекций заголовков HTTP, используемых пространством имен <see cref="N:System.Net.Http" />.</summary>
+    </member>
+    <member name="N:System.Net.NetworkInformation">
+      <summary>Пространство имен <see cref="N:System.Net.NetworkInformation" /> обеспечивает доступ к данным о сетевом трафике, сетевым адресам и уведомлениям об изменении адресов локального компьютера. Это пространство имен также содержит классы, реализующие функциональность программы Ping. Класс <see cref="T:System.Net.NetworkInformation.Ping" /> и другие связанные с ним классы могут использоваться для проверки доступности компьютера по сети.</summary>
+    </member>
+    <member name="N:System.Numerics">
+      <summary>Пространство имен <see cref="N:System.Numerics" /> содержит числовые типы, дополняющие числовые типы-примитивы, такие как <see cref="T:System.Byte" />, <see cref="T:System.Double" /> и <see cref="T:System.Int32" />, которые определены в .NET Framework.</summary>
+    </member>
+    <member name="N:System.Reflection">
+      <summary>Пространство имен <see cref="N:System.Reflection" /> содержит типы, предназначенные для извлечения сведений о сборках, модулях, членах, параметрах и других объектах в управляемом коде путем обработки их метаданных. Эти типы также можно использовать для работы с экземплярами загруженных типов, например для подключения событий или вызова методов. Для динамического создания типов следует использовать пространство имен <see cref="N:System.Reflection.Emit" />.</summary>
+    </member>
+    <member name="N:System.Reflection.Context">
+      <summary>Пространство имен <see cref="N:System.Reflection.Context" /> содержит классы, которые позволяют настраиваемые контексты отражения.</summary>
+    </member>
+    <member name="N:System.Reflection.Emit">
+      <summary>Пространство имен <see cref="N:System.Reflection.Emit" /> содержит классы, позволяющие компилятору или инструментальным средствам создавать метаданные и инструкции промежуточного языка MSIL и при необходимости формировать на диске PE-файл. В основном эти классы используются обработчиками скриптов и компиляторами.</summary>
+    </member>
+    <member name="N:System.Resources">
+      <summary>Пространство имен <see cref="N:System.Resources" /> предоставляет классы и интерфейсы, позволяющие разработчику создавать, сохранять и управлять различными ресурсами, связанными с языком и региональными параметрами, которые используются в приложении. Одним из наиболее важных классов в пространстве имен <see cref="N:System.Resources" /> является класс <see cref="T:System.Resources.ResourceManager" />.</summary>
+    </member>
+    <member name="N:System.Runtime">
+      <summary>Пространство имен <see cref="N:System.Runtime" /> содержит дополнительные типы, поддерживающие различные пространства имен, такие как System, Runtime и Security.</summary>
+    </member>
+    <member name="N:System.Runtime.CompilerServices">
+      <summary>Пространство имен <see cref="N:System.Runtime.CompilerServices" /> предоставляет функции средствам записи компилятора, которые используют управляемый код для задания в метаданных атрибутов, влияющих на поведение среды CLR во время выполнения.</summary>
+    </member>
+    <member name="N:System.Runtime.ExceptionServices">
+      <summary>Пространство имен <see cref="N:System.Runtime.ExceptionServices" /> предоставляет классы для расширенной обработки исключений.</summary>
+    </member>
+    <member name="N:System.Runtime.InteropServices">
+      <summary>Пространство имен <see cref="N:System.Runtime.InteropServices" /> предоставляет широкий спектр членов, поддерживающих COM-взаимодействие и службы вызова неуправляемого кода. Для ознакомления с этими службами см. раздел Взаимодействие с неуправляемым кодом.</summary>
+    </member>
+    <member name="N:System.Runtime.InteropServices.ComTypes">
+      <summary>Пространство имен System.Runtime.InteropServices.ComTypes содержит методы, которые являются определениями функций COM для управляемого кода. Эти функции заменили не поддерживаемые более методы UCOM* в пространстве имен <see cref="N:System.Runtime.InteropServices" />.</summary>
+    </member>
+    <member name="N:System.Runtime.InteropServices.WindowsRuntime">
+      <summary>Пространство имен <see cref="N:System.Runtime.InteropServices.WindowsRuntime" /> содержит классы, которые поддерживают взаимодействие между управляемым кодом и средой Среда выполнения Windows и обеспечивают создание типов Среда выполнения Windows с помощью управляемого кода.</summary>
+    </member>
+    <member name="N:System.Runtime.Serialization">
+      <summary>Пространство имен <see cref="N:System.Runtime.Serialization" /> содержит классы, которые можно использовать для сериализации и десериализации объектов. Сериализацией называется процесс преобразования объекта или набора объектов в линейную последовательность байтов для сохранения или для передачи на другой компьютер. Десериализацией называется процесс получения сохраненных данных и восстановления из них объекта.</summary>
+    </member>
+    <member name="N:System.Runtime.Serialization.Json">
+      <summary>Предоставляет классы, связанные с сериализацией Json.</summary>
+    </member>
+    <member name="N:System.Runtime.Versioning">
+      <summary>Пространство имен <see cref="N:System.Runtime.Versioning" /> содержит дополнительные типы, поддерживающие управление версиями в параллельно выполняемых реализациях платформы .NET Framework.</summary>
+    </member>
+    <member name="N:System.Security">
+      <summary>Пространство имен <see cref="N:System.Security" /> обеспечивает структуру, лежащую в основе системы обеспечения безопасности среды CLR, включая базовые классы для разрешений.</summary>
+    </member>
+    <member name="N:System.Security.Principal">
+      <summary>Пространство имен <see cref="N:System.Security.Principal" /> определяет объект-участник, представляющий контекст безопасности, в котором выполняется код программы. Дополнительные сведения см. в разделе Безопасность на основе ролей.</summary>
+    </member>
+    <member name="N:System.ServiceModel">
+      <summary>Предоставляет классы, связанные с моделью службы.</summary>
+    </member>
+    <member name="N:System.ServiceModel.Channels">
+      <summary>Предоставляет классы, связанные с каналами модели службы.</summary>
+    </member>
+    <member name="N:System.ServiceModel.Description">
+      <summary>Предоставляет классы, связанные с описанием модели службы.</summary>
+    </member>
+    <member name="N:System.ServiceModel.Dispatcher">
+      <summary>Предоставляет классы, связанные с распределения модели службы.</summary>
+    </member>
+    <member name="N:System.ServiceModel.Security">
+      <summary>Пространство имен <see cref="N:System.ServiceModel.Security" /> связано с общими вопросами безопасности, например <see cref="T:System.ServiceModel.Security.SecurityAlgorithmSuite" />.</summary>
+    </member>
+    <member name="N:System.ServiceModel.Security.Tokens">
+      <summary>Работает с токенами безопасности и сертификатами.</summary>
+    </member>
+    <member name="N:System.Text">
+      <summary>Пространство имен <see cref="N:System.Text" /> содержит классы, представляющие кодировки ASCII и Юникод, абстрактные базовые классы для преобразования блоков символов в блоки байтов и обратно и класс поддержки, управляющий объектами <see cref="T:System.String" /> и форматирующий такие объекты без создания промежуточных экземпляров <see cref="T:System.String" />.</summary>
+    </member>
+    <member name="N:System.Text.RegularExpressions">
+      <summary>Пространство имен <see cref="N:System.Text.RegularExpressions" /> содержит классы, обеспечивающие доступ к обработчику регулярных выражений платформы .NET Framework. Пространство имен обеспечивает функциональные возможности регулярный выражений, которые могут быть использованы из любой платформы или языка, работающих в рамках Microsoft .NET Framework. В дополнение к типам, содержащимся в данном пространстве имен, класс <see cref="T:System.Configuration.RegexStringValidator" /> позволяет определить, совпадает ли определенная строка с шаблоном регулярного выражения.</summary>
+    </member>
+    <member name="N:System.Threading">
+      <summary>Пространство имен <see cref="N:System.Threading" /> содержит классы и интерфейсы, которые дают возможность программировать в многопоточном режиме. Помимо классов синхронизации работы потоков и доступа к данным (<see cref="T:System.Threading.Mutex" />, <see cref="T:System.Threading.Monitor" />, <see cref="T:System.Threading.Interlocked" />, <see cref="T:System.Threading.AutoResetEvent" /> и т. д.), это пространство имен содержит класс <see cref="T:System.Threading.ThreadPool" />, позволяющий использовать пул предоставляемых системой потоков, и класс <see cref="T:System.Threading.Timer" />, выполняющий методы обратного вызова в потоках пула потоков.</summary>
+    </member>
+    <member name="N:System.Threading.Tasks">
+      <summary>Пространство имен System.Threading.Tasks предоставляет типы, которые упрощают работу по написанию параллельного и асинхронного кода. Основные типы: <see cref="T:System.Threading.Tasks.Task" />, представляющий асинхронную операцию, которую можно ожидать и отменить, и <see cref="T:System.Threading.Tasks.Task`1" />, представляющий собой задачу, которая может вернуть значение. Класс <see cref="T:System.Threading.Tasks.TaskFactory" /> предоставляет статические методы для создания и запуска задач, а класс <see cref="T:System.Threading.Tasks.TaskScheduler" /> предоставляет инфраструктуру планирования потоков по умолчанию.</summary>
+    </member>
+    <member name="N:System.Windows.Input">
+      <summary>Предоставляет типы для поддержки системы ввода Windows Presentation Foundation (WPF). Сюда входят классы абстрагирования устройств для устройств мыши, клавиатуры и пера, часто используемые классы диспетчера ввода, поддержка для команд и пользовательских команд, а также различные служебные классы.</summary>
+    </member>
+    <member name="N:System.Xml">
+      <summary>Пространство имен <see cref="N:System.Xml" /> предоставляет основанную на стандартах поддержку обработки XML.</summary>
+    </member>
+    <member name="N:System.Xml.Linq">
+      <summary>Содержит классы для LINQ to XML. LINQ to XML — это расположенный в памяти программный интерфейс XML, который позволяет легко и эффективно изменять документы XML.</summary>
+    </member>
+    <member name="N:System.Xml.Schema">
+      <summary>Пространство имен <see cref="N:System.Xml.Schema" /> содержит классы XML, обеспечивающие основанную на стандартах поддержку для схем на языке определения схем XML (XSD).</summary>
+    </member>
+    <member name="N:System.Xml.Serialization">
+      <summary>Пространство имен <see cref="N:System.Xml.Serialization" /> содержит классы, используемые для сериализации объектов в документы или потоки формата XML.</summary>
+    </member>
+    <member name="N:Windows.Foundation">
+      <summary>Пространство имен <see cref="N:Windows.Foundation" /> содержит типы, поддерживающие разработку приложений Магазин Windows с платформой .NET Framework.</summary>
+    </member>
+    <member name="N:Windows.UI">
+      <summary>Пространство имен <see cref="N:Windows.UI" /> содержит типы, поддерживающие разработку приложений Магазин Windows с платформой .NET Framework.</summary>
+    </member>
+    <member name="N:Windows.UI.Xaml">
+      <summary>Пространство имен <see cref="N:Windows.UI.Xaml" /> содержит типы, поддерживающие разработку приложений Магазин Windows с платформой .NET Framework.</summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Automation">
+      <summary>Пространство имен <see cref="N:Windows.UI.Xaml.Automation" /> содержит типы, поддерживающие разработку приложений Магазин Windows с платформой .NET Framework.</summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Controls.Primitives">
+      <summary>Пространство имен <see cref="N:Windows.UI.Xaml.Controls.Primitives" /> содержит типы, поддерживающие разработку приложений Магазин Windows с платформой .NET Framework.</summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Markup">
+      <summary>Пространство имен <see cref="N:Windows.UI.Xaml.Markup" /> содержит типы, поддерживающие разработку приложений Магазин Windows с платформой .NET Framework.</summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Media">
+      <summary>Пространство имен <see cref="N:Windows.UI.Xaml.Media" /> содержит типы, поддерживающие разработку приложений Магазина Windows с платформой .NET Framework.</summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Media.Animation">
+      <summary>Пространство имен <see cref="N:Windows.UI.Xaml.Media.Animation" /> содержит типы, поддерживающие разработку приложений Магазин Windows с платформой .NET Framework.</summary>
+    </member>
+    <member name="N:Windows.UI.Xaml.Media.Media3D">
+      <summary>Пространство имен <see cref="N:Windows.UI.Xaml.Media.Media3D" /> содержит типы, поддерживающие разработку приложений Магазин Windows с платформой .NET Framework.</summary>
+    </member>
+  </members>
+</doc>

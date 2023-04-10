@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.Net.Http.Rtc</name>
+  </assembly>
+  <members>
+    <member name="T:System.Net.Http.RtcRequestFactory">
+      <summary>使用实时通信 (RTC) 背景通知基础结构表示用于创建特殊 <see cref="T:System.Net.Http.HttpRequestMessage" /> 以使用的类。</summary>
+    </member>
+    <member name="M:System.Net.Http.RtcRequestFactory.Create(System.Net.Http.HttpMethod,System.Uri)">
+      <summary>创建特殊 <see cref="T:System.Net.Http.HttpRequestMessage" /> 以用于实时通信 (RTC) 后台通知基础结构。</summary>
+      <returns>返回 <see cref="T:System.Net.Http.HttpRequestMessage" />。 一次与 RTC 背景通知基础结构一起使用的 HTTP 请求消息。</returns>
+      <param name="method">HTTP 方法。</param>
+      <param name="uri">请求发送到的 URI。</param>
+    </member>
+  </members>
+</doc>

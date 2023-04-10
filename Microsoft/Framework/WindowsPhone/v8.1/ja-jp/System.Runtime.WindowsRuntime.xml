@@ -1,0 +1,674 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.Runtime.WindowsRuntime</name>
+  </assembly>
+  <members>
+    <member name="T:System.WindowsRuntimeSystemExtensions">
+      <summary>[セキュリティ クリティカル] タスクと  非同期アクションおよび操作の間で変換を行う拡張メソッドを提供します。</summary>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsAsyncAction(System.Threading.Tasks.Task)">
+      <summary>[セキュリティ クリティカル] 開始タスクを表す  非同期アクションを返します。</summary>
+      <returns>開始タスクを表す Windows.Foundation.IAsyncAction インスタンス。</returns>
+      <param name="source">開始されたタスク。</param>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsAsyncOperation``1(System.Threading.Tasks.Task{``0})">
+      <summary>[セキュリティ クリティカル] 結果を返す開始タスクを表す  非同期アクションを返します。</summary>
+      <returns>開始タスクを表す Windows.Foundation.IAsyncOperation&lt;TResult&gt; インスタンス。</returns>
+      <param name="source">開始されたタスク。</param>
+      <typeparam name="TResult">結果を返す型。</typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask(Windows.Foundation.IAsyncAction)">
+      <summary>[セキュリティ クリティカル]  の非同期アクションを表すタスクを返します。</summary>
+      <returns>非同期アクションを表すタスク。</returns>
+      <param name="source">非同期アクション。</param>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask(Windows.Foundation.IAsyncAction,System.Threading.CancellationToken)">
+      <summary>[セキュリティ クリティカル] 取り消し可能な  非同期アクションを表すタスクを返します。</summary>
+      <returns>非同期アクションを表すタスク。</returns>
+      <param name="source">非同期アクション。</param>
+      <param name="cancellationToken">非同期アクションの取り消し要求に使用できるトークン。</param>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask``1(Windows.Foundation.IAsyncActionWithProgress{``0})">
+      <summary>[セキュリティ クリティカル]  の非同期アクションを表すタスクを返します。</summary>
+      <returns>非同期アクションを表すタスク。</returns>
+      <param name="source">非同期アクション。</param>
+      <typeparam name="TProgress">進行状況を示すデータを提供するオブジェクトの型。</typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask``1(Windows.Foundation.IAsyncActionWithProgress{``0},System.IProgress{``0})">
+      <summary>[セキュリティ クリティカル] 進行状況をレポートする  非同期アクションを表すタスクを返します。</summary>
+      <returns>非同期アクションを表すタスク。</returns>
+      <param name="source">非同期アクション。</param>
+      <param name="progress">進行状況の更新を受け取るオブジェクト。</param>
+      <typeparam name="TProgress">進行状況を示すデータを提供するオブジェクトの型。</typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask``1(Windows.Foundation.IAsyncActionWithProgress{``0},System.Threading.CancellationToken)">
+      <summary>[セキュリティ クリティカル] 取り消し可能な  非同期アクションを表すタスクを返します。</summary>
+      <returns>非同期アクションを表すタスク。</returns>
+      <param name="source">非同期アクション。</param>
+      <param name="cancellationToken">非同期アクションの取り消し要求に使用できるトークン。</param>
+      <typeparam name="TProgress">進行状況を示すデータを提供するオブジェクトの型。</typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask``1(Windows.Foundation.IAsyncActionWithProgress{``0},System.Threading.CancellationToken,System.IProgress{``0})">
+      <summary>[セキュリティ クリティカル] 進行状況をレポートするキャンセル可能な  非同期アクションを表すタスクを返します。</summary>
+      <returns>非同期アクションを表すタスク。</returns>
+      <param name="source">非同期アクション。</param>
+      <param name="cancellationToken">非同期アクションの取り消し要求に使用できるトークン。</param>
+      <param name="progress">進行状況の更新を受け取るオブジェクト。</param>
+      <typeparam name="TProgress">進行状況を示すデータを提供するオブジェクトの型。</typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask``1(Windows.Foundation.IAsyncOperation{``0})">
+      <summary>[セキュリティ クリティカル] 結果を返す  非同期操作を表すタスクを返します。</summary>
+      <returns>非同期操作を表すタスク。</returns>
+      <param name="source">非同期操作。</param>
+      <typeparam name="TResult">非同期操作の結果を返すオブジェクトの型。</typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask``1(Windows.Foundation.IAsyncOperation{``0},System.Threading.CancellationToken)">
+      <summary>[セキュリティ クリティカル] 結果を返し取り消し可能な  非同期操作を表すタスクを返します。</summary>
+      <returns>非同期操作を表すタスク。</returns>
+      <param name="source">非同期操作。</param>
+      <param name="cancellationToken">非同期操作の取り消し要求に使用できるトークン。</param>
+      <typeparam name="TResult">非同期操作の結果を返すオブジェクトの型。</typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask``2(Windows.Foundation.IAsyncOperationWithProgress{``0,``1})">
+      <summary>[セキュリティ クリティカル] 結果を返す  非同期操作を表すタスクを返します。</summary>
+      <returns>非同期操作を表すタスク。</returns>
+      <param name="source">非同期操作。</param>
+      <typeparam name="TResult">非同期操作の結果を返すオブジェクトの型。</typeparam>
+      <typeparam name="TProgress">進行状況を示すデータを提供するオブジェクトの型。</typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask``2(Windows.Foundation.IAsyncOperationWithProgress{``0,``1},System.IProgress{``1})">
+      <summary>[セキュリティ クリティカル] 結果を返して進行状況をレポートする  非同期操作を表すタスクを返します。</summary>
+      <returns>非同期操作を表すタスク。</returns>
+      <param name="source">非同期操作。</param>
+      <param name="progress">進行状況の更新を受け取るオブジェクト。</param>
+      <typeparam name="TResult">非同期操作の結果を返すオブジェクトの型。</typeparam>
+      <typeparam name="TProgress">進行状況を示すデータを提供するオブジェクトの型。</typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask``2(Windows.Foundation.IAsyncOperationWithProgress{``0,``1},System.Threading.CancellationToken)">
+      <summary>[セキュリティ クリティカル] 結果を返し取り消し可能な  非同期操作を表すタスクを返します。</summary>
+      <returns>非同期操作を表すタスク。</returns>
+      <param name="source">非同期操作。</param>
+      <param name="cancellationToken">非同期操作の取り消し要求に使用できるトークン。</param>
+      <typeparam name="TResult">非同期操作の結果を返すオブジェクトの型。</typeparam>
+      <typeparam name="TProgress">進行状況を示すデータを提供するオブジェクトの型。</typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.AsTask``2(Windows.Foundation.IAsyncOperationWithProgress{``0,``1},System.Threading.CancellationToken,System.IProgress{``1})">
+      <summary>[セキュリティ クリティカル] 結果を返して進行状況をレポートするキャンセル可能な  非同期操作を表すタスクを返します。</summary>
+      <returns>非同期操作を表すタスク。</returns>
+      <param name="source">非同期操作。</param>
+      <param name="cancellationToken">非同期操作の取り消し要求に使用できるトークン。</param>
+      <param name="progress">進行状況の更新を受け取るオブジェクト。</param>
+      <typeparam name="TResult">非同期操作の結果を返すオブジェクトの型。</typeparam>
+      <typeparam name="TProgress">進行状況を示すデータを提供するオブジェクトの型。</typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.GetAwaiter(Windows.Foundation.IAsyncAction)">
+      <summary>[セキュリティ クリティカル] 非同期アクションを待機するオブジェクトを返します。</summary>
+      <returns>指定した非同期アクションを待つオブジェクト。</returns>
+      <param name="source">待機対象の非同期アクション。</param>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.GetAwaiter``1(Windows.Foundation.IAsyncActionWithProgress{``0})">
+      <summary>[セキュリティ クリティカル] 進行状況をレポートする非同期アクションを待機するオブジェクトを返します。</summary>
+      <returns>指定した非同期アクションを待つオブジェクト。</returns>
+      <param name="source">待機対象の非同期アクション。</param>
+      <typeparam name="TProgress">進行状況を示すデータを提供するオブジェクトの型。</typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.GetAwaiter``1(Windows.Foundation.IAsyncOperation{``0})">
+      <summary>[セキュリティ クリティカル] 結果を返す非同期操作を待機するオブジェクトを返します。</summary>
+      <returns>指定した非同期操作を待つオブジェクト。</returns>
+      <param name="source">待機対象の非同期操作。</param>
+      <typeparam name="TResult">非同期操作の結果を返すオブジェクトの型。</typeparam>
+    </member>
+    <member name="M:System.WindowsRuntimeSystemExtensions.GetAwaiter``2(Windows.Foundation.IAsyncOperationWithProgress{``0,``1})">
+      <summary>[セキュリティ クリティカル] 進行状況をレポートして結果を返す非同期操作を待機するオブジェクトを返します。</summary>
+      <returns>指定した非同期操作を待つオブジェクト。</returns>
+      <param name="source">待機対象の非同期操作。</param>
+      <typeparam name="TResult">非同期操作の結果を返すオブジェクトの型。</typeparam>
+      <typeparam name="TProgress">進行状況を示すデータを提供するオブジェクトの型。</typeparam>
+    </member>
+    <member name="T:System.IO.WindowsRuntimeStorageExtensions">
+      <summary>[セキュリティ クリティカル] Windows  アプリケーションの開発時に  の IStorageFile インターフェイスと IStorageFolder インターフェイスの拡張メソッドを格納します。</summary>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStorageExtensions.OpenStreamForReadAsync(Windows.Storage.IStorageFile)">
+      <summary>[セキュリティ クリティカル] 指定されたファイルから読み取るためのストリームを取得します。</summary>
+      <returns>非同期読み取り操作を表すタスク。</returns>
+      <param name="windowsRuntimeFile">読み取り元の IStorageFile オブジェクト。</param>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStorageExtensions.OpenStreamForReadAsync(Windows.Storage.IStorageFolder,System.String)">
+      <summary>[セキュリティ クリティカル] 指定された親フォルダー内のファイルから読み取るためのストリームを取得します。</summary>
+      <returns>非同期読み取り操作を表すタスク。</returns>
+      <param name="rootDirectory">読み取り元のファイルを格納する IStorageFolder オブジェクト。</param>
+      <param name="relativePath">読み取り元のファイルのルート フォルダーを基準とする相対パス。</param>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStorageExtensions.OpenStreamForWriteAsync(Windows.Storage.IStorageFile)">
+      <summary>[セキュリティ クリティカル] 指定されたファイルに書き込むためのストリームを取得します。</summary>
+      <returns>非同期書き込み操作を表すタスク。</returns>
+      <param name="windowsRuntimeFile">書き込み先の IStorageFile オブジェクト。</param>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStorageExtensions.OpenStreamForWriteAsync(Windows.Storage.IStorageFolder,System.String,Windows.Storage.CreationCollisionOption)">
+      <summary>[セキュリティ クリティカル] 指定された親フォルダー内のファイルに書き込むためのストリームを取得します。</summary>
+      <returns>非同期書き込み操作を表すタスク。</returns>
+      <param name="rootDirectory">書き込み先のファイルを格納する IStorageFolder オブジェクト。</param>
+      <param name="relativePath">書き込み先のファイルのルート フォルダーを基準とする相対パス。</param>
+      <param name="creationCollisionOption">作成するファイルの名前が既存のファイルの名前と同じであるときに使用する動作を指定する CreationCollisionOption 列挙値。</param>
+    </member>
+    <member name="T:System.IO.WindowsRuntimeStreamExtensions">
+      <summary>[セキュリティ クリティカル]  のストリームと  のマネージ ストリームとの間で変換を行うための拡張メソッドを格納します。</summary>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStreamExtensions.AsInputStream(System.IO.Stream)">
+      <summary>[セキュリティ クリティカル]  のマネージ ストリームを  の入力ストリームに変換します。</summary>
+      <returns>変換されたストリームを表す IInputStream オブジェクト。</returns>
+      <param name="stream">変換対象のストリーム。</param>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStreamExtensions.AsOutputStream(System.IO.Stream)">
+      <summary>[セキュリティ クリティカル]  のマネージ ストリームを  の出力ストリームに変換します。</summary>
+      <returns>変換されたストリームを表す IOutputStream オブジェクト。</returns>
+      <param name="stream">変換対象のストリーム。</param>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStreamExtensions.AsStream(Windows.Storage.Streams.IRandomAccessStream)">
+      <summary>[セキュリティ クリティカル]  のランダム アクセス ストリームを  のマネージ ストリームに変換します。</summary>
+      <returns>変換されたストリーム。</returns>
+      <param name="windowsRuntimeStream">変換対象の IRandomAccessStream オブジェクト。</param>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStreamExtensions.AsStream(Windows.Storage.Streams.IRandomAccessStream,System.Int32)">
+      <summary>[セキュリティ クリティカル] 指定したバッファー サイズを使用して、 のランダム アクセス ストリームを  のマネージ ストリームに変換します。</summary>
+      <returns>変換されたストリーム。</returns>
+      <param name="windowsRuntimeStream">変換対象の IRandomAccessStream オブジェクト。</param>
+      <param name="bufferSize">バッファーのバイト単位のサイズ。この値を負にすることはできません。バッファリングを無効にする場合は、0 (ゼロ) に設定します。</param>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStreamExtensions.AsStreamForRead(Windows.Storage.Streams.IInputStream)">
+      <summary>[セキュリティ クリティカル]  の入力ストリームを  のマネージ ストリームに変換します。</summary>
+      <returns>変換されたストリーム。</returns>
+      <param name="windowsRuntimeStream">変換対象の IInputStream オブジェクト。</param>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStreamExtensions.AsStreamForRead(Windows.Storage.Streams.IInputStream,System.Int32)">
+      <summary>[セキュリティ クリティカル] 指定したバッファー サイズを使用して、 の入力ストリームを  のマネージ ストリームに変換します。</summary>
+      <returns>変換されたストリーム。</returns>
+      <param name="windowsRuntimeStream">変換対象の IInputStream オブジェクト。</param>
+      <param name="bufferSize">バッファーのバイト単位のサイズ。この値を負にすることはできません。バッファリングを無効にする場合は、0 (ゼロ) に設定します。</param>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStreamExtensions.AsStreamForWrite(Windows.Storage.Streams.IOutputStream)">
+      <summary>[セキュリティ クリティカル]  の出力ストリームを  のマネージ ストリームに変換します。</summary>
+      <returns>変換されたストリーム。</returns>
+      <param name="windowsRuntimeStream">変換対象の IOutputStream オブジェクト。</param>
+    </member>
+    <member name="M:System.IO.WindowsRuntimeStreamExtensions.AsStreamForWrite(Windows.Storage.Streams.IOutputStream,System.Int32)">
+      <summary>[セキュリティ クリティカル] 指定したバッファー サイズを使用して、 の出力ストリームを  のマネージ ストリームに変換します。</summary>
+      <returns>変換されたストリーム。</returns>
+      <param name="windowsRuntimeStream">変換対象の IOutputStream オブジェクト。</param>
+      <param name="bufferSize">バッファーのバイト単位のサイズ。この値を負にすることはできません。バッファリングを無効にする場合は、0 (ゼロ) に設定します。</param>
+    </member>
+    <member name="T:System.Runtime.InteropServices.WindowsRuntime.AsyncInfo">
+      <summary>[セキュリティ クリティカル]  非同期アクションおよび非同期操作と互換性のあるマネージ タスクの表現を作成するファクトリ メソッドを提供します。</summary>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.AsyncInfo.Run``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}})">
+      <summary>[セキュリティ クリティカル] 結果を返す開始済みタスクを生成する関数を使用して、 非同期操作を作成し、開始します。タスクはキャンセルをサポートすることができます。</summary>
+      <returns>
+        <paramref name="taskProvider" /> によって生成されたタスクを表す、開始された Windows.Foundation.IAsyncOperation&lt;TResult&gt; インスタンス。</returns>
+      <param name="taskProvider">タスクを作成して開始する関数を表すデリゲート。開始済みタスクは、返された  非同期操作によって表されます。タスクがキャンセル要求の通知を受けるために監視できるキャンセル トークンが関数に渡されます。タスクがキャンセルをサポートしていない場合はトークンを無視できます。</param>
+      <typeparam name="TResult">結果を返す型。</typeparam>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.AsyncInfo.Run(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task})">
+      <summary>[セキュリティ クリティカル] 開始済みのタスクを生成する関数を使用して  非同期アクションを作成して開始します。タスクはキャンセルをサポートすることができます。</summary>
+      <returns>
+        <paramref name="taskProvider" /> によって生成されたタスクを表す、開始された Windows.Foundation.IAsyncAction インスタンス。</returns>
+      <param name="taskProvider">タスクを作成して開始する関数を表すデリゲート。開始済みのタスクは、返される  非同期アクションによって表されます。タスクがキャンセル要求の通知を受けるために監視できるキャンセル トークンが関数に渡されます。タスクがキャンセルをサポートしていない場合はトークンを無視できます。</param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.AsyncInfo.Run``2(System.Func{System.Threading.CancellationToken,System.IProgress{``1},System.Threading.Tasks.Task{``0}})">
+      <summary>[セキュリティ クリティカル] 結果を返す開始済みタスクを生成する関数を使用して、進行状況の更新を含む  非同期操作を作成し、開始します。タスクはキャンセルおよび進行状況レポートをサポートすることができます。</summary>
+      <returns>
+        <paramref name="taskProvider" /> によって生成されたタスクを表す、開始された Windows.Foundation.IAsyncOperationWithProgress&lt;TResult,TProgress&gt; インスタンス。</returns>
+      <param name="taskProvider">タスクを作成して開始する関数を表すデリゲート。開始済みのタスクは、返される  非同期アクションによって表されます。タスクがキャンセル要求の通知を受けるために監視できるキャンセル トークン、および進行状況をレポートするためのインターフェイスが関数に渡されます。タスクが進行状況レポートまたはキャンセルをサポートしない場合はこれらの引数のどちらかまたは両方を無視することができます。</param>
+      <typeparam name="TResult">結果を返す型。</typeparam>
+      <typeparam name="TProgress">進行状況の通知に使用される型。</typeparam>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.AsyncInfo.Run``1(System.Func{System.Threading.CancellationToken,System.IProgress{``0},System.Threading.Tasks.Task})">
+      <summary>[セキュリティ クリティカル] 開始されたタスクを生成する関数を使用して、進行状況の更新を含む  非同期アクションを作成し、開始します。タスクはキャンセルおよび進行状況レポートをサポートすることができます。</summary>
+      <returns>
+        <paramref name="taskProvider" /> によって生成されたタスクを表す、開始された Windows.Foundation.IAsyncActionWithProgress&lt;TProgress&gt; インスタンス。</returns>
+      <param name="taskProvider">タスクを作成して開始する関数を表すデリゲート。開始済みのタスクは、返される  非同期アクションによって表されます。タスクがキャンセル要求の通知を受けるために監視できるキャンセル トークン、および進行状況をレポートするためのインターフェイスが関数に渡されます。タスクが進行状況レポートまたはキャンセルをサポートしない場合はこれらの引数のどちらかまたは両方を無視することができます。</param>
+      <typeparam name="TProgress">進行状況の通知に使用される型。</typeparam>
+    </member>
+    <member name="T:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBuffer">
+      <summary>[セキュリティ クリティカル] IBuffer インターフェイス (Windows.Storage.Streams.IBuffer) およびその他すべての必要なインターフェイスの実装を提供します。</summary>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBuffer.Create(System.Byte[],System.Int32,System.Int32,System.Int32)">
+      <summary>[セキュリティ クリティカル] バイト配列からコピーされたバイトの指定範囲を含む Windows.Storage.Streams.IBuffer インターフェイスを返します。指定した容量がコピーされたバイト数より大きい場合、残りのバッファーには 0 が入ります。</summary>
+      <returns>バイトの指定範囲を含む Windows.Storage.Streams.IBuffer インターフェイス。<paramref name="capacity" /> が <paramref name="length" /> より大きい場合、残りのバッファーには 0 が入ります。</returns>
+      <param name="data">コピー元のバイト配列。</param>
+      <param name="offset">
+        <paramref name="data" /> 内のコピー開始位置を示すオフセット。</param>
+      <param name="length">コピーするバイト数。</param>
+      <param name="capacity">バッファーが保持できる最大バイト数。この値が <paramref name="length" /> より大きい場合、バッファーの残りのバイトは 0 (ゼロ) に初期化されます。</param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBuffer.Create(System.Int32)">
+      <summary>[セキュリティ クリティカル] 指定した最大容量を持つ空の Windows.Storage.Streams.IBuffer インターフェイスを返します。</summary>
+      <returns>指定した容量と 0 (ゼロ) に等しい Length プロパティを持つ Windows.Storage.Streams.IBuffer インターフェイス。</returns>
+      <param name="capacity">バッファーが保持できる最大バイト数。</param>
+    </member>
+    <member name="T:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions">
+      <summary>[セキュリティ クリティカル]  バッファー (Windows.Storage.Streams.IBuffer インターフェイス) を操作する拡張メソッドを提供します。</summary>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.AsBuffer(System.Byte[])">
+      <summary>[セキュリティ クリティカル] 指定したバイト配列を表す Windows.Storage.Streams.IBuffer インターフェイスを返します。</summary>
+      <returns>指定したバイト配列を表す Windows.Storage.Streams.IBuffer インターフェイス。</returns>
+      <param name="source">表現する配列。</param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.AsBuffer(System.Byte[],System.Int32,System.Int32)">
+      <summary>[セキュリティ クリティカル] 指定されたバイト配列内のバイトの範囲を表す Windows.Storage.Streams.IBuffer インターフェイスを返します。</summary>
+      <returns>
+        <paramref name="source" /> のバイトの指定範囲を表す IBuffer インターフェイス。</returns>
+      <param name="source">IBuffer によって表されるバイトの範囲を含む配列。</param>
+      <param name="offset">範囲の開始位置を示す <paramref name="source" /> 内のオフセット。</param>
+      <param name="length">IBuffer によって表される範囲の長さ。</param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.AsBuffer(System.Byte[],System.Int32,System.Int32,System.Int32)">
+      <summary>[セキュリティ クリティカル] 指定されたバイト配列内のバイトの範囲を表す Windows.Storage.Streams.IBuffer インターフェイスを返します。必要に応じて、IBuffer の Length プロパティを容量より少ない値に設定します。</summary>
+      <returns>
+        <paramref name="source" /> のバイトの指定範囲を表し、指定した Length プロパティ値を持つ IBuffer インターフェイス。</returns>
+      <param name="source">IBuffer によって表されるバイトの範囲を含む配列。</param>
+      <param name="offset">範囲の開始位置を示す <paramref name="source" /> 内のオフセット。</param>
+      <param name="length">IBuffer の Length プロパティの値。</param>
+      <param name="capacity">IBuffer によって表される範囲のサイズ。IBuffer の Capacity プロパティはこの値に設定されます。</param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.AsStream(Windows.Storage.Streams.IBuffer)">
+      <summary>[セキュリティ クリティカル] 指定した Windows.Storage.Streams.IBuffer インターフェイスが表すメモリと同じメモリを表すストリームを返します。</summary>
+      <returns>指定した Windows.Storage.Streams.IBuffer インターフェイスが表すメモリと同じメモリを表すストリーム。</returns>
+      <param name="source">ストリームとして表す IBuffer。</param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.CopyTo(System.Byte[],System.Int32,Windows.Storage.Streams.IBuffer,System.UInt32,System.Int32)">
+      <summary>[セキュリティ クリティカル] コピー元配列の開始インデックス、コピー先バッファーの開始インデックス、およびコピーするバイト数を指定して、コピー元配列からコピー先バッファー (Windows.Storage.Streams.IBuffer) にバイトをコピーします。メソッドはコピー先バッファーの Length プロパティを更新しません。</summary>
+      <param name="source">データのコピー元の配列。</param>
+      <param name="sourceIndex">データのコピー元の開始位置を示す <paramref name="source" /> のインデックス。</param>
+      <param name="destination">データのコピー先のバッファー。</param>
+      <param name="destinationIndex">データのコピー先の開始位置を示す <paramref name="destination" /> のインデックス。</param>
+      <param name="count">コピーするバイト数。</param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.CopyTo(System.Byte[],Windows.Storage.Streams.IBuffer)">
+      <summary>[セキュリティ クリティカル] コピー元配列からコピー先バッファー (Windows.Storage.Streams.IBuffer) にすべてのバイトをコピーします。どちらもオフセット 0 (ゼロ) で開始します。メソッドはコピー先バッファーの長さを更新しません。</summary>
+      <param name="source">データのコピー元の配列。</param>
+      <param name="destination">データのコピー先のバッファー。</param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.CopyTo(Windows.Storage.Streams.IBuffer,System.Byte[])">
+      <summary>[セキュリティ クリティカル] コピー元バッファー (Windows.Storage.Streams.IBuffer) からコピー先配列にすべてのバイトをコピーします。どちらもオフセット 0 (ゼロ) で開始します。</summary>
+      <param name="source">データのコピー元のバッファー。</param>
+      <param name="destination">データのコピー先の配列。</param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.CopyTo(Windows.Storage.Streams.IBuffer,System.UInt32,System.Byte[],System.Int32,System.Int32)">
+      <summary>[セキュリティ クリティカル] コピー元バッファーの開始インデックス、コピー先配列の開始インデックス、およびコピーするバイト数を指定して、コピー元バッファー (Windows.Storage.Streams.IBuffer) からコピー先配列にバイトをコピーします。</summary>
+      <param name="source">データのコピー元のバッファー。</param>
+      <param name="sourceIndex">データのコピー元の開始位置を示す <paramref name="source" /> のインデックス。</param>
+      <param name="destination">データのコピー先の配列。</param>
+      <param name="destinationIndex">データのコピー先の開始位置を示す <paramref name="destination" /> のインデックス。</param>
+      <param name="count">コピーするバイト数。</param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.CopyTo(Windows.Storage.Streams.IBuffer,System.UInt32,Windows.Storage.Streams.IBuffer,System.UInt32,System.UInt32)">
+      <summary>[セキュリティ クリティカル] コピー元の開始インデックス、コピー先の開始インデックス、およびコピーするバイト数を指定して、コピー元バッファー (Windows.Storage.Streams.IBuffer) からコピー先バッファーにバイトをコピーします。</summary>
+      <param name="source">データのコピー元のバッファー。</param>
+      <param name="sourceIndex">データのコピー元の開始位置を示す <paramref name="source" /> のインデックス。</param>
+      <param name="destination">データのコピー先のバッファー。</param>
+      <param name="destinationIndex">データのコピー先の開始位置を示す <paramref name="destination" /> のインデックス。</param>
+      <param name="count">コピーするバイト数。</param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.CopyTo(Windows.Storage.Streams.IBuffer,Windows.Storage.Streams.IBuffer)">
+      <summary>[セキュリティ クリティカル] コピー元バッファー (Windows.Storage.Streams.IBuffer) からコピー先バッファーにすべてのバイトをコピーします。どちらもオフセット 0 (ゼロ) で開始します。</summary>
+      <param name="source">コピー元のバッファー。</param>
+      <param name="destination">コピー先のバッファー。</param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.GetByte(Windows.Storage.Streams.IBuffer,System.UInt32)">
+      <summary>[セキュリティ クリティカル] 指定した Windows.Storage.Streams.IBuffer インターフェイスの指定したオフセットにあるバイトを返します。</summary>
+      <returns>指定したオフセットのバイト。</returns>
+      <param name="source">バイトの取得元となるバッファー。</param>
+      <param name="byteOffset">バイトのオフセット。</param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.GetWindowsRuntimeBuffer(System.IO.MemoryStream)">
+      <summary>[セキュリティ クリティカル] 指定したメモリ ストリームと同じメモリを表す Windows.Storage.Streams.IBuffer インターフェイスを返します。</summary>
+      <returns>指定したメモリ ストリームをバッキングするメモリと同じメモリでバッキングされる Windows.Storage.Streams.IBuffer インターフェイス。</returns>
+      <param name="underlyingStream">IBuffer のバッキング メモリを提供するストリーム。</param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.GetWindowsRuntimeBuffer(System.IO.MemoryStream,System.Int32,System.Int32)">
+      <summary>[セキュリティ クリティカル] 指定したメモリ ストリームが表すメモリ内の領域を表す Windows.Storage.Streams.IBuffer インターフェイスを返します。</summary>
+      <returns>指定したメモリ ストリームをバッキングするメモリ内の領域でバッキングされる Windows.Storage.Streams.IBuffer インターフェイス。</returns>
+      <param name="underlyingStream">IBuffer とメモリを共有するストリーム。</param>
+      <param name="positionInStream">
+        <paramref name="underlyingStream" /> の共有メモリ領域の位置。</param>
+      <param name="length">共有メモリ領域の最大サイズ。<paramref name="positionInStream" /> から始まる <paramref name="underlyingStream" /> のバイト数が <paramref name="length" /> より小さい場合、返される IBuffer は使用可能なバイトしか表しません。</param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.IsSameData(Windows.Storage.Streams.IBuffer,Windows.Storage.Streams.IBuffer)">
+      <summary>[セキュリティ クリティカル] 2 つのバッファー (Windows.Storage.Streams.IBuffer オブジェクト) が基の同じメモリ領域を表すかどうかを示す値を返します。</summary>
+      <returns>2 つのバッファーで表されるメモリ領域に同じ開始点がある場合は true。それ以外の場合は false。</returns>
+      <param name="buffer">最初のバッファー。</param>
+      <param name="otherBuffer">2 番目のバッファー。</param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.ToArray(Windows.Storage.Streams.IBuffer)">
+      <summary>[セキュリティ クリティカル] 指定したバッファー (Windows.Storage.Streams.IBuffer) の内容から作成された新しい配列を返します。配列のサイズは IBuffer の Length プロパティの値です。</summary>
+      <returns>オフセット 0 (ゼロ) で始まり、IBuffer の Length プロパティの値に等しいバイト数を含む、指定した IBuffer のバイトを含むバイト配列。</returns>
+      <param name="source">新しい配列に追加する内容を含むバッファー。</param>
+    </member>
+    <member name="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions.ToArray(Windows.Storage.Streams.IBuffer,System.UInt32,System.Int32)">
+      <summary>[セキュリティ クリティカル] 指定したバッファー (Windows.Storage.Streams.IBuffer) の内容から作成され、指定したオフセットを開始位置とし、指定したバイト数を含む新しい配列を返します。</summary>
+      <returns>バイトの指定範囲を含むバイト配列。</returns>
+      <param name="source">新しい配列に追加する内容を含むバッファー。</param>
+      <param name="sourceIndex">データのコピー元の開始位置を示す <paramref name="source" /> のインデックス。</param>
+      <param name="count">コピーするバイト数。</param>
+    </member>
+    <member name="T:Windows.Foundation.Point">
+      <summary>[セキュリティ クリティカル] 2 次元空間での x 座標と y 座標のペアを表します。特定のプロパティの使用について、論理点を表すこともできます。</summary>
+    </member>
+    <member name="M:Windows.Foundation.Point.#ctor(System.Double,System.Double)">
+      <summary>[セキュリティ クリティカル] 指定した値を含む <see cref="T:Windows.Foundation.Point" /> 構造体を初期化します。</summary>
+      <param name="x">
+        <see cref="T:Windows.Foundation.Point" /> 構造体の x 座標の値。</param>
+      <param name="y">
+        <see cref="T:Windows.Foundation.Point" /> 構造体の y 座標の値。</param>
+    </member>
+    <member name="M:Windows.Foundation.Point.Equals(System.Object)">
+      <summary>[セキュリティ クリティカル] 指定したオブジェクトが <see cref="T:Windows.Foundation.Point" /> であり、この <see cref="T:Windows.Foundation.Point" /> と同じ値が含まれているかどうかを判断します。</summary>
+      <returns>
+        <paramref name="obj" /> が <see cref="T:Windows.Foundation.Point" /> であり、この <see cref="T:Windows.Foundation.Point" /> と同じ <see cref="P:Windows.Foundation.Point.X" /> 値および <see cref="P:Windows.Foundation.Point.Y" /> 値を含む場合は true。それ以外の場合は false。</returns>
+      <param name="o">比較対象のオブジェクト。</param>
+    </member>
+    <member name="M:Windows.Foundation.Point.Equals(Windows.Foundation.Point)">
+      <summary>[セキュリティ クリティカル] 2 つの <see cref="T:Windows.Foundation.Point" /> 構造体を比較して、等しいかどうかを確認します。</summary>
+      <returns>両方の <see cref="T:Windows.Foundation.Point" /> 構造体が、同じ <see cref="P:Windows.Foundation.Point.X" /> 値および <see cref="P:Windows.Foundation.Point.Y" /> 値を含む場合は true。それ以外の場合は false。</returns>
+      <param name="value">このインスタンスと比較するポイント。</param>
+    </member>
+    <member name="M:Windows.Foundation.Point.GetHashCode">
+      <summary>[セキュリティ クリティカル] この <see cref="T:Windows.Foundation.Point" /> のハッシュ コードを返します。</summary>
+      <returns>この <see cref="T:Windows.Foundation.Point" /> 構造体のハッシュ コード。</returns>
+    </member>
+    <member name="M:Windows.Foundation.Point.op_Equality(Windows.Foundation.Point,Windows.Foundation.Point)">
+      <summary>[セキュリティ クリティカル] 2 つの <see cref="T:Windows.Foundation.Point" /> 構造体を比較して、等しいかどうかを確認します。</summary>
+      <returns>
+        <paramref name="point1" /> および <paramref name="point2" /> の <see cref="P:Windows.Foundation.Point.X" /> 値と <see cref="P:Windows.Foundation.Point.Y" /> 値の両方が等しい場合は true。それ以外の場合は false。</returns>
+      <param name="point1">比較する最初の <see cref="T:Windows.Foundation.Point" /> 構造体。</param>
+      <param name="point2">比較する 2 番目の <see cref="T:Windows.Foundation.Point" /> 構造体。</param>
+    </member>
+    <member name="M:Windows.Foundation.Point.op_Inequality(Windows.Foundation.Point,Windows.Foundation.Point)">
+      <summary>[セキュリティ クリティカル] 2 つの <see cref="T:Windows.Foundation.Point" /> 構造体を比較し、等しくないかどうかを確認します。</summary>
+      <returns>
+        <paramref name="point1" /> および <paramref name="point2" /> の <see cref="P:Windows.Foundation.Point.X" /> 値または <see cref="P:Windows.Foundation.Point.Y" /> 値が異なる場合は true。<paramref name="point1" /> および <paramref name="point2" /> の <see cref="P:Windows.Foundation.Point.X" /> 値と <see cref="P:Windows.Foundation.Point.Y" /> 値が同じである場合は false。</returns>
+      <param name="point1">比較する最初のポイント。</param>
+      <param name="point2">比較する 2 番目のポイント。</param>
+    </member>
+    <member name="M:Windows.Foundation.Point.System#IFormattable#ToString(System.String,System.IFormatProvider)">
+      <summary>[セキュリティ クリティカル] このメンバーの説明については、<see cref="M:System.IFormattable.ToString(System.String,System.IFormatProvider)" /> のトピックを参照してください。</summary>
+      <returns>指定した書式で現在のインスタンスの値を格納する文字列。</returns>
+      <param name="format">使用する書式を指定する文字列。またはIFormattable 実装の型に対して定義されている既定の書式を使用する場合は、null。</param>
+      <param name="provider">値の書式設定に使用する IFormatProvider。またはオペレーティング システムの現在のロケール設定から数値の書式情報を取得する場合は null。</param>
+    </member>
+    <member name="M:Windows.Foundation.Point.ToString">
+      <summary>[セキュリティ クリティカル] この <see cref="T:Windows.Foundation.Point" /> の <see cref="T:System.String" /> 形式を作成します。</summary>
+      <returns>この <see cref="T:Windows.Foundation.Point" /> 構造体の <see cref="P:Windows.Foundation.Point.X" /> 値と <see cref="P:Windows.Foundation.Point.Y" /> 値が含まれている <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="M:Windows.Foundation.Point.ToString(System.IFormatProvider)">
+      <summary>[セキュリティ クリティカル] この <see cref="T:Windows.Foundation.Point" /> の <see cref="T:System.String" /> 形式を作成します。</summary>
+      <returns>この <see cref="T:Windows.Foundation.Point" /> 構造体の <see cref="P:Windows.Foundation.Point.X" /> 値と <see cref="P:Windows.Foundation.Point.Y" /> 値が含まれている <see cref="T:System.String" />。</returns>
+      <param name="provider">カルチャ固有の書式設定情報。</param>
+    </member>
+    <member name="P:Windows.Foundation.Point.X">
+      <summary>[セキュリティ クリティカル] この <see cref="T:Windows.Foundation.Point" /> 構造体の <see cref="P:Windows.Foundation.Point.X" /> 座標値を取得または設定します。</summary>
+      <returns>この <see cref="T:Windows.Foundation.Point" /> 構造の <see cref="P:Windows.Foundation.Point.X" /> 座標値。既定値は 0 です。</returns>
+    </member>
+    <member name="P:Windows.Foundation.Point.Y">
+      <summary>[セキュリティ クリティカル] この <see cref="T:Windows.Foundation.Point" /> の <see cref="P:Windows.Foundation.Point.Y" /> 座標値を取得または設定します。</summary>
+      <returns>この <see cref="T:Windows.Foundation.Point" /> 構造の <see cref="P:Windows.Foundation.Point.Y" /> 座標値。既定値は 0 です。</returns>
+    </member>
+    <member name="T:Windows.Foundation.Rect">
+      <summary>[セキュリティ クリティカル] 四角形の幅、高さ、および原点を示します。</summary>
+    </member>
+    <member name="M:Windows.Foundation.Rect.#ctor(System.Double,System.Double,System.Double,System.Double)">
+      <summary>[セキュリティ クリティカル] 指定した x 座標、y 座標、幅、および高さを持つ <see cref="T:Windows.Foundation.Rect" /> 構造体を初期化します。</summary>
+      <param name="x">四角形の左上隅の x 座標。</param>
+      <param name="y">四角形の左上隅の y 座標。</param>
+      <param name="width">四角形の幅。</param>
+      <param name="height">四角形の高さ。</param>
+    </member>
+    <member name="M:Windows.Foundation.Rect.#ctor(Windows.Foundation.Point,Windows.Foundation.Point)">
+      <summary>[セキュリティ クリティカル] 指定した 2 つの点をちょうど格納できる大きさを持つ、<see cref="T:Windows.Foundation.Rect" /> 構造体を初期化します。</summary>
+      <param name="point1">新しい四角形に格納する必要がある最初の点。</param>
+      <param name="point2">新しい四角形に格納する必要がある 2 番目の点。</param>
+    </member>
+    <member name="M:Windows.Foundation.Rect.#ctor(Windows.Foundation.Point,Windows.Foundation.Size)">
+      <summary>[セキュリティ クリティカル] 原点とサイズに基づいて <see cref="T:Windows.Foundation.Rect" /> 構造体を初期化します。</summary>
+      <param name="location">新しい <see cref="T:Windows.Foundation.Rect" /> の原点。</param>
+      <param name="size">新しい <see cref="T:Windows.Foundation.Rect" /> のサイズ。</param>
+    </member>
+    <member name="P:Windows.Foundation.Rect.Bottom">
+      <summary>[セキュリティ クリティカル] 四角形の底辺の y 軸の値を取得します。</summary>
+      <returns>四角形の底辺の y 軸の値。四角形が空の場合、値は <see cref="F:System.Double.NegativeInfinity" /> になります。</returns>
+    </member>
+    <member name="M:Windows.Foundation.Rect.Contains(Windows.Foundation.Point)">
+      <summary>[セキュリティ クリティカル] 指定した点が、<see cref="T:Windows.Foundation.Rect" /> で表される四角形に含まれているかどうかを示します。</summary>
+      <returns>指定した点が、<see cref="T:Windows.Foundation.Rect" /> で表される四角形に含まれている場合は true。それ以外の場合は false。</returns>
+      <param name="point">確認対象の点。</param>
+    </member>
+    <member name="P:Windows.Foundation.Rect.Empty">
+      <summary>[セキュリティ クリティカル] 位置や領域を持たない四角形を表す特殊な値を取得します。</summary>
+      <returns>
+        <see cref="F:System.Double.PositiveInfinity" /> の <see cref="P:Windows.Foundation.Rect.X" /> 値および <see cref="P:Windows.Foundation.Rect.Y" /> 値を持ち、<see cref="F:System.Double.NegativeInfinity" /> の <see cref="P:Windows.Foundation.Rect.Width" /> および <see cref="P:Windows.Foundation.Rect.Height" /> 値を持つ空の四角形。</returns>
+    </member>
+    <member name="M:Windows.Foundation.Rect.Equals(System.Object)">
+      <summary>[セキュリティ クリティカル] 指定したオブジェクトが、現在の <see cref="T:Windows.Foundation.Rect" /> と等しいかどうかを示します。</summary>
+      <returns>
+        <paramref name="o" /> が <see cref="T:Windows.Foundation.Rect" /> で、現在の <see cref="T:Windows.Foundation.Rect" /> と同じ x、y、width、height の各値を持つ場合は true。それ以外の場合は false。</returns>
+      <param name="o">現在の四角形と比較するオブジェクト。</param>
+    </member>
+    <member name="M:Windows.Foundation.Rect.Equals(Windows.Foundation.Rect)">
+      <summary>[セキュリティ クリティカル] 指定した <see cref="T:Windows.Foundation.Rect" /> が、現在の <see cref="T:Windows.Foundation.Rect" /> と等しいかどうかを示します。</summary>
+      <returns>指定した <see cref="T:Windows.Foundation.Rect" /> が、現在の <see cref="T:Windows.Foundation.Rect" /> と同じ x、y、width、height の各プロパティ値を持つ場合は true。それ以外の場合は false。</returns>
+      <param name="value">現在の四角形と比較する対象の四角形。</param>
+    </member>
+    <member name="M:Windows.Foundation.Rect.GetHashCode">
+      <summary>[セキュリティ クリティカル] <see cref="T:Windows.Foundation.Rect" /> のハッシュ コードを作成します。</summary>
+      <returns>現在の <see cref="T:Windows.Foundation.Rect" /> 構造のハッシュ コード。</returns>
+    </member>
+    <member name="P:Windows.Foundation.Rect.Height">
+      <summary>[セキュリティ クリティカル] 四角形の高さを取得または設定します。</summary>
+      <returns>四角形の高さを表す値。既定値は 0 です。</returns>
+    </member>
+    <member name="M:Windows.Foundation.Rect.Intersect(Windows.Foundation.Rect)">
+      <summary>[セキュリティ クリティカル] 現在の <see cref="T:Windows.Foundation.Rect" /> で表される四角形と指定した <see cref="T:Windows.Foundation.Rect" /> で表される四角形の交差部分を求め、結果を現在の <see cref="T:Windows.Foundation.Rect" /> として保存します。</summary>
+      <param name="rect">現在の四角形と交差する四角形。</param>
+    </member>
+    <member name="P:Windows.Foundation.Rect.IsEmpty">
+      <summary>[セキュリティ クリティカル] 四角形が <see cref="P:Windows.Foundation.Rect.Empty" /> の四角形かどうかを示す値を取得します。</summary>
+      <returns>四角形が <see cref="P:Windows.Foundation.Rect.Empty" /> の四角形である場合は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="P:Windows.Foundation.Rect.Left">
+      <summary>[セキュリティ クリティカル] 四角形の左辺の x 軸の値を取得します。</summary>
+      <returns>四角形の左辺の x 軸の値。</returns>
+    </member>
+    <member name="M:Windows.Foundation.Rect.op_Equality(Windows.Foundation.Rect,Windows.Foundation.Rect)">
+      <summary>[セキュリティ クリティカル] 2 つの <see cref="T:Windows.Foundation.Rect" /> 構造体を比較して、等しいかどうかを確認します。</summary>
+      <returns>
+        <see cref="T:Windows.Foundation.Rect" /> 構造体が、同じ x、y、width、height の各プロパティ値を持つ場合は true。それ以外の場合は false。</returns>
+      <param name="rect1">最初に比較する四角形。</param>
+      <param name="rect2">比較する 2 番目の四角形。</param>
+    </member>
+    <member name="M:Windows.Foundation.Rect.op_Inequality(Windows.Foundation.Rect,Windows.Foundation.Rect)">
+      <summary>[セキュリティ クリティカル] 2 つの <see cref="T:Windows.Foundation.Rect" /> 構造体を比較し、等しくないかどうかを確認します。</summary>
+      <returns>
+        <see cref="T:Windows.Foundation.Rect" /> 構造体が、同じ x、y、width、height の各プロパティ値を持たない場合は true。それ以外の場合は false。</returns>
+      <param name="rect1">最初に比較する四角形。</param>
+      <param name="rect2">比較する 2 番目の四角形。</param>
+    </member>
+    <member name="P:Windows.Foundation.Rect.Right">
+      <summary>[セキュリティ クリティカル] 四角形の右辺の x 軸の値を取得します。</summary>
+      <returns>四角形の右辺の x 軸の値。</returns>
+    </member>
+    <member name="M:Windows.Foundation.Rect.System#IFormattable#ToString(System.String,System.IFormatProvider)">
+      <summary>[セキュリティ クリティカル] このメンバーの説明については、<see cref="M:System.IFormattable.ToString(System.String,System.IFormatProvider)" /> のトピックを参照してください。</summary>
+      <returns>指定した書式で現在のインスタンスの値を格納する文字列。</returns>
+      <param name="format">使用する書式を指定する文字列。またはIFormattable 実装の型に対して定義されている既定の書式を使用する場合は、null。</param>
+      <param name="provider">値の書式設定に使用する IFormatProvider。またはオペレーティング システムの現在のロケール設定から数値の書式情報を取得する場合は null。</param>
+    </member>
+    <member name="P:Windows.Foundation.Rect.Top">
+      <summary>[セキュリティ クリティカル] 四角形の上辺の y 軸の位置を取得します。</summary>
+      <returns>四角形の上辺の y 軸の位置。</returns>
+    </member>
+    <member name="M:Windows.Foundation.Rect.ToString">
+      <summary>[セキュリティ クリティカル] <see cref="T:Windows.Foundation.Rect" /> 構造体の文字列形式を返します。</summary>
+      <returns>現在の <see cref="T:Windows.Foundation.Rect" /> 構造体の文字列形式。文字列の形式は、次のとおりです。"<see cref="P:Windows.Foundation.Rect.X" />,<see cref="P:Windows.Foundation.Rect.Y" />,<see cref="P:Windows.Foundation.Rect.Width" />,<see cref="P:Windows.Foundation.Rect.Height" />".</returns>
+    </member>
+    <member name="M:Windows.Foundation.Rect.ToString(System.IFormatProvider)">
+      <summary>[セキュリティ クリティカル] 指定した書式プロバイダーを使用して、四角形の文字列形式を返します。</summary>
+      <returns>指定した書式プロバイダーにより決定される現在の四角形の文字列形式を返します。</returns>
+      <param name="provider">カルチャ固有の書式設定情報。</param>
+    </member>
+    <member name="M:Windows.Foundation.Rect.Union(Windows.Foundation.Point)">
+      <summary>[セキュリティ クリティカル] 指定した点をちょうど格納できる大きさになるように、現在の <see cref="T:Windows.Foundation.Rect" /> で表される四角形を拡大します。</summary>
+      <param name="point">格納対象の点。</param>
+    </member>
+    <member name="M:Windows.Foundation.Rect.Union(Windows.Foundation.Rect)">
+      <summary>[セキュリティ クリティカル] 指定した四角形をちょうど格納できる大きさになるように、現在の <see cref="T:Windows.Foundation.Rect" /> で表される四角形を拡大します。</summary>
+      <param name="rect">格納する四角形。</param>
+    </member>
+    <member name="P:Windows.Foundation.Rect.Width">
+      <summary>[セキュリティ クリティカル] 四角形の幅を取得または設定します。</summary>
+      <returns>四角形の幅を表すピクセル単位の値。既定値は 0 です。</returns>
+    </member>
+    <member name="P:Windows.Foundation.Rect.X">
+      <summary>[セキュリティ クリティカル] 四角形の左辺の x 軸の値を取得または設定します。</summary>
+      <returns>四角形の左辺の x 軸の値。この値は座標空間内のピクセルとして解釈されます。</returns>
+    </member>
+    <member name="P:Windows.Foundation.Rect.Y">
+      <summary>[セキュリティ クリティカル] 四角形の上辺の y 軸の値を取得または設定します。</summary>
+      <returns>四角形の上辺の y 軸の値。この値は座標空間内のピクセルとして解釈されます。</returns>
+    </member>
+    <member name="T:Windows.Foundation.Size">
+      <summary>[セキュリティ クリティカル] オブジェクトの幅と高さを記述します。</summary>
+    </member>
+    <member name="M:Windows.Foundation.Size.#ctor(System.Double,System.Double)">
+      <summary>[セキュリティ クリティカル] <see cref="T:Windows.Foundation.Size" /> 構造体の新しいインスタンスを初期化し、<paramref name="width" /> および <paramref name="height" /> の初期値を割り当てます。</summary>
+      <param name="width">
+        <see cref="T:Windows.Foundation.Size" /> のインスタンスの初期幅。</param>
+      <param name="height">
+        <see cref="T:Windows.Foundation.Size" /> のインスタンスの初期高さ。</param>
+    </member>
+    <member name="P:Windows.Foundation.Size.Empty">
+      <summary>[セキュリティ クリティカル] 静的で空の <see cref="T:Windows.Foundation.Size" /> を表す値を取得します。</summary>
+      <returns>
+        <see cref="T:Windows.Foundation.Size" /> の空のインスタンス。</returns>
+    </member>
+    <member name="M:Windows.Foundation.Size.Equals(System.Object)">
+      <summary>[セキュリティ クリティカル] オブジェクトが <see cref="T:Windows.Foundation.Size" /> のインスタンスと等しいかどうかを比較します。</summary>
+      <returns>サイズが等しい場合は true。それ以外の場合は false。</returns>
+      <param name="o">比較する <see cref="T:System.Object" />。</param>
+    </member>
+    <member name="M:Windows.Foundation.Size.Equals(Windows.Foundation.Size)">
+      <summary>[セキュリティ クリティカル] 値が <see cref="T:Windows.Foundation.Size" /> のインスタンスと等しいかどうかを比較します。</summary>
+      <returns>
+        <see cref="T:Windows.Foundation.Size" /> のインスタンスが等しい場合は true。それ以外の場合は false。</returns>
+      <param name="value">
+        <see cref="T:Windows.Foundation.Size" /> の現在のインスタンスと比較するサイズ。</param>
+    </member>
+    <member name="M:Windows.Foundation.Size.GetHashCode">
+      <summary>[セキュリティ クリティカル] <see cref="T:Windows.Foundation.Size" /> のこのインスタンスのハッシュ コードを取得します。</summary>
+      <returns>
+        <see cref="T:Windows.Foundation.Size" /> のインスタンスのハッシュ コード。</returns>
+    </member>
+    <member name="P:Windows.Foundation.Size.Height">
+      <summary>[セキュリティ クリティカル] <see cref="T:Windows.Foundation.Size" /> のこのインスタンスの高さを取得または設定します。</summary>
+      <returns>
+        <see cref="T:Windows.Foundation.Size" /> のこのインスタンスの <see cref="P:Windows.Foundation.Size.Height" /> (ピクセル単位)。既定値は 0 です。この値を負にすることはできません。</returns>
+    </member>
+    <member name="P:Windows.Foundation.Size.IsEmpty">
+      <summary>[セキュリティ クリティカル] <see cref="T:Windows.Foundation.Size" /> のこのインスタンスが <see cref="P:Windows.Foundation.Size.Empty" /> かどうかを示す値を取得します。</summary>
+      <returns>Size のこのインスタンスが <see cref="P:Windows.Foundation.Size.Empty" /> である場合は true。それ以外の場合は false。</returns>
+    </member>
+    <member name="M:Windows.Foundation.Size.op_Equality(Windows.Foundation.Size,Windows.Foundation.Size)">
+      <summary>[セキュリティ クリティカル] <see cref="T:Windows.Foundation.Size" /> の 2 つのインスタンスを比較し、等しいかどうかを確認します。</summary>
+      <returns>
+        <see cref="T:Windows.Foundation.Size" /> の 2 つのインスタンスが等しい場合は true。それ以外の場合は false。</returns>
+      <param name="size1">比較する最初の <see cref="T:Windows.Foundation.Size" /> のインスタンス。</param>
+      <param name="size2">比較する 2 番目の <see cref="T:Windows.Foundation.Size" /> のインスタンス。</param>
+    </member>
+    <member name="M:Windows.Foundation.Size.op_Inequality(Windows.Foundation.Size,Windows.Foundation.Size)">
+      <summary>[セキュリティ クリティカル] <see cref="T:Windows.Foundation.Size" /> の 2 つのインスタンスを比較し、等しくないかどうかを判断します。</summary>
+      <returns>
+        <see cref="T:Windows.Foundation.Size" /> のインスタンスが等しくない場合は true。それ以外の場合は false。</returns>
+      <param name="size1">比較する最初の <see cref="T:Windows.Foundation.Size" /> のインスタンス。</param>
+      <param name="size2">比較する 2 番目の <see cref="T:Windows.Foundation.Size" /> のインスタンス。</param>
+    </member>
+    <member name="M:Windows.Foundation.Size.ToString">
+      <summary>[セキュリティ クリティカル] この <see cref="T:Windows.Foundation.Size" /> の文字列形式を返します。</summary>
+      <returns>この <see cref="T:Windows.Foundation.Size" /> の文字列形式。</returns>
+    </member>
+    <member name="P:Windows.Foundation.Size.Width">
+      <summary>[セキュリティ クリティカル] <see cref="T:Windows.Foundation.Size" /> のこのインスタンスの幅を取得または設定します。</summary>
+      <returns>
+        <see cref="T:Windows.Foundation.Size" /> のこのインスタンスの <see cref="P:Windows.Foundation.Size.Width" /> (ピクセル単位)。既定値は 0 です。この値を負にすることはできません。</returns>
+    </member>
+    <member name="T:Windows.UI.Color">
+      <summary>[セキュリティ クリティカル] アルファ、赤、緑、青の各チャネルによって色を表します。</summary>
+    </member>
+    <member name="P:Windows.UI.Color.A">
+      <summary>[セキュリティ クリティカル] 色の sRGB アルファ チャネルの値を取得または設定します。</summary>
+      <returns>色の sRGB アルファ チャネル値 (0 ～ 255 までの値)。</returns>
+    </member>
+    <member name="P:Windows.UI.Color.B">
+      <summary>[セキュリティ クリティカル] 色の sRGB 青チャネルの値を取得または設定します。</summary>
+      <returns>sRGB 青チャネル値 (0 ～ 255 までの値)。</returns>
+    </member>
+    <member name="M:Windows.UI.Color.Equals(System.Object)">
+      <summary>[セキュリティ クリティカル] 指定したオブジェクトが <see cref="T:Windows.UI.Color" /> 構造体であるかどうか、また、現在の色と等価かどうかをテストします。</summary>
+      <returns>指定したオブジェクトが <see cref="T:Windows.UI.Color" /> 構造体で、現在の <see cref="T:Windows.UI.Color" /> 構造体と同じである場合は true。それ以外の場合は false。</returns>
+      <param name="o">現在の <see cref="T:Windows.UI.Color" /> 構造体と比較するオブジェクト。</param>
+    </member>
+    <member name="M:Windows.UI.Color.Equals(Windows.UI.Color)">
+      <summary>[セキュリティ クリティカル] 指定した <see cref="T:Windows.UI.Color" /> 構造体が、現在の色と同じであるかどうかをテストします。</summary>
+      <returns>指定した <see cref="T:Windows.UI.Color" /> 構造体が、現在の <see cref="T:Windows.UI.Color" /> 構造体と同じである場合は true。それ以外の場合は false。</returns>
+      <param name="color">現在の <see cref="T:Windows.UI.Color" /> 構造体と比較する <see cref="T:Windows.UI.Color" /> 構造体。</param>
+    </member>
+    <member name="M:Windows.UI.Color.FromArgb(System.Byte,System.Byte,System.Byte,System.Byte)">
+      <summary>[セキュリティ クリティカル] 指定した sRGB アルファ チャネル値およびカラー チャネル値を使用して新しい <see cref="T:Windows.UI.Color" /> 構造体を作成します。</summary>
+      <returns>指定した値を格納する <see cref="T:Windows.UI.Color" /> 構造体。</returns>
+      <param name="a">新しい色のアルファ チャネル <see cref="P:Windows.UI.Color.A" />。有効な値の範囲は 0 ～ 255 です。</param>
+      <param name="r">新しい色の赤チャネル <see cref="P:Windows.UI.Color.R" />。有効な値の範囲は 0 ～ 255 です。</param>
+      <param name="g">新しい色の緑チャネル <see cref="P:Windows.UI.Color.G" />。有効な値の範囲は 0 ～ 255 です。</param>
+      <param name="b">新しい色の青チャネル <see cref="P:Windows.UI.Color.B" />。有効な値の範囲は 0 ～ 255 です。</param>
+    </member>
+    <member name="P:Windows.UI.Color.G">
+      <summary>[セキュリティ クリティカル] 色の sRGB 緑チャネルの値を取得または設定します。</summary>
+      <returns>色の sRGB 緑チャネル値 (0 ～ 255 までの値)。</returns>
+    </member>
+    <member name="M:Windows.UI.Color.GetHashCode">
+      <summary>[セキュリティ クリティカル] 現在の <see cref="T:Windows.UI.Color" /> 構造体のハッシュ コードを取得します。</summary>
+      <returns>現在の <see cref="T:Windows.UI.Color" /> 構造体のハッシュ コード。</returns>
+    </member>
+    <member name="M:Windows.UI.Color.op_Equality(Windows.UI.Color,Windows.UI.Color)">
+      <summary>[セキュリティ クリティカル] 2 つの <see cref="T:Windows.UI.Color" /> 構造体が同じかどうかをテストします。</summary>
+      <returns>
+        <paramref name="color1" /> と <paramref name="color2" /> が完全に同一である場合は true。それ以外の場合は false。</returns>
+      <param name="color1">最初に比較する <see cref="T:Windows.UI.Color" /> 構造体。</param>
+      <param name="color2">2 番目に比較する <see cref="T:Windows.UI.Color" /> 構造体。</param>
+    </member>
+    <member name="M:Windows.UI.Color.op_Inequality(Windows.UI.Color,Windows.UI.Color)">
+      <summary>[セキュリティ クリティカル] 2 つの <see cref="T:Windows.UI.Color" /> 構造体が異なるかどうかをテストします。</summary>
+      <returns>
+        <paramref name="color1" /> と <paramref name="color2" /> が等しくない場合は true。それ以外の場合は false。</returns>
+      <param name="color1">最初に比較する <see cref="T:Windows.UI.Color" /> 構造体。</param>
+      <param name="color2">2 番目に比較する <see cref="T:Windows.UI.Color" /> 構造体。</param>
+    </member>
+    <member name="P:Windows.UI.Color.R">
+      <summary>[セキュリティ クリティカル] 色の sRGB 赤チャネルの値を取得または設定します。</summary>
+      <returns>sRGB 赤チャネル値 (0 ～ 255 までの値)。</returns>
+    </member>
+    <member name="M:Windows.UI.Color.System#IFormattable#ToString(System.String,System.IFormatProvider)">
+      <summary>[セキュリティ クリティカル] このメンバーの説明については、<see cref="M:System.IFormattable.ToString(System.String,System.IFormatProvider)" /> のトピックを参照してください。</summary>
+      <returns>指定した書式で現在のインスタンスの値を格納する文字列。</returns>
+      <param name="format">使用する書式を指定する文字列。またはIFormattable 実装の型に対して定義されている既定の書式を使用する場合は、null。</param>
+      <param name="provider">値の書式設定に使用する IFormatProvider。またはオペレーティング システムの現在のロケール設定から数値の書式情報を取得する場合は null。</param>
+    </member>
+    <member name="M:Windows.UI.Color.ToString">
+      <summary>[セキュリティ クリティカル] ARGB チャネルを使って色の文字列表現を 16 進数で作成します。</summary>
+      <returns>色の文字列形式。</returns>
+    </member>
+    <member name="M:Windows.UI.Color.ToString(System.IFormatProvider)">
+      <summary>[セキュリティ クリティカル] ARGB チャネルおよび指定した書式プロバイダーを使用して、色の文字列形式を作成します。</summary>
+      <returns>色の文字列形式。</returns>
+      <param name="provider">カルチャ固有の書式設定情報。</param>
+    </member>
+  </members>
+</doc>
